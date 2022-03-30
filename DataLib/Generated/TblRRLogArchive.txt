@@ -1,0 +1,41 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblRRLogArchive --> [RRLogArchive]
+
+  colId --> [ID] int **PK** not null
+  colFilePrefix --> [FilePrefix] smallint not null
+  colFileNo --> [FileNo] varchar(9) not null
+  colPracticeCode --> [PracticeCode] smallint not null
+  colHazard --> [Hazard] varchar(7) null
+  colDateStamp --> [DateStamp] datetime not null
+  colSender --> [Sender] varchar(50) not null
+  colRecipientName --> [RecipientName] varchar(75) null
+  colRecipientEmail --> [RecipientEmail] varchar(75) null
+  colActivity --> [Activity] varchar(5) not null
+  colLinkActive --> [LinkActive] bit not null
+  colLinkActivatedDate --> [LinkActivatedDate] datetime null
+  colLinkActivatedBy --> [LinkActivatedBy] varchar(75) null
+  colLinkActivatedByEmail --> [LinkActivatedByEmail] varchar(75) null
+  colResponseActive --> [ResponseActive] bit null
+  colResponseLastActivity --> [ResponseLastActivity] datetime null
+  colChanged --> [Changed] bit null
+  colRFU1Date --> [RFU1Date] datetime null
+  colRFU2Date --> [RFU2Date] datetime null
+  colRFU3Date --> [RFU3Date] datetime null
+  colRRLogGuid --> [RRLogGuid] varchar(38) null
+  colCurrentLink --> [CurrentLink] varchar(255) null
+  colLanguagePreference --> [LanguagePreference] varchar(255) null
+  colAdminAlertDate --> [AdminAlertDate] datetime null
+  colAdminAlertReason --> [AdminAlertReason] varchar(255) null
+  colSysUserCreated --> [SysUserCreated] nvarchar(100) null
+  colSysDateCreated --> [SysDateCreated] datetime null
+  colSysUserModified --> [SysUserModified] nvarchar(100) null
+  colSysDateModified --> [SysDateModified] datetime null
+

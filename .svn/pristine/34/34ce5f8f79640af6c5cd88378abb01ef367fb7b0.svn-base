@@ -1,0 +1,29 @@
+/*************/
+/* RESET     */
+/*************/
+a, abbr, acronym, address, applet, area, b, bdo, big, blockquote, body, button, caption, center, cite, 
+code, col, colgroup, dd, del, dfn, div, dl, dt, em, embed, fieldset, form, h1, h2, h3, h4, 
+h5, h6, hr, html, i, iframe, img, images, ins, kbd, label, legend, li, map, object, ol, p, param, pre, 
+q, s, samp, small, span, strike, strong, sub, sup, table, tbody, td, textarea, tfoot, th, thead, 
+tr, tt, u, ul, var {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	vertical-align: baseline;
+	outline-style: none;
+	list-style: none;
+}
+html{overflow-y: scroll;}
+img{vertical-align: baseline;}
+div{position: relative; overflow: visible;}
+
+
+/*************/
+/* CLEAR FIX */
+/*************/
+.clear {	clear: both;}
+.clearfix:before,
+.clearfix:after {content: ""; display: table;} 
+.clearfix:after {clear: both;}
+.clearfix {zoom: 1;}

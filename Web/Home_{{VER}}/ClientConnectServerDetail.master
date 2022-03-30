@@ -1,0 +1,372 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/ClientConnectForm.master" AutoEventWireup="false" CodeBehind="ClientConnectServerDetail.master.vb" Inherits="GRC.Connect.Web.ClientConnectServerDetail" %>
+<%@ Register Src="~/Home_{{VER}}/Controls/RevisionStampControl.ascx" TagName="RevisionStampControl" TagPrefix="grcRSC" %>
+
+<asp:Content ID="ClientConnectTestHeadContent" ContentPlaceHolderID="ClientConnectFormHead" runat="server">
+    <title>TUV SUD GRC Connect</title>
+
+    <%-- OUTDATED STYLES --%>
+    
+    <%-- UPDATED STYLES --%>
+    <link rel="Stylesheet" type="text/css" href="../../css/Kendo.v2014.1.318/kendo.common.min.css" />
+
+    <%-- ORIGINAL STYLES --%>
+    <link rel="Stylesheet" type="text/css" href="../../css/kendo-lightblue-noedit.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/GRCConnect/connect-grid.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/GRCConnect/connect-icons.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/kendo-lightblue-menu.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/global.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/topbanner.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/windows.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/icons.css" />
+    <%--<link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadTreeView.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadTreeViewOffice2010Silver.css" />--%>
+    <link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadFileExplorer.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadFileExplorerOffice2010Silver.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadWindow.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadWindowOffice2010Blue.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/EDA/cssgrid.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/EDA/eda.css" />
+
+    <%-- OUTDATED JAVASCRIPT --%>
+
+    <%-- UPDATED JAVASCRIPT --%>
+    <%--<script src="../../Lib_{{VER}}/KendoUI.v2014.1.416/kendo.web.min.js" type="text/javascript"></script>--%>
+    <%--<script src="../../Lib_{{VER}}/kendo.web.min.js" type="text/javascript"></script>--%>
+    <script src="../../Lib_{{VER}}/kendo.all.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Knockout.v3.3.0/knockout-3.3.0.js" type="text/javascript"></script>
+
+    <%-- ORIGINAL JAVASCRIPT --%>
+    <script src="../../Lib_{{VER}}/json/json2.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/ES/entityspaces.XHR.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/GSafeDetail.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/GSafeDetail.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/GSafeHeader.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/GSafeHeader.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/NavLink.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Config/baseurl.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Session/sessvars.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/util_{{VER}}.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/export.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/topbanner.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/nav.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/global.js" type="text/javascript"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="ClientConnectTestBodyContent" ContentPlaceHolderID="ClientConnectFormBody" runat="server">
+    <form id="form1" runat="server">
+        <telerik:RadStyleSheetManager ID="RadStyleSheetManager1" runat="server">
+            <StyleSheets>
+                <%--<telerik:StyleSheetReference Path="../../css/Telerik/RadTreeView.css" /> 
+                <telerik:StyleSheetReference Path="../../css/Telerik/RadTreeViewOffice2010Silver.css" />--%>
+                <telerik:StyleSheetReference Path="../../css/Telerik/RadFileExplorer.css" />
+                <telerik:StyleSheetReference Path="../../css/Telerik/RadFileExplorerOffice2010Silver.css" />
+                <telerik:StyleSheetReference Path="../../css/Telerik/RadWindow.css" /> 
+                <telerik:StyleSheetReference Path="../../css/Telerik/RadWindowOffice2010Blue.css" /> 
+            </StyleSheets>
+        </telerik:RadStyleSheetManager>
+        <telerik:RadWindowManager 
+            id="RadWindowManager1" 
+            runat="server" 
+            Title="Your Request Is Being Processed"
+            Behaviors="Move, Resize, Close"
+            VisibleStatusbar="False"
+            Skin="Office2010Blue"
+            IconUrl="../../Home_{{VER}}/Images/icons/reports/chart_column_16x16.png"
+            ReloadOnShow="True">
+            <windows>
+                <telerik:RadWindow 
+                    ID="RadWindow1" 
+                    runat="server"
+                    Left="350px"
+                    Top="225px" 
+                    Width="395px" 
+                    Height="300px"
+                    Behaviours="Close">
+                </telerik:RadWindow>
+            </windows>
+        </telerik:RadWindowManager>
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+	    <asp:HiddenField ID="HiddenField1"  runat="server" />
+        <asp:HiddenField ID="HiddenPracticeID" runat="server" />
+
+        <div class="masterHeaderElasticBlue100" id="viewMasterTop">
+            <span>
+                <!-- HEADER -->
+                <div class="headerContainerElastic ui-helper-clearfix">
+                    <div class="headerLeft">
+                        <div class="headerCompanyNameLargeBlue"><asp:Label runat="server" ID="lblCompany" Text=""></asp:Label></div>
+                    </div>
+                    <div class="headerRight">
+                        <div class="headerPageTitle" style="padding-top: 2px;"><asp:Label runat="server" ID="lblPageTitle" Text=""></asp:Label></div>
+                    </div>
+                </div>
+                <br style="clear: both;" />
+                <div class="headerContainerElastic ui-helper-clearfix">
+                    <div class="headerLeft">
+                        <asp:ContentPlaceHolder ID="ContentFindCriteria" runat="server"></asp:ContentPlaceHolder>
+                        <div runat="server" id="divCrumbs">
+                            <div class="headerCrumbTrail"><asp:Label runat="server" ID="lblCrumbTrail" Text=""></asp:Label></div>
+                        </div>
+                    </div>
+                    <div class="headerRight" style="padding-bottom: 4px; min-width: 330px;">
+                        <div class="icon_container_DetailsNoBatchData"><!-- CHANGE CLASS TO icon_container WHEN ADDING BATCH DATA ICON -->
+                            <div class="icon_cell">
+                                <div class="icon_myPref icon_center" id="icoMyPreferences" runat="server" style="margin-left: 35%;"></div>
+                                <span class="icon_label"><asp:HyperLink class="hiddenLink" runat="server" ID="hypMyPreferences">myPreferences</asp:HyperLink></span>
+                                <div class="icon_labelFilterApplied" id="divFilterApplied" runat="server" title=""><asp:Label runat="server" ID="lblFilterApplied"></asp:Label>&nbsp;</div>
+                            </div>
+                            <div runat="server" id="divEnableIcons">
+                                <div class="icon_cell" style="padding-left: 20px;">
+                                    <div class="icon_sitemap icon_center" id="icoSiteMap" runat="server" ></div>
+                                    <span class="icon_label"><asp:HyperLink class="hiddenLink" runat="server" ID="hypSiteMap">Site Map</asp:HyperLink></span>
+                                </div>
+                                <div class="icon_cell">
+                                    <div class="icon_reportsAll icon_center" id="icoAllReports" runat="server"></div>
+                                    <span class="icon_label"><asp:HyperLink class="hiddenLink" runat="server" ID="hypAllReports">Batch Reports</asp:HyperLink></span>
+                                </div>
+                                <div class="icon_cell_hide"><!-- HIDE BATCH DATA -->
+                                    <div class="icon_dataDownload icon_center" id="icoAllData" runat="server" ></div>
+                                    <span class="icon_label"><asp:HyperLink class="hiddenLink" runat="server" ID="hypAllData">Batch Data</asp:HyperLink></span>
+                                </div>
+                            </div>
+                            <div runat="server" id="divDisableIcons">
+                                <div class="icon_cell" style="padding-left: 20px;">
+                                    <div class="icon_sitemap_disabled icon_center" id="icoSiteMap_disabled"></div>
+                                    <span class="icon_label_disabled"><label class="" id="hypSiteMap_disabled">Site Map</label></span>
+                                </div>
+                                <div class="icon_cell">
+                                    <div class="icon_reportsAll_disabled icon_center" id="icoAllReports_disabled"></div>
+                                    <span class="icon_label_disabled"><label class="" id="hypAllReports_disabled">Batch Reports</label></span>
+                                </div>
+                                <div class="icon_cell_hide"><!-- HIDE BATCH DATA -->
+                                    <div class="icon_dataDownload_disabled icon_center" id="icoAllData_disabled"></div>
+                                    <span class="icon_label_disabled"><label class="" id="hypAllData_disabled">Batch Data</label></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br style="clear:both;" />
+                </div>
+
+                <!-- END HEADER -->
+            </span>
+        </div>
+        <div class="masterTopBannerElastic100">
+            <div class="topBanner_Container_Other_Elastic_Blue">
+
+                 <!-- NEW TOP BANNER LEFT OPTIONS -->
+                <div style="float: left;" id="topBannerNav">
+                    <div style="margin-top: 4px; margin-left: 12px; background-color: #0046ad;">
+                        <!-- NAVIGATION MENU -->
+                        <div style="float: left;"><ul id="navMenuHorizontal" class="menuHorizontal"></ul></div>                      
+                        <!-- CHANGE PRACTICE -->
+                        <div style="float: left; margin-left: 16px;"><ul id="menuPracticeHorizontal" class="menuHorizontal"></ul></div>                      
+                        <%--<input id="cboPractice" class="blk" style="width:195px;" />--%>
+                        &nbsp;&nbsp;&nbsp;
+                        <span id="spanTopBanner" runat="server"></span>
+                        <span id="spanTopBannerAdmin" runat="server"></span>
+                    </div>
+                </div>
+
+               <div style="float: right;">
+                    <div class="headerWelcomeWhite"><asp:Label runat="server" ID="lblLoginName" Text=""></asp:Label><asp:Label runat="server" ID="lblPreferencesApplied" Visible="False" title="To change your filter/setting, go to Menu Selector > User Tools > myPreferences."><span>,</span> <span class="headerWelcomePreferences">you have a myPreference filter/setting applied!</span></asp:Label> | <a onclick="setCurrentTab(utilConstants.pageId_LogOut, utilConstants.pageId_Gauge)" href="#"><asp:Label runat="server" ID="lblLogoutHeader" Text="Logout"></asp:Label></a></div>
+                    <div class="headerTodaysDateLightBlue"><asp:Label runat="server" ID="lblTodaysDate" Text=""></asp:Label></div>
+                </div>
+            </div>
+            <br style="clear: both;" />
+        </div>
+        &nbsp;<br />
+        <div class="ui-helper-clearfix locListBG" style="white-space: nowrap; min-width: 1126px;">
+        <div class="masterContentArea" style="min-height:521px;">
+            <span>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </span>
+        </div>
+        <br style="clear: both;" />
+        <br style="clear: both;" />
+        <div class="masterLeftNav" id="viewMasterLeftNav" style="padding-left: 15px;">
+            <span>
+                <%--<div id="nav_Container" class="nav_Container nav_ContainerBackgroundWhite" runat="server">
+                    <telerik:RadTreeView
+                        style="white-space: normal; margin-left: 6px;"
+                        ID="RadTreeView1"
+                        EnableViewState="true" 
+                        ViewStateMode="Enabled"
+                        Runat="server"
+                        Skin="Office2010Silver" 
+                        SingleExpandPath="True"
+                        Width="170px"
+                        OnClientNodeExpanding="onExpanding"
+                        OnClientNodeClicking="onTreeviewNodeClick">
+	                </telerik:RadTreeView>
+                </div>--%>
+                <div class="nav_Comments">
+                    <b>Comments on what you see?</b>
+                    <br /><a href="#" onclick="onCommentsOpen(); return false;">Provide Feedback</a>
+                </div>
+            </span>
+        </div>
+        </div>
+
+        <div class="masterBottomBannerElasticBlue">
+            <div id="include_bottombanner"></div>
+        </div>
+
+        <!-- FEEDBACK COMMENTS WINDOWS AND SCRIPT - ALSO NEED TO INCLUDE CSS AND SERVERSIDE HIDDEN FIELD -->
+        <div id="include_comments"></div>
+
+        <!--Search Window-->
+        <div id="searchWindow"></div>
+        <!--Search Window End-->
+
+        <!--Search Lat Long Facility Window-->
+        <div id="searchLatLongFacilityWindow"></div>
+        <!--Search Lat Long Facility Window End-->
+
+    </form>  
+</asp:Content>
+<asp:Content ID="ClientConnectTestBottomHtml" ContentPlaceHolderID="ClientConnectFormBottomHtml" runat="server">
+    <script type="text/javascript">
+    $(document).ready(function () {
+        showTab();
+        $("#include_bottombanner").load("../Common/bottombanner_english_other.html");
+        $("#include_comments").load("../Common/CommentsWindows.html");
+    });
+
+    // CHOOSE PRACTICE MENU
+    var menuPracticeHorizontal = null;
+    var loadPracticeMenu = function () {
+        try {
+            var zServiceName = "GetPracticeMenuItems";
+            var zParms = ko.toJSON({
+                "pGSafeGuid": getGSafeGUID()
+            });
+            global.callRestServiceCached(SITEBASEURL + RESTSERVERENDPOINT, zServiceName, zParms, loadPracticeMenuSuccess, loadPracticeMenuError, null);
+        } catch (pException) {
+            alert("An error occurred while starting the practice menu data load call: " + pException.message);
+            //txtMessage("An error occurred while starting the menu data load call: " + pException.message);
+            //global.messageShow("txtMessage", "messageChartError");
+        }
+    }
+    var loadPracticeMenuSuccess = function (pResults, pParms) {
+        try {
+            if (pResults.isSuccess) {
+                $("#menuPracticeHorizontal").kendoMenu({
+                    orientation: "horizontal",
+                    openOnClick: true,
+                    closeOnClick: false,
+                    hoverDelay: 500,
+                    dataSource: {
+                        encoded: false,
+                        text: "Change Service",
+                        cssClass: null,
+                        url: null,
+                        imageUrl: null,
+                        items: pResults.data
+                    },
+                    select: function (pEvent) {
+                        var zItem = null; //this.dataItem(this.select());
+                        var zList = this.options.dataSource.items;
+                        var zText = pEvent.item.textContent;
+                        for (var x = 0; x < zList.length; x++) {
+                            if (zList[x].textLabel == zText) {
+                                zItem = zList[x];
+                                break;
+                            }
+                        }
+                        if (zItem) {
+                            setCurrentTab(zItem.locListId, zItem.pageId);
+                        }
+                    }
+                });
+                menuPracticeHorizontal = $("#menuPracticeHorizontal").data("kendoMenu");
+            } else {
+                alert("(265) An error occurred while loading practice menu data: " + pResults.message);
+                //txtMessage("An error occurred while loading menu data: " + pResults.message);
+                //global.messageShow("txtMessage", "messageChartError");
+            }
+        } catch (pException) {
+            alert("(270) An error occurred while loading menu data: " + pException.message);
+            //txtMessage("An error occurred while loading menu data: " + pException.message);
+            //global.messageShow("txtMessage", "messageChartError");
+        }
+        //processLoading();
+    }
+    var loadPracticeMenuError = function (pResults, pMessage, pErrorDetail, pParms) {
+        alert("(277) Error while making the load practice menu data call. " + pMessage + " - " + pResults.responseText);
+        //txtMessage("Error while loading menu data. " + pMessage);
+        //global.messageShow("txtMessage", "messageChartError");
+        //processLoading();
+    }
+
+    // SIDE NAV MENU VARIABLES AND FUNCTIONS
+    var navMenuHorizontal = null;
+    var loadMenu = function () {
+        try {
+            var zServiceName = "GetAllMenuItems";
+            var zParms = ko.toJSON({
+                "pGSafeGuid": getGSafeGUID(),
+                "pPageType": "top"
+            });
+            global.callRestServiceCached(SITEBASEURL + RESTSERVERENDPOINT, zServiceName, zParms, loadMenuSuccess, loadMenuError, null);
+        } catch (pException) {
+            alert("An error occurred while starting the menu data load call: " + pException.message);
+            //txtMessage("An error occurred while starting the menu data load call: " + pException.message);
+            //global.messageShow("txtMessage", "messageChartError");
+        }
+    }
+    var loadMenuSuccess = function (pResults, pParms) {
+        try {
+            if (pResults.isSuccess) {
+                if (pResults.data && pResults.dataPage) {
+                    // COMBINE DATA WITH DATAPAGE
+                    zData = pResults.data.concat(pResults.dataPage);
+                    // BUILD THE MENU
+                    $("#navMenuHorizontal").kendoMenu({
+                        orientation: "horizontal",
+                        openOnClick: true,
+                        closeOnClick: false,
+                        hoverDelay: 500,
+                        dataSource: {
+                            encoded: false,
+                            text: "Menu Selector",
+                            cssClass: null,
+                            url: null,
+                            imageUrl: null,
+                            items: zData
+                        }
+                    });
+                    navMenuHorizontal = $("#navMenuHorizontal").data("kendoMenu");
+                } else {
+                    alert("(340) No data found when loading menu data.");
+                    //txtMessage("An error occurred while loading menu data: " + pResults.message);
+                    //global.messageShow("txtMessage", "messageChartError");
+                }
+            } else {
+                alert("(806) An error occurred while loading menu data: " + pResults.message);
+                //txtMessage("An error occurred while loading menu data: " + pResults.message);
+                //global.messageShow("txtMessage", "messageChartError");
+            }
+        } catch (pException) {
+            alert("(811) An error occurred while loading menu data: " + pException.message);
+            //txtMessage("An error occurred while loading menu data: " + pException.message);
+            //global.messageShow("txtMessage", "messageChartError");
+        }
+        //processLoading();
+    }
+    var loadMenuError = function (pResults, pMessage, pErrorDetail, pParms) {
+        alert("(818) Error while making the load menu data call. " + pMessage + " - " + pResults.responseText);
+        //txtMessage("Error while loading menu data. " + pMessage);
+        //global.messageShow("txtMessage", "messageChartError");
+        //processLoading();
+    }
+
+    // LOAD THE MENU DATA
+    loadMenu();
+    loadPracticeMenu();
+
+</script>
+</asp:Content>

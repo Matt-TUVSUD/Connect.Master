@@ -1,0 +1,28 @@
+
+
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"FilePrefix":"FilePrefix", 
+	"FileNo":"FileNo", 
+	"Division":"Division", 
+	"CustomAccess":"CustomAccess", 
+	"ClientLocNo":"ClientLocNo", 
+	"Facility":"Facility", 
+	"Address":"Address", 
+	"City":"City", 
+	"StProv":"StProv", 
+	"Country":"Country", 
+	"CityStProvCountry":"CityStProvCountry", 
+	"StProvCountry":"StProvCountry", 
+	"Longitude":null, 
+	"Latitude":null, 
+	"Tiv":"TIV"
+}]

@@ -1,0 +1,35 @@
+﻿var Project = 
+{
+  "TemplateInformation": {
+    "Namespace": "razor.experimental",
+    "Name": "razor.gen.vb.sqlserver",
+    "ScriptingEngine": "Handlebars",
+    "OutputLanguage": "VB.NET",
+    "MappingLanguage": "VB.NET"
+  },
+  "Tables": [
+	"dbo.TblWhatIfRecSort",
+	"dbo.TblWhatIfOutputParm",
+	"dbo.TblWhatIfFireRecSelected",
+	"dbo.TblWhatIfLocation",
+	"dbo.TblWhatIfLocationSelected",
+	"dbo.TblWhatIfKey"
+	],
+  "Views": [],
+  "Procs": [],
+  "DatabaseName": "cldbConnect",
+  "DatabaseType": "SQL",
+  "JsonName": "(None)",
+  "EdmxName": "(None)",
+  "Settings": {
+    "OutputPath": "C:\\M2G\\razor\\",
+    "TableAliasPrefix": "",
+    "QueryAliasPrefix": "query",
+    "ColumnAliasPrefix": "col",
+    "DataObjectPrefix": "row",
+	"AuditDateCreatedColumnName": "SysDateCreated",
+	"AuditUserCreatedColumnName": "SysUserCreated",
+	"AuditDateModifiedColumnName": "SysDateModified",
+	"AuditUserModifiedColumnName": "SysUserModified"
+  }
+}

@@ -1,0 +1,194 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/ClientConnectForm.master" AutoEventWireup="false" CodeBehind="ClientConnectExtractServer.master.vb" Inherits="GRC.Connect.Web.ClientConnectExtractServer" %>
+<%@ Register Src="~/Home_{{VER}}/Controls/RevisionStampControl.ascx" TagName="RevisionStampControl" TagPrefix="grcRSC" %>
+
+<asp:Content ID="ClientConnectTestHeadContent" ContentPlaceHolderID="ClientConnectFormHead" runat="server">
+    <title>TUV SUD GRC Connect</title>
+
+    <%-- OUTDATED STYLES --%>
+    <%--<link rel="Stylesheet" type="text/css" href="../../css/kendo.common.min.css" />--%>
+    
+    <%-- UPDATED STYLES --%>
+    <link rel="Stylesheet" type="text/css" href="../../css/Kendo.v2014.1.318/kendo.common.min.css" />
+    <%--<link rel="Stylesheet" type="text/css" href="../../css/Kendo.v2014.1.318/kendo.silver.min.css" />--%>
+
+    <%-- ORIGINAL STYLES --%>
+    <link rel="Stylesheet" type="text/css" href="../../css/kendo-lightblue-noedit.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/kendo-lightblue-menu.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/GRCConnect/connect-grid.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/GRCConnect/connect-icons.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/global.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/topbanner.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/windows.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/icons.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/eda/eda.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadTreeView.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadTreeViewOffice2010Silver.css" />
+    <%--<link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadFileExplorer.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadFileExplorerOffice2010Silver.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadWindow.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadWindowOffice2010Blue.css" />--%>
+    <link rel="Stylesheet" type="text/css" href="../../css/EDA/cssgrid.css" />
+
+    <%-- OUTDATED JAVASCRIPT --%>
+    <%--<script src="../../Lib_{{VER}}/KendoUI/kendo.web.min.js" type="text/javascript"></script>--%>
+    <%--<script src="../../Lib_{{VER}}/Knockout/knockout-2.0.0.debug.js" type="text/javascript"></script>--%>
+
+    <%-- UPDATED JAVASCRIPT --%>
+    <%--<script src="../../Lib_{{VER}}/KendoUI.v2014.1.416/kendo.web.min.js" type="text/javascript"></script>--%>
+    <%--<script src="../../Lib_{{VER}}/kendo.web.min.js" type="text/javascript"></script>--%>
+    <script src="../../Lib_{{VER}}/kendo.all.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Knockout.v3.3.0/knockout-3.3.0.js" type="text/javascript"></script>
+
+    <%-- ORIGINAL JAVASCRIPT --%>
+    <script src="../../Lib_{{VER}}/json/json2.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/ES/entityspaces.XHR.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/GSafeDetail.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/GSafeDetail.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/GSafeHeader.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/GSafeHeader.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/NavLink.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Config/baseurl.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Session/sessvars.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/global.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/util_{{VER}}.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/export.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/topbanner.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/nav.js" type="text/javascript"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        #icoBack
+        {
+            height: 13px;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="ClientConnectTestBodyContent" ContentPlaceHolderID="ClientConnectFormBody" runat="server">
+    <form id="form1" runat="server">
+        <div class="masterHeaderElasticBlue100" id="viewMasterTop">
+            <span>
+                <!-- HEADER -->
+                <div class="headerContainerElastic ui-helper-clearfix">
+                    <div class="headerLeft">
+                        <div class="headerCompanyNameLargeBlue"><asp:Label runat="server" ID="lblCompany" Text=""></asp:Label></div>
+                    </div>
+                    <div class="headerRight">
+                        <div class="headerPageTitle"><asp:Label runat="server" ID="lblPageTitle" Text=""></asp:Label></div>
+                    </div>
+                </div>
+                <br style="clear: both;" />
+                <div class="headerContainerElastic ui-helper-clearfix">
+                    <div class="headerLeft">
+                        <%--<div class="headerCrumbTrail"><asp:Label runat="server" ID="lblCrumbTrail" Text=""></asp:Label></div>--%>
+                    </div>
+                    <div class="headerRight">
+                    </div>
+                </div>
+                <!-- END HEADER -->
+            </span>
+        </div>
+        <div class="masterTopBannerElastic100">
+            <div class="topBanner_Container_Other_Elastic_Blue">
+                <div style="float: right;">
+                    <div class="headerWelcomeWhite"><asp:Label runat="server" ID="lblLoginName" Text=""></asp:Label><asp:Label runat="server" ID="lblPreferencesApplied" Visible="False" title="To change your filter/setting, go to Menu Selector > User Tools > myPreferences."><span>,</span> <span class="headerWelcomePreferences">you have a myPreference filter/setting applied!</span></asp:Label></div>
+                    <div class="headerTodaysDateLightBlue"><asp:Label runat="server" ID="lblTodaysDate" Text=""></asp:Label></div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <div class="masterOtherContainerElastic">
+            <span>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </span>
+        </div>
+
+        <br />
+
+        <div class="masterLeftNav" style="padding-left: 15px;">
+            <span>
+                <div class="nav_Comments" style="padding-top: 10px;">
+                    <b>Comments on what you see?</b>
+                    <br /><a href="#" onclick="onCommentsOpen(); return false;">Provide Feedback</a>
+                </div>
+            </span>
+        </div>
+
+        <div class="" style="float: right; padding-right: 65px; padding-top: 6px; width: 100px;">
+            <div id="icoBackArrowVisibleContainer" runat="server" style="float: left;">
+                <div class="icon_backArrow" id="icoBackArrow" onclick="goBack()">&nbsp;</div>
+                <span class="icon_label"><label class="hiddenLink" id="hypBackArrow" onclick="goBack()">Back</label></span>
+            </div>
+           <%-- <div style="float: right;">
+                <div class="icon_exit" id="icoClose" onclick="closeWindow()">&nbsp;</div>
+                <span class="icon_label"><label class="hiddenLink" id="hypClose" onclick="closeWindow()">Close</label></span>
+            </div>--%>
+        </div>
+
+
+        <div class="masterBottomBannerElasticBlue">
+            <div class="bottomBanner_Container_Elastic_Blue" runat="server" id="divBottomBannerNonAdmin">
+                <div class="bottomBanner_Left_Elastic_Blue" style=""></div>
+                <div class="bottomBanner_Right_Elastic_Blue" style=""></div>
+                <div class="bottomBanner_Middle_Elastic_Blue" style=""><!--<span class="bottomBanner_Link"><a href="http://www.globalriskconsultants.com/privacy_statement.html" target="_blank">Privacy Statement</a></span>-->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="bottomBanner_Text">Global Risk Consultants Corp.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="bottomBanner_Link"><a href="mailto:grc-ClientDBA@tuvsud.com">Email Us</a></span></div>
+            </div>
+            <div><br style="clear: both;" /><grcRSC:RevisionStampControl ID="RevisionStampControl" runat="server" /></div>
+        </div>
+        &nbsp;<br style="clear: both;" />
+        &nbsp;<br style="clear: both;" />
+
+    <!-- FEEDBACK COMMENTS WINDOWS AND SCRIPT - ALSO NEED TO INCLUDE CSS AND SERVERSIDE HIDDEN FIELD -->
+    <div id="include_comments"></div>
+
+    </form>
+</asp:Content>
+<asp:Content ID="ClientConnectTestBottomHtml" ContentPlaceHolderID="ClientConnectFormBottomHtml" runat="server">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#include_comments").load("../Common/CommentsWindows.html");
+        });
+
+        function closeWindow() {
+            window.close();
+        }
+
+        function goBack() {
+            // COLLECT PARMS AND URL INFO
+            var URL = document.referrer.split("?")[0];
+            var zGuid = "";
+            if (global.getQueryVariable("sid")) {
+                zGuid = "&sid=" + global.getQueryVariable("sid");
+            }
+            var zChartId = "";
+            if (global.getQueryVariable("chartId")) {
+                zChartId = "&chartId=" + global.getQueryVariable("chartId");
+            }
+            var zP1 = "";
+            if (global.getQueryVariable("p1")) {
+                zP1 = "&p1=" + global.getQueryVariable("p1");
+            }
+            var zC1 = "";
+            if (global.getQueryVariable("c1")) {
+                zC1 = "&c1=" + global.getQueryVariable("c1");
+            }
+            var pageNum = "";
+            if (global.getQueryVariable("pg")) {
+                pageNum = "&pg=" + global.getQueryVariable("pg");
+            }
+            var pageSort = "";
+            if (global.getQueryVariable("srt")) {
+                pageSort = "&srt=" + global.getQueryVariable("srt");
+            }
+            // NAVIGATE BACK
+            if (pageNum.length > 0) {
+                URL = URL + "?q1=0" + zGuid + zChartId + zC1 + zP1 + pageNum + pageSort;
+                document.location.href = URL;
+            } else {
+                history.back();
+            };
+        }
+    </script>
+</asp:Content>

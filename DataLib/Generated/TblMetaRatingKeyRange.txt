@@ -1,0 +1,20 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblMetaRatingKeyRange --> [tblMetaRatingKeyRange]
+
+  colFldId --> [fldId] int **PK** identity not null
+  colFldKeyId --> [fldKeyId] int not null
+  colFldRating --> [fldRating] nvarchar(50) not null
+  colFldDescription --> [fldDescription] nvarchar(50) not null
+  colFldScoreLow --> [fldScoreLow] float not null
+  colFldScoreHigh --> [fldScoreHigh] float not null
+  colFldMetaColorId --> [fldMetaColorId] int not null
+  colFldPSRatingKey --> [fldPSRatingKey] nvarchar(20) null
+

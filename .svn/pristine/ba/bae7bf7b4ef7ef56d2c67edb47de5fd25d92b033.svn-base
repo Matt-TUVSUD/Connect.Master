@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<configuration>
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="Telerik.Reporting" publicKeyToken="a9d7983dfcc261be" culture="neutral"/>
+        <bindingRedirect oldVersion="0.0.0.0-12.0.0.0" newVersion="12.0.18.125"/>
+      </dependentAssembly>
+    </assemblyBinding>
+  	<assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+			<dependentAssembly>
+				<assemblyIdentity name="Telerik.Windows.Documents.Spreadsheet" publicKeyToken="5803CFA389C90CE7" culture="neutral"/>
+				<bindingRedirect oldVersion="0.0.0.0-2018.1.220.40" newVersion="2018.1.220.40"/>
+			</dependentAssembly>
+			<dependentAssembly>
+				<assemblyIdentity name="Telerik.Windows.Documents.Core" publicKeyToken="5803CFA389C90CE7" culture="neutral"/>
+				<bindingRedirect oldVersion="0.0.0.0-2018.1.220.40" newVersion="2018.1.220.40"/>
+			</dependentAssembly>
+		</assemblyBinding>
+	</runtime>
+  <connectionStrings>
+
+    <add name="AppJob.Test" connectionString="Persist Security Info=True;Server=EXNJCU01008.EXUS01.NET;Database=AppJob;User Id=AppUserAppJob; Password=TA0F6jFy5MhS744;  Application Name=GRC Connect Scheduled Task" providerName="System.Data.SqlClient" />
+    <add name="AppJob.Live" connectionString="Persist Security Info=True;Server=EXNJCU01003.EXUS01.NET;Database=AppJob;User Id=AppUserAppJob; Password=TA0F6jFy5MhS744;  Application Name=GRC Connect Scheduled Task" providerName="System.Data.SqlClient" />
+    <add name="AppJob.Dev" connectionString="Persist Security Info=True;Server=SUSNJCU01041.US001.ITGR.NET;Database=AppJob;User Id=AppUserAppJob; Password=TA0F6jFy5MhS744;  Application Name=GRC Connect Scheduled Task" providerName="System.Data.SqlClient" />
+    <add name="Connect.Dev" connectionString="Data Source=SUSNJCU01033.US001.ITGR.NET\DMZ;Initial Catalog=cldbConnect;User Id=AppUserCLDBWeb;Password=$Cl13nt$; Application Name=GRC Connect Web" providerName="System.Data.SqlClient" />
+    <add name="Connect.Test" connectionString="Data Source=DMZTESTSQL;Initial Catalog=cldbConnect;User Id=AppUserCLDBWeb;Password=$Cl13nt$; Application Name=GRC Connect Web" providerName="System.Data.SqlClient" />
+    <add name="Connect.Live" connectionString="Data Source=exnjcu01003.exus01.net;Initial Catalog=cldbConnect;User Id=AppUserCLDBWeb;Password=$Cl13nt$; Application Name=GRC Connect Web" providerName="System.Data.SqlClient" />
+    <add name="Connect.Beta" connectionString="Data Source=DMZBETASQL;Initial Catalog=cldbConnect;User Id=AppUserCLDBWeb;Password=$Cl13nt$; Application Name=GRC Connect Web" providerName="System.Data.SqlClient" />
+    <add name="Impairment.Dev" connectionString="Persist Security Info=False; Initial Catalog=ImpairmentDev; User Id=AppUserCLDBWeb; Password=$Cl13nt$; Data Source=SUSNJCU01041.us001.itgr.net; Application Name=GRC Connect Web" providerName="System.Data.SqlClient" />
+    <add name="Impairment.Test" connectionString="Data Source=exnjcu01008.exus01.net; Initial Catalog=Impairment; User Id=AppUserCLDBWeb; Password=$Cl13nt$; Application Name=GRC Connect Web" providerName="System.Data.SqlClient" />
+    <add name="Impairment.Live" connectionString="Data Source=exnjcu01003.exus01.net; Initial Catalog=Impairment; User Id=AppUserCLDBWeb; Password=$Cl13nt$; Application Name=GRC Connect Web" providerName="System.Data.SqlClient" />
+    <add name="GRIPSS.Live" connectionString="Data Source=SUSNJCU01014.US001.ITGR.NET; Initial Catalog=GRIPSS;Trusted_Connection=True;Application Name=GRIPSS(Live)" providerName="System.Data.SqlClient" />
+    <add name="GRIPSS.Test" connectionString="Data Source=SUSNJCU01080.US001.ITGR.NET; Initial Catalog=GRIPSS;Trusted_Connection=True;Application Name=GRIPSS(Test)" providerName="System.Data.SqlClient" />
+    <add name="GRIPSS.Dev" connectionString="Data Source=SUSNJCU01041.US001.ITGR.NET; Initial Catalog=GRIPSS;Trusted_Connection=True;Application Name=GRIPSS(DEV)" providerName="System.Data.SqlClient" />
+    <add name="GRIPSS.Beta" connectionString="Data Source=SUSNJCU01080.US001.ITGR.NET\Beta; Initial Catalog=GRIPSS;Trusted_Connection=True;Application Name=GRIPSS(Beta)" providerName="System.Data.SqlClient" />
+    <add name="EmailManagement.Live" connectionString="Persist Security Info=True;Server=SUSNJCU01014.US001.ITGR.NET;Database=EmailManagement;User Id=AppUserEmailManagement; Password=qoQbxNqcICMMigw;" providerName="System.Data.SqlClient" />
+    <add name="EmailManagement.Test" connectionString="Persist Security Info=True;Server=SUSNJCU01080.US001.ITGR.NET;Database=EmailManagement;User Id=AppUserEmailManagement; Password=qoQbxNqcICMMigw;" providerName="System.Data.SqlClient" />
+    <add name="EmailManagement.Beta" connectionString="Persist Security Info=True;Server=SUSNJCU01080.US001.ITGR.NET;Database=EmailManagement;User Id=AppUserEmailManagement; Password=qoQbxNqcICMMigw;" providerName="System.Data.SqlClient" />
+    <add name="EmailManagement.Dev" connectionString="Persist Security Info=True;Server=SUSNJCU01080.US001.ITGR.NET;Database=EmailManagement;User Id=AppUserEmailManagement; Password=qoQbxNqcICMMigw;" providerName="System.Data.SqlClient" />
+    <add name="TimeExpense.Live" connectionString="Server=SUSNJCU01014.US001.ITGR.NET;Database=time_expense;User Id=AppUserStaffWeb;Password=dnMbUKYu39ywMYe;" />
+    <add name="TimeExpense.Test" connectionString="Server=SUSNJCU01080.US001.ITGR.NET;Database=time_expense;User Id=AppUserStaffWeb;Password=dnMbUKYu39ywMYe;" />
+    <add name="TimeExpense.Beta" connectionString="Server=SUSNJCU01080.US001.ITGR.NET\Beta;Database=time_expense;User Id=AppUserStaffWeb;Password=dnMbUKYu39ywMYe;" />
+    <add name="ProjectManagement.Dev" connectionString="Data Source=susnjcu01033.us001.itgr.net\dmz; Initial Catalog=EDAProjectManagement;User Id=AppUserPM; Password=H8jOb2kEqULzEJ8X; Application Name=EDA.PM(Dev)" providerName="System.Data.SqlClient" />
+    <add name="ProjectManagement.Test" connectionString="Data Source=DMZTESTSQL; Initial Catalog=EDAProjectManagement;User Id=AppUserPM; Password=H8jOb2kEqULzEJ8X; Application Name=EDA.PM(Test)" providerName="System.Data.SqlClient" />
+    <add name="ProjectManagement.Live" connectionString="Data Source=EXNJCU01003.EXUS01.NET; Initial Catalog=EDAProjectManagement;User Id=AppUserPM; Password=H8jOb2kEqULzEJ8X; Application Name=EDA.PM(Live)" providerName="System.Data.SqlClient" />
+    <add name="ProjectManagement.Beta" connectionString="Data Source=DMZBETASQL; Initial Catalog=EDAProjectManagement;User Id=AppUserPM; Password=H8jOb2kEqULzEJ8X; Application Name=EDA.PM(Beta)" providerName="System.Data.SqlClient" />
+ 
+  </connectionStrings>
+  <appSettings>
+    <add key="WebAppMode" value="Dev"/>
+    <add key="ActiveReports 9 License" value="bSYNGtwoWAVEpS6o1qns8dzetqsf+VTsb5OQoo9+VM2CW4b2V8dg9GuZqMhRrORRziEMQvFIX3356lYZLjuIvddoEHbyFhI0l7cJZzu99Z0hiYUMMF45jyVzrdGqBMbu6zs2edmYZdh2oa7PcIBXZMZvclniUGyVWBug07xGjuff1+3PW8UtuiYuwBgAoy2B2ih/rQitFZ0nYLIsD6PFXukjeVHik2BXrPiVhG9CCVubvkLxglYIClS2akNMdHR1v00kZamhXyZqFWbsJ9A9nQWCi71xs+W7y0Gu8nTqaoP6YRyCk3XdG1osfjPNzBxQ"/>
+    <add key="ClientSettingsProvider.ServiceUri" value=""/>
+  </appSettings>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5"/>
+  </startup>
+  <system.web>
+    <membership defaultProvider="ClientAuthenticationMembershipProvider">
+      <providers>
+        <add name="ClientAuthenticationMembershipProvider" type="System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri=""/>
+      </providers>
+    </membership>
+    <roleManager defaultProvider="ClientRoleProvider" enabled="true">
+      <providers>
+        <add name="ClientRoleProvider" type="System.Web.ClientServices.Providers.ClientRoleProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" cacheTimeout="86400"/>
+      </providers>
+    </roleManager>
+  </system.web>
+</configuration>

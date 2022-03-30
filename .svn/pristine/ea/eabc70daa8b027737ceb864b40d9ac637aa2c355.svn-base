@@ -1,0 +1,95 @@
+﻿<!-- FOR KENDO GRID ROW DETAIL TEMPLATES -->
+<!-- CELL DATA REPLACERS USE #= NameOfField # -->
+<!-- AVOID USING # AS A CHARACTER IN THE TEMPLATE -->
+<!-- IF USING A CLASS LOOKUP TO THE GRID, MAKE SURE THAT CLASS IS IN THE COLUMN TEMPLATE -->
+<!-- SCRIPTS INCLUDED HERE GET RUN EVERY TIME THE DETAIL POPUP IS OPENED -->
+<!-- WHEN COPIED TO THE DATABASE, THE HTML AND JS MUST BE ALL IN ONE LINE -->
+<!-- DO NOT USE DOUBLE QUOTES IN JS OR HTML -->
+<!-- DO NOT USE COMMENTS IN JS, ALL ONE LINE COMMENTS WILL NOT RUN CODE -->
+
+<!-- FormViewNameOfGrid LAYOUT -->
+<div id='divDetailForm_#= uid #' class='divDetailForm'>
+    
+    <div class='IREquipmentLDHead'>
+        Location Detail</div>
+    <!--Row 1-->
+    <div class='IREquipmentLDInfo'> 
+        <div>
+            <span id='lblFileNo'>File No.</span>
+            <input id='fileno' readonly='readonly' type='text' value='#= fileno #' />
+            <span id='lblClientLocID'>Client Loc. ID</span>
+            <input id='clientlocno' readonly='readonly' type='text' value='#= clientlocno #' />
+        </div>
+        <!--Row 2-->
+        <div>
+            <span id='lblAddress'>Address</span>
+            <input id='Address' readonly='readonly' type='text' value='#= Address #' />
+            <span id='lblCity'>City</span>
+            <input id='city' readonly='readonly' type='text' value='#= city #' />
+            <span id='lblStProv'>St/Prov</span>
+            <input id='stprov' readonly='readonly' type='text' value='#= stprov #' />
+            <span id='lblZip'>Zip</span>
+            <input id='zip' readonly='readonly' type='text' value='#= zip #' />
+            <span id='lblCountry'>Country</span>
+            <input id='country' readonly='readonly' type='text' value='#= country #' />
+        </div>
+        <!--Row 3-->
+        <div>
+            <span id='lblDivision'>Division</span>
+            <input id='division' readonly='readonly' type='text' value='#= division #' />
+            <span id='lblFacility'>Facility</span>
+            <input id='facility' readonly='readonly' type='text' value='#= facility #' />
+        </div>
+    </div>
+    <div class='FVTable'>
+        <div class='rmx1'>Equipment</div>
+        <div class='rmx2'>
+            <div style='width: 60px; float: left; padding: 2px; border-right: 1px solid rgb(177,177,177);'>Item Number</div>
+            <div style='width: 300px; float: left; padding: 2px; border-right: 1px solid rgb(177,177,177);'>Equipment</div>
+            <div style='width: 300px; float: left; padding: 2px;'>Location</div>
+        </div>
+        <div class='rmx3'>
+            <div style='width: 60px; float: left; padding: 2px; border-right: 1px solid rgb(177,177,177)'>
+                <input id='Item_No' style='width: 46px;' readonly='readonly' type='text' value='#= Item_No #' />
+            </div>
+            <div style='width: 300px; float: left; padding: 2px; border-right: 1px solid rgb(177,177,177)'>
+                <input id='Equipment' style='width: 296px;' readonly='readonly' type='text' value='#= Equipment #' />
+            </div>
+            <div style='width: 300px; float: left; padding: 2px;'>
+                <input id='location' style='width: 296px;'readonly='readonly' type='text' value='#= location #' />
+            </div>
+        </div>
+    </div>
+
+    <br />
+
+    <div class='tableDiv'>
+        <div style='margin: auto; width: 100%; text-align: center;'>
+            <span style='margin: auto; width: 100%; text-align: center;'><button class='k-button' onclick='globalCloseFormView(); return false;'>Close</button></span>
+        </div>
+    </div>
+</div>
+<script>
+    /*LOAD THE CSS*/
+    var zLink = "<link rel='stylesheet' type='text/css' href='../../../css/FormView/FormViewIREquipment.css'>";
+    $(zLink).appendTo('head');
+
+    setTimeout(function () {
+        var zUID = '#= uid #';
+
+        /* FORMAT DATES GLOBAL REMIX */
+        $('\\#divDetailForm_' + zUID + ' input').each(function(){
+            if( $(this).attr('id').toLowerCase().indexOf('date') > -1 ){
+                $(this).val(global.formatShortDateWithMonth($(this).val()));
+            }
+        });
+
+        /* REMOVE NULLS GLOBAL REMIX */
+        $('\\#divDetailForm_' + zUID + ' input').each(function(){
+            if( ($(this).val() == 'null') || ($(this).val() == 'undefined') ){
+                $(this).val('');
+            }
+        });
+
+    }, 50);
+</script>

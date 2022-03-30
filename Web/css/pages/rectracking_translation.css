@@ -1,0 +1,451 @@
+﻿/************************************/
+/* CLASS THAT MAKES THE WRAP HAPPEN */
+.recLabelVerticalCenter
+{
+    display: table-cell;
+    vertical-align: middle;
+}
+.recLabelVerticalCenterRight
+{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+    padding: 0px;
+    margin: 0px;
+    width: auto;
+}
+
+/********************************/
+/* COMPANY LABELS */
+.companyLabels1
+{
+    text-align: right;
+    width: 100px;
+    line-height: 8pt !important;
+    margin-right: 6px;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.companyLabels2
+{
+    text-align: right;
+    width: 160px;
+    line-height: 8pt !important;
+    margin-right: 6px;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.companyLabels3
+{
+    text-align: right;
+    width: 120px;
+    line-height: 8pt !important;
+    margin-left: 5px;
+    margin-right: 4px;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.companyLabels4
+{
+    text-align: right;
+    width: 65px;
+    line-height: 8pt !important;
+    margin-right: 6px;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.companyLabels5
+{
+    text-align: right;
+    width: 214px;
+    line-height: 8pt !important;
+    margin-left: 5px;
+    margin-right: 4px;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.companyLabels6
+{
+    text-align: right;
+    width: 175px;
+    line-height: 8pt !important;
+    margin-left: 5px;
+    margin-right: 4px;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.stateLabels
+{
+    width: 80px;
+    text-align: right;
+    margin-right: 4px;
+    line-height: 8pt !important;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.countryLabels
+{
+    width: 45px;
+    text-align: right;
+    margin-right: 4px;
+    line-height: 8pt !important;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.postalLabels
+{
+    width: 48px;
+    text-align: right;
+    margin-right: 4px;
+    line-height: 8pt !important;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.companyInputs4
+{
+    width: 68px;
+}
+.companyInputs6
+{
+    width: 470px; 
+}
+
+
+/******************************/
+/* LABELS */
+.recLabelLeft
+{
+    width: 100px;
+    text-align: right;
+    line-height: 8pt !important;
+    margin-right: 4px;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.recLabelRecSmall
+{
+    width: 90px;
+    text-align: right;
+    line-height: 8pt !important;
+    margin-right: 4px;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.recLabelHistory
+{
+    width: 60px;
+    text-align: right;
+    line-height: 8pt !important;
+    margin-right: 4px;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.recLabelRecSmallStandard
+{
+    width: 110px;
+    text-align: right;
+    line-height: 8pt !important;
+    margin-right: 4px;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.recLabelRecCode
+{
+    width: 90px;
+    text-align: right;
+    line-height: 8pt !important;
+    margin-right: 4px;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.recLabelRecStatus
+{
+    width: 100px;
+    text-align: right;
+    line-height: 8pt !important;
+    margin-right: 4px;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.recLabelRecStatusStandard
+{
+    width: 115px;
+    text-align: right;
+    line-height: 8pt !important;
+    margin-right: 4px;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.recLabelHazard
+{
+    width: 145px;
+    text-align: right;
+    line-height: 8pt !important;
+    margin-right: 4px;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.recLabelPrimaryType
+{
+    width: 138px;
+    text-align: right;
+    line-height: 8pt !important;
+    margin-right: 4px;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.recLabelSecondaryType
+{
+    width: 152px;
+    text-align: right;
+    line-height: 8pt !important;
+    margin-right: 4px;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.recLabelSecondaryTypeSmall
+{
+    width: 175px;
+    text-align: right;
+    line-height: 8pt !important;
+    margin-right: 4px;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.recLabelRangeLarge
+{
+    width: 170px;
+    text-align: center;
+    line-height: 8pt !important;
+    margin-right: 4px;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.recLabelRangeLargePadding
+{
+    width: 160px;
+    text-align: center;
+    line-height: 8pt !important;
+    margin-right: 4px;
+    padding-right: 20px;
+    padding-left: 20px;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.recLabelRangeSmall
+{
+    width: 115px;
+    text-align: center;
+    line-height: 8pt !important;
+    margin-right: 4px;
+    margin-left: 10px;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.recLabelRespSmall
+{
+    width: 165px;
+    text-align: right;
+    line-height: 8pt !important;
+    margin-right: 4px;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.recLabelIntendedActionSmall
+{
+    width: 165px;
+    text-align: right;
+    line-height: 8pt !important;
+    margin-right: 4px;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.recLabelIntendedActionSmallMgmt
+{
+    width: 170px;
+    text-align: right;
+    line-height: 8pt !important;
+    margin-right: 4px;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.recLabelRecPlantArea
+{
+    width: 130px;
+    text-align: right;
+    line-height: 8pt !important;
+    margin-right: 4px;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.recLabelRedundancySpare
+{
+    width: 150px;
+    text-align: right;
+    line-height: 8pt !important;
+    margin-right: 4px;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.recLabelProbEquipDamage
+{
+    width: 202px;
+    text-align: right;
+    line-height: 8pt !important;
+    margin-right: 4px;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.recLabelFindingNo
+{
+    width: 201px;
+    text-align: right;
+    line-height: 8pt !important;
+    margin-right: 4px;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.recLabelLengthOfBusinessInterruption
+{
+    width: 126px;
+    text-align: right;
+    line-height: 8pt !important;
+    margin-right: 4px;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+
+
+/****** MISC LABELS ******/
+.recLabelDatasheetView
+{
+    width: 325px;
+    text-align: center;
+    line-height: 8pt !important;
+    margin-right: 8px;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.recResponse_DocumentsLabel
+{
+    width: 275px;
+    text-align: right;
+    line-height: 8pt !important;
+    margin-right: 6px;
+    white-space: pre-wrap;
+    overflow: visible;
+    display: table;
+}
+.recResponse_LargeSpacer
+{
+    width: 330px;
+}
+
+/***********************************/
+/* INPUTS */
+.recInputRecNoIR
+{
+    width: 110px;
+}
+.recInputHazard
+{
+    width: 225px;
+}
+.recInputKeyWordsLong
+{
+    width: 829px;
+}
+.recInputRangeLargeActual
+{
+    width: 160px;
+    padding-right: 13px;
+}
+.recInputRangeCellLarge
+{
+    width: 173px;
+}
+.recInputRangeLarge
+{
+    width: 160px;
+    padding-right: 10px;
+}
+.recInputRangeSmallCell
+{
+    width: 130px;
+}
+.recInputRangeSmall
+{
+    width: 120px;
+    padding-right: 10px;
+}
+.recInputIntendedActionSmall
+{
+    width: 293px;
+}
+.recInputCommentsLarge
+{
+    width: 828px;
+    height: 26px;
+    line-height: normal;
+}
+.recInputRecStatus
+{
+    width: 100px;
+}
+.recInputRecStatusStandard
+{
+    width: 190px;
+}
+.recInputRecStatusStandardIR
+{
+    width: 162px;
+}
+.recInputRecCategory
+{
+    width: 60px;
+}
+.k-dropdown-wrap
+{
+    overflow: hidden;
+}
+
+
+/***********************************/
+/* MISC */
+.recResponse_HeaderPadding
+{
+    width: 500px;
+    height: 32px;
+}

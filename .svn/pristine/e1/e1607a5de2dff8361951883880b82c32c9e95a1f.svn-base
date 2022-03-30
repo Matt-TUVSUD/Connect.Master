@@ -1,0 +1,355 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../../../css/pages/mapping.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/pages/print.css" />
+    <script>
+        var gWindowTitle = "Facility Rating Detail";
+    </script>
+    <script src="../../../Lib_{{VER}}/Mapping/mapping.js"></script>
+</head>
+<body>
+    <div id="formView">
+        <div style="font-family:Arial !important; font-size:8pt;">
+        <div id="printWindow" class="windowBody pdf-page" style="font-family:Arial !important; font-size:8pt;">
+        <div id="loading" class="noShow"><span>Loading...</span></div>
+            <div class="infoArea">
+                <div class="popColA bottomSpaceRow">
+                    <div class="popRow">
+                        <label class="topHalfLbl">File No.:</label><span data-bind="text: objFormData().fileno" class="topHalfTxt"></span>
+                    </div>
+                    <div class="popRow">
+                        <label class="topHalfLbl">Client:</label><span data-bind="text: objFormData().client" class="topHalfTxt"></span>
+                    </div>
+                    <div class="popRow">
+                        <label class="topHalfLbl">Client Loc. ID:</label><span data-bind="text: objFormData().clientlocno" class="topHalfTxt"></span>
+                    </div>
+                    <div class="popRow">
+                        <label class="topHalfLbl">Divisions:</label><span data-bind="text: objFormData().division" class="topHalfTxt"></span>
+                    </div>
+                    <div class="popRow bottomSpaceRow">
+                        <label class="topHalfLbl">Facility:</label><span data-bind="text: objFormData().facility" class="topHalfTxt"></span>
+                    </div>
+                    <div class="popRow">
+                        <label class="topHalfLbl">TIV (millions) <span data-bind="text: currencyText"></span></label>
+                        <span data-bind="    text: numeral(objFormData().Tiv).format('0,0')" class="topHalfTxt"></span>
+                    </div>
+                    <div class="popRow">
+                        <label class="topHalfLbl">Date of Last Insp.:</label><span data-bind="text: objFormData().InspectionDateString" class="topHalfTxt"></span>
+                    </div>
+                </div>
+                <div class="popColB bottomSpaceRow">
+                    <div class="popRow">
+                        <label class="topHalfLbl">Address:</label><span data-bind="text: objFormData().address" class="topHalfTxt"></span>
+                    </div>
+                    <div class="popRow">
+                        <label class="topHalfLbl">City:</label><span data-bind="text: objFormData().city" class="topHalfTxt"></span>
+                    </div>
+                    <div class="popRow">
+                        <label class="topHalfLbl">St/Prov.:</label><span data-bind="text: objFormData().stprov" class="topHalfTxt"></span>
+                    </div>
+                    <div class="popRow">
+                        <label class="topHalfLbl">Country:</label><span data-bind="text: objFormData().country" class="topHalfTxt"></span>
+                    </div>
+                    <div class="popRow bottomSpaceRow">
+                        <label class="topHalfLbl">Postal Code:</label><span data-bind="text: objFormData().zip" class="topHalfTxt"></span>
+                    </div>
+                    <div class="popRow">
+                        <label class="topHalfLbl">Latitude:</label><span data-bind="text: objFormData().latitude" class="topHalfTxt"></span>
+                    </div>
+                    <div class="popRow">
+                        <label class="topHalfLbl">Longitude:</label><span data-bind="text: objFormData().longitude" class="topHalfTxt"></span>
+                    </div>
+                </div>
+
+                <div id="satMap" class="imgHldr">
+                    <a href="#" class="printNone">
+                        <img data-bind="attr: { src: getStaticMapUrl() }, click: onGoToLocationBingMaps" /></a>
+                    <img class="printOnly" data-bind="attr: { src: staticImageBase64 }" />
+                    <span class="satImgTip">Tip! The above map is interactive and will open Bing Maps.</span>
+                </div>
+            </div>
+            <div class="btnHldr noPrint">
+                <a href="#" class="grcBlueBtn printNone" data-bind="click: function () { onCurrentERReport(); }, visible: visibleCurrentERReport">
+                    <i class="far fa-file" style="font-size: 20px; margin-right: 5px"></i>Current ER Report
+                </a>
+                <a href="#" class="grcBlueBtn printNone" data-bind="click: function () { onCurrentDiagramReport(); }, visible: visibleCurrentDiagramReport">
+                    <i class="far fa-file" style="font-size: 20px; margin-right: 5px;"></i>Current Diagram
+                </a>
+                <a href="#" class="grcBlueBtn printNone" data-bind="click: function () { onPrint(); }, visible: visiblePrint">
+                    <i class="far fa-file" style="font-size: 20px; margin-right: 5px;"></i>Print
+                </a>
+            </div>
+        <div class="bottomSection">
+            <div data-bind=" visible: clientFeatures().search('a') < 0 && clientFeatures().search('u') < 0">
+                <div class="borderedGrid" data-bind="style: { width: clientFeatures().search('a') < 0 ? '1020px' : '683px' }">
+                <div class="borderedHeader">
+                    <span style="width: 125px; text-align: right; float: left;" data-bind="if: clientFeatures().search('a') < 0">Current</span>
+                    <span style="width: 210px; text-align: center; float: left;" data-bind="if: clientFeatures().search('a') < 0">With Recs Completed</span>
+                    <span style="width: 315px; text-align: center; float: left;" data-bind="style: { width: clientFeatures().search('a') < 0 ? '315px' : '315px' }">Passive</span>
+                    <span style="width: 225px; text-align: center; float: left;" data-bind="style: { width: clientFeatures().search('a') < 0 ? '225px' : '225px' }">Active</span>
+                    <span style="width: 140px; text-align: center; float: left;" data-bind="style: { width: clientFeatures().search('a') < 0 ? '140px' : '140px' }">Current</span>
+                </div>
+                    <div class="borderedGridBody">
+                    <div class="gridBodyRow">
+                    <div style="display:flex;" data-bind="if: clientFeatures().search('a') < 0">
+                        <div class="fullBox">
+                            <div class="fullBoxTopHalf">
+                                APL USD
+                            </div>
+                            <div class="fullBoxBottomHalf">
+                                <span data-bind="text: numeral(objFormData().Apl).format('0,0')"></span>
+                            </div>
+                        </div>
+                        <div class="quarterBox">
+                            <div class="quarterBox1WordTopHalf">Factor</div>
+                            <div class="quarterBoxBottomHalf">
+                                <span data-bind="text: objFormData().aplfactor"></span>
+                            </div>
+                        </div>
+                        <div class="fullBox">
+                            <div class="fullBoxTopHalf">APL USD</div>
+                            <div class="fullBoxBottomHalf">
+                                <span data-bind="text: numeral(objFormData().aplwithallrecscomplete).format('0,0')"></span>
+                            </div>
+                        </div>
+                        <div class="quarterBox">
+                            <div class="quarterBox1WordTopHalf">Factor</div>
+                            <div class="quarterBoxBottomHalf">
+                                <span data-bind="text: objFormData().aplfactorwithallrecscomplete"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quarterBox">
+                        <div class="quarterBox1WordTopHalf">Flood</div>
+                        <div class="quarterBoxBottomHalf" data-bind="style: { background: objFormData().floodratingColor }">
+                            <span data-bind="text: objFormData().floodrating"></span>
+                        </div>
+                    </div>
+                    <div class="quarterBox">
+                        <div class="quarterBox1WordTopHalf">Seis.</div>
+                        <div class="quarterBoxBottomHalf" data-bind="style: { background: objFormData().earthquakeratingColor }">
+                            <span data-bind="text: objFormData().earthquakerating"></span>
+                        </div>
+                    </div>
+                    <div class="quarterBox">
+                        <div class="quarterBox1WordTopHalf">Wind</div>
+                        <div class="quarterBoxBottomHalf" data-bind="style: { background: objFormData().windstormratingColor }">
+                            <span data-bind="text:objFormData().windstormrating"></span>
+                        </div>
+                    </div>
+                    <div class="quarterBox">
+                        <div class="quarterBox1WordTopHalf">Constr.</div>
+                        <div class="quarterBoxBottomHalf" data-bind="style: {background: objFormData().constructionratingColor}">
+                            <span data-bind="text: objFormData().constructionrating"></span>
+                        </div>
+                    </div>
+                    <div class="quarterBox">
+                        <div class="quarterBox1WordTopHalf">Occup.</div>
+                        <div class="quarterBoxBottomHalf" data-bind="style: {background: objFormData().occupancyratingColor}">
+                            <span data-bind="text: objFormData().occupancyrating"></span>
+                        </div>
+                    </div>
+                    <div class="quarterBox">
+                        <div class="quarterBox1WordTopHalf">Other</div>
+                        <div class="quarterBoxBottomHalf" data-bind="style: {background: objFormData().otherratingColor}">
+                            <span data-bind="text: objFormData().otherrating"></span>
+                        </div>
+                    </div>
+                    <div class="quarterBox">
+                        <div class="quarterBoxTopHalf">Total<br />Passive</div>
+                        <div class="quarterBoxBottomHalf">
+                            <span data-bind="text: objFormData().passivescore"></span>
+                        </div>
+                    </div>
+                    <div class="quarterBox">
+                        <div class="quarterBoxTopHalf">Phy.<br />Prot.</div>
+                        <div class="quarterBoxBottomHalf" data-bind="style: {background: objFormData().physicalprotectionratingColor}">
+                            <span data-bind="text: objFormData().physicalprotectionrating"></span>
+                        </div>
+                    </div>
+                    <div class="quarterBox">
+                        <div class="quarterBoxTopHalf">Human<br />Ele.</div>
+                        <div class="quarterBoxBottomHalf" data-bind="style: {background: objFormData().humanelementratingColor}">
+                            <span data-bind="text: objFormData().humanelementrating"></span>
+                        </div>
+                    </div>
+                    <div class="quarterBox">
+                        <div class="quarterBox1WordTopHalf">NatHaz</div>
+                        <div class="quarterBoxBottomHalf" data-bind="style: {background: objFormData().naturalhazardsprotectionratingColor}">
+                            <span data-bind="text: objFormData().naturalhazardsprotectionrating"></span>
+                        </div>
+                    </div>
+                    <div class="quarterBox">
+                        <div class="quarterBox1WordTopHalf">BCP</div>
+                        <div class="quarterBoxBottomHalf" data-bind="style: {background: objFormData().businesscontinuityratingColor}">
+                            <span data-bind="text: objFormData().businesscontinuityrating"></span>
+                        </div>
+                    </div>
+                    <div class="quarterBox">
+                        <div class="quarterBoxTopHalf">Total<br />Active</div>
+                        <div class="quarterBoxBottomHalf">
+                            <span data-bind="text: objFormData().activescore"></span>
+                        </div>
+                    </div>
+                    <div class="halfBox">
+                        <div class="halfBox1WordTopHalf">Score</div>
+                        <div class="halfBoxBottomHalf" data-bind="style: {background: objFormData().totalscoreColor}">
+                            <span data-bind="text: objFormData().totalscore"></span>
+                        </div>
+                    </div>
+                    <div style="margin-right:0px;" class="halfBox">
+                        <div class="halfBox1WordTopHalf">Rating</div>
+                        <div class="halfBoxBottomHalf" data-bind="style: { background: objFormData().overallplantratingColor }">
+                            <span data-bind="text: objFormData().overallplantrating"></span>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+            </div>
+            </div>
+            <div data-bind=" visible: clientFeatures().search('u') > -1">
+                <div class="borderedGrid" style="width: 1055px;">
+                    <div class="borderedHeader">
+                        <span style="width: 315px; text-align: center; float: left;" data-bind="style: { width: clientFeatures().search('a') < 0 ? '315px' : '315px' }">Passive</span>
+                        <span style="width: 225px; text-align: center; float: left;" data-bind="style: { width: clientFeatures().search('a') < 0 ? '225px' : '225px' }">Active</span>
+                        <span style="width: 140px; text-align: center; float: left;" data-bind="style: { width: clientFeatures().search('a') < 0 ? '140px' : '140px' }">Current</span>
+                        <span style="width: 375px; text-align: center; float: left;">With Recs Completed</span>
+                    </div>
+                    <div class="borderedGridBody">
+                    <div class="gridBodyRow">
+                        <div class="quarterBox">
+                            <div class="quarterBox1WordTopHalf">Flood</div>
+                            <div class="quarterBoxBottomHalf" data-bind="style: { background: objFormData().floodratingColor }">
+                                <span data-bind="text: objFormData().floodrating"></span>
+                            </div>
+                        </div>
+                        <div class="quarterBox">
+                            <div class="quarterBox1WordTopHalf">Seis.</div>
+                            <div class="quarterBoxBottomHalf" data-bind="style: { background: objFormData().earthquakeratingColor }">
+                                <span data-bind="text: objFormData().earthquakerating"></span>
+                            </div>
+                        </div>
+                        <div class="quarterBox">
+                            <div class="quarterBox1WordTopHalf">Wind</div>
+                            <div class="quarterBoxBottomHalf" data-bind="style: { background: objFormData().windstormratingColor }">
+                                <span data-bind="text: objFormData().windstormrating"></span>
+                            </div>
+                        </div>
+                        <div class="quarterBox">
+                            <div class="quarterBox1WordTopHalf">Constr.</div>
+                            <div class="quarterBoxBottomHalf" data-bind="style: { background: objFormData().constructionratingColor }">
+                                <span data-bind="text: objFormData().constructionrating"></span>
+                            </div>
+                        </div>
+                        <div class="quarterBox">
+                            <div class="quarterBox1WordTopHalf">Occup.</div>
+                            <div class="quarterBoxBottomHalf" data-bind="style: { background: objFormData().occupancyratingColor }">
+                                <span data-bind="text: objFormData().occupancyrating"></span>
+                            </div>
+                        </div>
+                        <div class="quarterBox">
+                            <div class="quarterBox1WordTopHalf">Other</div>
+                            <div class="quarterBoxBottomHalf" data-bind="style: { background: objFormData().otherratingColor }">
+                                <span data-bind="text: objFormData().otherrating"></span>
+                            </div>
+                        </div>
+                        <div class="quarterBox">
+                            <div class="quarterBoxTopHalf">Total<br />
+                                Passive</div>
+                            <div class="quarterBoxBottomHalf">
+                                <span data-bind="text: objFormData().passivescore"></span>
+                            </div>
+                        </div>
+                        <div class="quarterBox">
+                            <div class="quarterBoxTopHalf">Phy.<br />
+                                Prot.</div>
+                            <div class="quarterBoxBottomHalf" data-bind="style: { background: objFormData().physicalprotectionratingColor }">
+                                <span data-bind="text: objFormData().physicalprotectionrating"></span>
+                            </div>
+                        </div>
+                        <div class="quarterBox">
+                            <div class="quarterBoxTopHalf">Human<br />
+                                Ele.</div>
+                            <div class="quarterBoxBottomHalf" data-bind="style: { background: objFormData().humanelementratingColor }">
+                                <span data-bind="text: objFormData().humanelementrating"></span>
+                            </div>
+                        </div>
+                        <div class="quarterBox">
+                            <div class="quarterBox1WordTopHalf">NatHaz</div>
+                            <div class="quarterBoxBottomHalf" data-bind="style: { background: objFormData().naturalhazardsprotectionratingColor }">
+                                <span data-bind="text: objFormData().naturalhazardsprotectionrating"></span>
+                            </div>
+                        </div>
+                        <div class="quarterBox">
+                            <div class="quarterBox1WordTopHalf">BCP</div>
+                            <div class="quarterBoxBottomHalf" data-bind="style: { background: objFormData().businesscontinuityratingColor }">
+                                <span data-bind="text: objFormData().businesscontinuityrating"></span>
+                            </div>
+                        </div>
+                        <div class="quarterBox">
+                            <div class="quarterBoxTopHalf">Total<br />
+                                Active</div>
+                            <div class="quarterBoxBottomHalf">
+                                <span data-bind="text: objFormData().activescore"></span>
+                            </div>
+                        </div>
+                        <div class="halfBox">
+                            <div class="halfBox1WordTopHalf">Score</div>
+                            <div class="halfBoxBottomHalf" data-bind="style: { background: objFormData().totalscoreColor }">
+                                <span data-bind="text: objFormData().totalscore"></span>
+                            </div>
+                        </div>
+                        <div class="halfBox">
+                            <div class="halfBox1WordTopHalf">Rating</div>
+                            <div class="halfBoxBottomHalf" data-bind="style: { background: objFormData().overallplantratingColor }">
+                                <span data-bind="text: objFormData().overallplantrating"></span>
+                            </div>
+                        </div>
+                        <div class="fullBox">
+                            <div class="fullBoxTopHalf2Line">
+                                Achievable<br />Rating %
+                            </div>
+                            <div class="fullBoxBottomHalf" data-bind="style: { background: objFormData().overallplantratingwithrecscompleteColor }">
+                                <span data-bind="text: objFormData().AchievableScorePercentString"></span>
+                            </div>
+                        </div>
+                        <div class="fullBox">
+                            <div class="fullBoxTopHalf">
+                                Score
+                            </div>
+                            <div class="fullBoxBottomHalf" data-bind="style: { background: objFormData().overallscorewithrecscompleteColor }">
+                                <span data-bind="text: objFormData().overallscorewithrecscomplete"></span>
+                            </div>
+                        </div>
+                        <div class="fullBox" style="margin-right: 0px;">
+                            <div class="fullBoxTopHalf">
+                                Rating
+                            </div>
+                            <div class="fullBoxBottomHalf" data-bind="style: {background: objFormData().overallplantratingwithrecscompleteColor }">
+                                <span data-bind="text:objFormData().overallplantratingwithrecscomplete"></span>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" onclick="getPDF('.pdf-page'); return false;" class="printThis printNone" title="Print This Section"><i class="fa fa-print"></i></button>
+    </div>
+        </div>
+    </div>
+
+     <script>
+         function getPDF(selector) {
+             $('.noPrint').hide();
+             kendo.drawing.drawDOM($(selector)).then(function (group) {
+                 kendo.drawing.pdf.saveAs(group, "popupWindow.pdf");
+             });
+             setTimeout(function () { $('.noPrint').show(); }, 5000);
+         }
+    </script>
+
+</body>
+</html>

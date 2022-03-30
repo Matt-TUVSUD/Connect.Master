@@ -1,0 +1,216 @@
+﻿/****** VERSION: 2016.12.12  *******************************/
+
+
+.nav_Container
+{
+    /*width: 176px;*/
+    max-width: 240px;
+    min-width: 240px;
+    /*font-family: Verdana;*/
+    font-family: Arial;
+    font-size: 8pt;
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+}
+.nav_Container a
+{
+    /*** UNDERLINE HAS NO EFFECT ON LINKS IN LEFT NAV ***/
+    /*** MUST BE DONE IN JQUERY AT END OF LOAD ***/
+    color: #5b63b7;
+    text-decoration: underline;
+}
+.nav_MenuList
+{
+    padding-left: 25px;
+    border: 0px;
+    /*color: #5b63b7;*/
+    text-decoration: underline;
+}
+.nav_Comments
+{
+    font-family: Calibri, Verdana, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    font-size: 9pt;
+    padding-left: 20px;
+    padding-top: 0px;
+    padding-bottom: 10px;
+    border: 0px;
+    margin-top: -20px;
+}
+.nav_Comments_Grid {
+    font-family: Calibri, Verdana, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    font-size: 9pt;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 0px;
+}
+.nav_Comments_Grid a,
+.nav_Comments a
+{
+    font-family: Calibri, Verdana, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    font-size: 9pt;
+    color: #5b63b7;
+    text-decoration: underline;
+}
+.nav_CommentsSmall
+{
+    font-family: Calibri, Verdana, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    font-size: 9pt;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 0px;
+}
+.nav_CommentsSmall a
+{
+    font-family: Calibri, Verdana, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    font-size: 9pt;
+    color: #5b63b7;
+    text-decoration: underline;
+}
+.nav_Comments
+.nav_PlainText
+{
+    font-size: 9pt;
+    color: #595959;
+    line-height: 14pt;
+    padding-left: 15px;
+}
+.menuSelected
+{
+    font-weight: bold;
+    color: #0f3b6a;
+}
+.selected
+{
+    font-weight: bold !important;
+}
+.notSelected
+{
+    font-weight: normal !important;
+}
+.nav_ContainerBackgroundWhite
+{
+    /*width: 176px;*/
+    min-width: 240px;
+    max-width: 240px;
+    min-height: 375px;
+    /*background-image: url('../../Home_{{VER}}/images/fire/navbackground.png');
+    background-repeat: no-repeat;*/
+    font-family: arial;
+    font-size: 8pt;
+    position: relative;
+}
+.nav_ContainerBackgroundWhite a
+{
+    /*** UNDERLINE HAS NO EFFECT ON LINKS IN LEFT NAV ***/
+    /*** MUST BE DONE IN JQUERY AT END OF LOAD ***/
+    color: #5b63b7;
+    text-decoration: underline;
+}
+
+.nav_ContainerBackground
+{
+    width: 176px;
+    min-height: 375px;
+    background-image: url('../../Home_{{VER}}/images/fire/navbackground.png');
+    background-repeat: no-repeat;
+    font-family: arial;
+    font-size: 8pt;
+    position: relative;
+}
+.nav_ContainerBackground a
+{
+    /*** UNDERLINE HAS NO EFFECT ON LINKS IN LEFT NAV ***/
+    /*** MUST BE DONE IN JQUERY AT END OF LOAD ***/
+    color: #5b63b7;
+    text-decoration: underline;
+}
+.nav_ContainerBackgroundFire
+{
+    width: 176px;
+    height: 295px;
+    background-image: url('../../Home_{{VER}}/images/fire/navbackground.png');
+    background-repeat: no-repeat;
+    border: 0px;
+    padding-top: 50px;
+}
+.nav_ContainerBackgroundFire a
+{
+    /*** UNDERLINE HAS NO EFFECT ON LINKS IN LEFT NAV ***/
+    /*** MUST BE DONE IN JQUERY AT END OF LOAD ***/
+    color: #5b63b7;
+    text-decoration: underline;
+}
+.nav_ContainerBackgroundBoiler
+{
+    width: 176px;
+    height: 295px;
+    background-image: url('../../Home_{{VER}}/images/boiler/navbackground.png');
+    background-repeat: no-repeat;
+    border: 0px;
+    padding-top: 50px;
+}
+.nav_ContainerBackgroundBoiler a
+{
+    /*** UNDERLINE HAS NO EFFECT ON LINKS IN LEFT NAV ***/
+    /*** MUST BE DONE IN JQUERY AT END OF LOAD ***/
+    color: #5b63b7;
+    text-decoration: underline;
+}
+.nav_ContainerBackgroundJuris
+{
+    width: 176px;
+    height: 295px;
+    background-image: url('../../Home_{{VER}}/images/juris/navbackground.png');
+    background-repeat: no-repeat;
+    border: 0px;
+    padding-top: 50px;
+}
+.nav_ContainerBackgroundJuris a
+{
+    /*** UNDERLINE HAS NO EFFECT ON LINKS IN LEFT NAV ***/
+    /*** MUST BE DONE IN JQUERY AT END OF LOAD ***/
+    color: #5b63b7;
+    text-decoration: underline;
+}
+.nav_ContainerBackgroundNatural
+{
+    width: 176px;
+    height: 295px;
+    background-image: url('../../Home_{{VER}}/images/natural/navbackground.png');
+    background-repeat: no-repeat;
+    border: 0px;
+    padding-top: 50px;
+}
+.nav_ContainerBackgroundNatural a
+{
+    /*** UNDERLINE HAS NO EFFECT ON LINKS IN LEFT NAV ***/
+    /*** MUST BE DONE IN JQUERY AT END OF LOAD ***/
+    color: #5b63b7;
+    text-decoration: underline;
+}
+.nav_ContainerBackgroundInfrared
+{
+    width: 176px;
+    height: 295px;
+    background-image: url('../../Home_{{VER}}/images/infrared/navbackground.png');
+    background-repeat: no-repeat;
+    border: 0px;
+    padding-top: 50px;
+}
+.nav_ContainerBackgroundInfrared a
+{
+    /*** UNDERLINE HAS NO EFFECT ON LINKS IN LEFT NAV ***/
+    /*** MUST BE DONE IN JQUERY AT END OF LOAD ***/
+    color: #5b63b7;
+    text-decoration: underline;
+}
+
+
+
+
+
+

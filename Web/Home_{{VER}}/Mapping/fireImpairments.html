@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../../../css/pages/mapping.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/pages/print.css" />
+    <script>
+        var gWindowTitle = "Fire Impairments";
+    </script>
+    <script src="../../../Lib_{{VER}}/Mapping/mapping.js"></script>
+    <script src="../../../Lib_{{VER}}/Mapping/moment.min.js"></script>
+</head>
+<body>
+    <div id="formView">
+        <div style="font-family:Arial !important; font-size:8pt;">
+            <div id="printWindow" class="windowBody pdf-page" style="font-family:Arial !important; font-size:8pt;">
+                <div id="loading" class="noShow"><span>Loading...</span></div>
+                <div class="infoArea">
+                    <div class="popColA bottomSpaceRow">
+                        <div class="popRow">
+                            <label class="topHalfLbl">File No.:</label><span data-bind="text: objFormData().FileNo" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">Client:</label><span data-bind="text: objFormData().client" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">Client Loc. ID:</label><span data-bind="text: objFormData().ClientLocNo" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">Divisions:</label><span data-bind="text: objFormData().Division" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow bottomSpaceRow">
+                            <label class="topHalfLbl">Facility:</label><span data-bind="text: objFormData().Facility" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">TIV (millions) <span data-bind="text: currencyText"></span></label><span data-bind="    text: numeral(objFormData().TIV).format('0,0')" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">Date of Last Insp.:</label><span data-bind="text: moment(objFormData().inspectiondate).format('DD-MMM-YY')" class="topHalfTxt"></span>
+                        </div>
+                    </div>
+                    <div class="popColB bottomSpaceRow">
+                        <div class="popRow">
+                            <label class="topHalfLbl">Address:</label><span data-bind="text: objFormData().address" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">City:</label><span data-bind="text: objFormData().City" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">St/Prov.:</label><span data-bind="text: objFormData().StProv" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">Country:</label><span data-bind="text: objFormData().Country" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow bottomSpaceRow">
+                            <label class="topHalfLbl">Postal Code:</label><span data-bind="text: objFormData().Zip" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">Latitude:</label><span data-bind="text: objFormData().latitude" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">Longitude:</label><span data-bind="text: objFormData().longitude" class="topHalfTxt"></span>
+                        </div>
+                    </div>
+                    <div id="satMap" class="imgHldr">
+                        <a href="#" class="printNone">
+                            <img data-bind="attr: { src: getStaticMapUrl() }, click: onGoToLocationBingMaps" />
+                        </a>
+                        <img class="printOnly" data-bind="attr: { src: staticImageBase64 }" />
+                        <span class="satImgTip">Tip! The above map is interactive and will open Bing Maps.</span>
+                    </div>
+                </div>
+                <div class="btnHldr noPrint">
+                    <a href="#" class="grcBlueBtn printNone" data-bind="click: function () { onCurrentERReport(); }, visible: visibleCurrentERReport">
+                        <i class="far fa-file" style="font-size: 20px; margin-right: 5px"></i>Current ER Report
+                    </a>
+                    <a href="#" class="grcBlueBtn printNone" data-bind="click: function () { onCurrentDiagramReport(); }, visible: visibleCurrentDiagramReport">
+                        <i class="far fa-file" style="font-size: 20px; margin-right: 5px;"></i>Current Diagram
+                    </a>
+                    <a href="#" class="grcBlueBtn printNone" data-bind="click: function () { onPrint(); }, visible: visiblePrint">
+                        <i class="far fa-file" style="font-size: 20px; margin-right: 5px;"></i>Print
+                    </a>
+                </div>
+            
+            <div class="bottomSection">
+                <div class="borderedGrid" style="width:530px; margin-left:10%;">
+                    <div class="borderedHeader">
+                        <span style="text-align:left; width:210px; margin-left:5px; font-weight:700; font-size:12px;">Restoration Timeline</span>
+                        <span style="width:40px; font-weight:700; font-size:12px;">Counts</span>
+                        <span style="text-align:left; width:216px; margin-left:10px; font-weight:700; font-size:12px;">Impairment Status</span>
+                        <span style="font-weight:700; font-size:12px;">Counts</span>
+                    </div>
+                    <div class="borderedGridBody">
+                        <div class="gridBodyRow">
+                            <div class="impLbl">Same Day</div>
+                            <div class="impBox" style="background:#1cf831;">
+                                <span data-bind="text: objFormData().RestoreSameDay"></span>
+                            </div>
+                            <div class="impLbl">Pending</div>
+                            <div class="impBox" style="background:#ffff00;">
+                                <span data-bind="text: objFormData().Pending"></span>
+                            </div>
+                        </div>
+                        <div class="gridBodyRow">
+                            <div class="impLbl">1-5 Days</div>
+                            <div class="impBox" style="background:#ffff00;">
+                                <span data-bind="text: objFormData().Restore1to5"></span>
+                            </div>
+                            <div class="impLbl">Overdue</div>
+                            <div class="impBox" style="background:#ff0000;">
+                                <span data-bind="text: objFormData().Overdue"></span>
+                            </div>
+                        </div>
+                        <div class="gridBodyRow">
+                            <div class="impLbl">6-10 Days</div>
+                            <div class="impBox" style="background:#ff0000;">
+                                <span data-bind="text: objFormData().Restore6to10"></span>
+                            </div>
+                            <div class="impLbl">Advisory</div>
+                            <div class="impBox">
+                                <span data-bind="text: objFormData().Advisory"></span>
+                            </div>
+                        </div>
+                        <div class="gridBodyRow">
+                            <div class="impLbl">Over 10 Days</div>
+                            <div class="impBox" style="background:#ff0000;">
+                                <span data-bind="text: objFormData().RestoreOver10"></span>
+                            </div>
+                            <div class="impLbl">Restored</div>
+                            <div class="impBox" style="background:#1cf831;">
+                                <span data-bind="text: objFormData().Restored"></span>
+                            </div>
+                        </div>
+                        <div class="gridBodyRow">
+                            <div class="impLbl">Pending/Advisory/Overdue</div>
+                            <div class="impBox">
+                                <span data-bind="text: objFormData().RestorePAO"></span>
+                            </div>
+                            <div class="impLbl">Cancelled</div>
+                            <div class="impBox">
+                                <span data-bind="text: objFormData().Cancelled"></span>
+                            </div>
+                        </div>
+                        <div class="gridBodyRow">
+                            <div style="font-weight:700;" class="impLbl">Total No. of Impairments</div>
+                            <div class="impBox">
+                                <span style="font-weight:700;" data-bind="text: objFormData().TotalImpairments"></span>
+                            </div>
+                            <div style="font-weight:700;" class="impLbl">Total No. of Impairments</div>
+                            <div class="impBox">
+                                <span style="font-weight:700;" data-bind="text: objFormData().TotalImpairments"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" onclick="getPDF('.pdf-page'); return false;" class="printThis printNone" title="Print This Section"><i class="fa fa-print"></i></button>
+        </div>
+        </div>
+    </div>
+
+     <script>
+         function getPDF(selector) {
+             $('.noPrint').hide();
+             kendo.drawing.drawDOM($(selector)).then(function (group) {
+                 kendo.drawing.pdf.saveAs(group, "popupWindow.pdf");
+             });
+             setTimeout(function () { $('.noPrint').show(); }, 5000);
+         }
+    </script>
+
+</body>
+</html>

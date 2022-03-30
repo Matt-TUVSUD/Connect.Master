@@ -1,0 +1,19 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblAdminViewXLColumn --> [tblAdminViewXLColumn]
+
+  colFldID --> [fldID] int **PK** identity not null
+  colFldAdminXLSheetID --> [fldAdminXLSheetID] int not null
+  colFldDataMember --> [fldDataMember] nvarchar(50) not null
+  colFdlHyperLinkMember --> [fdlHyperLinkMember] nvarchar(100) null
+  colFldHeaderText --> [fldHeaderText] nvarchar(50) not null
+  colFldColumnPosition --> [fldColumnPosition] int not null
+  colFldInclude --> [fldInclude] bit not null
+

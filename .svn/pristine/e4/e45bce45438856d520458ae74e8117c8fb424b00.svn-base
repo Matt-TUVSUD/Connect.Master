@@ -1,0 +1,207 @@
+﻿<!-- FOR KENDO GRID ROW DETAIL TEMPLATES -->
+<!-- CELL DATA REPLACERS USE #= NameOfField # -->
+<!-- AVOID USING # AS A CHARACTER IN THE TEMPLATE -->
+<!-- IF USING A CLASS LOOKUP TO THE GRID, MAKE SURE THAT CLASS IS IN THE COLUMN TEMPLATE -->
+<!-- SCRIPTS INCLUDED HERE GET RUN EVERY TIME THE DETAIL POPUP IS OPENED -->
+<!-- WHEN COPIED TO THE DATABASE, THE HTML AND JS MUST BE ALL IN ONE LINE -->
+<!-- DO NOT USE DOUBLE QUOTES IN JS OR HTML -->
+<!-- DO NOT USE COMMENTS IN JS, ALL ONE LINE COMMENTS WILL NOT RUN CODE -->
+
+<!-- FormViewNameOfGrid LAYOUT -->
+<div id='divDetailForm_#= uid #' class='divDetailForm'>
+    
+    <div class='LDHead'>
+        Location Detail</div>
+    <!--Row 1-->
+    <div class='LDInfo'>
+        <div>
+            <span id='lblFileNo'>File No.</span>
+            <input id='FileNo' readonly='readonly' type='text' value='#= FileNo #' />
+            <span id='lblClientLocID'>Client Loc. ID</span>
+            <input id='ClientLocNo' readonly='readonly' type='text' value='#= ClientLocNo #' />
+        </div>
+        <!--Row 2-->
+        <div>
+            <span id='lblAddress'>Address</span>
+            <input id='Address' readonly='readonly' type='text' value='#= Address #' />
+            <span id='lblCity'>City</span>
+            <input id='City' readonly='readonly' type='text' value='#= City #' />
+            <span id='lblStProv'>St/Prov</span>
+            <input id='StProv' readonly='readonly' type='text' value='#= StProv #' />
+            <span id='lblCountry'>Country</span>
+            <input id='Country' readonly='readonly' type='text' value='#= Country #' />
+        </div>
+        <!--Row 3-->
+        <div>
+            <span id='lblDivision'>Division</span>
+            <input id='Division' readonly='readonly' type='text' value='#= Division #' />
+            <span id='lblFacility'>Facility</span>
+            <input id='Facility' readonly='readonly' type='text' value='#= Facility #' />
+        </div>
+    </div>
+    <div class='FVTIV'>
+        <div id='lblTIV'>TIV</div>
+        <div>(millions)</div>
+        <div>
+            <input id='TIV' readonly='readonly' type='text' value='#= TIV #' />
+        </div>
+    </div>
+    <div class='FVTIV'>
+        <div>Date Of</div>
+        <div>Inspection</div>
+        <div>
+            <input id='SurveyDate' readonly='readonly' type='text' value='#= SurveyDate #' />
+        </div>
+    </div>
+    <div class='FVTable'>
+        <table cellspacing='0' cellpadding='2'>
+            <tr class='th'>
+                <td colspan='6' class='rb'>
+                    Building Envelope - Roof
+                </td>
+                <td colspan='4' class='rb'>
+                    Building Envelope - Walls
+                </td>
+                <td colspan='2' class='b'>
+                    &nbsp;
+                </td>
+            </tr>
+            <tr class='tch'>
+                <td class='rb'>
+                    Fastening
+                </td>
+                <td class='rb'>
+                    Flashing
+                </td>
+                <td class='rb'>
+                    Covering
+                </td>
+                <td class='rb'>
+                    Skylight/<br />
+                    Atria
+                </td>
+                <td class='rb'>
+                    Drainage
+                </td>
+                <td class='hrb'>
+                    Parapet/<br />
+                    Other - Roof
+                </td>
+                <td class='rb'>
+                    Wall<br />
+                    Surface
+                </td>
+                <td class='rb'>
+                    Glass
+                </td>
+                <td class='rb'>
+                    Door<br />
+                    Resistance
+                </td>
+                <td class='hrb'>
+                    Other Openings<br />
+                    Louvers
+                </td>
+                <td class='rb'>
+                    Prior Loss<br />
+                    History
+                </td>
+                <td class='b'>
+                    Critical Equip./Values<br />
+                    Below Grade
+                </td>
+            </tr>
+            <tr class='tch'>
+                <td class='r'>
+                    <input style='width: 65px' id='FasteningRating' readonly='readonly' type='text' value='#= FasteningRating #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 65px' id='FlashingRating' readonly='readonly' type='text' value='#= FlashingRating #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 65px' id='CoveringRating' readonly='readonly' type='text' value='#= CoveringRating #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 65px' id='SkylightAtriaRating' readonly='readonly' type='text' value='#= SkylightAtriaRating #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 65px' id='DrainageRating' readonly='readonly' type='text' value='#= DrainageRating #' />
+                </td>
+                <td class='hr'>
+                    <input style='width: 65px' id='ParapetOtherRoofRating' readonly='readonly' type='text' value='#= ParapetOtherRoofRating #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 65px' id='WallSurfaceRating' readonly='readonly' type='text' value='#= WallSurfaceRating #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 65px' id='GlassRating' readonly='readonly' type='text' value='#= GlassRating #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 65px' id='DoorResistanceRating' readonly='readonly' type='text' value='#= DoorResistanceRating #' />
+                </td>
+                <td class='hr'>
+                    <input style='width: 65px' id='OtherOpeningsLouversRating' readonly='readonly' type='text' value='#= OtherOpeningsLouversRating #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 65px' id='PriorLossHistory' readonly='readonly' type='text' value='#= PriorLossHistory #' />
+                </td>
+                <td>
+                    <input style='width: 65px' id='CVBEGRating' readonly='readonly' type='text' value='#= CVBEGRating #' />
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <br />
+
+    <div class='tableDiv'>
+        <div style='margin: auto; width: 100%; text-align: center;'>
+            <span style='margin: auto; width: 100%; text-align: center;'><button class='k-button' onclick='globalCloseFormView(); return false;'>Close</button></span>
+        </div>
+    </div>
+</div>
+<script>
+    /*LOAD THE CSS*/
+    var zLink = "<link rel='stylesheet' type='text/css' href='../../../css/FormView/FormView.css'>";
+    $(zLink).appendTo('head');
+
+    setTimeout(function () {
+        var zUID = '#= uid #';
+
+        /* COLOR REPLACEMENTS REMIX*/
+        var colorItems = [
+			'FasteningRating',
+			'FlashingRating',
+			'CoveringRating',
+			'SkylightAtriaRating',
+			'DrainageRating',
+			'ParapetOtherRoofRating',
+            'WallSurfaceRating',
+            'GlassRating',
+            'DoorResistanceRating',
+            'OtherOpeningsLouversRating',
+            'PriorLossHistory',
+            'CVBEGRating'
+        ];
+        for (i = 0; i < colorItems.length; i++){
+            var zColor = 'transparent';
+            zColor = $('[data-uid=' + zUID + '] .' + colorItems[i] + 'Color').css('background-color');
+            $('\\#divDetailForm_' + zUID + ' \\#' + colorItems[i] + '').css('background-color', zColor);
+        }
+
+        /* FORMAT DATES GLOBAL REMIX */
+        $('\\#divDetailForm_' + zUID + ' input').each(function(){
+            if( $(this).attr('id').toLowerCase().indexOf('date') > -1 ){
+                $(this).val(global.formatShortDateWithMonth($(this).val()));
+            }
+        });
+
+        /* REMOVE NULLS GLOBAL REMIX */
+        $('\\#divDetailForm_' + zUID + ' input').each(function(){
+            if( ($(this).val() == 'null') || ($(this).val() == 'undefined') ){
+                $(this).val('');
+            }
+        });
+
+    }, 50);
+</script>

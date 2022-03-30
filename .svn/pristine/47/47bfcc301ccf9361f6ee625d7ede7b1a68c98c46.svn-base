@@ -1,0 +1,140 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="ClientConnectSite.master.vb" Inherits="GRC.Connect.Web.ClientConnectSite" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <%--<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7" />--%>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta http-equiv="CACHE-CONTROL" content="NO-STORE" />
+    <meta http-equiv="PRAGMA" content="NO-CACHE" />
+    <meta name="EXPIRES" content="0" />
+    <meta name="VERSION" content="{{VER}}" />
+
+    <%-- OUTDATED JAVASCRIPT --%>
+    <%--<script src="../../Lib_{{VER}}/JQuery/jquery-1.7.1.js" type="text/javascript"></script>--%>
+    
+    <%-- UPDATED JAVASCRIPT --%>
+    <%--<script src="../../Lib_{{VER}}/JQuery.v1.11.3/jquery-1.11.3.min.js" type="text/javascript"></script>--%>
+    <script src="../../Lib_{{VER}}/JQuery/jQuery.3.4.1.min.js" type="text/javascript"></script>
+
+    <%-- ORIGINAL JAVASCRIPT --%>
+    <script src="../../Lib_{{VER}}/JQuery/jquery.cookie.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/JQuery/cache-controller_{{VER}}.js" type="text/javascript"></script>
+
+    <title>TUV SUD GRC Connect</title>
+    <script type="text/javascript">
+        /*
+         A PUBLIC CLASS TO HOLD CONSTANTS
+         NOTE: TEMPORARILY THIS CLASS IS ALSO FOUND ON GRID MASTERPAGE.MASTER - MUST UPDATE AND MOVE TO THIS MASTER ONLY. */
+        var utilConstants = new function () {
+            /* PRACTICE or PROGRAM PAGE IDs */
+            this.pageId_Gauge = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_Gauge %>";
+            this.pageId_Fire = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_Fire %>";
+            this.pageId_Boiler = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_Boiler %>";
+            this.pageId_Juris = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_Juris %>";
+            this.pageId_Infrared = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_Infrared %>";
+            this.pageId_Seismic = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_Seismic %>";
+            this.pageId_Wind = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_Wind %>";
+            this.pageId_Flood = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_Flood %>";
+            this.pageId_DivServ = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_DivServ%>";
+            
+            
+            /* LOCATION LISTING or GRID PAGE */
+            this.pageId_LocationListing_Fire = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_LocationListing_Fire %>";
+            this.pageId_LocationListing_Boiler = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_LocationListing_Boiler %>";
+            this.pageId_LocationListing_Juris = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_LocationListing_Juris %>";
+            this.pageId_LocationListing_Infrared = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_LocationListing_Infrared %>";
+            this.pageId_LocationListing_Seismic = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_LocationListing_Seismic %>";
+            this.pageId_LocationListing_Wind = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_LocationListing_Wind %>";
+            this.pageId_LocationListing_Flood = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_LocationListing_Flood %>";
+            this.pageId_LocationListing_DivServ = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_LocationListing_DivServ%>";
+
+            /* LOCATION DETAILS PAGE */
+            this.pageId_LocationDetails_Fire = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_LocationDetails_Fire %>";
+            this.pageId_LocationDetails_Boiler = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_LocationDetails_Boiler %>";
+            this.pageId_LocationDetails_Juris = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_LocationDetails_Juris %>";
+            this.pageId_LocationDetails_Infrared = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_LocationDetails_Infrared %>";
+            this.pageId_LocationDetails_Seismic = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_LocationDetails_Seismic %>";
+            this.pageId_LocationDetails_Wind = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_LocationDetails_Wind %>";
+            this.pageId_LocationDetails_Flood = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_LocationDetails_Flood %>";
+            this.pageId_LocationDetails_DivServ = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_LocationDetails_DivServ%>";
+
+            /* FACILITY RATINGS PAGE */
+            this.pageId_FacilityRating_Fire = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_FacilityRating_Fire %>";
+            this.pageId_FacilityRating_Boiler = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_FacilityRating_Boiler %>";
+
+            /* RECOMMENDATION TRACKING PAGE */
+            this.pageId_RecommendationTracking_Fire = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_RecommendationTracking_Fire %>";
+            this.pageId_RecommendationTracking_Fire_Feature_X = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_RecommendationTracking_Fire_Feature_X %>";
+            this.pageId_RecommendationTracking_Boiler = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_RecommendationTracking_Boiler %>";
+            this.pageId_RecommendationTracking_Infrared = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_RecommendationTracking_Infrared %>";
+            this.pageId_RecommendationTracking_Seismic = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_RecommendationTracking_Seismic %>";
+            this.pageId_RecommendationTracking_Wind = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_RecommendationTracking_Wind %>";
+            this.pageId_RecommendationTracking_Flood = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_RecommendationTracking_Flood %>";
+
+            /* C.O.P.E. PAGE */
+            this.pageId_COPE_Fire = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_COPE_Fire %>";
+
+            /* IMPAIRMENTS */
+            this.pageId_Impairments_Fire = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_Impairments_Fire %>";
+
+            /* PLAN / PROJECT REVIEW */
+            this.pageId_PlanProjectReview_Fire = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_PlanProjectReview_Fire %>";
+
+            /* CONTACTS */
+            this.pageId_Contacts_Fire = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_Contacts_Fire %>";
+
+            /* DOCUMENT LIBRARY */
+            this.pageId_DocumentLibrary_Fire = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_DocumentLibrary_Fire %>";
+
+            /* OTHER PAGES */
+            this.pageId_ClientAdmin = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_ClientAdmin%>";
+            this.pageId_SiteMap = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_SiteMap %>";
+            this.pageId_AllReports = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_AllReports %>";
+            this.pageId_AllExports = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_AllExports %>";
+            this.pageId_ContactUs = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_ContactUs %>";
+            this.pageId_LogOut = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_LogOut %>";
+            this.pageId_LogOutGrid = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_LogOutGrid %>";
+            this.pageId_RecentUpdates = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_RecentUpdates %>";
+            this.pageId_WhatsNew = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_WhatsNew %>";
+            this.pageId_ProgramStatusForm = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_ProgramStatusForm %>";
+            this.pageId_UserReclassification = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_UserReclassification%>";
+            this.pageId_UserAccount = "<%# GRC.Connect.Libraries.CoreLib.UtilConstants.PageId_UserAccount%>";
+
+            /* GRIDS */
+            this.GridId_BMLocationListings = "61";
+            this.GridId_BMLocationListingsExtract = "62";
+            this.GridId_FireLocationListingsExtract = "63";
+            this.GridId_FireLocationListingsWithImpairmentsExtract = "64";
+            this.GridId_FireLocationListingsWithoutImpairmentsExtract = "65";
+            this.GridId_IRLocationListingsExtract = "66";
+            this.GridId_JurisLocationListingsExtract = "67";
+            this.GridId_NatHazFloodLocationListingsExtract = "68";
+            this.GridId_NatHazSeismicLocationListingsExtract = "69";
+            this.GridId_NatHazWindLocationListingsExtrac = "70";
+            this.GridId_FireLocationListings = "71";
+            this.GridId_IRLocationListings = "72";
+            this.GridId_JurisLocationListings = "73";
+            this.GridId_NatHazFloodLocationListings = "74";
+            this.GridId_NatHazSeismicLocationListings = "75";
+            this.GridId_NatHazWindLocationListings = "76";
+            this.GridId_DivServLocationListings = "276";
+            this.GridId_DivLocationListingsExtract = "275";
+        };
+
+        // OTHER GLOBAL VARIABLES
+        var globalIsMapShown = false;
+
+    </script>
+    <asp:ContentPlaceHolder ID="ClientConnectSiteHead" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="bodyElastic">
+    <asp:ContentPlaceHolder ID="ClientConnectSiteBody" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+    <asp:ContentPlaceHolder ID="ClientConnectSiteBottomHtml" runat="server">
+    </asp:ContentPlaceHolder>
+</html>

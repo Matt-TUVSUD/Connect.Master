@@ -1,0 +1,19 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colFldId":1, 
+	"colFldTo":"fldTo", 
+	"colFldCc":"fldCc", 
+	"colFldBcc":"fldBcc", 
+	"colFldSubject":"fldSubject", 
+	"colFldBody":"fldBody", 
+	"colFldSentDate":null, 
+	"colFldHasException":null
+}]

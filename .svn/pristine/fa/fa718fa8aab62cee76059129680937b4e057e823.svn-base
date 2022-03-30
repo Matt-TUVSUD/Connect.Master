@@ -1,0 +1,17 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colRogueFileId":1, 
+	"colFilePathName":"FilePathName", 
+	"colFoundInFilePrefix":"FoundInFilePrefix", 
+	"colFoundInCldbName":"FoundInCldbName", 
+	"colFoundOnDate":null, 
+	"colComments":"Comments"
+}]

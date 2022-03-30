@@ -1,0 +1,23 @@
+
+
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblBatchProcessingFile --> [tblBatchProcessingFile]
+
+  colFldSetId --> [fldSetId] int **PK** not null
+  colFldGuid --> [fldGuid] nvarchar(50) null
+  colFldCreateDate --> [fldCreateDate] datetime null
+  colFldAccessDate --> [fldAccessDate] datetime null
+  colFldData --> [fldData] varbinary(MAX) null
+  colFldFileSize --> [fldFileSize] int null
+  colFldMime --> [fldMime] nvarchar(100) null
+  colFldExtension --> [fldExtension] nvarchar(5) null
+  colFldFileName --> [fldFileName] nvarchar(255) null
+

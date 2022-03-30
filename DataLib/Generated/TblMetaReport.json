@@ -1,0 +1,20 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colFldId":1, 
+	"colFldName":"fldName", 
+	"colFldFileName":"fldFileName", 
+	"colFldVendorId":1, 
+	"colFldSourceId":1, 
+	"colFldTypeName":"fldTypeName", 
+	"colFldMetaPracticeId":1, 
+	"colFldOldRptCode":"fldOldRptCode", 
+	"colFldComment":"fldComment"
+}]

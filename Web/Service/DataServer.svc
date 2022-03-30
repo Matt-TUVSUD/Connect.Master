@@ -1,0 +1,1 @@
+<%@  ServiceHost Language="VB" Debug="true" Service="GRC.Connect.Web.Service.DataServer" CodeBehind="DataServer.svc.vb" Factory="System.ServiceModel.Activation.WebServiceHostFactory" %>

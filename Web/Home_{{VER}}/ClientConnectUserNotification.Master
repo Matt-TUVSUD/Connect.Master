@@ -1,0 +1,86 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" MasterPageFile="~/ClientConnectForm.master" CodeBehind="ClientConnectUserNotification.master.vb" Inherits="GRC.Connect.Web.ClientConnectUserNotification" %>
+
+<%@ Register Src="~/Home_{{VER}}/Controls/RevisionStampControl.ascx" TagName="RevisionStampControl" TagPrefix="grcRSC" %>
+
+<asp:Content ID="ClientConnectTestHeadContent" ContentPlaceHolderID="ClientConnectFormHead" runat="server">
+    <title>TUV SUD GRC Connect</title>
+    
+    <%-- UPDATED STYLES --%>
+    <link rel="Stylesheet" type="text/css" href="../../css/Kendo.v2014.1.318/kendo.common.min.css" />
+
+    <%-- ORIGINAL STYLES --%>
+    <link rel="Stylesheet" type="text/css" href="../../css/kendo-lightblue-noedit.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/kendo-lightblue-menu.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/global.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/topbanner.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/icons.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/windows.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/EDA/cssgrid.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/EDA/eda.css" />
+ 
+    <%-- UPDATED JAVASCRIPT --%>
+    <%--<script src="../../Lib_{{VER}}/KendoUI.v2014.1.416/kendo.web.min.js" type="text/javascript"></script>--%>
+    <%--<script src="../../Lib_{{VER}}/kendo.web.min.js" type="text/javascript"></script>--%>
+    <%--<script src="../../Lib_{{VER}}/kendo.web.min.js" type="text/javascript"></script>--%>
+    <script src="../../Lib_{{VER}}/kendo.all.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Knockout.v3.3.0/knockout-3.3.0.js" type="text/javascript"></script>
+
+    <%-- ORIGINAL JAVASCRIPT --%>
+    <script src="../../Lib_{{VER}}/json/json2.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/ES/entityspaces.XHR.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/GSafeDetail.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/GSafeDetail.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/GSafeHeader.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/GSafeHeader.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/NavLink.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Config/baseurl.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/constants.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Session/sessvars.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/util_{{VER}}.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/topbanner.js" type="text/javascript"></script>
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder></asp:Content>
+<asp:Content ID="ClientConnectTestBodyContent" ContentPlaceHolderID="ClientConnectFormBody" runat="server">
+    <form id="form1" runat="server">
+        <div class="masterHeaderElasticBlue100 ui-helper-clearfix" id="viewMasterTop">
+            <span>
+                <!-- HEADER -->
+                <div class="headerContainerElastic">
+                    <img src="../Images/Home_{{VER}}/logo_english_clientconnect.png" alt="Global Risk Consultants" style="width: 450px; border: none;" />
+                    <br />
+                </div>
+                <!-- END HEADER -->
+            </span>
+        </div>
+        <div class="masterTopBannerElastic100">
+            <div><!-- DISPLAY NOTHING --></div>
+        </div>
+        &nbsp;<br />
+        <div style="white-space: nowrap; min-width: 1126px;">
+        <div class="masterLeftNav" id="viewMasterLeftNav">
+            <span>
+                <div id="nav_Container" class="nav_ContainerBackgroundWhite nav_PlainText" style="padding-top: 260px;">
+                </div>
+            </span>
+        </div>
+        <div class="masterContentArea">
+            <span>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </span>
+        </div>
+        </div>
+        <div class="masterBottomBannerElasticBlue">
+            <div id="include_bottombanner"></div>
+            <div class="bottomBanner_Container_Elastic_Blue"></div>
+            <div><br style="clear: both;" /><grcRSC:RevisionStampControl ID="RevisionStampControl" runat="server" /></div>
+        </div>
+        &nbsp;<br style="clear: both;" />
+        &nbsp;<br style="clear: both;" />
+
+    </form>
+</asp:Content>
+<asp:Content ID="ClientConnectTestBottomHtml" ContentPlaceHolderID="ClientConnectFormBottomHtml" runat="server">
+</asp:Content>
+

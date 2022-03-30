@@ -1,0 +1,22 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colLoginID":1, 
+	"colPasswordReminderSentFlag":1, 
+	"colExpireEveryNthDay":1, 
+	"colLastPasswordChangeDate":null, 
+	"colIsLockedOut":null, 
+	"colPasswordIsExpired":null, 
+	"colPasswordExpirationDate":null, 
+	"colNeedToExpirePasswordAndLockout":null, 
+	"colDaysUntilPasswordExpiration":1, 
+	"colNeed14DayPasswordReminder":null, 
+	"colNeed7DayPasswordReminder":null
+}]

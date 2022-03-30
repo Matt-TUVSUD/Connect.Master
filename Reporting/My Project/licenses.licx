@@ -1,0 +1,7 @@
+GrapeCity.ActiveReports.Viewer.Win.Viewer, GrapeCity.ActiveReports.Viewer.Win.v9, Version=9.3.4039.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff
+Telerik.Reporting.Panel, Telerik.Reporting, Version=15.2.21.1125, Culture=neutral, PublicKeyToken=a9d7983dfcc261be
+Telerik.Reporting.TextBox, Telerik.Reporting, Version=15.2.21.1125, Culture=neutral, PublicKeyToken=a9d7983dfcc261be
+Telerik.Reporting.HtmlTextBox, Telerik.Reporting, Version=15.2.21.1125, Culture=neutral, PublicKeyToken=a9d7983dfcc261be
+Telerik.Reporting.Table, Telerik.Reporting, Version=15.2.21.1125, Culture=neutral, PublicKeyToken=a9d7983dfcc261be
+GrapeCity.ActiveReports.SectionReport, GrapeCity.ActiveReports.v9, Version=9.3.4039.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff
+Telerik.Reporting.PictureBox, Telerik.Reporting, Version=15.2.21.1125, Culture=neutral, PublicKeyToken=a9d7983dfcc261be

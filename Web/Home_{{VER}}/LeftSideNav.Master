@@ -1,0 +1,6 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/ClientConnectForm.master" AutoEventWireup="false" CodeBehind="LeftSideNav.master.vb" Inherits="GRC.Connect.Web.LeftSideNav" %>
+<%@ Register Src="~/Home_{{VER}}/Controls/RevisionStampControl.ascx" TagName="RevisionStampControl" TagPrefix="grcRSC" %>
+
+<asp:Content ID="ClientConnectTestHeadContent" ContentPlaceHolderID="ClientConnectFormHead" runat="server">
+    <title>TUV SUD GRC Connect</title>
+</asp:Content>

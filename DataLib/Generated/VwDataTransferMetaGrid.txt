@@ -1,0 +1,19 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: VwDataTransferMetaGrid --> [vwDataTransferMetaGrid]
+
+  colFldId --> [fldId] int not null
+  colFldGridId --> [fldGridId] int null
+  colFldFilePrefix --> [fldFilePrefix] nvarchar(10) null
+  colFldFileName --> [fldFileName] nvarchar(255) null
+  colFldSourceId --> [fldSourceId] int not null
+  colFldSchemaName --> [fldSchemaName] nvarchar(10) null
+  colFldObjectName --> [fldObjectName] nvarchar(255) null
+

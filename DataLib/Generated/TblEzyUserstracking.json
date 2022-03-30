@@ -1,0 +1,15 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colId":1, 
+	"colEzyUserID":1, 
+	"colFilePrefix":1
+	"colDocLibLastReviewedDate":null
+}]

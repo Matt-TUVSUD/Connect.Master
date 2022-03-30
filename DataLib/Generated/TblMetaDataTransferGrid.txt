@@ -1,0 +1,15 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblMetaDataTransferGrid --> [tblMetaDataTransferGrid]
+
+  colFldId --> [fldId] int **PK** identity not null
+  colFldGridId --> [fldGridId] int null
+  colFldFilePrefix --> [fldFilePrefix] nvarchar(10) null
+

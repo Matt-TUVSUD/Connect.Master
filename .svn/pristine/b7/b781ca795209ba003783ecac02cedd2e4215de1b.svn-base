@@ -1,0 +1,28 @@
+﻿<div id="windowComments" class="windowContent"> <!-- COMMENTS WINDOW -->
+    <div class="windowComments_Instructions">
+        <label id="lblCommentsUserFullName" class="windowComments_FullName">Client Connect User</label>, your feedback is very important to us. The comments you provide will help us improve our level of quality, service and help shape the overall features and functionality of the TUV SUD GRC Connect system.
+    </div>
+    <div>
+        <textarea class="windowComments_TextArea watermark_TextArea" id="txtFeedbackCommentsText" cols="35" rows="10" maxlength="500">Enter Comments Here</textarea>
+    </div>
+    <br />
+    <div style="text-align: right;">
+        <label id="lblCommentsPleaseWait" style="display: none;">Processing your comments, please wait...</label>
+        &nbsp;&nbsp;<button class="k-button k-button-padding" id="btnCommentsSubmit" onclick="onCommentsSubmit()" disabled="disabled">Submit</button>
+        &nbsp;<button class="k-button k-button-padding" id="btnCommentsCancel" onclick="onCommentsHide()">Cancel</button>
+    </div>
+</div>
+<div id="windowCommentsSuccess" class="windowContent"> <!-- SUCCESS WINDOW -->
+    <div>
+        Your comment has been submitted, thank you.<br />&nbsp;<br />
+        <div style="text-align: center;"><button class="k-button k-button-padding" id="btnCommentsCloseSuccess" onclick="onCommentsHide()">Close</button></div>
+    </div>
+</div>
+<div id="windowCommentsFail" class="windowContent"> <!-- FAIL WINDOW -->
+    <div>
+        An error occured when trying to submit your comments, please try again later.<br />&nbsp;<br />
+        Error message: <label id="lblCommentsErrorMessage">none</label><br />&nbsp;<br />
+        <div style="text-align: center;"><button class="k-button k-button-padding" id="btnCommentsCloseFail" onclick="onCommentsHide()">Close</button></div>
+    </div>
+</div>
+<script src="../../Lib_{{VER}}/pages/commentsRecResponse.js" type="text/javascript"></script>

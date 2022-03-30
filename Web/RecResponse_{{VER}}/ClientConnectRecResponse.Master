@@ -1,0 +1,663 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/ClientConnectForm.master" AutoEventWireup="false" CodeBehind="ClientConnectRecResponse.Master.vb" Inherits="GRC.Connect.Web.ClientConnectRecResponse" %>
+<%@ Register Src="~/Home_{{VER}}/Controls/RevisionStampControl.ascx" TagName="RevisionStampControl" TagPrefix="grcRSC" %>
+<%@ Register Src="~/Home_{{VER}}/Controls/Loader.ascx" TagName="LoaderControl" TagPrefix="grcLoader" %>
+
+<asp:Content ID="ClientConnectTestHeadContent" ContentPlaceHolderID="ClientConnectFormHead" runat="server">
+    <title>TUV SUD GRC Client Connect</title>
+
+    
+    <%-- UPDATED STYLES --%>
+    <%--<link rel="Stylesheet" type="text/css" href="../../css/Kendo.v2014.1.318/kendo.common.min.css" />--%>
+    <link rel="Stylesheet" type="text/css" href="../../css/kendo.common.min.css" />
+    <%-- ORIGINAL STYLES --%>
+    <link rel="Stylesheet" type="text/css" href="../../css/kendo-lightblue-noedit.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/kendo-lightblue-menu.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/global.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/topbanner.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/icons.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/windows.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/EDA/eda.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadTreeView.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadTreeViewOffice2010Silver.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Footer/footer.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/font-awesome.min.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Font-Awesome/all.css" />
+
+
+    <%-- UPDATED JAVASCRIPT --%>
+    <%--<script src="../../Lib_{{VER}}/kendo.web.min.js" type="text/javascript"></script>--%>
+    
+
+    <script src="../../Lib_{{VER}}/Knockout.v3.3.0/knockout-3.3.0.js" type="text/javascript"></script>
+    
+    <%-- ADDITIONAL JAVASCRIPT --%>
+    <script src="../../Lib_{{VER}}/kendo.all.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/knockoutkendo.v0.9.3/knockout-kendo.min.js"></script>
+
+    <%-- ORIGINAL JAVASCRIPT --%>
+    <script src="../../Lib_{{VER}}/json/json2.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/ES/entityspaces.XHR.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/GSafeDetail.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/GSafeDetail.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/GSafeHeader.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/GSafeHeader.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/RRLog.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/RRLog.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCFireRecommendationCounts.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/ViewCCFireRecommendationCounts.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCBMRecommendationCounts.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/ViewCCBMRecommendationCounts.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCIRRecommendationCounts.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/ViewCCIRRecommendationCounts.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCRecCompletedLossEstList.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCRecCurrentLossEstList.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCRecEstCostToCompleteList.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCPSRecommendationCounts.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/ViewCCPSRecommendationCounts.js" type="text/javascript"></script>
+
+    <script src="../../Lib_{{VER}}/Generated/ViewCCTranslation.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCTranslationImpact.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCTranslationIntendedAction.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCTranslationHazard.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCTranslationPrimaryRec.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCTranslationRecStatus.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCTranslationSecondaryRec.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCTranslationMgmtIntendedAction.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/ViewCCTranslationMgmtIntendedAction.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/ViewCCTranslation.js" type="text/javascript"></script>
+
+    <script src="../../Lib_{{VER}}/Generated/NavLink.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Config/baseurl.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Session/sessvars.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/util_{{VER}}.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/export.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/topbanner.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/nav.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Day.js/dayjs.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        #icoBack
+        {
+            height: 13px;
+        }
+        body
+        {
+            width: 1175px;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="ClientConnectTestBodyContent" ContentPlaceHolderID="ClientConnectFormBody" runat="server">
+    <form id="form1" runat="server">
+       <grcLoader:LoaderControl ID="loaderControl" runat="server" />
+        <div id="viewMaster" data-bind="with: viewMaster" style="display:flex;flex-direction:column;">
+            <div class="recRespHeader" style="display:flex; padding:5px; height:75px;">
+                <div class="logo">
+                    <img src="../../Home_{{VER}}/Controls/50x50_GRCLogo.png" alt="Global Risk Consultants" />
+                    <label class="grcLbl">GRC CONNECT</label>
+                </div>
+                <div class="line" style="display:none; transform:rotate(44deg) translateY(-35px); height:120px;">&nbsp;</div>
+                <div class="" id="viewMasterTop">
+                    <!-- HEADER -->
+                    <div id="" class="" style="display:flex; flex-direction:column; justify-content:center; align-items:flex-end; height:100%; "><!--width:1610px;-->
+                        <asp:Label runat="server" ID="lblCompany" Text="" style="color:#0046ad"></asp:Label>
+                        <asp:Label runat="server" ID="lblPageTitle" Text=""></asp:Label>
+                    </div>
+                    <!-- END HEADER -->
+                </div>
+            </div>
+            <div class="recRespSubHeader" style="background:#d9dddf;color:#666666; display:flex;align-items:center; justify-content:space-between; height:40px; padding:0 10px;">
+                <div style="" id="topBannerNav">
+                    <div style="display:flex;">
+                        <!-- CHANGE LANGUAGE -->
+                        <span class="headheaderContainererLanguageSelector" style="" id="LanguageSelector">
+                            <input id="langSelector" class="headerLanguageSelector" />
+                        </span>
+                        <span id="spanTopBanner" runat="server"></span>
+                    </div>
+                </div>
+                <div style="">
+                    <div class="headerWelcomeWhite" style="color:#666;">
+                        <asp:Label runat="server" ID="lblLoginName" Text=""></asp:Label>
+                        &nbsp;|&nbsp;
+                        <a onclick="closeWindow(); return false;" href="#" style="color:#666;">
+                            <label runat="server" id="lblLogoutHeader" data-bind="text: $root.objLanguageLabels().lblLogout">Logout</label>
+                        </a>
+                    </div>
+                    <div class="headerTodaysDateLightBlue" style="color:#666;">
+                        <asp:Label runat="server" ID="lblTodaysDate" Text=""></asp:Label>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: flex;">
+                <div style="width: 240px; display:flex; justify-content:flex-start; flex-direction:column; padding:0 10px;" class="">
+                    <div id="nav_Container" class="nav_Container nav_ContainerBackgroundWhite" style="padding-top: 10px; height: 475px;" runat="server">
+                        <div style="float: left; width: 24px; padding-top: 0px; position: relative;">
+                            <img src="../../Home_{{VER}}/images/icons/reports/document_information_24x24.png" alt="Important Information" style="height: 24px; width: 24px;" />
+                        </div>
+                        <div style="padding-right: 5px; padding-left: 3px; padding-top: 0px;">
+                            <%--<span data-bind="if: $root.clientFeatures().search('I') > -1">--%>
+                            <label id="langLbl" data-bind="text: $parent.lblInst_Language_Title" class="recResponse_InstructionsBold">Language</label>
+                            - 
+                                <label id="langText" data-bind="text: $parent.lblInst_Language_Text" class="recResponse_Instructions">This page can be converted with a  choice of six languages.  Use the drop-down menu above  on the upper toolbar.</label>
+                            <br />
+                            &nbsp;<br />
+                            <%--</span>--%>
+                            <span>
+                                <label id="instEditTitle" data-bind="text: $parent.lblInst_Edit_Title" class="recResponse_InstructionsBold">Edit</label>
+                                - 
+                                <label id="instEditText" data-bind="text: $parent.lblInst_Edit_Text" class="recResponse_Instructions">Click the Edit button to enter your response.</label>
+                                <br />
+                                &nbsp;<br />
+                            </span>
+                            <span>
+                                <label id="instResponseTitle" data-bind="text: $parent.lblInst_Responses_Title" class="recResponse_InstructionsBold">Edit</label>
+                                - 
+                                <label id="instResposeText" data-bind="text: $parent.lblInst_Responses_Text" class="recResponse_Instructions">Once you have entered each of your responses, please end your session using the Logout button on the right of the upper top right toolbar.</label>
+                                <br />
+                                &nbsp;<br />
+                            </span>
+                            <span>
+                                <label id="emailTitle" data-bind="text: $parent.lblInst_Email_Title" class="recResponse_InstructionsBold">Email</label>
+                                - 
+                                <label id="emailResposeText" data-bind="text: $parent.lblInst_Email_Text" class="recResponse_Instructions">After your session ends, an auto-generated email will be sent to your email containing the Rec Response Report with your changes.</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div style="padding-top: 0px;">&nbsp;</div>
+                    <div class="nav_Comments"></div>
+                </div>
+
+                <!-- ERROR WINDOW FOR NO RECORD FOUND NOTIFICATION -->
+                <div id="windowRecNotCompleted" class="windowContent">
+                    <div>
+                        <img src="../../Home_{{VER}}/images/icons/reports/document_information_32x32.png" align="left" alt="Warning" class="windowImage" style="width: 32px; height: 32px;" /></div>
+                    <div>
+                        <label id="lblWindowResponded_Warning" data-bind="text: $root.objLanguageLabels().lblWindowResponded_Warning">All recommendations have not been responded to, or your work is not complete.</label></div>
+                    <br />
+                    &nbsp;<br />
+                    <div style="text-align: center;">
+                        <label id="lblWindowResponded_AreYouSure" data-bind="text: $root.objLanguageLabels().lblWindowResponded_AreYouSure">Are you sure you want to navigate away from this page?</label>
+                        <br />
+                        &nbsp;<br />
+                        <label id="lblWindowResponded_ClickCancelToContinueWorking" data-bind="text: $root.objLanguageLabels().lblWindowResponded_ClickCancelToContinueWorking">Click Cancel to continue working.</label>
+                        <br />
+                        <label id="lblWindowResponded_ClickOKToExit" data-bind="text: $root.objLanguageLabels().lblWindowResponded_ClickOKToExit">Click OK to exit.</label>
+                    </div>
+                    <br />
+                    &nbsp;<br />
+                    <div style="text-align: center;">
+                        <button id="btnYes" class="k-button k-button-padding" style="width: 75px;" onclick="onOKClick();" data-bind="text: $root.objLanguageLabels().lblOK">OK</button>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button id="btnCancel" class="k-button k-button-padding" style="width: 75px;" onclick="onCancelClick(); return false;" data-bind="text: $root.objLanguageLabels().lblCancel">Cancel</button>
+                    </div>
+                    <br />
+                </div>
+
+                <!-- ERROR WINDOW FOR NO RECORD FOUND NOTIFICATION FOR DATASHEET VIEW -->
+                <div id="windowRecNotCompletedDatasheet" class="windowContent">
+                    <div>
+                        <img src="../../Home_{{VER}}/images/icons/reports/document_information_32x32.png" align="left" alt="Warning" class="windowImage" style="width: 32px; height: 32px;" /></div>
+                    <div>
+                        <label id="lblWindowRespondedDatasheet_Warning" data-bind="text: $root.objLanguageLabels().lblWindowResponded_Warning">All recommendations have not been responded to, or your work is not complete.</label></div>
+                    <br />
+                    &nbsp;<br />
+                    <div style="text-align: center;">
+                        <label id="lblWindowRespondedDatasheet_AreYouSure" data-bind="text: $root.objLanguageLabels().lblWindowResponded_AreYouSure">Are you sure you want to navigate away from this page?</label>
+                        <br />
+                        &nbsp;<br />
+                        <label id="lblWindowRespondedDatasheet_ClickCancelToContinueWorking" data-bind="text: $root.objLanguageLabels().lblWindowResponded_ClickCancelToContinueWorking">Click Cancel to continue working.</label>
+                        <br />
+                        <label id="lblWindowRespondedDatasheet_ClickOKToExit" data-bind="text: $root.objLanguageLabels().lblWindowResponded_ClickOKToExit">Click OK to exit.</label>
+                    </div>
+                    <br />
+                    &nbsp;<br />
+                    <div style="text-align: center;">
+                        <button id="btnYesDatasheet" class="k-button k-button-padding" style="width: 75px;" onclick="onOKClickDatasheet();" data-bind="text: $root.objLanguageLabels().lblOK">OK</button>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button id="btnCancelDatasheet" class="k-button k-button-padding" style="width: 75px;" onclick="onCancelClickDatasheet(); return false;" data-bind="text: $root.objLanguageLabels().lblCancel">Cancel</button>
+                    </div>
+                    <br />
+                </div>
+
+                <div class="" style="width:100%;">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+
+        
+        
+        
+
+
+
+        <div class="masterBottomBannerElasticBlue" id="viewMasterBottom" style="background:#d9dddf;display:-webkit-box;display:-ms-flexbox;display:flex;height:65px;color:#666666;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size:16px;padding:0 10px; width:99%;">
+            <div class="bottomBanner_Container_Elastic_Blue" runat="server" id="divBottomBannerNonAdmin">
+                <div class="bottomBanner_Middle_Elastic_Blue" style="width:auto;"><span class="bottomBanner_Text">Global Risk Consultants Corp.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="bottomBanner_Link"><a href="mailto:grc-ClientDBA@tuvsud.com">Email Us</a></span></div>
+            </div>
+            <div>
+                <grcRSC:RevisionStampControl ID="RevisionStampControl" runat="server" />
+            </div>
+        </div>
+        <!-- FEEDBACK COMMENTS WINDOWS AND SCRIPT - ALSO NEED TO INCLUDE CSS AND SERVERSIDE HIDDEN FIELD -->
+        <div id="include_comments"></div>
+
+    </form>
+</asp:Content>
+<asp:Content ID="ClientConnectTestBottomHtml" ContentPlaceHolderID="ClientConnectFormBottomHtml" runat="server">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#include_comments").load("../../Home_{{VER}}/Common/CommentsWindowsRecResponse.html");
+        });
+
+        var global_SaveNotComplete = false;
+        var global_DatasheetViewURL = "";
+        var global_MgmtFields = false;
+        if ("<%= ServerSideMaster_MgmtFields %>" == "true") {
+            global_MgmtFields = true;
+        }
+
+        var dsLanguageLabels = {};
+
+        var dsLanguageOptions = [
+            dsLanguageLabels.lblChooseLanguage,
+            "Deutsch",
+            "English",
+            "Español",
+            "Français",
+            "Italiano",
+            "Português"
+        ];
+
+        function closeWindow() {
+            //// CHECK TO SEE IF ALL RESPONSES ARE COMPLETED
+            var practiceName = "<%= ServerSideMaster_PracticeName %>";
+            var coll = undefined;
+            var rTotal = 0;
+            var rCompleted = 0;
+            var rNeeded = 0;
+
+            document.location.href = "../../RecResponse_{{VER}}/Logout/Default.aspx";
+
+            <%--switch (practiceName) {
+                case "fire":
+                    coll = new es.objects.ViewCCFireRecommendationCountsCollection();
+                    es.dataProvider.baseURL = SITEBASEURL + VIEWSERVERENDPOINT;
+                    if (!coll.GetRecommendationCountsFire("<%= ServerSideMaster_FileNo %>")) {
+                        rTotal = coll()[0].ResponsesTotal();
+                        rCompleted = coll()[0].ResponsesCompleted();
+                        if (rCompleted > 0 || global_SaveNotComplete) {
+                            windowRecNotCompleted.data("kendoWindow").open();
+                            $("#windowRecNotCompleted").css("display", "block");
+                        } else {
+                            document.location.href = "../../RecResponse_{{VER}}/Logout/Default.aspx";
+                        }
+                    } else {
+                        alert("Error loading Rec. Response log record. Please log out and try again.");
+                    }
+                    break;
+
+                case "boiler":
+                    coll = new es.objects.ViewCCBMRecommendationCountsCollection();
+                    es.dataProvider.baseURL = SITEBASEURL + VIEWSERVERENDPOINT;
+                    if (!coll.GetRecommendationCountsBM("<%= ServerSideMaster_FileNo %>")) {
+                        rTotal = coll()[0].ResponsesTotal();
+                        rCompleted = coll()[0].ResponsesCompleted();
+                        if (rCompleted > 0 || global_SaveNotComplete) {
+                            windowRecNotCompleted.data("kendoWindow").open();
+                            $("#windowRecNotCompleted").css("display", "block");
+                        } else {
+                            document.location.href = "../../RecResponse_{{VER}}/Logout/Default.aspx";
+                        }
+                    } else {
+                        alert("Error loading Rec. Response log record. Please log out and try again.");
+                    }
+                    break;
+
+                case "infrared":
+                    coll = new es.objects.ViewCCIRRecommendationCountsCollection(); //ViewCCFireRecommendationCountsCollection();
+                    es.dataProvider.baseURL = SITEBASEURL + VIEWSERVERENDPOINT;
+                    if (!coll.GetRecommendationCountsIR("<%= ServerSideMaster_FileNo %>")) {
+                        rTotal = coll()[0].ResponsesTotal();
+                        rCompleted = coll()[0].ResponsesCompleted();
+                        if (rCompleted > 0 || global_SaveNotComplete) {
+                            windowRecNotCompleted.data("kendoWindow").open();
+                            $("#windowRecNotCompleted").css("display", "block");
+                        } else {
+                            document.location.href = "../../RecResponse_{{VER}}/Logout/Default.aspx";
+                        }
+                    } else {
+                        alert("Error loading Rec. Response log record. Please log out and try again.");
+                    }
+                    break;
+                
+                case "juris":
+                    coll = new es.objects.ViewCCFireRecommendationCountsCollection();
+                    es.dataProvider.baseURL = SITEBASEURL + VIEWSERVERENDPOINT;
+                    if (!coll.GetRecommendationCountsFire("<%= ServerSideMaster_FileNo %>")) {
+                        rTotal = coll()[0].ResponsesTotal();
+                        rCompleted = coll()[0].ResponsesCompleted();
+                        if (rCompleted > 0 || global_SaveNotComplete) {
+                            windowRecNotCompleted.data("kendoWindow").open();
+                            $("#windowRecNotCompleted").css("display", "block");
+                        } else {
+                            document.location.href = "../../RecResponse_{{VER}}/Logout/Default.aspx";
+                        }
+                    } else {
+                        alert("Error loading Rec. Response log record. Please log out and try again.");
+                    }
+                    break;
+                
+                case "seismic":
+                    coll = new es.objects.ViewCCFireRecommendationCountsCollection();
+                    es.dataProvider.baseURL = SITEBASEURL + VIEWSERVERENDPOINT;
+                    if (!coll.GetRecommendationCountsSeismic("<%= ServerSideMaster_FileNo %>")) {
+                        rTotal = coll()[0].ResponsesTotal();
+                        rCompleted = coll()[0].ResponsesCompleted();
+                        if (rCompleted > 0 || global_SaveNotComplete) {
+                            windowRecNotCompleted.data("kendoWindow").open();
+                            $("#windowRecNotCompleted").css("display", "block");
+                        } else {
+                            document.location.href = "../../RecResponse_{{VER}}/Logout/Default.aspx";
+                        }
+                    } else {
+                        alert("Error loading Rec. Response log record. Please log out and try again.");
+                    }
+                    break;
+                
+                case "wind":
+                    coll = new es.objects.ViewCCFireRecommendationCountsCollection();
+                    es.dataProvider.baseURL = SITEBASEURL + VIEWSERVERENDPOINT;
+                    if (!coll.GetRecommendationCountsWind("<%= ServerSideMaster_FileNo %>")) {
+                        rTotal = coll()[0].ResponsesTotal();
+                        rCompleted = coll()[0].ResponsesCompleted();
+                        if (rCompleted > 0 || global_SaveNotComplete) {
+                            windowRecNotCompleted.data("kendoWindow").open();
+                            $("#windowRecNotCompleted").css("display", "block");
+                        } else {
+                            document.location.href = "../../RecResponse_{{VER}}/Logout/Default.aspx";
+                        }
+                    } else {
+                        alert("Error loading Rec. Response log record. Please log out and try again.");
+                    }
+                    break;
+                
+                case "flood":
+                    coll = new es.objects.ViewCCFireRecommendationCountsCollection();
+                    es.dataProvider.baseURL = SITEBASEURL + VIEWSERVERENDPOINT;
+                    if (!coll.GetRecommendationCountsFlood("<%= ServerSideMaster_FileNo %>")) {
+                        rTotal = coll()[0].ResponsesTotal();
+                        rCompleted = coll()[0].ResponsesCompleted();
+                        if (rCompleted > 0 || global_SaveNotComplete) {
+                            windowRecNotCompleted.data("kendoWindow").open();
+                            $("#windowRecNotCompleted").css("display", "block");
+                        } else {
+                            document.location.href = "../../RecResponse_{{VER}}/Logout/Default.aspx";
+                        }
+                    } else {
+                        alert("Error loading Rec. Response log record. Please log out and try again.");
+                    }
+                    break;
+
+                case "nathaz":
+                    coll = new es.objects.ViewCCFireRecommendationCountsCollection();
+                    es.dataProvider.baseURL = SITEBASEURL + VIEWSERVERENDPOINT;
+                    if (!coll.GetRecommendationCountsNatHaz("<%= ServerSideMaster_FileNo %>")) {
+                        rTotal = coll()[0].ResponsesTotal();
+                        rCompleted = coll()[0].ResponsesCompleted();
+                        if (rCompleted > 0 || global_SaveNotComplete) {
+                            windowRecNotCompleted.data("kendoWindow").open();
+                            $("#windowRecNotCompleted").css("display", "block");
+                        } else {
+                            document.location.href = "../../RecResponse_{{VER}}/Logout/Default.aspx";
+                        }
+                    } else {
+                        alert("Error loading Rec. Response log record. Please log out and try again.");
+                    }
+                    break;
+                case "processsafety":
+                    coll = new es.objects.ViewCCPSRecommendationCountsCollection();
+                    es.dataProvider.baseURL = SITEBASEURL + VIEWSERVERENDPOINT;
+                    if (!coll.GetRecommendationCountsPS("<%= ServerSideMaster_FileNo %>")) {
+                        rTotal = coll()[0].ResponsesTotal();
+                        rCompleted = coll()[0].ResponsesCompleted();
+                        if (rCompleted > 0 || global_SaveNotComplete) {
+                            windowRecNotCompletedDatasheet.data("kendoWindow").open();
+                            $("#windowRecNotCompletedDatasheet").css("display", "block");
+                            document.location.href = "../../RecResponse_{{VER}}/Logout/Default.aspx";
+                        } else {
+                            document.location.href = "../../RecResponse_{{VER}}/Logout/Default.aspx";
+                        }
+                    } else {
+                        alert("Error loading Rec. Response log record. Please log out and try again.");
+                    }
+                    break;
+            }--%>
+        }
+
+        function goToDataSheetView(pURL) {
+            //// CHECK TO SEE IF ALL RESPONSES ARE COMPLETED
+            var practiceName = "<%= ServerSideMaster_PracticeName %>";
+            global_DatasheetViewURL = pURL;
+            var coll = undefined;
+            var rTotal = 0;
+            var rCompleted = 0;
+            var rNeeded = 0;
+
+            switch (practiceName) {
+                case "fire":
+                    coll = new es.objects.ViewCCFireRecommendationCountsCollection();
+                    es.dataProvider.baseURL = SITEBASEURL + VIEWSERVERENDPOINT;
+                    if (!coll.GetRecommendationCountsFire("<%= ServerSideMaster_FileNo %>")) {
+                        rTotal = coll()[0].ResponsesTotal();
+                        rCompleted = coll()[0].ResponsesCompleted();
+                        if (rCompleted > 0 || global_SaveNotComplete) {
+                            //windowRecNotCompletedDatasheet.data("kendoWindow").open();
+                            //$("#windowRecNotCompletedDatasheet").css("display", "block");
+                            document.location.href = pURL;
+                        } else {
+                            document.location.href = pURL;
+                        }
+                    } else {
+                        alert("Error loading Rec. Response log record. Please log out and try again.");
+                    }
+                    break;
+
+                case "boiler":
+                    coll = new es.objects.ViewCCBMRecommendationCountsCollection();
+                    es.dataProvider.baseURL = SITEBASEURL + VIEWSERVERENDPOINT;
+                    if (!coll.GetRecommendationCountsBM("<%= ServerSideMaster_FileNo %>")) {
+                        rTotal = coll()[0].ResponsesTotal();
+                        rCompleted = coll()[0].ResponsesCompleted();
+                        if (rCompleted > 0 || global_SaveNotComplete) {
+                            //windowRecNotCompletedDatasheet.data("kendoWindow").open();
+                            //$("#windowRecNotCompletedDatasheet").css("display", "block");
+                            document.location.href = pURL;
+                        } else {
+                            document.location.href = pURL;
+                        }
+                    } else {
+                        alert("Error loading Rec. Response log record. Please log out and try again.");
+                    }
+                    break;
+                
+                case "infrared":
+                    coll = new es.objects.ViewCCFireRecommendationCountsCollection();
+                    es.dataProvider.baseURL = SITEBASEURL + VIEWSERVERENDPOINT;
+                    if (!coll.GetRecommendationCountsFire("<%= ServerSideMaster_FileNo %>")) {
+                        rTotal = coll()[0].ResponsesTotal();
+                        rCompleted = coll()[0].ResponsesCompleted();
+                        if (rCompleted > 0 || global_SaveNotComplete) {
+                            //windowRecNotCompletedDatasheet.data("kendoWindow").open();
+                            //$("#windowRecNotCompletedDatasheet").css("display", "block");
+                            document.location.href = pURL;
+                        } else {
+                            document.location.href = pURL;
+                        }
+                    } else {
+                        alert("Error loading Rec. Response log record. Please log out and try again.");
+                    }
+                    break;
+                
+                case "juris":
+                    coll = new es.objects.ViewCCFireRecommendationCountsCollection();
+                    es.dataProvider.baseURL = SITEBASEURL + VIEWSERVERENDPOINT;
+                    if (!coll.GetRecommendationCountsFire("<%= ServerSideMaster_FileNo %>")) {
+                        rTotal = coll()[0].ResponsesTotal();
+                        rCompleted = coll()[0].ResponsesCompleted();
+                        if (rCompleted > 0 || global_SaveNotComplete) {
+                            //windowRecNotCompletedDatasheet.data("kendoWindow").open();
+                            //$("#windowRecNotCompletedDatasheet").css("display", "block");
+                            document.location.href = pURL;
+                        } else {
+                            document.location.href = pURL;
+                        }
+                    } else {
+                        alert("Error loading Rec. Response log record. Please log out and try again.");
+                    }
+                    break;
+                
+                case "seismic":
+                    coll = new es.objects.ViewCCFireRecommendationCountsCollection();
+                    es.dataProvider.baseURL = SITEBASEURL + VIEWSERVERENDPOINT;
+                    if (!coll.GetRecommendationCountsSeismic("<%= ServerSideMaster_FileNo %>")) {
+                        rTotal = coll()[0].ResponsesTotal();
+                        rCompleted = coll()[0].ResponsesCompleted();
+                        if (rCompleted > 0 || global_SaveNotComplete) {
+                            //windowRecNotCompletedDatasheet.data("kendoWindow").open();
+                            //$("#windowRecNotCompletedDatasheet").css("display", "block");
+                            document.location.href = pURL;
+                        } else {
+                            document.location.href = pURL;
+                        }
+                    } else {
+                        alert("Error loading Rec. Response log record. Please log out and try again.");
+                    }
+                    break;
+                
+                case "wind":
+                    coll = new es.objects.ViewCCFireRecommendationCountsCollection();
+                    es.dataProvider.baseURL = SITEBASEURL + VIEWSERVERENDPOINT;
+                    if (!coll.GetRecommendationCountsWind("<%= ServerSideMaster_FileNo %>")) {
+                        rTotal = coll()[0].ResponsesTotal();
+                        rCompleted = coll()[0].ResponsesCompleted();
+                        if (rCompleted > 0 || global_SaveNotComplete) {
+                            //windowRecNotCompletedDatasheet.data("kendoWindow").open();
+                            //$("#windowRecNotCompletedDatasheet").css("display", "block");
+                            document.location.href = pURL;
+                        } else {
+                            document.location.href = pURL;
+                        }
+                    } else {
+                        alert("Error loading Rec. Response log record. Please log out and try again.");
+                    }
+                    break;
+                
+                case "flood":
+                    coll = new es.objects.ViewCCFireRecommendationCountsCollection();
+                    es.dataProvider.baseURL = SITEBASEURL + VIEWSERVERENDPOINT;
+                    if (!coll.GetRecommendationCountsFlood("<%= ServerSideMaster_FileNo %>")) {
+                        rTotal = coll()[0].ResponsesTotal();
+                        rCompleted = coll()[0].ResponsesCompleted();
+                        if (rCompleted > 0 || global_SaveNotComplete) {
+                            //windowRecNotCompletedDatasheet.data("kendoWindow").open();
+                            //$("#windowRecNotCompletedDatasheet").css("display", "block");
+                            document.location.href = pURL;
+                        } else {
+                            document.location.href = pURL;
+                        }
+                    } else {
+                        alert("Error loading Rec. Response log record. Please log out and try again.");
+                    }
+                    break;
+
+                case "nathaz":
+                    coll = new es.objects.ViewCCFireRecommendationCountsCollection();
+                    es.dataProvider.baseURL = SITEBASEURL + VIEWSERVERENDPOINT;
+                    if (!coll.GetRecommendationCountsNatHaz("<%= ServerSideMaster_FileNo %>")) {
+                        rTotal = coll()[0].ResponsesTotal();
+                        rCompleted = coll()[0].ResponsesCompleted();
+                        if (rCompleted > 0 || global_SaveNotComplete) {
+                            //windowRecNotCompletedDatasheet.data("kendoWindow").open();
+                            //$("#windowRecNotCompletedDatasheet").css("display", "block");
+                            document.location.href = pURL;
+                        } else {
+                            document.location.href = pURL;
+                        }
+                    } else {
+                        alert("Error loading Rec. Response log record. Please log out and try again.");
+                    }
+                    break;
+                case "processsafety":
+                    coll = new es.objects.ViewCCPSRecommendationCountsCollection();
+                    es.dataProvider.baseURL = SITEBASEURL + VIEWSERVERENDPOINT;
+                    if (!coll.GetRecommendationCountsPS("<%= ServerSideMaster_FileNo %>")) {
+                        rTotal = coll()[0].ResponsesTotal();
+                        rCompleted = coll()[0].ResponsesCompleted();
+                        if (rCompleted > 0 || global_SaveNotComplete) {
+                            //windowRecNotCompletedDatasheet.data("kendoWindow").open();
+                            //$("#windowRecNotCompletedDatasheet").css("display", "block");
+                            document.location.href = pURL;
+                        } else {
+                            document.location.href = pURL;
+                        }
+                    } else {
+                        alert("Error loading Rec. Response log record. Please log out and try again.");
+                    }
+                    break;
+            }
+        }
+
+        function onOKClick() {
+            windowRecNotCompleted.data("kendoWindow").close();
+            document.location.href = "../../RecResponse_{{VER}}/Logout/Default.aspx";
+        }
+
+        function onCancelClick() {
+            windowRecNotCompleted.data("kendoWindow").close();
+        }
+
+        function onOKClickDatasheet() {
+            windowRecNotCompletedDatasheet.data("kendoWindow").close();
+            document.location.href = global_DatasheetViewURL;
+        }
+
+        function onCancelClickDatasheet() {
+            windowRecNotCompletedDatasheet.data("kendoWindow").close();
+        }
+
+
+        //// SETUP REC COUNT POPUP WINDOW
+        var windowRecNotCompleted = $("#windowRecNotCompleted");
+        windowRecNotCompleted.kendoWindow({
+            width: "300px",
+            height: "215px",
+            title: "", // title added below with JQuery
+            actions: ["Close"],
+            animation: { open: { effects: "none" }, close: { effects: "default"} }
+        });
+        $("#windowRecNotCompleted").closest(".k-window").css({
+            top: 275,
+            left: 400
+        });
+        $("#windowRecNotCompleted").prev().find(".k-window-title").append("<img src='../../Home_{{VER}}/images/icons/reports/document_information_24x24.png' align='left' alt='Information Icon' class='windowIcon'/>  " + "Responses Not Complete");
+
+        var windowRecNotCompletedDatasheet = $("#windowRecNotCompletedDatasheet");
+        windowRecNotCompletedDatasheet.kendoWindow({
+            width: "300px",
+            height: "215px",
+            title: "", // title added below with JQuery
+            actions: ["Close"],
+            animation: { open: { effects: "none" }, close: { effects: "default"} }
+        });
+        $("#windowRecNotCompletedDatasheet").closest(".k-window").css({
+            top: 275,
+            left: 400
+        });
+        $("#windowRecNotCompletedDatasheet").prev().find(".k-window-title").append("<img src='../../Home_{{VER}}/images/icons/reports/document_information_24x24.png' align='left' alt='Information Icon' class='windowIcon'/>  " + "Responses Not Complete");
+
+    </script>
+</asp:Content>

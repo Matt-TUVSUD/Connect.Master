@@ -1,0 +1,497 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+        <link type="text/css" href="../WhatsNew/wnCss/reset.css" rel="stylesheet" />
+		<link type="text/css" href="../WhatsNew/wnCss/grid.css" rel="stylesheet" />
+		<link type="text/css" href="../WhatsNew/wnCss/font-awesome.min.css" rel="stylesheet" />
+		<link type="text/css" href="../WhatsNew/wnCss/common.css" rel="stylesheet" />
+        <link type="text/css" href="../WhatsNew/wnCss/print.css" rel="stylesheet" media="print" />
+		
+		<link rel="shortcut icon" href="../WhatsNew/images/favicon.ico" />
+
+		<script type="text/javascript" src="../WhatsNew/jquery/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="../WhatsNew/jquery/jquery.sticky.js"></script>
+		<script type="text/javascript" src="../WhatsNew/jquery/jquery.printThis.js"></script>
+		<script type="text/javascript" src="../WhatsNew/jquery/jquery.highlight.js"></script>
+		<script type="text/javascript" src="../WhatsNew/jquery/jquery-functions.js"></script>
+</head>
+<body>
+
+    <div id="header" class="setPrimary">
+        <div id="headerInner" class="clearfix">
+            <div class="logo">
+                <img src="../WhatsNew/images/logo_horizontalstacked.png" style="height: 110px;" alt="" />
+            </div>
+            <div class="description">
+                <h3>TUV SUD GRC Connect Knowledge Base</h3>
+            </div>
+        </div>
+    </div>
+    <div id="bluebar" class="setPrimary">
+        <div id="bluebarInner" class="clearfix">
+            <div class="onehalf left">
+                <fieldset style="text-align: left; padding-left: 30px;">
+                    <label>Quick Text Search:</label>
+                    <input id="searchbox" type="text" placeholder="Your Search Term..." />
+                    <div class="clearfix">
+                        <div id="count"></div>
+                        <!--
+                        <div id="ifFound">
+                            <a class="itemPREV" style="color: #fff;" href="#" title="">&laquo; Prev</a> | <a class="itemNEXT" style="color: #fff;" href="#" title="">Next &raquo;</a>
+                        </div>
+                        -->
+                    </div>
+                </fieldset>
+            </div>
+            <div class="onehalf right">
+                <fieldset style="text-align: right; padding-right: 30px;">
+                    <label>Please Select a Help Topic:</label>
+                    <select id="pickTopic">
+	                    <option value="">Select...</option>
+                        <option value="intro">Introduction</option>
+                        <option value="accessingGRC">Accessing TUV SUD GRC Connect</option>
+                        <option value="flyoutMenu">Main Menu and Tools Sub-menu</option>
+                        <option value="facilityNavigation">Facility Navigation</option>
+                        <option value="dashboard">Dashboard</option>
+                        <option value="chartsReports">Reports</option>
+                        <option value="favorites">Favorites</option>
+                        <option value="docLib">Document Library</option>
+                        <option value="userTools">Tools</option>
+                        <option value="batchReports">Batch Reports</option>
+                        <option value="latLongSearch">Latitude/Longitude Search</option>
+                        <option value="myPreferences">My Preferences</option>
+                        <option value="contactUs">Contact Us (GRC)</option>
+                        <option value="autoRecResponse">&nbsp;&nbsp;&bull;&nbsp;Auto-Rec Response Summary</option>
+                        <option value="programStatusSum">&nbsp;&nbsp;&bull;&nbsp;Program Status Summary</option>
+                        <option value="clientInfo">&nbsp;&nbsp;&bull;&nbsp;Client Information (optional)</option>
+                        <option value="whatsNew">&nbsp;&nbsp;&bull;&nbsp;What's New!</option>
+                        <option value="mapView">Map View</option>
+                        <option value="alertsMenu">Alerts</option>
+                        <option value="flSchedulingValues">Facility Level - Scheduling & Values</option>
+                        <option value="flFacilityRating">Facility Level - Facility Rating</option>
+                        <option value="flRecommendations">Facility Level - Recommendations</option>
+                        <option value="flChangeService">Facility Level - Change Service</option>
+                        <option value="facilitySum">Facility Level - Facility Summary</option>
+                        <option value="pl_quickReference">Program Level - Quick Reference</option>
+                        <option value="gridFeatures">Grid Features</option>
+                    </select>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+
+    <div id="content" class="setPrimary">
+        <div id="contentInner">
+            <div class="printAllContainer">
+                <a type="button" target="_blank" href="pdfs/KnowledgeBase.pdf" style="cursor:pointer; background-color:#eee; border:1px solid #ccc; padding:5px 10px; border-radius:4px; position:absolute; right: 30px; color:#1861ad;" title="Print This Section">Open as PDF</a>
+            </div>
+            <div id="intro" class="content">
+                <h2>Introduction</h2>
+                <button type="button" class="printThis" title="Print This Section"><i class="fa fa-print"></i></button>
+                <p class="contentP">
+                   The TUV SUD GRC Connect client database system is a full-featured, easy-to-use, information system that can be accessed from all the major web browsers with an internet connection.  It provides access to engineering documents, data extracts and various summary and detailed charts and reports for each of the Services provided to your company.
+                </p>
+                <p>
+                    <img src="img/introImg.jpg" />
+                </p>
+            </div>
+            <div id="accessingGRC" class="content">
+                <h2>Accessing TUV SUD GRC Connect</h2>
+                <button type="button" class="printThis" title="Print This Section"><i class="fa fa-print"></i></button>
+                <p class="contentP">
+                    From your internet web browser, go to the TUV SUD GRC web site - <a href="http://www.globalriskconsultants.com">http://www.globalriskconsultants.com</a> - then choose Client Tools and GRC Connect.   
+                    Enter a valid email address and password. Click <strong>Login</strong> to continue access into the application.&nbsp; In the case of a forgotten password, click the <strong>Forgot/Reset Password</strong> which will send the user an email to begin the password reset process. 
+                </p>
+                    <img src="img/accessGRC.jpg" style="float:left;" />
+                    <ul style="float:left;width:52%;">
+                        <li>
+                            <strong>Account</strong> Access - provides full access to all locations.
+                        </li>
+                        <li>
+                            <strong>Division/Custom Access</strong> - provides only the information within a Division/Custom designation.
+                        </li>
+                        <li>
+                            <strong>Document Library Access</strong> - provides limited visibility, functionality and access to the Document Library to access all engineering reports and diagrams, as available.
+                        </li>
+                        <li>
+                            <strong>Facility Manager Access</strong> - provides limited visibility, functionality and only access to a single location.
+                        </li>
+                    </ul>
+            </div>
+            <div id="flyoutMenu" class="content">
+                <h2>Main Menu and Tools Sub-menu</h2>
+                <button type="button" class="printThis" title="Print This Section"><i class="fa fa-print"></i></button>
+                <p class="contentP">
+                    All areas of TUV SUD GRC Connect can be accessed from this one menu along with the Tools sub-menu.
+                </p>
+                <p class="contentP">
+                    Clicking the Tools menu option opens the sub-menu.
+                </p>
+                <p>
+                    <img src="img/flyoutMenu.jpg" />
+                </p>
+            </div>
+            <div id="facilityNavigation" class="content">
+                <h2>Facility Navigation</h2>
+                <button type="button" class="printThis" title="Print This Section"><i class="fa fa-print"></i></button>
+                <p class="contentP">
+                    Facility Navigation is done on the <strong>Services</strong> page which allows the user to drill down to a specific location by Service, providing location-level detailed information for Scheduling & Property Values, linked Engineering Reports, Facility Rating (current and historical), Recommendations (all or only active), Charts & Reports and Data Extracts.
+                </p>
+                    <img src="img/facilityNav.jpg" style="float:left;padding:5px" />
+                <p id="FN2" class="contentP">
+                    <strong>Location Listing</strong> – Redirects the user to the Facility Listing grid for drilling down to a particular facility.  
+                </p>
+                <p id="FN3" class="contentP">
+                    <strong>Reports and Document Library</strong> - Redirects the user to the Reports or Document Library page with a filter for the selected service.
+                </p>
+                <p id="FN1" class="contentP">
+                    Use the <strong>Display Inactive Services</strong> to show or hide services that TUV SUD GRC provides that are not currently provided to your company.                      
+                    The <strong>Learn more...</strong> link provides a more detailed explanation for each of the services TUV SUD GRC provides.
+                </p>
+            </div>
+            <div id="dashboard" class="content">
+                <h2>Dashboard</h2>
+                <button type="button" class="printThis" title="Print This Section"><i class="fa fa-print"></i></button>
+                <p class="contentP">
+                    The Dashboard is a subset of the Program Status Summary (which can be found under "Cross-Service" on the reports page).  The Dashboard provides some high-level statistics regarding your program.
+                </p>
+                    <img src="img/dashboard.jpg" style="float:left;padding:5px" />
+            </div>
+            <div id="chartsReports" class="content">
+                <h2>Reports</h2>
+                <button type="button" class="printThis" title="Print This Section"><i class="fa fa-print"></i></button>
+                <p class="contentP">
+                    The <strong>Reports</strong> menu item provides user access to all output reports offered by individual Service provided, sorted by report name.  
+                </p>
+                <p>
+                    <img src="img/chartReports.jpg" />
+                </p>
+                <p class="contentP">
+                    Some outputs go directly to an Adobe .pdf, while other offer a Pre-Filter to narrow down the information, and others offer the flexibility to first navigate to the grid, where you can apply custom filtering and sorting, to then run the chart or report.  
+                </p>
+                <p>
+                    <img src="img/plChartReports.jpg" />
+                </p>
+            </div>
+            <div id="favorites" class="content">
+                <h2>Favorites</h2>
+                <button type="button" class="printThis" title="Print This Section"><i class="fa fa-print"></i></button>
+                <p id="favLib" class="contentP">
+                    The <strong>Favorites</strong> page contains all Favorites that the user has created.&nbsp;  
+                    It identifies the Practice and Type of Grid the Favorite was created from.&nbsp;
+                    From here you can Recall, Rename or Delete any Favorite and can extract the list for review as well.&nbsp;
+                    If you click Recall you will go to the Favorite Grid selected.
+                </p>
+                    <img style="float:left;" src="img/favorites.jpg" />
+            </div>
+            <div id="docLib" class="content">
+                <h2>Document Library</h2>
+                <button type="button" class="printThis" title="Print This Section"><i class="fa fa-print"></i></button>
+                    <p id="recentDocUpdates" class="contentP" style="float:left; margin-left:10px; width:90%;">
+                        The <strong>Document Library</strong> page is available to Risk Managers and Document Library level users .  &nbsp;
+                        It contains all engineering reports and/or diagrams that have been filed by Global Risk Consultants on your behalf.&nbsp;
+                        This was designed to provide easy access to your completed inspection reports.&nbsp;
+                        From the Document Library page you can print or save the files to your local computer.&nbsp;&nbsp;
+                        When you arrive at this page, all documents will be displayed and available to you.&nbsp;
+                        You can also choose to view only recently uploaded documents.&nbsp;
+                        To do this, select the "Show recently uploaded documents" radio button.&nbsp;
+                        Selecting this option will filter the document list to contain only documents that have been uploaded since the last time this option was selected.&nbsp;
+                        Selecting this option also resets the date associated with "recently uploaded documents" so only documents uploaded after the current time will be displayed the next time this option is chosen.
+                    </p>
+                    <img style="float:left;" src="img/libraries.jpg" />
+                    <p class="contentP" style="float:left; width:75%; margin-left:10px;">
+                        <br /><br />
+                        This feature allows you to search through any of the content contained within any engineering and/or plan review PDF documents linked to your database.
+                    </p>
+                    <p class="contentP" style="float:left; width:75%; margin-left:10px;">
+                        To find a document, enter your keyword(s) and click the <strong>Search</strong> icon.  All files containing your keyword(s) will appear in the results section, categorized by the individual TUV SUD GRC Services to aid in locating the desired files.
+                    </p>
+                    <p class="contentP" style="float:left; width:75%; margin-left:10px;">
+                        Note:  For multi-word searches, add quotations around your keywords, for example “Loss Control”.  
+                    </p>
+                    <img src="img/searchEngine.jpg" style="float:left;"/>
+            </div>
+
+
+            <div id="userTools" class="content ui-helper-clearfix">
+                <h2>Tools</h2>
+                <button type="button" class="printThis" title="Print This Section"><i class="fa fa-print"></i></button>
+                <p class="contentP">
+                    The Tools menu item allows access to a variety of system tools though not all users have access to all the tools:
+                </p>
+                <img style="float:left;" src="img/userTools.jpg" />
+                <ul style="float:left; width:52%;">
+                    <li>
+                        <strong>Batch Reports</strong> – This tool allows the user to select multiple reports to be packaged into one Adobe .pdf file.  Once the report is compiled, the user will receive an email confirmation and the report will be available for viewing in the <strong>Reports</strong> page.
+                    </li>
+                    <li>
+                        <strong>Latitude/Longitude Search</strong> – This tool provides the user a quick and simple way to view locations in proximity to any point of interest.&nbsp; See "Latitude/Longitude Search" below for more information.
+                    </li>
+                    <li>
+                        <strong>Project Management</strong> – This tool displays the projects being managed for you by Global Risk Consultants.
+                    </li>
+                    <li>
+                        <strong>My Preferences</strong> – This feature allows users to create their own custom filter or set their settings (units/currency).  Once a custom filter/setting is applied, the TUV SUD GRC Connect application will reflect those settings in all charts, reports and data extracts.
+                    </li>
+                    <li>
+                        <strong>File Cabinet</strong> – Serves as a filing cabinet to store client-specific files that have been shared with you by TUV SUD GRC associates.  These files are uploaded and maintained by your assigned GRC Account Coordinators.
+                    </li>
+                    <li>
+                        <strong>User Accounts</strong> – This tool allows the TUV SUD GRC Connect Main Contact to review and edit user records.&nbsp; This is restricted to risk management users with Account-level access.
+                    </li>
+                    <li>
+                        <strong>User Activity</strong> - This tool allows the TUV SUD GRC Connect Main Contact to review the activity of their users.
+                    </li>
+                    <li>
+                        <strong>What's New</strong> - This page includes documentation on the latest enhancements to TUV SUD GRC Connect.&nbsp; In the top right corner, you can use the What’s New topic drop-down menu selector to review current and previous enhancements.
+                    </li>
+                </ul>
+            </div>
+            <div id="batchReports" class="content">
+                <h2>Batch Reports</h2>
+                <button type="button" class="printThis" title="Print This Section"><i class="fa fa-print"></i></button>
+                <p class="contentP">
+                    The <strong>Batch Reports</strong> tool allows the user to select multiple reports, for multiple Services, then select a custom filter(s) and apply optional settings (currency/units).  The system combines all selected reports in the order selected into one batched .pdf file.  Once the report is compiled, the user will receive an email notification along with a link to log in and review the final report.   
+                </p>
+                <p>
+                    <img src="img/batchReport.jpg" />
+                </p>
+            </div>
+            <div id="latLongSearch" class="content">
+                <h2>Latitude/Longitude Location Search</h2>
+                <button type="button" class="printThis" title="Print This Section"><i class="fa fa-print"></i></button>
+                <p class="contentP">
+                    The <strong>Latitude/Longitude Location Search</strong> tool provides the user a quick and simple way to view locations in proximity to any point of interest, whether it is the 
+                    epicenter of an earthquake, point of landfall of a hurricane, etc.
+                </p>
+                <p class="contentP">
+                    By inserting latitude and longitude coordinates (a point of interest) and a range in miles, nautical miles 
+                    or kilometers, the tool will find all locations falling within that range, which can be viewed in a grid or on a map.
+                </p>
+                <p class="contentP">
+                    <img src="img/LatLongImg1.jpg" />
+                </p>
+                <p class="contentP">
+                    <img src="img/LatLongImg4.png" />
+                </p>
+                <p class="contentP">
+                    <img src="img/LatLongImg5.png" />
+                </p>
+            </div>
+            <div id="myPreferences" class="content">
+                <h2>My Preferences</h2>
+                <button type="button" class="printThis" title="Print This Section"><i class="fa fa-print"></i></button>
+                <p class="contentP">
+                    The <strong>My Preferences</strong> page can be reached in two different ways:
+                </p>
+                <img src="img/myPreferences.jpg" style="float:left;padding:5px" />
+                <p class="contentP">
+                    (1) the My Preferences menu item, and<br /> (2) the upper right-hand menu shows whether or not any preferences have been set with a link to go to the page.
+                </p>
+                <p class="contentP">
+                    This feature allows users to create their own custom filter and to set their settings (units/currency).  Once a custom filter/setting is applied, the TUV SUD GRC Connect application will reflect those settings in all charts, reports and data extracts.
+                </p>
+            </div>
+            <div id="contactUs" class="content">
+                <h2>Contact GRC</h2>
+                <button type="button" class="printThis" title="Print This Section"><i class="fa fa-print"></i></button>
+                <img style="float:left; padding-right:10px" src="img/provideFeedback.jpg" />
+                <p class="contentP" >
+                    The <strong>Contact Us</strong> menu item at the top of the page will open a page with useful information and several ways to find and contact the right person at TUV SUD Global Risk Consultants.  
+                </p>
+                <p class="contentP">
+                    This screen has a link to email the TUV SUD GRC Connect Administrators.  Clicking this link will open your email program and pre-address a new email to the administrators.  Send an email to the Administrators if you have any suggestions for the Development Team or to report any issues you may be experiencing.
+                </p>
+                <p class="contentP">
+                    The names and contact information for the TUV SUD GRC associates that are responsible for your account are also listed making it easy for you to find and contact the correct individual.  These are the people you would want to contact regarding the services provided to you by GRC. 
+                </p>
+                <p class="contentP">
+                    There is also a simple form - no need to enter any information about yourself or your contact information since we already have that - which you can use to contact an administrator for any purpose.  We will make sure these comments get routed to the correct individual at GRC. 
+                </p>
+            </div>
+            <div id="mapView" class="content">
+                <h2>Map View</h2>
+                <button type="button" class="printThis" title="Print This Section"><i class="fa fa-print"></i></button>
+                <div class="contentP ui-helper-clearfix" style="margin-bottom:10px;">
+                    <img src="img/MapViewMenu.jpg" style="float: left; margin-right: 5px;" />
+                    <p class="contentP">
+                        The <strong>Map View</strong> tool allows the user to view data in a graphical manner.  The mapping is available for a number of grids, and you can use the fly-out menus to review what is available by each service.
+                    </p>
+                    <p class="contentP">
+                        By first clicking on Map View from the Main Menu, choose a Service and then selecting a specific grid, the application will open that grid where you can then click on the Show Map button.
+                    </p>
+                    <p class="contentP">
+                        The mapping feature graphically depicts what is contained within your grid in accordance with any applied filters, in addition to having Metric Pin Filter selections accessible from the Mapping page.
+                    </p>
+                </div>
+                <div class="contentP ui-helper-clearfix" style="margin-bottom:10px;">
+                    <span class="ui-helper-clearfix" style="float:left; margin-right:5px;"><img src="img/showGridBtn.jpg" style="float:left;"/><br /><br /><img src="img/showMapBtn.jpg" style="float:left;"/></span> The <strong>Show </strong>Map icon can be found at the top left portion of the applicable grid web pages.  Once on the map page, you can click the <strong>Show Grid</strong>, which will return you to the grid where you can apply or reset any filters or exit the grid to return to the Main Menu.
+                </div>
+                <div class="contentP ui-helper-clearfix" style="margin-bottom:10px;">
+                    <img src="img/mapViewPickList.jpg" style="float: left; margin-right: 5px;" />
+                    <p class="contentP">
+                        Depending upon the type of data in the grid will depend upon which columns the data can be depicted by in the map view.
+                    </p>
+                    <p class="contentP">
+                        For any column that the mapping feature can depict, you will see a new selection at the bottom of the Picklist menu, <strong>Depict Map By</strong>.
+                    </p>
+                    <p class="contentP">
+                        Changing the Depict Map By column from the default will then represent that column's data and any color-coding for that column, if applicable.
+                    </p>
+                </div>
+                <div class="contentP ui-helper-clearfix">
+                    <img src="img/mapPins.jpg" style="float:left; margin-right:5px;" />
+                    <p class="contentP">
+                        With the exception of the inspection Status grid, the map with contain a simple round pin shape.  The map will display color-coding for depictable fields, if applicable.
+                    </p>
+                    <p class="contentP">
+                        If color-coding for a particular grid or column is not applicable, the pin will display with the color blue.  Some pins contain numeric counts.  In this case you will see the number in the center of the blue pins.
+                    </p>
+                </div>
+                <div class="contentP ui-helper-clearfix">
+                    <h2>Inspection Status</h2>
+                    <p class="contentP">
+                        The data shown in the <strong>Inspection Status</strong> grid includes a pin for ALL inspection records, in addition to any locations where there is no inspection due as part of the current program.  This grid displays a calendar
+                        style pin including color-coding to easily identify the current status of an inspection, in addition to a Service Identifier in the center of the calendar pin.
+                    </p>
+                    <p class="contentP">
+                        The color coding for the Inspection Status is as follows:<br />
+                        <img src="img/inspectionStatusColorCode.jpg" style="margin:10px 0px"/><br />
+                        Each type of inspection will contain a letter abbreviation in the center of the pin to easily identify which Service inspection is being provided.<br />
+                        <img src="img/mapViewPinLegend.jpg" style="margin-top:10px;"/>
+                    </p>
+                </div>
+                <div class="contentP ui-helper-clearfix">
+                    <img src="img/magnifyingGlass.jpg" style="float:left; margin-right:5px" />
+                    <p class="contentP">
+                        An additional feature introduced with the mapping is the Form View for each of the mapping grids.  The first column of each grid, you will find an icon of an hourglass.  Clicking the hourglass icon will open the form view for any record displaying all details for that record.  You can also open the form view by clicking on any pin in the map view. 
+                    </p>
+                    <img src="img/popUpExample.jpg" style="float:right;margin-left :5px;" />
+                    <p class="contentP">
+                        Additional features of the Form View popup are: accessing the latest engineer report, printing the relevant output report, and printing a snapshot of all that’s contained on the Form View by clicking the print icon.
+                    </p>
+                    <p class="contentP">
+                        The form contains a Bing image of the facility.  Clicking on the image will open the Bing website directly to that particular facility.  This will open in a new window where you can close at any time, returning you back to TUV SUD GRC Connect.
+                    </p>
+                </div>
+            </div>
+            <div id="alertsMenu" class="content">
+                <h2>Alerts</h2>
+                <button type="button" class="printThis" title="Print This Section"><i class="fa fa-print"></i></button>
+                <img src="img/updatesWindow.jpg" style="float:left;"/>
+                <p class="contentP" style="float:left; margin-left:10px; width:52%;">
+                    The Alerts icon will appear when new Batch Reports have completed, when new engineering reports or diagrams have been uploaded, and when an enhancement to the application has been implemented since your last login.
+                </p>
+                <p class="contentP" style="float:left; margin-left:10px; width:52%;">
+                    Click on the Alert icon to open a popup window which will display the new information.  Clicking on the links will navigate you to the application area.  Once you have reviewed all of the updates, the Alert icon will disappear.  You can also click the “X” to close the form at any time.
+                </p>
+            </div>
+            <div id="flSchedulingValues" class="content">
+                <h2>Facility Level – Scheduling & Values</h2>
+                <button type="button" class="printThis" title="Print This Section"><i class="fa fa-print"></i></button>
+                <p class="contentP">
+                    The <strong>Scheduling & Values</strong> page provides a snapshot view of the inspection status, links to current and previous engineering report and diagram in addition to the breakdown of Property Values.  
+                </p>
+                <p class="contentP">
+                    You can use the arrows to navigate from one facility to the next or use the <strong>Find</strong> function.  
+                </p>
+                <p>
+                    <img src="img/schedulingValues.jpg" />
+                </p>
+            </div>
+            <div id="flFacilityRating" class="content">
+                <h2>Facility Level – Facility Rating</h2>
+                <button type="button" class="printThis" title="Print This Section"><i class="fa fa-print"></i></button>
+                <p class="contentP">
+                    The <strong>Facility Ratings</strong> page provides the details of each current rating.  Using the arrows on the right side under the Inspection Date, provides ability to view any historical ratings for same location.  
+                </p>
+                <p>
+                    <img src="img/facilityRating.jpg" />
+                </p>
+            </div>
+            <div id="flRecommendations" class="content">
+                <h2>Facility Level - Recommendations</h2>
+                <button type="button" class="printThis" title="Print This Section"><i class="fa fa-print"></i></button>
+                <p class="contentP">
+                    The <strong>Recommendations</strong> page contains all recommendation for a particular facility that are currently still active or if they have been resolved.   You may view the recommendation in form or datasheet view.
+                </p>
+                <p>
+                    <img src="img/recommendations.jpg" />
+                </p>
+            </div>
+            <div id="flChangeService" class="content">
+                <h2>Facility Level – Change Service</h2>
+                <button type="button" class="printThis" title="Print This Section"><i class="fa fa-print"></i></button>
+                <p class="contentP">
+                    The <strong>Change Service</strong> menu allows the user to navigate from one service to the next without having to go back to the Facilities Listing grid.  Simply click the drop-down menu, choose another Service, and the page will navigate to that Service, where applicable.  
+                </p>
+                <p>
+                    <img src="img/changeService.jpg" />
+                </p>
+            </div>
+
+            <div id="facilitySum" class="content">
+                <h2>Facility Level - Facility Summary</h2>
+                <button type="button" class="printThis" title="Print This Section"><i class="fa fa-print"></i></button>
+                <p class="contentP">
+                    The <strong>Facility Summary</strong> grid and map view allows the user to review the facility-level information in data and graphical views.
+                </p>
+                <p class="contentP">
+                    By clicking on <strong>Map View > All Services > Facility Summary</strong> from the main menu, the application will open the new grid containing facility summary information for various data points
+                    across multiple services.
+                </p>
+                <p class="contentP">
+                    <strong>Inspection Summary</strong> provides a snapshot view of current inspection activity along with links to the latest inspection engineering report for each Service; <strong>Recommendation Summary</strong> for High, Moderate and Low impact counts, including current recommendation response status for each applicable Service; <strong>Facility Rating</strong> section displays overall ratings; <strong>Natural Hazard Summary</strong> displays rating for Seismic, Flood and Wind: <strong>Impairment Summary</strong> displays breakout of impairment history, along with <strong>Jurisdictional</strong> details.
+                </p>
+                <p class="contentP">
+                    <img src="img/facilitySummaryIMG1.png" />
+                </p>
+                <p class="contentP ui-helper-clearfix">
+                    <img src="img/facilitySummaryIMG2.png" style="float:left; margin-right:5px;"/>
+                    The Facility Summary grid is defaulted to depict the map view by the Fire Overall Rating, but this can be changed to any column that you see the <strong>Depict Map By</strong> checkbox at the bottom of the picklist menu.
+                </p>
+            </div>
+            <div id="pl_quickReference" class="content">
+                <h2>Program Level - Quick Reference</h2>
+                <button type="button" class="printThis" title="Print This Section"><i class="fa fa-print"></i></button>
+                <p class="contentP">
+                    The <strong>Quick Reference</strong> menu provides access to program-wide summary output reports.  The grids provide some simple mining capabilities with sorting, custom filters in addition to the simple Picklist menu option. Some outputs go directly to an Adobe .pdf, while other offer a Pre-Filter to narrow down the information, and others offer the flexibility to first navigate to the grid, where you can apply custom filtering and sorting, to then run the chart or report.
+                </p>
+                <p>
+                    <img src="img/plQuickReference.jpg" />
+                </p>
+            </div>
+            <div id="gridFeatures" class="content">
+                <h2>Grid Features</h2>
+                <button type="button" class="printThis" title="Print This Section"><i class="fa fa-print"></i></button>
+                <p class="contentP">
+                    Each of the data grids contains each of the same features and flexibility.
+                </p>
+                <img src="img/gridFeatureImg.jpg" style="float:left;" />
+                <p class="contentP" style="float:left; margin-left:10px; width:52%;">
+                    <strong>Sort:</strong> Select checkbox to apply sort by that column in ascending or descending order.
+                </p>
+                <p class="contentP" style="float:left; margin-left:10px; width:52%;">
+                    <strong>Filters:</strong> From this menu you may apply custom filters by choosing the value and the selecting the criteria.
+                </p>
+                <p class="contentP" style="float:left; margin-left:10px; width:52%;">
+                    <strong>Pin:</strong> Clicking on Pin will freeze this column to the left side. 
+                </p>
+                <p class="contentP" style="float:left; margin-left:10px; width:52%;">
+                    <strong>Pick List:</strong>  This feature provides a dynamic selecting of items applicable within the particular column you have selected, where you can then select one or multiple options.  Click the checkbox for each item you would like included or deselect the items you want excluded.  The selections at the bottom allow you to Check All, Uncheck All or Revert All.
+                </p>
+                <p class="contentP" style="float:left; margin-left:10px; width:52%;">
+                    <strong>Move to First</strong> – Clicking here will move the selected column to the first position.  
+                </p>
+                <p class="contentP" style="float:left; margin-left:10px; width:52%;">
+                    <strong>Move to Last</strong> – Clicking here will move the selected column to the last position.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

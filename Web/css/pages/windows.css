@@ -1,0 +1,578 @@
+﻿/****************************************
+**** STYLES FOR KENDO WINDOW PARTS ******
+****************************************/
+
+/* GLOBAL FOR ALL WINDOWS */
+.windowIcon
+{
+    width:18px;
+    height:18px;
+    border:0;
+    padding-right:10px;
+}
+.windowImage
+{
+    border: 0;
+    width: 32px;
+    height: 32px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+.windowImageSmallPadding
+{
+    border: 0;
+    width: 32px;
+    height: 32px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+}
+.windowContent
+{
+    padding: 15px !important;
+    display: none;
+}
+.windowSection
+{
+    background-color: #FFFFFF;
+    border: 1px solid #8a8a8a;
+    padding: 6px;
+    width: 100%;
+}
+.windowSubHeading
+{
+    width: 100%;
+    padding: 7px;
+    margin: 0;
+    background-color: #2A2A2A;
+	color: #C6D1DE; 
+ 	background-image: url('../../Home_{{VER}}/Images/banners/topbanner_blankarea_small.png'); 
+	background-position: top left;
+	background-repeat: repeat-x;
+	border-top: 0;
+	border-right: 0;
+	border-left: 0;
+	font-weight: bold;
+}
+.windowSuperScript
+{
+    font-size: 10pt;
+    font-style: italic;
+    color: Red;
+    padding-bottom: 4px;
+}
+
+/* SPECIFIC WINDOWS */
+
+/* ADMIN */
+.windowAdminTabStripContent
+{
+    height: 405px;
+    overflow: hidden;
+}
+.windowAdminContentScroll
+{
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.windowAdminCheckboxCell
+{
+    height: 20px;
+    width: 175px;
+    float: left;
+    font-size:13px;
+}
+.windowAdminCheckboxCell input
+{
+    vertical-align: middle;
+}
+.windowAdminImportMessage
+{
+    height: 160px;
+    width: 100%;
+}
+.windowFilterLabel
+{
+    float: left;
+    height: 30px;
+}
+.windowFilterInput
+{
+    float: right;
+}
+.filterWidth
+{
+    width: 200px;
+}
+.filterWidthSettings
+{
+    width: 150px;
+}
+#gridUsers .k-header,
+#gridPlanProject .k-header{
+    color:#fff;
+}
+
+#gridUsers .k-header .k-i-filter::before,
+#gridPlanProject .k-header .k-i-filter::before {
+    content:"\f0d7";
+    color:#fff;
+    font-family:fontAwesome;
+}
+
+#divUserActivity_UserDetail .k-i-arrow-60-down::before {
+    content:"\f0d7";
+    color:#000;
+    font-family:fontAwesome;
+}
+
+.k-list-scroller {
+    background:#eee;
+}
+
+.k-filter-menu{
+    background:#eee;
+}
+
+.k-tabstrip .k-state-default {
+    background:#E0ECEC;
+}
+
+.k-tabstrip .k-state-active {
+    background-color: #FFFFFF;
+    color: #000000;
+    border-bottom: 1px solid white;
+    border-collapse: collapse;
+}
+
+.adminFormRow {
+    display:flex;
+    width:100%;
+    height:18px;
+    align-items:center;
+    margin-bottom:5px;
+}
+
+.adminFormLbl {
+    display:flex;
+    flex-basis:115px;
+    align-items:center;
+}
+
+.adminBtnHldr {
+    display:flex;
+    width:675px;
+    align-items:center;
+}
+
+.editRequired {
+    background:#FFFF99 !important;
+}
+
+#PracticeType .k-i-arrow-60-down::before {
+    color:#000;
+    content: "\f0d7";
+    font-family: fontAwesome;
+}
+
+.k-i-calendar::before {
+    color:#000;
+    content: "\f073";
+    font-family: fontAwesome;
+}
+
+.k-calendar {
+    background:#eee;
+}
+
+/*****************************
+******************************
+*** COMMENTS WINDOWS
+*****************************/
+.windowComments_Instructions
+{
+    background-color: #444444; 
+    color: White; 
+    padding: 8px; 
+    width: 703px;
+}
+.windowComments_TextArea
+{
+    width: 700px; 
+    height: 165px; 
+    padding: 8px;
+    color: #000000;
+    font-family: Verdana;
+    font-size: 9pt;
+}
+.windowComments_FullName
+{
+    color: #c2d6ed;
+    font-size: 9pt;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.watermark_TextArea
+{
+    width: 700px; 
+    height: 165px; 
+    padding: 8px;
+    color: #c2d6ed;
+    font-family: Verdana;
+    font-size: 14pt;
+}
+
+/*****************************
+******************************
+*** PLEASE WAIT WINDOW
+*****************************/
+.windowPleaseWait_Body
+{
+    width: auto;
+   /* background-color: #f6f6f6;*/
+   background:#eee;
+}
+.windowPleaseWait
+{
+    /*border: 1px solid #AAAAAA;*/
+    /*height:175px;*/
+    /*width: 300px;*/
+    padding-top: 3px;
+    /*position:relative;*/
+    /*font-family:Arial;*/
+    /*font-size:14pt;*/
+    /*font-weight:bold;*/
+    /*background-color:#fff;*/
+    /*text-align:center;*/
+    /*vertical-align:middle;*/
+}
+.windowPleaseWait_PopupShadowBorder
+{
+    box-shadow: 2px 2px 8px #444444;
+	-moz-box-shadow: 2px 2px 8px #444444;
+	-webkit-box-shadow: 2px 2px 8px #444444;
+}
+.windowPleaseWait_Content
+{
+    padding: 15px !important;
+    background:#eee !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 347px;
+    width: 100%;
+}
+.windowPleaseWait_TitleBar
+{
+    padding-left: 15px;
+    padding-right: 3px;
+    padding-top: 0px;
+    padding-bottom: 6px;
+}
+.windowPleaseWait_TitleBarBorder
+{
+    margin-left: -1px;
+    position: relative;
+    border-collapse: collapse;
+    border-top: 1px solid #222222;
+    border-right: 1px solid #222222;
+    border-left: 1px solid #222222;
+}
+.windowPleaseWait_Background
+{
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+
+/*****************************
+******************************
+*** ERROR WINDOW
+*****************************/
+.windowError
+{
+	width: 300px;
+    height: 200px;
+    background-color: #f6f6f6;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto; 
+    padding: 12px;
+    border: 1px solid #000000;
+}
+
+
+
+/*****************************
+******************************
+*** ADMIN WINDOW
+*****************************/
+.adminWindow_Right
+{
+    text-align: right;
+    padding-right: 5px;
+}
+.adminWindow_Center
+{
+    text-align: center;
+}
+.adminWindow_UserTopLabel
+{
+    width: 29px; /*49*/
+    padding-right: 8px;
+    padding-left: 12px;
+    height: 30px !important;
+    text-align: center;
+    white-space: normal;
+    line-height: 16px !important;
+}
+.adminWindow_CheckBoxGridLeft
+{
+    text-align: center;
+    padding-left: 16px;
+    padding-top: 4px;
+    border-left: 1px dotted #CCCCCC;
+    border-top: 1px dotted #CCCCCC;
+    border-collapse: collapse;
+}
+.adminWindow_CheckBoxGridEnd
+{
+    text-align: center;
+    padding-left: 16px;
+    padding-top: 4px;
+    border-left: 1px dotted #CCCCCC;
+    border-top: 1px dotted #CCCCCC;
+    border-right: 1px dotted #CCCCCC;
+    border-collapse: collapse;
+}
+.adminWindow_CheckBoxGridBottom
+{
+    text-align: center;
+    padding-left: 16px;
+    padding-top: 4px;
+    border-left: 1px dotted #CCCCCC;
+    border-top: 1px dotted #CCCCCC;
+    border-bottom: 1px dotted #CCCCCC;
+    border-collapse: collapse;
+}
+.adminWindow_CheckBoxGridAlt
+{
+    background-color: #f0f0f0;
+}
+.adminWindow_Column1
+{
+    width: 135px;
+}
+.adminWindow_Column2
+{
+    width: 225px;
+}
+.adminWindow_Column3
+{
+    width: 125px;
+}
+.adminWindow_Column4
+{
+    width: 500px;
+}
+.adminWindow_Column5
+{
+    width: 100px;
+}
+.adminWindow_Column6
+{
+    width: 245px;
+}
+.adminWindow_Column7
+{
+    width: 115px;
+}
+.adminWindow_Column8
+{
+    width: 100px;
+    padding-top: 4px;
+}
+.adminWindow_Column9
+{
+    width: 335px;
+}
+.adminWindow_Column10
+{
+    width: 400px;
+}
+.adminWindow_Column11
+{
+    width: 375px;
+}
+.adminWindow_Column12
+{
+    width: 75px;
+}
+.adminWindow_Column13
+{
+    width: 50px;
+}
+.adminWindow_Inputs0
+{
+    width: 44px;
+    padding-left: 4px;
+}
+.adminWindow_Inputs1
+{
+    width: 150px;
+}
+.adminWindow_Inputs2
+{
+    width: 500px;
+}
+.adminWindow_Inputs3
+{
+    width: 225px;
+}
+.adminWindow_Inputs4
+{
+    width: 245px;
+}
+.adminWindow_Inputs5
+{
+    width: 335px;
+}
+.adminWindow_Inputs6
+{
+    width: 135px;
+}
+.adminWindow_Inputs7
+{
+    width: 475px;
+}
+.adminWindow_Inputs8
+{
+    width: 375px;
+}
+.adminWindow_Inputs12
+{
+    width: 75px;
+}
+.k-widget .k-dropdown-wrap, .k-widget .k-picker-wrap, .k-widget .k-numeric-wrap, .k-autocomplete.k-header, .k-autocomplete.k-state-focused, div.k-dropdown-wrap.k-state-active, .k-dropdown-wrap.k-state-focused, .k-dropdown-wrap.k-state-focused:hover, div.k-picker-wrap.k-state-active, .k-picker-wrap.k-state-focused, .k-picker-wrap.k-state-focused:hover, span.k-numeric-wrap.k-state-active, .k-numeric-wrap.k-state-focused, .k-numeric-wrap.k-state-focused:hover
+{
+    background-color: #FFFFFF;
+}
+.adminWindow_Button0
+{
+    width: 210px;
+}
+.adminWindow_Button1
+{
+    width: 210px;
+}
+.adminWindow_Button1
+{
+    width: 210px;
+}
+.adminWindow_Button2
+{
+    width: 75px;
+}
+.adminWindow_Button3
+{
+    width: 100px;
+}
+.adminWindow_Button4 
+{
+    width: 115px;
+    height: 20px;
+    line-height: normal;
+    margin-left: 10px;
+}
+.adminWindow_ButtonSpacer
+{
+    margin-left: 35px;
+}
+.adminWindow_ButtonSpacer2
+{
+    margin-left: 100px !important;
+}
+.adminWindow_SubTitle
+{
+    font-size: 14pt;
+    color: #1A1A1A;
+}
+
+/************************/
+/* BRAND NEW AS OF 2015 */
+/************************/
+
+#divUserActivity_UserGrid .k-grid-content,
+#gridContainerPlanProject .k-grid-content{
+    height: 302px;
+    min-height: 302px;
+}
+#divUserActivity_UserGrid .k-grid td {
+    line-height: inherit;
+}
+
+
+/*#Admin_PlanProject_Received .k-icon.k-i-calendar {
+}*/
+
+
+
+/************************/
+/* SAVE FAVORITE WINDOW */
+/************************/
+.windowFavorite {
+    margin: 0;
+    padding: 0;
+}
+
+.windowFavoriteHeader {
+    background-color: #000000;
+    color: red;
+    margin: 0;
+    padding: 6px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.windowFavoriteList {
+    background-color: #FFFFFF;
+    min-height: 150px;
+    margin: 0;
+    padding: 0px;
+}
+
+.windowFavoriteListItem {
+    border-bottom: 1px solid #808080;
+    margin: 0;
+    padding: 4px;
+    overflow: hidden;
+}
+
+.windowFavoriteFooter {
+    background-color: #E6E6E6;
+    min-height: 32px;
+    margin: 0;
+    padding: 6px;
+}
+
+
+/************************/
+/* UPDATES WINDOW       */
+/************************/
+.updatesWindowLeft {
+    float: left;
+    width: 12%;
+    text-align: left;
+}
+
+.updatesWindowRight {
+    float: left;
+    width: 88%;
+    text-align: left;
+    white-space: pre-wrap;
+}

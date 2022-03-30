@@ -1,0 +1,188 @@
+﻿<!-- FOR KENDO GRID ROW DETAIL TEMPLATES -->
+<!-- CELL DATA REPLACERS USE #= NameOfField # -->
+<!-- AVOID USING # AS A CHARACTER IN THE TEMPLATE -->
+<!-- IF USING A CLASS LOOKUP TO THE GRID, MAKE SURE THAT CLASS IS IN THE COLUMN TEMPLATE -->
+<!-- SCRIPTS INCLUDED HERE GET RUN EVERY TIME THE DETAIL POPUP IS OPENED -->
+<!-- WHEN COPIED TO THE DATABASE, THE HTML AND JS MUST BE ALL IN ONE LINE -->
+<!-- DO NOT USE DOUBLE QUOTES IN JS OR HTML -->
+<!-- DO NOT USE COMMENTS IN JS, ALL ONE LINE COMMENTS WILL NOT RUN CODE -->
+
+<!-- FormViewNameOfGrid LAYOUT -->
+<div id='divDetailForm_#= uid #' class='divDetailForm'>
+    
+    <div class='LDHead'>
+        Location Detail</div>
+    <!--Row 1-->
+    <div class='LDInfo'>
+        <div>
+            <span id='lblFileNo'>File No.</span>
+            <input id='fileno' readonly='readonly' type='text' value='#= fileno #' />
+            <span id='lblClientLocID'>Client Loc. ID</span>
+            <input id='clientlocno' readonly='readonly' type='text' value='#= clientlocno #' />
+        </div>
+        <!--Row 2-->
+        <div>
+            <span id='lblAddress'>Address</span>
+            <input id='address' readonly='readonly' type='text' value='#= address #' />
+            <span id='lblCity'>City</span>
+            <input id='city' readonly='readonly' type='text' value='#= city #' />
+            <span id='lblStProv'>St/Prov</span>
+            <input id='stprov' readonly='readonly' type='text' value='#= stprov #' />
+            <span id='lblCountry'>Country</span>
+            <input id='country' readonly='readonly' type='text' value='#= country #' />
+        </div>
+        <!--Row 3-->
+        <div>
+            <span id='lblDivision'>Division</span>
+            <input id='division' readonly='readonly' type='text' value='#= division #' />
+            <span id='lblFacility'>Facility</span>
+            <input id='facility' readonly='readonly' type='text' value='#= facility #' />
+        </div>
+    </div>
+    <div class='FVTIV'>
+        <div id='lblTIV'>TIV</div>
+        <div>(millions)</div>
+        <div>
+            <input id='TIV' readonly='readonly' type='text' value='#= TIV #' />
+        </div>
+    </div>
+    <div class='FVTIV'>
+        <div>Date Of</div>
+        <div>Inspection</div>
+        <div>
+            <input id='SurveyDateString' readonly='readonly' type='text' value='#= SurveyDateString #' />
+        </div>
+    </div>
+    <div class='FVTable'>
+        <table cellspacing='0' cellpadding='2'>
+            <tr class='th'>
+                <td colspan='11' class='b'>
+                    General
+                </td>
+            </tr>
+            <tr class='tch'>
+                <td class='rb'>
+                    Prior Flood<br />
+                    Loss History
+                </td>
+                <td class='rb'>
+                    Flood<br />
+                    Zone
+                </td>
+                <td class='rb'>
+                    Site Grade<br />
+                    Elevation
+                </td>
+                <td class='rb'>
+                    First Floor/Water<br />
+                    Entry Elevation
+                </td>
+                <td class='rb'>
+                    Below Grade<br />
+                    Depth
+                </td>
+                <td class='rb'>
+                    100 Yr. Flood<br />
+                    Elevation
+                </td>
+                <td class='rb'>
+                    500 Yr. Flood<br />
+                    Elevation
+                </td>
+                <td class='rb'>
+                    100 Yr. Inundation<br />
+                    Depth
+                </td>
+                <td class='rb'>
+                    500 Yr. Inundation<br />
+                    Depth
+                </td>
+                <td class='rb'>
+                    Distance<br />
+                    to Coast
+                </td>
+                <td class='b'>
+                    Storm Surge<br />
+                    Elevation
+                </td>
+            </tr>
+            <tr class='tch'>
+                <td class='r'>
+                    <input style='width: 50px' id='flosses' readonly='readonly' type='text' value='#= flosses #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 100px' id='floodzone' readonly='readonly' type='text' value='#= floodzone #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 50px' id='sitegradeelevation' readonly='readonly' type='text' value='#= sitegradeelevation #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 50px' id='firstfloorwaterentryelev' readonly='readonly' type='text' value='#= firstfloorwaterentryelev #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 50px' id='belowgradedepth' readonly='readonly' type='text' value='#= belowgradedepth #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 50px' id='onehundredyrfloodelev' readonly='readonly' type='text' value='#= onehundredyrfloodelev #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 50px' id='fivehundredyrfloodelev' readonly='readonly' type='text' value='#= fivehundredyrfloodelev #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 50px' id='onehundredyrdepth' readonly='readonly' type='text' value='#= onehundredyrdepth #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 50px' id='fivehundredyrdepth' readonly='readonly' type='text' value='#= fivehundredyrdepth #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 50px' id='distancetocoast' readonly='readonly' type='text' value='#= distancetocoast #' />
+                </td>
+                <td>
+                    <input style='width: 50px' id='stormsurge' readonly='readonly' type='text' value='#= stormsurge #' />
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <br />
+
+    <div class='tableDiv'>
+        <div style='margin: auto; width: 100%; text-align: center;'>
+            <span style='margin: auto; width: 100%; text-align: center;'><button class='k-button' onclick='globalCloseFormView(); return false;'>Close</button></span>
+        </div>
+    </div>
+</div>
+<script>
+    /*LOAD THE CSS*/
+    var zLink = "<link rel='stylesheet' type='text/css' href='../../../css/FormView/FormView.css'>";
+    $(zLink).appendTo('head');
+
+    setTimeout(function () {
+        var zUID = '#= uid #';
+
+        /* COLOR REPLACEMENTS REMIX*/
+        var colorItems = [
+			'flosses'
+        ];
+        for (i = 0; i < colorItems.length; i++){
+            var zColor = 'transparent';
+            zColor = $('[data-uid=' + zUID + '] .' + colorItems[i] + 'Color').css('background-color');
+            $('\\#divDetailForm_' + zUID + ' \\#' + colorItems[i] + '').css('background-color', zColor);
+        }
+
+        /* FORMAT DATES GLOBAL REMIX */
+        $('\\#divDetailForm_' + zUID + ' input').each(function(){
+            if( $(this).attr('id').toLowerCase().indexOf('date') > -1 ){
+                $(this).val(global.formatShortDateWithMonth($(this).val()));
+            }
+        });
+
+        /* REMOVE NULLS GLOBAL REMIX */
+        $('\\#divDetailForm_' + zUID + ' input').each(function(){
+            if( ($(this).val() == 'null') || ($(this).val() == 'undefined') ){
+                $(this).val('');
+            }
+        });
+
+    }, 50);
+</script>

@@ -1,0 +1,18 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colFldID":1, 
+	"colFldAdminXLSheetID":1, 
+	"colFldDataMember":"fldDataMember", 
+	"colFdlHyperLinkMember":"fdlHyperLinkMember", 
+	"colFldHeaderText":"fldHeaderText", 
+	"colFldColumnPosition":1, 
+	"colFldInclude":null
+}]

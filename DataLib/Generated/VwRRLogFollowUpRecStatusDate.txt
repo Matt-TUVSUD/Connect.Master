@@ -1,0 +1,15 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: VwRRLogFollowUpRecStatusDate --> [vwRRLogFollowUpRecStatusDate]
+
+  colFileNo --> [FileNo] nvarchar(255) null
+  colStatusDate --> [StatusDate] datetime null
+  colPracticeCode --> [PracticeCode] smallint not null
+

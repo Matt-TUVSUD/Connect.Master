@@ -1,0 +1,413 @@
+﻿<!-- FOR KENDO GRID ROW DETAIL TEMPLATES -->
+<!-- CELL DATA REPLACERS USE #= NameOfField # -->
+<!-- AVOID USING # AS A CHARACTER IN THE TEMPLATE -->
+<!-- IF USING A CLASS LOOKUP TO THE GRID, MAKE SURE THAT CLASS IS IN THE COLUMN TEMPLATE -->
+<!-- SCRIPTS INCLUDED HERE GET RUN EVERY TIME THE DETAIL POPUP IS OPENED -->
+<!-- WHEN COPIED TO THE DATABASE, THE HTML AND JS MUST BE ALL IN ONE LINE -->
+<!-- DO NOT USE DOUBLE QUOTES IN JS OR HTML -->
+<!-- DO NOT USE COMMENTS IN JS, ALL ONE LINE COMMENTS WILL NOT RUN CODE -->
+
+<!-- FormViewNameOfGrid LAYOUT -->
+<div id='divDetailForm_#= uid #' class='divDetailForm'>
+    
+    <div class='LDHead'>
+        Location Detail</div>
+    <!--Row 1-->
+    <div class='LDInfo'>
+        <div>
+            <span id='lblFileNo'>File No.</span>
+            <input id='fileno' readonly='readonly' type='text' value='#= fileno #' />
+            <span id='lblClientLocID'>Client Loc. ID</span>
+            <input id='clientlocno' readonly='readonly' type='text' value='#= clientlocno #' />
+        </div>
+        <!--Row 2-->
+        <div>
+            <span id='lblAddress'>Address</span>
+            <input id='address' readonly='readonly' type='text' value='#= address #' />
+            <span id='lblCity'>City</span>
+            <input id='city' readonly='readonly' type='text' value='#= city #' />
+            <span id='lblStProv'>St/Prov</span>
+            <input id='stprov' readonly='readonly' type='text' value='#= stprov #' />
+            <span id='lblCountry'>Country</span>
+            <input id='country' readonly='readonly' type='text' value='#= country #' />
+        </div>
+        <!--Row 3-->
+        <div>
+            <span id='lblDivision'>Division</span>
+            <input id='division' readonly='readonly' type='text' value='#= division #' />
+            <span id='lblFacility'>Facility</span>
+            <input id='facility' readonly='readonly' type='text' value='#= facility #' />
+        </div>
+    </div>
+    <div class='FVTIV'>
+        <div id='lblTIV'>TIV</div>
+        <div>(millions)</div>
+        <div>
+            <input id='TIV' readonly='readonly' type='text' value='#= Tiv #' />
+        </div>
+    </div>
+    <div class='FVTIV'>
+        <div>Date Of</div>
+        <div>Inspection</div>
+        <div>
+            <input id='InspectionDateString' readonly='readonly' type='text' value='#= InspectionDateString #' />
+        </div>
+    </div>
+    <div class='FVTable'>
+        <table id='StandardFormView' cellspacing='0' cellpadding='2'>
+            <tr class='th'>
+                <td colspan='4' class='rb'>
+                    Loss Estimates
+                </td>
+                <td colspan='7' class='rb'>
+                    Passive
+                </td>
+                <td colspan='5' class='rb'>
+                    Active
+                </td>
+                <td colspan='4' class='b'>
+                    Overall Score
+                </td>
+            </tr>
+            <tr class='tch'>
+                <td colspan='2' class='rb'>
+                    Current
+                </td>
+                <td colspan='2' class='hrb'>
+                    w/Recs Completed
+                </td>
+                <td rowspan='2' class='rb'>
+                    FL
+                </td>
+                <td rowspan='2' class='rb'>
+                    EQ
+                </td>
+                <td rowspan='2' class='rb'>
+                    WD
+                </td>
+                <td rowspan='2' class='rb'>
+                    Con.
+                </td>
+                <td rowspan='2' class='rb'>
+                    Occ.
+                </td>
+                <td rowspan='2' class='rb'>
+                    Oth.
+                </td>
+                <td rowspan='2' class='hrb'>
+                    Total Passive
+                </td>
+                <td rowspan='2' class='rb'>
+                    PP
+                </td>
+                <td rowspan='2' class='rb'>
+                    HE
+                </td>
+                <td rowspan='2' class='rb'>
+                    NAT
+                </td>
+                <td rowspan='2' class='rb'>
+                    BCP
+                </td>
+                <td rowspan='2' class='hrb'>
+                    Total Active
+                </td>
+                <td colspan='2' class='rb'>
+                    Current
+                </td>
+                <td colspan='2' class='b'>
+                    w/Recs Completed
+                </td>
+            </tr>
+            <tr class='tch'>
+                <td id='APLCurrent' class='rb'>
+                    APL USD
+                </td>
+                <td class='rb'>
+                    Factor
+                </td>
+                <td id='APLComplete' class='rb'>
+                    APL USD
+                </td>
+                <td class='hrb'>
+                    Factor
+                </td>
+                <td class='rb'>
+                    Score
+                </td>
+                <td class='rb'>
+                    Rating
+                </td>
+                <td class='rb'>
+                    Score
+                </td>
+                <td class='b'>
+                    Rating
+                </td>
+            </tr>
+            <tr>
+                <td class='r'>
+                    <input class='center-7pt' style='width: 75px;' id='APL' readonly='readonly' type='text' value='#= Apl #' />
+                </td>
+                <td class='r'>
+                    <input class='center-7pt' style='width: 25px' id='aplfactor' readonly='readonly' type='text' value='#= aplfactor #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 75px;' id='aplwithallrecscomplete' readonly='readonly' type='text' value='#= aplwithallrecscomplete #' />
+                </td>
+                <td class='hr'>
+                    <input style='width: 25px' id='aplfactorwithallrecscomplete' readonly='readonly' type='text' value='#= aplfactorwithallrecscomplete #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 25px' id='floodrating' readonly='readonly' type='text' value='#= floodrating #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 25px' id='earthquakerating' readonly='readonly' type='text' value='#= earthquakerating #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 25px' id='windstormrating' readonly='readonly' type='text' value='#= windstormrating #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 25px' id='constructionrating' readonly='readonly' type='text' value='#= constructionrating #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 25px' id='occupancyrating' readonly='readonly' type='text' value='#= occupancyrating #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 25px' id='otherrating' readonly='readonly' type='text' value='#= otherrating #' />
+                </td>
+                <td class='hr'>
+                    <input style='width: 53px' id='passivescore' readonly='readonly' type='text' value='#= passivescore #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 25px' id='physicalprotectionrating' readonly='readonly' type='text' value='#= physicalprotectionrating #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 25px' id='humanelementrating' readonly='readonly' type='text' value='#= humanelementrating #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 25px' id='naturalhazardsprotectionrating' readonly='readonly' type='text' value='#= naturalhazardsprotectionrating #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 25px' id='businesscontinuityrating' readonly='readonly' type='text' value='#= businesscontinuityrating #' />
+                </td>
+                <td class='hr'>
+                    <input style='width: 53px' id='activescore' readonly='readonly' type='text' value='#= activescore #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 45px' id='totalscore' readonly='readonly' type='text' value='#= totalscore #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 70px' id='overallplantrating' readonly='readonly' type='text' value='#= overallplantrating #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 45px' id='overallscorewithrecscomplete' readonly='readonly' type='text' value='#= overallscorewithrecscomplete #' />
+                </td>
+                <td>
+                    <input style='width: 70px' id='overallplantratingwithrecscomplete' readonly='readonly' type='text' value='#= overallplantratingwithrecscomplete #' />
+                </td>
+            </tr>
+        </table>
+        <table id='NoAPLFormView' cellspacing='0' cellpadding='2'>
+            <tr class='th'>
+                <td colspan='7' class='rb'>
+                    Passive
+                </td>
+                <td colspan='5' class='rb'>
+                    Active
+                </td>
+                <td colspan='4' class='b'>
+                    Overall Score
+                </td>
+            </tr>
+            <tr class='tch'>
+                <td rowspan='2' class='rb'>
+                    FL
+                </td>
+                <td rowspan='2' class='rb'>
+                    EQ
+                </td>
+                <td rowspan='2' class='rb'>
+                    WD
+                </td>
+                <td rowspan='2' class='rb'>
+                    Con.
+                </td>
+                <td rowspan='2' class='rb'>
+                    Occ.
+                </td>
+                <td rowspan='2' class='rb'>
+                    Oth.
+                </td>
+                <td rowspan='2' class='hrb'>
+                    Total Passive
+                </td>
+                <td rowspan='2' class='rb'>
+                    PP
+                </td>
+                <td rowspan='2' class='rb'>
+                    HE
+                </td>
+                <td rowspan='2' class='rb'>
+                    NAT
+                </td>
+                <td rowspan='2' class='rb'>
+                    BCP
+                </td>
+                <td rowspan='2' class='hrb'>
+                    Total Active
+                </td>
+                <td colspan='2' class='rb'>
+                    Current
+                </td>
+                <td colspan='2' class='b'>
+                    w/Recs Completed
+                </td>
+            </tr>
+            <tr class='tch'>
+                <td class='rb'>
+                    Score
+                </td>
+                <td class='rb'>
+                    Rating
+                </td>
+                <td class='rb'>
+                    Score
+                </td>
+                <td class='b'>
+                    Rating
+                </td>
+            </tr>
+            <tr>
+                <td class='r'>
+                    <input style='width: 25px' id='NoAPL-floodrating' readonly='readonly' type='text' value='#= floodrating #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 25px' id='NoAPL-earthquakerating' readonly='readonly' type='text' value='#= earthquakerating #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 25px' id='NoAPL-windstormrating' readonly='readonly' type='text' value='#= windstormrating #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 25px' id='NoAPL-constructionrating' readonly='readonly' type='text' value='#= constructionrating #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 25px' id='NoAPL-occupancyrating' readonly='readonly' type='text' value='#= occupancyrating #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 25px' id='NoAPL-otherrating' readonly='readonly' type='text' value='#= otherrating #' />
+                </td>
+                <td class='hr'>
+                    <input style='width: 53px' id='NoAPL-passivescore' readonly='readonly' type='text' value='#= passivescore #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 25px' id='NoAPL-physicalprotectionrating' readonly='readonly' type='text' value='#= physicalprotectionrating #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 25px' id='NoAPL-humanelementrating' readonly='readonly' type='text' value='#= humanelementrating #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 25px' id='NoAPL-naturalhazardsprotectionrating' readonly='readonly' type='text' value='#= naturalhazardsprotectionrating #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 25px' id='NoAPL-businesscontinuityrating' readonly='readonly' type='text' value='#= businesscontinuityrating #' />
+                </td>
+                <td class='hr'>
+                    <input style='width: 53px' id='NoAPL-activescore' readonly='readonly' type='text' value='#= activescore #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 45px' id='NoAPL-totalscore' readonly='readonly' type='text' value='#= totalscore #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 70px' id='NoAPL-overallplantrating' readonly='readonly' type='text' value='#= overallplantrating #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 45px' id='NoAPL-overallscorewithrecscomplete' readonly='readonly' type='text' value='#= overallscorewithrecscomplete #' />
+                </td>
+                <td>
+                    <input style='width: 70px' id='NoAPL-overallplantratingwithrecscomplete' readonly='readonly' type='text' value='#= overallplantratingwithrecscomplete #' />
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <br />
+
+    <div class='tableDiv'>
+        <div style='margin: auto; width: 100%; text-align: center;'>
+            <span style='margin: auto; width: 100%; text-align: center;'><button class='k-button' onclick='globalCloseFormView(); return false;'>Close</button></span>
+        </div>
+    </div>
+</div>
+<script>
+    /*LOAD THE CSS*/
+    var zLink = "<link rel='stylesheet' type='text/css' href='../../../css/FormView/FormView.css'>";
+    $(zLink).appendTo('head');
+
+    setTimeout(function () {
+
+        /*PROCESS SPECIAL FEATURES*/
+        /*THIS IS AN EXAMPLE OF LE FIELDS*/
+        if (globalClientFeatures.toLowerCase().indexOf('a') > -1) {
+            $('\\#NoAPLFormView').show(1);
+            $('\\#StandardFormView').hide(1);
+        } else {
+            $('\\#NoAPLFormView').hide(1);
+            $('\\#StandardFormView').show(1);
+        }
+
+        var zUID = '#= uid #';
+
+        /* COLOR REPLACEMENTS */
+        var colorItems = [
+            'floodrating',
+            'earthquakerating',
+            'windstormrating',
+            'constructionrating',
+            'occupancyrating',
+            'otherrating',
+            'physicalprotectionrating',
+            'humanelementrating',
+            'naturalhazardsprotectionrating',
+            'businesscontinuityrating',
+            'totalscore',
+            'overallplantrating',
+            'overallscorewithrecscomplete',
+            'overallplantratingwithrecscomplete',
+            'NoAPL-floodrating',
+            'NoAPL-earthquakerating',
+            'NoAPL-windstormrating',
+            'NoAPL-constructionrating',
+            'NoAPL-occupancyrating',
+            'NoAPL-otherrating',
+            'NoAPL-physicalprotectionrating',
+            'NoAPL-humanelementrating',
+            'NoAPL-naturalhazardsprotectionrating',
+            'NoAPL-businesscontinuityrating',
+            'NoAPL-totalscore',
+            'NoAPL-overallplantrating',
+            'NoAPL-overallscorewithrecscomplete',
+            'NoAPL-overallplantratingwithrecscomplete'
+        ];
+        for (i = 0; i < colorItems.length; i++){
+            var zColor = 'transparent';
+            zColor = $('[data-uid=' + zUID + '] .' + colorItems[i] + 'Color').css('background-color');
+            $('\\#divDetailForm_' + zUID + ' \\#' + colorItems[i] + '').css('background-color', zColor);
+        }
+
+        /* FORMAT DATES GLOBAL REMIX */
+        $('\\#divDetailForm_' + zUID + ' input').each(function(){
+            if( $(this).attr('id').toLowerCase().indexOf('date') > -1 ){
+                $(this).val(global.formatShortDateWithMonth($(this).val()));
+            }
+        });
+
+        /* REMOVE NULLS GLOBAL REMIX */
+        $('\\#divDetailForm_' + zUID + ' input').each(function(){
+            if( ($(this).val() == 'null') || ($(this).val() == 'undefined') ){
+                $(this).val('');
+            }
+        });
+
+    }, 50);
+</script>

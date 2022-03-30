@@ -1,0 +1,22 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colId":1, 
+	"colClientname":"clientname", 
+	"colFullName":"FullName", 
+	"colEmailAddress":"EmailAddress", 
+	"colLastLoginDateTime":null, 
+	"colLastActivityDateTime":null, 
+	"colDuration":"Duration", 
+	"colFilePrefix":"FilePrefix", 
+	"colLoginID":1, 
+	"colInternal":null, 
+	"colUserLogout":null
+}]

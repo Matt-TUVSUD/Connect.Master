@@ -1,0 +1,31 @@
+﻿@media print {
+
+    @page {
+        orientation: landscape;
+    }
+
+    .chartNoPrint {
+        display: none;
+    }
+
+    .printNone {
+        display: none;
+    }
+
+    .printPageBreak {
+        page-break-after: always;
+    }
+
+    .btnHldr, .printThis {
+        display: none;
+    }
+
+    .printOnly {
+        display:block;
+    }
+
+    .printContainer {
+        width: 100%;
+        display: table;
+    }
+}

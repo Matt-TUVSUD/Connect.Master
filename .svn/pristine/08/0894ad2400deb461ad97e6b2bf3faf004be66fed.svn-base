@@ -1,0 +1,49 @@
+﻿var Project = 
+{
+  "TemplateInformation": {
+    "Namespace": "razor.experimental",
+    "Name": "razor.gen.vb.sqlserver",
+    "ScriptingEngine": "Handlebars",
+    "OutputLanguage": "VB.NET",
+    "MappingLanguage": "VB.NET"
+  },
+  "Tables": [
+	"dbo.clients",
+	"dbo.ezy_Users",
+	"dbo.ezy_Login",
+	"dbo.ezy_LoginActivityLog",
+	"dbo.ezy_PasswordHistory",
+	"dbo.ezy_UsersTracking",
+	"dbo.NavLink",
+	"dbo.RRLog",
+	"dbo.RRLogArchive",
+	"dbo.GSafePreferences",
+	"dbo.GSafeUserReclass",
+	"dbo.GSafeSlideMenu",
+	"dbo.GSafeHeader",
+	"dbo.FavMeta",
+	"dbo.Favorites",
+	"dbo.clientsfileprefixspec",
+	"dbo.clientsskipdatafolder",
+	"dbo.clientsroguefile",
+	"dbo.clientsskiprootfolder",
+	"dbo.ReportArchiveValidation"
+	],
+  "Views": [],
+  "Procs": [],
+  "DatabaseName": "cldbConnect",
+  "DatabaseType": "SQL",
+  "JsonName": "(None)",
+  "EdmxName": "(None)",
+  "Settings": {
+    "OutputPath": "C:\\M2G\\razor\\",
+    "TableAliasPrefix": "Tbl",
+    "QueryAliasPrefix": "queryTbl",
+    "ColumnAliasPrefix": "col",
+    "DataObjectPrefix": "row",
+	"AuditDateCreatedColumnName": "SysDateCreated",
+	"AuditUserCreatedColumnName": "SysUserCreated",
+	"AuditDateModifiedColumnName": "SysDateModified",
+	"AuditUserModifiedColumnName": "SysUserModified"
+  }
+}

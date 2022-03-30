@@ -1,0 +1,135 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/ClientConnectForm.master" AutoEventWireup="false" CodeBehind="ClientConnectServerMyBatch.master.vb" Inherits="GRC.Connect.Web.ClientConnectServerMyBatch" %>
+<asp:Content ID="ClientConnectTestHeadContent" ContentPlaceHolderID="ClientConnectFormHead" runat="server">
+    <title>TUV SUD GRC Client Connect</title>
+    <link rel="Stylesheet" type="text/css" href="../../css/kendo.common.min.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/kendo-lightblue-noedit.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/kendo-lightblue-menu.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/global.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/topbanner.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/windows.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/icons.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/allreports.css" />    
+    <link rel="Stylesheet" type="text/css" href="../../css/EDA/cssgrid.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/EDA/eda.css" />
+
+    <%--<script src="../../Lib_{{VER}}/KendoUI.v2014.1.416/kendo.web.min.js" type="text/javascript"></script>--%>
+    <%--<script src="../../Lib_{{VER}}/kendo.web.min.js" type="text/javascript"></script>--%>
+    <script src="../../Lib_{{VER}}/kendo.all.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Knockout.v3.3.0/knockout-3.3.0.js" type="text/javascript"></script>
+
+    <script src="../../Lib_{{VER}}/json/json2.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/ES/entityspaces.XHR.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/GSafeDetail.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/GSafeDetail.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/GSafeHeader.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/GSafeHeader.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/NavLink.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Config/baseurl.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Session/sessvars.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/util_{{VER}}.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/topbanner.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="ClientConnectTestBodyContent" ContentPlaceHolderID="ClientConnectFormBody" runat="server">
+    <form id="form1" runat="server">
+        <%--<div class="masterHeaderElasticBlue100" id="viewMasterTop" data-bind="with: viewMasterTop">--%>
+        <div class="masterHeaderElasticBlue100" id="viewMasterTop">
+            <span>
+                <!-- HEADER -->
+                <div class="headerContainerElastic">
+                    <div class="headerLeft">
+                        <div class="headerCompanyNameLargeBlue"><asp:Label runat="server" ID="lblCompany" Text=""></asp:Label></div>
+                    </div>
+                    <div class="headerRight">
+                        <div class="headerPageTitle" style="padding-top: 2px;"><asp:Label runat="server" ID="lblPageTitle" Text=""></asp:Label></div>
+                    </div>
+                </div>
+                <br style="clear: both;" />
+                <!-- END HEADER -->
+            </span>
+        </div>
+
+        <div class="masterTopBannerElastic100">
+            <div class="topBanner_Container_Other_Elastic_Blue">
+                <div>
+                    <div style="float: right; width: 32px; padding-right: 35px; text-align: right;">
+                    <a href="#" onclick="openRequestedKnowledgeBasePopup(null, null)" title="Knowledge Base" class="i-information"></a>
+                </div>
+                    <div style="float:right; width:85%;"class="headerWelcomeWhite"><asp:Label runat="server" ID="lblLoginName" Text=""></asp:Label><asp:Label runat="server" ID="lblPreferencesApplied" Visible="False" title="To change your filter/setting, go to Menu Selector > User Tools > myPreferences."><span>,</span> <span class="headerWelcomePreferences">you have a myPreference filter/setting applied!</span></asp:Label> | <a onclick="setCurrentTab(utilConstants.pageId_LogOut, utilConstants.pageId_Gauge)" href="#"><asp:Label runat="server" ID="lblLogoutHeader" Text="Logout"></asp:Label></a></div>
+                    <div style="float:right; width:85%;" class="headerTodaysDateLightBlue"><asp:Label runat="server" ID="lblTodaysDate" Text=""></asp:Label></div>
+                </div>
+            </div>
+            <br style="clear: both;" />
+        </div>
+        &nbsp;<br />
+
+        <div class="masterContentAreaNoNav">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <div class="masterBottomBannerElasticBlue">
+            <div id="include_bottombanner"></div>
+            <%--<div><br style="clear: both;" /><grcRSC:RevisionStampControl ID="RevisionStampControl" runat="server" /></div>--%>
+        </div>
+        &nbsp;<br style="clear: both;" />
+        &nbsp;<br style="clear: both;" />
+
+        <!-- PLEASE WAIT WINDOW FOR PROGRAM STATUS PAGE -->
+        <div id="windowPleaseWait" class="windowContent">
+            <img src="../../Home_{{VER}}/Images/loading/image_loading07.gif" style="width: 28px; height: 28px;" align="left" class="windowImageSmallPadding" alt="TUV SUD GRC Client Connect - Please Wait" />
+            <div id="windowPleaseWaitProcessed" style="display:flex; flex-direction:column; align-items:center; justify-content:center; font-size:13px;">
+                <div style="padding-top: 6px;"><label data-bind="" >Your request is being processed</label></div>
+                <div style="margin-bottom:5px;">
+                    <label>Thank you for your patience while the Program Status web page is being built.</label>
+                </div>
+                 <div style="margin-bottom:5px;">
+                    <label>As this tool provides a statistical view of your entire program, this may take a few minutes.</label>
+                </div>
+            </div>
+            <div id="windowPleaseWaitCancelled" style="display: none;">
+                <div style="padding-top: 6px;"><label data-bind="" >Your request is being cancelled</label></div>
+                <br />&nbsp;<br />
+                <div style="text-align: center;">
+                    <label>Please wait.</label>
+                    <br />&nbsp;<br />&nbsp;<br />
+                    <label>&nbsp;</label>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</asp:Content>
+
+<asp:Content ID="ClientConnectTestBottomHtml" ContentPlaceHolderID="ClientConnectFormBottomHtml" runat="server">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            showTab();
+            $("#include_bottombanner").load("../Common/bottombanner_english_other.html");
+        });
+
+        // DEFINE PLEASE WAIT WINDOW
+        var windowPleaseWait = $("#windowPleaseWait");
+        windowPleaseWait.kendoWindow({
+            width: "300px",
+            height: "220px",
+            title: "", // title added below with JQuery
+            actions: {},
+            animation: { open: { effects: "default" }, close: { effects: "default" } },
+            modal: true
+        });
+        $("#windowPleaseWait").closest(".k-window").css({
+            top: 300,
+            left: 375
+        });
+        $("#windowPleaseWait").prev().find(".k-window-title").append("<img src='../images/icons/wait/icon_hourglass_32x32.png' align='left' alt='Please Wait' class='windowIcon'/>  " + "Please Wait");
+
+        function cancelProgramStatus() {
+            $("#windowPleaseWaitProcessed").hide();
+            $("#windowPleaseWaitCancelled").show();
+            var gSafeGuid = getGSafeGUID();
+            document.location.href = "../Gauge/Default.aspx?sid=" + gSafeGuid;
+        }
+</script>
+</asp:Content>

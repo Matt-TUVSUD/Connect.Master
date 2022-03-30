@@ -1,0 +1,14 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblMetaRatingKey --> [tblMetaRatingKey]
+
+  colFldId --> [fldId] int **PK** identity not null
+  colFldAPLFactor --> [fldAPLFactor] float not null
+

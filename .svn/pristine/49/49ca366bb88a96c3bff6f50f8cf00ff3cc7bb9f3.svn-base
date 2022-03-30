@@ -1,0 +1,18 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblMetaAppSetting --> [tblMetaAppSetting]
+
+  colFldKey --> [fldKey] nvarchar(255) **PK** not null
+  colFldDevValue --> [fldDevValue] nvarchar(MAX) null
+  colFldTestValue --> [fldTestValue] nvarchar(MAX) null
+  colFldLiveValue --> [fldLiveValue] nvarchar(MAX) null
+  colFldDefaultValue --> [fldDefaultValue] nvarchar(MAX) null
+  colFldDevVSValue --> [fldDevVSValue] nvarchar(MAX) null
+

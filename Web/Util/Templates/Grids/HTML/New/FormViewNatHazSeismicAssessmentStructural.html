@@ -1,0 +1,223 @@
+﻿<!-- FOR KENDO GRID ROW DETAIL TEMPLATES -->
+<!-- CELL DATA REPLACERS USE #= NameOfField # -->
+<!-- AVOID USING # AS A CHARACTER IN THE TEMPLATE -->
+<!-- IF USING A CLASS LOOKUP TO THE GRID, MAKE SURE THAT CLASS IS IN THE COLUMN TEMPLATE -->
+<!-- SCRIPTS INCLUDED HERE GET RUN EVERY TIME THE DETAIL POPUP IS OPENED -->
+<!-- WHEN COPIED TO THE DATABASE, THE HTML AND JS MUST BE ALL IN ONE LINE -->
+<!-- DO NOT USE DOUBLE QUOTES IN JS OR HTML -->
+<!-- DO NOT USE COMMENTS IN JS, ALL ONE LINE COMMENTS WILL NOT RUN CODE -->
+
+<!-- FormViewNameOfGrid LAYOUT -->
+<div id='divDetailForm_#= uid #' class='divDetailForm'>
+    
+    <div class='LDHead'>
+        Location Detail</div>
+    <!--Row 1-->
+    <div class='LDInfo'>
+        <div>
+            <span id='lblFileNo'>File No.</span>
+            <input id='fileno' readonly='readonly' type='text' value='#= fileno #' />
+            <span id='lblClientLocID'>Client Loc. ID</span>
+            <input id='clientlocno' readonly='readonly' type='text' value='#= clientlocno #' />
+        </div>
+        <!--Row 2-->
+        <div>
+            <span id='lblAddress'>Address</span>
+            <input id='address' readonly='readonly' type='text' value='#= address #' />
+            <span id='lblCity'>City</span>
+            <input id='city' readonly='readonly' type='text' value='#= city #' />
+            <span id='lblStProv'>St/Prov</span>
+            <input id='stprov' readonly='readonly' type='text' value='#= stprov #' />
+            <span id='lblCountry'>Country</span>
+            <input id='country' readonly='readonly' type='text' value='#= country #' />
+        </div>
+        <!--Row 3-->
+        <div>
+            <span id='lblDivision'>Division</span>
+            <input id='division' readonly='readonly' type='text' value='#= division #' />
+            <span id='lblFacility'>Facility</span>
+            <input id='facility' readonly='readonly' type='text' value='#= facility #' />
+        </div>
+    </div>
+    <div class='FVTIV'>
+        <div id='lblTIV'>TIV</div>
+        <div>(millions)</div>
+        <div>
+            <input id='TIV' readonly='readonly' type='text' value='#= TIV #' />
+        </div>
+    </div>
+    <div class='FVTIV'>
+        <div>Date Of</div>
+        <div>Inspection</div>
+        <div>
+            <input id='SurveyDateString' readonly='readonly' type='text' value='#= SurveyDateString #' />
+        </div>
+    </div>
+    <div class='FVTable'>
+        <table cellspacing='0' cellpadding='2'>
+            <tr class='th'>
+                <td colspan='16' class='b'>
+                    Structural
+                </td>
+            </tr>
+            <tr class='tch'>
+                <td class='rb'>
+                    Bldg.<br />
+                    Condition
+                </td>
+                <td class='rb'>
+                    Wood<br />
+                    Frame
+                </td>
+                <td class='rb'>
+                    Unreinf.<br />
+                    Mas.
+                </td>
+                <td class='rb'>
+                    Reinf.<br />
+                    Mas.
+                </td>
+                <td class='rb'>
+                    Reinf. Mas. w/Reinf.<br />
+                    Conc. Or St. Fr.
+                </td>
+                <td class='rb'>
+                    Reinforced<br />
+                    Concrete
+                </td>
+                <td class='rb'>
+                    RC Sheer Walls w/RC<br />
+                    or Steel Frame
+                </td>
+                <td class='rb'>
+                    Precast<br />
+                    Concrete
+                </td>
+                <td class='rb'>
+                    Tilt-up<br />
+                    Concrete
+                </td>
+                <td class='rb'>
+                    Light Metal<br />
+                    Frame
+                </td>
+                <td class='rb'>
+                    Steel<br />
+                    Frame
+                </td>
+                <td class='rb'>
+                    Braced Steel<br />
+                    Frame
+                </td>
+                <td class='rb'>
+                    Unknown/<br />
+                    Other
+                </td>
+                <td class='rb'>
+                    Irregular Plan<br />
+                    or Vertical
+                </td>
+                <td class='rb'>
+                    Pounding<br />
+                    Potential
+                </td>
+                <td class='b'>
+                    Soft<br />
+                    Story
+                </td>
+            </tr>
+            <tr class='tch'>
+                <td class='r'>
+                    <input style='width: 70px' id='bldgcondition' readonly='readonly' type='text' value='#= bldgcondition #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 35px' id='woodframe' readonly='readonly' type='text' value='#= woodframe #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 35px' id='urm' readonly='readonly' type='text' value='#= urm #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 35px' id='reinfmas' readonly='readonly' type='text' value='#= reinfmas #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 65px' id='rmwrc' readonly='readonly' type='text' value='#= rmwrc #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 40px' id='rc' readonly='readonly' type='text' value='#= rc #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 65px' id='rcsheer' readonly='readonly' type='text' value='#= rcsheer #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 40px' id='precast' readonly='readonly' type='text' value='#= precast #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 40px' id='tiltup' readonly='readonly' type='text' value='#= tiltup #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 40px' id='ltmetal' readonly='readonly' type='text' value='#= ltmetal #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 35px' id='stfr' readonly='readonly' type='text' value='#= stfr #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 40px' id='brstfr' readonly='readonly' type='text' value='#= brstfr #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 40px' id='unk' readonly='readonly' type='text' value='#= unk #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 50px' id='irreg' readonly='readonly' type='text' value='#= irreg #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 40px' id='pounding' readonly='readonly' type='text' value='#= pounding #' />
+                </td>
+                <td>
+                    <input style='width: 40px' id='softstory' readonly='readonly' type='text' value='#= softstory #' />
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <br />
+
+    <div class='tableDiv'>
+        <div style='margin: auto; width: 100%; text-align: center;'>
+            <span style='margin: auto; width: 100%; text-align: center;'><button class='k-button' onclick='globalCloseFormView(); return false;'>Close</button></span>
+        </div>
+    </div>
+</div>
+<script>
+    /*LOAD THE CSS*/
+    var zLink = "<link rel='stylesheet' type='text/css' href='../../../css/FormView/FormView.css'>";
+    $(zLink).appendTo('head');
+
+    setTimeout(function () {
+        var zUID = '#= uid #';
+
+        /* COLOR REPLACEMENTS REMIX*/
+        var colorItems = [
+			'bldgcondition'
+        ];
+        for (i = 0; i < colorItems.length; i++){
+            var zColor = 'transparent';
+            zColor = $('[data-uid=' + zUID + '] .' + colorItems[i] + 'Color').css('background-color');
+            $('\\#divDetailForm_' + zUID + ' \\#' + colorItems[i] + '').css('background-color', zColor);
+        }
+
+        /* FORMAT DATES GLOBAL REMIX */
+        $('\\#divDetailForm_' + zUID + ' input').each(function(){
+            if( $(this).attr('id').toLowerCase().indexOf('date') > -1 ){
+                $(this).val(global.formatShortDateWithMonth($(this).val()));
+            }
+        });
+
+        /* REMOVE NULLS GLOBAL REMIX */
+        $('\\#divDetailForm_' + zUID + ' input').each(function(){
+            if( ($(this).val() == 'null') || ($(this).val() == 'undefined') ){
+                $(this).val('');
+            }
+        });
+
+    }, 50);
+</script>

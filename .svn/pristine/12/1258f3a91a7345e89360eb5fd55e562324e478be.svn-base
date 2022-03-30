@@ -1,0 +1,33 @@
+﻿<div class="topBanner_Container">
+    <img class="topBanner_image_default" usemap="#topbannermap" id="topbannerbackground" src="../images/topbanner/other/topbanner_english_noneselected.png" alt="Global Risk Consultants Services" />
+    <map name="topbannermap" id="topbannermap">
+        <!-- MAP FOR BUTTONS -->
+        <area id="button1" class="hoverCursor" coords="717,3,796,27" shape="rect" onmouseover="showButton('2')" onmousedown="showButton('3')" onmouseout="hideButtons()" onmouseup="setCurrentTab(utilConstants.pageId_SiteMap, utilConstants.pageId_Gauge)" alt="Site Map" href="#" />
+        <area id="button2" class="hoverCursor" coords="810,3,889,27" shape="rect" onmouseover="showButton('4')" onmousedown="showButton('5')" onmouseout="hideButtons()" onmouseup="setCurrentTab(utilConstants.pageId_AllReports, utilConstants.pageId_Gauge)" alt="All Reports" href="#" />
+        <area id="button3" class="hoverCursor" coords="902,3,981,27" shape="rect" onmouseover="showButton('6')" onmousedown="showButton('7')" onmouseout="hideButtons()" onmouseup="setCurrentTab(utilConstants.pageId_AllExports, utilConstants.pageId_Gauge)" alt="All Exports" href="#" />
+        <!-- MAP FOR LINKS -->
+        <area id="topbannermain" class="hoverCursor" coords="5,5,136,30" shape="rect" onmousedown="setCurrentTab(utilConstants.pageId_Gauge, utilConstants.pageId_Gauge)" href="#" alt="Main Menu" />
+        <area id="topbannerfire" class="hoverCursor" coords="155,5,190,30" shape="rect" onmousedown="setCurrentTab(utilConstants.pageId_LocationListing_Fire, utilConstants.pageId_Fire)" href="#" alt="Fire" />
+        <area id="topbannerboiler" class="hoverCursor" coords="205,5,322,30" shape="rect" onmousedown="setCurrentTab(utilConstants.pageId_LocationListing_Boiler, utilConstants.pageId_Boiler)" href="#" alt="Boiler and Machinery" />
+        <area id="topbannerjurisdictional" class="hoverCursor" coords="337,5,423,30" shape="rect" onmousedown="setCurrentTab(utilConstants.pageId_LocationListing_Juris, utilConstants.pageId_Juris)" href="#" alt="Jurisdictional" />
+        <area id="topbannerinfrared" class="hoverCursor" coords="438,5,496,30" shape="rect" onmousedown="setCurrentTab(utilConstants.pageId_LocationListing_Infrared, utilConstants.pageId_Infrared)" href="#" alt="Infrared" />
+        <area id="topbannerseismic" class="hoverCursor" coords="511,5,568,30" shape="rect" onmousedown="setCurrentTab(utilConstants.pageId_LocationListing_Seismic, utilConstants.pageId_Seismic)" href="#" alt="Seismic" />
+        <area id="topbannerflood" class="hoverCursor" coords="581,5,625,30" shape="rect" onmousedown="setCurrentTab(utilConstants.pageId_LocationListing_Flood, utilConstants.pageId_Flood)" href="#" alt="Flood" />
+        <area id="topbannerwind" class="hoverCursor" coords="638,5,678,30" shape="rect" onmousedown="setCurrentTab(utilConstants.pageId_LocationListing_Wind, utilConstants.pageId_Wind)" href="#" alt="Wind" />
+    </map>
+    <!-- IMAGES FOR BUTTONS | DEFUALT DISPLAY = HIDDEN -->
+    <img class="topBanner_image" usemap="#topbannermap" src="../images/topbanner/other/topbanner_english_sitemap_hover.png" id="topbanner2" alt="Site Map" />
+    <img class="topBanner_image" usemap="#topbannermap" src="../images/topbanner/other/topbanner_english_sitemap_click.png" id="topbanner3" alt="Site Map" />
+    <img class="topBanner_image" usemap="#topbannermap" src="../images/topbanner/other/topbanner_english_allreports_hover.png" id="topbanner4" alt="All Reports" />
+    <img class="topBanner_image" usemap="#topbannermap" src="../images/topbanner/other/topbanner_english_allreports_click.png" id="topbanner5" alt="All Reports" />
+    <img class="topBanner_image" usemap="#topbannermap" src="../images/topbanner/other/topbanner_english_allexports_hover.png" id="topbanner6" alt="All Exports" />
+    <img class="topBanner_image" usemap="#topbannermap" src="../images/topbanner/other/topbanner_english_allexports_click.png" id="topbanner7" alt="All Exports" />
+    <!-- IMAGES FOR CURRENT TAB | DEFAULT DISPLAY = HIDDEN -->
+    <img class="topBanner_currentTab hoverCursor" id="highlightFire" src="../images/topbanner/other/topbanner_english_fire.png" alt="Fire" style="left: 135px; border:0;" onclick="setCurrentTab(utilConstants.pageId_Fire, utilConstants.pageId_Fire)" href="#" />
+    <img class="topBanner_currentTab hoverCursor" id="highlightBoiler" src="../images/topbanner/other/topbanner_english_boiler.png" alt="Boiler and Machinery" style="left: 186px; border:0;" onclick="setCurrentTab(utilConstants.pageId_LocationListing_Boiler, utilConstants.pageId_Boiler)" href="#" />
+    <img class="topBanner_currentTab hoverCursor" id="highlightJurisdictional" src="../images/topbanner/other/topbanner_english_jurisdictional.png" alt="Jurisdictional" style="left: 317px; border:0;" onclick="setCurrentTab(utilConstants.pageId_LocationListing_Juris, utilConstants.pageId_Juris)" href="#" />
+    <img class="topBanner_currentTab hoverCursor" id="highlightInfrared" src="../images/topbanner/other/topbanner_english_infrared.png" alt="Infrared" style="left: 419px; border:0;" onclick="setCurrentTab(utilConstants.pageId_LocationListing_Infrared, utilConstants.pageId_Infrared)" href="#" />
+    <img class="topBanner_currentTab hoverCursor" id="highlightSeismic" src="../images/topbanner/other/topbanner_english_seismic.png" alt="Seismic" style="left: 492px; border:0;" onclick="setCurrentTab(utilConstants.pageId_LocationListing_Seismic, utilConstants.pageId_Seismic)" href="#" />
+    <img class="topBanner_currentTab hoverCursor" id="highlightFlood" src="../images/topbanner/other/topbanner_english_flood.png" alt="Flood" style="left: 562px; border:0;" onclick="setCurrentTab(utilConstants.pageId_LocationListing_Flood, utilConstants.pageId_Flood)" href="#" />
+    <img class="topBanner_currentTab hoverCursor" id="highlightWind" src="../images/topbanner/other/topbanner_english_wind.png" alt="Wind" style="left: 618px; border:0;" onclick="setCurrentTab(utilConstants.pageId_LocationListing_Wind, utilConstants.pageId_Wind)" href="#" />
+</div>

@@ -1,0 +1,28 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colFldId":1, 
+	"colFldCreateDate":null, 
+	"colFldFilePrefix":"fldFilePrefix", 
+	"colFldSetTypeID":1
+	"colFldFileName":"fldFileName", 
+	"colFldStatusId":1, 
+	"colFldDisable":null, 
+	"colFldLOFilterJSON":"fldLOFilterJSON", 
+	"colFldLOCriteriaJSON":"fldLOCriteriaJSON", 
+	"colFldLOSortJSON":"fldLOSortJSON", 
+	"colFldLOSettingJSON":"fldLOSettingJSON", 
+	"colFldMetaParameterJSON":"fldMetaParameterJSON", 
+	"colFldCreatedByGsafeId":1, 
+	"colFldIsInteractive":null, 
+	"colFldIsMyBatchReport":null, 
+	"colFldCreatedByGsafeUserEmail":"fldCreatedByGsafeUserEmail", 
+	"colFldLOMyPreferenceJSON":"fldLOMyPreferenceJSON"
+}]

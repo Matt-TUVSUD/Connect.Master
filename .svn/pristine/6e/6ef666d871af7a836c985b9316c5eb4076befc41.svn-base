@@ -1,0 +1,274 @@
+﻿<!-- FOR KENDO GRID ROW DETAIL TEMPLATES -->
+<!-- CELL DATA REPLACERS USE #= NameOfField # -->
+<!-- AVOID USING # AS A CHARACTER IN THE TEMPLATE -->
+<!-- IF USING A CLASS LOOKUP TO THE GRID, MAKE SURE THAT CLASS IS IN THE COLUMN TEMPLATE -->
+<!-- SCRIPTS INCLUDED HERE GET RUN EVERY TIME THE DETAIL POPUP IS OPENED -->
+<!-- WHEN COPIED TO THE DATABASE, THE HTML AND JS MUST BE ALL IN ONE LINE -->
+<!-- DO NOT USE DOUBLE QUOTES IN JS OR HTML -->
+<!-- DO NOT USE COMMENTS IN JS, ALL ONE LINE COMMENTS WILL NOT RUN CODE -->
+
+<!-- FormViewNameOfGrid LAYOUT -->
+<div id='divDetailForm_#= uid #' class='divDetailForm'>
+    
+    <div class='LDHead'>
+        Location Detail</div>
+    <!--Row 1-->
+    <div class='LDInfo'>
+        <div>
+            <span id='lblFileNo'>File No.</span>
+            <input id='FileNo' readonly='readonly' type='text' value='#= FileNo #' />
+            <span id='lblClientLocID'>Client Loc. ID</span>
+            <input id='ClientLocNo' readonly='readonly' type='text' value='#= ClientLocNo #' />
+        </div>
+        <!--Row 2-->
+        <div>
+            <span id='lblAddress'>Address</span>
+            <input id='Address' readonly='readonly' type='text' value='#= Address #' />
+            <span id='lblCity'>City</span>
+            <input id='City' readonly='readonly' type='text' value='#= City #' />
+            <span id='lblStProv'>St/Prov</span>
+            <input id='StProv' readonly='readonly' type='text' value='#= StProv #' />
+            <span id='lblCountry'>Country</span>
+            <input id='Country' readonly='readonly' type='text' value='#= Country #' />
+        </div>
+        <!--Row 3-->
+        <div>
+            <span id='lblDivision'>Division</span>
+            <input id='Division' readonly='readonly' type='text' value='#= Division #' />
+            <span id='lblFacility'>Facility</span>
+            <input id='Facility' readonly='readonly' type='text' value='#= Facility #' />
+        </div>
+    </div>
+    <div class='FVTIV'>
+        <div id='lblTIV'>TIV</div>
+        <div>(millions)</div> 
+        <div>
+            <input id='TIV' readonly='readonly' type='text' value='#= TIV #' />
+        </div>
+    </div>
+    <div class='FVTIV'>
+        <div>Date Of</div>
+        <div>Inspection</div>
+        <div>
+            <input id='SurveyDateString' readonly='readonly' type='text' value='#= SurveyDateString #' />
+        </div>
+    </div>
+    <div class='FVTable'>
+        <table cellspacing='0' cellpadding='2'>
+            <tr class='th'>
+                <td colspan='5' class='rb'>
+                    Extinguishers
+                </td>
+                <td colspan='11' rowspan='2' class='b'>
+                    Hazard Controls
+                </td>
+            </tr>
+            <tr class='th'>
+                <td colspan='4' class='rb'>
+                    Portable Fire Extinguisher
+                </td>
+                <td colspan='1' class='rb'>
+                    &nbsp;
+                </td>
+            </tr>
+            <tr class='tch'>
+                <td class='rb'>
+                    Insp.<br />
+                    Monthly
+                </td>
+                <td class='rb'>
+                    Serv'd<br />
+                    Annually
+                </td>
+                <td class='rb'>
+                    Appr.<br />
+                    Type/<br />
+                    Size
+                </td>
+                <td class='rb'>
+                    Access -<br />
+                    ible
+                </td>
+                <td class='hrb'>
+                    Fire<br />
+                    Hoses
+                </td>
+                <td class='rb'>
+                    Hot Work<br />
+                    PS In Place
+                </td>
+                <td class='rb'>
+                    Flam. Liq.<br />
+                    Storage
+                </td>
+                <td class='rb'>
+                    16in<br />
+                    Clearance<br />
+                    Cooking<br />
+                    Equip.
+                </td>
+                <td class='rb'>
+                    No Interior<br />
+                    Propane<br />
+                    Storage
+                </td>
+                <td class='rb'>
+                    Ext. LP Stg.<br />
+                    10ft<br />
+                    Clearance
+                </td>
+                <td class='rb'>
+                    No Smoking
+                </td>
+                <td class='rb'>
+                    Fire Doors<br />
+                    Not<br />
+                    Obstructed
+                </td>
+                <td class='rb'>
+                    No Missing<br />
+                    Ceiling<br />
+                    Tiles
+                </td>
+                <td class='rb'>
+                    Barrier for<br />
+                    NG/Traffic
+                </td>
+                <td class='rb'>
+                    No Storage<br />
+                    in Elec.<br />
+                    Room
+                </td>
+                <td class='b'>
+                    Skids/Pallet<br />
+                    Storage
+                </td>
+            </tr>
+            <tr class='tch'>
+                <td class='r'>
+                    <input style='width: 30px' id='PFEInspMonthly' readonly='readonly' type='text' value='#= PFEInspMonthly #' />
+                    <input id='PFEInspMonthlyC' readonly='readonly' type='text' value='#= PFEInspMonthlyC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 30px' id='PFEServAnn' readonly='readonly' type='text' value='#= PFEServAnn #' />
+                    <input id='PFEServAnnC' readonly='readonly' type='text' value='#= PFEServAnnC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 30px' id='PFEAppTypeSize' readonly='readonly' type='text' value='#= PFEAppTypeSize #' />
+                    <input id='PFEAppTypeSizeC' readonly='readonly' type='text' value='#= PFEAppTypeSizeC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 30px' id='PFEMounted' readonly='readonly' type='text' value='#= PFEMounted #' />
+                    <input id='PFEMountedC' readonly='readonly' type='text' value='#= PFEMountedC #' class='hidden' />
+                </td>
+                <td class='hr'>
+                    <input style='width: 30px' id='FireHosesInsp' readonly='readonly' type='text' value='#= FireHosesInsp #' />
+                    <input id='FireHosesInspC' readonly='readonly' type='text' value='#= FireHosesInspC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 30px' id='HotWorkPermit' readonly='readonly' type='text' value='#= HotWorkPermit #' />
+                    <input id='HotWorkPermitC' readonly='readonly' type='text' value='#= HotWorkPermitC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 30px' id='FlamLiqStored' readonly='readonly' type='text' value='#= FlamLiqStored #' />
+                    <input id='FlamLiqStoredC' readonly='readonly' type='text' value='#= FlamLiqStoredC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 30px' id='SixteenSeparation' readonly='readonly' type='text' value='#= 16Separation #' />
+                    <input id='SixteenSeparationC' readonly='readonly' type='text' value='#= SixteenSeparationC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 30px' id='PropCylinders' readonly='readonly' type='text' value='#= PropCylinders #' />
+                    <input id='PropCylindersC' readonly='readonly' type='text' value='#= PropCylindersC #'
+                        class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 30px' id='PropStorage' readonly='readonly' type='text' value='#= PropStorage #' />
+                    <input id='PropStorageC' readonly='readonly' type='text' value='#= PropStorageC #'
+                        class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 30px' id='NoSmoking' readonly='readonly' type='text' value='#= NoSmoking #' />
+                    <input id='NoSmokingC #' readonly='readonly' type='text' value='#= NoSmokingC' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 30px' id='FireDoorsNotObstr' readonly='readonly' type='text' value='#= FireDoorsNotObstr #' />
+                    <input id='FireDoorsNotObstrC' readonly='readonly' type='text' value='#= FireDoorsNotObstrC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 30px' id='NoMissCealTiles' readonly='readonly' type='text' value='#= NoMissCealTiles #' />
+                    <input id='NoMissCealTilesC' readonly='readonly' type='text' value='#= NoMissCealTilesC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 30px' id='BarricadeProvided' readonly='readonly' type='text' value='#= BarricadeProvided #' />
+                    <input id='BarricadeProvidedC' readonly='readonly' type='text' value='#= BarricadeProvidedC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 30px' id='NoStorageInElecRm' readonly='readonly' type='text' value='#= NoStorageInElecRm #' />
+                    <input id='NoStorageInElecRmC' readonly='readonly' type='text' value='#= NoStorageInElecRmC #' class='hidden' />
+                </td>
+                <td class='outside-bottom-right'>
+                    <input style='width: 30px' id='PlasSkids' readonly='readonly' type='text' value='#= PlasSkids #' />
+                    <input id='PlasSkidsC' readonly='readonly' type='text' value='#= PlasSkidsC #' class='hidden' />
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <br />
+
+    <div class='tableDiv'>
+        <div style='margin: auto; width: 100%; text-align: center;'>
+            <span style='margin: auto; width: 100%; text-align: center;'><button class='k-button' onclick='globalCloseFormView(); return false;'>Close</button></span>
+        </div>
+    </div>
+</div>
+<script>
+    /*LOAD THE CSS*/
+    var zLink = "<link rel='stylesheet' type='text/css' href='../../../css/FormView/FormView.css'>";
+    $(zLink).appendTo('head');
+
+    setTimeout(function () {
+        var zUID = '#= uid #';
+
+        /* COLOR REPLACEMENTS REMIX*/
+        var colorItems = [
+			'PFEInspMonthly',
+			'PFEServAnn',
+			'PFEAppTypeSize',
+			'PFEMounted',
+			'FireHosesInsp',
+			'HotWorkPermit',
+			'FlamLiqStored',
+			'16Separation',
+			'PropCylinders',
+			'PropStorage',
+			'NoSmoking',
+			'FireDoorsNotObstr',
+			'NoMissCealTiles',
+			'BarricadeProvided',
+			'NoStorageInElecRm',
+			'PlasSkids'
+        ];
+        for (i = 0; i < colorItems.length; i++){
+            var zColor = 'transparent';
+            zColor = $('[data-uid=' + zUID + '] .' + colorItems[i] + 'Color').css('background-color');
+            $('\\#divDetailForm_' + zUID + ' \\#' + colorItems[i] + '').css('background-color', zColor);
+        }
+
+        /* FORMAT DATES GLOBAL REMIX */
+        $('\\#divDetailForm_' + zUID + ' input').each(function(){
+            if( $(this).attr('id').toLowerCase().indexOf('date') > -1 ){
+                $(this).val(global.formatShortDateWithMonth($(this).val()));
+            }
+        });
+
+        /* REMOVE NULLS GLOBAL REMIX */
+        $('\\#divDetailForm_' + zUID + ' input').each(function(){
+            if( ($(this).val() == 'null') || ($(this).val() == 'undefined') ){
+                $(this).val('');
+            }
+        });
+
+    }, 50);
+</script>

@@ -1,0 +1,40 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: ViewCCGSafeSitemapItems --> [viewCCGSafeSitemapItems]
+
+  colGSafeId --> [GSafeId] int not null
+  colNavSiteMapKeyWord --> [NavSiteMapKeyWord] varchar(50) null
+  colNavAllReportsKeyword --> [NavAllReportsKeyword] varchar(50) null
+  colNavAllDataKeyword --> [NavAllDataKeyword] varchar(50) null
+  colNavLinkId --> [NavLinkId] int not null
+  colNavParentLinkId --> [NavParentLinkId] int null
+  colNavText --> [NavText] varchar(50) not null
+  colNavUrl --> [NavUrl] varchar(255) null
+  colNavOrder --> [NavOrder] int null
+  colNavToolTip --> [NavToolTip] varchar(50) null
+  colNavVisible --> [NavVisible] int null
+  colNavEnabled --> [NavEnabled] int null
+  colNavTarget --> [NavTarget] varchar(25) null
+  colNavType --> [NavType] varchar(50) null
+  colNavConstant --> [NavConstant] varchar(50) null
+  colNavRptCode --> [NavRptCode] varchar(50) null
+  colNavGridId --> [NavGridId] int null
+  colNavChartId --> [NavChartId] int null
+  colNavExtractId --> [NavExtractId] int null
+  colNavBypassFilter --> [NavBypassFilter] bit null
+  colNavStatusToolTip --> [NavStatusToolTip] nvarchar(200) null
+  colSlideMenuId --> [slideMenuId] int null
+  colSlideGroupId --> [slideGroupId] int null
+  colSlideLevelId --> [slideLevelId] int null
+  colSlideType --> [slideType] varchar(25) null
+  colSlideParentId --> [slideParentId] int null
+  colSlideOrder --> [slideOrder] int null
+  colSlideImageClassName --> [slideImageClassName] varchar(25) null
+

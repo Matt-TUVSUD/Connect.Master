@@ -1,0 +1,29 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblBatchProcessingSet --> [tblBatchProcessingSet]
+
+  colFldId --> [fldId] int **PK** identity not null
+  colFldCreateDate --> [fldCreateDate] datetime not null
+  colFldFilePrefix --> [fldFilePrefix] nvarchar(50) not null
+  colFldSetTypeID --> [fldSetTypeID] int not null
+  colFldFileName --> [fldFileName] nvarchar(255) not null
+  colFldStatusId --> [fldStatusId] int not null
+  colFldDisable --> [fldDisable] bit not null
+  colFldLOFilterJSON --> [fldLOFilterJSON] nvarchar(MAX) null
+  colFldLOCriteriaJSON --> [fldLOCriteriaJSON] nvarchar(MAX) null
+  colFldLOSortJSON --> [fldLOSortJSON] nvarchar(MAX) null
+  colFldLOSettingJSON --> [fldLOSettingJSON] nvarchar(MAX) null
+  colFldMetaParameterJSON --> [fldMetaParameterJSON] nvarchar(MAX) null
+  colFldCreatedByGsafeId --> [fldCreatedByGsafeId] int null
+  colFldIsInteractive --> [fldIsInteractive] bit null
+  colFldIsMyBatchReport --> [fldIsMyBatchReport] bit null
+  colFldCreatedByGsafeUserEmail --> [fldCreatedByGsafeUserEmail] nvarchar(100) null
+  colFldLOMyPreferenceJSON --> [fldLOMyPreferenceJSON] nvarchar(MAX) null
+

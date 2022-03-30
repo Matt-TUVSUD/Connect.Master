@@ -1,0 +1,153 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: VwWhatIfFireFacilityRating --> [vwWhatIfFireFacilityRating]
+
+  colGSafeId --> [GSafeId] int not null
+  colFileNo --> [FileNo] nvarchar(40) not null
+  colAddressStamp --> [AddressStamp] nvarchar(1000) null
+  colAddress1 --> [address1] nvarchar(40) null
+  colCity --> [city] nvarchar(30) null
+  colStprov --> [stprov] nvarchar(20) null
+  colCountry --> [country] nvarchar(20) null
+  colDivision --> [division] nvarchar(75) null
+  colZip --> [zip] nvarchar(10) null
+  colTiv --> [TIV] float null
+  colTivbi --> [TIVBI] float null
+  colTivpd --> [TIVPD] float null
+  colPml --> [PML] float null
+  colPmlpd --> [PMLPD] float null
+  colPmlbi --> [PMLBI] float null
+  colMflpd --> [MFLPD] float null
+  colMflbi --> [MFLBI] float null
+  colMfl --> [MFL] float null
+  colAplpd --> [APLPD] float null
+  colAplbi --> [APLBI] float null
+  colApl --> [APL] float null
+  colInspectiondate --> [inspectiondate] datetime null
+  colGrade --> [grade] numeric(10,1) null
+  colConstructionrating --> [constructionrating] numeric(10,1) null
+  colOccupancyrating --> [occupancyrating] numeric(10,1) null
+  colFloodrating --> [floodrating] numeric(10,1) null
+  colEarthquakerating --> [earthquakerating] numeric(10,1) null
+  colWindstormrating --> [windstormrating] numeric(10,1) null
+  colOtherrating --> [otherrating] numeric(10,1) null
+  colFloorRatingBackColorHex --> [FloorRatingBackColorHex] nvarchar(10) null
+  colEarthquakeRatingBackColorHex --> [EarthquakeRatingBackColorHex] nvarchar(10) null
+  colWindstormRatingBackColorHex --> [WindstormRatingBackColorHex] nvarchar(10) null
+  colConstructionRatingBackColorHex --> [ConstructionRatingBackColorHex] nvarchar(10) null
+  colOccupancyRatingBackColorHex --> [OccupancyRatingBackColorHex] nvarchar(10) null
+  colOtherRatingBackColorHex --> [OtherRatingBackColorHex] nvarchar(10) null
+  colPhysicalprotectionrating --> [physicalprotectionrating] numeric(18,2) null
+  colHumanelementrating --> [humanelementrating] numeric(18,2) null
+  colNaturalhazardsprotectionrating --> [naturalhazardsprotectionrating] numeric(18,2) null
+  colBusinesscontinuityrating --> [businesscontinuityrating] numeric(18,2) null
+  colPhysicalProtectionRatingBackColorHex --> [PhysicalProtectionRatingBackColorHex] nvarchar(10) null
+  colHumanElementRatingBackColorHex --> [HumanElementRatingBackColorHex] nvarchar(10) null
+  colNaturalHazardsProtectionRatingBackColorHex --> [NaturalHazardsProtectionRatingBackColorHex] nvarchar(10) null
+  colBusinessContinuityRatingBackColorHex --> [BusinessContinuityRatingBackColorHex] nvarchar(10) null
+  colAplfactor --> [aplfactor] numeric(18,1) null
+  colOverallplantratingrating --> [overallplantratingrating] varchar(50) null
+  colPassivescore --> [passivescore] numeric(18,1) null
+  colActivescore --> [activescore] numeric(18,1) null
+  colWhatIfActiveScore --> [WhatIfActiveScore] numeric(38,2) null
+  colTotalscore --> [totalscore] numeric(18,1) null
+  colTotalScoreHexBackColor --> [TotalScoreHexBackColor] varchar(50) null
+  colTotalScoreHexForeColor --> [TotalScoreHexForeColor] varchar(7) not null
+  colTotalscorerating --> [totalscorerating] varchar(50) null
+  colWhatIfScore --> [WhatIfScore] numeric(38,2) null
+  colWhatIfScoreHexBackColor --> [WhatIfScoreHexBackColor] varchar(50) null
+  colTotalfacilityscore --> [totalfacilityscore] numeric(18,1) null
+  colOtherweight --> [otherweight] numeric(10,2) null
+  colConstructionweight --> [constructionweight] numeric(10,1) null
+  colOccupancyweight --> [occupancyweight] numeric(10,1) null
+  colPhysicalprotectionweight --> [physicalprotectionweight] numeric(10,1) null
+  colHumanelementweight --> [humanelementweight] numeric(10,1) null
+  colNaturalhazardsprotectionweight --> [naturalhazardsprotectionweight] numeric(10,2) null
+  colBusinesscontinuityweight --> [businesscontinuityweight] numeric(10,1) null
+  colFireprotectionallrecscompleterating --> [fireprotectionallrecscompleterating] numeric(18,2) null
+  colHumanelementallrecscompleterating --> [humanelementallrecscompleterating] numeric(18,2) null
+  colNathazprotallrecscompleterating --> [nathazprotallrecscompleterating] numeric(18,2) null
+  colBcpAllRecsCompleteRating --> [BcpAllRecsCompleteRating] numeric(18,2) null
+  colFireProtectionAllRecsCompleteRatingBackColorHex --> [FireProtectionAllRecsCompleteRatingBackColorHex] nvarchar(10) null
+  colHumanElementAllRecsCompleteRatingBackColorHex --> [HumanElementAllRecsCompleteRatingBackColorHex] nvarchar(10) null
+  colNatHazProtAllRecsCompleteRatingBackColorHex --> [NatHazProtAllRecsCompleteRatingBackColorHex] nvarchar(10) null
+  colBcpAllRecsCompleteRatingBackColorHex --> [BcpAllRecsCompleteRatingBackColorHex] nvarchar(10) null
+  colPhysicalProtectionWhatIfRatingBackColorHex --> [PhysicalProtectionWhatIfRatingBackColorHex] nvarchar(10) null
+  colHumanElementWhatIfRatingBackColorHex --> [HumanElementWhatIfRatingBackColorHex] nvarchar(10) null
+  colNaturalHazardsProtectionWhatIfRatingBackColorHex --> [NaturalHazardsProtectionWhatIfRatingBackColorHex] nvarchar(10) null
+  colBusinessContinuityWhatIfRatingBackColorHex --> [BusinessContinuityWhatIfRatingBackColorHex] nvarchar(10) null
+  colPhysicalProtectionWhatIfRating --> [PhysicalProtectionWhatIfRating] numeric(18,2) null
+  colHumanElementWhatIfRating --> [HumanElementWhatIfRating] numeric(18,2) null
+  colNaturalHazardsWhatIfRating --> [NaturalHazardsWhatIfRating] numeric(18,2) null
+  colBusinessContinuityWhatIfRating --> [BusinessContinuityWhatIfRating] numeric(18,2) null
+  colPhysicalProtectionWhatIfRatingDesc --> [PhysicalProtectionWhatIfRatingDesc] varchar(50) null
+  colHumanElementWhatIfRatingDesc --> [HumanElementWhatIfRatingDesc] varchar(50) null
+  colNaturalHazardsWhatIfRatingDesc --> [NaturalHazardsWhatIfRatingDesc] varchar(50) null
+  colBusinessContinuityWhatIfRatingDesc --> [BusinessContinuityWhatIfRatingDesc] varchar(50) null
+  colActivescorewithrecscomplete --> [activescorewithrecscomplete] numeric(18,1) null
+  colAplwithallrecscomplete --> [aplwithallrecscomplete] numeric(18,1) null
+  colFloodweight --> [floodweight] numeric(10,2) null
+  colEarthquakeweight --> [earthquakeweight] numeric(10,2) null
+  colWindstormweight --> [windstormweight] numeric(10,2) null
+  colOverallscorewithrecscomplete --> [overallscorewithrecscomplete] numeric(18,1) null
+  colMaxpossiblescore --> [maxpossiblescore] numeric(18,1) null
+  colAplfactorwithallrecscomplete --> [aplfactorwithallrecscomplete] numeric(18,1) null
+  colFlooddescription --> [flooddescription] varchar(255) null
+  colEarthquakedescription --> [earthquakedescription] varchar(255) null
+  colWindstormdescription --> [windstormdescription] varchar(255) null
+  colConstructiondescription --> [constructiondescription] varchar(255) null
+  colOccupancydescription --> [occupancydescription] varchar(255) null
+  colOtherdescription --> [otherdescription] varchar(255) null
+  colFiredescription --> [firedescription] varchar(255) null
+  colHumandescription --> [humandescription] varchar(255) null
+  colNaturaldescription --> [naturaldescription] varchar(255) null
+  colBusinessdescription --> [businessdescription] varchar(255) null
+  colFirerecdescription --> [firerecdescription] varchar(255) null
+  colHumanrecdescription --> [humanrecdescription] varchar(255) null
+  colNaturalrecdescription --> [naturalrecdescription] varchar(255) null
+  colBusinessrecdescription --> [businessrecdescription] varchar(255) null
+  colExchangerate --> [exchangerate] numeric(18,1) null
+  colAdminmemo --> [adminmemo] nvarchar(255) null
+  colOverallscorewithrecscompleterating --> [overallscorewithrecscompleterating] varchar(50) null
+  colMaxpossiblerating --> [maxpossiblerating] varchar(50) null
+  colOverallScoreWithRecsCompleteHexForeColor --> [OverallScoreWithRecsCompleteHexForeColor] varchar(7) not null
+  colOverallScoreWithRecsCompleteHexBackColor --> [OverallScoreWithRecsCompleteHexBackColor] varchar(50) null
+  colAchievableScorePercent --> [AchievableScorePercent] numeric(38,20) null
+  colAchievableScorePercentString --> [AchievableScorePercentString] varchar(5) null
+  colAchievableScorePercentHexForeColor --> [AchievableScorePercentHexForeColor] varchar(7) not null
+  colAchievableScorePercentHexBackColor --> [AchievableScorePercentHexBackColor] varchar(7) not null
+  colIsLatestRating --> [IsLatestRating] varchar(5) not null
+  colAchievablePercentWhatIfString --> [AchievablePercentWhatIfString] varchar(5) null
+  colAchievablePercentWhatIfHexBackColor --> [AchievablePercentWhatIfHexBackColor] varchar(7) not null
+  colAchievablePercentWhatIfHexForeColor --> [AchievablePercentWhatIfHexForeColor] varchar(7) not null
+  colAchievablePercentAllRecsCompHexBackColor --> [AchievablePercentAllRecsCompHexBackColor] varchar(7) not null
+  colAchievablePercentAllRecsCompHexForeColor --> [AchievablePercentAllRecsCompHexForeColor] varchar(7) not null
+  colAchievablePercentAllRecsCompString --> [AchievablePercentAllRecsCompString] varchar(5) null
+  colRatingID --> [RatingID] numeric(10,0) not null
+  colFloorRatingForeColorHex --> [FloorRatingForeColorHex] varchar(7) not null
+  colEarthquakeRatingForeColorHex --> [EarthquakeRatingForeColorHex] varchar(7) not null
+  colWindstormRatingForeColorHex --> [WindstormRatingForeColorHex] varchar(7) not null
+  colConstructionRatingForeColorHex --> [ConstructionRatingForeColorHex] varchar(7) not null
+  colOccupancyRatingForeColorHex --> [OccupancyRatingForeColorHex] varchar(7) not null
+  colOtherRatingForeColorHex --> [OtherRatingForeColorHex] varchar(7) not null
+  colPhysicalProtectionRatingForeColorHex --> [PhysicalProtectionRatingForeColorHex] varchar(7) not null
+  colHumanElementRatingForeColorHex --> [HumanElementRatingForeColorHex] varchar(7) not null
+  colNaturalHazardsProtectionRatingForeColorHex --> [NaturalHazardsProtectionRatingForeColorHex] varchar(7) not null
+  colBusinessContinuityRatingForeColorHex --> [BusinessContinuityRatingForeColorHex] varchar(7) not null
+  colFireProtectionAllRecsCompleteRatingForeColorHex --> [FireProtectionAllRecsCompleteRatingForeColorHex] varchar(7) not null
+  colHumanElementAllRecsCompleteRatingForeColorHex --> [HumanElementAllRecsCompleteRatingForeColorHex] varchar(7) not null
+  colNatHazProtAllRecsCompleteRatingForeColorHex --> [NatHazProtAllRecsCompleteRatingForeColorHex] varchar(7) not null
+  colBcpAllRecsCompleteRatingForeColorHex --> [BcpAllRecsCompleteRatingForeColorHex] varchar(7) not null
+  colWhatIfScoreHexForeColor --> [WhatIfScoreHexForeColor] varchar(7) not null
+  colPhysicalProtectionWhatIfRatingForeColorHex --> [PhysicalProtectionWhatIfRatingForeColorHex] varchar(7) not null
+  colHumanElementWhatIfRatingForeColorHex --> [HumanElementWhatIfRatingForeColorHex] varchar(7) not null
+  colNaturalHazardsProtectionWhatIfRatingForeColorHex --> [NaturalHazardsProtectionWhatIfRatingForeColorHex] varchar(7) not null
+  colBusinessContinuityWhatIfRatingForeColorHex --> [BusinessContinuityWhatIfRatingForeColorHex] varchar(7) not null
+

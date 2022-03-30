@@ -1,0 +1,90 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblEzyUsers --> [ezy_Users]
+
+  colUserID --> [UserID] varchar(75) not null
+  colPassword --> [Password] varchar(50) null
+  colFullName --> [FullName] varchar(50) null
+  colRiskManager --> [RiskManager] bit null
+  colDivisionManager --> [DivisionManager] bit null
+  colDivision --> [Division] varchar(50) null
+  colPlantManager --> [PlantManager] bit null
+  colPlant --> [Plant] varchar(50) null
+  colAdministrator --> [Administrator] bit null
+  colDocumentAccess --> [DocumentAccess] bit null
+  colCustomAccess --> [CustomAccess] bit null
+  colCustomAccessText --> [CustomAccessText] varchar(50) null
+  colOperatorStamp --> [OperatorStamp] varchar(50) null
+  colDateTimeStamp --> [DateTimeStamp] datetime not null
+  colPhone --> [Phone] varchar(50) null
+  colFax --> [Fax] varchar(50) null
+  colEmail --> [Email] varchar(50) not null
+  colNotificationStamp --> [NotificationStamp] datetime null
+  colActiveUser --> [ActiveUser] bit not null
+  colFilePrefix --> [FilePrefix] smallint not null
+  colLastLogin --> [LastLogin] datetime null
+  colLastPWChange --> [LastPWChange] datetime null
+  colInternal --> [Internal] bit not null
+  colComments --> [comments] varchar(255) null
+  colRInit --> [RInit] varchar(12) null
+  colRfu1 --> [RFU1] varchar(12) null
+  colRfu2 --> [RFU2] varchar(12) null
+  colRfu3 --> [RFU3] varchar(12) null
+  colRReport --> [RReport] varchar(12) null
+  colROverdue1 --> [ROverdue1] varchar(12) null
+  colROverdue2 --> [ROverdue2] varchar(12) null
+  colROverdue3 --> [ROverdue3] varchar(12) null
+  colRActResp --> [RActResp] varchar(12) null
+  colWo --> [WO] bit null
+  colCalist --> [calist] varchar(8000) null
+  colDivlist --> [divlist] varchar(8000) null
+  colLoclist --> [loclist] varchar(8000) null
+  colThirdParty --> [ThirdParty] bit null
+  colGRCAdministrator --> [GRCAdministrator] varchar(2) null
+  colLastRecentUpdate --> [LastRecentUpdate] datetime null
+  colEzyUserID --> [EzyUserID] int **PK** identity not null
+  colAllowMaintLogin --> [AllowMaintLogin] bit null
+  colCCActive --> [CCActive] bit not null
+  colExpOverdue --> [ExpOverdue] varchar(12) null
+  colEzyGuid --> [EzyGuid] varchar(50) null
+  colSecurityPasswordIsExpired --> [SecurityPasswordIsExpired] bit null
+  colSecurityAccountIsLockedOut --> [SecurityAccountIsLockedOut] bit null
+  colAutoInactiveDate --> [AutoInactiveDate] datetime null
+  colSecurityInactivityReminderSentDate --> [SecurityInactivityReminderSentDate] datetime null
+  colMultipleUserType --> [MultipleUserType] nvarchar(50) null
+  colImport --> [Import] nvarchar(50) null
+  colClientLocNoManager --> [ClientLocNoManager] bit not null
+  colClientLocNoText --> [ClientLocNoText] varchar(50) null
+  colFacilityManager --> [FacilityManager] bit not null
+  colFacilityText --> [FacilityText] varchar(50) null
+  colCityManager --> [CityManager] bit not null
+  colCityText --> [CityText] varchar(50) null
+  colStProvManager --> [StProvManager] bit not null
+  colStProvText --> [StProvText] varchar(50) null
+  colCountryManager --> [CountryManager] bit not null
+  colCountryText --> [CountryText] varchar(50) null
+  colRExpd --> [RExpd] varchar(12) null
+  colCCOnly --> [CCOnly] bit not null
+  colLoginId --> [LoginId] int null
+  colLastReclassificationDate --> [LastReclassificationDate] datetime null
+  colLastReclassificationByLoginID --> [LastReclassificationByLoginID] int null
+  colLastReclassificationAction --> [LastReclassificationAction] int null
+  colMarkedForDeletionDate --> [MarkedForDeletionDate] datetime null
+  colReclassificationDate --> [ReclassificationDate] datetime null
+  colReclassificationByLoginID --> [ReclassificationByLoginID] int null
+  colReclassificationAction --> [ReclassificationAction] int null
+  colClientComment --> [ClientComment] varchar(500) null
+  colTimeStamp --> [TimeStamp] timestamp null
+  colSysUserCreated --> [SysUserCreated] nvarchar(100) null
+  colSysDateCreated --> [SysDateCreated] datetime null
+  colSysUserModified --> [SysUserModified] nvarchar(100) null
+  colSysDateModified --> [SysDateModified] datetime null
+  colClientAdministration --> [ClientAdministration] bit not null
+

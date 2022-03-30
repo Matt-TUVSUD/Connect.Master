@@ -1,0 +1,19 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblMetaColor --> [tblMetaColor]
+
+  colFldId --> [fldId] int **PK** identity not null
+  colFldColor --> [fldColor] varchar(15) not null
+  colFldHex --> [fldHex] varchar(7) not null
+  colFldR --> [fldR] int not null
+  colFldG --> [fldG] int not null
+  colFldB --> [fldB] int not null
+  colFldA --> [fldA] decimal(2,1) null
+

@@ -1,0 +1,16 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblGSafeSlideMenu --> [GSafeSlideMenu]
+
+  colGSafeId --> [GSafeId] int null
+  colSlideMenuJSON --> [SlideMenuJSON] varchar(MAX) null
+  colSlideType --> [SlideType] varchar(25) null
+  colGSafeSlideMenuId --> [GSafeSlideMenuId] int **PK** identity not null
+

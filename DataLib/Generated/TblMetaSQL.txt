@@ -1,0 +1,19 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblMetaSQL --> [tblMetaSQL]
+
+  colFldId --> [fldId] int **PK** identity not null
+  colFldSql --> [fldSql] nvarchar(MAX) null
+  colFldCreatedate --> [fldCreatedate] datetime null
+  colFldDataKey --> [fldDataKey] nvarchar(50) null
+  colFldForeignKey --> [fldForeignKey] nvarchar(50) null
+  colFldBatchKey --> [fldBatchKey] nvarchar(50) null
+  colFldDebugInfo --> [fldDebugInfo] nvarchar(MAX) null
+

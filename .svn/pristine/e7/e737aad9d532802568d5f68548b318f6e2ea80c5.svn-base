@@ -1,0 +1,19 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: VwMetaReportPrefilters --> [vwMetaReportPrefilters]
+
+  colRptCode --> [RptCode] int not null
+  colEnumValue --> [EnumValue] int not null
+  colFldName --> [fldName] nvarchar(50) not null
+  colFldFieldName --> [fldFieldName] nvarchar(100) null
+  colFldAllowWildcardValue --> [fldAllowWildcardValue] bit null
+  colFldParameterKindId --> [fldParameterKindId] int not null
+  colParameterKindName --> [ParameterKindName] nvarchar(255) null
+

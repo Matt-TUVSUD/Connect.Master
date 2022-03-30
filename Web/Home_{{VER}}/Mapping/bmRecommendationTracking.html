@@ -1,0 +1,343 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../../../css/pages/mapping.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/pages/print.css" />
+    <script>
+        var gWindowTitle = "B&#38;M Recommendation Tracking";
+    </script>
+    <script src="../../../Lib_{{VER}}/Mapping/mapping.js"></script>
+    <script src="../../../Lib_{{VER}}/Mapping/moment.min.js"></script>
+</head>
+<body>
+    <div id="formView">
+      <div style="font-family:Arial !important; font-size:8pt">
+         <div id="printWindow" class="windowBody pdf-page" style="font-family:Arial !important; font-size:8pt;">
+                <div id="loading" class="noShow"><span>Loading...</span></div>
+                <div class="infoArea">
+                    <div class="popColA bottomSpaceRow">
+                        <div class="popRow">
+                            <label class="topHalfLbl">File No.:</label><span data-bind="text: objFormData().FileNo" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">Client:</label><span data-bind="text: objFormData().client" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">Client Loc. ID:</label><span data-bind="text: objFormData().ClientLocNo" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">Divisions:</label><span data-bind="text: objFormData().Division" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow bottomSpaceRow">
+                            <label class="topHalfLbl">Facility:</label><span data-bind="text: objFormData().Facility" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">TIV (millions) <span data-bind="text: currencyText"></span></label><span data-bind="    text: numeral(objFormData().TIV).format('0,0')" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">Date of Last Insp.:</label><span data-bind="text: moment(objFormData().LastInspDate).format('DD-MMM-YY')" class="topHalfTxt"></span>
+                        </div>
+                    </div>
+                    <div class="popColB bottomSpaceRow">
+                        <div class="popRow">
+                            <label class="topHalfLbl">Address:</label><span data-bind="text: objFormData().address" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">City:</label><span data-bind="text: objFormData().City" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">St/Prov.:</label><span data-bind="text: objFormData().StProv" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">Country:</label><span data-bind="text: objFormData().Country" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow bottomSpaceRow">
+                            <label class="topHalfLbl">Postal Code:</label><span data-bind="text: objFormData().Zip" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">Latitude:</label><span data-bind="text: objFormData().latitude" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">Longitude:</label><span data-bind="text: objFormData().longitude" class="topHalfTxt"></span>
+                        </div>
+                    </div>
+                    <div id="satMap" class="imgHldr">
+                            <a href="#" class="printNone">
+                                <img data-bind="attr: { src: getStaticMapUrl() }, click: onGoToLocationBingMaps" />
+                            </a>
+                            <img class="printOnly" data-bind="attr: { src: staticImageBase64 }" />
+                            <span class="satImgTip">Tip! The above map is interactive and will open Bing Maps.</span>
+                        </div>
+                    </div>
+                <div class="btnHldr noPrint">
+                    <a href="#" class="grcBlueBtn printNone" data-bind="click: function () { onCurrentERReport(); }, visible: visibleCurrentERReport">
+                        <i class="far fa-file" style="font-size:20px; margin-right:5px"></i> Current ER Report
+                    </a>
+                    <a href="#" class="grcBlueBtn printNone" data-bind="click: function () { onCurrentDiagramReport(); }, visible: visibleCurrentDiagramReport">
+                        <i class="far fa-file" style="font-size:20px; margin-right:5px;"></i>Current Diagram
+                    </a>
+                    <a href="#" class="grcBlueBtn printNone" data-bind="click: function () { onPrint(); }, visible: visiblePrint">
+                        <i class="far fa-file" style="font-size:20px; margin-right:5px;"></i>Print
+                    </a>
+                </div>
+            <div class="bottomSection">
+                <div class="borderedGrid" style="margin: 0px;">
+                        <div class="" style="">
+                            <div class="mappingRowDiv">
+                                <span class="recLabelLeft" style="">
+                                    <label>Rec. No.</label>
+                                </span>
+                                <span class="recInputRecNo" style="margin-right: 10px;">
+                                    <span data-bind="text: objFormData().RecYear" class="recInputRec" style="width: 35px; margin-right: 3px;" />
+                                    <span data-bind="text: objFormData().RecMonth" class="recInputRec" style="width: 20px; margin-right: 3px;" />
+                                    <span data-bind="text: objFormData().RecNumber" class="recInputRec" style="width: 25px; margin-right: 3px;" />
+                                    <span data-bind="value: objFormData().RecSubletter" class="recInputRec" style="width: 20px;" />
+                                </span>
+                                <span data-bind="if: clientFeatures().search('x') < 0">
+                                    <div style="width: 103px;">&nbsp;</div>
+                                </span>
+                                <span data-bind="if: clientFeatures().search('x') > -1">
+                                    <span class="recLabelRec" style="width: 26px; padding-left: 8px;">
+                                        <label>Code</label></span>
+                                    <span class="recInputRec" id="RecCode" style="width: 65px;">
+                                        <div class="inputNoEdit recInputRecCode" data-bind="" style="width: 50px;">
+                                            <span data-bind="text: objFormData().RecCode"></span>
+                                        </div>
+                                    </span>
+                                </span>
+                                <span class="recLabelRec" style="flex-basis: 85px;">
+                                    <label>Rec. Impact</label></span>
+                                <span class="recInputRec" id="RecCategory" style="margin-right: 10px;">
+                                    <div class="inputNoEdit recInputRec" data-bind="style: { background: objFormData().RecCategoryColor }" style="">
+                                        <span data-bind="text: objFormData().RecCategory"></span>
+                                    </div>
+                                </span>
+                                <span class="recLabelRec" style="flex-basis: 85px;">
+                                    <label>Rec. Status</label></span>
+                                <span class="recInputRec" id="RecStatus" style="margin-right: 10px; width: 100px;">
+                                    <div class="inputNoEdit recInputRec" data-bind="text: objFormData().RecStatus" style="width: 100%;">
+                                    </div>
+                                </span>
+                                <span class="recLabelRec" style="flex-basis: 75px;">
+                                    <label>Status Date</label></span>
+                                <span class="recInputDate" style="">
+                                    <div class="inputNoEdit recInputRec" data-bind="text: moment(objFormData().StatusDate).format('DD-MMM-YY')" style="width: 60px;">
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="mappingRowDiv">
+                                <span class="recLabelLeft">
+                                    <label>Hazard</label>
+                                </span>
+                                <span class="recInputHazardText">
+                                    <div class="inputNoEdit recInputRec" data-bind="text: objFormData().Hazard" style="border: 1px solid #abb5be; height: 15px; width: 80px; padding: 0 5px 4px;">
+                                    </div>
+                                </span>
+                                <span class="recLabelHazard">
+                                    <label>Primary Rec. Type</label>
+                                </span>
+                                <span class="" id="">
+                                    <div class="inputNoEdit recInputRec" data-bind="text: objFormData().PrimaryRecType" style="border: 1px solid #abb5be; height: 15px; width: 140px; padding: 0 5px 4px; overflow: hidden;">
+                                    </div>
+                                </span>
+                                <span class="recLabelHazard">
+                                    <label>Secondary Rec. Type</label>
+                                </span>
+                                <span class="">
+                                    <div class="inputNoEdit recInputRec" data-bind="text: objFormData().SecondaryRecType" style="border: 1px solid #abb5be; height: 15px; width: 120px; padding: 0 5px 4px; overflow: hidden;">
+                                    </div>
+                                </span>
+                                <span class="recLabelLeft" style="margin-left: 16px;">
+                                    <label>Response Status</label>
+                                </span>
+                                <span class="fullRecBox" data-bind="text: objFormData().ResponseStatus, style: { background: objFormData().ResponseStatusColor }" style="margin-right: 0px;"></span>
+                            </div>
+                            <div data-bind="if: clientFeatures().search('u') > -1">
+                                <div class="mappingRowDiv">
+                                    <span class="recLabelLeft">
+                                        <label>Rec. Priority</label>
+                                    </span>
+                                    <span class="recInputHazardText" style="width: 132px;">
+                                        <div class="inputNoEdit recInputRec" data-bind="text: objFormData().RecPriority" style="border: 1px solid #abb5be; height: 15px; width: 55px; padding: 0 5px 4px;">
+                                        </div>
+                                    </span>
+                                    <span class="recLabelLeft">
+                                        <label>Category Points</label>
+                                    </span>
+                                    <span class="recInputHazardText" style="width: 70px;">
+                                        <div class="inputNoEdit recInputRec" data-bind="text: objFormData().RatingCatPts" style="border: 1px solid #abb5be; height: 15px; width: 55px; padding: 0 5px 4px;">
+                                        </div>
+                                    </span>
+
+                                    <span class="recLabelLeft">
+                                        <label>Category Weight</label>
+                                    </span>
+                                    <span class="recInputHazardText">
+                                        <div class="inputNoEdit recInputRec" data-bind="text: objFormData().RatingCatWeight" style="border: 1px solid #abb5be; height: 15px; width: 55px; padding: 0 5px 4px;">
+                                        </div>
+                                    </span>
+
+                                    <span class="recLabelLeft" style="width: 117px;">
+                                        <label>Score Change</label>
+                                    </span>
+                                    <span class="recInputHazardText">
+                                        <div class="inputNoEdit recInputRec" data-bind="text: objFormData().RatingScoreChange" style="border: 1px solid #abb5be; height: 15px; width: 55px; padding: 0 5px 4px;">
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="mappingRowDiv">
+                                <span class="recLabelLeft">
+                                    <label>Rec. Key Word</label>
+                                </span>
+                                <span class="gridMultiLine" data-bind="text: objFormData().RecKeyWords" style="margin-bottom: 3px; width: 635px;"></span>
+                                <span class="recLabelLeft" style="width: 95px; margin-left: 6px;">
+                                    <label>Resp. Request Date</label>
+                                </span>
+                                <span class="dateGridBox" style="width: 55px;" data-bind="text: objFormData().RespRequestDateString"></span>
+                                <span class="recLabelLeft" style="width: 65px;">
+                                    <label>1st Follow-up</label>
+                                </span>
+                                <span class="dateGridBox" style="width: 55px;" data-bind="text: objFormData().RFU1DateString"></span>
+                            </div>
+                            <div class="mappingRowDiv">
+                                <span class="recLabelLeft">&nbsp;</span>
+                                <span class="recLabelRangeLarge" style="width: 121px;">
+                                    <label>Current Loss Est.</label></span>
+                                <span class="recLabelRangeLarge" style="width: 130px;">
+                                    <label>Completed Loss Est.</label></span>
+                                <span class="recLabelRangeLarge" style="width: 135px;">
+                                    <label>Est. Cost to Complete</label></span>
+                                <span class="recLabelRangeSmall" style="width: 125px;">
+                                    <label>Savings Ratio</label></span>
+                                <span class="recLabelRangeLarge" style="width: 127px;">
+                                    <label>Act. Cost to Complete</label></span>
+                                <span class="bufferRight" style="padding-left: 1px;"></span>
+                                <span class="recLabelLeft" style="width: 95px; margin-left: 10px;">
+                                    <label>Request Due Date</label>
+                                </span>
+                                <span class="dateGridBox" style="width: 55px;" data-bind="text: objFormData().RespDueDateString"></span>
+                                <span class="recLabelLeft" style="width: 65px;">
+                                    <label>2nd Follow-up</label>
+                                </span>
+                                <span class="dateGridBox" style="width: 55px;" data-bind="text: objFormData().RFU2DateString"></span>
+                            </div>
+                            <!-- ACTUAL LE FIELDS SHOWN ONLY IF CLIENT FEATURES CONTAIN 'L' -->
+                            <div class="mappingRowDiv">
+                                <span class="recLabelLeft">
+                                    <label>Actual</label>
+                                </span>
+                                <span data-bind="text: objFormData().LossExpectancyBeforeActual" class="fullRecBox" style="width: 110px;"></span>
+                                <span data-bind="text: objFormData().LossExpectancyAfterActual" class="fullRecBox" style="width: 110px;"></span>
+                                <span data-bind="text: objFormData().CostToCompleteActual" class="fullRecBox" style="width: 110px;"></span>
+                                <span class="bufferRight" style="padding-left: 2px;"></span>
+                                <span class="recLabelLeft" style="width: 95px; margin-left: 261px; margin-top: 5px;">
+                                    <label>Days Overdue</label>
+                                </span>
+                                <span class="dateGridBox" style="width: 55px; margin-top: 5px;" data-bind="text: objFormData().DaysOverdue"></span>
+                                <span class="recLabelLeft" style="width: 65px; margin-top: 5px;">
+                                    <label>3rd Follow-up</label>
+                                </span>
+                                <span class="dateGridBox" style="width: 55px; margin-top: 5px;" data-bind="text: objFormData().RFU3DateString"></span>
+                            </div>
+                            <!-- LE FIELDS -->
+                            <div class="mappingRowDiv">
+                                <span class="recLabelLeft">
+                                    <label>Range</label></span>
+                                <span data-bind="text: objFormData().LossExpectancyBefore" class="fullRecBox" style="width: 110px;"></span>
+                                <span data-bind="text: objFormData().LossExpectancyAfter" class="fullRecBox" style="width: 110px;"></span>
+                                <span data-bind="text: objFormData().CostToComplete" class="fullRecBox" style="width: 110px;"></span>
+                                <span data-bind="text: objFormData().SavingsRatio" class="fullRecBox" style="width: 110px;"></span>
+                                <span data-bind="text: objFormData().ActualCostToComplete" class="fullRecBox lastBox" style="width: 110px;"></span>
+                                <span class="bufferRight" style="padding-left: 2px;"></span>
+                            </div>
+                            <div class="mappingRowDiv">
+                                <span class="recLabelLeft">
+                                    <label>Resp. Date</label>
+                                </span>
+                                <span data-bind="text: moment(objFormData().ResponseDate).format('DD-MMM-YY')" class="dateGridBox" style="width: 60px; text-align: center; margin-right: 0px;"></span>
+                                <span class="recLabelPopupSmall" style="width: 62px; text-align: right;">
+                                    <label style="padding-right: 3px;">Resp. From</label>
+                                </span>
+                                <span data-bind="text: objFormData().ResponseFrom" class="smallGridBox" style="width: 125px; margin-right: 0px;"></span>
+                                <span class="recLabelIntendedActionSmall" style="width: 105px;">
+                                    <label>Rec. Intended Action</label>
+                                </span>
+                                <span data-bind="text: objFormData().IntendedAction" class="fullRecBox" style="margin-right: 0px; font-size: 10.5px;"></span>
+                                <span class="recLabelExpCompleteSmall" style="width: 90px;">
+                                    <label>Exp'd Compl. Date</label>
+                                </span>
+                                <span data-bind="text: moment(objFormData().ExpectedCompletionDate).format('DD-MMM-YY'), style: { background: objFormData().ExpectedCompletionDateColor }" class="dateGridBox lastBox" style="width: 60px; text-align: center; padding: 0 3px 4px 3px;"></span>
+
+                                <span class="recLabelLeft" style="margin-left: 3px;">
+                                    <label>Recipient's Name</label>
+                                </span>
+                                <span class="fullRecBox" data-bind="text: objFormData().RecipientName" style="width: 175px; margin-right: 0px;"></span>
+                            </div>
+                            <div class="mappingRowDiv">
+                                <span class="bufferLeft" style="height: 32px;"></span>
+                                <span class="recLabelLeft" style="height: 32px;">
+                                    <label>Facility Comment</label>
+                                </span>
+                                <span class="recInputCommentsLarge" style="height: 32px; width: 678px;">
+                                    <div data-bind="text: objFormData().PlantComment" class="gridMultiLine" style="width: 635px;"></div>
+                                </span>
+                                <span class="bufferRight" style="height: 32px; padding-left: 4px;"></span>
+                                <span class="recLabelLeft" style="margin-left: 5px;">
+                                    <label>Recipient's Email</label>
+                                </span>
+                                <span class="fullRecBox" style="width: 175px; margin-right: 0px; overflow: hidden;"><a data-bind="text: objFormData().RecipientEmail, attr: { href: 'mailto:' + objFormData().RecipientEmail }"></a></span>
+                            </div>
+                            <div data-bind="if: clientFeatures().search('q') > -1" class="mappingRowDiv">
+                                <span class="recLabelLeft">
+                                    <label>Mgmt. Resp. Date</label></span>
+                                <span data-bind="text: moment(objFormData().MgmtRespDate).format('DD-MMM-YY')" class="dateGridBox" style="width: 60px; text-align: center;"></span>
+                                <span class="recLabelRespSmall">
+                                    <label>Resp. From</label>
+                                </span>
+                                <span data-bind="text: objFormData().MgmtRespFrom" class="fullRecBox"></span>
+                                <span class="recLabelIntendedActionSmall">
+                                    <label>Mgmt. Action</label></span>
+                                <span data-bind="text: objFormData().MgmtRespAction" class="fullRecBox"></span>
+                            </div>
+                            <div data-bind="if: clientFeatures().search('q') > -1" class="mappingRowDiv">
+                                <span class="recLabelLeft" style="height: 32px;">
+                                    <label>Mgmt. Comment</label></span>
+                                <span class="recInputCommentsLarge" style="height: 32px;">
+                                    <div data-bind="value: objFormData().MgmtRespComment" class="gridMultiLine" style="width: 635px;"></div>
+                                </span>
+                                <span class="bufferRight" style="height: 32px; padding-left: 4px"></span>
+                            </div>
+                            <div style="height: 0px;" data-bind="if: clientFeatures().search('q') > -1">
+                                <span id="MgmtRespDateEmpty" style="height: 0px;"></span>
+                                <span id="MgmtRespActionEmpty" style="height: 0px;"></span>
+                            </div>
+                            <!-- THE ABOVE FIELDS WILL BE CHANGED AND UN COMMENTED WHEN GARY ADDS NEW MANAGER RESPONSE FIELDS TO THE DB -->
+                        </div>
+                    </div>
+            </div>
+            <div class="recCtHldr ui-helper-clearfix printNone">
+                <button style="float:left;" class="k-button buttonShape k-icon k-i-seek-w" id="btnFileFirst" type="button" data-bind="click: onFirst"></button>
+                <button style="float:left;" class="k-button buttonShape k-icon k-i-arrow-w" id="btnFilePrevious" type="button" data-bind="click: onPrev"></button>
+                <span class="countHldr"><span data-bind="text: recordIndex"></span> of <span data-bind="    text: recordCount"></span></span>
+                <button style="float:left;" class="k-button buttonShape k-icon k-i-arrow-e" id="btnFileNext" type="button" data-bind="click: onNext"></button>
+                <button style="float:left;" class="k-button buttonShape k-icon k-i-seek-e" id="btnFileLast" type="button" data-bind="click: onLast"></button>
+            </div>
+            <button type="button" onclick="getPDF('.pdf-page'); return false;" class="printThis printNone" title="Print This Section"><i class="fa fa-print"></i></button>
+         </div>
+      </div>
+    </div>
+
+     <script>
+         function getPDF(selector) {
+             $('.noPrint').hide();
+             kendo.drawing.drawDOM($(selector)).then(function (group) {
+                 kendo.drawing.pdf.saveAs(group, "popupWindow.pdf");
+             });
+             setTimeout(function () { $('.noPrint').show(); }, 5000);
+         }
+    </script>
+
+</body>
+</html>

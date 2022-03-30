@@ -1,0 +1,14 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblAdminSetting --> [tblAdminSetting]
+
+  colFldKey --> [fldKey] nvarchar(100) **PK** not null
+  colFldValue --> [fldValue] nvarchar(1000) null
+

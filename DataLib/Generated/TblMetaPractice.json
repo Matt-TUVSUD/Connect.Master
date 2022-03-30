@@ -1,0 +1,27 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colFldId":1, 
+	"colFldName":"fldName", 
+	"colFldReportDisplayTitle":"fldReportDisplayTitle", 
+	"colFldIsHazard":null, 
+	"colFldFilterValue":"fldFilterValue", 
+	"colFldPracticeCode":"fldPracticeCode", 
+	"colFldPracticeGroupCode":"fldPracticeGroupCode", 
+	"colFldSortOrder":1, 
+	"colFldPracticeLetter":"fldPracticeLetter", 
+	"colFldShortName":"fldShortName", 
+	"colFldPracticeNameText":"fldPracticeNameText", 
+	"colFldPracticeNameHTML":"fldPracticeNameHTML", 
+	"colFldNavLinkAllReportsKeyword":"fldNavLinkAllReportsKeyword", 
+	"colFldImageHtml":"fldImageHtml", 
+	"colFldLocationListingUrl":"fldLocationListingUrl", 
+	"colFldLearnMoreUrl":"fldLearnMoreUrl"
+}]

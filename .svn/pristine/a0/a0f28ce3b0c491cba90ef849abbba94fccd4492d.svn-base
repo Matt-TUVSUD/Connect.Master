@@ -1,0 +1,40 @@
+﻿.LatLongPg {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+}
+
+#LatLongHolder {
+    color: #000;
+    background: #eee;
+    max-width: 1200px;
+    width: 100%;
+    padding: 10px;
+}
+
+#LatLongHolder h1{
+    color: #000;
+    text-align: center;
+    text-decoration: underline;
+}
+
+#LatLongHolder a{
+    color: #000;
+    text-decoration: underline;
+}
+
+#LLnote {
+    font-size: 12px;
+}
+
+.k-list {
+    background: #fff;
+}
+
+#btnHldr {
+    display: flex;
+    margin: 5px 0px;
+}

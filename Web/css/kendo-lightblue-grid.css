@@ -1,0 +1,369 @@
+﻿/******************************************/
+/******************************************/
+/******************************************/
+/***** CUSTOM STYLE BY STB 20120426 *******/
+.k-grouping-header
+{
+}
+.k-grid 
+{
+    font-family: Arial;
+    font-size: 7pt;
+    /*** THIS TURNS SURROUNDING BORDER OFF ***/
+    border: 0px;
+
+}
+.k-grid-header-wrap
+{
+    /*** FIX FOR BORDER IN HEADER FOR SCROLLBAR ***/
+    border: 0px !important;
+    border-bottom: none !important;
+    border-bottom-width: 0px !important;
+    border-bottom-color: transparent !important;
+}
+.k-grid thead
+{
+    border-bottom: 1px solid #CECFCE !important;
+}
+.k-grid table
+{
+    /*** COLLAPSE BORDERS IN CELLS TO ONE BORDER, NOT SEPARATE ***/
+    border-collapse: collapse;
+}
+.k-grid-header .k-header:first-child, .k-grid tbody td:first-child, .k-grid tfoot td:first-child
+{
+    /*** LEFT MOST BORDER OF TABLE ***/
+    border-left-width: 1px;
+}
+.k-grid td
+{
+    /*** SEPARATING BORDER BETWEEN ROWS ***/
+    border-top: 1px solid #CECFCE;
+    border-bottom: 1px solid #CECFCE;
+    border-right: 1px solid #CECFCE;
+    border-left: 1px solid #CECFCE;
+}
+.k-grid .k-detail-row td {
+    /*** CLEARING OF ABOVE STYLE ON DETAIL POPUP ***/
+    border-top: 1px solid #FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
+    border-right: 1px solid #FFFFFF;
+    border-left: 1px solid #FFFFFF;
+}
+.k-pager-wrap
+{
+    /*** FIX 1px BORDER FROM TBODY ***/
+    border-right: 1px solid #0046ad;
+}
+.k-grid-header
+{
+    /*** FIX 1px BORDER FROM TBODY ***/
+    border-right: 1px solid #0046ad;
+    /*** FIX HEADER BOTTOM BORDER ***/
+    border-bottom: none !important;
+    border-bottom-width: 0px !important;
+    border-bottom-color: transparent !important;
+}
+.k-grid-content
+{
+    /*** FIX FOR BORDER ON BOTTOM, RIGHT, AND LEFT OF TABLE ***/
+    border-bottom: 1px solid #CECFCE;
+    border-right: 1px solid #CECFCE;
+    border-left: 1px solid #CECFCE;
+    border-collapse: collapse;
+}
+.k-grid-header .k-header {
+    overflow: hidden;
+    border-style: solid;
+    border-width: 0 0 0px 0px;
+    padding: .5em .2em .4em .2em;
+    font-weight: normal;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background-color: #0046ad; /*#0046ad; ORIGINAL*/ /*#D6DEE7; A LITTLE TOO BRIGHT*/ /*#d2dbe5 ALMOST RIGHT*/
+    /*border-top: 1px solid #0046ad;*/
+    border-left: 1px solid #0046ad;
+    border-right: 1px solid #0046ad;
+}
+.k-pager-wrap
+{
+    /* CORRECTION OF COLOR AND BORDER OF DRAG HANDLE AND HEADING */
+    background-color: #0046ad; /*#0046ad; ORIGINAL*/ /*#D6DEE7; A LITTLE TOO BRIGHT*/ /*#d2dbe5 ALMOST RIGHT*/
+}
+.k-grid-header,
+.k-draghandle .k-header 
+{
+    /* CORRECTION OF COLOR AND BORDER OF DRAG HANDLE AND HEADING */
+    background-color: #0046ad; /*#0046ad; ORIGINAL*/ /*#D6DEE7; A LITTLE TOO BRIGHT*/ /*#d2dbe5 ALMOST RIGHT*/
+    border-top: 1px solid #CECFCE;
+    border-collapse: collapse;
+}
+
+.k-state-selected,
+.k-list > .k-state-selected,
+.k-list > .k-state-focused
+{
+  color: #363636;
+  /*background-color: #edeef0; #e9ecf0; /*#e0e7f0; /*#e1e4e7;*/
+  background-image: none;
+  border-color: #5b63b7;
+}
+/*.k-link:link,
+.k-link:visited
+{
+    /*** BOLD AND CENTERED HEADINGS ***
+    color: #404040; /*#404040;*/ /* #595959; */ /*STB 12-19-2016
+    font-weight: bold;
+    text-align: center;
+}*/
+.k-button
+{
+    /*** MAKE BUTTONS SMALLER ***/
+    padding-right: 0px;
+    padding-left: 0px;
+    line-height: 1.0em;
+}
+.k-button-padding
+{
+    padding-right: 6px;
+    padding-left: 6px;
+    line-height: 2.0em;
+}
+.k-grid tbody .k-button
+{
+    /*** FIX MINIMUM WIDTH OF BUTTON ***/
+    min-width: 38px;
+}
+.k-focusable
+{
+}
+
+/*** FIX FOR WINDOW CLOSE (X) ICON NOT DISPLAYING CORRECTLY WHEN USED WITH KENDO GRID ***/
+/*.k-window-action .k-i-close
+{
+    background-position: -32px -16px;
+}*/
+
+
+/*** FIX FOR ALLOWING THE GRID COLUMN HEADERS TO WRAP ***/
+/*** AND CENTER THE COLUMN HEADER TEXT ***/
+.k-grid  .k-grid-header .k-header  .k-link {
+    height: auto;
+    vertical-align: central;
+    text-align: center;
+    font-size: 7pt;
+    line-height: 9pt;
+    font-weight: normal;
+    color: #FFFFFF; /*#404040;*/ /* #595959; */;
+    border-bottom: none;
+}
+  
+.k-grid  .k-grid-header .k-header {
+    min-height: 28px;
+    vertical-align: central;
+    white-space: normal;
+    text-align: center;
+    font-size: 7pt;
+    line-height: 9pt;
+    font-weight: normal;
+    color: #FFFFFF; /*#404040;*/ /* #595959; */;
+}
+
+.k-grid  .k-grid-header .k-header  .k-icon {
+    float: right;
+}
+
+.k-grid-header .k-with-icon .k-link {
+    margin-right: 2em;
+}
+
+.k-header .k-with-icon,
+.k-header-column-menu {
+    /*margin-top: 0 !important;*/
+    vertical-align: middle !important;
+    line-height: normal !important;
+}
+
+/*** ADD GRID HEADER BORDER ***/
+.k-grid  .k-grid-header .k-header {
+    /*border: 1px solid #CECFCE !important;*/
+}
+
+
+/*** CORRECTION FOR GRID HEADER MENU ICONS ***/
+.k-header > .k-grid-finder,
+.k-header > .k-header-column-menu {
+    margin-right: -0.2em;
+}
+
+
+/*** CORRECTIONS FOR GRID ROWS ***/
+.k-grid tbody tr {
+    /*height: 32px !important;*/
+    height: 18px !important;
+}
+.k-grid td {
+    white-space: nowrap;
+    text-align: left;
+    color: #111111;
+}
+.k-grid thead .k-link {
+    text-overflow: clip !important;
+    font-weight: bold;
+    color: #111111;
+}
+.k-grid thead .k-link:hover {
+    text-decoration: underline;
+}
+.k-grid-pager {
+    border: 1px solid #CECFCE !important;
+}
+
+
+/*** FIX UPPER RIGHT CORDER OF SCROLLING GRID ***/
+.k-resize-handle {
+    border-top: 1px solid #CECFCE;
+}
+
+
+/*** FIX BACKGROUND COLOR OF TEXTBOXES IN FILTER MENU POPUP ***/
+.k-filter-menu .k-textbox {
+    background-color: #FFFFFF;
+}
+
+/*COMBOBOXES ON BLUE HEADER*/
+#topBannerNav .k-header
+{
+    /*** CHANGE BORDER COLOR FROM WHITE TO BLUE ***/
+    background-color: #0046ad !important;
+}
+
+
+/*STB 12-19-2016*/
+
+/*USE WHITE BACKGROUND*/
+.k-grid-pager {
+    background-color: #FFFFFF;
+}
+/*USE WHITE TEXT ON DARK BACKGROUNDS IN SPECIFIC AREAS*/
+.k-pager-info {
+    color: #000000; /*#FFFFFF;*/
+    font-size: 8pt;
+    font-weight: normal;
+    padding-top: 2px;
+}
+
+/*CORRECT WHITE TEXT IN POPUP MENUES*/
+/*.k-widget.k-reset.k-header.k-menu.k-menu-vertical {
+    color: #000000;
+}*/
+
+/*USE DARK TEXT ON GRID NAV BUTTONS*/
+.k-pager-nav {
+    color: #FFFFFF; /*#000000;*/
+}
+
+/*CORRECT DISABLED GRID NAV BUTTONS*/
+.k-grid-pager > a.k-state-disabled,
+.k-grid-pager > a.k-state-disabled:hover {
+    background-color: #CCCCCC;
+    cursor: default;
+}
+
+.k-grid-pager > a,
+.k-grid-pager .k-link {
+    background:#0046ad;
+    color:#fff;
+    /*background-color: #FFFFFF;*/
+    cursor: pointer;
+    border-color: #DCDCDC;
+    font-size: 8pt;
+    font-weight: normal;
+}
+.k-grid-pager > a:hover,
+.k-grid-pager .k-link:hover {
+    background-color: #165597;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 8pt;
+    font-weight: normal;
+}
+
+/*FIX THE BACKGROUND IMAGE TO USE WHITE COLOR*/
+.k-grid-pager .k-icon:hover {
+    /*background-image: url('Kendo.v2014.1.318/Silver/sprite_White.png');
+    background-image: url('sprite_white.png');*/
+}
+
+.k-grid-pager > .k-pager-refresh,
+.k-grid-pager > .k-pager-refresh > a {
+    background-color: transparent;
+}
+
+/*MAKE BUTTONS LOOK LIKE EDA WITH WHITE BACKGROUND*/
+.k-pager-numbers > a,
+.k-pager-numbers .k-link {
+    border: none;
+    font-size: 8pt;
+    font-weight: normal;
+    min-width: 2.2em;
+    min-height: 2.0em;
+    padding-top: 2px;
+}
+.k-pager-numbers > a:hover,
+.k-pager-numbers .k-link:hover {
+    border: none;
+    background-image: none;
+    font-size: 8pt;
+    font-weight: normal;
+    min-width: 2.2em;
+    min-height: 2.0em;
+    padding-top: 2px;
+}
+.k-pager-numbers .k-state-selected {
+    border: none;
+    background-color: #B2C7DF;
+    color: #FFFFFF;
+    font-size: 8pt;
+    font-weight: normal;
+    min-width: 2.2em;
+    min-height: 2.0em;
+    padding-top: 2px;
+}
+
+/* Tooltip for Grid */
+.k-tooltip {
+  border-color: #0070c0;
+  background-color: #a8a8a8;
+  color: #2e2e2e;
+  text-align: left;
+  font-size:12px;
+}
+
+.k-tooltip-button {
+    display:none !important;
+}
+
+.k-tooltip-validation {
+  border-color: #ffe79e;
+  background-color: #fff4c9;
+  color: #635145;
+  text-align: left;
+}
+
+/*.k-tooltip {
+  border-color: #0070c0;
+  background-color: #0046ad;
+  color: #FFFFFF;
+  text-align: left;
+}
+.k-tooltip-validation {
+  border-color: #ffe79e;
+  background-color: #fff4c9;
+  color: #635145;
+}*/
+
+/*.k-icon.k-i-sort-asc-sm{
+    content:"\f885" !important;
+    font-family:fontAwesome;
+}*/

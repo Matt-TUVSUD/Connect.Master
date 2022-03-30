@@ -1,0 +1,30 @@
+
+
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: VwAdminNoteTextBox --> [vwAdminNoteTextBox]
+
+  colFldNoteID --> [fldNoteID] int null
+  colFldNote --> [fldNote] nvarchar(500) null
+  colFldCreateBy --> [fldCreateBy] nvarchar(50) null
+  colFldCreateDateTime --> [fldCreateDateTime] datetime null
+  colFldUpdateBy --> [fldUpdateBy] nvarchar(50) null
+  colFldUpdateDateTime --> [fldUpdateDateTime] datetime null
+  colFldPracticeGroupCd --> [fldPracticeGroupCd] nvarchar(5) not null
+  colFldTextBoxLabel --> [fldTextBoxLabel] nvarchar(100) null
+  colFldEmptyMessage --> [fldEmptyMessage] nvarchar(100) null
+  colFldMaxCharacters --> [fldMaxCharacters] int null
+  colFldSort --> [fldSort] int null
+  colInspectionID --> [InspectionID] nvarchar(50) null
+  colPracticeCode --> [PracticeCode] smallint null
+  colFldExcludeInXL --> [fldExcludeInXL] bit null
+  colFileNo --> [FileNo] nvarchar(40) not null
+  colDisplayText --> [DisplayText] nvarchar(165) null
+

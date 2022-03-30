@@ -1,0 +1,238 @@
+﻿<!-- FOR KENDO GRID ROW DETAIL TEMPLATES -->
+<!-- CELL DATA REPLACERS USE #= NameOfField # -->
+<!-- AVOID USING # AS A CHARACTER IN THE TEMPLATE -->
+<!-- IF USING A CLASS LOOKUP TO THE GRID, MAKE SURE THAT CLASS IS IN THE COLUMN TEMPLATE -->
+<!-- SCRIPTS INCLUDED HERE GET RUN EVERY TIME THE DETAIL POPUP IS OPENED -->
+<!-- WHEN COPIED TO THE DATABASE, THE HTML AND JS MUST BE ALL IN ONE LINE -->
+<!-- DO NOT USE DOUBLE QUOTES IN JS OR HTML -->
+<!-- DO NOT USE COMMENTS IN JS, ALL ONE LINE COMMENTS WILL NOT RUN CODE -->
+
+<!-- FormViewNameOfGrid LAYOUT -->
+<div id='divDetailForm_#= uid #' class='divDetailForm'>
+    
+    <div class='LDHead'>
+        Location Detail</div>
+    <!--Row 1-->
+    <div class='LDInfo'>
+        <div>
+            <span id='lblFileNo'>File No.</span>
+            <input id='FileNo' readonly='readonly' type='text' value='#= FileNo #' />
+            <span id='lblClientLocID'>Client Loc. ID</span>
+            <input id='ClientLocNo' readonly='readonly' type='text' value='#= ClientLocNo #' />
+        </div>
+        <!--Row 2-->
+        <div>
+            <span id='lblAddress'>Address</span>
+            <input id='Address' readonly='readonly' type='text' value='#= Address #' />
+            <span id='lblCity'>City</span>
+            <input id='City' readonly='readonly' type='text' value='#= City #' />
+            <span id='lblStProv'>St/Prov</span>
+            <input id='StProv' readonly='readonly' type='text' value='#= StProv #' />
+            <span id='lblCountry'>Country</span>
+            <input id='Country' readonly='readonly' type='text' value='#= Country #' />
+        </div>
+        <!--Row 3-->
+        <div>
+            <span id='lblDivision'>Division</span>
+            <input id='Division' readonly='readonly' type='text' value='#= Division #' />
+            <span id='lblFacility'>Facility</span>
+            <input id='Facility' readonly='readonly' type='text' value='#= Facility #' />
+        </div>
+    </div>
+    <div class='FVTIV'>
+        <div id='lblTIV'>TIV</div>
+        <div>(millions)</div>
+        <div>
+            <input id='TIV' readonly='readonly' type='text' value='#= TIV #' />
+        </div>
+    </div>
+    <div class='FVTIV'>
+        <div>Date Of</div>
+        <div>Inspection</div>
+        <div>
+            <input id='InspectionDate' readonly='readonly' type='text' value='#= InspectionDate #' />
+        </div>
+    </div>
+    <div class='FVTable' style='width: 600px;'>
+        <table id='StandardFormView' cellspacing='0' cellpadding='2'>
+            <tr class='th'>
+                <td colspan='6'>
+                    Loss Estimates
+                </td>
+            </tr>
+            <tr class='th'>
+                <td id='lblAPLPD' style='text-align: right; width: 100px;'>
+                    APL (PD) USD
+                </td>
+                <td>
+                    <input style='width: 75px; text-align: right;' id='APLPD' readonly='readonly' type='text' value='#= APLPD #' />
+                </td>
+                <td id='lblPMLPD' style='text-align: right; width: 100px;'>
+                    PML (PD) USD
+                </td>
+                <td>
+                    <input style='width: 75px; text-align: right;' id='PMLPD' readonly='readonly' type='text' value='#= PMLPD #' />
+                </td>
+                <td id='lblMFLPD' style='text-align: right; width: 100px;'>
+                    MFL (PD) USD
+                </td>
+                <td>
+                    <input style='width: 75px; text-align: right;' id='MFLPD' readonly='readonly' type='text' value='#= MFLPD #' />
+                </td>
+            </tr>
+            <tr class='th'>
+                <td id='lblAPLBI' style='text-align: right; width: 100px;'>
+                    APL (BI) USD
+                </td>
+                <td>
+                    <input style='width: 75px; text-align: right;' id='APLBI' readonly='readonly' type='text' value='#= APLBI #' />
+                </td>
+                <td id='lblPMLBI' style='text-align: right; width: 100px;'>
+                    PML (BI) USD
+                </td>
+                <td>
+                    <input style='width: 75px; text-align: right;' id='PMLBI' readonly='readonly' type='text' value='#= PMLBI #' />
+                </td>
+                <td id='lblMFLBI' style='text-align: right; width: 100px;'>
+                    MFL (BI) USD
+                </td>
+                <td>
+                    <input style='width: 75px; text-align: right;' id='MFLBI' readonly='readonly' type='text' value='#= MFLBI #' />
+                </td>
+            </tr>
+            <tr class='th'>
+                <td id='lblAPLTotal' style='text-align: right; width: 100px;'>
+                    APL Total USD
+                </td>
+                <td>
+                    <input style='width: 75px; text-align: right; font-weight: bold; font-size: 8pt;' id='APL' readonly='readonly' type='text' value='#= APL #' />
+                </td>
+                <td id='lblPMLTotal' style='text-align: right; width: 100px;'>
+                    PML Total USD
+                </td>
+                <td>
+                    <input style='width: 75px; text-align: right; font-weight: bold; font-size: 8pt;' id='PML' readonly='readonly' type='text' value='#= PML #' />
+                </td>
+                <td id='lblMFLTotal' style='text-align: right; width: 100px;'>
+                    MFL Total USD
+                </td>
+                <td>
+                    <input style='width: 75px; text-align: right; font-weight: bold; font-size: 8pt;' id='MFL' readonly='readonly' type='text' value='#= MFL #' />
+                </td>
+            </tr>
+        </table>
+        <table id='NoPMLFormView' cellspacing='0' cellpadding='2'>
+            <tr class='th'>
+                <td colspan='4'>
+                    Loss Estimates
+                </td>
+            </tr>
+            <tr class='th'>
+                <td id='lblAPLPDNoPML' style='text-align: right; width: 100px;'>
+                    APL (PD) USD
+                </td>
+                <td>
+                    <input style='width: 75px; text-align: right;' id='APLPD' readonly='readonly' type='text' value='#= APLPD #' />
+                </td>
+                <td id='lblMFLPDNoPML' style='text-align: right; width: 100px;'>
+                    MFL (PD) USD
+                </td>
+                <td>
+                    <input style='width: 75px; text-align: right;' id='MFLPD' readonly='readonly' type='text' value='#= MFLPD #' />
+                </td>
+            </tr>
+            <tr class='th'>
+                <td id='lblAPLBINoPML' style='text-align: right; width: 100px;'>
+                    APL (BI) USD
+                </td>
+                <td>
+                    <input style='width: 75px; text-align: right;' id='APLBI' readonly='readonly' type='text' value='#= APLBI #' />
+                </td>
+                <td id='lblMFLBINoPML' style='text-align: right; width: 100px;'>
+                    MFL (BI) USD
+                </td>
+                <td>
+                    <input style='width: 75px; text-align: right;' id='MFLBI' readonly='readonly' type='text' value='#= MFLBI #' />
+                </td>
+            </tr>
+            <tr class='th'>
+                <td id='lblAPLTotalNoPML' style='text-align: right; width: 100px;'>
+                    APL Total USD
+                </td>
+                <td>
+                    <input style='width: 75px; text-align: right; font-weight: bold; font-size: 8pt;' id='APL' readonly='readonly' type='text' value='#= APL #' />
+                </td>
+                <td id='lblMFLTotalNoPML' style='text-align: right; width: 100px;'>
+                    MFL Total USD
+                </td>
+                <td>
+                    <input style='width: 75px; text-align: right; font-weight: bold; font-size: 8pt;' id='MFL' readonly='readonly' type='text' value='#= MFL #' />
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <br />
+
+    <div class='tableDiv'>
+        <div style='margin: auto; width: 100%; text-align: center;'>
+            <span style='margin: auto; width: 100%; text-align: center;'><button class='k-button' onclick='globalCloseFormView(); return false;'>Close</button></span>
+        </div>
+    </div>
+</div>
+<script>
+    /*LOAD THE CSS*/
+    var zLink = "<link rel='stylesheet' type='text/css' href='../../../css/FormView/FormView.css'>";
+    $(zLink).appendTo('head');
+
+    setTimeout(function () {
+
+        /*PROCESS SPECIAL FEATURES*/
+        if (globalClientFeatures.toLowerCase().indexOf('f') > -1) {
+            $('\\#NoPMLFormView').show(1);
+            $('\\#StandardFormView').hide(1);
+        } else {
+            $('\\#NoPMLFormView').hide(1);
+            $('\\#StandardFormView').show(1);
+        }
+
+        var zUID = '#= uid #';
+
+        /*LARGE NUMBER FORMATTING REMIX*/
+        var largeNumbers = [
+            'TIV',
+            'APLPD',
+            'PMLPD',
+            'MFLPD',
+            'APLBI',
+            'PMLBI',
+            'MFLBI',
+            'APL',
+            'PML',
+            'MFL'
+        ];
+        for (i = 0; i < largeNumbers.length; i++) {
+            var numToConvert = $('\\#divDetailForm_' + zUID + ' \\#' + largeNumbers[i] + '').val();
+            numToConvert = parseInt(numToConvert);
+            if ((numToConvert != 'null') || (numToConvert != 'undefined')) {
+                numToConvert = Number(numToConvert).toLocaleString('en');
+                $('\\#divDetailForm_' + zUID + ' \\#' + largeNumbers[i] + '').val(numToConvert);
+            }
+        }
+
+        /* FORMAT DATES GLOBAL REMIX */
+        $('\\#divDetailForm_' + zUID + ' input').each(function(){
+            if( $(this).attr('id').toLowerCase().indexOf('date') > -1 ){
+                $(this).val(global.formatShortDateWithMonth($(this).val()));
+            }
+        });
+
+        /* REMOVE NULLS GLOBAL REMIX */
+        $('\\#divDetailForm_' + zUID + ' input').each(function(){
+            if( ($(this).val() == 'null') || ($(this).val() == 'undefined') ){
+                $(this).val('');
+            }
+        });
+
+    }, 50);
+</script>

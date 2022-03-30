@@ -1,0 +1,28 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colEzyUsersID":"ezyUsersID", 
+	"colEmail":"Email", 
+	"colGSafeGUID":"GSafeGUID", 
+	"colFilePrefix":null, 
+	"colDivision":"Division", 
+	"colPlant":"Plant", 
+	"colCustomAccessText":"CustomAccessText", 
+	"colClientLocNoText":"ClientLocNoText", 
+	"colFacilityText":"FacilityText", 
+	"colCityText":"CityText", 
+	"colStProvText":"StProvText", 
+	"colCountryText":"CountryText", 
+	"colCCActive":null, 
+	"colCityManager":null, 
+	"colStProvManager":null, 
+	"colActiveUser":null, 
+	"colCCOnly":null
+}]

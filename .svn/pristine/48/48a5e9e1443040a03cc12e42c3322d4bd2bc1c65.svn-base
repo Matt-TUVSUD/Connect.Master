@@ -1,0 +1,35 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colLinkToPopup":1, 
+	"colGSafeId":1, 
+	"colRefLatitude":null, 
+	"colRefLongitude":null, 
+	"colUnits":"Units", 
+	"colInputRange":null, 
+	"colSearchName":"SearchName", 
+	"colFileNo":"FileNo", 
+	"colClient":"client", 
+	"colAddress":"address", 
+	"colCity":"City", 
+	"colStProv":"StProv", 
+	"colCountry":"Country", 
+	"colZip":"Zip", 
+	"colTiv":null, 
+	"colLatitude":null, 
+	"colLongitude":null, 
+	"colDistanceMiles":null, 
+	"colDistanceNauticalMiles":null, 
+	"colDistanceKilometers":null, 
+	"colLastInspDate":null, 
+	"colClientLocNo":"ClientLocNo", 
+	"colDivision":"Division", 
+	"colFacility":"Facility"
+}]

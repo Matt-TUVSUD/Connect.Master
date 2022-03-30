@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../../../css/pages/mapping.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/pages/print.css" />
+    <script>
+        var gWindowTitle = "Fire Loss Estimates";
+    </script>
+    <script src="../../../Lib_{{VER}}/Mapping/mapping.js"></script>
+    <script src="../../../Lib_{{VER}}/Mapping/moment.min.js"></script>
+</head>
+<body>
+    <div id="formView">
+        <div style="font-family:Arial !important; font-size:8pt;">
+            <div id="printWindow" class="windowBody pdf-page" style="font-family:Arial !important; font-size:8pt;">
+                 <div id="loading" class="noShow"><span>Loading...</span></div>
+                 <div class="infoArea">
+                        <div class="popColA">
+                            <div class="popRow">
+                                <label class="topHalfLbl">File No.:</label><span data-bind="text: objFormData().FileNo" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow">
+                                <label class="topHalfLbl">Client:</label><span data-bind="text: objFormData().client" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow">
+                                <label class="topHalfLbl">Client Loc. ID:</label><span data-bind="text: objFormData().ClientLocNo" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow">
+                                <label class="topHalfLbl">Divisions:</label><span data-bind="text: objFormData().Division" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow bottomSpaceRow">
+                                <label class="topHalfLbl">Facility:</label><span data-bind="text: objFormData().Facility" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow">
+                                <label class="topHalfLbl">TIV (millions) <span data-bind="text: currencyText"></span></label><span data-bind="    text: numeral(objFormData().TIV).format('0,0')" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow">
+                                <label class="topHalfLbl">Date of Last Insp.:</label><span data-bind="text: moment(objFormData().InspectionDate).format('DD-MMM-YY')" class="topHalfTxt"></span>
+                            </div>
+                        </div>
+                        <div class="popColB">
+                            <div class="popRow">
+                                <label class="topHalfLbl">Address:</label><span data-bind="text: objFormData().address" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow">
+                                <label class="topHalfLbl">City:</label><span data-bind="text: objFormData().City" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow">
+                                <label class="topHalfLbl">St/Prov.:</label><span data-bind="text: objFormData().StProv" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow">
+                                <label class="topHalfLbl">Country:</label><span data-bind="text: objFormData().Country" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow bottomSpaceRow">
+                                <label class="topHalfLbl">Postal Code:</label><span data-bind="text: objFormData().Zip" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow">
+                                <label class="topHalfLbl">Latitude:</label><span data-bind="text: objFormData().latitude" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow">
+                                <label class="topHalfLbl">Longitude:</label><span data-bind="text: objFormData().longitude" class="topHalfTxt"></span>
+                            </div>
+                        </div>
+                        <div id="satMap" class="imgHldr">
+                            <a href="#" class="printNone">
+                                <img data-bind="attr: { src: getStaticMapUrl() }, click: onGoToLocationBingMaps" />
+                            </a>
+                            <img class="printOnly" data-bind="attr: { src: staticImageBase64 }" />
+                            <span class="satImgTip">Tip! The above map is interactive and will open Bing Maps.</span>
+                        </div>
+                    </div>
+                 <div class="btnHldr noPrint">
+                        <a href="#" class="grcBlueBtn printNone" data-bind="click: function () { onCurrentERReport(); }, visible: visibleCurrentERReport">
+                            <i class="far fa-file" style="font-size: 20px; margin-right: 5px"></i>Current ER Report
+                        </a>
+                        <a href="#" class="grcBlueBtn printNone" data-bind="click: function () { onCurrentDiagramReport(); }, visible: visibleCurrentDiagramReport">
+                            <i class="far fa-file" style="font-size: 20px; margin-right: 5px;"></i>Current Diagram
+                        </a>
+                        <a href="#" class="grcBlueBtn printNone" data-bind="click: function () { onPrint(); }, visible: visiblePrint">
+                            <i class="far fa-file" style="font-size: 20px; margin-right: 5px;"></i>Print
+                        </a>
+                    </div>
+                 <div class="bottomSection">
+                    <div class="borderedGrid" style="margin: auto; text-align: center;" data-bind="style: { width: clientFeatures().search('f') < 0 ? '640px' : '426px' }">
+                        <div class="borderedHeader" style="flex-direction:row; justify-content:space-around;">
+                            <span style="font-size:12px; font-weight:700;">Anticipated Probable Loss</span>
+                            <span style="font-size:12px; font-weight:700;" data-bind="if: clientFeatures().search('f') < 0">Possible Maximum Loss</span>
+                            <span style="font-size:12px; font-weight:700;">Maximum Foreseeable Loss</span>
+                        </div>
+                        <div class="borderedGridBody">
+                            <div class="gridBodyRow">
+                                <div class="cell1">
+                                    <span class="valLbl">APL (PD) USD</span>
+                                    <div class="valBox">
+                                        <span data-bind="text: numeral(objFormData().APLPD).format('0,0')"></span>
+                                    </div>
+                                </div>
+                                <!-- ko if: clientFeatures().search('f') < 0 -->
+                                <div class="cell2">
+                                    <span class="valLbl">PML (PD) USD</span>
+                                    <div class="valBox">
+                                        <span data-bind="text: numeral(objFormData().PMLPD).format('0,0')"></span>
+                                    </div>
+                                </div>
+                                <!-- /ko -->
+                                <div class="cell3">
+                                    <span class="valLbl">MFL (PD) USD</span>
+                                    <div class="valBox">
+                                        <span data-bind="text: numeral(objFormData().MFLPD).format('0,0')"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="gridBodyRow">
+                                <div class="cell1">
+                                    <span class="valLbl">APL (BI) USD</span>
+                                    <div class="valBox">
+                                        <span data-bind="text: numeral(objFormData().APLBI).format('0,0')"></span>
+                                    </div>
+                                </div>
+                                <!-- ko if: clientFeatures().search('f') < 0 -->
+                                <div class="cell2">
+                                    <span class="valLbl">PML (BI) USD</span>
+                                    <div class="valBox">
+                                        <span data-bind="text: numeral(objFormData().PMLBI).format('0,0')"></span>
+                                    </div>
+                                </div>
+                                <!-- /ko -->
+                                <div class="cell3">
+                                    <span class="valLbl">MFL (BI) USD</span>
+                                    <div class="valBox">
+                                        <span data-bind="text: numeral(objFormData().MFLBI).format('0,0')"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="gridBodyRow gridBodyBottomRow">
+                                 <div class="cell1">
+                                    <span class="valLbl">APL Total USD</span>
+                                    <div class="valBox">
+                                        <span style="font-weight:700;" data-bind="text: numeral(objFormData().APL).format('0,0')"></span>
+                                    </div>
+                                </div>
+                                <!-- ko if: clientFeatures().search('f') < 0 -->
+                                <div class="cell2">
+                                    <span class="valLbl">PML Total USD</span>
+                                    <div class="valBox">
+                                        <span style="font-weight:700;" data-bind="text: numeral(objFormData().PML).format('0,0')"></span>
+                                    </div>
+                                </div>
+                                <!-- /ko -->
+                                <div class="cell3">
+                                    <span class="valLbl">MFL Total USD</span>
+                                    <div class="valBox">
+                                        <span style="font-weight:700;" data-bind="text: numeral(objFormData().MFL).format('0,0')"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" onclick="getPDF('.pdf-page'); return false;" class="printThis printNone" title="Print This Section"><i class="fa fa-print"></i></button>
+            </div>
+        </div>
+    </div>
+
+     <script>
+         function getPDF(selector) {
+             $('.noPrint').hide();
+             kendo.drawing.drawDOM($(selector)).then(function (group) {
+                 kendo.drawing.pdf.saveAs(group, "popupWindow.pdf");
+             });
+             setTimeout(function () { $('.noPrint').show(); }, 5000);
+         }
+    </script>
+
+</body>
+</html>

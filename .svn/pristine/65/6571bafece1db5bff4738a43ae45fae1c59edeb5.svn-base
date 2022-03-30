@@ -1,0 +1,566 @@
+.recContainer {
+        display:flex; 
+        justify-content:center; 
+        align-items:center; 
+        flex-direction:column;
+        width:100%;
+    }
+
+    .locationCard {
+        display:flex; 
+        flex-direction:row; 
+        align-items:center; 
+        justify-content:center;
+        /*background:#eee;
+        -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.9);
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.9);*/
+        border-right:1px solid #666;
+        border-bottom:1px solid #666;
+        border-left:1px solid #666;
+    }
+
+    .locationInfoHldr{
+        display:flex;
+        flex-direction:column;
+        width:65%;
+        order:1;
+        background:#fff;
+        /*padding:15px;*/
+    }
+
+    .locationHeaderBar{
+        width:865px;
+        min-height:23px;
+        background:#0046ad;
+        color:#fff;
+        font-size:20px;
+        display:flex;
+        align-items:center;
+        justify-content:flex-start;
+        padding:15px;
+        border:1px solid #fff;
+        /*-webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.9);
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.9);*/
+    }
+
+    .locationUpper {
+        background:#fff;
+        padding:15px;
+        display:flex;
+        flex-direction:row;
+        justify-content:flex-start;
+        align-items:flex-start;
+    }
+
+    .locationLower {
+        margin-top:15px;
+        /*background:#fff;*/
+        padding:15px;
+        display:flex;
+        flex-direction:column;
+        justify-content:flex-start;
+        align-items:flex-start;
+    }
+
+    .satImgHldr{
+        display:flex;
+        order:2;
+        width:35%;
+        align-items:center;
+        justify-content:center;
+        padding:15px;
+    }
+
+    .recBtnRow{
+        margin-bottom:5px;
+    }
+
+    .locationCardBtnHldr{
+        width:100%;
+        display:flex;
+        background:#fff;
+        margin-top:10px;
+        width:230px;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .recGridCard {
+        display: flex;
+        width: 1000px;
+        background: #eee;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn-disabled {
+        background: #666666;
+        cursor:default;
+    }
+
+    #recGrid .k-grid {
+        width:1000px;
+    }
+
+    #recGrid .k-grid-content{
+        height:385px;
+    }
+
+    .recDataSection{
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .recResponseBar{
+        width:1025px;
+        margin:5px 0;
+        background:#0046ad;
+        color:#fff;
+        font-size:20px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        padding:15px;
+        border:1px solid #666;
+    }
+
+    .recHeaderBar {
+        width:1175px;
+        background:#0046ad;
+        color:#fff;
+        font-size:20px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        padding:15px;
+        border:1px solid #666;
+    }
+
+    .recGridNoRecs {
+        margin-top:10px;
+    }
+
+.k-switch-handle {
+    background: #ededed;
+}
+
+    .k-switch-off .k-switch-handle {
+        background:#f2f2f2;
+    }
+
+    .k-switch-on .k-switch-container{
+        color:#fff;
+        background:#0046ad;
+    }
+    .closeRec {
+        color: #fff;
+        font-size: 20px;
+        text-decoration: none;
+        justify-content: flex-end;
+    }
+
+    .recDataCard{
+        display:flex; 
+        flex-direction:column; 
+        justify-content:center;
+        background:#fff;
+        max-width:1205px;
+        border-right:1px solid #666;
+        border-bottom:1px solid #666;
+        border-left:1px solid #666;
+    }
+
+    .recDataContainer{
+        display:flex; 
+        flex-direction:row;
+        justify-content: center;
+    }
+
+    .recData{
+        display:flex;
+        flex-direction:column;
+        /*width:40%;*/
+        order:1;
+        padding:15px 15px 0px;
+    }
+
+    .recEditFields{
+        display:flex;
+        flex-direction:column;
+        width:615px;
+        order:2;
+        padding:15px 15px 0px;
+    }
+
+    .bottomFields{
+        display:flex;
+        flex-direction:column;
+        padding:0px 15px 15px;
+    }
+
+    #editDelete,
+    #fileNav{
+        display:flex;
+        width:100%;
+    }
+
+    #saveCancel{
+        display:flex;
+    }
+
+    #noFilesMsg {
+        display:flex;
+        justify-content:center;
+    }
+
+    #filesGridHldr {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        flex-direction:column;
+        align-items:center;
+    }
+
+.linkHldr {
+    text-align: left;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 5px 10px;
+    width: 98%;
+}
+
+.altRow {
+    background: #d9d9d9;
+}
+
+.fileText {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: center;
+    -ms-flex-preferred-size: 80%;
+    font-size: 14px;
+    width: 500px;
+    align-items: center;
+    align-content: center;
+}
+
+.fileDate {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-preferred-size: 25px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100px;
+}
+
+.fileTypeIcon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-preferred-size: 25px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 50px;
+}
+
+.fileDownloadIcon {
+    width: 75px;
+    text-align: center;
+    cursor: pointer;
+    color:#00b140
+}
+
+.fileDeleteIcon {
+    width: 75px;
+    text-align: center;
+    cursor:pointer;
+    color:#ff0000;
+}
+.k-i-x:before {
+    content: "X";
+    color:#000;
+}
+/* Common Styles */
+.cardTitle {
+    color: #0046ad;
+    text-decoration: underline;
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+    .cardRow{
+        display:flex;
+        flex-direction:row;
+        align-items:center;
+        margin-bottom:5px;
+    }
+
+    .actualRangeRow{
+        justify-content:space-around;
+    }
+
+    .actualValueLbl{
+        width:100px;
+        font-size:16px; 
+        text-align:center;
+    }
+
+    .rangeValueLbl{
+        font-size:16px; 
+        text-align:center; 
+        width:225px;
+    }
+
+    .recEditField{
+        background: #FFFF99;
+        /*height:20px;
+        border: 1px solid #8a8a8a;
+        border-radius:4px;*/
+        font-size:13px;
+        padding:0px;
+        line-height:15px;
+    }
+
+    .recEditField .k-picker-wrap{
+        height:22px;
+    }
+
+    .recEditField .k-input{
+        /*height:15px;*/
+        height:auto;
+        line-height:18px;
+    }
+
+    .recEditField .k-select{
+        background:#ddd;
+    }
+
+    .editInput{
+        height:20px;
+        border: 1px solid #8a8a8a;
+        border-radius:4px;
+    }
+
+    .editInputMultiLine{
+        height:50px;
+        border: 1px solid #8a8a8a;
+        border-radius:4px;
+    }
+
+    .editRowEditValue{
+        width:130px;
+        text-align:center;
+        /*margin: 0px 10px;*/
+    }
+
+    .editMode .cardRow {
+        margin-bottom:10px;
+    }
+
+    .cardLbl{
+        font-weight:700;
+        font-size:16px;
+        margin-right:25px;
+        width:145px;
+        text-align:right;
+    }
+
+    .actualRangeRow .cardLbl{
+        width:235px;
+    }
+
+    .divider {
+        width: 100%;
+        height: 1px;
+        background-color: #0046AD;
+        margin:15px 0;
+    }
+
+    .cardValue{
+        font-size:16px;
+        width:250px;
+        max-height:75px;
+        overflow-y:auto;
+    }
+
+    .streetAddress{
+        display:flex;
+        flex-direction:column;
+    }
+
+    .multiValueRowLbl{
+        width:175px;
+        margin-right:15px;
+        font-size:16px;
+        text-align:center;
+    }
+
+    .editRowDisplayValue{
+        width:170px;
+        font-size:16px;
+        text-align:center;
+        margin-right:15px;
+    }
+
+    #statusRow .k-dropdown-wrap {
+        height:21px;
+    }
+
+    .commentLbl{
+
+    }
+
+    .commentValue {
+        width:335px;
+    }
+
+    .editValueHldr{
+        width:165px; 
+        text-align:center; 
+    }
+
+    .respDateField{
+        width:115px;
+        margin-right:0px;
+    }
+
+.respDateColor {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    /*margin-right: 20px*/
+}
+
+.expectedCompDateBackColor {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+}
+
+.required {
+    border:2px solid #ff0000;
+}
+
+.cardRow .k-dropdown-wrap {
+    height: 22px;
+}
+
+.headerLanguageSelector {
+    width:135px;
+}
+
+.flexCol {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    text-align:center;
+    margin-bottom: 10px;
+    min-height:20px;
+}
+
+    .flexRow .editRowDisplayValue {
+        margin-right:0px;
+    }
+
+#recFacilityIntendedActionDDHldr .k-dropdown,
+#recFacilityIntendedActionDDHldr .k-dropdown-wrap,
+#recFacilityIntendedActionDDHldr .recEditField .k-input,
+#mgmtRecIntendedActionHldr .k-dropdown,
+#mgmtRecIntendedActionHldr .k-dropdown-wrap,
+#mgmtRecIntendedActionHldr .recEditField .k-input,
+#recThirdLvlIntendedActionDDHldr .k-dropdown,
+#recThirdLvlIntendedActionDDHldr .k-dropdown-wrap,
+#recThirdLvlIntendedActionDDHldr .recEditField .k-input {
+    height: 2em;
+}
+
+.cardRow .k-i-arrow-60-down:before,
+.flexRow .k-i-arrow-60-down:before {
+    content: "\f0d7";
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 900;
+}
+
+    /*.cardRow .k-icon .k-i-arrow-60-left:before {
+        content: "\f0d9";
+        font-family:"Font Awesome 5 Pro";
+        font-weight:900;
+    }
+
+    .cardRow .k-icon .k-i-arrow-60-right:before{
+        color:#fff;
+        content: "\f0da";
+        font-family:"Font Awesome 5 Pro";
+        font-weight:900;
+    }*/
+
+/*.k-icon .k-i-arrow-60-right {
+    color: #fff;
+    content: "\f0da";
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 900;
+}*/
+
+.k-i-arrow-60-right::before {
+    content: "\f0da";
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 900;
+}
+
+.cardRow .k-i-calendar:before {
+    content: "\f133";
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 900;
+}
+
+    #recFacilityIntendedActionDD-list .k-list-scroller{
+        width:250px;
+    }
+
+.k-calendar .k-header {
+    background: #0046AD;
+    color: #fff;
+}
+
+    .k-calendar .k-header a {
+        color: #fff;
+    }
+
+    .k-calendar.k-widget .k-nav-fast {
+        color: #fff;
+    }
+
+    .cardRow .k-calendar .k-header .k-icon {
+        color:#fff;
+    }
+
+.k-link .k-nav-prev {
+    color: #fff;
+}
+
+.k-popup.k-list-container, .k-popup.k-calendar-container {
+    padding:0px;
+}
+
+.k-upload-status .k-upload-status-total {
+    display:none !important;
+}

@@ -1,0 +1,803 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntitySpacesProject Version="2012.1.0930.0">
+  <Folder Name="Project GRC.Connect">
+    <Folder Name="Tables">
+      <RecordedTemplate Name="Custom - Classes Master (VB)">
+        <Template Name="Custom - Classes Master (VB)" Path="{fixup}EntitySpaces\VB\Custom - Classes Master (VB).est" Version="2012.0.0.0" />
+        <Input>
+          <Item Type="(null)" Key="View" />
+          <Item Type="System.String" Key="Database" Value="cldbConnect" />
+          <Item Type="System.String" Key="Namespace" Value="BusinessObjects" />
+          <Item Type="System.String" Key="OutputPath" Value="{fixup\..\custom\}" />
+          <Item Type="System.Collections.ArrayList" Key="Entities" Value="dbo.clients" />
+          <Item Type="System.String" Key="EntityType" Value="Tables" />
+        </Input>
+        <esSettings>
+          <Driver>SQL</Driver>
+          <ConnectionString>Provider=SQLOLEDB;Integrated Security=SSPI;Persist Security Info=False;User ID=AppUserCLDBWeb;Initial Catalog=cldbConnect;Data Source=susnjcu01033\dmz</ConnectionString>
+          <TemplatePath>{fixup}</TemplatePath>
+          <OutputPath>{fixup}</OutputPath>
+          <UIAssemblyPath>{fixup}</UIAssemblyPath>
+          <CompilerAssemblyPath>{fixup}</CompilerAssemblyPath>
+          <LanguageMappingFile>{fixup}</LanguageMappingFile>
+          <UserMetadataFile>{fixup}</UserMetadataFile>
+          <AbstractPrefix>es</AbstractPrefix>
+          <EntitySuffix />
+          <CollectionSuffix>Collection</CollectionSuffix>
+          <QuerySuffix>Query</QuerySuffix>
+          <MetadataSuffix>Metadata</MetadataSuffix>
+          <ProxyStubSuffix>ProxyStub</ProxyStubSuffix>
+          <PrefixWithSchema>false</PrefixWithSchema>
+          <ProcPrefix>proc_</ProcPrefix>
+          <ProcInsert>Insert</ProcInsert>
+          <ProcUpdate>Update</ProcUpdate>
+          <ProcDelete>Delete</ProcDelete>
+          <ProcLoadAll>LoadAll</ProcLoadAll>
+          <ProcLoadByPK>LoadByPrimaryKey</ProcLoadByPK>
+          <ProcSuffix />
+          <ProcVerbFirst>false</ProcVerbFirst>
+          <OnePrefix />
+          <OneSeparator>By</OneSeparator>
+          <OneSuffix />
+          <ManyPrefix />
+          <ManySeparator>By</ManySeparator>
+          <ManySuffix>Collection</ManySuffix>
+          <SelfOnly>false</SelfOnly>
+          <SwapNames>false</SwapNames>
+          <UseAssociativeName>false</UseAssociativeName>
+          <UseUpToPrefix>true</UseUpToPrefix>
+          <PreserveUnderscores>false</PreserveUnderscores>
+          <UseRawNames>false</UseRawNames>
+          <UseNullableTypesAlways>true</UseNullableTypesAlways>
+          <TurnOffDateTimeInClassHeaders>false</TurnOffDateTimeInClassHeaders>
+          <DefaultTemplateDoubleClickAction>Execute</DefaultTemplateDoubleClickAction>
+          <LicenseProxyEnable>false</LicenseProxyEnable>
+          <LicenseProxyUrl />
+          <LicenseProxyUserName />
+          <LicenseProxyPassword />
+          <LicenseProxyDomainName />
+          <DriverInfoCollection>
+            <esSettingsDriverInfo>
+              <Driver>SQL</Driver>
+              <ConnectionString>Provider=SQLOLEDB;Integrated Security=SSPI;Persist Security Info=False;User ID=AppUserCLDBWeb;Initial Catalog=cldbConnect;Data Source=susnjcu01033\dmz</ConnectionString>
+              <DateAdded>
+                <IsEnabled>false</IsEnabled>
+                <ColumnName />
+                <Type>ClientSide</Type>
+                <ClientType>UtcNow</ClientType>
+                <ServerSideText />
+              </DateAdded>
+              <DateModified>
+                <IsEnabled>false</IsEnabled>
+                <ColumnName />
+                <Type>ClientSide</Type>
+                <ClientType>UtcNow</ClientType>
+                <ServerSideText />
+              </DateModified>
+              <AddedBy>
+                <IsEnabled>false</IsEnabled>
+                <UseEventHandler>false</UseEventHandler>
+                <ColumnName />
+                <ServerSideText />
+              </AddedBy>
+              <ModifiedBy>
+                <IsEnabled>false</IsEnabled>
+                <UseEventHandler>false</UseEventHandler>
+                <ColumnName />
+                <ServerSideText />
+              </ModifiedBy>
+              <ConcurrencyColumnEnabled>false</ConcurrencyColumnEnabled>
+              <ConcurrencyColumn />
+            </esSettingsDriverInfo>
+          </DriverInfoCollection>
+        </esSettings>
+      </RecordedTemplate>
+      <RecordedTemplate Name="Generated - Classes Master (VB)">
+        <Template Name="Generated - Classes Master (VB)" Path="{fixup}EntitySpaces\VB\Generated - Classes Master (VB).est" Version="2012.0.0.0" />
+        <Input>
+          <Item Type="System.Boolean" Key="WcfIsRequired" Value="False" />
+          <Item Type="System.Boolean" Key="WcfSupport" Value="False" />
+          <Item Type="System.Boolean" Key="CompactXML" Value="False" />
+          <Item Type="System.Boolean" Key="WcfEmitDefaultValue" Value="True" />
+          <Item Type="System.Boolean" Key="MetadataClassShouldIgnoreSchema" Value="True" />
+          <Item Type="System.Boolean" Key="LINQtoSQL" Value="False" />
+          <Item Type="System.String" Key="Namespace" Value="BusinessObjects" />
+          <Item Type="System.Boolean" Key="DebugVisualizer" Value="False" />
+          <Item Type="System.Boolean" Key="GenerateHierarchicalModel" Value="False" />
+          <Item Type="System.Boolean" Key="SupportINotifyChanged" Value="False" />
+          <Item Type="System.Boolean" Key="TargetMultipleDatabases" Value="False" />
+          <Item Type="System.Boolean" Key="TargetTheCompactFramework" Value="False" />
+          <Item Type="System.Boolean" Key="MetadataClassShouldIgnoreCatalog" Value="True" />
+          <Item Type="System.Boolean" Key="UseDnnObjectQualifier" Value="False" />
+          <Item Type="System.Boolean" Key="GenerateStrProperties" Value="True" />
+          <Item Type="System.String" Key="ConnectionName" Value="" />
+          <Item Type="System.String" Key="Database" Value="cldbConnect" />
+          <Item Type="System.Boolean" Key="UseCustomBaseClass" Value="False" />
+          <Item Type="System.Collections.ArrayList" Key="Entities" Value="adm.tblAdminNote,dbo.BM-Recommendations,dbo.Fire-Recommendations,dbo.PSRecommendations" />
+          <Item Type="System.Boolean" Key="GenerateProxyStub" Value="False" />
+          <Item Type="System.Boolean" Key="SerializableQueries" Value="False" />
+          <Item Type="System.Boolean" Key="GenerateHierarchicalDataContracts" Value="False" />
+          <Item Type="System.Boolean" Key="GenerateHierarchicalRiaServicesSupport" Value="False" />
+          <Item Type="System.String" Key="WcfDataContract" Value="http://tempuri.org/" />
+          <Item Type="System.Boolean" Key="DebuggerDisplay" Value="True" />
+          <Item Type="System.String" Key="EntityType" Value="Tables" />
+          <Item Type="System.Boolean" Key="WcfOrder" Value="True" />
+          <Item Type="System.String" Key="OutputPath" Value="{fixup\..\..\..\grc.connect3-trunk\core\generated\}" />
+          <Item Type="(null)" Key="Table" />
+          <Item Type="System.Boolean" Key="GenerateSingleFile" Value="True" />
+          <Item Type="System.Boolean" Key="IncludeRowStateInXml" Value="True" />
+          <Item Type="System.Boolean" Key="GenerateHierarchicalModelSelectedTablesOnly" Value="False" />
+        </Input>
+        <esSettings>
+          <Driver>SQL</Driver>
+          <ConnectionString>Provider=SQLOLEDB;Integrated Security=SSPI;Persist Security Info=False;User ID=AppUserCLDBWeb;Initial Catalog=cldbConnect;Data Source=susnjcu01033\dmz</ConnectionString>
+          <TemplatePath>{fixup}</TemplatePath>
+          <OutputPath>{fixup}</OutputPath>
+          <UIAssemblyPath>{fixup}</UIAssemblyPath>
+          <CompilerAssemblyPath>{fixup}</CompilerAssemblyPath>
+          <LanguageMappingFile>{fixup}</LanguageMappingFile>
+          <UserMetadataFile>{fixup}</UserMetadataFile>
+          <AbstractPrefix>es</AbstractPrefix>
+          <EntitySuffix />
+          <CollectionSuffix>Collection</CollectionSuffix>
+          <QuerySuffix>Query</QuerySuffix>
+          <MetadataSuffix>Metadata</MetadataSuffix>
+          <ProxyStubSuffix>ProxyStub</ProxyStubSuffix>
+          <PrefixWithSchema>false</PrefixWithSchema>
+          <ProcPrefix>proc_</ProcPrefix>
+          <ProcInsert>Insert</ProcInsert>
+          <ProcUpdate>Update</ProcUpdate>
+          <ProcDelete>Delete</ProcDelete>
+          <ProcLoadAll>LoadAll</ProcLoadAll>
+          <ProcLoadByPK>LoadByPrimaryKey</ProcLoadByPK>
+          <ProcSuffix />
+          <ProcVerbFirst>false</ProcVerbFirst>
+          <OnePrefix />
+          <OneSeparator>By</OneSeparator>
+          <OneSuffix />
+          <ManyPrefix />
+          <ManySeparator>By</ManySeparator>
+          <ManySuffix>Collection</ManySuffix>
+          <SelfOnly>false</SelfOnly>
+          <SwapNames>false</SwapNames>
+          <UseAssociativeName>false</UseAssociativeName>
+          <UseUpToPrefix>true</UseUpToPrefix>
+          <PreserveUnderscores>false</PreserveUnderscores>
+          <UseRawNames>false</UseRawNames>
+          <UseNullableTypesAlways>true</UseNullableTypesAlways>
+          <TurnOffDateTimeInClassHeaders>false</TurnOffDateTimeInClassHeaders>
+          <DefaultTemplateDoubleClickAction>Execute</DefaultTemplateDoubleClickAction>
+          <LicenseProxyEnable>false</LicenseProxyEnable>
+          <LicenseProxyUrl />
+          <LicenseProxyUserName />
+          <LicenseProxyPassword />
+          <LicenseProxyDomainName />
+          <DriverInfoCollection>
+            <esSettingsDriverInfo>
+              <Driver>SQL</Driver>
+              <ConnectionString>Provider=SQLOLEDB;Integrated Security=SSPI;Persist Security Info=False;User ID=AppUserCLDBWeb;Initial Catalog=cldbConnect;Data Source=susnjcu01033\dmz</ConnectionString>
+              <DateAdded>
+                <IsEnabled>false</IsEnabled>
+                <ColumnName />
+                <Type>ClientSide</Type>
+                <ClientType>UtcNow</ClientType>
+                <ServerSideText />
+              </DateAdded>
+              <DateModified>
+                <IsEnabled>false</IsEnabled>
+                <ColumnName />
+                <Type>ClientSide</Type>
+                <ClientType>UtcNow</ClientType>
+                <ServerSideText />
+              </DateModified>
+              <AddedBy>
+                <IsEnabled>false</IsEnabled>
+                <UseEventHandler>false</UseEventHandler>
+                <ColumnName />
+                <ServerSideText />
+              </AddedBy>
+              <ModifiedBy>
+                <IsEnabled>false</IsEnabled>
+                <UseEventHandler>false</UseEventHandler>
+                <ColumnName />
+                <ServerSideText />
+              </ModifiedBy>
+              <ConcurrencyColumnEnabled>false</ConcurrencyColumnEnabled>
+              <ConcurrencyColumn />
+            </esSettingsDriverInfo>
+          </DriverInfoCollection>
+        </esSettings>
+      </RecordedTemplate>
+      <RecordedTemplate Name="WCF Service (JSON)">
+        <Template Name="WCF Service (JSON)" Path="{fixup}EntitySpaces\VB\WCFServices\WCF Service (VB) JSON.est" Version="2012.0.0.0" />
+        <Input>
+          <Item Type="System.String" Key="WCFServiceClassNamespace" Value="grc.connect.Web.Service" />
+          <Item Type="System.Boolean" Key="GenerateSingleFile" Value="True" />
+          <Item Type="System.Boolean" Key="GenerateHierarchicalModelSelectedTablesOnly" Value="False" />
+          <Item Type="System.Boolean" Key="GenerateHierarchicalLazyLoadSupport" Value="False" />
+          <Item Type="System.String" Key="WCFServiceClassName" Value="DataServer" />
+          <Item Type="System.String" Key="EntitySpacesNamespace" Value="GRC.Connect.Libraries.CoreLib.BusinessObjects" />
+          <Item Type="System.String" Key="EntityType" Value="Tables" />
+          <Item Type="System.String" Key="OutputPath" Value="{fixup\..\..\web\service\}" />
+          <Item Type="System.Collections.ArrayList" Key="Entities" Value="dbo.Fire-Recommendations" />
+          <Item Type="System.String" Key="ConnectionName" Value="" />
+          <Item Type="System.String" Key="Database" Value="cldbConnect" />
+          <Item Type="System.Boolean" Key="GenerateHierarchicalModel" Value="False" />
+        </Input>
+        <esSettings>
+          <Driver>SQL</Driver>
+          <ConnectionString>Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;User ID=AppUserCLDBWeb;Initial Catalog=cldbConnect;Data Source=SUSNJCU01033\DMZ</ConnectionString>
+          <TemplatePath>{fixup}</TemplatePath>
+          <OutputPath>{fixup}</OutputPath>
+          <UIAssemblyPath>{fixup}</UIAssemblyPath>
+          <CompilerAssemblyPath>{fixup}</CompilerAssemblyPath>
+          <LanguageMappingFile>{fixup}</LanguageMappingFile>
+          <UserMetadataFile>{fixup}</UserMetadataFile>
+          <AbstractPrefix>es</AbstractPrefix>
+          <EntitySuffix />
+          <CollectionSuffix>Collection</CollectionSuffix>
+          <QuerySuffix>Query</QuerySuffix>
+          <MetadataSuffix>Metadata</MetadataSuffix>
+          <ProxyStubSuffix>ProxyStub</ProxyStubSuffix>
+          <PrefixWithSchema>false</PrefixWithSchema>
+          <ProcPrefix>proc_</ProcPrefix>
+          <ProcInsert>Insert</ProcInsert>
+          <ProcUpdate>Update</ProcUpdate>
+          <ProcDelete>Delete</ProcDelete>
+          <ProcLoadAll>LoadAll</ProcLoadAll>
+          <ProcLoadByPK>LoadByPrimaryKey</ProcLoadByPK>
+          <ProcSuffix />
+          <ProcVerbFirst>false</ProcVerbFirst>
+          <OnePrefix />
+          <OneSeparator>By</OneSeparator>
+          <OneSuffix />
+          <ManyPrefix />
+          <ManySeparator>By</ManySeparator>
+          <ManySuffix>Collection</ManySuffix>
+          <SelfOnly>false</SelfOnly>
+          <SwapNames>false</SwapNames>
+          <UseAssociativeName>false</UseAssociativeName>
+          <UseUpToPrefix>true</UseUpToPrefix>
+          <PreserveUnderscores>false</PreserveUnderscores>
+          <UseRawNames>false</UseRawNames>
+          <UseNullableTypesAlways>true</UseNullableTypesAlways>
+          <TurnOffDateTimeInClassHeaders>false</TurnOffDateTimeInClassHeaders>
+          <DefaultTemplateDoubleClickAction>Execute</DefaultTemplateDoubleClickAction>
+          <LicenseProxyEnable>false</LicenseProxyEnable>
+          <LicenseProxyUrl />
+          <LicenseProxyUserName />
+          <LicenseProxyPassword />
+          <LicenseProxyDomainName />
+          <DriverInfoCollection>
+            <esSettingsDriverInfo>
+              <Driver>SQL</Driver>
+              <ConnectionString>Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;User ID=AppUserCLDBWeb;Initial Catalog=cldbConnect;Data Source=SUSNJCU01033\DMZ</ConnectionString>
+              <DateAdded>
+                <IsEnabled>false</IsEnabled>
+                <ColumnName />
+                <Type>ClientSide</Type>
+                <ClientType>UtcNow</ClientType>
+                <ServerSideText />
+              </DateAdded>
+              <DateModified>
+                <IsEnabled>false</IsEnabled>
+                <ColumnName />
+                <Type>ClientSide</Type>
+                <ClientType>UtcNow</ClientType>
+                <ServerSideText />
+              </DateModified>
+              <AddedBy>
+                <IsEnabled>false</IsEnabled>
+                <UseEventHandler>false</UseEventHandler>
+                <ColumnName />
+                <ServerSideText />
+              </AddedBy>
+              <ModifiedBy>
+                <IsEnabled>false</IsEnabled>
+                <UseEventHandler>false</UseEventHandler>
+                <ColumnName />
+                <ServerSideText />
+              </ModifiedBy>
+              <ConcurrencyColumnEnabled>false</ConcurrencyColumnEnabled>
+              <ConcurrencyColumn />
+            </esSettingsDriverInfo>
+          </DriverInfoCollection>
+        </esSettings>
+      </RecordedTemplate>
+      <RecordedTemplate Name="JavaScript Classes">
+        <Template Name="JavaScript Classes" Path="{fixup}EntitySpaces\JavaScript\JavaScript Classes.est" Version="2012.0.0.0" />
+        <Input>
+          <Item Type="System.String" Key="Database" Value="cldbConnect" />
+          <Item Type="System.String" Key="ServicePath" Value="" />
+          <Item Type="System.Boolean" Key="GenerateRestAPI" Value="False" />
+          <Item Type="System.Boolean" Key="GenerateSingleFile" Value="False" />
+          <Item Type="(null)" Key="View" />
+          <Item Type="System.Boolean" Key="GenerateHierarchicalModel" Value="True" />
+          <Item Type="System.Boolean" Key="GenerateHierarchicalModelSelectedTablesOnly" Value="False" />
+          <Item Type="System.Collections.ArrayList" Key="Entities" Value="bv.vwFireRatingBaseView" />
+          <Item Type="System.String" Key="OutputPath" Value="{fixup\..\..\web\lib_{{ver\generated\}" />
+          <Item Type="System.String" Key="EntityType" Value="Views" />
+          <Item Type="System.Boolean" Key="GenerateHierarchicalLazyLoadSupport" Value="True" />
+        </Input>
+        <esSettings>
+          <Driver>SQL</Driver>
+          <ConnectionString>Provider=SQLOLEDB;Integrated Security=SSPI;Persist Security Info=False;User ID=AppUserCLDBWeb;Initial Catalog=cldbConnect;Data Source=susnjcu01033\dmz</ConnectionString>
+          <TemplatePath>{fixup}</TemplatePath>
+          <OutputPath>{fixup}</OutputPath>
+          <UIAssemblyPath>{fixup}</UIAssemblyPath>
+          <CompilerAssemblyPath>{fixup}</CompilerAssemblyPath>
+          <LanguageMappingFile>{fixup}</LanguageMappingFile>
+          <UserMetadataFile>{fixup}</UserMetadataFile>
+          <AbstractPrefix>es</AbstractPrefix>
+          <EntitySuffix />
+          <CollectionSuffix>Collection</CollectionSuffix>
+          <QuerySuffix>Query</QuerySuffix>
+          <MetadataSuffix>Metadata</MetadataSuffix>
+          <ProxyStubSuffix>ProxyStub</ProxyStubSuffix>
+          <PrefixWithSchema>false</PrefixWithSchema>
+          <ProcPrefix>proc_</ProcPrefix>
+          <ProcInsert>Insert</ProcInsert>
+          <ProcUpdate>Update</ProcUpdate>
+          <ProcDelete>Delete</ProcDelete>
+          <ProcLoadAll>LoadAll</ProcLoadAll>
+          <ProcLoadByPK>LoadByPrimaryKey</ProcLoadByPK>
+          <ProcSuffix />
+          <ProcVerbFirst>false</ProcVerbFirst>
+          <OnePrefix />
+          <OneSeparator>By</OneSeparator>
+          <OneSuffix />
+          <ManyPrefix />
+          <ManySeparator>By</ManySeparator>
+          <ManySuffix>Collection</ManySuffix>
+          <SelfOnly>false</SelfOnly>
+          <SwapNames>false</SwapNames>
+          <UseAssociativeName>false</UseAssociativeName>
+          <UseUpToPrefix>true</UseUpToPrefix>
+          <PreserveUnderscores>false</PreserveUnderscores>
+          <UseRawNames>false</UseRawNames>
+          <UseNullableTypesAlways>true</UseNullableTypesAlways>
+          <TurnOffDateTimeInClassHeaders>false</TurnOffDateTimeInClassHeaders>
+          <DefaultTemplateDoubleClickAction>Execute</DefaultTemplateDoubleClickAction>
+          <LicenseProxyEnable>false</LicenseProxyEnable>
+          <LicenseProxyUrl />
+          <LicenseProxyUserName />
+          <LicenseProxyPassword />
+          <LicenseProxyDomainName />
+          <DriverInfoCollection>
+            <esSettingsDriverInfo>
+              <Driver>SQL</Driver>
+              <ConnectionString>Provider=SQLOLEDB;Integrated Security=SSPI;Persist Security Info=False;User ID=AppUserCLDBWeb;Initial Catalog=cldbConnect;Data Source=susnjcu01033\dmz</ConnectionString>
+              <DateAdded>
+                <IsEnabled>false</IsEnabled>
+                <ColumnName />
+                <Type>ClientSide</Type>
+                <ClientType>UtcNow</ClientType>
+                <ServerSideText />
+              </DateAdded>
+              <DateModified>
+                <IsEnabled>false</IsEnabled>
+                <ColumnName />
+                <Type>ClientSide</Type>
+                <ClientType>UtcNow</ClientType>
+                <ServerSideText />
+              </DateModified>
+              <AddedBy>
+                <IsEnabled>false</IsEnabled>
+                <UseEventHandler>false</UseEventHandler>
+                <ColumnName />
+                <ServerSideText />
+              </AddedBy>
+              <ModifiedBy>
+                <IsEnabled>false</IsEnabled>
+                <UseEventHandler>false</UseEventHandler>
+                <ColumnName />
+                <ServerSideText />
+              </ModifiedBy>
+              <ConcurrencyColumnEnabled>false</ConcurrencyColumnEnabled>
+              <ConcurrencyColumn />
+            </esSettingsDriverInfo>
+          </DriverInfoCollection>
+        </esSettings>
+      </RecordedTemplate>
+    </Folder>
+    <Folder Name="Views">
+      <RecordedTemplate Name="Custom - Classes Master (VB)">
+        <Template Name="Custom - Classes Master (VB)" Path="{fixup}EntitySpaces\VB\Custom - Classes Master (VB).est" Version="2012.0.0.0" />
+        <Input>
+          <Item Type="System.Collections.ArrayList" Key="Entities" Value="dbo.viewCCPSRecommendationCounts" />
+          <Item Type="System.String" Key="Database" Value="cldbConnect" />
+          <Item Type="System.String" Key="Namespace" Value="BusinessObjects" />
+          <Item Type="(null)" Key="Table" />
+          <Item Type="System.String" Key="OutputPath" Value="{fixup\..\custom\}" />
+          <Item Type="System.String" Key="EntityType" Value="Views" />
+        </Input>
+        <esSettings>
+          <Driver>SQL</Driver>
+          <ConnectionString>Provider=SQLOLEDB.1; User ID=AppUserCLDBWeb; Password=$Cl13nt$; Initial Catalog=cldbConnect2Dev; Data Source=EXNJCU01008.EXUS01.NET</ConnectionString>
+          <TemplatePath>{fixup}</TemplatePath>
+          <OutputPath>{fixup}</OutputPath>
+          <UIAssemblyPath>{fixup}</UIAssemblyPath>
+          <CompilerAssemblyPath>{fixup}</CompilerAssemblyPath>
+          <LanguageMappingFile>{fixup}</LanguageMappingFile>
+          <UserMetadataFile>{fixup}</UserMetadataFile>
+          <AbstractPrefix>es</AbstractPrefix>
+          <EntitySuffix />
+          <CollectionSuffix>Collection</CollectionSuffix>
+          <QuerySuffix>Query</QuerySuffix>
+          <MetadataSuffix>Metadata</MetadataSuffix>
+          <ProxyStubSuffix>ProxyStub</ProxyStubSuffix>
+          <PrefixWithSchema>false</PrefixWithSchema>
+          <ProcPrefix>proc_</ProcPrefix>
+          <ProcInsert>Insert</ProcInsert>
+          <ProcUpdate>Update</ProcUpdate>
+          <ProcDelete>Delete</ProcDelete>
+          <ProcLoadAll>LoadAll</ProcLoadAll>
+          <ProcLoadByPK>LoadByPrimaryKey</ProcLoadByPK>
+          <ProcSuffix />
+          <ProcVerbFirst>false</ProcVerbFirst>
+          <OnePrefix />
+          <OneSeparator>By</OneSeparator>
+          <OneSuffix />
+          <ManyPrefix />
+          <ManySeparator>By</ManySeparator>
+          <ManySuffix>Collection</ManySuffix>
+          <SelfOnly>false</SelfOnly>
+          <SwapNames>false</SwapNames>
+          <UseAssociativeName>false</UseAssociativeName>
+          <UseUpToPrefix>true</UseUpToPrefix>
+          <PreserveUnderscores>false</PreserveUnderscores>
+          <UseRawNames>false</UseRawNames>
+          <UseNullableTypesAlways>true</UseNullableTypesAlways>
+          <TurnOffDateTimeInClassHeaders>false</TurnOffDateTimeInClassHeaders>
+          <DefaultTemplateDoubleClickAction>Execute</DefaultTemplateDoubleClickAction>
+          <LicenseProxyEnable>false</LicenseProxyEnable>
+          <LicenseProxyUrl />
+          <LicenseProxyUserName />
+          <LicenseProxyPassword />
+          <LicenseProxyDomainName />
+          <DriverInfoCollection>
+            <esSettingsDriverInfo>
+              <Driver>SQL</Driver>
+              <ConnectionString>Provider=SQLOLEDB.1; User ID=AppUserCLDBWeb; Password=$Cl13nt$; Initial Catalog=cldbConnect2Dev; Data Source=EXNJCU01008.EXUS01.NET</ConnectionString>
+              <DateAdded>
+                <IsEnabled>false</IsEnabled>
+                <ColumnName />
+                <Type>ClientSide</Type>
+                <ClientType>UtcNow</ClientType>
+                <ServerSideText />
+              </DateAdded>
+              <DateModified>
+                <IsEnabled>false</IsEnabled>
+                <ColumnName />
+                <Type>ClientSide</Type>
+                <ClientType>UtcNow</ClientType>
+                <ServerSideText />
+              </DateModified>
+              <AddedBy>
+                <IsEnabled>false</IsEnabled>
+                <UseEventHandler>false</UseEventHandler>
+                <ColumnName />
+                <ServerSideText />
+              </AddedBy>
+              <ModifiedBy>
+                <IsEnabled>false</IsEnabled>
+                <UseEventHandler>false</UseEventHandler>
+                <ColumnName />
+                <ServerSideText />
+              </ModifiedBy>
+              <ConcurrencyColumnEnabled>false</ConcurrencyColumnEnabled>
+              <ConcurrencyColumn />
+            </esSettingsDriverInfo>
+          </DriverInfoCollection>
+        </esSettings>
+      </RecordedTemplate>
+      <RecordedTemplate Name="Generated - Classes Master (VB)">
+        <Template Name="Generated - Classes Master (VB)" Path="{fixup}EntitySpaces\VB\Generated - Classes Master (VB).est" Version="2012.0.0.0" />
+        <Input>
+          <Item Type="System.Boolean" Key="WcfIsRequired" Value="False" />
+          <Item Type="System.Boolean" Key="WcfSupport" Value="False" />
+          <Item Type="System.Boolean" Key="CompactXML" Value="False" />
+          <Item Type="System.Boolean" Key="WcfEmitDefaultValue" Value="True" />
+          <Item Type="System.Boolean" Key="MetadataClassShouldIgnoreSchema" Value="False" />
+          <Item Type="System.Boolean" Key="LINQtoSQL" Value="False" />
+          <Item Type="System.String" Key="Namespace" Value="BusinessObjects" />
+          <Item Type="System.Boolean" Key="DebugVisualizer" Value="False" />
+          <Item Type="System.Boolean" Key="GenerateHierarchicalModel" Value="False" />
+          <Item Type="System.Boolean" Key="SupportINotifyChanged" Value="False" />
+          <Item Type="System.Boolean" Key="IncludeRowStateInXml" Value="True" />
+          <Item Type="System.Boolean" Key="TargetMultipleDatabases" Value="False" />
+          <Item Type="System.Boolean" Key="TargetTheCompactFramework" Value="False" />
+          <Item Type="(null)" Key="View" />
+          <Item Type="System.Boolean" Key="MetadataClassShouldIgnoreCatalog" Value="True" />
+          <Item Type="System.Boolean" Key="UseDnnObjectQualifier" Value="False" />
+          <Item Type="System.Boolean" Key="GenerateStrProperties" Value="True" />
+          <Item Type="System.String" Key="ConnectionName" Value="" />
+          <Item Type="System.String" Key="Database" Value="cldbConnect" />
+          <Item Type="System.String" Key="EntityType" Value="Tables" />
+          <Item Type="System.Collections.ArrayList" Key="Entities" Value="dbo.BM-Recommendations,dbo.Fire-Recommendations,dbo.PSRecommendations" />
+          <Item Type="System.Boolean" Key="GenerateProxyStub" Value="False" />
+          <Item Type="System.Boolean" Key="SerializableQueries" Value="False" />
+          <Item Type="System.Boolean" Key="GenerateHierarchicalDataContracts" Value="False" />
+          <Item Type="System.Boolean" Key="GenerateHierarchicalRiaServicesSupport" Value="False" />
+          <Item Type="System.String" Key="WcfDataContract" Value="http://tempuri.org/" />
+          <Item Type="System.Boolean" Key="DebuggerDisplay" Value="True" />
+          <Item Type="System.String" Key="OutputPath" Value="{fixup\..\generated\}" />
+          <Item Type="System.Boolean" Key="WcfOrder" Value="True" />
+          <Item Type="System.Boolean" Key="UseCustomBaseClass" Value="False" />
+          <Item Type="System.Boolean" Key="GenerateSingleFile" Value="True" />
+          <Item Type="System.Boolean" Key="GenerateHierarchicalModelSelectedTablesOnly" Value="False" />
+        </Input>
+        <esSettings>
+          <Driver>SQL</Driver>
+          <ConnectionString>Provider=SQLOLEDB;Integrated Security=SSPI;Persist Security Info=False;User ID=AppUserCLDBWeb;Initial Catalog=cldbConnect;Data Source=susnjcu01033\dmz</ConnectionString>
+          <TemplatePath>{fixup}</TemplatePath>
+          <OutputPath>{fixup}</OutputPath>
+          <UIAssemblyPath>{fixup}</UIAssemblyPath>
+          <CompilerAssemblyPath>{fixup}</CompilerAssemblyPath>
+          <LanguageMappingFile>{fixup}</LanguageMappingFile>
+          <UserMetadataFile>{fixup}</UserMetadataFile>
+          <AbstractPrefix>es</AbstractPrefix>
+          <EntitySuffix />
+          <CollectionSuffix>Collection</CollectionSuffix>
+          <QuerySuffix>Query</QuerySuffix>
+          <MetadataSuffix>Metadata</MetadataSuffix>
+          <ProxyStubSuffix>ProxyStub</ProxyStubSuffix>
+          <PrefixWithSchema>false</PrefixWithSchema>
+          <ProcPrefix>proc_</ProcPrefix>
+          <ProcInsert>Insert</ProcInsert>
+          <ProcUpdate>Update</ProcUpdate>
+          <ProcDelete>Delete</ProcDelete>
+          <ProcLoadAll>LoadAll</ProcLoadAll>
+          <ProcLoadByPK>LoadByPrimaryKey</ProcLoadByPK>
+          <ProcSuffix />
+          <ProcVerbFirst>false</ProcVerbFirst>
+          <OnePrefix />
+          <OneSeparator>By</OneSeparator>
+          <OneSuffix />
+          <ManyPrefix />
+          <ManySeparator>By</ManySeparator>
+          <ManySuffix>Collection</ManySuffix>
+          <SelfOnly>false</SelfOnly>
+          <SwapNames>false</SwapNames>
+          <UseAssociativeName>false</UseAssociativeName>
+          <UseUpToPrefix>true</UseUpToPrefix>
+          <PreserveUnderscores>false</PreserveUnderscores>
+          <UseRawNames>false</UseRawNames>
+          <UseNullableTypesAlways>true</UseNullableTypesAlways>
+          <TurnOffDateTimeInClassHeaders>false</TurnOffDateTimeInClassHeaders>
+          <DefaultTemplateDoubleClickAction>Execute</DefaultTemplateDoubleClickAction>
+          <LicenseProxyEnable>false</LicenseProxyEnable>
+          <LicenseProxyUrl />
+          <LicenseProxyUserName />
+          <LicenseProxyPassword />
+          <LicenseProxyDomainName />
+          <DriverInfoCollection>
+            <esSettingsDriverInfo>
+              <Driver>SQL</Driver>
+              <ConnectionString>Provider=SQLOLEDB;Integrated Security=SSPI;Persist Security Info=False;User ID=AppUserCLDBWeb;Initial Catalog=cldbConnect;Data Source=susnjcu01033\dmz</ConnectionString>
+              <DateAdded>
+                <IsEnabled>false</IsEnabled>
+                <ColumnName />
+                <Type>ClientSide</Type>
+                <ClientType>UtcNow</ClientType>
+                <ServerSideText />
+              </DateAdded>
+              <DateModified>
+                <IsEnabled>false</IsEnabled>
+                <ColumnName />
+                <Type>ClientSide</Type>
+                <ClientType>UtcNow</ClientType>
+                <ServerSideText />
+              </DateModified>
+              <AddedBy>
+                <IsEnabled>false</IsEnabled>
+                <UseEventHandler>false</UseEventHandler>
+                <ColumnName />
+                <ServerSideText />
+              </AddedBy>
+              <ModifiedBy>
+                <IsEnabled>false</IsEnabled>
+                <UseEventHandler>false</UseEventHandler>
+                <ColumnName />
+                <ServerSideText />
+              </ModifiedBy>
+              <ConcurrencyColumnEnabled>false</ConcurrencyColumnEnabled>
+              <ConcurrencyColumn />
+            </esSettingsDriverInfo>
+          </DriverInfoCollection>
+        </esSettings>
+      </RecordedTemplate>
+      <RecordedTemplate Name="WCF Service (JSON) View">
+        <Template Name="WCF Service (JSON) View" Path="{fixup}EntitySpaces\VB\WCFServices\WCF Service (VB) JSON (View).est" Version="2012.0.0.0" />
+        <Input>
+          <Item Type="System.String" Key="Database" Value="cldbConnect" />
+          <Item Type="System.String" Key="WCFServiceClassName" Value="ViewServer" />
+          <Item Type="System.Boolean" Key="GenerateSingleFile" Value="True" />
+          <Item Type="System.Boolean" Key="GenerateHierarchicalModelSelectedTablesOnly" Value="False" />
+          <Item Type="System.Boolean" Key="GenerateHierarchicalModel" Value="True" />
+          <Item Type="System.String" Key="ConnectionName" Value="" />
+          <Item Type="System.Collections.ArrayList" Key="Entities" Value="dbo.viewCCPSRecommendationCounts" />
+          <Item Type="System.String" Key="OutputPath" Value="{fixup\..\..\web\service\}" />
+          <Item Type="System.String" Key="EntityType" Value="Views" />
+          <Item Type="System.Boolean" Key="GenerateHierarchicalLazyLoadSupport" Value="True" />
+          <Item Type="System.String" Key="WCFServiceClassNamespace" Value="GRC.Connect.Web.Service" />
+          <Item Type="System.String" Key="EntitySpacesNamespace" Value="GRC.Connect.Libraries.CoreLib.BusinessObjects" />
+        </Input>
+        <esSettings>
+          <Driver>SQL</Driver>
+          <ConnectionString>Provider=SQLOLEDB.1; User ID=AppUserCLDBWeb; Password=$Cl13nt$; Initial Catalog=cldbConnect2Dev; Data Source=EXNJCU01008.EXUS01.NET</ConnectionString>
+          <TemplatePath>{fixup}</TemplatePath>
+          <OutputPath>{fixup}</OutputPath>
+          <UIAssemblyPath>{fixup}</UIAssemblyPath>
+          <CompilerAssemblyPath>{fixup}</CompilerAssemblyPath>
+          <LanguageMappingFile>{fixup}</LanguageMappingFile>
+          <UserMetadataFile>{fixup}</UserMetadataFile>
+          <AbstractPrefix>es</AbstractPrefix>
+          <EntitySuffix />
+          <CollectionSuffix>Collection</CollectionSuffix>
+          <QuerySuffix>Query</QuerySuffix>
+          <MetadataSuffix>Metadata</MetadataSuffix>
+          <ProxyStubSuffix>ProxyStub</ProxyStubSuffix>
+          <PrefixWithSchema>false</PrefixWithSchema>
+          <ProcPrefix>proc_</ProcPrefix>
+          <ProcInsert>Insert</ProcInsert>
+          <ProcUpdate>Update</ProcUpdate>
+          <ProcDelete>Delete</ProcDelete>
+          <ProcLoadAll>LoadAll</ProcLoadAll>
+          <ProcLoadByPK>LoadByPrimaryKey</ProcLoadByPK>
+          <ProcSuffix />
+          <ProcVerbFirst>false</ProcVerbFirst>
+          <OnePrefix />
+          <OneSeparator>By</OneSeparator>
+          <OneSuffix />
+          <ManyPrefix />
+          <ManySeparator>By</ManySeparator>
+          <ManySuffix>Collection</ManySuffix>
+          <SelfOnly>false</SelfOnly>
+          <SwapNames>false</SwapNames>
+          <UseAssociativeName>false</UseAssociativeName>
+          <UseUpToPrefix>true</UseUpToPrefix>
+          <PreserveUnderscores>false</PreserveUnderscores>
+          <UseRawNames>false</UseRawNames>
+          <UseNullableTypesAlways>true</UseNullableTypesAlways>
+          <TurnOffDateTimeInClassHeaders>false</TurnOffDateTimeInClassHeaders>
+          <DefaultTemplateDoubleClickAction>Execute</DefaultTemplateDoubleClickAction>
+          <LicenseProxyEnable>false</LicenseProxyEnable>
+          <LicenseProxyUrl />
+          <LicenseProxyUserName />
+          <LicenseProxyPassword />
+          <LicenseProxyDomainName />
+          <DriverInfoCollection>
+            <esSettingsDriverInfo>
+              <Driver>SQL</Driver>
+              <ConnectionString>Provider=SQLOLEDB.1; User ID=AppUserCLDBWeb; Password=$Cl13nt$; Initial Catalog=cldbConnect2Dev; Data Source=EXNJCU01008.EXUS01.NET</ConnectionString>
+              <DateAdded>
+                <IsEnabled>false</IsEnabled>
+                <ColumnName />
+                <Type>ClientSide</Type>
+                <ClientType>UtcNow</ClientType>
+                <ServerSideText />
+              </DateAdded>
+              <DateModified>
+                <IsEnabled>false</IsEnabled>
+                <ColumnName />
+                <Type>ClientSide</Type>
+                <ClientType>UtcNow</ClientType>
+                <ServerSideText />
+              </DateModified>
+              <AddedBy>
+                <IsEnabled>false</IsEnabled>
+                <UseEventHandler>false</UseEventHandler>
+                <ColumnName />
+                <ServerSideText />
+              </AddedBy>
+              <ModifiedBy>
+                <IsEnabled>false</IsEnabled>
+                <UseEventHandler>false</UseEventHandler>
+                <ColumnName />
+                <ServerSideText />
+              </ModifiedBy>
+              <ConcurrencyColumnEnabled>false</ConcurrencyColumnEnabled>
+              <ConcurrencyColumn />
+            </esSettingsDriverInfo>
+          </DriverInfoCollection>
+        </esSettings>
+      </RecordedTemplate>
+      <RecordedTemplate Name="JavaScript Classes">
+        <Template Name="JavaScript Classes" Path="{fixup}EntitySpaces\JavaScript\JavaScript Classes.est" Version="2012.0.0.0" />
+        <Input>
+          <Item Type="System.String" Key="Database" Value="cldbConnect" />
+          <Item Type="System.String" Key="ServicePath" Value="" />
+          <Item Type="System.Boolean" Key="GenerateRestAPI" Value="False" />
+          <Item Type="System.Boolean" Key="GenerateHierarchicalModelSelectedTablesOnly" Value="False" />
+          <Item Type="System.Boolean" Key="GenerateHierarchicalModel" Value="True" />
+          <Item Type="System.Collections.ArrayList" Key="Entities" Value="bv.vwFireRecommendationsBaseView" />
+          <Item Type="System.String" Key="OutputPath" Value="{fixup\..\..\web\lib_{{ver\generated\}" />
+          <Item Type="System.String" Key="EntityType" Value="Views" />
+          <Item Type="System.Boolean" Key="GenerateHierarchicalLazyLoadSupport" Value="True" />
+          <Item Type="(null)" Key="Table" />
+          <Item Type="System.Boolean" Key="GenerateSingleFile" Value="False" />
+        </Input>
+        <esSettings>
+          <Driver>SQL</Driver>
+          <ConnectionString>Provider=SQLOLEDB;Integrated Security=SSPI;Persist Security Info=False;User ID=AppUserCLDBWeb;Initial Catalog=cldbConnect;Data Source=susnjcu01033\dmz</ConnectionString>
+          <TemplatePath>{fixup}</TemplatePath>
+          <OutputPath>{fixup}</OutputPath>
+          <UIAssemblyPath>{fixup}</UIAssemblyPath>
+          <CompilerAssemblyPath>{fixup}</CompilerAssemblyPath>
+          <LanguageMappingFile>{fixup}</LanguageMappingFile>
+          <UserMetadataFile>{fixup}</UserMetadataFile>
+          <AbstractPrefix>es</AbstractPrefix>
+          <EntitySuffix />
+          <CollectionSuffix>Collection</CollectionSuffix>
+          <QuerySuffix>Query</QuerySuffix>
+          <MetadataSuffix>Metadata</MetadataSuffix>
+          <ProxyStubSuffix>ProxyStub</ProxyStubSuffix>
+          <PrefixWithSchema>false</PrefixWithSchema>
+          <ProcPrefix>proc_</ProcPrefix>
+          <ProcInsert>Insert</ProcInsert>
+          <ProcUpdate>Update</ProcUpdate>
+          <ProcDelete>Delete</ProcDelete>
+          <ProcLoadAll>LoadAll</ProcLoadAll>
+          <ProcLoadByPK>LoadByPrimaryKey</ProcLoadByPK>
+          <ProcSuffix />
+          <ProcVerbFirst>false</ProcVerbFirst>
+          <OnePrefix />
+          <OneSeparator>By</OneSeparator>
+          <OneSuffix />
+          <ManyPrefix />
+          <ManySeparator>By</ManySeparator>
+          <ManySuffix>Collection</ManySuffix>
+          <SelfOnly>false</SelfOnly>
+          <SwapNames>false</SwapNames>
+          <UseAssociativeName>false</UseAssociativeName>
+          <UseUpToPrefix>true</UseUpToPrefix>
+          <PreserveUnderscores>false</PreserveUnderscores>
+          <UseRawNames>false</UseRawNames>
+          <UseNullableTypesAlways>true</UseNullableTypesAlways>
+          <TurnOffDateTimeInClassHeaders>false</TurnOffDateTimeInClassHeaders>
+          <DefaultTemplateDoubleClickAction>Execute</DefaultTemplateDoubleClickAction>
+          <LicenseProxyEnable>false</LicenseProxyEnable>
+          <LicenseProxyUrl />
+          <LicenseProxyUserName />
+          <LicenseProxyPassword />
+          <LicenseProxyDomainName />
+          <DriverInfoCollection>
+            <esSettingsDriverInfo>
+              <Driver>SQL</Driver>
+              <ConnectionString>Provider=SQLOLEDB;Integrated Security=SSPI;Persist Security Info=False;User ID=AppUserCLDBWeb;Initial Catalog=cldbConnect;Data Source=susnjcu01033\dmz</ConnectionString>
+              <DateAdded>
+                <IsEnabled>false</IsEnabled>
+                <ColumnName />
+                <Type>ClientSide</Type>
+                <ClientType>UtcNow</ClientType>
+                <ServerSideText />
+              </DateAdded>
+              <DateModified>
+                <IsEnabled>false</IsEnabled>
+                <ColumnName />
+                <Type>ClientSide</Type>
+                <ClientType>UtcNow</ClientType>
+                <ServerSideText />
+              </DateModified>
+              <AddedBy>
+                <IsEnabled>false</IsEnabled>
+                <UseEventHandler>false</UseEventHandler>
+                <ColumnName />
+                <ServerSideText />
+              </AddedBy>
+              <ModifiedBy>
+                <IsEnabled>false</IsEnabled>
+                <UseEventHandler>false</UseEventHandler>
+                <ColumnName />
+                <ServerSideText />
+              </ModifiedBy>
+              <ConcurrencyColumnEnabled>false</ConcurrencyColumnEnabled>
+              <ConcurrencyColumn />
+            </esSettingsDriverInfo>
+          </DriverInfoCollection>
+        </esSettings>
+      </RecordedTemplate>
+    </Folder>
+  </Folder>
+</EntitySpacesProject>

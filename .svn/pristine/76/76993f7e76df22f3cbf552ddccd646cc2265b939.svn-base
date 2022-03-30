@@ -1,0 +1,22 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblWhatIfOutputParm --> [TblWhatIfOutputParm]
+
+  colFldGUID --> [fldGUID] nvarchar(50) **PK** not null
+  colFldSID --> [fldSID] nvarchar(50) null
+  colFldGSafeID --> [fldGSafeID] int null
+  colFldOutputID --> [fldOutputID] int null
+  colFldFileNo --> [fldFileNo] nvarchar(10) null
+  colFldSortJSON --> [fldSortJSON] nvarchar(1500) null
+  colFldFilterJSON --> [fldFilterJSON] nvarchar(1500) null
+  colFldEstBudget --> [fldEstBudget] nvarchar(50) null
+  colFldEstCostToComplete --> [fldEstCostToComplete] nvarchar(50) null
+  colFldRemainBudget --> [fldRemainBudget] nvarchar(50) null
+

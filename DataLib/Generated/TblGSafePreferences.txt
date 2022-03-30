@@ -1,0 +1,17 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblGSafePreferences --> [GSafePreferences]
+
+  colGSafeId --> [GSafeId] int **PK** not null
+  colFilePrefix --> [FilePrefix] varchar(4) **PK** not null
+  colDataName --> [DataName] varchar(50) **PK** not null
+  colDataValue --> [DataValue] varchar(MAX) null
+  colDataGroup --> [DataGroup] varchar(50) null
+

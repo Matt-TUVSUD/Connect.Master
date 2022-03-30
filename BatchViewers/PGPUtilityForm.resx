@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="OpenFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="uxPGPPublicKey.Text" xml:space="preserve">
+    <value>-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: PGPfreeware 6.5.8 for non-commercial use &lt;http://www.pgp.com&gt;
+
+mQGiBDqecSgRBADRp2Lp1fS/XPVrOaLuyOTlJTCeAIf3QJ1MFyu4+cHHQxJtUv4y
+a42TmIZRQOKaKKYCyfQGtHRukMaQQEORAU4ddqOryxVB+Tr05lD1ASjqnQl6Ung9
+1w3XoDChC+TpncY66ZU8oSIicB9iKvvNe6ahOzVD05J37VuohvmLnLwliQCg/0Pi
+42Qu2KKjfogOmIFqvqMKsgUD/3pVR2PNMlzXeUu23Z4iT+jlChLkhkVA4MzgtkEs
+euf0rFE6Vozcn47rCjsrv2Cnm8i75Wisft+1WW6P1dW8JtdgKznRNZiNDa5U1ozs
+Q+g6CeRwoTAvkTYg+h1WW5B+xKFhELKkNA5o7InSTvUVUk/NvQbFcJDGybCqJSZn
+dB6sA/4lTwS7DJHRVscSzhRbdQ8q+78hfe5//oHDq4asJh9gc7+Dc7RxEBP+/83X
+99Y7HucTzIy+avtvcUg5P+9ogXbvnlC1QA+9dbwV255FId9kKyUYzobr/ccTtI3a
+h3XGTrI4WnbLw4QoYS+quwPVE4SVIxIkxCRIZxc3XfzO+lMP5bQ0Umlza0xhYnMg
+RGF0YSBMaWJyYXJpYW4gPERhdGFMaWJyYXJpYW5Acmlza2xhYnMuY29tPokATgQQ
+EQIADgUCOp5xKAQLAwIBAhkBAAoJENjKbUGJ6ub+cOIAoOCeE4dIOMntf+xqCXi7
+SW/173dkAJ9eEn2fqN+wVr5uAkz5RbbxQ+hwPrkCDQQ6nnEoEAgA9kJXtwh/CBdy
+orrWqULzBej5UxE5T7bxbrlLOCDaAadWoxTpj0BV89AHxstDqZSt90xkhkn4DIO9
+ZekX1KHTUPj1WV/cdlJPPT2N286Z4VeSWc39uK50T8X8dryDxUcwYc58yWb/Ffm7
+/ZFexwGq01uejaClcjrUGvC/RgBYK+X0iP1YTknbzSC0neSRBzZrM2w4DUUdD3yI
+sxx8Wy2O9vPJI8BD8KVbGI2Ou1WMuF040zT9fBdXQ6MdGGzeMyEstSr/POGxKUAY
+EY18hKcKctaGxAMZyAcpesqVDNmWn6vQClCbAkbTCD1mpF1Bn5x8vYlLIhkmuqui
+XsNV6TILOwACAgf/ZdHOamdDIoJaGcjPda5DpyPVHxSjtWMSH8d5WM07dlQJOHcx
+GF5bP3dNSZpBcbqOk/Jrl12p/JYnqTUlqge/snFh9c7t3CNZsBp+kB4MZRHjqhpb
+gVdflzqIxlWPNx9IrMNmjWnB++cWxgxmb6oZU2kDoPNWWWUzTw7OxwUUvwDU1BZd
+vJm+PgrmgJi8IcS/qScbb4KvfQzXHXwq36zJ3rWygK+5xwzq/i7M2DiRtwhbVIOt
+MfpEHqgwwSXdY+fMo9oYzEvatI+xLWU0PnUghMlZgdfXfryibRQwwJBZse30el+M
+CeSGvIvJz+kc435LLXMPODf7rG6AeByXTOSZbIkARgQYEQIABgUCOp5xKAAKCRDY
+ym1Bierm/qXkAJ46m1OKnw+sUmO8koKGbTb9Tzp1bACfbArrm/k7ouKp2R8TopnF
+5xZBnQ0=
+=040K
+-----END PGP PUBLIC KEY BLOCK-----</value>
+  </data>
+</root>

@@ -1,0 +1,16 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblEzyUserstracking --> [ezy_UsersTracking]
+
+  colId --> [ID] int **PK** identity not null
+  colEzyUserID --> [EzyUserID] int null
+  colFilePrefix --> [FilePrefix] int null
+  colDocLibLastReviewedDate --> [DocLibLastReviewedDate] date null
+

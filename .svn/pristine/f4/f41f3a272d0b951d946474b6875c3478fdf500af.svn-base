@@ -1,0 +1,38 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colFldId":1, 
+	"colFldSchemaName":"fldSchemaName", 
+	"colFldObjectName":"fldObjectName", 
+	"colFldOrderBy":"fldOrderBy", 
+	"colFldJoinFieldName":"fldJoinFieldName", 
+	"colFldIsJoinRequired":null, 
+	"colFldHasCurrencyParm":null, 
+	"colFldHasUnitParm":null, 
+	"colFldHasFileNoParm":null, 
+	"colFldHasFilePrefixParm":null, 
+	"colFldType":1, 
+	"colFldHasDivisionParm":null, 
+	"colFldHasCountryParm":null, 
+	"colFldHasCustomAccessParm":null, 
+	"colFldObjectId":null, 
+	"colFldParameterFlag":1, 
+	"colFldHasLanguageParm":null, 
+	"colFldHasImpStartDateParm":null, 
+	"colFldHasImpEndDateParm":null, 
+	"colFldHasInspProgramYearParm":null, 
+	"colFldHasTIVParm":null, 
+	"colFldHasRecStatusParm":null, 
+	"colFldHasHazardParm":null, 
+	"colFldHasTIVValueParm":null, 
+	"colFldHasAutoRequestParm":null, 
+	"colFldComment":"fldComment", 
+	"colFldUniqueFieldName":"fldUniqueFieldName"
+}]

@@ -1,0 +1,131 @@
+﻿/*CORRECTIONS FOR MENU*/
+
+/* HORIZONTAL AND VERTICAL */
+/*.menuHorizontal.k-menu,
+.menuVertical.k-menu {
+    font-size: 11pt;
+}
+
+.menuHorizontal.k-menu:after,
+.menuVertical.k-menu:after{
+    width:auto;
+}
+
+.menuHorizontal.k-menu .k-state-hover,
+.menuHorizontal.k-menu .k-state-active,
+.menuHorizontal.k-menu .k-state-active .k-link:link,
+.menuHorizontal.k-menu .k-state-active .k-link:visited,
+.menuHorizontal.k-menu .k-item > .k-link .k-state-hover,
+.menuHorizontal.k-menu .k-item > .k-link .k-state-active,
+.menuHorizontal.k-menu .k-item > .k-link:link .k-state-hover,
+.menuHorizontal.k-menu .k-item > .k-link:link .k-state-active,
+.menuHorizontal.k-menu .k-item > .k-link:visited .k-state-hover,
+.menuHorizontal.k-menu .k-item > .k-link:visited .k-state-active, 
+.menuVertical.k-menu .k-state-hover,
+.menuVertical.k-menu .k-state-active,
+.menuVertical.k-menu .k-state-active .k-link:link,
+.menuVertical.k-menu .k-state-active .k-link:visited,
+.menuVertical.k-menu .k-item > .k-link .k-state-hover,
+.menuVertical.k-menu .k-item > .k-link .k-state-active,
+.menuVertical.k-menu .k-item > .k-link:link .k-state-hover,
+.menuVertical.k-menu .k-item > .k-link:link .k-state-active,
+.menuVertical.k-menu .k-item > .k-link:visited .k-state-hover,
+.menuVertical.k-menu .k-item > .k-link:visited .k-state-active {
+    color: #FFFFFF !important;
+}*/
+
+/*.menuHorizontal.k-menu .k-state-active .k-icon,
+.menuVertical.k-menu .k-state-active .k-icon {
+    /*background-image: url('Kendo.v2014.1.318/Silver/sprite_White.png');
+    background-image: url('sprite_white.png');
+    color: #FFFFFF !important;
+}
+
+.menuHorizontal.k-menu .k-item,
+.menuVertical.k-menu .k-item {
+    height: 34px;
+    line-height: 34px;
+    vertical-align: middle;
+    display: block;
+    font-weight: normal;
+}
+
+.menuHorizontal.k-menu .k-item > .k-link,
+.menuVertical.k-menu .k-item > .k-link {
+    height: 24px;
+    line-height: 24px;
+    vertical-align: middle;
+    display: block;
+    font-weight: normal;
+}
+
+.menuHorizontal.k-menu .k-link:link,
+.menuHorizontal.k-menu .k-link:visited,
+.menuHorizontal.k-menu .k-item > a,
+.menuVertical.k-menu .k-link:link,
+.menuVertical.k-menu .k-link:visited,
+.menuVertical.k-menu .k-item > a {
+    text-align: left;
+    font-weight: normal;
+    text-decoration: underline !important;
+    color: #1860AD;
+    font-weight: normal;
+}
+
+.menuHorizontal.k-menu .k-link .k-state-active,
+.menuVertical.k-menu .k-link .k-state-active {
+    color: #FFFFFF !important;
+    font-weight: normal;
+}
+
+.menuHorizontal.k-menu a:hover,
+.menuVertical.k-menu a:hover {
+    text-decoration: underline !important;
+    color: #1860AD;
+}
+
+.menuHorizontal.k-menu .k-group,
+.menuVertical.k-menu .k-group {
+    border: none;
+    background-color: #FFFFFF;
+    box-shadow: 1px 1px 7px 1px #8A8A8A;
+    -webkit-box-shadow: 1px 1px 7px 1px #8A8A8A;
+}*/
+
+/* HORIZONTAL ONLY */
+.menuHorizontal > li:first-child {
+    color: #FFFFFF !important;
+    border: 1px solid #FFFFFF !important;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.menuHorizontal > li:first-child,
+.menuHorizontal > li:first-child > .k-item,
+.menuHorizontal > li:first-child > .k-link {
+    background-color: #1860AD !important;
+    color: #FFFFFF !important;
+    height: 26px !important;
+    line-height: 26px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.menuHorizontal > li:first-child:hover {
+    background-color: #1860AD;
+    color: #FFFFFF !important;
+}
+
+.menuHorizontal > li:first-child > .k-link > .k-icon {
+    /*background-image: url('Kendo.v2014.1.318/Silver/sprite_White.png') !important;*/
+    background-image: url('sprite_white.png');
+    margin-left: 8px;
+}
+
+.menuHorizontal > .k-menu .k-item > .k-link {
+    height: 28px;
+    line-height: 28px;
+    vertical-align: middle;
+    display: block;
+}

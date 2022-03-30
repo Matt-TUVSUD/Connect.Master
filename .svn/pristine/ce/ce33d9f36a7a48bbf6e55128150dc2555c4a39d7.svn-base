@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../../../css/pages/mapping.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/pages/print.css" />
+    <script>
+        var gWindowTitle = "Fire COPE Summary";
+    </script>
+    <script src="../../../Lib_{{VER}}/Mapping/mapping.js"></script>
+    <script src="../../../Lib_{{VER}}/Mapping/moment.min.js"></script>
+</head>
+<body>
+    <div id="formView">
+        <div style="font-family:Arial !important; font-size:8pt;">
+            <div style="font-family:Arial !important; font-size:8pt;" class="windowBody pdf-page">
+                <div id="loading" class="noShow"><span>Loading...</span></div>
+                <div class="infoArea">
+                        <div class="popColA bottomSpaceRow">
+                            <div class="popRow">
+                                <label class="topHalfLbl">File No.:</label><span data-bind="text: objFormData().FileNo" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow">
+                                <label class="topHalfLbl">Client:</label><span data-bind="text: objFormData().client" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow">
+                                <label class="topHalfLbl">Client Loc. ID:</label><span data-bind="text: objFormData().ClientLocNo" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow">
+                                <label class="topHalfLbl">Divisions:</label><span data-bind="text: objFormData().Division" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow bottomSpaceRow">
+                                <label class="topHalfLbl">Facility:</label><span data-bind="text: objFormData().Facility" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow">
+                                <label class="topHalfLbl">TIV (millions) <span data-bind="text: currencyText"></span></label><span data-bind="    text: numeral(objFormData().TIV).format('0,0')" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow">
+                                <label class="topHalfLbl">Date of Last Insp.:</label><span data-bind="text: moment(objFormData().SurveyDate).format('DD-MMM-YY')" class="topHalfTxt"></span>
+                            </div>
+                        </div>
+                        <div class="popColB">
+                            <div class="popRow">
+                                <label class="topHalfLbl">Address:</label><span data-bind="text: objFormData().address" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow">
+                                <label class="topHalfLbl">City:</label><span data-bind="text: objFormData().City" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow">
+                                <label class="topHalfLbl">St/Prov.:</label><span data-bind="text: objFormData().StProv" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow">
+                                <label class="topHalfLbl">Country:</label><span data-bind="text: objFormData().Country" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow bottomSpaceRow">
+                                <label class="topHalfLbl">Postal Code:</label><span data-bind="text: objFormData().Zip" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow">
+                                <label class="topHalfLbl">Latitude:</label><span data-bind="text: objFormData().latitude" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow">
+                                <label class="topHalfLbl">Longitude:</label><span data-bind="text: objFormData().longitude" class="topHalfTxt"></span>
+                            </div>
+                        </div>
+                        <div id="satMap" class="imgHldr">
+                            <a href="#" class="printNone">
+                                <img data-bind="attr: { src: getStaticMapUrl() }, click: onGoToLocationBingMaps" />
+                            </a>
+                            <img class="printOnly" data-bind="attr: { src: staticImageBase64 }" />
+                            <span class="satImgTip">Tip! The above map is interactive and will open Bing Maps.</span>
+                        </div>
+                    </div>
+                <div class="btnHldr noPrint">
+                    <a href="#" class="grcBlueBtn printNone" data-bind="click: function () { onCurrentERReport(); }, visible: visibleCurrentERReport">
+                        <i class="far fa-file" style="font-size:20px; margin-right:5px"></i> Current ER Report
+                    </a>
+                    <a href="#" class="grcBlueBtn printNone" data-bind="click: function () { onCurrentDiagramReport(); }, visible: visibleCurrentDiagramReport">
+                        <i class="far fa-file" style="font-size:20px; margin-right:5px;"></i>Current Diagram
+                    </a>
+                    <a href="#" class="grcBlueBtn printNone" data-bind="click: function () { onPrint(); }, visible: visiblePrint">
+                        <i class="far fa-file" style="font-size:20px; margin-right:5px;"></i>Print
+                    </a>
+                </div>
+                <div class="bottomSection">
+                    <div style="" class="borderedGrid">
+                        <div class="borderedHeader">
+                            <span style="flex-basis:25%; text-align:center;">Construction</span>
+                            <span style="flex-basis:25%; text-align:center;">Occupancy</span>
+                            <span style="flex-basis:25%; text-align:center;">Protection</span>
+                            <span style="flex-basis:25%; text-align:center;">Exposure</span>
+                        </div>
+                        <div class="borderedGridBody">
+                            <div class="gridBodyRow">
+                                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height:100%;">
+                                    <div class="halfBox">
+                                        <div class="halfBoxTopHalf">Init. Year Built/<br />
+                                            Total Fl. Area</div>
+                                        <div class="halfBoxBottomHalf">
+                                            <span data-bind="text: objFormData().InititalMajorConstructionYear"></span>
+                                        </div>
+                                    </div>
+                                    <div class="halfBoxBottomHalfRow2">
+                                        <span data-bind="text: numeral(objFormData().TotalFloorArea).format('0,0')"></span>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height:100%;">
+                                    <div class="halfBox">
+                                        <div class="halfBoxTopHalf">% Fire Resist./<br />
+                                            Class III</div>
+                                        <div class="halfBoxBottomHalf">
+                                            <span data-bind="text: objFormData().RoofConstructionFireResistive"></span>
+                                        </div>
+                                    </div>
+                                    <div class="halfBoxBottomHalfRow2">
+                                        <span data-bind="text: objFormData().RoofConstructionClass"></span>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: center; height:100%; align-items: center;">
+                                    <div class="halfBox">
+                                        <div class="halfBoxTopHalf">
+                                            % Non-Comb./<br />
+                                            % Comb.
+                                        </div>
+                                        <div class="halfBoxBottomHalf">
+                                            <span data-bind="text: objFormData().RoofConstructionNoncombustible"></span>
+                                        </div>
+                                    </div>
+                                    <div class="halfBoxBottomHalfRow2">
+                                        <span data-bind="text: objFormData().RoofConstructionCombustible"></span>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: center; height:100%; align-items: center;">
+                                    <div class="xlBox">
+                                        <div class="xlBoxTopHalf">Major Group/Specific Group</div>
+                                        <div class="xlBoxBottomHalf">
+                                            <span style="padding-left: 3px;" data-bind="text: objFormData().MajorGroup"></span>
+                                        </div>
+                                    </div>
+                                    <div class="xlBoxBottomHalfRow2">
+                                        <span data-bind="text: objFormData().SpecificGroup"></span>
+                                    </div>
+                                </div>
+                                <div class="quarterBox">
+                                    <div class="quarterBoxTallTopHalf">% AS</div>
+                                    <div class="quarterBoxTallBottomHalf">
+                                        <span data-bind="text: objFormData().AreaWithSprinklers"></span>
+                                    </div>
+                                </div>
+                                <div class="quarterBox">
+                                    <div class="quarterBoxTallTopHalf">% ASN</div>
+                                    <div class="quarterBoxTallBottomHalf">
+                                        <span data-bind="text: objFormData().AreaWithoutSprinklersNeedingSprinklers"></span>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: center; height:100%; align-items: center;">
+                                    <div class="halfBox">
+                                        <div class="halfBoxTopHalf">Water Supply/<br />
+                                            Surveillance</div>
+                                        <div class="halfBoxBottomHalf" data-bind="style: { background: objFormData().WaterSupplyRatingColor }">
+                                            <span data-bind="text: objFormData().WaterSupplyRating"></span>
+                                        </div>
+                                    </div>
+                                    <div class="halfBoxBottomHalfRow2" data-bind="style: { background: objFormData().PropertySurveillanceColor }">
+                                        <span data-bind="text: objFormData().PropertySurveillance"></span>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: center; height:100%; align-items: center;">
+                                    <div class="halfBox">
+                                        <div class="halfBoxTopHalf">
+                                            Spec. Hazards/ Human Element
+                                        </div>
+                                        <div class="halfBoxBottomHalf" data-bind="style: { background: objFormData().SpecialHazardsRatingColor }">
+                                            <span data-bind="text: objFormData().SpecialHazardsRating"></span>
+                                        </div>
+                                    </div>
+                                    <div class="halfBoxBottomHalfRow2" data-bind="style: { background: objFormData().HumanElementRatingColor }">
+                                        <span data-bind="text: objFormData().HumanElementRating"></span>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: center; height:100%; align-items: center;">
+                                    <div class="halfBox">
+                                        <div class="halfBoxTopHalf">Seismic Rating/<br />
+                                            EQ Zone</div>
+                                        <div class="halfBoxBottomHalf" data-bind="style: { background: objFormData().SeismicColor }">
+                                            <span data-bind="text: objFormData().Seismic"></span>
+                                        </div>
+                                    </div>
+                                    <div class="halfBoxBottomHalfRow2" data-bind="style: { background: objFormData().FMSeismicZoneColor }">
+                                        <span data-bind="text: objFormData().FMSeismicZone"></span>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; justify-content: center; height:100%; align-items: center;">
+                                    <div class="fullBox">
+                                        <div class="fullBoxTopHalf2Line">Flood Rating/<br />
+                                            Flood Zone</div>
+                                        <div class="fullBoxBottomHalf" data-bind="style: { background: objFormData().FloodColor }">
+                                            <span data-bind="text: objFormData().Flood"></span>
+                                        </div>
+                                    </div>
+                                    <div class="fullBoxBottomHalfRow2" data-bind="style: { background: objFormData().ZoneColor }">
+                                        <span data-bind="text: objFormData().Zone"></span>
+                                    </div>
+                                </div>
+                                <div class="lastBox" style="display: flex; flex-direction: column; justify-content: center; height:100%; align-items: center;">
+                                    <div class="halfBox">
+                                        <div class="halfBoxTopHalf">Wind Rating/<br />
+                                            Wind Zone</div>
+                                        <div class="halfBoxBottomHalf" data-bind="style: { background: objFormData().WindstormColor }">
+                                            <span data-bind="text: objFormData().Windstorm"></span>
+                                        </div>
+                                    </div>
+                                    <div class="halfBoxBottomHalfRow2" data-bind="style: { background: objFormData().MaxSustainedWindSpeedColor }">
+                                        <span data-bind="text: objFormData().MaxSustainedWindSpeed"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" onclick="getPDF('.pdf-page'); return false;" class="printThis printNone" title="Print This Section"><i class="fa fa-print"></i></button>
+            </div>
+        </div>
+    </div>
+
+     <script>
+         function getPDF(selector) {
+             $('.noPrint').hide();
+             kendo.drawing.drawDOM($(selector)).then(function (group) {
+                 kendo.drawing.pdf.saveAs(group, "popupWindow.pdf");
+             });
+             setTimeout(function () { $('.noPrint').show(); }, 5000);
+         }
+    </script>
+
+</body>
+</html>

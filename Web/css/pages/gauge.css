@@ -1,0 +1,244 @@
+﻿/********* START GAUGE STYLES ORIGINAL ************/
+
+/*** FULL CONTAINER ***/
+.gaugeContainer
+{
+    width: 800px;
+    height: 204px; 
+}
+
+
+/*** LEFT SECTION ***/
+.gaugeLeftContainer
+{
+    width: 140px;
+    height: 204px;
+    float: left;
+}
+
+
+/*** MIDDLE SECTION ***/
+.gaugeMiddleContainer
+{
+    width: 132px;
+    height: 204px;
+    float: left;
+    background-image: url('../../Home_{{VER}}/Images/gauge/gauge_English/innerGauge_none/img_gauge_middle_map.png');
+    background-position: left 37px;
+    background-repeat: no-repeat;
+}
+.gaugeMiddleTop
+{
+    height: 37px;
+}
+.gaugeMiddleMap
+{
+    height: 123px;
+}
+.gaugeMiddleBottom
+{
+    height: 44px;
+}
+
+
+/*** RIGHT SECTION AND BUFFER ***/
+.gaugeRightContainer
+{
+    width: 503px;
+    height: 204px;
+    float: left;
+    background-image: url('../../Home_{{VER}}/Images/gauge/gauge_English/innerGauge_none/img_gauge_right_banner.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.gaugeRightTop
+{
+    height: 44px;
+}
+.gaugeRightBanner
+{
+    height: 116px;
+}
+.gaugeRightBottom
+{
+    height: 44px;
+    background-image: url('../../Home_{{VER}}/Images/gauge/GaugeShell/img_gauge_right_bottom.png');
+}
+.gaugeRightBottomEnglish
+{
+    height: 44px;
+    background-image: url('../../Home_{{VER}}/Images/gauge/GaugeShell/img_gauge_right_bottom.png');
+}
+/* OTHER LANGUAGES DO NOT EXIST
+.gaugeRightBottomGerman
+{
+    height: 44px;
+    background-image: url('../deutsch/images/GaugeShell/images/img_gauge_right_bottom.png');
+}
+.gaugeRightBottomSpanish
+{
+    height: 44px;
+    background-image: url('../espanol/images/GaugeShell/images/img_gauge_right_bottom.png');
+}
+.gaugeRightBottomFrench
+{
+    height: 44px;
+    background-image: url('../francais/images/GaugeShell/images/img_gauge_right_bottom.png');
+}
+.gaugeRightBottomItalian
+{
+    height: 44px;
+    background-image: url('../italiano/images/GaugeShell/images/img_gauge_right_bottom.png');
+}
+.gaugeRightBottomPortuguese
+{
+    height: 44px;
+    background-image: url('../portugues/images/GaugeShell/images/img_gauge_right_bottom.png');
+}
+*/
+.gaugeRightBuffer
+{
+    width: 25px;
+    height: 204px;
+    float: right;
+}
+
+
+/*** IMAGE STYLES ***/
+.dialImageBackground
+{
+    border: 0px;
+}
+.dialImage
+{
+    border: 0px;
+    display: none;
+}
+.bannerImageBackground
+{
+    border: 0px;
+}
+.bannerImage
+{
+    border: 0px;
+    display: none;
+}
+
+
+/*** QUICK INFO STYLES ***/
+.gaugeStatsContainer
+{
+    clear: left;
+    font-family: Segoe UI, Arial, sans-serif;
+    /*font-size: 11pt;*/
+    font-size: 9pt;    
+    width: 498px;
+    padding-left: 310px;
+    position: absolute;
+    line-height: normal !important;
+    border: 0;
+    display: none;
+}
+.gaugeStatsContainer span
+{
+    line-height: normal !important;
+    border: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.gaugeStatsLine
+{
+    width: 250px;
+}
+.gaugeStatsLabel
+{
+    width: 250px;
+}
+.gaugeStatsNumber
+{
+}
+.gaugeStatsLink
+{
+    cursor: pointer;
+}
+
+.gaugeStatsContainerNatHaz
+{
+    float: left;
+    font-family: Segoe UI, Arial, sans-serif;
+    /*font-size: 11pt;*/
+    font-size: 9pt;    
+    border-collapse: collapse;
+    padding: 0px;
+    margin: 0px;
+    /*width: 792px;*/
+    width: 900px;
+    padding-left: 15px;
+    line-height: normal;
+    border: 0;
+    display: none;
+}
+.gaugeStatsContainerNatHaz span
+{
+    line-height: normal !important;
+    border: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.gaugeStatsLineNatHaz
+{
+    clear: left;
+}
+.gaugeStatsLabelNatHaz
+{
+    float: left;
+    width: 210px;
+}
+.gaugeStatsNumberNatHaz
+{
+    float: left;
+}
+.gaugeStatsNatHazPracticeContainer
+{
+    padding-right: 50px;
+    float: left;
+}
+.gaugeStatsLabelNatHazPractice
+{
+}
+.gaugeStatsLineHeading
+{
+    width: 80%;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    color: #94B2D6; /* #a2b5cc; #5b63b7; #C6D1DE; */
+}
+
+
+/*** OTHER ***/
+.gaugeCompanyName
+{
+    font-size: 28px;
+    color: #777777;
+    font-weight: bold;
+    text-align: center;
+}
+.gaugeTagLine
+{
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    line-height: 8pt;
+}
+.gaugeWelcome
+{
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    line-height: 6pt;
+}
+    
+
+/***** END GAUGE STYLES ******/

@@ -1,0 +1,28 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: VwClientMetaPractice --> [vwClientMetaPractice]
+
+  colFldId --> [fldId] int not null
+  colFldName --> [fldName] nvarchar(50) not null
+  colFldReportDisplayTitle --> [fldReportDisplayTitle] nvarchar(50) not null
+  colFldIsHazard --> [fldIsHazard] bit null
+  colFldFilterValue --> [fldFilterValue] nvarchar(50) null
+  colFldPracticeCode --> [fldPracticeCode] nvarchar(10) null
+  colFldPracticeGroupCode --> [fldPracticeGroupCode] nvarchar(10) null
+  colFldSortOrder --> [fldSortOrder] int null
+  colFldPracticeLetter --> [fldPracticeLetter] nvarchar(1) null
+  colFldShortName --> [fldShortName] nvarchar(50) null
+  colFldPracticeNameText --> [fldPracticeNameText] nvarchar(100) null
+  colFldPracticeNameHTML --> [fldPracticeNameHTML] nvarchar(255) null
+  colFldNavLinkAllReportsKeyword --> [fldNavLinkAllReportsKeyword] nvarchar(50) null
+  colFldImageHtml --> [fldImageHtml] varchar(200) null
+  colFldLocationListingUrl --> [fldLocationListingUrl] varchar(255) null
+  colFilePrefix --> [FilePrefix] varchar(4) null
+

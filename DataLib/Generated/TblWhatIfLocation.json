@@ -1,0 +1,33 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colFldGSafeId":1, 
+	"colFldFileNo":"fldFileNo"
+	"colFldDivision":"fldDivision", 
+	"colFldCustomAccess":"fldCustomAccess", 
+	"colFldClientLocID":"fldClientLocID", 
+	"colFldAddressStamp":"fldAddressStamp", 
+	"colFldFilePrefix":"fldFilePrefix", 
+	"colFldTivUSD":1.5, 
+	"colFldTotalScore":1.5, 
+	"colFldTotalScoreRecsComplete":1.5, 
+	"colFldTotalScoreAchievedPercent":1.5, 
+	"colFldPhysicalProtRating":1.5, 
+	"colFldPhysicalProtWeight":1.5, 
+	"colFldHeRating":1.5, 
+	"colFldHeWeight":1.5, 
+	"colFldNatHazRating":1.5, 
+	"colFldNatHazWeight":1.5, 
+	"colFldBcpRating":1.5, 
+	"colFldBcpWeight":1.5, 
+	"colFldHasRatingData":null, 
+	"colFldCreateDate":null, 
+	"colFldFacility":"fldFacility"
+}]

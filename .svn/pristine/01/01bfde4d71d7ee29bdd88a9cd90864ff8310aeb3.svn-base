@@ -1,0 +1,83 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" MasterPageFile="~/MasterPage.master" CodeBehind="BubbleChartMaster.master.vb" Inherits="GRC.Connect.Web.BubbleChartMaster" %>
+
+<%@ Register Src="~/Home_{{VER}}/Controls/RevisionStampControl.ascx" TagName="RevisionStampControl" TagPrefix="grcRSC" %>
+<%@ Register Src="~/Home_{{VER}}/Controls/Header.ascx" TagName="Header" TagPrefix="grcRSC" %>
+<%@ Register Src="~/Home_{{VER}}/Controls/Footer.ascx" TagName="Footer" TagPrefix="grcRSC" %>
+
+<asp:Content ID="BubbleChartHead" runat="server" ContentPlaceHolderID="HeadContent">
+    <title>TUV SUD GRC Connect</title>
+
+    <%-- OUTDATED STYLES --%>
+    
+    <%-- UPDATED STYLES --%>
+    <link rel="Stylesheet" type="text/css" href="../../css/Kendo.v2014.1.318/kendo.common.min.css" />
+
+    <%-- ORIGINAL STYLES --%>
+    <link rel="Stylesheet" type="text/css" href="../../css/kendo-lightblue-noedit.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/kendo-lightblue-menu.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/global.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/topbanner.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/icons.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/EDA/cssgrid.css" />
+
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/global.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/windows.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/pages/print.css" media="print" />
+    
+    <link rel="stylesheet" type="text/css" href="../../css/Utilities/Loader.css"  />
+    <link rel="Stylesheet" type="text/css" href="../../css/GRC_Kendo_Overrides.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Utilities/utilities.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Header/header.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/mainPageBody.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Footer/footer.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Font-Awesome/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/Charts/BubbleChart.css"  />
+    
+    
+    <script src="../../Lib_{{VER}}/JQuery/jQuery.3.4.1.min.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/JQuery/jquery.cookie.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/JQuery/cache-controller_{{VER}}.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Knockout.v3.3.0/knockout-3.3.0.js" type="text/javascript"></script>
+
+    <script src="../../Lib_{{VER}}/kendo.all.min.js" type="text/javascript"></script>
+
+    <script src="../../Lib_{{VER}}/pages/global.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/json/json2.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/ES/entityspaces.XHR.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/GSafeDetail.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/GSafeDetail.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/GSafeHeader.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/GSafeHeader.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Config/baseurl.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Session/sessvars.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/constants.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/util_{{VER}}.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.5.6/numeral.min.js"></script>
+    <script src="../../Lib_{{VER}}/header/header.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Footer/footer.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Charts/BubbleChart.js"></script>
+    
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="MainContent" ContentPlaceHolderID="MainContent" Runat="Server">
+        <!-- HEADER -->
+        <header>
+           <grcRSC:Header ID="header" runat="server" />
+        </header>
+        <!-- END HEADER -->
+        <section class="pageBodyHldr">
+            <div class="pageContentHldr">
+                <asp:ContentPlaceholder id="BubbleChartContent" runat="server">
+                </asp:ContentPlaceholder>
+                <div id="revStampHldr">
+                    <grcRSC:RevisionStampControl ID="RevisionStampControl" runat="server" />
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <grcRSC:Footer ID="FooterControl" runat="server" />
+        </footer>
+</asp:Content>

@@ -1,0 +1,32 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: VwLibrariesDocumentLibrarySelect --> [vwLibrariesDocumentLibrarySelect]
+
+  colPDFErFilePath --> [PDFErFilePath] nvarchar(MAX) null
+  colPDFDiagramFilePath --> [PDFDiagramFilePath] nvarchar(MAX) null
+  colClientDBRootPath --> [ClientDBRootPath] nvarchar(MAX) null
+  colId --> [id] int not null
+  colFileno --> [fileno] varchar(50) null
+  colClientlocid --> [clientlocid] nvarchar(30) null
+  colDocumentdate --> [documentdate] datetime null
+  colLinktoer --> [linktoer] varchar(8000) null
+  colLinktourorlereport --> [linktourorlereport] varchar(8000) null
+  colLinktodiagram --> [linktodiagram] varchar(8000) null
+  colPractice --> [practice] varchar(50) null
+  colDivision --> [division] nvarchar(75) null
+  colFacility --> [facility] nvarchar(50) null
+  colAddress1 --> [address1] nvarchar(40) null
+  colCity --> [city] nvarchar(30) null
+  colStProv --> [st_prov] nvarchar(20) null
+  colCountry --> [country] nvarchar(20) null
+  colCldbname --> [cldbname] varchar(50) not null
+  colReportGuid --> [ReportGuid] nvarchar(50) null
+  colMetaPracticeID --> [MetaPracticeID] int null
+

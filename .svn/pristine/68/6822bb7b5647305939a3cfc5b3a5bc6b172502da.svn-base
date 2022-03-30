@@ -1,0 +1,22 @@
+
+
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colFldSetId":1, 
+	"colFldGuid":"fldGuid", 
+	"colFldCreateDate":null, 
+	"colFldAccessDate":null, 
+	"colFldData":"fldData", 
+	"colFldFileSize":1, 
+	"colFldMime":"fldMime", 
+	"colFldExtension":"fldExtension", 
+	"colFldFileName":"fldFileName"
+}]

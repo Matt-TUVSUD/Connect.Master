@@ -1,0 +1,16 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblMetaExchangeRate --> [tblMetaExchangeRate]
+
+  colFldExchangeRateGroupID --> [fldExchangeRateGroupID] int **PK** not null
+  colFldCurrencyIdFrom --> [fldCurrencyIdFrom] int **PK** not null
+  colFldCurrencyIdTo --> [fldCurrencyIdTo] int **PK** not null
+  colFldExchangeRate --> [fldExchangeRate] float not null
+

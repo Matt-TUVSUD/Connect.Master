@@ -1,0 +1,47 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colNavControlId":1, 
+	"colNavPracticeID":1, 
+	"colNavLevelId":1, 
+	"colNavParentLinkId":1, 
+	"colNavLinkId":1, 
+	"colNavText":"NavText", 
+	"colNavUrl":"NavUrl", 
+	"colNavOrder":1, 
+	"colNavToolTip":"NavToolTip", 
+	"colNavVisible":null, 
+	"colNavEnabled":null, 
+	"colNavSpcFeature":"NavSpcFeature", 
+	"colNavIsPracticeTopLink":null, 
+	"colNavDefaultExpanded":null, 
+	"colNavSiteMapKeyWord":"NavSiteMapKeyWord", 
+	"colNavAllReportsKeyword":"NavAllReportsKeyword", 
+	"colNavAllDataKeyword":"NavAllDataKeyword", 
+	"colNavTarget":"NavTarget", 
+	"colNavType":"NavType", 
+	"colNavComment":"NavComment", 
+	"colNavConstant":"NavConstant", 
+	"colNavReportId":"NavReportId", 
+	"colNavGridId":1, 
+	"colNavChartId":1, 
+	"colNavExtractId":1, 
+	"colNavBypassFilter":null, 
+	"colNavStatusToolTip":"NavStatusToolTip", 
+	"colTimeStamp":"TimeStamp", 
+	"colSlideMenuId":1, 
+	"colSlideGroupId":1, 
+	"colSlideLevelId":1, 
+	"colSlideType":"slideType", 
+	"colSlideParentId":1, 
+	"colSlideOrder":1, 
+	"colSlideImageClassName":"slideImageClassName", 
+	"colIsClientAdmin":null
+}]

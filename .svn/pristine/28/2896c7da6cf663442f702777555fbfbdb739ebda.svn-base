@@ -1,0 +1,454 @@
+BEGIN:VCALENDAR
+PRODID:-//Microsoft Corporation//Outlook 16.0 MIMEDIR//EN
+VERSION:2.0
+METHOD:REQUEST
+X-MS-OLK-FORCEINSPECTOROPEN:TRUE
+BEGIN:VTIMEZONE
+TZID:Eastern Standard Time
+BEGIN:STANDARD
+DTSTART:16011104T020000
+RRULE:FREQ=YEARLY;BYDAY=1SU;BYMONTH=11
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:16010311T020000
+RRULE:FREQ=YEARLY;BYDAY=2SU;BYMONTH=3
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+ATTENDEE;CN="Bruton, Margaret";RSVP=TRUE:mailto:margaret.bruton@tuvsud.com
+ATTENDEE;CN="Rauch, Mark";RSVP=TRUE:mailto:Mark.Rauch@tuvsud.com
+CLASS:PUBLIC
+CREATED:20220222T140648Z
+DESCRIPTION:Hi All\,\n\n \n\nPlease join us for our first quarter updates t
+	raining session.  Thank you.\n\n__________________________________________
+	______________________________________ \n\nMicrosoft Teams meeting \n\nJoi
+	n on your computer or mobile app \n\nClick here to join the meeting <https
+	://eur01.safelinks.protection.outlook.com/ap/t-59584e83/?url=https%3A%2F%2
+	Fteams.microsoft.com%2Fl%2Fmeetup-join%2F19%253ameeting_MTEzYTRiMjYtODVhOC
+	00ZjIwLWFkODEtM2VmN2FiOTY2MjU5%2540thread.v2%2F0%3Fcontext%3D%257b%2522Tid
+	%2522%253a%2522a1109567-0815-4e1f-88af-e23555482aaa%2522%252c%2522Oid%2522
+	%253a%2522fb277c98-eea7-4eb4-9825-3f1e470a2398%2522%257d&data=04%7C01%7CMa
+	rk.Rauch%40tuvsud.com%7Cb165226f8184402ccdf808d9f2542754%7Ca110956708154e1
+	f88afe23555482aaa%7C0%7C0%7C637807265522335283%7CUnknown%7CTWFpbGZsb3d8eyJ
+	WIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&sda
+	ta=PXUAQXLon%2BVIigr2wXVlRGot5At14UL31tJQwGp9XUA%3D&reserved=0>  \n\nJoin 
+	with a video conferencing device \n\n634682478@t.plcm.vc <mailto:634682478
+	@t.plcm.vc>  \n\nVideo Conference ID: 126 611 951 1 \n\nAlternate VTC inst
+	ructions <https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%
+	2Fdialin.plcm.vc%2Fteams%2F%3Fkey%3D634682478%26conf%3D1266119511&data=04%
+	7C01%7CMark.Rauch%40tuvsud.com%7Cb165226f8184402ccdf808d9f2542754%7Ca11095
+	6708154e1f88afe23555482aaa%7C0%7C0%7C637807265522335283%7CUnknown%7CTWFpbG
+	Zsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7
+	C3000&sdata=vUwIt0LdS%2FV3hs0UeKuloyxG9TgYWT7whAVqNdxLLTQ%3D&reserved=0>  
+	\n\nOr call in (audio only) \n\n+1 213-373-6998\,\,676008821# <tel:+121337
+	36998\,\,676008821#>    United States\, Los Angeles \n\nPhone Conference I
+	D: 676 008 821# \n\nFind a local number <https://eur01.safelinks.protectio
+	n.outlook.com/?url=https%3A%2F%2Fdialin.teams.microsoft.com%2Fc7edf32c-cef
+	6-47b3-9dc2-c0b421511fdd%3Fid%3D676008821&data=04%7C01%7CMark.Rauch%40tuvs
+	ud.com%7Cb165226f8184402ccdf808d9f2542754%7Ca110956708154e1f88afe23555482a
+	aa%7C0%7C0%7C637807265522335283%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMD
+	AiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&sdata=g7XLqwRtJUPJ
+	rNMJBoss3YSm4qiXZBfSHbqW4WHyeoQ%3D&reserved=0>  | Reset PIN <https://eur01
+	.safelinks.protection.outlook.com/?url=https%3A%2F%2Fmysettings.lync.com%2
+	Fpstnconferencing&data=04%7C01%7CMark.Rauch%40tuvsud.com%7Cb165226f8184402
+	ccdf808d9f2542754%7Ca110956708154e1f88afe23555482aaa%7C0%7C0%7C63780726552
+	2335283%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTi
+	I6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&sdata=DoCDD7CW5y2WuLhnr0hSqlm5vPKA%2FlbueM
+	yeuPJUExc%3D&reserved=0>  \n\nLearn More <https://eur01.safelinks.protecti
+	on.outlook.com/?url=https%3A%2F%2Faka.ms%2FJoinTeamsMeeting&data=04%7C01%7
+	CMark.Rauch%40tuvsud.com%7Cb165226f8184402ccdf808d9f2542754%7Ca11095670815
+	4e1f88afe23555482aaa%7C0%7C0%7C637807265522335283%7CUnknown%7CTWFpbGZsb3d8
+	eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&
+	sdata=R0xvijJuFZQ%2FlCFeVWouvboEMlQ5mxH5%2FabNrqHwaPk%3D&reserved=0>  | Me
+	eting options <https://eur01.safelinks.protection.outlook.com/?url=https%3
+	A%2F%2Fteams.microsoft.com%2FmeetingOptions%2F%3ForganizerId%3Dfb277c98-ee
+	a7-4eb4-9825-3f1e470a2398%26tenantId%3Da1109567-0815-4e1f-88af-e23555482aa
+	a%26threadId%3D19_meeting_MTEzYTRiMjYtODVhOC00ZjIwLWFkODEtM2VmN2FiOTY2MjU5
+	%40thread.v2%26messageId%3D0%26language%3Den-US&data=04%7C01%7CMark.Rauch%
+	40tuvsud.com%7Cb165226f8184402ccdf808d9f2542754%7Ca110956708154e1f88afe235
+	55482aaa%7C0%7C0%7C637807265522335283%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4w
+	LjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&sdata=6aYEm7
+	xojRmNSvz%2FMVHWk0%2FRPO9elkVjXhQMG88ITwA%3D&reserved=0>  \n\n____________
+	____________________________________________________________________ \n\n 
+	\n\nRegards\,\n\n \n\nMargaret Bruton\n\nSenior Systems Analyst\n\n \n\nPh
+	one: +1 732 827 4460\n\nMobile: +1 732 803 0739\n\nEmail address: Margaret
+	.Bruton@tuvsud.com <mailto:Margaret.Bruton@tuvsud.com>  \n\nwww.tuvsud.com
+	/grc <http://www.tuvsud.com/grc> \n\n \n\nPlease note our new Address Belo
+	w.\n\nBusiness address\n\nTÜV SÜD Global Risk Consultants\n\n10 Woodbrid
+	ge Center Drive\n\nSuite #700\n\nWoodbridge\, New Jersey 07095\n\n \n\nFol
+	low us on social media\n\n   \n\n  http://www.linkedin.com/company/global-
+	risk-consultants <https://eur01.safelinks.protection.outlook.com/?url=http
+	%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fglobal-risk-consultants&data=04%7C01
+	%7CMark.Rauch%40tuvsud.com%7Cb165226f8184402ccdf808d9f2542754%7Ca110956708
+	154e1f88afe23555482aaa%7C0%7C0%7C637807265522335283%7CUnknown%7CTWFpbGZsb3
+	d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C300
+	0&sdata=pUQcdsfVxoCRGwuc0BSYTb3I1TQqwWzXM0Ut2xCD5CQ%3D&reserved=0>     \n\
+	n  https://www.linkedin.com/company/tuvsud/ <https://eur01.safelinks.prote
+	ction.outlook.com/?url=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Ftuvsud%2
+	F&data=04%7C01%7CMark.Rauch%40tuvsud.com%7Cb165226f8184402ccdf808d9f254275
+	4%7Ca110956708154e1f88afe23555482aaa%7C0%7C0%7C637807265522335283%7CUnknow
+	n%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVC
+	I6Mn0%3D%7C3000&sdata=Yt1YNPJIjkZaajS8cT2v3%2FPRGOiaqCh8ZV7SFp%2F6JPg%3D&r
+	eserved=0> \n\nThe mail and/or attachments are confidential and may also b
+	e legally privileged. If you are not the intended recipient\, you are here
+	by notified\, that any review\, dissemination\, distribution or copying of
+	 this email and/or attachments is strictly prohibited. Please notify us im
+	mediately by email and delete this message and all its attachments.\n\n \n
+	\n \n\n
+DTEND;TZID="Eastern Standard Time":20220303T110000
+DTSTAMP:20220217T202901Z
+DTSTART;TZID="Eastern Standard Time":20220303T100000
+LAST-MODIFIED:20220222T140648Z
+LOCATION:Microsoft Teams Meeting
+ORGANIZER;CN="Bruton, Margaret":mailto:margaret.bruton@tuvsud.com
+PRIORITY:5
+SEQUENCE:0
+SUMMARY:Connect Training - First Quarter Updates
+TRANSP:OPAQUE
+UID:040000008200E00074C5B7101A82E0080000000000F238021124D801000000000000000
+	0100000004CD7B2B636D3074C8761F18D28C3C44E
+X-ALT-DESC;FMTTYPE=text/html:<html xmlns:v="urn:schemas-microsoft-com:vml" 
+	xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-mic
+	rosoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/
+	12/omml" xmlns="http://www.w3.org/TR/REC-html40"><head>\n<meta name="Gener
+	ator" content="Microsoft Word 15 (filtered medium)"><!--[if !mso]><style>v
+	\\:* {behavior:url(#default#VML)\;}\no\\:* {behavior:url(#default#VML)\;}\
+	nw\\:* {behavior:url(#default#VML)\;}\n.shape {behavior:url(#default#VML)\
+	;}\n</style><![endif]--><style><!--\n/* Font Definitions */\n@font-face\n	
+	{font-family:"Cambria Math"\;\n	panose-1:2 4 5 3 5 4 6 3 2 4\;}\n@font-fac
+	e\n	{font-family:Calibri\;\n	panose-1:2 15 5 2 2 2 4 3 2 4\;}\n@font-face\
+	n	{font-family:"Segoe UI"\;\n	panose-1:2 11 5 2 4 2 4 2 2 3\;}\n@font-face
+	\n	{font-family:"Segoe UI Semibold"\;\n	panose-1:2 11 7 2 4 2 4 2 2 3\;}\n
+	/* Style Definitions */\np.MsoNormal\, li.MsoNormal\, div.MsoNormal\n	{mar
+	gin:0in\;\n	font-size:11.0pt\;\n	font-family:"Calibri"\,sans-serif\;}\na:l
+	ink\, span.MsoHyperlink\n	{mso-style-priority:99\;\n	color:#0563C1\;\n	tex
+	t-decoration:underline\;}\nspan.EmailStyle18\n	{mso-style-type:personal-co
+	mpose\;\n	font-family:"Calibri"\,sans-serif\;\n	color:windowtext\;}\n.MsoC
+	hpDefault\n	{mso-style-type:export-only\;\n	font-size:10.0pt\;}\n@page Wor
+	dSection1\n	{size:8.5in 11.0in\;\n	margin:1.0in 1.0in 1.0in 1.0in\;}\ndiv.
+	WordSection1\n	{page:WordSection1\;}\n--></style><!--[if gte mso 9]><xml>\
+	n<o:shapedefaults v:ext="edit" spidmax="1027" />\n</xml><![endif]--><!--[i
+	f gte mso 9]><xml>\n<o:shapelayout v:ext="edit">\n<o:idmap v:ext="edit" da
+	ta="1" />\n</o:shapelayout></xml><![endif]--></head><body lang="EN-US" lin
+	k="#0563C1" vlink="#954F72" style="word-wrap:break-word"><div class="WordS
+	ection1"><p class="MsoNormal">Hi All\,<o:p></o:p></p><p class="MsoNormal">
+	<o:p>&nbsp\;</o:p></p><p class="MsoNormal">Please join us for our first qu
+	arter updates training session.&nbsp\; Thank you.<o:p></o:p></p><div><p cl
+	ass="MsoNormal"><span style="color:#5F5F5F">______________________________
+	__________________________________________________</span> <o:p></o:p></p><
+	/div><div><div style="margin-top:.25in\;margin-bottom:15.0pt"><p class="Ms
+	oNormal"><span style="font-size:18.0pt\;font-family:&quot\;Segoe UI&quot\;
+	\,sans-serif\;color:#252424">Microsoft Teams meeting</span><span style="fo
+	nt-family:&quot\;Segoe UI&quot\;\,sans-serif\;color:#252424"> <o:p></o:p><
+	/span></p></div><div style="margin-bottom:15.0pt"><div><p class="MsoNormal
+	"><b><span style="font-size:10.5pt\;font-family:&quot\;Segoe UI&quot\;\,sa
+	ns-serif\;color:#252424">Join on your computer or mobile app</span></b><b>
+	<span style="font-family:&quot\;Segoe UI&quot\;\,sans-serif\;color:#252424
+	"> <o:p></o:p></span></b></p></div><p class="MsoNormal"><span style="font-
+	family:&quot\;Segoe UI&quot\;\,sans-serif\;color:#252424"><a href="https:/
+	/eur01.safelinks.protection.outlook.com/ap/t-59584e83/?url=https%3A%2F%2Ft
+	eams.microsoft.com%2Fl%2Fmeetup-join%2F19%253ameeting_MTEzYTRiMjYtODVhOC00
+	ZjIwLWFkODEtM2VmN2FiOTY2MjU5%2540thread.v2%2F0%3Fcontext%3D%257b%2522Tid%2
+	522%253a%2522a1109567-0815-4e1f-88af-e23555482aaa%2522%252c%2522Oid%2522%2
+	53a%2522fb277c98-eea7-4eb4-9825-3f1e470a2398%2522%257d&amp\;data=04%7C01%7
+	CMark.Rauch%40tuvsud.com%7Cb165226f8184402ccdf808d9f2542754%7Ca11095670815
+	4e1f88afe23555482aaa%7C0%7C0%7C637807265522335283%7CUnknown%7CTWFpbGZsb3d8
+	eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&
+	amp\;sdata=PXUAQXLon%2BVIigr2wXVlRGot5At14UL31tJQwGp9XUA%3D&amp\;reserved=
+	0" originalsrc="https://teams.microsoft.com/l/meetup-join/19%3ameeting_MTE
+	zYTRiMjYtODVhOC00ZjIwLWFkODEtM2VmN2FiOTY2MjU5%40thread.v2/0?context=%7b%22
+	Tid%22%3a%22a1109567-0815-4e1f-88af-e23555482aaa%22%2c%22Oid%22%3a%22fb277
+	c98-eea7-4eb4-9825-3f1e470a2398%22%7d" shash="VlKmGq6eVziChM06AdtqRT9IXAoV
+	c7LFkNHyWjlubyk3wmr1YGk/RlrwwnUpyt8R+7L0/BcpDzBq551PU08x7p/CRKDIxV2W1x73D+
+	g6mzhY1fARVx74QA02B2CzS/LixygJce722p2DxWvnbhYJ2sVC6qcEXeybUnbB4ePztEE=" ta
+	rget="_blank"><span style="font-size:10.5pt\;font-family:&quot\;Segoe UI S
+	emibold&quot\;\,sans-serif\;color:#6264A7">Click here to join the meeting<
+	/span></a> <o:p></o:p></span></p></div><div style="margin-bottom:3.0pt"><p
+	 class="MsoNormal"><b><span style="font-size:10.5pt\;font-family:&quot\;Se
+	goe UI&quot\;\,sans-serif\;color:#252424">Join with a video conferencing d
+	evice</span></b><span style="font-family:&quot\;Segoe UI&quot\;\,sans-seri
+	f\;color:#252424"> <o:p></o:p></span></p></div><div><p class="MsoNormal"><
+	span style="font-size:10.5pt\;font-family:&quot\;Segoe UI&quot\;\,sans-ser
+	if\;color:#252424"><a href="mailto:634682478@t.plcm.vc">634682478@t.plcm.v
+	c</a> <o:p></o:p></span></p></div><div><p class="MsoNormal"><span style="f
+	ont-size:10.5pt\;font-family:&quot\;Segoe UI&quot\;\,sans-serif\;color:#25
+	2424">Video Conference ID: </span><span style="font-size:12.0pt\;font-fami
+	ly:&quot\;Segoe UI&quot\;\,sans-serif\;color:#252424">126 611 951 1 </span
+	><span style="font-family:&quot\;Segoe UI&quot\;\,sans-serif\;color:#25242
+	4"><o:p></o:p></span></p></div><div style="margin-bottom:15.0pt"><p class=
+	"MsoNormal"><span style="font-size:10.5pt\;font-family:&quot\;Segoe UI&quo
+	t\;\,sans-serif\;color:#252424"><a href="https://eur01.safelinks.protectio
+	n.outlook.com/?url=https%3A%2F%2Fdialin.plcm.vc%2Fteams%2F%3Fkey%3D6346824
+	78%26conf%3D1266119511&amp\;data=04%7C01%7CMark.Rauch%40tuvsud.com%7Cb1652
+	26f8184402ccdf808d9f2542754%7Ca110956708154e1f88afe23555482aaa%7C0%7C0%7C6
+	37807265522335283%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2lu
+	MzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&amp\;sdata=vUwIt0LdS%2FV3hs0UeKu
+	loyxG9TgYWT7whAVqNdxLLTQ%3D&amp\;reserved=0" originalsrc="https://dialin.p
+	lcm.vc/teams/?key=634682478&amp\;conf=1266119511" shash="v5db4uJM0m1QzGoFV
+	MjxpEGGdjgZTD8s+edfNnBdh7yuSan2tM/QSS+5xalo22lkZ9PqDkQGuoGe3gqZye00tEw62le
+	3JksVC7+OUJ0W01woYOtA26dcBMxuHrbrdrMjtAoJt5JDaTGAeKIcQ9B76fTSZCX/TOrDtmI2m
+	fFiGMM="><span style="color:#6264A7">Alternate VTC instructions</span></a>
+	 <o:p></o:p></span></p></div><div style="margin-bottom:3.0pt"><div style="
+	margin-bottom:3.0pt"><p class="MsoNormal"><b><span style="font-size:10.5pt
+	\;font-family:&quot\;Segoe UI&quot\;\,sans-serif\;color:#252424">Or call i
+	n (audio only)</span></b><span style="font-family:&quot\;Segoe UI&quot\;\,
+	sans-serif\;color:#252424"> <o:p></o:p></span></p></div><div style="margin
+	-bottom:3.0pt"><p class="MsoNormal"><span style="font-family:&quot\;Segoe 
+	UI&quot\;\,sans-serif\;color:#252424"><a href="tel:+12133736998\,\,6760088
+	21# "><span style="font-size:10.5pt\;color:#6264A7">+1 213-373-6998\,\,676
+	008821#</span></a> </span><span style="font-size:10.5pt\;font-family:&quot
+	\;Segoe UI&quot\;\,sans-serif\;color:#252424">&nbsp\; United States\, Los 
+	Angeles </span><span style="font-family:&quot\;Segoe UI&quot\;\,sans-serif
+	\;color:#252424"><o:p></o:p></span></p></div></div><p class="MsoNormal"><s
+	pan style="font-size:10.5pt\;font-family:&quot\;Segoe UI&quot\;\,sans-seri
+	f\;color:#252424">Phone Conference ID: </span><span style="font-size:12.0p
+	t\;font-family:&quot\;Segoe UI&quot\;\,sans-serif\;color:#252424">676 008 
+	821# </span><span style="font-family:&quot\;Segoe UI&quot\;\,sans-serif\;c
+	olor:#252424"><o:p></o:p></span></p><div style="margin-bottom:15.0pt"><p c
+	lass="MsoNormal"><span style="font-family:&quot\;Segoe UI&quot\;\,sans-ser
+	if\;color:#252424"><a href="https://eur01.safelinks.protection.outlook.com
+	/?url=https%3A%2F%2Fdialin.teams.microsoft.com%2Fc7edf32c-cef6-47b3-9dc2-c
+	0b421511fdd%3Fid%3D676008821&amp\;data=04%7C01%7CMark.Rauch%40tuvsud.com%7
+	Cb165226f8184402ccdf808d9f2542754%7Ca110956708154e1f88afe23555482aaa%7C0%7
+	C0%7C637807265522335283%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIj
+	oiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&amp\;sdata=g7XLqwRtJUPJrNM
+	JBoss3YSm4qiXZBfSHbqW4WHyeoQ%3D&amp\;reserved=0" originalsrc="https://dial
+	in.teams.microsoft.com/c7edf32c-cef6-47b3-9dc2-c0b421511fdd?id=676008821" 
+	shash="ncID8RYDnYzF2psnuq3ca59iqve0nW3BW1CxH8q1p2ManzOV/3NAoo0KmMaP++prYSJ
+	XsF+DjQWKx2akSzJ9LEsCUFaXcj3OdKQ7tJ7j/olPXGp4b8gn1ubPVdoPi1bzYY9iD8C1P/3df
+	Ao6swARJOJzCmpUpbU9PeB+TTmK5+8=" target="_blank"><span style="font-size:10
+	.5pt\;color:#6264A7">Find a local number</span></a> | <a href="https://eur
+	01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fmysettings.lync.com
+	%2Fpstnconferencing&amp\;data=04%7C01%7CMark.Rauch%40tuvsud.com%7Cb165226f
+	8184402ccdf808d9f2542754%7Ca110956708154e1f88afe23555482aaa%7C0%7C0%7C6378
+	07265522335283%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzI
+	iLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&amp\;sdata=DoCDD7CW5y2WuLhnr0hSqlm5
+	vPKA%2FlbueMyeuPJUExc%3D&amp\;reserved=0" originalsrc="https://mysettings.
+	lync.com/pstnconferencing" shash="dVX2kjjD4iilsk3DCuvXomrRTQhbRLUKUZv7xPhI
+	QwtB9z7Jc7VUd7fBDLADYoopG21TtTMLpAHKm7Bal35l3f5tfIrg1SHU+wA6sJxIL6UdkZAqTA
+	S2W9ulEmmLTDTpX36ZSQjguPwH0MBdd6dB/RL9EDf9DpfmbILg9cY6TRo=" target="_blank
+	"><span style="font-size:10.5pt\;color:#6264A7">Reset PIN</span></a> <o:p>
+	</o:p></span></p></div><div style="margin-top:15.0pt\;margin-bottom:.25in"
+	><p class="MsoNormal"><span style="font-family:&quot\;Segoe UI&quot\;\,san
+	s-serif\;color:#252424"><a href="https://eur01.safelinks.protection.outloo
+	k.com/?url=https%3A%2F%2Faka.ms%2FJoinTeamsMeeting&amp\;data=04%7C01%7CMar
+	k.Rauch%40tuvsud.com%7Cb165226f8184402ccdf808d9f2542754%7Ca110956708154e1f
+	88afe23555482aaa%7C0%7C0%7C637807265522335283%7CUnknown%7CTWFpbGZsb3d8eyJW
+	IjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&amp\
+	;sdata=R0xvijJuFZQ%2FlCFeVWouvboEMlQ5mxH5%2FabNrqHwaPk%3D&amp\;reserved=0"
+	 originalsrc="https://aka.ms/JoinTeamsMeeting" shash="TaxgqKEZ4pa7EAqmtNs8
+	PGQR3xdhRTD/uzmUs6duCLgCnQ7V9UOIGINE6DWQXau7/AJSAsvTmv4jADRkKb4Dp/kQQJZuWo
+	RbEmW6x0uLsQ0xJBODjWTv6iGEguqcsWOo/XeUe0oRh6Lnc4rwqRbX+/k5LfkkTvDDRqI959Hl
+	ofc=" target="_blank"><span style="font-size:10.5pt\;color:#6264A7">Learn 
+	More</span></a> | <a href="https://eur01.safelinks.protection.outlook.com/
+	?url=https%3A%2F%2Fteams.microsoft.com%2FmeetingOptions%2F%3ForganizerId%3
+	Dfb277c98-eea7-4eb4-9825-3f1e470a2398%26tenantId%3Da1109567-0815-4e1f-88af
+	-e23555482aaa%26threadId%3D19_meeting_MTEzYTRiMjYtODVhOC00ZjIwLWFkODEtM2Vm
+	N2FiOTY2MjU5%40thread.v2%26messageId%3D0%26language%3Den-US&amp\;data=04%7
+	C01%7CMark.Rauch%40tuvsud.com%7Cb165226f8184402ccdf808d9f2542754%7Ca110956
+	708154e1f88afe23555482aaa%7C0%7C0%7C637807265522335283%7CUnknown%7CTWFpbGZ
+	sb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C
+	3000&amp\;sdata=6aYEm7xojRmNSvz%2FMVHWk0%2FRPO9elkVjXhQMG88ITwA%3D&amp\;re
+	served=0" originalsrc="https://teams.microsoft.com/meetingOptions/?organiz
+	erId=fb277c98-eea7-4eb4-9825-3f1e470a2398&amp\;tenantId=a1109567-0815-4e1f
+	-88af-e23555482aaa&amp\;threadId=19_meeting_MTEzYTRiMjYtODVhOC00ZjIwLWFkOD
+	EtM2VmN2FiOTY2MjU5@thread.v2&amp\;messageId=0&amp\;language=en-US" shash="
+	wJwkTry42nuqZwcRzVtJTqvIHar4UxgGCzNGLrtFV43yJaX896MxQG2ZCtD7+K87ukEUFfyE/F
+	iqCXnnNZx2lImoRfwwS5Pi1+JVrs0dPf0ToCEEsDerBBSf57KZ2NaiyaZ2FSLAg0lN6sum9oNx
+	ES9/fZdc22eCCLXJ+EnXIuo=" target="_blank"><span style="font-size:10.5pt\;c
+	olor:#6264A7">Meeting options</span></a> <o:p></o:p></span></p></div></div
+	><div><p class="MsoNormal"><span style="color:#5F5F5F">___________________
+	_____________________________________________________________</span> <o:p>
+	</o:p></p></div><p class="MsoNormal"><o:p>&nbsp\;</o:p></p><div><p class="
+	MsoNormal"><span style="font-size:10.0pt\;font-family:&quot\;Arial&quot\;\
+	,sans-serif\;color:black">Regards\,<o:p></o:p></span></p><p class="MsoNorm
+	al"><b><span style="font-size:10.0pt\;font-family:&quot\;Arial&quot\;\,san
+	s-serif\;color:black"><o:p>&nbsp\;</o:p></span></b></p><p class="MsoNormal
+	"><b><span style="font-size:10.0pt\;font-family:&quot\;Arial&quot\;\,sans-
+	serif\;color:black">Margaret Bruton<o:p></o:p></span></b></p><p class="Mso
+	Normal"><span style="font-size:10.0pt\;font-family:&quot\;Arial&quot\;\,sa
+	ns-serif\;color:black">Senior Systems Analyst<o:p></o:p></span></p><p clas
+	s="MsoNormal"><span lang="FR" style="font-size:10.0pt\;font-family:&quot\;
+	Arial&quot\;\,sans-serif"><o:p>&nbsp\;</o:p></span></p><p class="MsoNormal
+	"><span lang="FR" style="font-size:10.0pt\;font-family:&quot\;Arial&quot\;
+	\,sans-serif">Phone: +1 732 827 4460<o:p></o:p></span></p><p class="MsoNor
+	mal"><span lang="FR" style="font-size:10.0pt\;font-family:&quot\;Arial&quo
+	t\;\,sans-serif">Mobile: +1 732 803 0739<o:p></o:p></span></p><p class="Ms
+	oNormal"><span style="font-size:10.0pt\;font-family:&quot\;Arial&quot\;\,s
+	ans-serif">Email address: <a href="mailto:Margaret.Bruton@tuvsud.com"><spa
+	n style="color:blue">Margaret.Bruton@tuvsud.com</span></a> <o:p></o:p></sp
+	an></p><p class="MsoNormal"><a href="http://www.tuvsud.com/grc"><span styl
+	e="color:blue">www.tuvsud.com/grc</span></a><o:p></o:p></p><p class="MsoNo
+	rmal"><a name="_Hlk503967053"></a><a name="_Hlk503966470"></a><a name="_Hl
+	k503966200"></a><a name="_Hlk503966112"><span style="mso-bookmark:_Hlk5039
+	66200"><span style="mso-bookmark:_Hlk503966470"><span style="mso-bookmark:
+	_Hlk503967053"><span style="font-size:9.0pt\;font-family:&quot\;Arial&quot
+	\;\,sans-serif"><o:p>&nbsp\;</o:p></span></span></span></span></a></p><p c
+	lass="MsoNormal" style="margin-bottom:12.0pt"><span style="mso-bookmark:_H
+	lk503966112"><span style="mso-bookmark:_Hlk503966200"><span style="mso-boo
+	kmark:_Hlk503966470"><span style="mso-bookmark:_Hlk503967053"><b><span sty
+	le="font-size:14.0pt\;font-family:&quot\;Arial&quot\;\,sans-serif\;color:r
+	ed">Please note our new Address Below.<o:p></o:p></span></b></span></span>
+	</span></span></p><p class="MsoNormal"><!--[if gte vml 1]><v:shapetype id=
+	"_x0000_t75" coordsize="21600\,21600" o:spt="75" o:preferrelative="t" path
+	="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">\n<v:stroke joinstyle="mi
+	ter" />\n<v:formulas>\n<v:f eqn="if lineDrawn pixelLineWidth 0" />\n<v:f e
+	qn="sum @0 1 0" />\n<v:f eqn="sum 0 0 @1" />\n<v:f eqn="prod @2 1 2" />\n<
+	v:f eqn="prod @3 21600 pixelWidth" />\n<v:f eqn="prod @3 21600 pixelHeight
+	" />\n<v:f eqn="sum @0 0 1" />\n<v:f eqn="prod @6 1 2" />\n<v:f eqn="prod 
+	@7 21600 pixelWidth" />\n<v:f eqn="sum @8 21600 0" />\n<v:f eqn="prod @7 2
+	1600 pixelHeight" />\n<v:f eqn="sum @10 21600 0" />\n</v:formulas>\n<v:pat
+	h o:extrusionok="f" gradientshapeok="t" o:connecttype="rect" />\n<o:lock v
+	:ext="edit" aspectratio="t" />\n</v:shapetype><v:shape id="Picture_x0020_3
+	" o:spid="_x0000_s1026" type="#_x0000_t75" style='position:absolute\;margi
+	n-left:0\;margin-top:.9pt\;width:160.05pt\;height:63.75pt\;z-index:2516592
+	64\;visibility:visible\;mso-wrap-style:square\;mso-width-percent:0\;mso-he
+	ight-percent:0\;mso-wrap-distance-left:9pt\;mso-wrap-distance-top:0\;mso-w
+	rap-distance-right:9pt\;mso-wrap-distance-bottom:0\;mso-position-horizonta
+	l:left\;mso-position-horizontal-relative:margin\;mso-position-vertical:abs
+	olute\;mso-position-vertical-relative:text\;mso-width-percent:0\;mso-heigh
+	t-percent:0\;mso-width-relative:page\;mso-height-relative:page'>\n<v:image
+	data src="cid:image001.png@01D82413.167478A0" o:title="" cropleft="4416f" 
+	/>\n<w:wrap type="square" anchorx="margin"/>\n</v:shape><![endif]--><![if 
+	!vml]><img width="213" height="85" style="width:2.2187in\;height:.8854in" 
+	src="cid:image002.jpg@01D82413.16CF42D0" align="left" hspace="12" v:shapes
+	="Picture_x0020_3"><![endif]><span style="mso-bookmark:_Hlk503966112"><spa
+	n style="mso-bookmark:_Hlk503966200"><span style="mso-bookmark:_Hlk5039664
+	70"><span style="mso-bookmark:_Hlk503967053"></span></span></span></span><
+	span style="mso-bookmark:_Hlk503966112"><span style="mso-bookmark:_Hlk5039
+	66200"><span style="mso-bookmark:_Hlk503966470"><span style="mso-bookmark:
+	_Hlk503967053"><b><span style="font-size:9.0pt\;font-family:&quot\;Arial&q
+	uot\;\,sans-serif">Business address</span></b></span></span></span></span>
+	<span style="mso-bookmark:_Hlk503966112"><span style="mso-bookmark:_Hlk503
+	966200"><span style="mso-bookmark:_Hlk503966470"><span style="mso-bookmark
+	:_Hlk503967053"><span style="font-size:9.0pt\;font-family:&quot\;Arial&quo
+	t\;\,sans-serif"><o:p></o:p></span></span></span></span></span></p><p clas
+	s="MsoNormal"><span style="mso-bookmark:_Hlk503966112"><span style="mso-bo
+	okmark:_Hlk503966200"><span style="mso-bookmark:_Hlk503966470"><span style
+	="mso-bookmark:_Hlk503967053"><span style="font-size:9.0pt\;font-family:&q
+	uot\;Arial&quot\;\,sans-serif">TÜV SÜD Global Risk Consultants<o:p></o:p
+	></span></span></span></span></span></p><p class="MsoNormal"><span style="
+	mso-bookmark:_Hlk503966112"><span style="mso-bookmark:_Hlk503966200"><span
+	 style="mso-bookmark:_Hlk503966470"><span style="mso-bookmark:_Hlk50396705
+	3"><b><span style="font-size:9.0pt\;font-family:&quot\;Arial&quot\;\,sans-
+	serif">10 Woodbridge Center Drive<o:p></o:p></span></b></span></span></spa
+	n></span></p><p class="MsoNormal"><span style="mso-bookmark:_Hlk503966112"
+	><span style="mso-bookmark:_Hlk503966200"><span style="mso-bookmark:_Hlk50
+	3966470"><span style="mso-bookmark:_Hlk503967053"><b><span style="font-siz
+	e:9.0pt\;font-family:&quot\;Arial&quot\;\,sans-serif">Suite #700<o:p></o:p
+	></span></b></span></span></span></span></p><p class="MsoNormal"><span sty
+	le="mso-bookmark:_Hlk503966112"><span style="mso-bookmark:_Hlk503966200"><
+	span style="mso-bookmark:_Hlk503966470"><span style="mso-bookmark:_Hlk5039
+	67053"><b><span style="font-size:9.0pt\;font-family:&quot\;Arial&quot\;\,s
+	ans-serif">Woodbridge\, New Jersey 07095<o:p></o:p></span></b></span></spa
+	n></span></span></p><p class="MsoNormal" style="margin-left:.5in\;mso-add-
+	space:auto"><span style="mso-bookmark:_Hlk503966112"><span style="mso-book
+	mark:_Hlk503966200"><span style="mso-bookmark:_Hlk503966470"><span style="
+	mso-bookmark:_Hlk503967053"><span style="font-size:9.0pt\;font-family:&quo
+	t\;Arial&quot\;\,sans-serif"><o:p>&nbsp\;</o:p></span></span></span></span
+	></span></p><p class="MsoNormal"><span style="mso-bookmark:_Hlk503966112">
+	<span style="mso-bookmark:_Hlk503966200"><span style="mso-bookmark:_Hlk503
+	966470"><span style="mso-bookmark:_Hlk503967053"><b><span style="font-size
+	:9.0pt\;font-family:&quot\;Arial&quot\;\,sans-serif\;color:#0046AD">Follow
+	 us on social media<o:p></o:p></span></b></span></span></span></span></p><
+	p class="MsoNormal" style="margin-left:.5in\;mso-add-space:auto"><span sty
+	le="mso-bookmark:_Hlk503966112"><span style="mso-bookmark:_Hlk503966200"><
+	span style="mso-bookmark:_Hlk503966470"><span style="mso-bookmark:_Hlk5039
+	67053"><span style="font-size:9.0pt\;font-family:&quot\;Arial&quot\;\,sans
+	-serif">&nbsp\;&nbsp\; <o:p></o:p></span></span></span></span></span></p><
+	p class="MsoNormal"><span style="mso-bookmark:_Hlk503966112"><span style="
+	mso-bookmark:_Hlk503966200"><span style="mso-bookmark:_Hlk503966470"><span
+	 style="mso-bookmark:_Hlk503967053"><span style="font-size:9.0pt\;font-fam
+	ily:&quot\;Arial&quot\;\,sans-serif"><img border="0" width="26" height="22
+	" style="width:.2708in\;height:.2291in" id="Picture_x0020_1" src="cid:imag
+	e003.jpg@01D82413.167478A0"></span></span></span></span></span><span style
+	="mso-bookmark:_Hlk503966112"><span style="mso-bookmark:_Hlk503966200"><sp
+	an style="mso-bookmark:_Hlk503966470"><span style="mso-bookmark:_Hlk503967
+	053"><span lang="EN-GB" style="font-size:9.0pt\;font-family:&quot\;Arial&q
+	uot\;\,sans-serif\;mso-fareast-language:EN-GB">&nbsp\;&nbsp\;</span></span
+	></span></span></span><a href="https://eur01.safelinks.protection.outlook.
+	com/?url=http%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fglobal-risk-consultants
+	&amp\;data=04%7C01%7CMark.Rauch%40tuvsud.com%7Cb165226f8184402ccdf808d9f25
+	42754%7Ca110956708154e1f88afe23555482aaa%7C0%7C0%7C637807265522335283%7CUn
+	known%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLC
+	JXVCI6Mn0%3D%7C3000&amp\;sdata=pUQcdsfVxoCRGwuc0BSYTb3I1TQqwWzXM0Ut2xCD5CQ
+	%3D&amp\;reserved=0" originalsrc="http://www.linkedin.com/company/global-r
+	isk-consultants" shash="GuMI9aYlgQsRx2cdtTFIINlY+1XtfmimweSPKwW4Vx33gAHoiQ
+	r/9U8xTEcUx1YMCutPQaggcEwOF9hoo1fkh7pMp6ZxKuVtT6JYVlk5XfRW8Hq3UlSDn+ldBJu8
+	g6oWIen4/N65nodxg10TjVNMGKUNv/SvwNKBA+0lT+2waYM="><span style="mso-bookmar
+	k:_Hlk503966112"><span style="mso-bookmark:_Hlk503966200"><span style="mso
+	-bookmark:_Hlk503966470"><span style="mso-bookmark:_Hlk503967053"><span la
+	ng="EN-GB" style="font-size:9.0pt\;font-family:&quot\;Arial&quot\;\,sans-s
+	erif\;color:blue\;position:relative\;top:-3.0pt\;mso-text-raise:3.0pt\;mso
+	-fareast-language:EN-GB">http://www.linkedin.com/company/global-risk-consu
+	ltants</span></span></span></span></span><span style="mso-bookmark:_Hlk503
+	966112"><span style="mso-bookmark:_Hlk503966200"><span style="mso-bookmark
+	:_Hlk503966470"><span style="mso-bookmark:_Hlk503967053"></span></span></s
+	pan></span></a><span style="mso-bookmark:_Hlk503966112"><span style="mso-b
+	ookmark:_Hlk503966200"><span style="mso-bookmark:_Hlk503966470"><span styl
+	e="mso-bookmark:_Hlk503967053"><span style="font-size:9.0pt\;font-family:&
+	quot\;Arial&quot\;\,sans-serif\;position:relative\;top:-3.0pt\;mso-text-ra
+	ise:3.0pt\;mso-fareast-language:EN-GB"> </span></span></span></span></span
+	><span style="mso-bookmark:_Hlk503966112"><span style="mso-bookmark:_Hlk50
+	3966200"><span style="mso-bookmark:_Hlk503966470"><span style="mso-bookmar
+	k:_Hlk503967053"><span lang="EN-GB" style="font-size:9.0pt\;font-family:&q
+	uot\;Arial&quot\;\,sans-serif\;mso-fareast-language:EN-GB">&nbsp\;&nbsp\; 
+	<o:p></o:p></span></span></span></span></span></p><p class="MsoNormal"><sp
+	an style="mso-bookmark:_Hlk503966112"><span style="mso-bookmark:_Hlk503966
+	200"><span style="mso-bookmark:_Hlk503966470"><span style="mso-bookmark:_H
+	lk503967053"><span style="font-size:9.0pt\;font-family:&quot\;Arial&quot\;
+	\,sans-serif"><img border="0" width="26" height="22" style="width:.2708in\
+	;height:.2291in" id="Picture_x0020_2" src="cid:image003.jpg@01D82413.16747
+	8A0"></span></span></span></span></span><span style="mso-bookmark:_Hlk5039
+	66112"><span style="mso-bookmark:_Hlk503966200"><span style="mso-bookmark:
+	_Hlk503966470"><span style="mso-bookmark:_Hlk503967053"><span lang="EN-GB"
+	 style="font-size:9.0pt\;font-family:&quot\;Arial&quot\;\,sans-serif\;mso-
+	fareast-language:EN-GB">&nbsp\;&nbsp\;</span></span></span></span></span><
+	a href="https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2F
+	www.linkedin.com%2Fcompany%2Ftuvsud%2F&amp\;data=04%7C01%7CMark.Rauch%40tu
+	vsud.com%7Cb165226f8184402ccdf808d9f2542754%7Ca110956708154e1f88afe2355548
+	2aaa%7C0%7C0%7C637807265522335283%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAw
+	MDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&amp\;sdata=Yt1YN
+	PJIjkZaajS8cT2v3%2FPRGOiaqCh8ZV7SFp%2F6JPg%3D&amp\;reserved=0" originalsrc
+	="https://www.linkedin.com/company/tuvsud/" shash="XxaFXJ5xY3yt/epE8rFeAOT
+	+Tn0Tt45mk0kfUVpk0QMeLg/eLPHe12/5D+XXjx2agR06Of305bW+lBSIexdj235JOqoHaDggl
+	tVJeWhvgcA3X72oTDNUGxAoKkMqDGepXoeyCFMBTjw0ho+bTuqm/AsEJ8Z1I0myO/8Bx+RUCcM
+	="><span style="mso-bookmark:_Hlk503966112"><span style="mso-bookmark:_Hlk
+	503966200"><span style="mso-bookmark:_Hlk503966470"><span style="mso-bookm
+	ark:_Hlk503967053"><span style="font-size:9.0pt\;font-family:&quot\;Arial&
+	quot\;\,sans-serif\;color:blue\;mso-fareast-language:EN-GB">https://www.li
+	nkedin.com/company/tuvsud/</span></span></span></span></span><span style="
+	mso-bookmark:_Hlk503966112"><span style="mso-bookmark:_Hlk503966200"><span
+	 style="mso-bookmark:_Hlk503966470"><span style="mso-bookmark:_Hlk50396705
+	3"></span></span></span></span></a><span style="mso-bookmark:_Hlk503966112
+	"><span style="mso-bookmark:_Hlk503966200"><span style="mso-bookmark:_Hlk5
+	03966470"><span style="mso-bookmark:_Hlk503967053"><span lang="EN-GB" styl
+	e="font-size:9.0pt\;font-family:&quot\;Arial&quot\;\,sans-serif\;mso-farea
+	st-language:EN-GB"><o:p></o:p></span></span></span></span></span></p><p cl
+	ass="MsoNormal"><span style="mso-bookmark:_Hlk503966112"><span style="mso-
+	bookmark:_Hlk503966200"><span style="mso-bookmark:_Hlk503966470"><span sty
+	le="mso-bookmark:_Hlk503967053"><span style="font-size:9.0pt\;font-family:
+	&quot\;Arial&quot\;\,sans-serif">The mail and/or attachments are confident
+	ial and may also be legally privileged. If you are not the intended recipi
+	ent\, you are hereby notified\, that any review\, dissemination\, distribu
+	tion or copying of this email and/or attachments is strictly prohibited. P
+	lease notify us immediately by email and delete this message and all its a
+	ttachments.</span></span></span></span></span><span style="font-size:9.0pt
+	\;font-family:&quot\;Arial&quot\;\,sans-serif"><o:p></o:p></span></p></div
+	><p class="MsoNormal"><o:p>&nbsp\;</o:p></p><p class="MsoNormal"><o:p>&nbs
+	p\;</o:p></p></div></body></html>
+X-MICROSOFT-CDO-BUSYSTATUS:BUSY
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+X-MICROSOFT-DISALLOW-COUNTER:FALSE
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+END:VCALENDAR

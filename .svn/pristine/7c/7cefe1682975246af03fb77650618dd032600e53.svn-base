@@ -1,0 +1,131 @@
+﻿<div id='divDetailForm_#= uid #' class='divDetailForm'>
+    <div class='LDHead'> Location Detail</div>
+    <div class='LDInfo'>
+        <div><span id='lblFileNo'>File No.</span>
+            <input id='fileno' readonly='readonly' type='text' value='#= fileno #' /><span id='lblClientLocID'>Client Loc. ID</span>
+            <input id='clientlocno' readonly='readonly' type='text' value='#= clientlocno #' />
+        </div>
+        <div><span id='lblAddress'>Address</span>
+            <input id='address' readonly='readonly' type='text' value='#= address #' /><span id='lblCity'>City</span>
+            <input id='city' readonly='readonly' type='text' value='#= city #' /><span id='lblStProv'>St/Prov</span>
+            <input id='stprov' readonly='readonly' type='text' value='#= stprov #' /><span id='lblCountry'>Country</span>
+            <input id='country' readonly='readonly' type='text' value='#= country #' />
+        </div>
+        <div><span id='lblDivision'>Division</span>
+            <input id='division' readonly='readonly' type='text' value='#= division #' /><span id='lblFacility'>Facility</span>
+            <input id='facility' readonly='readonly' type='text' value='#= facility #' />
+        </div>
+    </div>
+    <div class='FVTIV'>
+        <div id='lblTIV'>TIV</div>
+        <div>(millions)</div>
+        <div>
+            <input id='TIV' readonly='readonly' type='text' value='#= TIV #' />
+        </div>
+    </div>
+    <div class='FVTIV'>
+        <div>Date Of</div>
+        <div>Inspection</div>
+        <div>
+            <input id='surveydate' readonly='readonly' type='text' value='#= surveydate #' />
+        </div>
+    </div>
+    <div class='FVTable'>
+        <table cellspacing='0' cellpadding='2'>
+            <tr class='th'>
+                <td colspan='9' class='b'> Miscellaneous </td>
+            </tr>
+            <tr class='tch'>
+                <td class='rb'> Emerg.
+                    <br /> Lighting
+                    <br /> Provided </td>
+                <td class='rb'> Emergency
+                    <br /> Exits
+                    <br /> Lights
+                    <br /> Tested </td>
+                <td class='rb'> Emergency
+                    <br /> Generator
+                    <br /> Tested </td>
+                <td class='rb'> Generator
+                    <br /> Secure </td>
+                <td class='rb'> Exit Signs </td>
+                <td class='rb'> Exit Doors </td>
+                <td class='rb'> Natural
+                    <br /> Gas Fryers
+                    <br /> Secure </td>
+                <td class='rb'> Seismic
+                    <br /> Gas
+                    <br /> Shutoff </td>
+                <td class='b'> Storage
+                    <br /> Racks
+                    <br /> Bolted
+                    <br /> Down </td>
+            </tr>
+            <tr class='tch'>
+                <td class='r'>
+                    <input style='width: 60px' id='elprovided' readonly='readonly' type='text' value='#= elprovided #' />
+                    <input id='ELProvidedC' readonly='readonly' type='text' value='#= ELProvidedC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 60px' id='batopemerexit' readonly='readonly' type='text' value='#= batopemerexit #' />
+                    <input id='BatOpEmerExitC' readonly='readonly' type='text' value='#= BatOpEmerExitC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 60px' id='emerggenoptmonthly' readonly='readonly' type='text' value='#= emerggenoptmonthly #' />
+                    <input id='EmergGenOptMonthlyC' readonly='readonly' type='text' value='#= EmergGenOptMonthlyC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 60px' id='gensecpreunauth' readonly='readonly' type='text' value='#= gensecpreunauth #' />
+                    <input id='GenSecPreUnauthC' readonly='readonly' type='text' value='#= GenSecPreUnauthC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 60px' id='exitsignsprovill' readonly='readonly' type='text' value='#= exitsignsprovill #' />
+                    <input id='ExitSignsProvIllC' readonly='readonly' type='text' value='#= ExitSignsProvIllC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 60px' id='exitdoorsunobstr' readonly='readonly' type='text' value='#= exitdoorsunobstr #' />
+                    <input id='ExitDoorsUnobstrC' readonly='readonly' type='text' value='#= ExitDoorsUnobstrC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 60px' id='natgasfryer' readonly='readonly' type='text' value='#= natgasfryer #' />
+                    <input id='NatGasFryerC' readonly='readonly' type='text' value='#= NatGasFryerC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 60px' id='seismicgasshutoff' readonly='readonly' type='text' value='#= seismicgasshutoff #' />
+                    <input id='SeismicGasShutoffC' readonly='readonly' type='text' value='#= SeismicGasShutoffC #' class='hidden' />
+                </td>
+                <td class='outside-bottom-right'>
+                    <input style='width: 60px' id='storracksbolted' readonly='readonly' type='text' value='#= storracksbolted #' />
+                    <input id='StorRacksBoltedC' readonly='readonly' type='text' value='#= StorRacksBoltedC #' class='hidden' />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br />
+    <div class='tableDiv'>
+        <div style='margin: auto; width: 100%; text-align: center;'><span style='margin: auto; width: 100%; text-align: center;'><button class='k-button' onclick='globalCloseFormView(); return false;'>Close</button></span></div>
+    </div>
+</div>
+<script>
+    var zLink = "<link rel='stylesheet' type='text/css' href='../../../css/FormView/FormView.css'>";
+    $(zLink).appendTo('head');
+    setTimeout(function () {
+        var zUID = '#= uid #';
+        var colorItems = ['elprovided', 'batopemerexit', 'emerggenoptmonthly', 'gensecpreunauth', 'exitsignsprovill', 'exitdoorsunobstr', 'natgasfryer', 'seismicgasshutoff', 'storracksbolted'];
+        for (i = 0; i < colorItems.length; i++) {
+            var zColor = 'transparent';
+            zColor = $('[data-uid=' + zUID + '] .' + colorItems[i] + 'Color').css('background-color');
+            $('\\#divDetailForm_' + zUID + ' \\#' + colorItems[i] + '').css('background-color', zColor);
+        }
+        $('\\#divDetailForm_' + zUID + ' input').each(function () {
+            if ($(this).attr('id').toLowerCase().indexOf('date') > -1) {
+                $(this).val(global.formatShortDateWithMonth($(this).val()));
+            }
+        });
+        $('\\#divDetailForm_' + zUID + ' input').each(function () {
+            if (($(this).val() == 'null') || ($(this).val() == 'undefined')) {
+                $(this).val('');
+            }
+        });
+    }, 50);
+</script>

@@ -1,0 +1,23 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colNotificationID":1, 
+	"colTo":"To", 
+	"colCc":"Cc", 
+	"colBcc":"Bcc", 
+	"colSubject":"Subject", 
+	"colBody":"Body", 
+	"colCreateDate":null, 
+	"colSentDate":null, 
+	"colProcessedDate":null, 
+	"colIsException":null, 
+	"colAttachmentData":"AttachmentData", 
+	"colNotificationType":"NotificationType"
+}]

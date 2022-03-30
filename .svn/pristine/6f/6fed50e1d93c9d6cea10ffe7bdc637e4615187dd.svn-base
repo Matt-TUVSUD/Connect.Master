@@ -1,0 +1,16 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblMetaContextTerm --> [tblMetaContextTerm]
+
+  colFldId --> [fldId] int **PK** identity not null
+  colFldContext --> [fldContext] varchar(100) not null
+  colFldTerm --> [fldTerm] varchar(100) not null
+  colFldAbbreviation --> [fldAbbreviation] varchar(100) null
+

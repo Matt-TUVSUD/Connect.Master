@@ -1,0 +1,475 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/ClientConnectSite.Master" AutoEventWireup="false" CodeBehind="ClientConnectForm.master.vb" Inherits="GRC.Connect.Web.ClientConnectForm" %>
+<asp:Content ID="ClientConnectFormHeadContent" ContentPlaceHolderID="ClientConnectSiteHead" runat="server">
+    <asp:ContentPlaceHolder ID="ClientConnectFormHead" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="ClientConnectFormBodyContent" ContentPlaceHolderID="ClientConnectSiteBody" runat="server">
+    <asp:ContentPlaceHolder ID="ClientConnectFormBody" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="ClientConnectSiteBottomHtmlContent" ContentPlaceHolderID="ClientConnectSiteBottomHtml" runat="server">
+    <asp:ContentPlaceHolder ID="ClientConnectFormBottomHtml" runat="server">
+    </asp:ContentPlaceHolder>
+
+        <script type="text/javascript">
+            var windowObjectReferenceWhatsNew = null;
+            var windowObjectReferenceKnowledgeBase = null;
+            var windowObjectReference = null;
+            var PreviousUrl;
+
+            function openRequestedSinglePopup(strUrl, gridId, chartId, reportId) {
+                // BUILD THE IDS USED FOR REPORTS, GRIDS, AND CHARTS
+                var zQueryOperator = "?";
+                var zItemAdded = false;
+                if (strUrl.indexOf("?") > -1) {
+                    zQueryOperator = "&";
+                }
+                if (gridId !== undefined && gridId !== null) {
+                    strUrl = strUrl + zQueryOperator + "gridId=" + gridId;
+                    zQueryOperator = "&";
+                }
+                if (chartId !== undefined && chartId !== null) {
+                    strUrl = strUrl + zQueryOperator + "chartId=" + chartId;
+                    zQueryOperator = "&";
+                }
+                if (reportId !== undefined && reportId !== null) {
+                    strUrl = strUrl + zQueryOperator + "reportId=" + reportId;
+                    zQueryOperator = "&";
+                }
+                // NAVIGATE TO THE CORRECT AREA
+                if (windowObjectReference == null || windowObjectReference == undefined || windowObjectReference.closed) {
+                    // IF THE WINDOW DOWN NOT EXIST, OPEN A NEW ONE
+                    var zOptions = "" +
+                        "resizable=yes" +
+                        ",scrollbars=yes" + 
+                        ",status=yes" +
+                        ",left=0" +
+                        ",top=0" +
+                        ",width=" + screen.width * 0.99 + 
+                        ",height=" + screen.height * 0.90;
+                    windowObjectReference = window.open(strUrl, "SingleSecondaryWindowName", zOptions);
+                    windowObjectReference.focus();
+                }
+                else if (PreviousUrl != strUrl) {
+                    // IF THE WINDOW EXISTS AND THE URL IS NEW, CHANGE THE URL OF THE OPEN WINDOW
+                    windowObjectReference.location.href = strUrl;
+                    windowObjectReference.focus();
+                }
+                else {
+                    // IF THE WINDOW EXISTS AND THE URL IS THE SAME, MAKE WINDOW ON TOP
+                    windowObjectReference.focus();
+                };
+                PreviousUrl = strUrl;
+            }
+
+            var windowObjectDocumentLibrary = null;
+            function openRequestedDocumentLibrary(strUrl) {
+                // BUILD THE IDS USED FOR REPORTS, GRIDS, AND CHARTS
+                var zQueryOperator = "?";
+                var zItemAdded = false;
+                if (strUrl.indexOf("?") > -1) {
+                    zQueryOperator = "&";
+                }
+                // NAVIGATE TO THE CORRECT AREA
+                if (windowObjectDocumentLibrary == null || windowObjectDocumentLibrary == undefined || windowObjectDocumentLibrary.closed) {
+                    //// IF THE WINDOW DOWN NOT EXIST, OPEN A NEW ONE
+                    windowObjectDocumentLibrary = window.open(strUrl, "SingleSecondaryWindowDocumentLibrary", "resizable=yes,scrollbars=yes,status=yes");
+                    windowObjectDocumentLibrary.focus();
+                }
+                else if (PreviousUrl != strUrl) {
+                    //// IF THE WINDOW EXISTS AND THE URL IS NEW, CHANGE THE URL OF THE OPEN WINDOW
+                    windowObjectDocumentLibrary.location.href = strUrl;
+                    windowObjectDocumentLibrary.focus();
+                }
+                else {
+                    //// IF THE WINDOW EXISTS AND THE URL IS THE SAME, MAKE WINDOW ON TOP
+                    windowObjectDocumentLibrary.focus();
+                };
+                PreviousUrl = strUrl;
+            }
+
+            function onTreeviewNodeClick(sender, args) {
+                // CHECK IF A NEW WINDOW NEEDS TO BE OPENED
+                tempNode = args.get_domEvent();
+                tempTarget = tempNode.target.target.toLowerCase();
+                tempURL = tempNode.target.href;
+                tempID = args._node._properties._data.value;
+                if (tempTarget != undefined && tempTarget != null && tempTarget != "undefinied") {
+                    switch (tempTarget) {
+                        case "_blank":
+                            args.set_cancel(true);
+                            if (tempURL.indexOf('/Charts/') !== -1) {
+                                // IF IT IS A CHART, OPEN CHART PREFILTERS WINDOW
+                                openChartPrefilter(tempURL, tempID);
+                            } else {
+                                // IF IT IS A REPORT, OPEN SINGLE REPORT WINDOW
+                                openRequestedSinglePopup(tempNode.target.href);
+                            }
+                            return false;
+                            break;
+                        case "singlereport":
+                            args.set_cancel(true);
+                            var GSafeGUID = getGSafeGUID();
+                            var windowContent = window.radopen(tempNode.target.href, "RadWindow1");
+                            windowContent.setUrl(tempNode.target.href);
+                            return false;
+                            break;
+                        case "programstatus":
+                            args.set_cancel(true);
+                            openProgramStatusPrefilter(tempURL, tempID);
+                            //openPrgmStatus();
+                            return false;
+                            break;
+                        case "recfollowupstatus":
+                            args.set_cancel(true);
+                            openRecFollowUpStatusPrefilter(tempURL, tempID);
+                            return true;
+                            break;
+                    }
+                }
+            }
+
+            //function openPracticeReportPopup(strUrl) {
+            //    var windowContent = window.radopen(strUrl, "RadWindow1");
+            //    windowContent.setUrl(strUrl);
+            //    return false;
+            //}
+
+            //function openSingleReportPopup(strUrl) {
+            //    var windowContent = window.radopen(strUrl, "RadWindow1");
+            //    windowContent.setUrl(strUrl);
+            //    return false;
+            //}
+
+
+            function FilterBypassonOpenProgramStatusWindow(strUrl, navLinkId) {
+                var GSafeGUID = getGSafeGUID();
+                var PreFilterUrl = "../../Home_{{VER}}/ProgramStatus/PreFilter.aspx" + "?sid=" + GSafeGUID + "&id=" + navLinkId + '&SubmitOnOpen=1';
+                var windowContent = window.radopen(PreFilterUrl, "RadWindow1");
+                windowContent.setUrl(PreFilterUrl);
+                windowContent.set_modal(true);
+                return false;
+            }
+
+            function FilterBypassonOpenRecFollowUpStatusWindow(strUrl, navLinkId) {
+                var GSafeGUID = getGSafeGUID();
+                var PreFilterUrl = "../../Home_{{VER}}/Charts/AutoRecommendationResponseFollowUpStatus/PreFilter.aspx" + "?sid=" + GSafeGUID + "&id=" + navLinkId + '&SubmitOnOpen=1';
+                var windowContent = window.radopen(PreFilterUrl, "RadWindow1");
+                windowContent.setUrl(PreFilterUrl);
+                windowContent.set_modal(true);
+                return false;
+            }
+
+            function FilterBypassopenReportPopup(strUrl) {
+                var windowContent = window.radopen(strUrl, "RadWindow1");
+                windowContent.setUrl(strUrl + '&SubmitOnOpen=1');
+                windowContent.set_modal(true);
+                return false;
+            }
+
+            function FilterBypassopenChartPrefilter(strUrl, navLinkId) {
+                var GSafeGUID = getGSafeGUID();
+                var PreFilterUrl = "../../Home_{{VER}}/Charts/PreFilter.aspx" + "?sid=" + GSafeGUID + "&id=" + navLinkId + '&SubmitOnOpen=1';
+                var windowContent = window.radopen(PreFilterUrl, "RadWindow1");
+                windowContent.setUrl(PreFilterUrl);
+                windowContent.set_modal(true);
+                return false;
+            }
+
+            function openReportPopup(strUrl) {
+                var windowContent = window.radopen(strUrl, "RadWindow1");
+                windowContent.setUrl(strUrl);
+                windowContent.set_modal(true);
+                return false;
+            }
+
+            function openDocumentLibrary() {
+                var GSafeGUID = getGSafeGUID();
+                var strUrl = "../../Home_{{VER}}/Grids/LibrariesDocumentLibrary/?sid=" + GSafeGUID;
+                openRequestedSinglePopup(strUrl, 60, 0, 0);
+            }
+
+            function openChartPrefilter(strUrl, navLinkId) {
+                var GSafeGUID = getGSafeGUID();
+                var PreFilterUrl = "../../Home_{{VER}}/Charts/PreFilter.aspx" + "?sid=" + GSafeGUID + "&id=" + navLinkId; // + '&SubmitOnOpen=1';
+                var windowContent = window.radopen(PreFilterUrl, "RadWindow1");
+                windowContent.setUrl(PreFilterUrl);
+                windowContent.set_modal(true);
+                return false;
+            }
+
+            function openProgramStatusPrefilter(strUrl, navLinkId) {
+                var GSafeGUID = getGSafeGUID();
+                var PreFilterUrl = "../../Home_{{VER}}/ProgramStatus/PreFilter.aspx" + "?sid=" + GSafeGUID + "&id=" + navLinkId;
+                var windowContent = window.radopen(PreFilterUrl, "RadWindow1");
+                windowContent.setUrl(PreFilterUrl);
+                windowContent.set_modal(true);
+            }
+
+            function openRecFollowUpStatusPrefilter(strUrl, navLinkId) {
+                var GSafeGUID = getGSafeGUID();
+                var PreFilterUrl = "../../Home_{{VER}}/Charts/AutoRecommendationResponseFollowUpStatus/PreFilter.aspx" + "?sid=" + GSafeGUID + "&id=" + navLinkId;
+                var windowContent = window.radopen(PreFilterUrl, "RadWindow1");
+                windowContent.setUrl(PreFilterUrl);
+                windowContent.set_modal(true);
+            }
+
+            function openProgramStatusPageParent(strUrl) {
+                windowPleaseWait.data("kendoWindow").open();
+                $("#windowPleaseWait").css("display", "block");
+                document.location.href = strUrl;
+            }
+
+            function openRecFollowUpStatusPageParent(strUrl) {
+                openRequestedSinglePopup(strUrl, null, null, null);
+            }
+
+            var searchWindow = null;
+            var gSearchEngineUrl = null;
+            function searchLinkClick(pUrl) {
+                // BUILD THE URL WITH THE PARMS
+                var zGSafeGUID = getGSafeGUID();
+                var zOperator = "&";
+                gSearchEngineUrl = pUrl;
+                var zUrl = pUrl;
+                if (zUrl.indexOf("?") < 0) {
+                    var zMode = "l";
+                    zUrl = zUrl + "?sid=" + zGSafeGUID + "mo=" + zMode;
+                }
+                 //BUILD THE WINDOW AND OPEN
+                if (!searchWindow) {
+                    searchWindow = $('#searchWindow');
+                    searchWindow.kendoWindow({
+                        visible: false,
+                        title: "Document Library",
+                        width: "850px",
+                        height: "515px",
+                        modal: true,
+                        draggable: false,
+                        resizable: false,
+                        content: zUrl,
+                        iframe: true,
+                        open: function (e) {
+                            var zGSafeGUID = getGSafeGUID();
+                            var zOperator = "&";
+                            var zTempUrl = gSearchEngineUrl;
+                            if (zTempUrl.indexOf("?") < 0) {
+                                var zMode = "l";
+                                zTempUrl = zTempUrl + "?sid=" + zGSafeGUID + "mo=" + zMode;
+                            }
+                            var data = $("#searchWindow").data("kendoWindow");
+                            data.refresh(zTempUrl)
+                        }
+
+                    }).data("kendoWindow").center().open();
+                } else {
+                    searchWindow.data("kendoWindow").center().open();
+                }
+            }
+            // A FUNCTION FOR HANDLING SEARCH DOWNLAOD ERRORS
+            function gSearchDownloadError(pMessage) {
+                alert("Error while downloading file: " + pMessage);
+            }
+
+            var searchLatLongWindow = null;
+            var gSearchLatLongUrl = null;
+            var gSearchLatLongGridId = null;
+            function searchLatLongLinkClick(pUrl, pNavLinkId, pGridId) {
+                // BUILD THE URL WITH THE PARMS
+                var zGSafeGUID = getGSafeGUID();
+                var zOperator = "&";
+                gSearchLatLongGridId = pGridId;
+                gSearchLatLongUrl = pUrl;
+                var zUrl = pUrl;
+                if (zUrl.indexOf("?") < 0) {
+                    //var zMode = "l";
+                    zUrl = zUrl + "?sid=" + zGSafeGUID;
+                }
+                zUrl = zUrl + "&gid=" + gSearchLatLongGridId;
+                //BUILD THE WINDOW AND OPEN
+                if (!searchLatLongWindow) {
+                    searchLatLongWindow = $('#searchLatLongFacilityWindow');
+                    searchLatLongWindow.kendoWindow({
+                        visible: false,
+                        title: "Latitude/Longitude Facility Search",
+                        width: "600px",
+                        height: "420px",
+                        modal: true,
+                        draggable: false,
+                        resizable: false,
+                        content: zUrl,
+                        iframe: true,
+                        open: function (e) {
+                            var zGSafeGUID = getGSafeGUID();
+                            var zOperator = "&";
+                            var zTempUrl = gSearchLatLongUrl;
+                            if (zTempUrl.indexOf("?") < 0) {
+                                //var zMode = "l";
+                                zTempUrl = zTempUrl + "?sid=" + zGSafeGUID;
+                            }
+                            zTempUrl = zTempUrl + "&gid=" + gSearchLatLongGridId;
+                            var data = $("#searchLatLongFacilityWindow").data("kendoWindow");
+                            data.refresh(zTempUrl)
+                        }
+
+                    }).data("kendoWindow").center().open();
+                } else {
+                    searchLatLongWindow.data("kendoWindow").center().open();
+                }
+            }
+
+
+            // script by Josh Fraser (http://www.onlineaspect.com)
+            function calculate_time_zone() {
+                var rightNow = new Date();
+                var jan1 = new Date(rightNow.getFullYear(), 0, 1, 0, 0, 0, 0);  // jan 1st
+                var june1 = new Date(rightNow.getFullYear(), 6, 1, 0, 0, 0, 0); // june 1st
+                var temp = jan1.toGMTString();
+                var jan2 = new Date(temp.substring(0, temp.lastIndexOf(" ") - 1));
+                temp = june1.toGMTString();
+                var june2 = new Date(temp.substring(0, temp.lastIndexOf(" ") - 1));
+                var std_time_offset = (jan1 - jan2) / (1000 * 60 * 60);
+                var daylight_time_offset = (june1 - june2) / (1000 * 60 * 60);
+                var dst;
+                if (std_time_offset == daylight_time_offset) {
+                    dst = "0"; // daylight savings time is NOT observed
+                } else {
+                    // positive is southern, negative is northern hemisphere
+                    var hemisphere = std_time_offset - daylight_time_offset;
+                    if (hemisphere >= 0)
+                        std_time_offset = daylight_time_offset;
+                    dst = "1"; // daylight savings time is observed
+                }
+                var i;
+
+                //return convert(std_time_offset) + "," + dst;
+                return std_time_offset;
+            }
+            function convert(value) {
+                var hours = parseInt(value);
+                value -= parseInt(value);
+                value *= 60;
+                var mins = parseInt(value);
+                value -= parseInt(value);
+                value *= 60;
+                var secs = parseInt(value);
+                var display_hours = hours;
+                // handle GMT case (00:00)
+                if (hours == 0) {
+                    display_hours = "00";
+                } else if (hours > 0) {
+                    // add a plus sign and perhaps an extra 0
+                    display_hours = (hours < 10) ? "+0" + hours : "+" + hours;
+                } else {
+                    // add an extra 0 if needed 
+                    display_hours = (hours > -10) ? "-0" + Math.abs(hours) : hours;
+                }
+
+                mins = (mins < 10) ? "0" + mins : mins;
+                return "(UTC" + display_hours + ":" + mins + ")";
+            }
+            function getHemisphere(pOffset) {
+                var zReturn = ""
+                if (pOffset < 0) {
+                    zReturn = "west";
+                } else if (pOffset > 0) {
+                    zReturn = "east";
+                } else {
+                    zReturn = "";
+                }
+                return zReturn;
+            }
+
+            function onOpenProgramStatusWindow (pURL, pNavId) {
+                openProgramStatusPrefilter(pURL, pNavId);
+            }
+
+            function onOpenRecFollowUpStatusWindow (pURL, pNavId) {
+                openRecFollowUpStatusPrefilter(pURL, pNavId);
+            }
+
+            function openRequestedKnowledgeBasePopup(strUrl, pNavId) {
+                // BUILD THE URL
+                var zGUID = getGSafeGUID();
+                var zQueryOperator = "?";
+                var zSection = "";
+                if (globalIsMapShown) {
+                    zSection = "#mapView"
+                }
+                if (strUrl) {
+                    if (strUrl.indexOf("?") > -1) {
+                        zQueryOperator = "&";
+                    }
+                    strUrl = strUrl + zQueryOperator + "sid=" + zGUID + zSection;
+                } else {
+                    strUrl = "../KnowledgeBase/index.html" + zQueryOperator + "sid=" + zGUID + zSection;
+                    zQueryOperator = "&";
+                }
+                // BUILD THE IDS USED FOR REPORTS, GRIDS, AND CHARTS
+                var zOptionsKnowledgeBase = "" +
+                    "width=890" +
+                    ",height=600" +
+                    ",location=no" +
+                    ",menubar=no" +
+                    ",resizable=yes" +
+                    ",scrollbars=yes" +
+                    ",status=yes" +
+                    ",titlebar=no" +
+                    ",toolbar=no";
+                var zItemAdded = false;
+                // NAVIGATE TO THE CORRECT AREA
+                if (windowObjectReferenceKnowledgeBase == null || windowObjectReferenceKnowledgeBase == undefined || windowObjectReferenceKnowledgeBase.closed) {
+                    // IF THE WINDOW DOWN NOT EXIST, OPEN A NEW ONE
+                    windowObjectReferenceKnowledgeBase = window.open(strUrl, "SingleSecondaryWindowKnowledgeBaseName", zOptionsKnowledgeBase);
+                    windowObjectReferenceKnowledgeBase.focus();
+                }
+                else if (PreviousUrl != strUrl) {
+                    // IF THE WINDOW EXISTS AND THE URL IS NEW, CHANGE THE URL OF THE OPEN WINDOW
+                    windowObjectReferenceKnowledgeBase.location.href = strUrl;
+                    windowObjectReferenceKnowledgeBase.focus();
+                }
+                else {
+                    // IF THE WINDOW EXISTS AND THE URL IS THE SAME, MAKE WINDOW ON TOP
+                    windowObjectReferenceKnowledgeBase.focus();
+                };
+                PreviousUrl = strUrl;
+            }
+
+            function openRequestedWhatsNew(strUrl, pNavId) {
+                // BUILD THE IDS USED FOR REPORTS, GRIDS, AND CHARTS
+                var zOptionsWhatsNew = "" +
+                    "width=1050" +
+                    ",height=700" +
+                    ",location=no" +
+                    ",menubar=no" +
+                    ",resizable=yes" +
+                    ",scrollbars=yes" +
+                    ",status=yes" +
+                    ",titlebar=no" +
+                    ",toolbar=no";
+                var zQueryOperator = "?";
+                var zItemAdded = false;
+                if (strUrl.indexOf("?") > -1) {
+                    zQueryOperator = "&";
+                }
+                // NAVIGATE TO THE CORRECT AREA
+                if (windowObjectReferenceWhatsNew == null || windowObjectReferenceWhatsNew == undefined || windowObjectReferenceWhatsNew.closed) {
+                    // IF THE WINDOW DOWN NOT EXIST, OPEN A NEW ONE
+                    windowObjectReferenceWhatsNew = window.open(strUrl, "SingleSecondaryWindowWhatsNewName", zOptionsWhatsNew);
+                    // windowObjectReferenceWhatsNew.focus();
+                }
+                else if (PreviousUrl != strUrl) {
+                    // IF THE WINDOW EXISTS AND THE URL IS NEW, CHANGE THE URL OF THE OPEN WINDOW
+                    windowObjectReferenceWhatsNew.location.href = strUrl;
+                    windowObjectReferenceWhatsNew.focus();
+                }
+                else {
+                    // IF THE WINDOW EXISTS AND THE URL IS THE SAME, MAKE WINDOW ON TOP
+                    windowObjectReferenceWhatsNew.focus();
+                };
+                PreviousUrl = strUrl;
+            }
+
+        </script>
+
+</asp:Content>

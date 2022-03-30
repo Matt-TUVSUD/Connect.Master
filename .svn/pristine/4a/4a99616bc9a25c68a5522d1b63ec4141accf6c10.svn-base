@@ -1,0 +1,75 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: VwRRClients --> [vwRRClients]
+
+  colCldbname --> [cldbname] varchar(50) not null
+  colClientname --> [clientname] varchar(150) null
+  colFeatures --> [features] varchar(255) null
+  colFileprefix --> [fileprefix] varchar(50) not null
+  colClientdesigneenotify --> [clientdesigneenotify] bit not null
+  colClientdesigneename --> [clientdesigneename] varchar(255) null
+  colClientdesigneeemail --> [clientdesigneeemail] varchar(255) null
+  colActive --> [580active] bit not null
+  colRecrespemail --> [recrespemail] varchar(12) null
+  colRecautofollowup --> [recautofollowup] bit not null
+  colRecfollowup1 --> [recfollowup1] int null
+  colRecfollowup2 --> [recfollowup2] int null
+  colRecfollowup3 --> [recfollowup3] int null
+  colDatatransfer --> [datatransfer] nvarchar(5) null
+  colTimestamp --> [timestamp] timestamp not null
+  colAutoRecStartDate --> [AutoRecStartDate] datetime null
+  colAutoRecComments --> [AutoRecComments] varchar(100) null
+  colFireRatingKeyID --> [FireRatingKeyID] tinyint not null
+  colBMRatingKeyID --> [BMRatingKeyID] tinyint not null
+  colCustomAccessLabel --> [CustomAccessLabel] varchar(50) not null
+  colWORecipientName --> [WORecipientName] varchar(100) null
+  colWORecipientEmail --> [WORecipientEmail] varchar(100) null
+  colWOSubject --> [WOSubject] varchar(255) null
+  colExchangeRateGroupID --> [ExchangeRateGroupID] tinyint null
+  colAutoRecLastProcessDate --> [AutoRecLastProcessDate] datetime null
+  colIfu --> [IFU] bit not null
+  colPifu1 --> [PIFU1] int null
+  colPifu2 --> [PIFU2] int null
+  colPifu3 --> [PIFU3] int null
+  colPifu4 --> [PIFU4] int null
+  colImpClientDesName1 --> [ImpClientDesName1] varchar(100) null
+  colImpClientDesEmail1 --> [ImpClientDesEmail1] varchar(100) null
+  colImpClientDesName2 --> [ImpClientDesName2] varchar(100) null
+  colImpClientDesEmail2 --> [ImpClientDesEmail2] varchar(100) null
+  colImpClientDesName3 --> [ImpClientDesName3] varchar(100) null
+  colImpClientDesEmail3 --> [ImpClientDesEmail3] varchar(100) null
+  colAifu --> [AIFU] varchar(1) null
+  colImpClientDesName4 --> [ImpClientDesName4] varchar(100) null
+  colImpClientDesEmail4 --> [ImpClientDesEmail4] varchar(100) null
+  colImpClientDesName5 --> [ImpClientDesName5] varchar(100) null
+  colImpClientDesEmail5 --> [ImpClientDesEmail5] varchar(100) null
+  colMgmtARR --> [MgmtARR] bit not null
+  colImpEmailAll --> [ImpEmailAll] bit not null
+  colSecurityPasswordExpireDays --> [SecurityPasswordExpireDays] int null
+  colSecurityInactivityLockoutDays --> [SecurityInactivityLockoutDays] int null
+  colSecurityInactivityLockoutRemindDays --> [SecurityInactivityLockoutRemindDays] int null
+  colSecurityPasswordMinimumLength --> [SecurityPasswordMinimumLength] int null
+  colSecurityPasswordTypeId --> [SecurityPasswordTypeId] int null
+  colDataTransferPackageId --> [DataTransferPackageId] int null
+  colDataTransferPassword --> [DataTransferPassword] nvarchar(50) null
+  colDataTransferEncryptionKey --> [DataTransferEncryptionKey] nvarchar(50) null
+  colSecurityAllowChangePassword --> [SecurityAllowChangePassword] bit null
+  colReclassificationEmailSentDate --> [ReclassificationEmailSentDate] datetime null
+  colReclassificationEmailFollowUpDate --> [ReclassificationEmailFollowUpDate] datetime null
+  colReclassificationCompletionDate --> [ReclassificationCompletionDate] datetime null
+  colReclassificationLinkGUID --> [ReclassificationLinkGUID] nvarchar(100) null
+  colLastReclassificationCompletionDate --> [LastReclassificationCompletionDate] datetime null
+  colSysUserCreated --> [SysUserCreated] nvarchar(100) null
+  colSysDateCreated --> [SysDateCreated] datetime null
+  colSysUserModified --> [SysUserModified] nvarchar(100) null
+  colSysDateModified --> [SysDateModified] datetime null
+  colClientId --> [ClientId] int identity not null
+  colDefaultMetaCurrencyID --> [DefaultMetaCurrencyID] int null
+

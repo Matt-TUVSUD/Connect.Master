@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{41B08F63-F402-4320-881B-7AB2A0BDE6FA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>GRC.Connect.ConnectLib45</RootNamespace>
+    <AssemblyName>ConnectLib45</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>ConnectLib45.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>ConnectLib45.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AppJobLib">
+      <HintPath>..\..\..\..\..\..\..\GRCConnectDLLs\AppJobLib.dll</HintPath>
+    </Reference>
+    <Reference Include="GRC.Excel">
+      <HintPath>..\..\..\..\..\..\..\..\Tools\GRC\API\GRC.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Tools\JSON.Net\Bin\Net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\queryTblAdminNote.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Data\queryTblAdminNoteTextBox.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Data\queryTblAdminQueue.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Data\queryTblAdminSetting.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Data\queryTblAdminViewXLColumn.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Data\queryTblAdminViewXLSheet.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Data\queryVwAdminNoteTextBox.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Data\queryVwAdminViewXLSheet.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TblAdminNote.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TblAdminNoteTextBox.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TblAdminQueue.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TblAdminSetting.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TblAdminViewXLColumn.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TblAdminViewXLSheet.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Data\UtilSQLServer.vb">
+      <DependentUpon>Engine.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Data\VwAdminNoteTextBox.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Data\VwAdminViewXLSheet.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="UtilAdminNote.vb" />
+    <Compile Include="xNotificationAttachment.vb" />
+    <Compile Include="UtilAppSetting.vb" />
+    <Compile Include="UtilClient.vb" />
+    <Compile Include="UtilDB.vb" />
+    <Compile Include="xValidateSIDResult.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UtilFDR.vb" />
+    <Compile Include="UtilNotification.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\TblAdminNote.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Data\TblAdminNoteTextBox.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Data\TblAdminQueue.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Data\TblAdminSetting.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Data\TblAdminViewXLColumn.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Data\TblAdminViewXLSheet.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Data\Views.M2G">
+      <Generator>My2ndGenerationGenerator</Generator>
+      <LastGenOutput>Views.txt</LastGenOutput>
+    </None>
+    <None Include="Data\Engine.M2G">
+      <Generator>My2ndGenerationGenerator</Generator>
+      <LastGenOutput>Engine.txt</LastGenOutput>
+    </None>
+    <None Include="Data\Tables.M2G">
+      <Generator>My2ndGenerationGenerator</Generator>
+      <LastGenOutput>Tables.txt</LastGenOutput>
+    </None>
+    <None Include="Data\VwAdminNoteTextBox.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Data\VwAdminViewXLSheet.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Engine.txt">
+      <DependentUpon>Engine.M2G</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Content>
+    <Content Include="Data\Tables.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Data\TblAdminNote.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Data\TblAdminNoteTextBox.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Data\TblAdminQueue.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Data\TblAdminSetting.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Data\TblAdminViewXLColumn.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Data\TblAdminViewXLSheet.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Data\Views.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Data\VwAdminNoteTextBox.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Data\VwAdminViewXLSheet.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

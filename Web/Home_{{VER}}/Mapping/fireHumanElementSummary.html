@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../../../css/pages/mapping.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/pages/print.css" />
+    <script>
+        var gWindowTitle = "Fire Human Element Summary";
+    </script>
+    <script src="../../../Lib_{{VER}}/Mapping/mapping.js"></script>
+    <script src="../../../Lib_{{VER}}/Mapping/moment.min.js"></script>
+</head>
+<body>
+    <div id="formView">
+        <div style="font-family: Arial !important; font-size: 8pt;">
+            <div style="font-family: Arial !important; font-size: 8pt;" id="printWindow" class="windowBody pdf-page">
+                <div id="loading" class="noShow"><span>Loading...</span></div>
+                <div class="infoArea">
+                    <div class="popColA bottomSpaceRow">
+                        <div class="popRow">
+                            <label class="topHalfLbl">File No.:</label><span data-bind="text: objFormData().fileno" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">Client:</label><span data-bind="text: objFormData().client" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">Client Loc. ID:</label><span data-bind="text: objFormData().clientlocno" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">Divisions:</label><span data-bind="text: objFormData().division" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow bottomSpaceRow">
+                            <label class="topHalfLbl">Facility:</label><span data-bind="text: objFormData().facility" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">TIV (millions) <span data-bind="text: currencyText"></span></label>
+                            <span data-bind="    text: numeral(objFormData().Tiv).format('0,0')" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">Date of Last Insp.:</label><span data-bind="text: moment(objFormData().surveydate).format('DD-MMM-YY')" class="topHalfTxt"></span>
+                        </div>
+                    </div>
+                    <div class="popColB bottomSpaceRow">
+                        <div class="popRow">
+                            <label class="topHalfLbl">Address:</label><span data-bind="text: objFormData().address" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">City:</label><span data-bind="text: objFormData().city" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">St/Prov.:</label><span data-bind="text: objFormData().stprov" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">Country:</label><span data-bind="text: objFormData().country" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow bottomSpaceRow">
+                            <label class="topHalfLbl">Postal Code:</label><span data-bind="text: objFormData().zip" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">Latitude:</label><span data-bind="text: objFormData().latitude" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">Longitude:</label><span data-bind="text: objFormData().longitude" class="topHalfTxt"></span>
+                        </div>
+                    </div>
+                    <div id="satMap" class="imgHldr">
+                        <a href="#" class="printNone">
+                            <img data-bind="attr: { src: getStaticMapUrl() }, click: onGoToLocationBingMaps" />
+                        </a>
+                        <img class="printOnly" data-bind="attr: { src: staticImageBase64 }" />
+                        <span class="satImgTip">Tip! The above map is interactive and will open Bing Maps.</span>
+                    </div>
+                </div>
+                <div class="btnHldr noPrint">
+                    <a href="#" class="grcBlueBtn printNone" data-bind="click: function () { onCurrentERReport(); }, visible: visibleCurrentERReport">
+                        <i class="far fa-file" style="font-size: 20px; margin-right: 5px"></i>Current ER Report
+                    </a>
+                    <a href="#" class="grcBlueBtn printNone" data-bind="click: function () { onCurrentDiagramReport(); }, visible: visibleCurrentDiagramReport">
+                        <i class="far fa-file" style="font-size: 20px; margin-right: 5px;"></i>Current Diagram
+                    </a>
+                    <a href="#" class="grcBlueBtn printNone" data-bind="click: function () { onPrint(); }, visible: visiblePrint">
+                        <i class="far fa-file" style="font-size: 20px; margin-right: 5px;"></i>Print
+                    </a>
+                </div>
+                <div class="bottomSection">
+                    <div class="borderedGrid">
+                        <div class="borderedHeader">
+                            <span style="text-align: center;">Inspection/Testing - Management - Response</span>
+                        </div>
+                        <div class="borderedGridBody">
+                            <div class="gridBodyRow">
+                                <div class="fullBox101">
+                                    <div class="fullBoxTopHalf">HE Rating</div>
+                                    <div class="fullBoxBottomHalf" data-bind="style: { background: objFormData().humanelementratingColor }">
+                                        <span data-bind="text: objFormData().humanelementrating"></span>
+                                    </div>
+                                </div>
+                                <div class="fullBox101">
+                                    <div class="fullBoxTopHalf2Line">Fire Pumps<br />
+                                        Insp. Testing</div>
+                                    <div class="fullBoxBottomHalf" data-bind="style: { background: objFormData().firepumpsColor }">
+                                        <span data-bind="text: objFormData().firepumps"></span>
+                                    </div>
+                                </div>
+                                <div class="fullBox101">
+                                    <div class="fullBoxTopHalf2Line">Extinguishers<br />
+                                        Insp./Testing</div>
+                                    <div class="fullBoxBottomHalf" data-bind="style: { background: objFormData().extinguishersColor }">
+                                        <span data-bind="text: objFormData().extinguishers"></span>
+                                    </div>
+                                </div>
+                                <div class="fullBox101">
+                                    <div class="fullBoxTopHalf2Line">Combustion
+                                        Safety<br />
+                                        Insp./Testing</div>
+                                    <div class="fullBoxBottomHalf" data-bind="style: { background: objFormData().combustionsafetycontrolsColor }">
+                                        <span data-bind="text: objFormData().combustionsafetycontrols"></span>
+                                    </div>
+                                </div>
+                                <div class="fullBox101">
+                                    <div class="fullBoxTopHalf">Hot Work Mgmt</div>
+                                    <div class="fullBoxBottomHalf" data-bind="style: { background: objFormData().hotworkmonitoringColor }">
+                                        <span data-bind="text: objFormData().hotworkmonitoring"></span>
+                                    </div>
+                                </div>
+                                <div class="fullBox101">
+                                    <div class="fullBoxTopHalf2Line">Impairment<br />
+                                        Handling</div>
+                                    <div class="fullBoxBottomHalf" data-bind="style: { background: objFormData().impairmenthandlingColor }">
+                                        <span data-bind="text: objFormData().impairmenthandling"></span>
+                                    </div>
+                                </div>
+                                <div class="fullBox101">
+                                    <div class="fullBoxTopHalf2Line">General<br />
+                                        Maintenance</div>
+                                    <div class="fullBoxBottomHalf" data-bind="style: { background: objFormData().generalmaintenanceColor }">
+                                        <span data-bind="text: objFormData().generalmaintenance"></span>
+                                    </div>
+                                </div>
+                                <div class="fullBox101">
+                                    <div class="fullBoxTopHalf">Change Mgmt</div>
+                                    <div class="fullBoxBottomHalf" data-bind="style: { background: objFormData().managementofchangeColor }">
+                                        <span data-bind="text: objFormData().managementofchange"></span>
+                                    </div>
+                                </div>
+                                <div class="fullBox101">
+                                    <div class="fullBoxTopHalf">EO Training</div>
+                                    <div class="fullBoxBottomHalf" data-bind="style: { background: objFormData().eotrainingColor }">
+                                        <span data-bind="text: objFormData().eotraining"></span>
+                                    </div>
+                                </div>
+                                <div class="fullBox101 lastBox">
+                                    <div class="fullBoxTopHalf">Public F.D.</div>
+                                    <div class="fullBoxBottomHalf">
+                                        <span data-bind="text: objFormData().publicfiredepartmenttype"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin-top: 3px;" class="gridBodyRow">
+                                <div class="fullBox101">
+                                    <div class="fullBoxTopHalf2Line">Sprinkler Valves<br />
+                                        Insp./Testing</div>
+                                    <div class="fullBoxBottomHalf" data-bind="style: { background: objFormData().sprinklervalvesColor }">
+                                        <span data-bind="text: objFormData().sprinklervalves"></span>
+                                    </div>
+                                </div>
+                                <div class="fullBox101">
+                                    <div class="fullBoxTopHalf2Line">Alarms<br />
+                                        Insp./Testing</div>
+                                    <div class="fullBoxBottomHalf" data-bind="style: { background: objFormData().alarmsColor }">
+                                        <span data-bind="text: objFormData().alarms"></span>
+                                    </div>
+                                </div>
+                                <div class="fullBox101">
+                                    <div class="fullBoxTopHalf2Line">Fire Doors<br />
+                                        Insp./Testing</div>
+                                    <div class="fullBoxBottomHalf" data-bind="style: { background: objFormData().firedoorsColor }">
+                                        <span data-bind="text: objFormData().firedoors"></span>
+                                    </div>
+                                </div>
+                                <div class="fullBox101">
+                                    <div class="fullBoxTopHalf">Infrared Scans</div>
+                                    <div class="fullBoxBottomHalf" data-bind="style: { background: objFormData().infraredscansColor }">
+                                        <span data-bind="text: objFormData().infraredscans"></span>
+                                    </div>
+                                </div>
+                                <div class="fullBox101">
+                                    <div class="fullBoxTopHalf">Contract Supv.</div>
+                                    <div class="fullBoxBottomHalf" data-bind="style: { background: objFormData().contractorsupvColor }">
+                                        <span data-bind="text: objFormData().contractorsupv"></span>
+                                    </div>
+                                </div>
+                                <div class="fullBox101">
+                                    <div class="fullBoxTopHalf">Housekeeping</div>
+                                    <div class="fullBoxBottomHalf" data-bind="style: { background: objFormData().housekeepingColor }">
+                                        <span data-bind="text: objFormData().housekeeping"></span>
+                                    </div>
+                                </div>
+                                <div class="fullBox101">
+                                    <div class="fullBoxTopHalf2Line">Smoking<br />
+                                        Controls</div>
+                                    <div class="fullBoxBottomHalf" data-bind="style: { background: objFormData().smokingcontrolsColor }">
+                                        <span data-bind="text: objFormData().smokingcontrols"></span>
+                                    </div>
+                                </div>
+                                <div class="fullBox101">
+                                    <div class="fullBoxTopHalf">EO Type</div>
+                                    <div class="fullBoxBottomHalf" data-bind="style: { background: objFormData().eotypeColor }">
+                                        <span data-bind="text: objFormData().eotype"></span>
+                                    </div>
+                                </div>
+                                <div class="fullBox101">
+                                    <div class="fullBoxTopHalf">Emergency Plan</div>
+                                    <div class="fullBoxBottomHalf" data-bind="style: { background: objFormData().emergresponsebcpColor }">
+                                        <span data-bind="text: objFormData().emergresponsebcp"></span>
+                                    </div>
+                                </div>
+                                <div class="fullBox101 lastBox">
+                                    <div class="fullBoxTopHalf2Line">Distance To</br>Nearest Station</div>
+                                    <div class="fullBoxBottomHalf">
+                                        <span data-bind="text: objFormData().distancetoneareststation"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" onclick="getPDF('.pdf-page'); return false;" class="printThis printNone" title="Print This Section"><i class="fa fa-print"></i></button>
+            </div>
+        </div>
+    </div>
+
+     <script>
+         function getPDF(selector) {
+             $('.noPrint').hide();
+             kendo.drawing.drawDOM($(selector)).then(function (group) {
+                 kendo.drawing.pdf.saveAs(group, "popupWindow.pdf");
+             });
+             setTimeout(function () { $('.noPrint').show(); }, 5000);
+         }
+    </script>
+
+</body>
+</html>

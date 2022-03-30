@@ -1,0 +1,85 @@
+﻿div.LDHead{width:auto;text-align:center;font-size:8pt;font-weight:bold;}
+
+div.LDInfo{width:auto;text-align:left;float:left;height:58px; font-size:7pt;}
+div.LDInfo div{width:auto;font-size:7pt; margin-left: 5px !important;}
+
+div.LDInfo div #lblFileNo{margin-right:7px;}
+div.LDInfo div #lblClientLocID{margin-right:5px; margin-left: 5px;}
+div.LDInfo div #lblAddress{margin-right:5px;}
+div.LDInfo div #lblCity{margin-right:18px; margin-left: 5px;}
+div.LDInfo div #lblStProv{margin-right:5px; margin-left: 5px;}
+div.LDInfo div #lblCountry{margin-right:5px; margin-left: 5px;}
+div.LDInfo div #lblDivision{margin-right:7px;}
+div.LDInfo div #lblFacility{margin-right:5px; margin-left: 5px;}
+
+div.LDInfo div input{font-size:7pt;border:solid 1px blue;}
+div.LDInfo div input#FileNo{text-align:left;width:80px;}
+div.LDInfo div input#ClientLocNo{text-align:left;width:100px;}
+div.LDInfo div input#Address{text-align:left;width:250px;}
+div.LDInfo div input#City{text-align:left;width:76px;}
+div.LDInfo div input#StProv{text-align:center;width:25px;}
+div.LDInfo div input#Country{text-align:left;width:80px;}
+div.LDInfo div input#Division{text-align:left;width:250px;}
+div.LDInfo div input#Facility{text-align:left;width:273px;}
+
+div.FVTIV{text-align:center;width:70px;float:left;position:relative;top:4px;}
+div.FVTIV div{font-size:8pt;font-weight:bold;}
+div.FVTIV div input{font-size:7pt;text-align:center;border:solid 1px blue;}
+div.FVTIV div input#TIV{text-align:center;width:65px;}
+
+div.FVRS{text-align:center;width:100px;float:left;position:relative;top:4px;}
+div.FVRS div{font-size:8pt;font-weight:bold;}
+div.FVRS div input{font-size:7pt;text-align:center;border:solid 1px blue;}
+div.FVRS div input#ResponseStatus{text-align:center;width:95px;}
+
+div.FVAR{text-align:center;width:100px;float:left;position:relative;top:4px;}
+div.FVAR div{font-size:8pt;font-weight:bold;}
+div.FVAR div input{font-size:7pt;text-align:center;border:solid 1px blue;}
+div.FVAR div input#AutoRequest{text-align:center;width:95px;}
+
+div.FVTIV,
+div.FVRS,
+div.FVAR{
+    margin-top: 2px;
+    line-height: normal !important;
+    margin-left: 5px;
+}
+
+
+div.FVTable{padding-bottom:5px;float:left; clear: both;}
+div.FVTable table{border:solid 2px #666;text-align:left}
+div.FVTable table input{font-size:7pt;text-align:center;border:solid 1px blue; margin-left: 5px;}
+
+#lblTotalNoRecs{margin-left:74px;}
+#TotalNoRecs{width:40px;}
+#lblRespRequestDate{margin-left:10px;}
+#RespRequestDate{width:55px;}
+#lblRFU1Date{margin-left:10px;}
+#RFU1Date{width:55px;}
+#lblRecipientName{margin-left:10px;}
+#RecipientName{width:190px;}
+
+#lblNoActiveRecs{margin-left:69px;}
+#NoActiveRecs{width:40px;}
+#lblRespDueDate{margin-left:17px;}
+#RespDueDate{width:55px;}
+#lblRFU2Date{margin-left:10px;}
+#RFU2Date{width:55px;}
+#lblRecipientEmail{margin-left:11px;}
+#RecipientEmail{width:190px;}
+
+#lblNoRecsNeedingResp{margin-left:10px;}
+#NoRecsNeedingResp{width:40px;}
+#lblDaysOverdue{margin-left:35px;}
+#DaysOverdue{width:55px;}
+#lblRFU3Date{margin-left:10px;}
+#RFU3Date{width:55px;}
+
+div.OK{width:100%;text-align:center;float:left;padding-bottom:5px;}
+
+/* Fixes for table view - kendo override */
+div.FVTable table,
+div.FVTable table tr td{
+    width: auto !important;
+    line-height: normal !important;
+}

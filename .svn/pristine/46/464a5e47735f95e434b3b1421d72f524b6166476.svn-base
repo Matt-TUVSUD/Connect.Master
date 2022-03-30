@@ -1,0 +1,118 @@
+﻿.gridTopInfoContainer {
+    font-size: 11px;
+    text-align: left;
+    min-height: 26px;
+    padding-top: 3px;
+    /*margin-top: 5px !important;*/
+    /*background-color: #fff;
+    border-top: 1px solid #BEBEBE;
+    border-right: 1px solid #BEBEBE;
+    border-left: 1px solid #BEBEBE;*/
+}
+.gridTopInfoContainer label {
+    font-weight: bold;
+}
+.gridTopInfoInstructions {
+    color: #FF0000;
+    font-weight: bold;
+}
+.gridHeaderRed {
+    background-color: #ff4945 !important;
+}
+.gridButtonFormView {
+    background-color: purple; /*#C6D1DF;*/
+    background-image: url('../../Home_{{VER}}/Images/icons/grids/icon_ig_search.png');
+    background-repeat: no-repeat;
+    background-position-x: 6px;
+    cursor: pointer;
+    width: 26px;
+    height: 23px; 
+    margin: -6px; 
+    line-height: 28px; 
+    padding-left: 4px;
+}
+.gridButtonActions {
+    min-width: 45px;
+    min-height: 20px;
+}
+.k-hierarchy-cell .k-icon.k-plus,
+.k-hierarchy-cell .k-icon.k-minus  {
+    background-color: #C6D1DF;
+    background-image: url('../../Home_{{VER}}/Images/icons/grids/icon_ig_search.png');
+    background-repeat: no-repeat;
+    background-position-x: 6px;
+    background-position-y: 2px;
+    width: 23px;
+    height: 24px; 
+    margin: -6px; 
+    line-height: 29px; 
+    padding-left: 4px;
+}
+.k-grid tbody tr.k-detail-row {
+    position: fixed;
+    /*background-color: #C6D1DF !important;*/
+    background-color: #fff !important;
+    border: 1px solid #8d908d;
+    padding: 8px;
+    /*margin-top: -12px;
+    margin-left: 35px;*/
+    top: 310px;
+    left: 72px;
+    height: auto !important;
+    -webkit-box-shadow: 5px 5px 10px -4px rgba(0,0,0,1);
+    -moz-box-shadow: 5px 5px 10px -4px rgba(0,0,0,1);
+    box-shadow: 5px 5px 10px -4px rgba(0,0,0,1);
+    z-index: 9 !important;
+}
+/*.k-grid tbody tr.k-detail-row {
+    height: auto !important;
+}*/
+.gridColorHighlight {
+    margin: -6px; 
+    line-height: 26px; 
+    padding-left: 4px;
+}
+
+.gridStandardNoHeaderWrap {
+}
+.gridStandardNoHeaderWrap .k-grid-header .k-header {
+    overflow: hidden;
+    border-style: solid;
+    border-width: 0 0 0px 0px;
+    padding: .5em .2em .4em .2em;
+    font-weight: normal;
+    /*white-space: normal;*/
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background-color: #0046ad; /*#0046ad; ORIGINAL*/ /*#D6DEE7; A LITTLE TOO BRIGHT*/ /*#d2dbe5 ALMOST RIGHT*/
+    /*border-top: 1px solid #0046ad;*/
+    border-left: 1px solid #0046ad;
+    border-right: 1px solid #0046ad;
+}
+.gridStandardNoHeaderWrap .k-grid-header .k-header thead > tr> th {
+    /*max-height: 67px;*/
+    /*white-space: nowrap;*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.gridStandardNoHeaderWrap .k-grid  .k-grid-header .k-header {
+    min-height: 28px;
+    vertical-align: central;
+    /*white-space: normal;*/
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 7pt;
+    line-height: 9pt;
+    font-weight: normal;
+    color: #FFFFFF; /*#404040;*/ /* #595959; */;
+}
+.gridStandardNoHeaderWrap .k-grid  .k-grid-header .k-header thead > tr> th {
+    /*max-height: 67px;*/
+    /*white-space: nowrap;*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+background-image: url("http://localhost:57460/Home_%7B%7BVER%7D%7D/Images/icons/grids/icon_ig_search.png");

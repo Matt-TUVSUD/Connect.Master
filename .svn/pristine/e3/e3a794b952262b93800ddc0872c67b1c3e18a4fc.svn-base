@@ -1,0 +1,161 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/ClientConnectForm.master" AutoEventWireup="false" CodeBehind="GridMasterPageFavorites.master.vb" Inherits="GRC.Connect.Web.Grids_GridMasterPageFavorites" %>
+<%@ Register Src="~/Home_{{VER}}/Controls/RevisionStampControl.ascx" TagName="RevisionStampControl" TagPrefix="grcRSC" %>
+<%@ Register Src="~/Home_{{VER}}/Controls/Header.ascx" TagName="Header" TagPrefix="grcRSC" %>
+<%@ Register Src="~/Home_{{VER}}/Controls/LeftNav.ascx" TagName="LeftNav" TagPrefix="grcRSC" %>
+<%@ Register Src="~/Home_{{VER}}/Controls/Footer.ascx" TagName="Footer" TagPrefix="grcRSC" %>
+
+<asp:Content ID="HeadContent" ContentPlaceHolderID="ClientConnectFormHead" runat="Server">
+   
+    <!-- ************************ -->
+    <!-- STB ADDED START 7/6/2012 -->
+    <meta charset="utf-8" />
+    <meta http-equiv="CACHE-CONTROL" content="NO-STORE" />
+    <meta http-equiv="PRAGMA" content="NO-CACHE" />
+    <meta name="EXPIRES" content="0" />
+    <meta name="VERSION" content="{{VER}}" />
+    <title>TUV SUD GRC Connect Grid</title>
+
+    <%-- OUTDATED STYLES--%>
+    <%--<link rel="Stylesheet" type="text/css" href="../../../css/kendo.common.min.css" />--%>
+
+    <%-- ORIGINAL STYLES AND UPDATED STYLES --%>
+    <link rel="Stylesheet" type="text/css" href="../../../css/Kendo.v2014.1.318/kendo.common.min.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/kendo.common.min.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/kendo-lightblue-noedit.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/kendo-lightblue-menu.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/kendo-lightblue-grid.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/Kendo.v2014.1.318/kendo.grid.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/GRCConnect/connect-grid.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/GRCConnect/connect-icons.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/pages/global.css" />
+    <%--<link rel="Stylesheet" type="text/css" href="../../../css/pages/icons.css" />--%>
+    <link rel="Stylesheet" type="text/css" href="../../../css/pages/windows.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/EDA/eda.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/EDA/cssgrid.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/pages/mapping.css" />
+
+    <link rel="stylesheet" type="text/css" href="../../../css/Utilities/Loader.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/GRC_Kendo_Overrides.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/Utilities/utilities.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/Header/header.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/Nav/nav.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/pages/mainPageBody.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/Footer/footer.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/Font-Awesome/all.css" />
+
+
+    <%-- UPDATED JAVASCRIPT --%>
+    <script src="../../../Lib_{{VER}}/JQuery/jQuery.3.4.1.min.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/Knockout.v3.3.0/knockout-3.3.0.js" type="text/javascript"></script>
+    <%--<script src="../../../Lib_{{VER}}/kendo.web.min.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/kendo.all.min.js" type="text/javascript"></script>--%>
+    <script src="../../../Lib_{{VER}}/kendo.all.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/KendoUI.v2014.1.416/kendo.grc.grid.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/knockoutkendo.v0.9.3/knockout-kendo.min.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/pages/global.js" type="text/javascript"></script>
+
+    <%-- ORIGINAL JAVASCRIPT --%>
+    <script src="../../../Lib_{{VER}}/JQuery/jquery.cookie.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/JQuery/cache-controller_{{VER}}.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/json/json2.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/ES/entityspaces.XHR.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/Config/baseurl.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/Generated/GSafeDetail.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/Custom/GSafeDetail.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/Generated/GSafeHeader.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/Custom/GSafeHeader.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/Generated/NavLink.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/Session/sessvars.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/pages/constants.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/pages/util_{{VER}}.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/pages/topbanner.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.5.6/numeral.min.js"></script>
+    <script src="../../../Lib_{{VER}}/Footer/footer.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/header/header.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/Nav/Navigation.js" type="text/javascript"></script>
+    <!-- STB ADDED END 7/6/2012 -->
+    <!-- ********************** -->
+
+    <script>
+        var gCurrencyIdFromPrefilter = "<%=ServerSide_CurrencyIdFromPrefilter%>";
+    </script>
+
+    <asp:ContentPlaceHolder ID="GridHeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    
+    <style>
+        body {
+            width: 100%;
+        }
+    </style>
+
+</asp:Content>
+<asp:Content ID="ClientConnectTestBodyContent" ContentPlaceHolderID="ClientConnectFormBody" runat="server">
+    <form id="form1" runat="server">
+        <!--HEADER-->
+        <header>
+            <grcRSC:Header ID="header" runat="server" />
+        </header>
+
+        <section class="pageBodyHldr">
+            <div class="navHldr">
+                <grcRSC:LeftNav ID="Nav" runat="server" />
+            </div>
+            <!--MAIN CONTENT AREA-->
+            <div class="pageContentHldr" style="flex-direction:column; align-items:center;">
+                <!-- GRID BUTTONS AND CONVERSION -->
+                <div class="" style="display:flex; flex-direction:row; max-width:1500px; width:100%; color:#666;">
+                    <div id="divTopInstructions" class="" runat="server" style="width:75%;">
+                        <span style="font-size:25px;">
+                            <i class="far fa-info-circle"></i>
+                        </span>
+                        <span>
+                            <asp:Label ID="lblTopMessage" runat="server" Text=""></asp:Label>
+                            <span style="color: #000; font-family:Arial, Verdana, sans-serif;">The <b><i>Favorites</i></b> feature of the database allows the user to apply one or more Pins, Sorts, Filters or Custom Filters to any of the datagrids, and then saving those settings as a view.
+                                        Once a <b><i>View</i></b> is saved as a Favorite in your personal library, you can recall a view at any time. <b><i>Recalling</i></b> the view will re-apply the same Pins, Sorts, Filters or Custom Filters to the grid. This eliminates the need to repeat the setup of a desired way of reviewing a grid.
+                            </span>
+                        </span>
+                    </div>
+                    <div style="width:25%;">
+                        <!-- ACTION BUTTONS -->
+                        <div class="icon_container" id="divContainerActions" runat="server" style="display:flex; flex-direction:row; justify-content:space-around">
+                            <%--<div class="icon_cell" id="divExtractDownloadData" runat="server" style="">
+                                <div class="icon_dataDownload icon_center" id="icoExtractData" runat="server" onclick="globalDownloadData();" style="font-size:25px;">
+                                    <i class="far fa-download"></i>
+                                </div>
+                                <span class="icon_label" onclick="globalDownloadData();" style="font-size:14px;">
+                                    Download Data
+                                </span>
+                            </div>--%>
+                            <div class="icon_cell" style="width:30%; display:flex; flex-direction:column;justify-content:center; align-items:center;">
+                                <div class="icon_resetGrid icon_center" id="icoResetGrid" runat="server" onclick="refreshWindow();" style="font-size:25px;">
+                                    <i class="fad fa-sync-alt"></i>
+                                </div>
+                                <div class="icon_label" onclick="refreshWindow();" style="font-size:14px;">
+                                    Reset Grid
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END GRID BUTTONS AND CONVERSION -->
+                <asp:ContentPlaceHolder ID="GridBodyContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </section>
+    
+
+    <div class="hidden">
+        <asp:ContentPlaceHolder ID="HiddenContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <asp:HiddenField ID="hidSIDParameter" runat="server" />
+    <asp:HiddenField ID="hidMasterClientID" runat="server" />
+
+      
+        <!--FOOTER-->
+        <footer>
+            <grcRSC:footer ID="FooterControl" runat="server" />
+        </footer>
+</form>
+</asp:Content>

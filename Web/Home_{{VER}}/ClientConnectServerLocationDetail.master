@@ -1,0 +1,954 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/ClientConnectForm.master" AutoEventWireup="false" CodeBehind="ClientConnectServerLocationDetail.master.vb" Inherits="GRC.Connect.Web.ClientConnectServerLocationDetail" %>
+<%@ Register Src="~/Home_{{VER}}/Controls/RevisionStampControl.ascx" TagName="RevisionStampControl" TagPrefix="grcRSC" %>
+<%@ Register Src="~/Home_{{VER}}/Controls/Header.ascx" TagName="Header" TagPrefix="grcRSC" %>
+<%@ Register Src="~/Home_{{VER}}/Controls/LeftNav.ascx" TagName="LeftNav" TagPrefix="grcRSC" %>
+<%@ Register Src="~/Home_{{VER}}/Controls/Footer.ascx" TagName="Footer" TagPrefix="grcRSC" %>
+
+<asp:Content ID="ClientConnectTestHeadContent" ContentPlaceHolderID="ClientConnectFormHead" runat="server">
+    <title>TUV SUD GRC Connect</title>
+
+    <%-- OUTDATED STYLES --%>
+    
+    <%-- UPDATED STYLES --%>
+    <link rel="Stylesheet" type="text/css" href="../../css/Kendo.v2014.1.318/kendo.common.min.css" />
+
+    <%-- ORIGINAL STYLES --%>
+    <link rel="Stylesheet" type="text/css" href="../../css/kendo.common.min.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/kendo-lightblue-noedit.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/kendo-lightblue-grid.css" />
+    <%--<link rel="Stylesheet" type="text/css" href="../../css/kendo-lightblue-menu.css" />--%>
+    <link rel="Stylesheet" type="text/css" href="../../css/kendo-lightblue-tabstrip.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/global.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/windows.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadFileExplorer.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadFileExplorerOffice2010Silver.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadWindow.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadWindowOffice2010Blue.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/EDA/cssgrid.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/EDA/eda.css" />
+
+    <link rel="stylesheet" type="text/css" href="../../css/Utilities/Loader.css"  />
+    <link rel="Stylesheet" type="text/css" href="../../css/GRC_Kendo_Overrides.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Utilities/utilities.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Header/header.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Nav/nav.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/mainPageBody.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Footer/footer.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/font-awesome.min.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Font-Awesome/all.css" />
+
+    <%-- OUTDATED JAVASCRIPT --%>
+    <%-- UPDATED JAVASCRIPT --%>
+    <%--<script src="../../Lib_{{VER}}/kendo.all.min.js" type="text/javascript"></script>--%>
+    <script src="../../Lib_{{VER}}/kendo.all.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/KendoUI.v2014.1.416/kendo.grc.grid.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Knockout.v3.3.0/knockout-3.3.0.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/knockoutkendo.v0.9.3/knockout-kendo.min.js" type="text/javascript"></script>
+
+    <%-- ORIGINAL JAVASCRIPT --%>
+    <script src="../../Lib_{{VER}}/json/json2.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/ES/entityspaces.XHR.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Math/Math.uuid.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/GSafeDetail.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/GSafeDetail.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/GSafeHeader.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/GSafeHeader.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/RRLog.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/RRLog.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/NavLink.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Config/baseurl.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Session/sessvars.js" type="text/javascript"></script>
+
+    <script src="../../Lib_{{VER}}/pages/util_{{VER}}.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/topbanner.js" type="text/javascript"></script>
+    <%--<script src="../../Lib_{{VER}}/pages/nav.js" type="text/javascript"></script>--%>
+    <script src="../../Lib_{{VER}}/pages/export.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.5.6/numeral.min.js"></script>
+    <script src="../../Lib_{{VER}}/Footer/footer.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/header/header.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Nav/Navigation.js" type="text/javascript"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="ClientConnectTestBodyContent" ContentPlaceHolderID="ClientConnectFormBody" runat="server">
+    <form id="form1" runat="server">
+
+        <telerik:RadStyleSheetManager ID="RadStyleSheetManager1" runat="server">
+            <StyleSheets>
+                <telerik:StyleSheetReference Path="../../css/Telerik/RadFileExplorer.css" />
+                <telerik:StyleSheetReference Path="../../css/Telerik/RadFileExplorerOffice2010Silver.css" />
+                <telerik:StyleSheetReference Path="../../css/Telerik/RadWindow.css" />
+                <telerik:StyleSheetReference Path="../../css/Telerik/RadWindowOffice2010Blue.css" /> 
+            </StyleSheets>
+        </telerik:RadStyleSheetManager>
+        <telerik:RadWindowManager 
+            id="RadWindowManager1" 
+            runat="server" 
+            Title="Your Request Is Being Processed"
+            Behaviors="Move, Resize, Close"
+            VisibleStatusbar="False"
+            Modal="False"
+            Skin="Office2010Blue"
+            IconUrl="../../Home_{{VER}}/Images/icons/reports/chart_column_16x16.png"
+            ReloadOnShow="True">
+            <windows>
+                <telerik:RadWindow 
+                    ID="RadWindow1" 
+                    runat="server"
+                    Left="350px"
+                    Top="225px" 
+                    Width="395px" 
+                    Height="300px"
+                    Modal="True"
+                    Behaviours="Close"
+                    Skin="Office2010Blue">
+                </telerik:RadWindow>
+            </windows>
+        </telerik:RadWindowManager>
+	    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+		<asp:HiddenField ID="HiddenField1"  runat="server" />
+        <asp:HiddenField ID="HiddenPracticeID" runat="server" />        
+         <!--HEADER-->
+        <header>
+            <grcRSC:Header id="header" runat="server" />
+        </header>
+        <asp:ContentPlaceHolder ID="ContentFindCriteria" runat="server"></asp:ContentPlaceHolder>
+        <section class="pageBodyHldr">
+            <div class="navHldr">
+                <grcRSC:LeftNav id="Nav" runat="server" />
+            </div>
+            <!--MAIN CONTENT AREA-->
+            <div class="pageContentHldr" style="align-items:center; justify-content:center;">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+                <div id="revStampHldr">
+                    <grcRSC:RevisionStampControl ID="RevisionStampControl" runat="server" />
+                </div>
+            </div>
+        </section>
+        <!--FOOTER-->
+        <footer>
+            <grcRSC:footer ID="FooterControl" runat="server" />
+        </footer>  
+        <!-- PLEASE WAIT WINDOW FOR PROGRAM STATUS PAGE -->
+        <div id="windowPleaseWait" class="windowContent">
+            <img src="../../Home_{{VER}}/Images/loading/image_loading07.gif" style="width: 28px; height: 28px;" align="left" class="windowImageSmallPadding" alt="TUV SUD GRC Client Connect - Please Wait" />
+            <div id="windowPleaseWaitProcessed" style="display:flex; flex-direction:column; align-items:center; justify-content:center; font-size:13px;">
+                <div style="padding-top: 6px;"><label data-bind="" >Your request is being processed</label></div>
+                <div style="margin-bottom:5px;">
+                    <label>Thank you for your patience while the Program Status web page is being built.</label>
+                </div>
+                <div style="margin-bottom:5px;">
+                    <label>As this tool provides a statistical view of your entire program, this may take a few minutes.</label>
+                </div>
+            </div>
+            <div id="windowPleaseWaitCancelled" style="display: none;">
+                <div style="padding-top: 6px;"><label data-bind="" >Your request is being cancelled</label></div>
+                <br />&nbsp;<br />
+                <div style="text-align: center;">
+                    <label>Please wait.</label>
+                    <br />&nbsp;<br />&nbsp;<br />
+                    <label>&nbsp;</label>
+                </div>
+            </div>
+        </div>
+
+        <!--Search Window-->
+        <div id="searchWindow"></div>
+        <!--Search Window End-->
+
+        <!-- START WINDOW FOR ADMIN FUNCTIONS -->
+        <div id="windowAdmin" class="windowContent">
+            <!-- POPUP WINDOW FOR ADMIN -->
+            <div id="viewAdmin">
+                <!-- TAB STRIP FOR ADMIN FUNCTIONS -->
+                <div id="windowAdminTabStrip" class="windowAdminTabStrip">
+                    <ul style="margin-left:2px; font-size:9px; width:610px;">
+                        <li id="0">Document Manager</li>
+                        <li id="1">Import Template</li>
+                        <li id="2">Send Response Email</li>
+                        <li id="3">User Activity</li>
+                        <li id="4">Project / Plan Review</li>
+                    </ul>
+
+
+                    <!-- START DOCUMENT MANAGER -->
+                    <div class="windowAdminTabStripContent" style="height:365px;">
+                        <div id="divComingSoon_DocumentManager" style="display: none;">
+                            <br />Document Manager administration tools coming soon.
+                            <br /><br /><button class="grcNeutralBtn" id="btnCloseCancelContinue_DocumentManager_ComingSoon" data-bind="click: onCloseCancelContinue_Document, text: txtCloseCancelContinue_Document">Cancel</button>
+                        </div>
+
+                        <div id="divLive_DocumentManager">
+                            <div id="divDoc_Form">
+                                <div class="adminFormRow" style="height:auto;">
+                                    <div class="adminBtnHldr" style="justify-content: space-around; width:630px;">
+                                        <button class="grcGreenBtn" data-bind="text: objAdminLanguageLabels().lblAddDocument, click: onAddDocument, enable: enableDocumentTopButtons">Add Document</button>
+                                        <button class="grcBlueBtn" data-bind="text: objAdminLanguageLabels().lblEditRecord, click: onEditDocument, enable: enableDocumentTopButtons">Edit Record</button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="tableDiv tableDivAutoBordersFull" style="width: 630px; padding: 12px; margin-bottom:10px;">
+                                        <div class="adminFormRow">
+                                            <span class="adminWindow_Column1"><label data-bind="text: objAdminLanguageLabels().lblFileNo">File. No.</label></span>
+                                            <span class="adminWindow_Column2"><input data-bind="value: objDoc().FileNo" id="Admin_Document_FileNo" readonly="readonly" class="k-autocomplete k-input inputNoEdit inputLeft adminWindow_Inputs1" /></span>
+                                            <span class="adminWindow_Column3"><label data-bind="text: objAdminLanguageLabels().lblPracticeCode">PracticeCode</label></span>
+                                            <span class="adminWindow_Column1"><input data-bind="value: objDoc().PracticeCode" id="Admin_Document_PracticeCode" readonly="readonly" class="k-autocomplete k-input inputNoEdit inputLeft adminWindow_Inputs1" /></span>
+                                        </div>
+                                    </div>
+                                    <div class="tableDiv tableDivAutoBordersFull" style="width: 630px; padding: 12px;">
+                                        <div class="adminFormRow">
+                                            <span style="width:142px"><label data-bind="text: objAdminLanguageLabels().lblDateOfInspection">Date of Inspection</label></span>
+                                            <span class="adminWindow_Column2" style="width:207px;"><input data-bind="" id="Admin_Document_DateOfInspection" class="k-autocomplete k-numerictextbox inputNoEdit inputLeft adminWindow_Inputs1" /></span>
+                                            <span class="adminWindow_Column3"><label data-bind="text: objAdminLanguageLabels().lblDateMailedToClient">Date Mailed to Client</label></span>
+                                            <span class="adminWindow_Column1"><input data-bind="" id="Admin_Document_DateMailedToClient" class="k-autocomplete k-numerictextbox inputNoEdit inputLeft adminWindow_Inputs1" /></span>
+                                        </div>
+                                        <div class="adminFormRow" style="height:25px" id="divDoc_LinkToLEReport">
+                                            <span class="adminWindow_Column1" style="width:185px;"><label data-bind="text: objAdminLanguageLabels().lblLinkToERReport">Link to LE Report</label></span>
+                                            <span class=""><span id="Admin_Document_LinkERReport" class="k-widget k-autocomplete k-header k-input inputNoEdit inputLink adminWindow_Inputs5" style="line-height: normal; padding-top: 0px; padding-left: 3px; text-align: left; overflow: hidden;"><label class="linkPointer" data-bind="text: objDoc().LinkToReport, click: function (data) { onBuildAdminLink(objDoc().LinkToReport()) }"></label></span></span>
+                                            <span style="display:flex; flex-basis: 200px; justify-content: space-around; align-items:center;">
+                                                <button class="grcBlueBtn pagerBtn" style="" data-bind="click: onClearERReport, enable: enableDocumentSelect" type="button" id="btnClearERReport"><i class="fas fa-caret-down"></i></button>
+                                                <button class="grcBlueBtn" style="width:100px; height:12px;" id="btnSelectERReport" data-bind="click: function () { onOpenReportPicker(1); return false; }, enable: enableDocumentSelect, text: objAdminLanguageLabels().lblSelectReport">Select Report</button>
+                                            </span>
+                                        </div>
+                                        <div class="adminFormRow" style="height:25px" id="divDoc_LinkToURLEReport">
+                                            <span class="adminWindow_Column1" style="width:185px;"><label data-bind="text: objAdminLanguageLabels().lblLinkToURLEReport">Link to UR or LE Report</label></span>
+                                            <span class=""><span id="Admin_Document_LinkURLEReport" class="k-widget k-autocomplete k-header k-input inputNoEdit inputLink adminWindow_Inputs5" style="line-height: normal; padding-top: 0px; padding-left: 3px; text-align: left; overflow: hidden;"><label class="linkPointer" data-bind="text: objDoc().LinkToReport2, click: function (data) { onBuildAdminLink(objDoc().LinkToReport2()) }"></label></span></span>
+                                            <span style="display:flex; flex-basis:200px; justify-content:space-around; align-items:center;">
+                                                <button class="grcBlueBtn pagerBtn" data-bind="click: onClearURLEReport, enable: enableDocumentSelect" type="button" id="btnClearURLEReport"><i class="fas fa-caret-down"></i></button>
+                                                <button class="grcBlueBtn" style="width:100px; height:12px;" id="btnSelectLEReport" data-bind="click: function () { onOpenReportPicker(2); return false; }, enable: enableDocumentSelect, text: objAdminLanguageLabels().lblSelectReport">Select Report</button>
+                                            </span>
+                                        </div>
+                                        <div class="adminFormRow" style="height:25px" id="divDoc_LinkToDiagram">
+                                            <span class="adminWindow_Column1" style="width:185px;"><label data-bind="text: objAdminLanguageLabels().lblLinkToDiagram">Link to Diagram</label></span>
+                                            <span class=""><span id="Admin_Document_LinkDiagram" class="k-widget k-autocomplete k-header k-input inputNoEdit inputLink adminWindow_Inputs5" style="line-height: normal; padding-top: 0px; padding-left: 3px; text-align: left; overflow: hidden;"><label class="linkPointer" data-bind="text: objDoc().LinkToDiagram, click: function (data) { onBuildAdminLink(objDoc().LinkToDiagram()) }"></label></span></span>
+                                            <span style="display:flex; flex-basis:200px; justify-content:space-around; align-items:center;">
+                                                <button class="grcBlueBtn pagerBtn" data-bind="click: onClearDiagram, enable: enableDocumentSelect" type="button" id="btnClearDiagram"><i class="fas fa-caret-down"></i></button>
+                                                <button class="grcBlueBtn" style="width:100px; height:12px;" id="btnSelectDiagram" data-bind="click: function () { onOpenReportPicker(3); return false; }, enable: enableDocumentSelect, text: objAdminLanguageLabels().lblSelectDiagram">Select Diagram</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="adminBtnHldr" style="width:630px; justify-content:space-between; margin-top:25px;">
+                                    <button class="grcGreenBtn" id="btnSave_DocumentManager" data-bind="click: onSaveDocument, text: objAdminLanguageLabels().lblSaveChanges, enable: enableDocumentSelect">Save Changes</button>
+                                    <button class="grcRedBtn" id="btnDelete_DocumentManager" data-bind="click: onDeleteDocument, text: objAdminLanguageLabels().lblDelectRecord, enable: enableDocumentDelete">Delete Record</button>
+                                    <button class="grcNeutralBtn" id="btnCloseCancelContinue_DocumentManager" data-bind="click: onCloseCancelContinue_Document, text: txtCloseCancelContinue_Document">Cancel</button>
+                                </div>
+                                <div style="text-align: center;">
+                                    <label id="lblMessageDoc" data-bind="text: messageDoc" class="messageNotice"></label>
+                                </div>
+                            </div>
+
+                            <div id="divDoc_ReportPicker" style="display: none;">
+                                <label class="adminWindow_SubTitle" data-bind="text: objAdminLanguageLabels().lblSelectReport">Select Report</label>
+                                <div style="height: 4px;">&nbsp;</div>
+                                <telerik:RadFileExplorer runat="server" ID="flxDocManager_Report" Width="665px" Height="300px" Skin="Office2010Silver" OnClientFileOpen="docManagerPlaceReport"></telerik:RadFileExplorer>
+                                <br />
+                                <button class="k-button k-button-padding" data-bind="click: onCancelReportPicker, text: objAdminLanguageLabels().lblCancel"></button>
+                            </div>
+                            <div id="divDoc_DiagramPicker" style="display: none;">
+                                <label class="adminWindow_SubTitle" data-bind="text: objAdminLanguageLabels().lblSelectDiagram">Select Diagram</label>
+                                <div style="height: 4px;">&nbsp;</div>
+                                <telerik:RadFileExplorer runat="server" ID="flxDocManager_Diagram" Width="665px" Height="300px" Skin="Office2010Silver" OnClientFileOpen="docManagerPlaceDiagram"></telerik:RadFileExplorer>
+                                <br />
+                                <button class="k-button k-button-padding" data-bind="click: onCancelDiagramPicker, text: objAdminLanguageLabels().lblCancel"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END DOCUMENT MANAGER -->
+
+
+                    <!-- START IMPORT -->
+                    <div class="windowAdminTabStripContent">
+                            <div id="divComingSoon_Import" style="display: none;">
+                                <br />Import administration tools coming soon.
+                                <br /><br /><button class="k-button k-button-padding" id="btnCloseCancelContinue_Import_ComingSoon" data-bind="click: onCloseCancelContinue_Import, text: txtCloseCancelContinue_Import, enable: enableCloseCancelContinue">Cancel</button>
+                            </div>
+
+                            <div id="divLive_Import">
+                                <input id="windowAdminUpload" name="windowAdminUpload" type="file" />
+                                <div class="windowAdminCheckboxCell" data-bind="visible: enableImportFireCheckboxes">
+                                    <input id="chkLoadCOPE" name="chkLoadCOPE" type="checkbox"  data-bind="checked: chkLoadCOPE, click: onCheckBox" />
+                                    <label data-bind="text: objAdminLanguageLabels().lblWindowLoadCOPEInfo">Load C.O.P.E. Info</label>
+                                </div>
+                                <div class="windowAdminCheckboxCell" data-bind="visible: enableImportBMCheckboxes">
+                                    <input id="chkLoadFacilityData" name="chkLoadFacilityData" type="checkbox"  data-bind="checked: chkLoadFacilityData, click: onCheckBox" /><label data-bind="    text: objAdminLanguageLabels().lblWindowLoadFacilityDataInfo">Load Facility Data Info</label>
+                                </div>
+                                <div class="windowAdminCheckboxCell" data-bind="visible: enableImportNatHazCheckboxes">
+                                    <input id="chkLoadNatHazModelData" name="chkLoadNatHazModelData" type="checkbox" data-bind="checked: chkLoadNatHazModelData, click: onCheckBox" />
+                                    <label data-bind="text: objAdminLanguageLabels().lblWindowLoadNatHazModelData">Load NatHaz Model Data</label>
+                                </div>
+                                <div class="windowAdminCheckboxCell" data-bind="visible: enableImportNatHazCheckboxes">
+                                    <input id="chkLoadNatHazDataInfo" name="chkchkLoadNatHazDataInfo" type="checkbox"  data-bind="    checked: chkLoadNatHazDataInfo, click: onCheckBox" />
+                                    <label data-bind="text: objAdminLanguageLabels().lblWindowLoadNatHazDataInfo">Load NatHaz Data Info</label>
+                                </div>
+                                <div style="clear: both;" class="windowAdminCheckboxCell" data-bind="visible: enableImportRecCheckboxes">
+                                    <input id="chkLoadRecInfo" name="chkLoadRecInfo" type="checkbox"  data-bind="checked: chkLoadRecInfo, click: onCheckBox" />
+                                    <label data-bind="text: objAdminLanguageLabels().lblWindowLoadRecInfo">Load Rec. Info</label>
+                                </div>
+                                <div class="windowAdminCheckboxCell" data-bind="visible: enableImportRatingCheckboxes">
+                                    <input id="chkLoadRatingInfo" name="chkLoadRatingInfo" type="checkbox"  data-bind="checked: chkLoadRatingInfo, click: onCheckBox" />
+                                    <label data-bind="text: objAdminLanguageLabels().lblWindowLoadRatingInfo">Load Rating Info</label>
+                                </div>
+                                <div class="windowAdminCheckboxCell" data-bind="visible: enableImportRetailCheckboxes">
+                                    <input id="chkLoadRetailInfo" name="chkLoadRetailInfo" type="checkbox"  data-bind="checked: chkLoadRetailInfo, click: onCheckBox" />
+                                    <label data-bind="text: objAdminLanguageLabels().lblWindowLoadRetailInfo">Load Retail Info</label>
+                                </div>
+                                <div class="adminBtnHldr" style="width:640px; justify-content:space-between; margin:10px 0;">
+                                    <button class="grcBlueBtn" id="btnSelectNone" data-bind="click: onUploadSelectNone, enable: enableAdminButtons, text: objAdminLanguageLabels().lblSelectNone">Select None</button>
+                                    <button class="grcBlueBtn" id="btnSelectAll" data-bind="click: onUploadSelectAll, enable: enableAdminButtons, text: objAdminLanguageLabels().lblSelectAll">Select All </button>
+                                    <button class="grcBlueBtn grcBlueDisabledBtn" id="btnImport" data-bind="value: objAdminLanguageLabels().lblImport, enable: enableImport">Import</button>
+                                    <button class="grcNeutralBtn" id="btnCloseCancelContinue_Import" data-bind="click: onCloseCancelContinue_Import, text: txtCloseCancelContinue_Import, enable: enableCloseCancelContinue">Cancel</button>
+                                </div>
+                                <textarea data-bind="value: messageImport" id="MessageImport" class="k-textbox inputNoEdit windowAdminImportMessage" rows="5" cols="40" readonly="readonly" >Results...</textarea>
+                            </div>
+
+                            <div style="text-align: center;">
+                                <label id="lblMessageImport" data-bind="text: messageImportLabel" class="messageNotice"></label>
+                            </div>
+
+                    </div>
+                    <!-- END IMPORT -->
+
+
+                    <!-- START REC RESPONSE -->
+                    <div class="windowAdminTabStripContent">
+                        <div id="divComingSoon_RecResponse" style="display: none;">
+                            <br />Send Response Email administration tools coming soon.
+                            <br /><br /><button class="k-button k-button-padding" id="btnCloseCancelContinue_ResponseEmail_ComingSoon" data-bind="click: onCloseCancelContinue_Rec, text: txtCloseCancelContinue_Rec, enable: enableCloseCancelContinue">Cancel</button>
+                        </div>
+
+                        <div id="divLive_RecResponse">
+                            <div class="tableDiv tableDivAutoBordersFull" style="width: 640px; padding: 12px;">
+                                <div class="adminFormRow">
+                                    <span class="adminWindow_Column1"><label data-bind="text: objAdminLanguageLabels().lblFileNo">File. No.</label></span>
+                                    <span class="adminWindow_Column2"><input data-bind="value: objRec().FileNo" id="Admin_RecResponse_FileNo" readonly="true" class="k-autocomplete k-input inputNoEdit inputLeft adminWindow_Inputs1" /></span>
+                                    <span class="adminWindow_Column3"><label data-bind="text: objAdminLanguageLabels().lblPracticeCode">PracticeCode</label></span>
+                                    <span class="adminWindow_Column1"><input data-bind="value: objRec().PracticeCode" id="Admin_RecResponse_PracticeCode" readonly="true" class="k-autocomplete k-input inputNoEdit inputLeft adminWindow_Inputs1" /></span>
+                                </div>
+                                <div class="adminFormRow">
+                                    <span class="adminWindow_Column1"><label data-bind="text: objAdminLanguageLabels().lblDateOfInspection">Date of Inspection</label></span>
+                                    <span class="adminWindow_Column2"><input data-bind="" id="Admin_RecResponse_DateOfInspection" readonly="true" class="k-autocomplete k-numerictextbox inputNoEdit inputLeft adminWindow_Inputs1" /></span>
+                                    <span class="adminWindow_Column3"><label data-bind="text: objAdminLanguageLabels().lblDateMailedToClient">Date Mailed to Client</label></span>
+                                    <span class="adminWindow_Column1"><input data-bind="" id="Admin_RecResponse_DateMailedToClient" readonly="true" class="k-autocomplete k-numerictextbox inputNoEdit inputLeft adminWindow_Inputs1" /></span>
+                                </div>
+                                <div class="adminFormRow">
+                                    <span class="adminWindow_Column1"><label data-bind="text: objAdminLanguageLabels().lblLastEmailSentOn">Last Email Sent On</label></span>
+                                    <span class="adminWindow_Column2"><input data-bind="" id="Admin_RecResponse_LastEmailSentOn" readonly="true" class="k-autocomplete k-numerictextbox inputNoEdit inputLeft adminWindow_Inputs1" /></span>
+                                    <span class="adminWindow_Column3"><label data-bind="text: objAdminLanguageLabels().lblLastEmailSentBy">Last Email Sent By</label></span>
+                                    <span class="adminWindow_Column1"><input data-bind="value: objRec().Sender" id="Admin_RecResponse_LastEmailSentBy" readonly="true" class="k-autocomplete k-input inputNoEdit inputLeft adminWindow_Inputs1" /></span>
+                                </div>
+                                <div class="adminFormRow">
+                                    <span class="adminWindow_Column1"><label data-bind="text: objAdminLanguageLabels().lblLinkToERReport">Link to ER Report</label></span>
+                                    <span class="adminWindow_Column2"><span class="k-widget k-autocomplete k-header k-input inputCenter inputNoEdit inputLink adminWindow_Inputs1" style="line-height: normal; padding-top: 0px;"><label class="linkPointer" id="Admin_RecResponse_LinkToERReport" data-bind="visible: objRec().LinkToReport, text: objAdminLanguageLabels().lblClickHere, click: function (data) { onBuildAdminLink(objRec().LinkToReport()) }"></label></span></span>
+                                    <span class="adminWindow_Column3"><label data-bind="text: objAdminLanguageLabels().lblActivity">Activity</label></span>
+                                    <span class="adminWindow_Column1"><input data-bind="value: objRec().Activity" id="Admin_RecResponse_Activity" readonly="true" class="k-autocomplete k-input inputNoEdit inputLeft adminWindow_Inputs1" /></span>
+                                </div>
+                                <div class="adminFormRow">
+                                    <span class="adminWindow_Column1"><label data-bind="text: objAdminLanguageLabels().lblCurrentLink">Current Link</label></span>
+                                    <span class="adminWindow_Column2"><span class="k-widget k-autocomplete k-header k-input inputCenter inputNoEdit inputLink adminWindow_Inputs1" style="line-height: normal; padding-top: 0px;"><label class="linkPointer" id="Admin_RecResponse_CurrentLink" data-bind="visible: objRec().CurrentLink, text: objAdminLanguageLabels().lblClickHere, click: function (data) { onGoToCurrentLink(objRec().CurrentLink()) }"></label></span></span>
+                                    <span data-bind="visible: visibleCboRecResponse_Hazard" class="adminWindow_Column3"><label data-bind="    text: objAdminLanguageLabels().lblHazard">Hazard</label></span>
+                                    <span data-bind="visible: visibleCboRecResponse_Hazard" class="adminWindow_Column1" id="cboRecResponse_Hazard">
+                                        <select class="inputNoEdit adminWindow_Inputs1 editRequired" style="" data-bind="kendoDropDownList: { data: cboHazard, value: cboHazardValue, enabled: enableCboRecResponse_Hazard }">
+                                        </select>
+                                    </span>
+                                </div>                    
+                            </div>
+
+                            <br />&nbsp;<br />
+                            <div class="tableDiv tableDivAutoBordersFull" style="width: 640px; padding: 12px;">
+                                <div class="adminFormRow">
+                                    <span class="adminWindow_Column1"><label data-bind="text: objAdminLanguageLabels().lblRecipientsFullName">Recipient's Full Name</label></span>
+                                    <span class="adminWindow_Column4"><input data-bind="value: recRecipientsFullName" id="Admin_RecResponse_RecipientsFullName" class="k-autocomplete k-input inputNoEdit inputLeft editRequired adminWindow_Inputs2" /></span>
+                                </div>
+                                <div class="adminFormRow">
+                                    <span class="adminWindow_Column1"><label data-bind="text: objAdminLanguageLabels().lblRecipientsEmailAddress">Recipient's Email Address</label></span>
+                                    <span class="adminWindow_Column4"><input data-bind="value: recRecipientsEmailAddress" id="Admin_RecResponse_RecipientsEmailAddress" class="k-autocomplete k-input inputNoEdit inputLeft editRequired adminWindow_Inputs2" /></span>
+                                </div>
+                            </div>
+
+                            <br />&nbsp;<br />
+                            <div class="tableDiv tableDivAutoBordersFull" style="width: 640px; padding: 12px;">               
+                                <div class="adminBtnHldr" style="justify-content:space-between">
+                                    <button id="btnSendRecEmail" data-bind="text: objAdminLanguageLabels().lblSendRecommendationResponseEmail, click: onSendRecEmail, enable: enableSendRecResponseEmail" class="grcBlueBtn" onclick="return false;">Send Recommendation Response Email</button>
+                                    <button id="btnReSendRecEmail" data-bind="text: objAdminLanguageLabels().lblReSendRecommendationResponseEmail, click: onReSendRecEmail, enable: enableResendRecResponseEmail" class="grcBlueBtn" onclick="return false;">Send Recommendation Response Email</button>
+                                    <button id="btnSendRecCancel" data-bind="text: txtCloseCancelContinue_Rec, click: onCloseCancelContinue_Rec" class="grcNeutralBtn" onclick="return false;">Cancel</button>
+                                </div>
+                            </div>
+                            <div style="text-align: center;">
+                                <label id="lblMessageRec" data-bind="text: messageRec" class="messageNotice"></label>
+                            </div>
+                         </div>               
+                    </div>
+                    <!-- END REC RESPONSE -->
+
+
+                    <!-- START USER ACTIVITY -->
+                    <div class="windowAdminTabStripContent" id="divUserActivityContainer">
+                        <div id="divComingSoon_UserActivity" style="display: none;">
+                            <br />User Activity administration tools coming soon.
+                            <br /><br /><button class="grcNeutralBtn" id="btnCloseCancelContinue_UserActivity_ComingSoon" data-bind="click: onCloseCancelContinue_Document, text: txtCloseCancelContinue_Document">Cancel</button>
+                        </div>
+                        <div id="divLive_UserActivity">
+                            <div id="divUserActivity_UserGrid" style="height:360px;">
+                                <div id="gridContainer" style="clear: both;">
+                                    <div id="gridUsers" style="width: 654px; height: 314px; max-height: 314px; min-height: 314px;"></div>
+                                    <div class="adminBtnHldr" id="gridBottomBanner" style="width: 315px; justify-content:space-between; margin-top:25px;">
+                                        <button class="grcBlueBtn" id="btnAddNewUser" data-bind="text: objAdminLanguageLabels().lblAddNewUser, click: onAddNewUser">Add New User</button>
+                                        <button class="grcBlueBtn" id="btnExportUsers" data-bind="text: objAdminLanguageLabels().lblExport, click: onExportUsers">Export</button>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <div id="divUserActivity_UserDetail" class="windowAdminContentScroll" style="width: 677px; height: 316px; padding-top: 0px; padding-left: 10px; margin-left: -10px; margin-top: -16px; display: none; border-bottom: 1px solid #5a61b5;">
+                                <div style="clear: both; padding-top: 4px;">
+                                    <span class="adminWindow_Column4 adminWindow_SubTitle"><label data-bind="text: objAdminLanguageLabels().lblUserForm">User Form</label></span>
+                                </div>
+                                <div class="tableDiv tableDivAutoBordersFull" style="width: 620px; padding: 12px;">               
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column7 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblActiveUser">Active User</label></span>
+                                        <span class="adminWindow_Column13"><input id="chkUser_ActiveUser" name="chkUser_ActiveUser" type="checkbox" data-bind="checked: objUser().colActiveUser" /></span>
+                                        <input type="radio" name="action" id="radEmailNewUser" value="emailNewUser" data-bind="checked: emailFlag" /><label for="radEmailNewUser">New User Email</label>&nbsp;&nbsp;
+                                        <input type="radio" name="action" id="radEmailResetPassword" value="emailResetPassword" data-bind="checked: emailFlag" /><label for="radEmailResetPassword">Reset Password Email</label>&nbsp;&nbsp;
+                                        <input type="radio" name="action" id="radEmailUnlockAccount" value="emailUnlockAccount" data-bind="checked: emailFlag" /><label for="radEmailUnlockAccount">Unlock Account Email</label>&nbsp;&nbsp;
+                                        <input type="radio" name="action" id="radEmailNone" value="emailNone" checked="checked" /><label for="radEmailNone">None</label>
+                                    </div>
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column7 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblEmail">Email</label></span>
+                                        <span class="adminWindow_Column6"><input data-bind="value: objUser().colEmail" id="txtUser_Email" list="autocompleteOff" autocomplete="off" class="k-autocomplete k-input inputNoEdit inputLeft editRequired adminWindow_Inputs4" /></span>
+                                    </div>
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column7 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblFullName">Full Name</label></span>
+                                        <span class="adminWindow_Column4"><input data-bind="value: objUser().colFullName" id="txtUser_FullName" class="k-autocomplete k-input inputNoEdit inputLeft editRequired adminWindow_Inputs2" /></span>
+                                    </div>
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column7 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblInternal">Internal</label></span>
+                                        <span class="adminWindow_Inputs0"><input data-bind="checked: objUser().colInternal" onclick="    onUserCheckBoxClick(4)" type="checkbox" id="chkUser_Internal" class="" /></span>
+                                        <span class="adminWindow_Column1 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblIsAMorAE">Is AM or AE</label></span>
+                                        <span class="adminWindow_Inputs0"><input data-bind="checked: objUser().colGRCAdministrator" type="checkbox" id="chkUser_GRCAdministrator" class="" disabled="disabled" /></span>
+                                        <span class="adminWindow_Column1 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblThirdParty">Third Party</label></span>
+                                        <span class="adminWindow_Inputs0"><input data-bind="checked: objUser().colThirdParty" type="checkbox" id="chkUser_ThirdParty" class="" /></span>
+                                    </div>
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column7 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblAccountAccess">Account Access</label></span>
+                                        <span class="adminWindow_Inputs0"><input data-bind="checked: objUser().colRiskManager" onclick="    onUserCheckBoxClick(5)" type="checkbox" id="chkUser_RiskManager" class="" /></span>
+                                        <span class="adminWindow_Column1 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblDocumentsOnly">Documents Only</label></span>
+                                        <span class="adminWindow_Inputs0"><input data-bind="checked: objUser().colDocumentAccess" type="checkbox" id="chkUser_DocumentAccess" class="" /></span>
+                                        <span class="adminWindow_Column1 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblClientAdmin">Client Admin</label></span>
+                                        <span class="adminWindow_Inputs0"><input data-bind="checked: objUser().colClientAdministration" type="checkbox" id="chkUser_ClientAdministration" class="" /></span>
+                                    </div>
+                                    <!-- CUSTOM ACCESS -->
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column7 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblCustomAccess">Custom Access</label></span>
+                                        <span class="adminWindow_Inputs0"><input data-bind="checked: objUser().colCustomAccess" onclick="    onUserCheckBoxClick(1)" type="checkbox" id="chkUser_CustomAccess" class="" /></span>
+                                        <span class="adminWindow_Column1 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblCustomAccessText">Custom Access Text</label></span>
+                                        <span class="adminWindow_Column1" id="cboUser_CustomAccessText">
+                                            <select class="inputNoEdit adminWindow_Inputs1" data-bind="kendoDropDownList: {
+    data: customAccessTextArray,
+    value: customAccessTextValue,
+    close: onDropdownCloseCustomAccess
+}">
+                                            </select>
+                                        </span>
+                                    </div>
+                                    <!-- LOCATION ACCESS -->
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column7 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblLocationAccess">Location Access</label></span>
+                                        <span class="adminWindow_Inputs0"><input data-bind="checked: objUser().colPlantManager" onclick="    onUserCheckBoxClick(6)" type="checkbox" id="chkUser_PlantManager" class="" /></span>
+                                        <span class="adminWindow_Column1 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblLocation">Location</label></span>
+                                        <span class="adminWindow_Column1" id="cboUser_Plant">
+                                            <select class="inputNoEdit adminWindow_Inputs1" data-bind="kendoDropDownList: {
+    data: plantArray,
+    value: plantValue,
+    close: onDropdownCloseLocation
+}">
+                                            </select>
+                                        </span>
+                                    </div>
+                                    <!-- DIVISION -->
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column7 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblDivisionManager">Division Access</label></span>
+                                        <span class="adminWindow_Inputs0"><input data-bind="checked: objUser().colDivisionManager" onclick="    onUserCheckBoxClick(2)" type="checkbox" id="chkUser_DivisionManager" class="" /></span>
+                                        <span class="adminWindow_Column1 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblDivision">Division</label></span>
+                                        <span class="adminWindow_Column1" id="cboUser_Division">
+                                            <select class="inputNoEdit adminWindow_Inputs1" data-bind="kendoDropDownList: {
+    data: divisionArray,
+    value: divisionValue,
+    close: onDropdownCloseDivision
+}">
+                                            </select>
+                                        </span>
+                                    </div>
+                                    <!-- CLIENT LOC NO ACCESS -->
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column7 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblClientLocNo">Client Loc No.</label></span>
+                                        <span class="adminWindow_Inputs0"><input data-bind="checked: objUser().colClientLocNoManager" onclick="    onUserCheckBoxClick(7)" type="checkbox" id="chkUser_ClientLocNoManager" class="" /></span>
+                                        <span class="adminWindow_Column1 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblClientLocNo">Client Loc No.</label></span>
+                                        <span class="adminWindow_Column1" id="cboUser_ClientLocNo">
+                                            <select class="inputNoEdit adminWindow_Inputs1" data-bind="kendoDropDownList: {
+    data: clientLocNoArray,
+    value: clientLocNoValue,
+    close: onDropdownCloseClientLocNo
+}">
+                                            </select>
+                                        </span>
+                                    </div>
+                                    <!-- FACILITY -->
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column7 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblFacility">Facility</label></span>
+                                        <span class="adminWindow_Inputs0"><input data-bind="checked: objUser().colFacilityManager" onclick="    onUserCheckBoxClick(3)" type="checkbox" id="chkUser_FacilityManager" class="" /></span>
+                                        <span class="adminWindow_Column1 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblFacility">Facility</label></span>
+                                        <span class="adminWindow_Column1" id="cboUser_Facility">
+                                            <select class="inputNoEdit adminWindow_Inputs1" data-bind="kendoDropDownList: {
+    data: facilityArray,
+    value: facilityValue,
+    close: onDropdownCloseFacility
+}">
+                                            </select>
+                                        </span>
+                                    </div>
+                                    <!-- CITY -->
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column7 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblCity">City</label></span>
+                                        <span class="adminWindow_Inputs0"><input data-bind="checked: objUser().colCityManager" onclick="    onUserCheckBoxClick(8)" type="checkbox" id="chkUser_CityManager" class="" /></span>
+                                        <span class="adminWindow_Column1 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblCity">City</label></span>
+                                        <span class="adminWindow_Column1" id="cboUser_City">
+                                            <select class="inputNoEdit adminWindow_Inputs1" data-bind="kendoDropDownList: {
+    data: cityArray,
+    value: cityValue,
+    close: onDropdownCloseCity
+}">
+                                            </select>
+                                        </span>
+                                    </div>
+                                    <!-- ST PROV -->
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column7 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblStProv">St/Prov</label></span>
+                                        <span class="adminWindow_Inputs0"><input data-bind="checked: objUser().colStProvManager" onclick="    onUserCheckBoxClick(9)" type="checkbox" id="chkUser_StProvManager" class="" /></span>
+                                        <span class="adminWindow_Column1 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblStProv">St/Prov</label></span>
+                                        <span class="adminWindow_Column1" id="cboUser_StProv">
+                                            <select class="inputNoEdit adminWindow_Inputs1" data-bind="kendoDropDownList: {
+    data: stProvArray,
+    value: stProvValue,
+    close: onDropdownCloseStProv
+}">
+                                            </select>
+                                        </span>
+                                    </div>
+                                    <!-- COUNTRY -->
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column7 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblCountry">Country</label></span>
+                                        <span class="adminWindow_Inputs0"><input data-bind="checked: objUser().colCountryManager" onclick="    onUserCheckBoxClick(10)" type="checkbox" id="chkCountryManager" class="" /></span>
+                                        <span class="adminWindow_Column1 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblCountry">Country</label></span>
+                                        <span class="adminWindow_Column1" id="cboUser_Country">
+                                            <select class="inputNoEdit adminWindow_Inputs1" data-bind="kendoDropDownList: {
+    data: countryArray,
+    value: countryValue,
+    close: onDropdownCloseCountry
+}">
+                                            </select>
+                                        </span>
+                                    </div>
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column7 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblPhone">Phone</label></span>
+                                        <span class="adminWindow_Column1"><input data-bind="value: objUser().colPhone" id="txtUser_Phone" class="k-autocomplete k-input inputNoEdit inputLeft editRequired adminWindow_Inputs1" /></span>
+                                        <span class="adminWindow_Column1 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblFax">Fax</label></span>
+                                        <span class="adminWindow_Column1"><input data-bind="value: objUser().colFax" id="txtUser_Fax" class="k-autocomplete k-input inputNoEdit inputLeft editRequired adminWindow_Inputs1" /></span>
+                                    </div>
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column7 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblComments">Comments</label></span>
+                                        <span class="adminWindow_Column4"><input data-bind="value: objUser().colComments" id="txtUser_Comments" class="k-autocomplete k-input inputNoEdit inputLeft editRequired adminWindow_Inputs2" /></span>
+                                    </div>
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column4">&nbsp;<br /></span>
+                                    </div>
+                                </div>
+
+                                <br />
+                                <div style="clear: both;">
+                                    <span class="adminWindow_Column4 adminWindow_SubTitle"><label data-bind="text: objAdminLanguageLabels().lblAutoRecDetails">Auto-Rec. Details</label></span>
+                                </div>
+                                <div class="tableDiv tableDivAutoBordersFull" style="width: 620px; padding: 12px;">               
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column5 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblCCgActivity">CC'G Activity</label></span>
+                                        <span class="adminWindow_Inputs0"><input data-bind="checked: objUser().colCCActive" type="checkbox" id="chkUser_CCActive" disabled="disabled" class="" /></span>
+                                        <span class="adminWindow_Column5 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblCCOnly">CC Only</label></span>
+                                        <span class="adminWindow_Inputs0"><input data-bind="checked: objUser().colCCOnly" type="checkbox" id="chkUser_CCOnly" class="" disabled="disabled" /></span>
+                                    </div>
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column8 adminWindow_Right">&nbsp;</span>
+                                        <span class="adminWindow_UserTopLabel"><br /><label data-bind="text: objAdminLanguageLabels().lblInit">Init.</label></span>
+                                        <span class="adminWindow_UserTopLabel"><br /><label data-bind="text: objAdminLanguageLabels().lblRpt">Rpt.</label></span>
+                                        <span class="adminWindow_UserTopLabel"><label data-bind="text: objAdminLanguageLabels().lbl1stFU">1st F/U</label></span>
+                                        <span class="adminWindow_UserTopLabel"><label data-bind="text: objAdminLanguageLabels().lbl2ndFU">2nd F/U</label></span>
+                                        <span class="adminWindow_UserTopLabel"><label data-bind="text: objAdminLanguageLabels().lbl3rdFU">3rd F/U</label></span>
+                                        <span class="adminWindow_UserTopLabel"><label data-bind="text: objAdminLanguageLabels().lblExpdFU">Exp'd F/U</label></span>
+                                        <span class="adminWindow_UserTopLabel"><label data-bind="text: objAdminLanguageLabels().lbl1stOD">1st OD</label></span>
+                                        <span class="adminWindow_UserTopLabel"><label data-bind="text: objAdminLanguageLabels().lbl2ndOD">2nd OD</label></span>
+                                        <span class="adminWindow_UserTopLabel"><label data-bind="text: objAdminLanguageLabels().lbl3rdOD">3rd OD</label></span>
+                                        <span class="adminWindow_UserTopLabel"><label data-bind="text: objAdminLanguageLabels().lblPastDue">Exp OD</label></span>
+                                    </div>
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column8 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblAll">All</label></span>
+                                        <span class="adminWindow_Inputs0 tableDivAutoBordersTop tableDivAutoBordersLeft adminWindow_CheckBoxGridLeft"><input data-bind="checked: All_Init" onclick="    onUserAllCheckClick(1)" type="checkbox" id="chkUser_All_Init" class="" /></span>
+                                        <span class="adminWindow_Inputs0 tableDivAutoBordersTop adminWindow_CheckBoxGridLeft"><input data-bind="checked: All_Rpt" onclick="    onUserAllCheckClick(2)" type="checkbox" id="chkUser_All_Rpt" class="" /></span>
+                                        <span class="adminWindow_Inputs0 tableDivAutoBordersTop adminWindow_CheckBoxGridLeft"><input data-bind="checked: All_1stFU" onclick="    onUserAllCheckClick(3)" type="checkbox" id="chkUser_All_1stFU" class="" /></span>
+                                        <span class="adminWindow_Inputs0 tableDivAutoBordersTop adminWindow_CheckBoxGridLeft"><input data-bind="checked: All_2ndFU" onclick="    onUserAllCheckClick(4)" type="checkbox" id="chkUser_All_2ndFU" class="" /></span>
+                                        <span class="adminWindow_Inputs0 tableDivAutoBordersTop adminWindow_CheckBoxGridLeft"><input data-bind="checked: All_3rdFU" onclick="    onUserAllCheckClick(5)" type="checkbox" id="chkUser_All_3rdFU" class="" /></span>
+                                        <span class="adminWindow_Inputs0 tableDivAutoBordersTop adminWindow_CheckBoxGridLeft"><input data-bind="checked: All_ExpdFU" onclick="    onUserAllCheckClick(10)" type="checkbox" id="chkUser_All_ExpdFU" class="" /></span>
+                                        <span class="adminWindow_Inputs0 tableDivAutoBordersTop adminWindow_CheckBoxGridLeft"><input data-bind="checked: All_1stOD" onclick="    onUserAllCheckClick(6)" type="checkbox" id="chkUser_All_1stOD" class="" /></span>
+                                        <span class="adminWindow_Inputs0 tableDivAutoBordersTop adminWindow_CheckBoxGridLeft"><input data-bind="checked: All_2ndOD" onclick="    onUserAllCheckClick(7)" type="checkbox" id="chkUser_All_2ndOD" class="" /></span>
+                                        <span class="adminWindow_Inputs0 tableDivAutoBordersTop adminWindow_CheckBoxGridLeft"><input data-bind="checked: All_3rdOD" onclick="    onUserAllCheckClick(8)" type="checkbox" id="chkUser_All_3rdOD" class="" /></span>
+                                        <span class="adminWindow_Inputs0 tableDivAutoBordersTop tableDivAutoBordersRight adminWindow_CheckBoxGridEnd"><input data-bind="checked: All_PastDue" onclick="    onUserAllCheckClick(9)" type="checkbox" id="chkUser_All_PastDue" class="" /></span>
+                                    </div>
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column8 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblFire">Fire</label></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridAlt tableDivAutoBordersLeft adminWindow_CheckBoxGridLeft"><input data-bind="checked: Fire_Init" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_Fire_Init" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridAlt adminWindow_CheckBoxGridLeft"><input data-bind="checked: Fire_Rpt" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_Fire_Rpt" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridAlt adminWindow_CheckBoxGridLeft"><input data-bind="checked: Fire_1stFU" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_Fire_1stFU" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridAlt adminWindow_CheckBoxGridLeft"><input data-bind="checked: Fire_2ndFU" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_Fire_2ndFU" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridAlt adminWindow_CheckBoxGridLeft"><input data-bind="checked: Fire_3rdFU" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_Fire_3rdFU" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridAlt adminWindow_CheckBoxGridLeft"><input data-bind="checked: Fire_ExpdFU" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_Fire_ExpdFU" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridAlt adminWindow_CheckBoxGridLeft"><input data-bind="checked: Fire_1stOD" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_Fire_1stOD" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridAlt adminWindow_CheckBoxGridLeft"><input data-bind="checked: Fire_2ndOD" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_Fire_2ndOD" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridAlt adminWindow_CheckBoxGridLeft"><input data-bind="checked: Fire_3rdOD" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_Fire_3rdOD" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridAlt tableDivAutoBordersRight adminWindow_CheckBoxGridEnd"><input data-bind="checked: Fire_PastDue" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_Fire_PastDue" class="" /></span>
+                                    </div>
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column8 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblBM">B&#38;M</label></span>
+                                        <span class="adminWindow_Inputs0 tableDivAutoBordersLeft adminWindow_CheckBoxGridLeft"><input data-bind="checked: BM_Init" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_BM_Init" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridLeft"><input data-bind="checked: BM_Rpt" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_BM_Rpt" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridLeft"><input data-bind="checked: BM_1stFU" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_BM_1stFU" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridLeft"><input data-bind="checked: BM_2ndFU" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_BM_2ndFU" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridLeft"><input data-bind="checked: BM_3rdFU" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_BM_3rdFU" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridLeft"><input data-bind="checked: BM_ExpdFU" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_BM_ExpdFU" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridLeft"><input data-bind="checked: BM_1stOD" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_BM_1stOD" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridLeft"><input data-bind="checked: BM_2ndOD" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_BM_2ndOD" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridLeft"><input data-bind="checked: BM_3rdOD" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_BM_3rdOD" class="" /></span>
+                                        <span class="adminWindow_Inputs0 tableDivAutoBordersRight adminWindow_CheckBoxGridEnd"><input data-bind="checked: BM_PastDue" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_BM_PastDue" class="" /></span>
+                                    </div>
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column8 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblInfrared">Infrared</label></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridAlt tableDivAutoBordersLeft adminWindow_CheckBoxGridLeft"><input data-bind="checked: IR_Init" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_IR_Init" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridAlt adminWindow_CheckBoxGridLeft"><input data-bind="checked: IR_Rpt" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_IR_Rpt" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridAlt adminWindow_CheckBoxGridLeft"><input data-bind="checked: IR_1stFU" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_IR_1stFU" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridAlt adminWindow_CheckBoxGridLeft"><input data-bind="checked: IR_2ndFU" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_IR_2ndFU" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridAlt adminWindow_CheckBoxGridLeft"><input data-bind="checked: IR_3rdFU" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_IR_3rdFU" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridAlt adminWindow_CheckBoxGridLeft"><input data-bind="checked: IR_ExpdFU" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_IR_ExpdFU" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridAlt adminWindow_CheckBoxGridLeft"><input data-bind="checked: IR_1stOD" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_IR_1stOD" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridAlt adminWindow_CheckBoxGridLeft"><input data-bind="checked: IR_2ndOD" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_IR_2ndOD" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridAlt adminWindow_CheckBoxGridLeft"><input data-bind="checked: IR_3rdOD" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_IR_3rdOD" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridAlt tableDivAutoBordersRight adminWindow_CheckBoxGridEnd"><input data-bind="checked: IR_PastDue" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_IR_PastDue" class="" /></span>
+                                    </div>
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column8 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblNatHaz">Nat. Haz.</label></span>
+                                        <span class="adminWindow_Inputs0 tableDivAutoBordersLeft adminWindow_CheckBoxGridLeft"><input data-bind="checked: NatHaz_Init" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_NatHaz_Init" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridLeft"><input data-bind="checked: NatHaz_Rpt" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_NatHaz_Rpt" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridLeft"><input data-bind="checked: NatHaz_1stFU" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_NatHaz_1stFU" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridLeft"><input data-bind="checked: NatHaz_2ndFU" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_NatHaz_2ndFU" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridLeft"><input data-bind="checked: NatHaz_3rdFU" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_NatHaz_3rdFU" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridLeft"><input data-bind="checked: NatHaz_ExpdFU" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_NatHaz_ExpdFU" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridLeft"><input data-bind="checked: NatHaz_1stOD" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_NatHaz_1stOD" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridLeft"><input data-bind="checked: NatHaz_2ndOD" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_NatHaz_2ndOD" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridLeft"><input data-bind="checked: NatHaz_3rdOD" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_NatHaz_3rdOD" class="" /></span>
+                                        <span class="adminWindow_Inputs0 tableDivAutoBordersRight adminWindow_CheckBoxGridEnd"><input data-bind="checked: NatHaz_PastDue" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_NatHaz_PastDue" class="" /></span>
+                                    </div>
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column8 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblDivServ">Div. Serv.</label></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridAlt tableDivAutoBordersLeft adminWindow_CheckBoxGridBottom"><input data-bind="checked: DivServ_Init" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_DivServ_Init" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridAlt adminWindow_CheckBoxGridBottom"><input data-bind="checked: DivServ_Rpt" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_DivServ_Rpt" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridAlt adminWindow_CheckBoxGridBottom"><input data-bind="checked: DivServ_1stFU" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_DivServ_1stFU" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridAlt adminWindow_CheckBoxGridBottom"><input data-bind="checked: DivServ_2ndFU" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_DivServ_2ndFU" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridAlt adminWindow_CheckBoxGridBottom"><input data-bind="checked: DivServ_3rdFU" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_DivServ_3rdFU" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridAlt adminWindow_CheckBoxGridBottom"><input data-bind="checked: DivServ_ExpdFU" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_DivServ_ExpdFU" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridAlt adminWindow_CheckBoxGridBottom"><input data-bind="checked: DivServ_1stOD" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_DivServ_1stOD" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridAlt adminWindow_CheckBoxGridBottom"><input data-bind="checked: DivServ_2ndOD" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_DivServ_2ndOD" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridAlt adminWindow_CheckBoxGridBottom"><input data-bind="checked: DivServ_3rdOD" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_DivServ_3rdOD" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridAlt tableDivAutoBordersRight adminWindow_CheckBoxGridBottom adminWindow_CheckBoxGridEnd"><input data-bind="checked: DivServ_PastDue" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_DivServ_PastDue" class="" /></span>
+                                    </div>
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column8 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblProcSafe">Proc. Safe.</label></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridLeft tableDivAutoBordersLeft adminWindow_CheckBoxGridBottom"><input data-bind="checked: ProcSafe_Init" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_ProcSafe_Init" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridLeft adminWindow_CheckBoxGridBottom"><input data-bind="checked: ProcSafe_Rpt" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_ProcSafe_Rpt" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridLeft adminWindow_CheckBoxGridBottom"><input data-bind="checked: ProcSafe_1stFU" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_ProcSafe_1stFU" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridLeft adminWindow_CheckBoxGridBottom"><input data-bind="checked: ProcSafe_2ndFU" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_ProcSafe_2ndFU" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridLeft adminWindow_CheckBoxGridBottom"><input data-bind="checked: ProcSafe_3rdFU" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_ProcSafe_3rdFU" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridLeft adminWindow_CheckBoxGridBottom"><input data-bind="checked: ProcSafe_ExpdFU" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_ProcSafe_ExpdFU" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridLeft adminWindow_CheckBoxGridBottom"><input data-bind="checked: ProcSafe_1stOD" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_ProcSafe_1stOD" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridLeft adminWindow_CheckBoxGridBottom"><input data-bind="checked: ProcSafe_2ndOD" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_ProcSafe_2ndOD" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridLeft adminWindow_CheckBoxGridBottom"><input data-bind="checked: ProcSafe_3rdOD" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_ProcSafe_3rdOD" class="" /></span>
+                                        <span class="adminWindow_Inputs0 adminWindow_CheckBoxGridLeft tableDivAutoBordersRight adminWindow_CheckBoxGridBottom adminWindow_CheckBoxGridEnd"><input data-bind="checked: ProcSafe_PastDue" onclick="    onUserRecCheckBoxClick(this.checked)" type="checkbox" id="chkUser_ProcSafe_PastDue" class="" /></span>
+                                    </div>
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column4">&nbsp;<br /></span>
+                                    </div>
+                                </div>
+                                <script id="templateEditButton" type="text/x-kendo-template">
+                                    # if(GRCAdministrator == null || GRCAdministrator == undefined || GRCAdministrator == "") { #
+                                    <span id="'#=EzyUserID#'" class="k-button" onclick="onEditUser('#=EzyUserID#')" data-bind="text: objAdminLanguageLabels().lblEdit">Edit</span>
+                                    # } else { #
+                                    <span id="'#=EzyUserID#'" class="k-button" style="color: gray;" onclick="" data-bind="text: objAdminLanguageLabels().lblEdit">Edit</span>
+                                    # } #
+                                </script>
+                            </div>
+                            <br />
+                            <div id="divUserActivity_DetailButtons" class="tableDiv tableDivAutoBordersFull" style="width: 620px; max-height: 34px; padding: 12px; margin-top: -2px; display: none;">               
+                                <div style="clear: both;">
+                                    <span class="" style="width: 100%; text-align: center;">
+                                        <button id="btnUserSave" data-bind="text: objAdminLanguageLabels().lblSaveChanges, click: onSaveUser" class="k-button k-button-padding adminWindow_Button3" onclick="return false;">Save Changes</button>
+                                        <button id="btnUserDelete" data-bind="text: objAdminLanguageLabels().lblDeleteUser, click: onDeleteUser, enable: enableDeleteUser" class="k-button k-button-padding adminWindow_Button3 adminWindow_ButtonSpacer" onclick="return false;">Delete User</button>
+                                        <button id="btnUserCancel" data-bind="text: objAdminLanguageLabels().lblCancel, click: onCancelUser" class="k-button k-button-padding adminWindow_Button3 adminWindow_ButtonSpacer" onclick="return false;">Cancel</button>
+                                    </span>
+                                </div><br />
+                                <div style="text-align: center; padding-top: 6px; padding-bottom: 0px;">
+                                    &nbsp;<label id="lblMessageUserDetails" data-bind="text: messageUserDetails" class="messageError"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END USER ACTIVITY -->
+
+                    <!-- START PROJECT PLAN REVIEW -->
+                    <div class="windowAdminTabStripContent">
+                        <div id="divLive_PlanProjectReview" style="height:360px;">
+                            <div id="divPlanProject_PlanProjectGrid">
+                                <div id="gridContainerPlanProject" style="clear: both;">
+                                    <div id="gridPlanProject" style="width: 654px; height: 314px; max-height: 314px; min-height: 314px;"></div>
+                                    <div class="k-pager-wrap k-grid-pager" id="gridBottomBannerPlanProject" style="">
+                                        <button class="grcBlueBtn" id="btnAddNewPlanProject" style="width:200px;" data-bind="text: objAdminLanguageLabels().lblAddNewPlanProject, click: onAddNewPlanProject">Add New Plan/Project Review</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="divPlanProject_PlanProjectDetailForm" style="display: none;">
+                                <div style="clear: both; padding-bottom: 4px; padding-top: 4px;">
+                                    <span class="adminWindow_Column4 adminWindow_SubTitle"><label data-bind="text: objAdminLanguageLabels().lblPlanProjectReviewForm">Plan / Project Review Form</label></span>
+                                </div>
+                                <div class="tableDiv tableDivAutoBordersFull" style="width: 620px; padding: 12px;">               
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column7 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblFileNo">File No.</label></span>
+                                        <span class="adminWindow_Column1" id="cboPlanProject_FileNo">
+                                            <select class="inputNoEdit adminWindow_Inputs1" data-bind="kendoDropDownList: {
+    data: planProjectFileNoArray,
+    value: planProjectFileNoValue,
+    enabled: enablePlanProjectFileNo
+}">
+                                            </select>
+                                        </span>
+                                        <span class="adminWindow_Column5 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblProjectNo">Project No.</label></span>
+                                        <span class="adminWindow_Column1"><input data-bind="value: objPlanProject().ProjectNo" id="txtPlanProject_ProjectNo" class="k-autocomplete k-input inputNoEdit inputLeft editRequired adminWindow_Inputs6" maxlength="5" /></span>
+                                    </div>
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column7 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblSubmittedBy">Submitted By</label></span>
+                                        <span class="adminWindow_Column11"><input data-bind="value: objPlanProject().Contact" id="txtPlanProject_Contact" class="k-autocomplete k-input inputNoEdit inputLeft editRequired adminWindow_Inputs8" /></span>
+                                    </div>
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column7 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblEmailPhone">Email / Phone</label></span>
+                                        <span class="adminWindow_Column11"><input data-bind="value: objPlanProject().ContactPhone" id="txtPlanProject_EmailPhone" class="k-autocomplete k-input inputNoEdit inputLeft editRequired adminWindow_Inputs8" /></span>
+                                    </div>
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column7 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblProject">Project</label></span>
+                                        <span class="adminWindow_Column11"><input data-bind="value: objPlanProject().Subject" id="txtPlanProject_Subject" class="k-autocomplete k-input inputNoEdit inputLeft editRequired adminWindow_Inputs8"  maxlength="50" onkeyup="maxLengthProject(this.value, 49)" /></span>
+                                    </div>
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column7 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblConsultant">Consultant</label></span>
+                                        <span class="adminWindow_Column11"><input data-bind="value: objPlanProject().Consultant" id="txtPlanProject_Consultant" class="k-autocomplete k-input inputNoEdit inputLeft editRequired adminWindow_Inputs8" /></span>
+                                    </div>
+                                    <div style="clear: both; height: 80px;">
+                                        <span class="adminWindow_Column7 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblComments">Comments</label></span>
+                                        <span class="adminWindow_Inputs7"><textarea data-bind="value: objPlanProject().Comments" id="txtPlanProject_Comments" class="k-textbox inputNoEdit editRequired adminWindow_Inputs7" rows="6" cols="35" style="height: 70px;" ></textarea></span>
+                                    </div>
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column7 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblReceived">Received</label></span>
+                                        <span class="adminWindow_Column5"><input data-bind="" id="Admin_PlanProject_Received" class="k-autocomplete k-numerictextbox inputNoEdit inputLeft adminWindow_Inputs1" /></span>
+                                        <span class="adminWindow_Column7 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblReviewed">Reviewed</label></span>
+                                        <span class="adminWindow_Column1"><input data-bind="" id="Admin_PlanProject_Reviewed" class="k-autocomplete k-numerictextbox inputNoEdit inputLeft adminWindow_Inputs1" /></span>
+                                    </div>
+                                    <div style="clear: both;">
+                                        <span class="adminWindow_Column7 adminWindow_Right"><label data-bind="text: objAdminLanguageLabels().lblToReview">To Review</label></span>
+                                        <span class="adminWindow_Column6"><span id="Admin_PlanProject_ToReview" class="k-widget k-autocomplete k-header k-input inputNoEdit inputLink editRequired adminWindow_Inputs5" style="line-height: normal; padding-top: 0px; padding-left: 3px; text-align: left; overflow: hidden;"><label class="linkPointer" data-bind="text: objPlanProject().ToReview, click: function (data) { onBuildAdminPlanProjectLink(objPlanProject().ToReview()) }"></label></span></span>
+                                        <span><button class="k-button buttonShape k-icon k-close adminWindow_ButtonSpacer2" data-bind="click: onClearToReview, enable: enablePlanProjectSelect" type="button" id="btnClearToReview"></button></span>
+                                        <span><button class="k-button k-button-padding adminWindow_Button4" id="btnSelectToReview" data-bind="click: function () { onOpenToReviewPicker(); return false; }, enable: enablePlanProjectSelect, text: objAdminLanguageLabels().lblSelectDocument">Select Document</button></span>
+                                    </div>
+                                    <div style="clear: both;">
+                                        <span style="height: 5px;">&nbsp;</span>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="tableDiv tableDivAutoBordersFull" style="width: 620px; padding: 12px;">               
+                                    <div style="clear: both;">
+                                        <span class="" style="width: 100%; text-align: center;">
+                                            <button id="btnPlanProjectSave" data-bind="text: objAdminLanguageLabels().lblSaveChanges, click: onSavePlanProject" class="k-button k-button-padding adminWindow_Button3" onclick="return false;">Save Changes</button>
+                                            <button id="btnPlanProjectDelete" data-bind="text: objAdminLanguageLabels().lblDeletePlanProject, click: onDeletePlanProject, enable: enableDeletePlanProject" class="k-button k-button-padding adminWindow_Button3 adminWindow_ButtonSpacer" onclick="return false;">Delete Record</button>
+                                            <button id="btnPlanProjectCancel" data-bind="text: objAdminLanguageLabels().lblCancel, click: onCancelPlanProject" class="k-button k-button-padding adminWindow_Button3 adminWindow_ButtonSpacer" onclick="return false;">Cancel</button>
+                                        </span>
+                                    </div>
+                                    <div style="text-align: center; padding-top: 6px; padding-bottom: 0px;">
+                                        &nbsp;<label id="lblMessagePlanProjectDetails" data-bind="text: messagePlanProjectDetails" class="messageError"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="divPlanProject_FilePicker" style="display: none;">
+                                <label class="adminWindow_SubTitle" data-bind="text: objAdminLanguageLabels().lblSelectItem">Select Item</label>
+                                <div style="height: 4px;">&nbsp;</div>
+                                <telerik:RadFileExplorer runat="server" ID="flxPlanProjectPicker" Width="665px" Height="300px" OnClientFileOpen="PlanProjectPlaceItem" Skin="Office2010Silver" Behaviors="Close"></telerik:RadFileExplorer>
+                                <br />
+                                <button class="k-button k-button-padding" data-bind="click: onCancelPlanProjectPicker, text: objAdminLanguageLabels().lblCancel"></button>
+                            </div>
+                            <div id="divPlanProject_Disabled" style="display: none;">
+                                <br />Project / Plan Review is not available for this practice.
+                                <br /><br /><button class="k-button k-button-padding" id="btnCloseCancelContinue_PlanProjectReview" data-bind="click: onCloseCancelContinue_PlanProject, text: txtCloseCancelContinue_PlanProject">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                    <script id="templatePlanProjectEditButton" type="text/x-kendo-template">
+                        <span id="'#=Id#'" class="k-button" onclick="onEditPlanProject('#=Id#')" data-bind="text: objAdminLanguageLabels().lblEdit">Edit</span>
+                    </script>
+                    <!-- END PROJECT PLAN REVIEW -->
+
+                </div>
+            </div>
+        </div>
+        <!-- END ADMIN WINDOW POPUP -->
+
+    </form>
+</asp:Content>
+<asp:Content ID="ClientConnectTestBottomHtml" ContentPlaceHolderID="ClientConnectFormBottomHtml" runat="server">
+    <script src="../../Lib_{{VER}}/pages/global.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        // GLOBAL VARIABLES USED IN INCLUDED JS FILES
+        var global_IsMainGaugePage = false;
+        var global_PracticeCode = "";
+        var global_IsAdminWindowOpen = false;
+        var global_EnableAdminWindow = true;
+
+        $(document).ready(function () {
+            showTabAdmin("<%= ServerSide_AdminTab %>");
+        
+        //$("#include_AdminWindow").load("../Common/AdminWindow.html");
+    });
+
+    // ADMIN WINDOW
+    var windowAdmin = $("#windowAdmin");
+    windowAdmin.kendoWindow({
+        width: "725px",
+        height: "500px",
+        title: "", // title added below with JQuery
+        actions: ["close"],
+        modal: true,
+        resizable: false,
+        moveable: false,
+        close: onAdminWindowClose,
+        open: onAdminWindowOpen
+    });
+    //$("#windowAdmin").closest(".k-window").css({
+    //    top: 145,
+    //    left: 215
+    //});
+    $("#windowAdmin").prev().find(".k-window-title").append("<img src='../images/icons/admin/businesswoman_24x24.png' align='left' alt='Administration Window' class='windowIcon'/>  " + "Administration Window");
+
+    function onAdminClick() {
+        if (global_EnableAdminWindow) {
+            windowAdmin.data("kendoWindow").center().open();
+            $("#windowAdmin").css("display", "block");
+            global_IsAdminWindowOpen = true;
+        }
+    }
+
+    function onAdminWindowClose() {
+        refreshTabs();
+        refreshPage();
+        windowAdminTabStrip.select(0);
+        global_IsAdminWindowOpen = false;
+    }
+
+    function onAdminWindowOpen() {
+        if (windowAdminUpload == null) {
+            setupAdminKendo();
+        }
+        viewAdmin.onLoadDocManagerTab();
+        windowAdminTabStrip.select(0);
+        global_IsAdminWindowOpen = true;
+    }
+
+    // DEFINE PLEASE WAIT WINDOW
+    var windowPleaseWait = $("#windowPleaseWait");
+    windowPleaseWait.kendoWindow({
+        width: "300px",
+        height: "220px",
+        title: "", // title added below with JQuery
+        actions: {},
+        animation: { open: { effects: "default" }, close: { effects: "default" } },
+        modal: true
+    });
+    $("#windowPleaseWait").closest(".k-window").css({
+        top: 300,
+        left: 375
+    });
+    $("#windowPleaseWait").prev().find(".k-window-title").append("<img src='../images/icons/wait/icon_hourglass_32x32.png' align='left' alt='Please Wait' class='windowIcon'/>  " + "Please Wait");
+
+    function cancelProgramStatus() {
+        $("#windowPleaseWaitProcessed").hide();
+        $("#windowPleaseWaitCancelled").show();
+        var gSafeGuid = getGSafeGUID();
+        document.location.href = "../Gauge/Default.aspx?sid=" + gSafeGuid;
+    }
+
+    function refreshTabs() {
+        // DON'T DO THE BELOW, OUT OF MEMORY ERROR AND BAD RESULTS
+        viewAdmin.onCancelReportPicker();
+        viewAdmin.onCancelDiagramPicker();
+        viewAdmin.onClearDocManager();
+        viewAdmin.onUploadCancel();
+        viewAdmin.onClearRecResponse();
+    }
+
+</script>
+
+    <script src="../../Lib_{{VER}}/Generated/ViewCCAdminWindowDocManagerBM.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCAdminWindowDocManagerFire.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCAdminWindowDocManagerIR.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCAdminWindowDocManagerJuris.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCAdminWindowDocManagerFlood.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCAdminWindowDocManagerSeismic.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCAdminWindowDocManagerWind.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCAdminWindowDocManagerNH.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCAdminWindowDocManagerDiversified.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCAdminWindowDocManagerPS.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/ViewCCAdminWindowDocManager.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCAdminWindowRecResponseBM.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCAdminWindowRecResponseFire.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCAdminWindowRecResponseIR.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCAdminWindowRecResponseJuris.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCAdminWindowRecResponseNatHaz.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCAdminWindowRecResponseNH.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCAdminWindowRecResponseDiversified.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCAdminWindowRecResponsePS.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/ViewCCAdminWindowRecResponse.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCPrefCustomAccess.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCPrefCustomAccessFilteredByFilePrefix.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCPrefDivision.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCPrefDivisionUsers.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCPrefLocation.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/ViewCCPrefUsers.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCUserActivityGrid.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/ViewCCUserActivityGrid.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/EzyUsers.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/EzyUsers.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ReportArchive.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/ReportArchive.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/BMPlanReview.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/BMPlanReview.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/FirePlanReview.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/FirePlanReview.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCAllPlanReview.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/ViewCCAllPlanReview.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCBMPlanReview.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/ViewCCBMPlanReview.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/ViewCCFirePlanReview.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/ViewCCFirePlanReview.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Data/adminWindow.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/adminWindow.js" type="text/javascript"></script>
+
+</asp:Content>
+

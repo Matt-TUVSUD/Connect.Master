@@ -1,0 +1,96 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: VwBMLossEstimatesLatestFacilityRatingExtractSelect --> [vwBMLossEstimatesLatestFacilityRatingExtractSelect]
+
+  colFileprefix --> [fileprefix] varchar(50) not null
+  colFileNo --> [FileNo] nvarchar(40) not null
+  colClient --> [Client] nvarchar(40) null
+  colClientLocNo --> [ClientLocNo] nvarchar(30) null
+  colDivision --> [Division] nvarchar(75) null
+  colFacility --> [Facility] nvarchar(50) null
+  colAddress --> [Address] nvarchar(40) null
+  colCity --> [City] nvarchar(30) null
+  colStProv --> [StProv] nvarchar(20) null
+  colCountry --> [Country] nvarchar(20) null
+  colInspectionDate --> [InspectionDate] datetime null
+  colEngineer --> [Engineer] nvarchar(25) null
+  colCurrency --> [Currency] nvarchar(50) null
+  colBIReporting --> [BIReporting] nvarchar(50) null
+  colExchangeRate --> [ExchangeRate] float null
+  colTivpd --> [TIVPD] float null
+  colTivbi --> [TIVBI] float null
+  colTiv --> [TIV] float null
+  colPmlpd --> [PMLPD] float null
+  colPmlbi --> [PMLBI] float null
+  colPml --> [PML] float null
+  colPMLPDPercent --> [PMLPDPercent] float null
+  colPMLBIPercent --> [PMLBIPercent] float null
+  colPMLPercent --> [PMLPercent] float null
+  colMflpd --> [MFLPD] float null
+  colMflbi --> [MFLBI] float null
+  colMfl --> [MFL] float null
+  colMFLPDPercent --> [MFLPDPercent] float null
+  colMFLBIPercent --> [MFLBIPercent] float null
+  colMFLPercent --> [MFLPercent] float null
+  colInterdependencies --> [Interdependencies] nvarchar(3) null
+  colLEandInterdependecyComments --> [LEandInterdependecyComments] nvarchar(300) null
+  colLossesLast3Years --> [Losses_Last_3_Years] nvarchar(3) null
+  colLossHistoryDescription --> [Loss_History_Description] nvarchar(300) null
+  colActiveC --> [ActiveC] float null
+  colPassiveC --> [PassiveC] float null
+  colTotalScoreCurrent --> [TotalScoreCurrent] float null
+  colOverallRating --> [OverallRating] varchar(50) null
+  colTotalscorecurrentColor --> [totalscorecurrentColor] varchar(7) null
+  colOccupancy --> [Occupancy] nvarchar(50) null
+  colIndustryGroup --> [IndustryGroup] nvarchar(40) null
+  colMajorGroup --> [MajorGroup] nvarchar(40) null
+  colSpecificGroup --> [SpecificGroup] nvarchar(40) null
+  colActiveWC --> [ActiveWC] float null
+  colPassiveWC --> [PassiveWC] float null
+  colTotalWRComplete --> [TotalWRComplete] float null
+  colMechEquipC --> [MechEquipC] int null
+  colElecEquipC --> [ElecEquipC] int null
+  colBoilersC --> [BoilersC] int null
+  colProcEquipC --> [ProcEquipC] int null
+  colOccupancyC --> [OccupancyC] int null
+  colCompSysC --> [CompSysC] int null
+  colMechMaintC --> [MechMaintC] int null
+  colElecMaintC --> [ElecMaintC] int null
+  colSparesC --> [SparesC] int null
+  colHumanElementC --> [HumanElementC] int null
+  colBcpc --> [BCPC] int null
+  colMechEquipWR --> [MechEquipWR] int null
+  colElecEquipWR --> [ElecEquipWR] int null
+  colBoilersWR --> [BoilersWR] int null
+  colProcEquipWR --> [ProcEquipWR] int null
+  colOccupancyWR --> [OccupancyWR] int null
+  colCompSysWR --> [CompSysWR] int null
+  colMechMaintWR --> [MechMaintWR] int null
+  colElecMaintWR --> [ElecMaintWR] int null
+  colSparesWR --> [SparesWR] int null
+  colHumanElementWR --> [HumanElementWR] int null
+  colBcpwr --> [BCPWR] int null
+  colMechEquipWeight --> [MechEquipWeight] bigint null
+  colElecEquipWeight --> [ElecEquipWeight] bigint null
+  colBoilersWeight --> [BoilersWeight] bigint null
+  colProcEquipWeight --> [ProcEquipWeight] bigint null
+  colOccupancyWeight --> [OccupancyWeight] bigint null
+  colCompSysWeight --> [CompSysWeight] bigint null
+  colMechMaintWeight --> [MechMaintWeight] bigint null
+  colElecMaintWeight --> [ElecMaintWeight] bigint null
+  colSparesWeight --> [SparesWeight] bigint null
+  colHumanElementWeight --> [HumanElementWeight] bigint null
+  colBCPWeight --> [BCPWeight] bigint null
+  colCustomAccess --> [CustomAccess] nvarchar(50) null
+  colInspProgramYearFROM --> [InspProgramYearFROM] smalldatetime null
+  colInspProgramYear --> [InspProgramYear] varchar(61) null
+  colIbi --> [IBI] float null
+  colHighestLossExpectancy --> [HighestLossExpectancy] int null
+

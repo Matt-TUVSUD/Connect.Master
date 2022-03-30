@@ -1,0 +1,34 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: VwGSafeLocationFilter --> [vwGSafeLocationFilter]
+
+  colGSafeId --> [GSafeId] int not null
+  colRowNo --> [RowNo] bigint null
+  colLinkToLocation --> [Link_to_Location] int null
+  colFileNo --> [FileNo] nvarchar(40) not null
+  colClient --> [Client] nvarchar(40) null
+  colClientLocNo --> [ClientLocNo] nvarchar(30) null
+  colDivision --> [Division] nvarchar(75) null
+  colFacility --> [Facility] nvarchar(50) null
+  colAddress1 --> [Address1] nvarchar(40) null
+  colAddress --> [Address] nvarchar(40) null
+  colCity --> [City] nvarchar(30) null
+  colStProv --> [StProv] nvarchar(20) null
+  colCountry --> [Country] nvarchar(20) null
+  colTivus --> [TIVUS] float null
+  colFilePrefix --> [FilePrefix] varchar(50) null
+  colZip --> [Zip] nvarchar(10) null
+  colCustomAccess --> [CustomAccess] nvarchar(50) null
+  colLongitude --> [longitude] decimal(7,4) null
+  colLatitude --> [latitude] decimal(7,4) null
+  colStProvName --> [StProvName] nvarchar(255) null
+  colClient1 --> [Client1] nvarchar(255) null
+  colAddressStamp --> [AddressStamp] nvarchar(1000) null
+

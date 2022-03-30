@@ -1,0 +1,17 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: VwImpairmentDropDownGroups --> [vwImpairmentDropDownGroups]
+
+  colSortOrder --> [SortOrder] bigint null
+  colGroupNo --> [GroupNo] int not null
+  colDictionaryId --> [DictionaryId] int null
+  colTextEnglish --> [TextEnglish] nvarchar(MAX) null
+  colGroupCode --> [GroupCode] nvarchar(255) null
+

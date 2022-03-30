@@ -1,0 +1,48 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colFldId":1, 
+	"colFldMetaGridId":1, 
+	"colFldNotes":"fldNotes", 
+	"colType":1, 
+	"colEncoded":null, 
+	"colField":"field"
+	"colTitle":"title", 
+	"colWidth":1, 
+	"colHidden":null, 
+	"colFilterable":null, 
+	"colSortable":null, 
+	"colGroupable":null, 
+	"colLocked":null, 
+	"colLockable":null, 
+	"colInclude":null, 
+	"colFormat":"format", 
+	"colMenu":null, 
+	"colTemplate":"template", 
+	"colEditable":null, 
+	"colEditor":"editor", 
+	"colNullable":null, 
+	"colFooterTemplate":"footerTemplate", 
+	"colHeaderAttributes":1, 
+	"colIndexOrder":1, 
+	"colSrcField":"SrcField", 
+	"colSrcTable":"SrcTable", 
+	"colKeyField":"KeyField", 
+	"colFldFieldNameBackColor":"fldFieldNameBackColor", 
+	"colFldCustomFeature":"fldCustomFeature", 
+	"colFldExcludeFromExtract":null, 
+	"colFldMapTitleHtmlSnippet":"fldMapTitleHtmlSnippet", 
+	"colFldMapPinIconSqlSnippet":"fldMapPinIconSqlSnippet", 
+	"colFldMapDefaultDepicted":null, 
+	"colFldMapIsDepictable":null, 
+	"colFldMapIsPicklistable":null, 
+	"colFldColumnDescription":"fldColumnDescription", 
+	"colFldExtractWrapText":null
+}]

@@ -1,0 +1,589 @@
+﻿.icon_container
+{
+    padding-top: 2px;
+    padding-bottom: 4px;
+    float: left;
+}
+.icon_container_DetailsNoBatchData
+{
+    padding-left: 70px;
+    padding-top: 2px;
+    padding-bottom: 4px;
+}
+.icon_containerGrid
+{
+    padding-top: 5px;
+    padding-bottom: 4px;
+    text-align: center;
+    /*padding-right: 650px;*/
+}
+.icon_cell
+{
+    float: left;
+    padding-left: 20px;
+}
+.icon_cell_hide
+{
+    display: none;
+    float: left;
+    padding-left: 25px;
+}
+.icon_center
+{
+    margin-left: 20%;
+}
+.icon_label
+{
+    font-size: 7pt;
+    font-weight: normal;
+}
+.icon_label_disabled
+{
+    font-size: 7pt;
+    font-weight: normal;
+    color: #CCCCCC;
+}
+.icon_labelFilterApplied
+{
+    font-size: 6pt;
+    color: Red;
+    text-align: center;
+    padding: 0px;
+    cursor: default;
+}
+.icon_labelHeading
+{
+    font-size: 8pt;
+    font-weight: bold;
+    text-align: center;
+    padding-left: 55px;
+}
+.icon_labelHeadingRow
+{
+    clear: both; 
+    padding-bottom: 6px; 
+    padding-left: 11px;
+}
+
+/*****************************/
+/***** EXIT - CLOSE DOOR *****/
+.icon_exit 
+{
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/exit.png');
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    margin-left: 10%;
+}
+.icon_exit:hover
+{
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/exit.png');
+    background-position: 0px -28px;
+    background-repeat: no-repeat;
+    margin-left: 10%;
+}
+.icon_exit:active
+{
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/exit.png');
+    background-position: 0px -56px;
+    background-repeat: no-repeat;
+    margin-left: 10%;
+}
+
+
+/**************************************/
+/***** MY PREFERENCES - CLIPBOARD *****/
+.icon_myPref 
+{
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/preferences_edit.png');
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+.icon_myPref:hover
+{
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/preferences_edit.png');
+    background-position: 0px -28px;
+    background-repeat: no-repeat;
+}
+.icon_myPref:active
+{
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/preferences_edit.png');
+    background-position: 0px -56px;
+    background-repeat: no-repeat;
+}
+.icon_myPref_disabled 
+{
+    width: 28px;
+    height: 28px;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/notselected/preferences_edit_disabled.png');
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+
+
+/******************************************/
+/*****    DOCUMENT LIBRARY - FIND    *****/
+.icon_find {
+    width: 30px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/icon_find_final.png');
+    background-position:0px 3px;
+    background-repeat:no-repeat;
+}
+.icon_find:hover {
+    width: 30px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/icon_find_final.png');
+    background-position:0px -24px;
+    background-repeat:no-repeat;
+}
+.icon_find:active {
+    width: 30px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/icon_find_final.png');
+    background-position:0px -50px;
+    background-repeat:no-repeat;
+}
+
+
+/******************************************/
+/***** FAVORITES LIBRARY - BLUE BOOKS *****/
+.icon_favoritesLibrary 
+{
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/books_blue.png');
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+.icon_favoritesLibrary:hover
+{
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/books_blue.png');
+    background-position: 0px -28px;
+    background-repeat: no-repeat;
+}
+.icon_favoritesLibrary:active
+{
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/books_blue.png');
+    background-position: 0px -56px;
+    background-repeat: no-repeat;
+}
+.icon_favoritesLibrary_disabled 
+{
+    width: 28px;
+    height: 28px;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/notselected/books_blue_disabled.png');
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+
+
+/*************************************/
+/***** FAVORITES SAVE - PDA INTO *****/
+.icon_favoritesSave
+{
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/pda_into.png');
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+.icon_favoritesSave:hover
+{
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/pda_into.png');
+    background-position: 0px -28px;
+    background-repeat: no-repeat;
+}
+.icon_favoritesSave:active
+{
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/pda_into.png');
+    background-position: 0px -56px;
+    background-repeat: no-repeat;
+}
+.icon_favoritesSave_disabled 
+{
+    width: 28px;
+    height: 28px;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/notselected/pda_into_disabled.png');
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+
+
+/**************************************/
+/***** REPORTS ALL - CHART COLUMN *****/
+.icon_reportsAll 
+{
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/chart_column.png');
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    margin-left: 20px;
+}
+.icon_reportsAll:hover
+{
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/chart_column.png');
+    background-position: 0px -28px;
+    background-repeat: no-repeat;
+    margin-left: 20px;
+}
+.icon_reportsAll:active
+{
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/chart_column.png');
+    background-position: 0px -56px;
+    background-repeat: no-repeat;
+    margin-left: 20px;
+}
+.icon_reportsAll_disabled 
+{
+    width: 28px;
+    height: 28px;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/notselected/chart_column_disabled.png');
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    margin-left: 20px;
+}
+
+
+
+/************************************************/
+/***** REPORTS DOWNLOAD - CHART COLUMN DOWN *****/
+.icon_reportsDownload
+{
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/chart_column_down.png');
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+.icon_reportsDownload:hover
+{
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/chart_column_down.png');
+    background-position: 0px -28px;
+    background-repeat: no-repeat;
+}
+.icon_reportsDownload:active
+{
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/chart_column_down.png');
+    background-position: 0px -56px;
+    background-repeat: no-repeat;
+}
+.icon_reportsDownload_disabled 
+{
+    width: 28px;
+    height: 28px;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/notselected/chart_column_down_disabled.png');
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+
+
+/********************************/
+/***** DATA DOWNLOAD - DOWN *****/
+.icon_dataDownload
+{
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/data_down.png');
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+.icon_dataDownload:hover
+{
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/data_down.png');
+    background-position: 0px -28px;
+    background-repeat: no-repeat;
+}
+.icon_dataDownload:active
+{
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/data_down.png');
+    background-position: 0px -56px;
+    background-repeat: no-repeat;
+}
+.icon_dataDownload_disabled
+{
+    width: 28px;
+    height: 28px;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/notselected/data_down_disabled.png');
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+
+
+/************************************/
+/***** SITEMAP - EARTH LOCATION *****/
+.icon_sitemap
+{
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/earth_location.png');
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+.icon_sitemap:hover
+{
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/earth_location.png');
+    background-position: 0px -28px;
+    background-repeat: no-repeat;
+}
+.icon_sitemap:active
+{
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/earth_location.png');
+    background-position: 0px -56px;
+    background-repeat: no-repeat;
+}
+.icon_sitemap_disabled
+{
+    width: 28px;
+    height: 28px;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/notselected/earth_location_disabled.png');
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+
+
+
+/********************************/
+/***** RESET GRID - REFRESH *****/
+.icon_resetGrid
+{
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/refresh.png');
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+.icon_resetGrid:hover
+{
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/refresh.png');
+    background-position: 0px -28px;
+    background-repeat: no-repeat;
+}
+.icon_resetGrid:active
+{
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/refresh.png');
+    background-position: 0px -56px;
+    background-repeat: no-repeat;
+}
+
+
+
+/********************************/
+/********** BACK BUTTON *********/
+.icon_backArrow
+{
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/arrow_left_blue.png');
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+.icon_backArrow:hover
+{
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/arrow_left_blue.png');
+    background-position: 0px -28px;
+    background-repeat: no-repeat;
+}
+.icon_backArrow:active
+{
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 7pt;
+    vertical-align: bottom;
+    text-align: center;
+    background-image: url('../../Home_{{VER}}/Images/icons/allstates/arrow_left_blue.png');
+    background-position: 0px -56px;
+    background-repeat: no-repeat;
+}

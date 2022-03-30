@@ -1,0 +1,17 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblMetaSourceValueColor --> [tblMetaSourceValueColor]
+
+  colFldId --> [fldId] int **PK** identity not null
+  colFldSourceId --> [fldSourceId] int null
+  colFldFieldContext --> [fldFieldContext] nvarchar(50) null
+  colFldValue --> [fldValue] nvarchar(50) null
+  colFldColorId --> [fldColorId] int null
+

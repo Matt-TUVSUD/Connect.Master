@@ -1,0 +1,23 @@
+﻿<div class="topBanner_Container">
+    <img class="topBanner_image_default" usemap="#topbannermap" id="topbannerbackground" src="../images/topbanner/Home_{{VER}}/topbanner_english_noneselected.png" alt="Global Risk Consultants Services" />
+    <map name="topbannermap" id="topbannermap">
+        <!-- MAP FOR BUTTONS -->
+        <area id="button1" class="hoverCursor" coords="717,3,796,27" shape="rect" onmouseover="showButton('2')" onmousedown="showButton('3')" onmouseout="hideButtons()" onmouseup="setCurrentTab(utilConstants.pageId_SiteMap, utilConstants.pageId_Gauge)" alt="Site Map" href="#" />
+        <area id="button2" class="hoverCursor" coords="810,3,889,27" shape="rect" onmouseover="showButton('4')" onmousedown="showButton('5')" onmouseout="hideButtons()" onmouseup="setCurrentTab(utilConstants.pageId_AllReports, utilConstants.pageId_Gauge)" alt="All Reports" href="#" />
+        <area id="button3" class="hoverCursor" coords="902,3,981,27" shape="rect" onmouseover="showButton('6')" onmousedown="showButton('7')" onmouseout="hideButtons()" onmouseup="setCurrentTab(utilConstants.pageId_AllExports, utilConstants.pageId_Gauge)" alt="All Exports" href="#" />
+
+        <area id="button1" coords="717,3,796,27" shape="rect" onmouseover="showButton('2')" onmousedown="showButton('3')" onmouseout="hideButtons()" onmouseup="setCurrentTab(utilConstants.pageId_SiteMap, utilConstants.pageId_Gauge)" alt="Site Map" href="#" />
+        <area id="button2" coords="810,3,889,27" shape="rect" onmouseover="showButton('4')" onmousedown="showButton('5')" onmouseout="hideButtons()" onmouseup="setCurrentTab(utilConstants.pageId_AllReports, utilConstants.pageId_Gauge)" alt="All Reports" href="#" />
+        <area id="button3" coords="902,3,981,27" shape="rect" onmouseover="showButton('6')" onmousedown="showButton('7')" onmouseout="hideButtons()" onmouseup="setCurrentTab(utilConstants.pageId_AllExports, utilConstants.pageId_Gauge)" alt="All Exports" href="#" />
+    </map>
+    <!-- IMAGES FOR BUTTONS | DEFUALT DISPLAY = HIDDEN -->
+    <img class="topBanner_image" usemap="#topbannermap" src="../images/topbanner/Home_{{VER}}/topbanner_english_sitemap_hover.png" id="topbanner2" alt="Site Map" />
+    <img class="topBanner_image" usemap="#topbannermap" src="../images/topbanner/Home_{{VER}}/topbanner_english_sitemap_click.png" id="topbanner3" alt="Site Map" />
+    <img class="topBanner_image" usemap="#topbannermap" src="../images/topbanner/Home_{{VER}}/topbanner_english_allreports_hover.png" id="topbanner4" alt="All Reports" />
+    <img class="topBanner_image" usemap="#topbannermap" src="../images/topbanner/Home_{{VER}}/topbanner_english_allreports_click.png" id="topbanner5" alt="All Reports" />
+    <img class="topBanner_image" usemap="#topbannermap" src="../images/topbanner/Home_{{VER}}/topbanner_english_allexports_hover.png" id="topbanner6" alt="All Exports" />
+    <img class="topBanner_image" usemap="#topbannermap" src="../images/topbanner/Home_{{VER}}/topbanner_english_allexports_click.png" id="topbanner7" alt="All Exports" />
+
+    <span style="color: pink; position: absolute;">This is sample text</span>
+
+</div>

@@ -1,0 +1,35 @@
+﻿.GenericPg {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+}
+
+#GenericHolder {
+    color: #000;
+    background: #eee;
+    max-width: 1200px;
+    width: 100%;
+    padding: 10px;
+}
+
+#GenericHolder h1{
+    color: #000;
+    text-align: center;
+    text-decoration: underline;
+}
+
+#GenericHolder a{
+    color: #000;
+    text-decoration: underline;
+}
+
+#GenericNote {
+    font-size: 12px;
+}
+
+.k-list {
+    background: #fff;
+}

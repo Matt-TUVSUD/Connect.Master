@@ -1,0 +1,58 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" MasterPageFile="~/ClientConnectForm.master" CodeBehind="HazMap.master.vb" Inherits="GRC.Connect.Web.HazMap" %>
+<%@ Register Src="~/Home_{{VER}}/Controls/Header.ascx" TagName="Header" TagPrefix="grcRSC" %>
+
+
+<asp:Content ID="ClientConnectTestHeadContent" ContentPlaceHolderID="ClientConnectFormHead" runat="server">
+    <link rel="Stylesheet" type="text/css" href="../../css/Header/header.css" />
+    <script src="../../Lib_{{VER}}/Knockout/knockout-3.5.1.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Config/baseurl.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/global.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/util_{{VER}}.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/kendo.all.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.5.6/numeral.min.js"></script>
+    <script src="../../Lib_{{VER}}/Header/header.js" type="text/javascript"></script>
+    <script>
+        var gFilePrefix = "<%=ServerSide_FilePrefix%>"
+        var isIE = "<%=zIsIE%>"
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    
+    <style>
+        body {
+            margin:0px;
+        }
+        .noShow {
+            display:none !important;
+        }
+    </style>
+</asp:Content>
+<asp:Content ContentPlaceHolderID="ClientConnectFormBody" runat="server">
+    <!--HEADER-->
+        <header>
+            <grcRSC:Header id="header" runat="server" />
+        </header>
+    <div id="unsupported-browser" class="noShow" style="padding: 16px; color: black; border-bottom-color: grey; border-bottom-width: 1px; border-bottom-style: solid; background-color: white;">
+        <div style="margin: 0px auto; max-width: 800px;">
+            <p style="font-size: 24px;">This feature is not supported by Internet Explorer</p>
+            <p style="font-size: 16px; margin-top: 16px;">Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.</p>
+            <div style="margin-top: 12px;">
+                <a style="padding: 6px 12px; border-radius: 2px; border: 1px solid rgb(0, 120, 212); border-image: none; color: white; display: inline-block; background-color: rgb(0, 120, 212);" href="https://go.microsoft.com/fwlink/p/?LinkID=2092881 ">Download Microsoft Edge</a>
+                <a style="padding: 6px 12px; border-radius: 2px; border: 1px solid rgb(80, 80, 80); border-image: none; color: rgb(23, 23, 23); display: inline-block; background-color: white;" href="https://docs.microsoft.com/en-US/lifecycle/faq/internet-explorer-microsoft-edge">More info</a>	
+            </div>
+        </div>
+    </div>
+    <asp:ContentPlaceHolder ID="NatHazMapContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <script>
+        $("#headerInfoHldr").addClass("noShow");
+        isIE = isIE.toLowerCase() == "true" ? true : false;
+        if (isIE) {
+            $('#unsupported-browser').removeClass('noShow');
+        } else {
+            $('#unsupported-browser').addClass('noShow');
+        }
+    </script>
+</asp:Content>
+
+

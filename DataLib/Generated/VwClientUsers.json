@@ -1,0 +1,39 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colFilePrefix":null, 
+	"colReclassificationLinkGUID":"ReclassificationLinkGUID", 
+	"colUserIndex":null, 
+	"colUserTotalCount":1, 
+	"colUserCertifiedCount":1, 
+	"colFullName":"FullName", 
+	"colEzyUserId":1, 
+	"colEzyGuid":"EzyGuid", 
+	"colActiveUser":"ActiveUser", 
+	"colAccessLevel":"AccessLevel", 
+	"colAccessLevelDetails":"AccessLevelDetails", 
+	"colEmail":"Email", 
+	"colCCOnly":"CCOnly", 
+	"colDateTimeStamp":"DateTimeStamp", 
+	"colLastLogin":"LastLogin", 
+	"colComment":"Comment", 
+	"colClientComment":"ClientComment", 
+	"colRInit":"RInit", 
+	"colRReport":"RReport", 
+	"colRfu1":"Rfu1", 
+	"colRfu2":"Rfu2", 
+	"colRfu3":"Rfu3", 
+	"colROverdue1":"ROverdue1", 
+	"colROverdue2":"ROverdue2", 
+	"colROverdue3":"ROverdue3", 
+	"colExpOverdue":"ExpOverdue", 
+	"colRExpd":"RExpd", 
+	"colActionId":1
+}]

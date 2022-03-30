@@ -1,0 +1,166 @@
+﻿body {
+    background:#fff;
+}
+.switch_Container
+{
+    width: 90%;
+    overflow: hidden;
+    /*clear: both;*/
+}
+.switch_Container_6wide
+{
+    width: auto;
+    overflow: hidden;
+    /*clear: both;*/
+}
+.switch_Title
+{
+    font-size: 12pt; 
+    font-weight: bold; 
+    float: right; 
+    color: #2A2A2A; 
+    text-decoration: none;
+}
+.switch_TitleSecondary
+{
+    font-size: 14pt; 
+    font-weight: bold; 
+    width: 100%;
+    text-align: center;
+    color: #2A2A2A; 
+    text-decoration: none;
+}
+.switch_InstructionsSecondary
+{
+    font-size: 8pt; 
+    font-weight: normal; 
+    width: 100%;
+    text-align: center;
+    color: Blue; 
+    text-decoration: none;
+}
+.switch_NoticeSecondary
+{
+    font-size: 10pt; 
+    font-weight: normal; 
+    width: 100%;
+    text-align: center;
+    color: Red; 
+    text-decoration: none;
+}
+.switch_TopBannerTabActive
+{
+    float: left;
+    width: 175px;
+    height: 36px;
+    cursor: pointer;
+	font-weight: bold;
+    background-color: #165597;
+    background-image: none; /*url('../../Home_{{VER}}/Images/banners/banner_top_tabs_mirrored.png');*/
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+.switch_TopBannerTabInactive
+{
+    float: left;
+    width: 175px;
+    height: 36px;
+    cursor: pointer;
+    color: #E6E6E6;
+	/*font-weight: bold;*/
+    background-color: #1c6dc3;
+    background-image: none; /*url('../../Home_{{VER}}/Images/banners/banner_top_tabs_mirrored.png');*/
+    background-position: 0px -36px;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+.switch_TopBannerTabInactive:hover
+{
+    float: left;
+    width: 175px;
+    height: 36px;
+    cursor: pointer;
+    color: #cdcdcd;
+	/*font-weight: bold;*/
+    background-color: #0046ad;
+    background-image: none; /*url('../../Home_{{VER}}/Images/banners/banner_top_tabs_mirrored.png');*/
+    background-position: 0px -0px;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+.switch_TopBannerTabInactive:active
+{
+    float: left;
+    width: 175px;
+    height: 36px;
+    cursor: pointer;
+	/*font-weight: bold;*/
+	color: White;
+    background-color: #0046ad;
+    background-image: none; /*url('../../Home_{{VER}}/Images/banners/banner_top_tabs_mirrored.png');*/
+    background-position: 0px -0px;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+.switch_TabContainer
+{
+    width: 1235px;
+    height: 68px;
+	color: #FFFFFF; /*#C6D1DE;*/ 
+	font-size: 11pt; 
+	line-height: 32px;
+	text-decoration: underline;
+	text-align: center; 
+    overflow: hidden;
+}
+.switch_CellContainer
+{
+    font-family: Arial;
+    font-size: 8pt;
+    width: auto;
+    /*height: 560px;*/
+    overflow: hidden;
+    overflow-y: auto;
+}
+.switch_CellContainerOutside
+{
+    border: 1px solid #5A5A5A;
+    background:#fff;
+}
+.switch_Cell
+{
+    float: left;
+    width: 225px;
+    padding: 8px;
+    line-height: 16px;
+    min-height: 525px;
+    overflow: hidden;
+}
+.switch_Cell a:hover
+{
+    text-decoration: none;
+}
+.switch_CellMiddle
+{
+    border-right: 1px dotted #CCCCCC;
+    /*height: 100%;*/
+    min-height: 525px;
+    position: relative;
+    overflow: hidden;
+}
+.switch_CellLeft
+{
+    border-right: 1px dotted #CCCCCC;
+    /*height: 100%;*/
+    min-height: 525px;
+    position: relative;
+    overflow: hidden;
+}
+.switch_CellRight
+{
+    /*height: 100%;*/
+    min-height: 525px;
+    position: relative;
+    overflow: hidden;
+}

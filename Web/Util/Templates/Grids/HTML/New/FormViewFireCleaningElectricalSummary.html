@@ -1,0 +1,164 @@
+﻿<!-- FOR KENDO GRID ROW DETAIL TEMPLATES -->
+<!-- CELL DATA REPLACERS USE #= NameOfField # -->
+<!-- AVOID USING # AS A CHARACTER IN THE TEMPLATE -->
+<!-- IF USING A CLASS LOOKUP TO THE GRID, MAKE SURE THAT CLASS IS IN THE COLUMN TEMPLATE -->
+<!-- SCRIPTS INCLUDED HERE GET RUN EVERY TIME THE DETAIL POPUP IS OPENED -->
+<!-- WHEN COPIED TO THE DATABASE, THE HTML AND JS MUST BE ALL IN ONE LINE -->
+<!-- DO NOT USE DOUBLE QUOTES IN JS OR HTML -->
+<!-- DO NOT USE COMMENTS IN JS, ALL ONE LINE COMMENTS WILL NOT RUN CODE -->
+
+<!-- FormViewNameOfGrid LAYOUT -->
+<div id='divDetailForm_#= uid #' class='divDetailForm'>
+    
+    <div class='LDHead'>
+        Location Detail</div>
+    <!--Row 1-->
+    <div class='LDInfo'>
+        <div>
+            <span id='lblFileNo'>File No.</span>
+            <input id='FileNo' readonly='readonly' type='text' value='#= FileNo #' />
+            <span id='lblClientLocID'>Client Loc. ID</span>
+            <input id='ClientLocNo' readonly='readonly' type='text' value='#= ClientLocNo #' />
+        </div>
+        <!--Row 2-->
+        <div>
+            <span id='lblAddress'>Address</span>
+            <input id='Address' readonly='readonly' type='text' value='#= Address #' />
+            <span id='lblCity'>City</span>
+            <input id='City' readonly='readonly' type='text' value='#= City #' />
+            <span id='lblStProv'>St/Prov</span>
+            <input id='StProv' readonly='readonly' type='text' value='#= StProv #' />
+            <span id='lblCountry'>Country</span>
+            <input id='Country' readonly='readonly' type='text' value='#= Country #' />
+        </div>
+        <!--Row 3-->
+        <div>
+            <span id='lblDivision'>Division</span>
+            <input id='Division' readonly='readonly' type='text' value='#= Division #' />
+            <span id='lblFacility'>Facility</span>
+            <input id='Facility' readonly='readonly' type='text' value='#= Facility #' />
+        </div>
+    </div>
+    <div class='FVTIV'>
+        <div id='lblTIV'>TIV</div>
+        <div>(millions)</div>
+        <div>
+            <input id='TIV' readonly='readonly' type='text' value='#= TIV #' />
+        </div>
+    </div>
+    <div class='FVTIV'>
+        <div>Date Of</div>
+        <div>Inspection</div>
+        <div>
+            <input id='SurveyDateString' readonly='readonly' type='text' value='#= SurveyDateString #' />
+        </div>
+    </div>
+    <div class='FVTable'>
+        <table cellspacing='0' cellpadding='2'>
+            <tr class='th'>
+                <td colspan='2' class='rb'>
+                    Cleaning
+                </td>
+                <td colspan='3' class='b'>
+                    Electrical
+                </td>
+            </tr>
+            <tr class='tch'>
+                <td class='rb'>
+                    Hoods/Ducts<br />
+                    Cleaned - 6<br />
+                    Months
+                </td>
+                <td class='hrb'>
+                    Filters<br />
+                    Clean/Grease<br />
+                    Cup
+                </td>
+                <td class='rb'>
+                    Elect. Heavy-<br />
+                    Duty Ext. Cords<br />
+                    Only Temp.
+                </td>
+                <td class='rb'>
+                    Undam. Elect.<br />
+                    Equip.<br />
+                    Properly<br />
+                    Covered
+                </td>
+                <td class='b'>
+                    36in Clearance<br />
+                    in Front of Elec.<br />
+                    Panels
+                </td>
+            </tr>
+            <tr class='tch'>
+                <td class='r'>
+                    <input style='width: 90px' id='ExhaustHoodsDuct' readonly='readonly' type='text' value='#= ExhaustHoodsDuct #' />
+                    <input id='ExhaustHoodsDuctC' readonly='readonly' type='text' value='#= ExhaustHoodsDuctC #' class='hidden' />
+                </td>
+                <td class='hr'>
+                    <input style='width: 90px' id='FiltersForCooking' readonly='readonly' type='text' value='#= FiltersForCooking #' />
+                    <input id='FiltersForCookingC' readonly='readonly' type='text' value='#= FiltersForCookingC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 90px' id='ElectExtCords' readonly='readonly' type='text' value='#= ElectExtCords #' />
+                    <input id='ElectExtCordsC' readonly='readonly' type='text' value='#= ElectExtCordsC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 90px' id='ElectEquipFreeDam' readonly='readonly' type='text' value='#= ElectEquipFreeDam #' />
+                    <input id='ElectEquipFreeDamC' readonly='readonly' type='text' value='#= ElectEquipFreeDamC #' class='hidden' />
+                </td>
+                <td class='outside-bottom-right'>
+                    <input style='width: 90px' id='ThirtySixClearance' readonly='readonly' type='text' value='#= 36Clearance #' />
+                    <input id='ThirtySixClearanceC' readonly='readonly' type='text' value='#= ThirtySixClearanceC #' class='hidden' />
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <br />
+
+    <div class='tableDiv'>
+        <div style='margin: auto; width: 100%; text-align: center;'>
+            <span style='margin: auto; width: 100%; text-align: center;'><button class='k-button' onclick='globalCloseFormView(); return false;'>Close</button></span>
+        </div>
+    </div>
+</div>
+<script>
+    /*LOAD THE CSS*/
+    var zLink = "<link rel='stylesheet' type='text/css' href='../../../css/FormView/FormView.css'>";
+    $(zLink).appendTo('head');
+
+    setTimeout(function () {
+        var zUID = '#= uid #';
+
+        /* COLOR REPLACEMENTS REMIX*/
+        var colorItems = [
+			'ExhaustHoodsDuct',
+			'FiltersForCooking',
+			'ElectExtCords',
+			'ElectEquipFreeDam',
+			'36Clearance'
+        ];
+        for (i = 0; i < colorItems.length; i++){
+            var zColor = 'transparent';
+            zColor = $('[data-uid=' + zUID + '] .' + colorItems[i] + 'Color').css('background-color');
+            $('\\#divDetailForm_' + zUID + ' \\#' + colorItems[i] + '').css('background-color', zColor);
+        }
+
+        /* FORMAT DATES GLOBAL REMIX */
+        $('\\#divDetailForm_' + zUID + ' input').each(function(){
+            if( $(this).attr('id').toLowerCase().indexOf('date') > -1 ){
+                $(this).val(global.formatShortDateWithMonth($(this).val()));
+            }
+        });
+
+        /* REMOVE NULLS GLOBAL REMIX */
+        $('\\#divDetailForm_' + zUID + ' input').each(function(){
+            if( ($(this).val() == 'null') || ($(this).val() == 'undefined') ){
+                $(this).val('');
+            }
+        });
+
+    }, 50);
+</script>

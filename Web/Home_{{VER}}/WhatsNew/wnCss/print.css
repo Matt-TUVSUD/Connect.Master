@@ -1,0 +1,26 @@
+﻿body{
+    font-size: 12px;
+    font-family: arial;
+    text-align: left;
+}
+
+.printAllContainer,
+button.printThis{
+    display: none;
+}
+
+#bluebar{
+    display: none;
+}
+
+.content p{
+    page-break-inside: avoid;
+}
+
+#content{
+    padding-bottom: 0px !important;
+}
+
+p.center img.printSize{
+    max-width: 600px;
+}

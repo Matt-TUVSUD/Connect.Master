@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MetaCloneGrid" xml:space="preserve">
+    <value>DECLARE @tables table (fldName nvarchar(50))
+DECLARE @tablename nvarchar(100)
+DECLARE @colname nvarchar(100)
+DECLARE @insertSQL nvarchar(max)
+DECLARE @colSQL nvarchar(max)
+DECLARE @valSQL nvarchar(max)
+DECLARE @gridIdentity int
+DECLARE @sql nvarchar(max)
+
+INSERT INTO @tables(fldName) values('tblMetaGrid')
+INSERT INTO @tables(fldName) values('tblMetaGridColumn')
+
+SET @sql = 'DECLARE @insertedGridIdentity int, @clonedGridIdentity int' + CHAR(13)+CHAR(10)
+SET @sql = @sql + 'BEGIN TRANSACTION ' + CHAR(13)+CHAR(10)
+DECLARE TableCursor CURSOR FOR SELECT fldName from @tables 
+OPEN TableCursor
+FETCH NEXT FROM TableCursor INTO @tablename
+WHILE @@FETCH_STATUS=0
+	BEGIN
+		SET @colSQL = ''
+		SET @valSQL = ''
+		
+		DECLARE ColumnCursor CURSOR FOR SELECT name from sys.columns where object_id=object_id(@tablename) and is_identity=0
+		OPEN ColumnCursor
+		FETCH NEXT FROM ColumnCursor INTO @colname
+		WHILE @@FETCH_STATUS=0
+			BEGIN	
+			SET @colSQL = COALESCE(@colSQL,'') + '[' + @colname + '],'
+			
+			IF (@tablename='tblMetaGridColumn' AND @colname='fldMetaGridId') 
+				SET @valSQL = COALESCE(@valSQL,'') + '@insertedGridIdentity,'
+			ELSE
+				IF (@tablename='tblMetaGrid' AND @colname='fldGridName') 
+					SET @valSQL = COALESCE(@valSQL,'') +  '''CLONE of '' + [' + @colname + '],'
+				ELSE
+					SET @valSQL = COALESCE(@valSQL,'') + '[' + @colname + '],'	
+								
+			FETCH NEXT FROM ColumnCursor INTO @colname
+			END
+
+		IF (@tablename='tblMetaGrid')
+			BEGIN
+				SET @insertSQL = 'INSERT INTO ' + @tablename + ' (' + left(@colSQL,len(@colSQL)-1) + ') SELECT ' + left(@valSQL,len(@valSQL)-1) + ' FROM ' +  @tablename + ' WHERE fldId=@clonedGridIdentity; ' + CHAR(13)+ CHAR(10) 
+				SET @sql = @sql + @insertSQL
+				SET @sql = @sql + 'SET @insertedGridIdentity = (Select @@Identity);' + CHAR(13)+ CHAR(10) 			
+			END
+		ELSE 
+			BEGIN
+				SET @insertSQL = 'INSERT INTO ' + @tablename + ' (' + left(@colSQL,len(@colSQL)-1) + ') SELECT ' + left(@valSQL,len(@valSQL)-1) + ' FROM ' +  @tablename + ' WHERE fldMetaGridId=@clonedGridIdentity; ' + CHAR(13)+ CHAR(10) 		
+				SET @sql = @sql + @insertSQL
+			END
+
+		
+		CLOSE COLUMNCURSOR
+		DEALLOCATE COLUMNCURSOR
+	
+		FETCH NEXT FROM TableCursor INTO @tablename
+	END
+
+SET @sql = @sql + 'COMMIT TRANSACTION'
+	
+
+CLOSE TableCursor
+DEALLOCATE TableCursor
+print @sql
+EXEC sp_executesql @stmt=@sql</value>
+  </data>
+  <data name="MetaGetCurrencyView" xml:space="preserve">
+    <value>SELECT     tblMetaCurrencyConversionFactor.fldId, tblMetaCurrencyConversionFactor.fldClientCurrencyId, fc.fldCode AS fldFromCode, tc.fldCode AS fldToCode, 
+                      tblMetaCurrencyConversionFactor.fldExchangeRate
+FROM         tblMetaCurrencyConversionFactor INNER JOIN
+                      tblMetaCurrency AS tc ON tblMetaCurrencyConversionFactor.fldCurrencyIdTo = tc.fldId INNER JOIN
+                      tblMetaCurrency AS fc ON tblMetaCurrencyConversionFactor.fldCurrencyIdFrom = fc.fldId</value>
+  </data>
+  <data name="MetaGetLossEstAfterView" xml:space="preserve">
+    <value>SELECT    tblMetaLossEstimate.fldId, tblMetaLossEstimate.fldClientCurrencyId, tblMetaLossEstimate.fldCurrencyId, tblMetaLossEstimate.fldLossEstimateTypeId, 
+                      tblMetaLossEstimate.fldIndexNo, tblMetaLossEstimate.fldRangeText, tblMetaLossEstimate.fldRangeDisplay, tblMetaLossEstimate.fldRangeValueLow, 
+                      tblMetaLossEstimate.fldRangeValueHigh, tblMetaCurrency.fldCode
+FROM         tblMetaLossEstimate INNER JOIN
+                      tblMetaCurrency ON tblMetaLossEstimate.fldCurrencyId = tblMetaCurrency.fldId
+WHERE fldLossEstimateTypeId=2</value>
+  </data>
+  <data name="MetaGetLossEstBeforeView" xml:space="preserve">
+    <value>SELECT    tblMetaLossEstimate.fldId, tblMetaLossEstimate.fldClientCurrencyId, tblMetaLossEstimate.fldCurrencyId, tblMetaLossEstimate.fldLossEstimateTypeId, 
+                      tblMetaLossEstimate.fldIndexNo, tblMetaLossEstimate.fldRangeText, tblMetaLossEstimate.fldRangeDisplay, tblMetaLossEstimate.fldRangeValueLow, 
+                      tblMetaLossEstimate.fldRangeValueHigh, tblMetaCurrency.fldCode
+FROM         tblMetaLossEstimate INNER JOIN
+                      tblMetaCurrency ON tblMetaLossEstimate.fldCurrencyId = tblMetaCurrency.fldId
+WHERE fldLossEstimateTypeId=1</value>
+  </data>
+  <data name="MetaGetLossEstCostView" xml:space="preserve">
+    <value>SELECT    tblMetaLossEstimate.fldId, tblMetaLossEstimate.fldClientCurrencyId, tblMetaLossEstimate.fldCurrencyId, tblMetaLossEstimate.fldLossEstimateTypeId, 
+                      tblMetaLossEstimate.fldIndexNo, tblMetaLossEstimate.fldRangeText, tblMetaLossEstimate.fldRangeDisplay, tblMetaLossEstimate.fldRangeValueLow, 
+                      tblMetaLossEstimate.fldRangeValueHigh, tblMetaCurrency.fldCode
+FROM         tblMetaLossEstimate INNER JOIN
+                      tblMetaCurrency ON tblMetaLossEstimate.fldCurrencyId = tblMetaCurrency.fldId
+WHERE fldLossEstimateTypeId=3</value>
+  </data>
+  <data name="MetaGetSourceViewQuery" xml:space="preserve">
+    <value>select * from 
+(
+Select g.fldId, v.name as source, m.definition,  g.fldGridName as GridName, g.fldGridPageTitle as GridTitle, c.name as field from sys.columns c INNER JOIN
+SYS.views v ON c.object_id=v.object_id	INNER JOIN
+SYS.sql_modules m ON v.object_id=m.object_id INNER JOIN
+tblMetaSource s ON s.fldObjectName=v.name 
+INNER JOIN
+tblMetaGrid g ON g.fldsourceid=s.fldId
+) a
+ORDER BY source</value>
+  </data>
+</root>

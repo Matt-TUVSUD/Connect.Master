@@ -1,0 +1,74 @@
+﻿.divDetailForm {line-height: normal !important;}
+div.LDHead{width:625px;text-align:center;font-size:8pt;font-weight:bold;}
+
+div.LDInfo{width:625px;text-align:left;float:left;height:58px; font-size:7pt;}
+div.LDInfo div{width:625px;font-size:7pt;}
+
+div.LDInfo div #lblFileNo{margin-right:7px;}
+div.LDInfo div #lblClientLocID{margin-right:5px;}
+div.LDInfo div #lblAddress{margin-right:5px;}
+div.LDInfo div #lblCity{margin-right:19px;  margin-left:5px;}
+div.LDInfo div #lblStProv{margin-right:6px;}
+div.LDInfo div #lblCountry{margin-right:5px;}
+div.LDInfo div #lblDivision{margin-right:7px;}
+div.LDInfo div #lblFacility{margin-right:5px; margin-left:5px;}
+            
+div.LDInfo div input{font-size:7pt; border: 1px solid #AAAAAA; }
+div.LDInfo div input#fileno,
+div.LDInfo div input#FileNo{text-align:left;width:80px; margin-right:5px;}
+div.LDInfo div input#clientlocno,
+div.LDInfo div input#ClientLocNo{text-align:left;width:100px;}
+div.LDInfo div input#address,
+div.LDInfo div input#Address{text-align:left;width:250px;}
+div.LDInfo div input#city,
+div.LDInfo div input#City{text-align:left;width:76px; margin-right:5px;}
+div.LDInfo div input#stprov,
+div.LDInfo div input#StProv{text-align:center;width:25px; margin-right:5px;}
+div.LDInfo div input#country,
+div.LDInfo div input#Country{text-align:left;width:80px; margin-right:5px;}
+div.LDInfo div input#division,
+div.LDInfo div input#Division{text-align:left;width:250px;}
+div.LDInfo div input#facility,
+div.LDInfo div input#Facility{text-align:left;width:273px;}
+
+div.FVTIV{text-align:center;width:70px;float:left;position:relative;top:4px;}
+div.FVTIV div{font-size:8pt;font-weight:bold;}
+div.FVTIV div input{font-size:7pt;text-align:center;border:solid 1px #AAAAAA;width:65px;}
+
+div.FVTable{padding-bottom:5px; clear: both;}
+div.FVTable table{border: 1px solid #AAAAAA; width: auto !important;}
+div.FVTable table tr.th td{font-size:8pt;font-weight:bold;text-align:center; border: 1px solid #AAAAAA;}
+div.FVTable table tr.th td.rb{border-right:1px solid #AAAAAA;border-bottom:1px solid #AAAAAA;}
+div.FVTable table tr.th td.b{border-bottom:1px solid #AAAAAA;}
+div.FVTable table tr.tch td{font-size:7pt;text-align:center;}
+div.FVTable table td{border: 1px solid #AAAAAA;}
+div.FVTable table td.b{border-bottom:1px solid #AAAAAA;}
+div.FVTable table td.r{border-right:1px solid #AAAAAA;}
+div.FVTable table td.hr{border-right:1px solid #AAAAAA;}
+div.FVTable table td.rb{border-right:1px solid #AAAAAA;border-bottom:1px solid #AAAAAA;}
+div.FVTable table td.hrb{border-right:1px solid #AAAAAA;border-bottom:1px solid #AAAAAA;}
+div.FVTable table td input{font-size:7pt;border:1px solid #AAAAAA;width:65px;}
+
+div.OK{width:100%;text-align:center;}
+
+.center-7pt-red{font-size:7pt;text-align:center;background-color:#FF0000;border:solid 1px #AAAAAA;}
+.center-7pt-yellow{font-size:7pt;text-align:center;background-color:#FFFF00;border:solid 1px #AAAAAA;}
+.center-7pt-green{font-size:7pt;text-align:center;background-color:#00FF00;border:solid 1px #AAAAAA;}
+.center-7pt-blue{font-size:7pt;text-align:center;background-color:#0000FF;border:solid 1px #AAAAAA;}
+.center-7pt-white{font-size:7pt;text-align:center;background-color:#FFFFFF;border:solid 1px #AAAAAA;}
+
+.BordersAndBackground
+{
+    background-color: #C6D1DE; /* THIS DOES NOT GET APPLIED OR OVER-WRITTEN - MUST BE INLINE */
+    border: 1px solid #AAAAAA;
+    box-shadow: 2px 2px 8px #444444;
+	-moz-box-shadow: 2px 2px 8px #444444;
+	-webkit-box-shadow: 2px 2px 8px #444444;
+}
+
+/* Fixes for table view - kendo override */
+div.FVTable table,
+div.FVTable table tr td{
+    width: auto !important;
+    line-height: normal !important;
+}

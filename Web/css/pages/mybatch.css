@@ -1,0 +1,164 @@
+﻿.MyBatchPg {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+}
+
+#MyBatchHolder {
+    color: #000;
+    background: #eee;
+    max-width: 1200px;
+    width: 100%;
+    padding: 10px;
+}
+
+#MyBatchHolder h1{
+    color: #000;
+    text-align: center;
+    text-decoration: underline;
+}
+
+#MyBatchHolder a{
+    color: #000;
+    text-decoration: underline;
+}
+
+.k-list {
+    background: #fff;
+}
+
+
+.mybatch_Column1
+{
+    width: 150px;
+    height: 24px;
+    padding-left: 3px;
+    padding-right: 3px;
+    display: table-cell;
+    vertical-align: middle;
+}
+.mybatch_Column2
+{
+    width: 100px;
+    height: 24px;
+    padding-left: 3px;
+    padding-right: 3px;
+    display: table-cell;
+    vertical-align: middle;
+}
+.mybatch_Column3
+{
+    width: auto;
+    height: 24px;
+    padding-left: 3px;
+    padding-right: 3px;
+    display: table-cell;
+    vertical-align: middle;
+}
+.mybatch_Heading
+{
+    text-align: left;
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+
+/*Batch Reports Slider Styles*/
+
+.batchHldr {
+    /*width: 1400px;*/
+    width:1560px;
+    overflow: auto;
+    overflow-y: hidden;
+    display: block;
+    white-space: nowrap;
+    margin: 0 auto;
+}
+
+ #batchReports_slider{
+    /*height:535px;
+    float:left;*/
+    background-color:#ffffff;
+    overflow:auto;
+}
+
+#batchReports_slider .overview {
+    height:535px;
+    margin:0;
+    width:2235px;
+}
+
+#batchReports_slider .overview div.batchCell{
+    float: left;
+    font-size:12px;
+    text-align:center;
+    overflow: hidden;
+    min-height:535px;
+    /*width:350px;
+    width:318px;*/
+}
+
+#batchReports_slider .overview div .batchHeading {
+    color:#ffffff;
+    font-weight:700;
+    font-size:12px;
+    display:block;
+    text-align:center;
+    margin-top:5px;
+}
+
+#batchReports_slider .overview div .practiceIcon{
+    /*width:43px;
+    height:50px;*/
+    font-size:50px;
+}
+
+#batchReports_slider .overview .k-treeview{
+    margin-top:5px;
+    min-height:500px;
+}
+
+#batchReports_slider .overview div .k-item{
+    display: block;
+    border-width: 0;
+    margin: 0;
+    padding-left: 10px;
+    text-align:left;
+    font-size:11px;
+}
+
+#batchReports_slider .buttons {
+    display: block;
+    margin: 30px 0 0;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    color:#017ac3;
+    font-weight: bold;
+    text-align: center;
+    line-height: 35px;
+    text-decoration: none;
+    font-size:44px;
+}
+
+#batchReports_slider .next {
+    margin: 30px 0 0;
+    left: auto;
+    right: 0;
+    top: 25px;
+}
+
+#batchReports_slider .disable {
+    visibility: hidden;
+}
+
+#batchReports_slider .k-treeview-lines .k-i-collapse {
+    display:none;
+}
+
+/*End Batch Reports Slider Styles*/

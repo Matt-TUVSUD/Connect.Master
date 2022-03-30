@@ -1,0 +1,14 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblClientsskiprootfolder --> [clientsskiprootfolder]
+
+  colCldbname --> [cldbname] varchar(50) null
+  colComments --> [comments] text null
+

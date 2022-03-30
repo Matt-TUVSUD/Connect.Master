@@ -1,0 +1,22 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: VwReclassificationDeletedUser --> [vwReclassificationDeletedUser]
+
+  colEzyUserID --> [EzyUserID] int not null
+  colFullName --> [FullName] varchar(50) null
+  colReclassificationAction --> [ReclassificationAction] int null
+  colReclassificationDate --> [ReclassificationDate] datetime null
+  colMarkedForDeletionDate --> [MarkedForDeletionDate] datetime null
+  colReclassificationCompletionDate --> [ReclassificationCompletionDate] datetime null
+  colMarkedForDeletion --> [MarkedForDeletion] bit null
+  colDeleteOnDate --> [DeleteOnDate] datetime null
+  colLoginId --> [LoginId] int null
+  colDeleteLogin --> [DeleteLogin] bit null
+

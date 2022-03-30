@@ -1,0 +1,21 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: VwBatchProcessingSet --> [vwBatchProcessingSet]
+
+  colFldId --> [fldId] int not null
+  colFldCreateDate --> [fldCreateDate] datetime not null
+  colFldFilePrefix --> [fldFilePrefix] nvarchar(50) not null
+  colFldGroupName --> [fldGroupName] nvarchar(50) null
+  colFldStatus --> [fldStatus] nvarchar(255) not null
+  colFldFileName --> [fldFileName] nvarchar(255) not null
+  colFldDisable --> [fldDisable] bit not null
+  colFldIsMyBatchReport --> [fldIsMyBatchReport] bit null
+  colFldCreatedByGsafeUserEmail --> [fldCreatedByGsafeUserEmail] nvarchar(100) null
+

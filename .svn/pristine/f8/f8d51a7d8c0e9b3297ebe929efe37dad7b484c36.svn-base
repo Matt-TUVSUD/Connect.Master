@@ -1,0 +1,1215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{85FBABEA-5D69-4199-85D3-756F818835C9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>GRC.Connect.Libraries.CoreLib</RootNamespace>
+    <AssemblyName>CoreLib</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>CoreLib.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>CoreLib.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ABCpdf, Version=10.1.0.2, Culture=neutral, PublicKeyToken=a7a0b3f5184f2169, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\GRCConnectDLLs\ABCpdf.dll</HintPath>
+    </Reference>
+    <Reference Include="AppJobLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\GRCConnectDLLs\AppJobLib.dll</HintPath>
+    </Reference>
+    <Reference Include="EntitySpaces.Core, Version=2012.1.930.0, Culture=neutral, PublicKeyToken=653e033684908f9c, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\GRCConnectDLLs\EntitySpaces.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EntitySpaces.DynamicQuery, Version=2012.1.930.0, Culture=neutral, PublicKeyToken=653e033684908f9c, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\GRCConnectDLLs\EntitySpaces.DynamicQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="EntitySpaces.Interfaces, Version=2012.1.930.0, Culture=neutral, PublicKeyToken=653e033684908f9c, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\GRCConnectDLLs\EntitySpaces.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EntitySpaces.Loader, Version=2012.1.930.0, Culture=neutral, PublicKeyToken=653e033684908f9c, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\GRCConnectDLLs\EntitySpaces.Loader.dll</HintPath>
+    </Reference>
+    <Reference Include="EntitySpaces.Profiler">
+      <HintPath>..\..\..\..\..\..\..\GRCConnectDLLs\EntitySpaces.Profiler.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>..\..\..\..\..\..\..\GRCConnectDLLs\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="GRC.DataTransfer.Core">
+      <HintPath>..\..\..\..\..\..\..\GRCConnectDLLs\GRC.DataTransfer.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GRC.EDA.PMClient">
+      <HintPath>..\..\..\..\..\..\..\GRCConnectDLLs\GRC.EDA.PMClient.dll</HintPath>
+    </Reference>
+    <Reference Include="GRC.EmailClient, Version=2.16.2016.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\GRCConnectDLLs\GRC.EmailClient.dll</HintPath>
+    </Reference>
+    <Reference Include="GRC.Excel">
+      <HintPath>..\..\..\..\..\..\..\..\Tools\GRC\API\GRC.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="GRC.MSOffice">
+      <HintPath>..\..\..\..\..\..\..\GRCConnectDLLs\GRC.MSOffice.dll</HintPath>
+    </Reference>
+    <Reference Include="GRC.Resources, Version=12.10.2015.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Tools\GRC\ResourcesBin\GRC.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Tools\JSON.Net\Bin\Net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenHtmlToPdf, Version=1.12.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\GRCConnectDLLs\OpenHtmlToPdf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Telerik.Web.UI, Version=2021.1.119.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\GRCConnectDLLs\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="GRC.Connect.Libraries.CoreLib" />
+    <Import Include="GRC.Connect.Libraries.CoreLib.BusinessObjects" />
+    <Import Include="GRC.Connect.Libraries.DataLib" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Text" />
+    <Import Include="System.Web" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomExtensions\DataRowExtensions.vb" />
+    <Compile Include="Custom\EzyUsers.AccountManagement.vb" />
+    <Compile Include="Custom\GSafePreferences.vb" />
+    <Compile Include="Custom\GSafePreferencesCollection.vb" />
+    <Compile Include="Custom\GSafePreferencesQuery.vb" />
+    <Compile Include="Custom\GSafeSlideMenu.vb" />
+    <Compile Include="Custom\GSafeSlideMenuCollection.vb" />
+    <Compile Include="Custom\GSafeSlideMenuQuery.vb" />
+    <Compile Include="Custom\PSRecommendations.vb" />
+    <Compile Include="Custom\PSRecommendationsCollection.vb" />
+    <Compile Include="Custom\PSRecommendationsQuery.vb" />
+    <Compile Include="Custom\SelfAuditRecommendationsCollection.vb" />
+    <Compile Include="Custom\SelfAuditRecommendationsQuery.vb" />
+    <Compile Include="Custom\TblMetaColor.vb" />
+    <Compile Include="Custom\TblMetaColorCollection.vb" />
+    <Compile Include="Custom\TblMetaColorQuery.vb" />
+    <Compile Include="Custom\TblMetaRatingKey.vb" />
+    <Compile Include="Custom\TblMetaRatingKeyCollection.vb" />
+    <Compile Include="Custom\TblMetaRatingKeyQuery.vb" />
+    <Compile Include="Custom\TblMetaRatingKeyRange.vb" />
+    <Compile Include="Custom\TblMetaRatingKeyRangeCollection.vb" />
+    <Compile Include="Custom\TblMetaRatingKeyRangeQuery.vb" />
+    <Compile Include="Custom\TblMetaRecImpact.vb" />
+    <Compile Include="Custom\TblMetaRecImpactCollection.vb" />
+    <Compile Include="Custom\TblMetaRecImpactQuery.vb" />
+    <Compile Include="Custom\TblMetaRecIntendedAction.vb" />
+    <Compile Include="Custom\TblMetaRecIntendedActionCollection.vb" />
+    <Compile Include="Custom\TblMetaRecIntendedActionQuery.vb" />
+    <Compile Include="Custom\TblMetaRecMgmtIntendedAction.vb" />
+    <Compile Include="Custom\TblMetaRecMgmtIntendedActionCollection.vb" />
+    <Compile Include="Custom\TblMetaRecMgmtIntendedActionQuery.vb" />
+    <Compile Include="Custom\TblMetaRecStatus.vb" />
+    <Compile Include="Custom\TblMetaRecStatusCollection.vb" />
+    <Compile Include="Custom\TblMetaRecStatusQuery.vb" />
+    <Compile Include="Custom\TblMetaRecThirdLevelIntendedAction.vb" />
+    <Compile Include="Custom\TblMetaRecThirdLevelIntendedActionCollection.vb" />
+    <Compile Include="Custom\TblMetaRecThirdLevelIntendedActionQuery.vb" />
+    <Compile Include="Custom\TblMetaRecType.vb" />
+    <Compile Include="Custom\TblMetaRecTypeCollection.vb" />
+    <Compile Include="Custom\TblMetaRecTypePairPractice.vb" />
+    <Compile Include="Custom\TblMetaRecTypePairPracticeCollection.vb" />
+    <Compile Include="Custom\TblMetaRecTypePairPracticeQuery.vb" />
+    <Compile Include="Custom\TblMetaRecTypeQuery.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowDocManagerDiversified.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowDocManagerDiversifiedCollection.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowDocManagerDiversifiedQuery.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowDocManagerNH.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowDocManagerNHCollection.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowDocManagerNHQuery.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowDocManagerPS.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowDocManagerPSCollection.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowDocManagerPSQuery.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowRecResponseDiversified.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowRecResponseDiversifiedCollection.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowRecResponseDiversifiedQuery.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowRecResponseNH.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowRecResponseNHCollection.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowRecResponseNHQuery.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowRecResponsePS.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowRecResponsePSCollection.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowRecResponsePSQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationInspectionDiversified.vb" />
+    <Compile Include="Custom\ViewCCLocationInspectionDiversifiedCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationInspectionDiversifiedQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationInspectionNH.vb" />
+    <Compile Include="Custom\ViewCCLocationInspectionNHCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationInspectionNHQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationInspectionPS.vb" />
+    <Compile Include="Custom\ViewCCLocationInspectionPSCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationInspectionPSQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationListingDiversified.vb" />
+    <Compile Include="Custom\ViewCCLocationListingDiversifiedBase.vb" />
+    <Compile Include="Custom\ViewCCLocationListingDiversifiedBaseCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationListingDiversifiedBaseQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationListingDiversifiedCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationListingDiversifiedQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationListingNH.vb" />
+    <Compile Include="Custom\ViewCCLocationListingNHBase.vb" />
+    <Compile Include="Custom\ViewCCLocationListingNHBaseCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationListingNHBaseQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationListingNHCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationListingNHGroupBy.vb" />
+    <Compile Include="Custom\ViewCCLocationListingNHGroupByCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationListingNHGroupByQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationListingNHQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationListingNHRating.vb" />
+    <Compile Include="Custom\ViewCCLocationListingNHRatingCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationListingNHRatingQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationListingNHRecommendation.vb" />
+    <Compile Include="Custom\ViewCCLocationListingNHRecommendationCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationListingNHRecommendationQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationListingPS.vb" />
+    <Compile Include="Custom\ViewCCLocationListingPSBase.vb" />
+    <Compile Include="Custom\ViewCCLocationListingPSBaseCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationListingPSBaseQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationListingPSCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationListingPSQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationListingRecResponsePS.vb" />
+    <Compile Include="Custom\ViewCCLocationListingRecResponsePSCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationListingRecResponsePSQuery.vb" />
+    <Compile Include="Custom\ViewCCNHRecommendationGrid.vb" />
+    <Compile Include="Custom\ViewCCNHRecommendationGridCollection.vb" />
+    <Compile Include="Custom\ViewCCNHRecommendationGridQuery.vb" />
+    <Compile Include="Custom\ViewCCPSRecommendationCounts.vb" />
+    <Compile Include="Custom\ViewCCPSRecommendationCountsCollection.vb" />
+    <Compile Include="Custom\ViewCCPSRecommendationCountsQuery.vb" />
+    <Compile Include="Custom\ViewCCPSRecommendationGrid.vb" />
+    <Compile Include="Custom\ViewCCPSRecommendationGridCollection.vb" />
+    <Compile Include="Custom\ViewCCPSRecommendationGridQuery.vb" />
+    <Compile Include="Custom\VwFireRatingBaseView.vb" />
+    <Compile Include="Custom\VwFireRatingBaseViewCollection.vb" />
+    <Compile Include="Custom\VwFireRatingBaseViewQuery.vb" />
+    <Compile Include="Custom\VwFireRecommendationsBaseView.vb" />
+    <Compile Include="Custom\VwFireRecommendationsBaseViewCollection.vb" />
+    <Compile Include="Custom\VwFireRecommendationsBaseViewQuery.vb" />
+    <Compile Include="Custom\VwFireRecommendationsFollowUpBaseView.vb" />
+    <Compile Include="Custom\VwFireRecommendationsFollowUpBaseViewCollection.vb" />
+    <Compile Include="Custom\VwFireRecommendationsFollowUpBaseViewQuery.vb" />
+    <Compile Include="Custom\VwMetaRecTypePair.vb" />
+    <Compile Include="Custom\VwMetaRecTypePairCollection.vb" />
+    <Compile Include="Custom\VwMetaRecTypePairQuery.vb" />
+    <Compile Include="Export\GRCTextExport.vb" />
+    <Compile Include="GDC\RatingTrend.vb" />
+    <Compile Include="Generated\GSafePreferences.vb" />
+    <Compile Include="Generated\GSafeSlideMenu.vb" />
+    <Compile Include="Generated\NavLink.vb" />
+    <Compile Include="Generated\PSRecommendations.vb" />
+    <Compile Include="Generated\SelfAuditRecommendations.vb" />
+    <Compile Include="Generated\TblARISELocations.vb" />
+    <Compile Include="Generated\TblFileType.Custom.vb" />
+    <Compile Include="CustomExtensions\DictionaryExtensions.vb" />
+    <Compile Include="CustomExtensions\StringExtensions.vb" />
+    <Compile Include="Export\GRCMSOfficeExcel.vb" />
+    <Compile Include="Export\UtilExport.vb" />
+    <Compile Include="Generated\TblMetaColor.vb" />
+    <Compile Include="Generated\TblMetaRatingKey.vb" />
+    <Compile Include="Generated\TblMetaRatingKeyRange.vb" />
+    <Compile Include="Generated\TblMetaRecImpact.vb" />
+    <Compile Include="Generated\TblMetaRecIntendedAction.vb" />
+    <Compile Include="Generated\TblMetaRecMgmtIntendedAction.vb" />
+    <Compile Include="Generated\TblMetaRecStatus.vb" />
+    <Compile Include="Generated\TblMetaRecThirdLevelIntendedAction.vb" />
+    <Compile Include="Generated\TblMetaRecType.vb" />
+    <Compile Include="Generated\TblMetaRecTypePair.vb" />
+    <Compile Include="Generated\TblMetaRecTypePairPractice.vb" />
+    <Compile Include="Generated\ViewCCAdminWindowDocManagerDiversified.vb" />
+    <Compile Include="Generated\ViewCCAdminWindowDocManagerNH.vb" />
+    <Compile Include="Generated\ViewCCAdminWindowDocManagerPS.vb" />
+    <Compile Include="Generated\ViewCCAdminWindowRecResponseDiversified.vb" />
+    <Compile Include="Generated\ViewCCAdminWindowRecResponseNH.vb" />
+    <Compile Include="Generated\ViewCCAdminWindowRecResponsePS.vb" />
+    <Compile Include="Generated\ViewCCLocationInspectionDiversified.vb" />
+    <Compile Include="Generated\ViewCCLocationInspectionNH.vb" />
+    <Compile Include="Generated\ViewCCLocationInspectionPS.vb" />
+    <Compile Include="Generated\ViewCCLocationListingDiversified.vb" />
+    <Compile Include="Generated\ViewCCLocationListingDiversifiedBase.vb" />
+    <Compile Include="Generated\ViewCCLocationListingNH.vb" />
+    <Compile Include="Generated\ViewCCLocationListingNHBase.vb" />
+    <Compile Include="Generated\ViewCCLocationListingNHGroupBy.vb" />
+    <Compile Include="Generated\ViewCCLocationListingNHRating.vb" />
+    <Compile Include="Generated\ViewCCLocationListingNHRecommendation.vb" />
+    <Compile Include="Generated\ViewCCLocationListingPS.vb" />
+    <Compile Include="Generated\ViewCCLocationListingPSBase.vb" />
+    <Compile Include="Generated\ViewCCLocationListingRecResponsePS.vb" />
+    <Compile Include="Generated\ViewCCNHRecommendationGrid.vb" />
+    <Compile Include="Generated\ViewCCPSRecommendationCounts.vb" />
+    <Compile Include="Generated\ViewCCPSRecommendationGrid.vb" />
+    <Compile Include="Generated\VwFireRatingBaseView.vb" />
+    <Compile Include="Generated\VwFireRecommendationsBaseView.vb" />
+    <Compile Include="Generated\VwFireRecommendationsFollowUpBaseView.vb" />
+    <Compile Include="Generated\VwMetaRecTypePair.vb" />
+    <Compile Include="GridFavorite\UtilGridFavorite.Converter.vb" />
+    <Compile Include="GridFavorite\UtilGridFavorite.vb" />
+    <Compile Include="Interfaces\IBatchReportPropertiesUnit.vb" />
+    <Compile Include="Interfaces\IBatchReportProperties.vb" />
+    <Compile Include="Interfaces\IBatchReportPropertiesRecResponse.vb" />
+    <Compile Include="Interfaces\IBatchSet.vb" />
+    <Compile Include="JSON\IJSONFilter.vb" />
+    <Compile Include="JSON\JSONFilter.vb" />
+    <Compile Include="JSON\JSONFilterLogic.vb" />
+    <Compile Include="JSON\JSONFilterItem.vb" />
+    <Compile Include="JSON\JSONFilterOperator.vb" />
+    <Compile Include="GSafe\GSafeDetail.vb" />
+    <Compile Include="GSafe\GSafeFileNo.Custom.vb" />
+    <Compile Include="GSafe\GSafeFileNo.vb" />
+    <Compile Include="GSafe\GSafeFilePrefix.vb" />
+    <Compile Include="GSafe\GSafeFilePrefixFilter.vb" />
+    <Compile Include="GSafe\GSafeHeader.vb" />
+    <Compile Include="GSafe\GSafeLO.vb" />
+    <Compile Include="GSafe\GSafeSitemapItems.vb" />
+    <Compile Include="GSafe\UtilSafe.vb" />
+    <Compile Include="Generated\TblFileType.vb" />
+    <Compile Include="JSON\JSONSettingItem.vb" />
+    <Compile Include="Generated\TblFile.vb" />
+    <Compile Include="JSON\JSONSetting.vb" />
+    <Compile Include="UtiilMapRadius.vb" />
+    <Compile Include="UtilAccountServices.vb" />
+    <Compile Include="UtilAppEntry.vb" />
+    <Compile Include="UtilBubbleChart.vb" />
+    <Compile Include="UtilConvert.vb" />
+    <Compile Include="UtilCustomFeature.vb" />
+    <Compile Include="UtilDocLib.vb" />
+    <Compile Include="UtilGlobal.vb" />
+    <Compile Include="UtilLandingRedirect.vb" />
+    <Compile Include="UtilLossExpectancy.vb" />
+    <Compile Include="UtilMenu.vb" />
+    <Compile Include="UtilMeta.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramStatus\UtilProgramStatus.vb" />
+    <Compile Include="Custom\Aplfactorkey.vb" />
+    <Compile Include="Custom\AplfactorkeyCollection.vb" />
+    <Compile Include="Custom\AplfactorkeyQuery.vb" />
+    <Compile Include="Custom\BmBpv.vb" />
+    <Compile Include="Custom\BmBpvA.vb" />
+    <Compile Include="Custom\BmBpvACollection.vb" />
+    <Compile Include="Custom\BmBpvAQuery.vb" />
+    <Compile Include="Custom\BmBpvCollection.vb" />
+    <Compile Include="Custom\BmBpvQuery.vb" />
+    <Compile Include="Custom\BmComputerSystem.vb" />
+    <Compile Include="Custom\BmComputerSystemCollection.vb" />
+    <Compile Include="Custom\BmComputerSystemQuery.vb" />
+    <Compile Include="Custom\BmCpv.vb" />
+    <Compile Include="Custom\BmCpvCollection.vb" />
+    <Compile Include="Custom\BmCpvQuery.vb" />
+    <Compile Include="Custom\BmElectrical.vb" />
+    <Compile Include="Custom\BmElectricalCollection.vb" />
+    <Compile Include="Custom\BmElectricalQuery.vb" />
+    <Compile Include="Custom\BmElectricalRotatingEquipment.vb" />
+    <Compile Include="Custom\BmElectricalRotatingEquipmentCollection.vb" />
+    <Compile Include="Custom\BmElectricalRotatingEquipmentQuery.vb" />
+    <Compile Include="Custom\BmElectricalTransformer.vb" />
+    <Compile Include="Custom\BmElectricalTransformerCollection.vb" />
+    <Compile Include="Custom\BmElectricalTransformerQuery.vb" />
+    <Compile Include="Custom\BmEppms.vb" />
+    <Compile Include="Custom\BmEppmsA.vb" />
+    <Compile Include="Custom\BmEppmsACollection.vb" />
+    <Compile Include="Custom\BmEppmsAQuery.vb" />
+    <Compile Include="Custom\BmEppmsCollection.vb" />
+    <Compile Include="Custom\BmEppmsQuery.vb" />
+    <Compile Include="Custom\BmHebcp.vb" />
+    <Compile Include="Custom\BmHebcpCollection.vb" />
+    <Compile Include="Custom\BmHebcpQuery.vb" />
+    <Compile Include="Custom\BmMain.vb" />
+    <Compile Include="Custom\BmMainCollection.vb" />
+    <Compile Include="Custom\BmMainQuery.vb" />
+    <Compile Include="Custom\BmMechanical.vb" />
+    <Compile Include="Custom\BmMechanicalCollection.vb" />
+    <Compile Include="Custom\BmMechanicalQuery.vb" />
+    <Compile Include="Custom\BmMppm.vb" />
+    <Compile Include="Custom\BmMppmCollection.vb" />
+    <Compile Include="Custom\BmMppmQuery.vb" />
+    <Compile Include="Custom\BmOccupancy.vb" />
+    <Compile Include="Custom\BmOccupancyCollection.vb" />
+    <Compile Include="Custom\BmOccupancyQuery.vb" />
+    <Compile Include="Custom\BMPlanReview.vb" />
+    <Compile Include="Custom\BMPlanReviewCollection.vb" />
+    <Compile Include="Custom\BMPlanReviewQuery.vb" />
+    <Compile Include="Custom\BmPpe.vb" />
+    <Compile Include="Custom\BmPpeA.vb" />
+    <Compile Include="Custom\BmPpeACollection.vb" />
+    <Compile Include="Custom\BmPpeAQuery.vb" />
+    <Compile Include="Custom\BmPpeCollection.vb" />
+    <Compile Include="Custom\BmPpeQuery.vb" />
+    <Compile Include="Custom\BmPrimeMover.vb" />
+    <Compile Include="Custom\BmPrimeMoverCollection.vb" />
+    <Compile Include="Custom\BmPrimeMoverQuery.vb" />
+    <Compile Include="Custom\BMRating.vb" />
+    <Compile Include="Custom\BMRatingCollection.vb" />
+    <Compile Include="Custom\BMRatingQuery.vb" />
+    <Compile Include="Custom\BMRecommendations.vb" />
+    <Compile Include="Custom\BMRecommendationsCollection.vb" />
+    <Compile Include="Custom\BMRecommendationsQuery.vb" />
+    <Compile Include="Custom\Clientfeatures.vb" />
+    <Compile Include="Custom\ClientfeaturesCollection.vb" />
+    <Compile Include="Custom\ClientfeaturesQuery.vb" />
+    <Compile Include="Custom\Clients.vb" />
+    <Compile Include="Custom\ClientsCollection.vb" />
+    <Compile Include="Custom\ClientsQuery.vb" />
+    <Compile Include="Custom\Color.vb" />
+    <Compile Include="Custom\ColorCollection.vb" />
+    <Compile Include="Custom\ColorQuery.vb" />
+    <Compile Include="Custom\CommentsLog.vb" />
+    <Compile Include="Custom\CommentsLogCollection.vb" />
+    <Compile Include="Custom\CommentsLogQuery.vb" />
+    <Compile Include="Custom\Contact1.vb" />
+    <Compile Include="Custom\Contact1Collection.vb" />
+    <Compile Include="Custom\Contact1Query.vb" />
+    <Compile Include="Custom\CopeFireConstruction.vb" />
+    <Compile Include="Custom\CopeFireConstructionCollection.vb" />
+    <Compile Include="Custom\CopeFireConstructionQuery.vb" />
+    <Compile Include="Custom\CopeFireExposure.vb" />
+    <Compile Include="Custom\CopeFireExposureCollection.vb" />
+    <Compile Include="Custom\CopeFireExposureQuery.vb" />
+    <Compile Include="Custom\CopeFireMain.vb" />
+    <Compile Include="Custom\CopeFireMainCollection.vb" />
+    <Compile Include="Custom\CopeFireMainQuery.vb" />
+    <Compile Include="Custom\CopeFireOccupancy.vb" />
+    <Compile Include="Custom\CopeFireOccupancyCollection.vb" />
+    <Compile Include="Custom\CopeFireOccupancyQuery.vb" />
+    <Compile Include="Custom\CopeFireProtection.vb" />
+    <Compile Include="Custom\CopeFireProtectionCollection.vb" />
+    <Compile Include="Custom\CopeFireProtectionQuery.vb" />
+    <Compile Include="Custom\CopeNatHazModeling.vb" />
+    <Compile Include="Custom\CopeNatHazModelingCollection.vb" />
+    <Compile Include="Custom\CopeNatHazModelingQuery.vb" />
+    <Compile Include="Custom\CopeUnitConversion.vb" />
+    <Compile Include="Custom\CopeUnitConversionCollection.vb" />
+    <Compile Include="Custom\CopeUnitConversionQuery.vb" />
+    <Compile Include="Custom\CurrencyDefinition.vb" />
+    <Compile Include="Custom\CurrencyDefinitionCollection.vb" />
+    <Compile Include="Custom\CurrencyDefinitionQuery.vb" />
+    <Compile Include="Custom\DdPasswordType.vb" />
+    <Compile Include="Custom\DdPasswordTypeCollection.vb" />
+    <Compile Include="Custom\DdPasswordTypeQuery.vb" />
+    <Compile Include="Custom\EmployeeClientList.vb" />
+    <Compile Include="Custom\EmployeeClientListCollection.vb" />
+    <Compile Include="Custom\EmployeeClientListQuery.vb" />
+    <Compile Include="Custom\ErrorLog.vb" />
+    <Compile Include="Custom\ErrorLogCollection.vb" />
+    <Compile Include="Custom\ErrorLogQuery.vb" />
+    <Compile Include="Custom\EventLevel.vb" />
+    <Compile Include="Custom\EventLevelCollection.vb" />
+    <Compile Include="Custom\EventLevelQuery.vb" />
+    <Compile Include="Custom\EventLog.vb" />
+    <Compile Include="Custom\EventLogCollection.vb" />
+    <Compile Include="Custom\EventLogQuery.vb" />
+    <Compile Include="Custom\EventType.vb" />
+    <Compile Include="Custom\EventTypeCollection.vb" />
+    <Compile Include="Custom\EventTypeQuery.vb" />
+    <Compile Include="Custom\EzyAuditLog.vb" />
+    <Compile Include="Custom\EzyAuditLogCollection.vb" />
+    <Compile Include="Custom\EzyAuditLogQuery.vb" />
+    <Compile Include="Custom\EzyUsers.vb" />
+    <Compile Include="Custom\EzyUsersCollection.vb" />
+    <Compile Include="Custom\EzyUsersQuery.vb" />
+    <Compile Include="Custom\Findings.vb" />
+    <Compile Include="Custom\FindingsCollection.vb" />
+    <Compile Include="Custom\FindingsQuery.vb" />
+    <Compile Include="Custom\FirePlanReview.vb" />
+    <Compile Include="Custom\FirePlanReviewCollection.vb" />
+    <Compile Include="Custom\FirePlanReviewQuery.vb" />
+    <Compile Include="Custom\FireRecommendations.vb" />
+    <Compile Include="Custom\FireRecommendationsCollection.vb" />
+    <Compile Include="Custom\FireRecommendationsQuery.vb" />
+    <Compile Include="Custom\FireRetail.vb" />
+    <Compile Include="Custom\FireRetailCollection.vb" />
+    <Compile Include="Custom\FireRetailQuery.vb" />
+    <Compile Include="Custom\GRIPSSWorkload.vb" />
+    <Compile Include="Custom\GRIPSSWorkloadCollection.vb" />
+    <Compile Include="Custom\GRIPSSWorkloadQuery.vb" />
+    <Compile Include="Custom\GSafeDetail.vb" />
+    <Compile Include="Custom\GSafeDetailCollection.vb" />
+    <Compile Include="Custom\GSafeDetailQuery.vb" />
+    <Compile Include="Custom\GSafeFileNo.vb" />
+    <Compile Include="Custom\GSafeFileNoCollection.vb" />
+    <Compile Include="Custom\GSafeFileNoQuery.vb" />
+    <Compile Include="Custom\GSafeFilePrefix.vb" />
+    <Compile Include="Custom\GSafeFilePrefixCollection.vb" />
+    <Compile Include="Custom\GSafeFilePrefixFilter.vb" />
+    <Compile Include="Custom\GSafeFilePrefixFilterCollection.vb" />
+    <Compile Include="Custom\GSafeFilePrefixFilterQuery.vb" />
+    <Compile Include="Custom\GSafeFilePrefixQuery.vb" />
+    <Compile Include="Custom\GSafeHeader.vb" />
+    <Compile Include="Custom\GSafeHeaderCollection.vb" />
+    <Compile Include="Custom\GSafeHeaderQuery.vb" />
+    <Compile Include="Custom\GSafeSitemapItems.vb" />
+    <Compile Include="Custom\GSafeSitemapItemsCollection.vb" />
+    <Compile Include="Custom\GSafeSitemapItemsQuery.vb" />
+    <Compile Include="Custom\IRRecommendations.vb" />
+    <Compile Include="Custom\IRRecommendationsCollection.vb" />
+    <Compile Include="Custom\IRRecommendationsQuery.vb" />
+    <Compile Include="Custom\LocationSpecificAll.vb" />
+    <Compile Include="Custom\LocationSpecificAllCollection.vb" />
+    <Compile Include="Custom\LocationSpecificAllQuery.vb" />
+    <Compile Include="Custom\NatHazFloodBldgStructureDetails.vb" />
+    <Compile Include="Custom\NatHazFloodBldgStructureDetailsCollection.vb" />
+    <Compile Include="Custom\NatHazFloodBldgStructureDetailsQuery.vb" />
+    <Compile Include="Custom\NatHazFloodExposureDetails.vb" />
+    <Compile Include="Custom\NatHazFloodExposureDetailsCollection.vb" />
+    <Compile Include="Custom\NatHazFloodExposureDetailsQuery.vb" />
+    <Compile Include="Custom\NatHazFloodGeneral.vb" />
+    <Compile Include="Custom\NatHazFloodGeneralCollection.vb" />
+    <Compile Include="Custom\NatHazFloodGeneralQuery.vb" />
+    <Compile Include="Custom\NatHazFloodOtherDetails.vb" />
+    <Compile Include="Custom\NatHazFloodOtherDetailsCollection.vb" />
+    <Compile Include="Custom\NatHazFloodOtherDetailsQuery.vb" />
+    <Compile Include="Custom\NatHazSeismicGeneral.vb" />
+    <Compile Include="Custom\NatHazSeismicGeneralCollection.vb" />
+    <Compile Include="Custom\NatHazSeismicGeneralQuery.vb" />
+    <Compile Include="Custom\NatHazSeismicNonstructural.vb" />
+    <Compile Include="Custom\NatHazSeismicNonstructuralCollection.vb" />
+    <Compile Include="Custom\NatHazSeismicNonstructuralQuery.vb" />
+    <Compile Include="Custom\NatHazSeismicStructural.vb" />
+    <Compile Include="Custom\NatHazSeismicStructuralCollection.vb" />
+    <Compile Include="Custom\NatHazSeismicStructuralData.vb" />
+    <Compile Include="Custom\NatHazSeismicStructuralDataCollection.vb" />
+    <Compile Include="Custom\NatHazSeismicStructuralDataQuery.vb" />
+    <Compile Include="Custom\NatHazSeismicStructuralQuery.vb" />
+    <Compile Include="Custom\NatHazWindBuildingEnvelope.vb" />
+    <Compile Include="Custom\NatHazWindBuildingEnvelopeCollection.vb" />
+    <Compile Include="Custom\NatHazWindBuildingEnvelopeQuery.vb" />
+    <Compile Include="Custom\NatHazWindGeneral.vb" />
+    <Compile Include="Custom\NatHazWindGeneralCollection.vb" />
+    <Compile Include="Custom\NatHazWindGeneralQuery.vb" />
+    <Compile Include="Custom\NatHazWindMiscellaneousOther.vb" />
+    <Compile Include="Custom\NatHazWindMiscellaneousOtherCollection.vb" />
+    <Compile Include="Custom\NatHazWindMiscellaneousOtherQuery.vb" />
+    <Compile Include="Custom\NatHazWindUtilities.vb" />
+    <Compile Include="Custom\NatHazWindUtilitiesCollection.vb" />
+    <Compile Include="Custom\NatHazWindUtilitiesQuery.vb" />
+    <Compile Include="Custom\NavControl.vb" />
+    <Compile Include="Custom\NavControlCollection.vb" />
+    <Compile Include="Custom\NavControlQuery.vb" />
+    <Compile Include="Custom\NavLevel.vb" />
+    <Compile Include="Custom\NavLevelCollection.vb" />
+    <Compile Include="Custom\NavLevelQuery.vb" />
+    <Compile Include="Custom\NavLink.vb" />
+    <Compile Include="Custom\NavLinkCollection.vb" />
+    <Compile Include="Custom\NavLinkQuery.vb" />
+    <Compile Include="Custom\Rating.vb" />
+    <Compile Include="Custom\RatingCollection.vb" />
+    <Compile Include="Custom\RatingQuery.vb" />
+    <Compile Include="Custom\REDocAttrib.vb" />
+    <Compile Include="Custom\REDocAttribCollection.vb" />
+    <Compile Include="Custom\REDocAttribQuery.vb" />
+    <Compile Include="Custom\REDocHeader.vb" />
+    <Compile Include="Custom\REDocHeaderCollection.vb" />
+    <Compile Include="Custom\REDocHeaderQuery.vb" />
+    <Compile Include="Custom\ReportArchive.vb" />
+    <Compile Include="Custom\ReportArchiveCollection.vb" />
+    <Compile Include="Custom\ReportArchiveQuery.vb" />
+    <Compile Include="Custom\RRLog.vb" />
+    <Compile Include="Custom\RRLogArchive.vb" />
+    <Compile Include="Custom\RRLogArchiveCollection.vb" />
+    <Compile Include="Custom\RRLogArchiveQuery.vb" />
+    <Compile Include="Custom\RRLogCollection.vb" />
+    <Compile Include="Custom\RRLogQuery.vb" />
+    <Compile Include="Custom\SysAppSetting.vb" />
+    <Compile Include="Custom\SysAppSettingCollection.vb" />
+    <Compile Include="Custom\SysAppSettingQuery.vb" />
+    <Compile Include="Custom\TblARISELocations.vb" />
+    <Compile Include="Custom\TblARISELocationsCollection.vb" />
+    <Compile Include="Custom\TblARISELocationsQuery.vb" />
+    <Compile Include="Custom\TblUserDefinableLabel.vb" />
+    <Compile Include="Custom\TblUserDefinableLabelCollection.vb" />
+    <Compile Include="Custom\TblUserDefinableLabelQuery.vb" />
+    <Compile Include="Custom\ViewCCActiveRRLog.vb" />
+    <Compile Include="Custom\ViewCCActiveRRLogCollection.vb" />
+    <Compile Include="Custom\ViewCCActiveRRLogQuery.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowDocManagerBM.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowDocManagerBMCollection.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowDocManagerBMQuery.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowDocManagerFire.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowDocManagerFireCollection.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowDocManagerFireQuery.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowDocManagerFlood.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowDocManagerFloodCollection.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowDocManagerFloodQuery.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowDocManagerIR.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowDocManagerIRCollection.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowDocManagerIRQuery.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowDocManagerJuris.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowDocManagerJurisCollection.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowDocManagerJurisQuery.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowDocManagerSeismic.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowDocManagerSeismicCollection.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowDocManagerSeismicQuery.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowDocManagerWind.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowDocManagerWindCollection.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowDocManagerWindQuery.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowRecResponseBM.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowRecResponseBMCollection.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowRecResponseBMQuery.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowRecResponseFire.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowRecResponseFireCollection.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowRecResponseFireQuery.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowRecResponseIR.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowRecResponseIRCollection.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowRecResponseIRQuery.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowRecResponseJuris.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowRecResponseJurisCollection.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowRecResponseJurisQuery.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowRecResponseNatHaz.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowRecResponseNatHazCollection.vb" />
+    <Compile Include="Custom\ViewCCAdminWindowRecResponseNatHazQuery.vb" />
+    <Compile Include="Custom\ViewCCAllClients.vb" />
+    <Compile Include="Custom\ViewCCAllClientsCollection.vb" />
+    <Compile Include="Custom\ViewCCAllClientsQuery.vb" />
+    <Compile Include="Custom\ViewCCAllPlanReview.vb" />
+    <Compile Include="Custom\ViewCCAllPlanReviewCollection.vb" />
+    <Compile Include="Custom\ViewCCAllPlanReviewQuery.vb" />
+    <Compile Include="Custom\ViewCCBMFacilityRating.vb" />
+    <Compile Include="Custom\ViewCCBMFacilityRatingCollection.vb" />
+    <Compile Include="Custom\ViewCCBMFacilityRatingQuery.vb" />
+    <Compile Include="Custom\ViewCCBMPlanReview.vb" />
+    <Compile Include="Custom\ViewCCBMPlanReviewCollection.vb" />
+    <Compile Include="Custom\ViewCCBMPlanReviewQuery.vb" />
+    <Compile Include="Custom\ViewCCBMRecommendationCounts.vb" />
+    <Compile Include="Custom\ViewCCBMRecommendationCountsCollection.vb" />
+    <Compile Include="Custom\ViewCCBMRecommendationCountsQuery.vb" />
+    <Compile Include="Custom\ViewCCBMRecommendationGrid.vb" />
+    <Compile Include="Custom\ViewCCBMRecommendationGridCollection.vb" />
+    <Compile Include="Custom\ViewCCBMRecommendationGridQuery.vb" />
+    <Compile Include="Custom\ViewCCCopeMainBM.vb" />
+    <Compile Include="Custom\ViewCCCopeMainBMCollection.vb" />
+    <Compile Include="Custom\ViewCCCopeMainBMQuery.vb" />
+    <Compile Include="Custom\ViewCCCopeMainFire.vb" />
+    <Compile Include="Custom\ViewCCCopeMainFireCollection.vb" />
+    <Compile Include="Custom\ViewCCCopeMainFireQuery.vb" />
+    <Compile Include="Custom\ViewCCDocumentLibraryForm.vb" />
+    <Compile Include="Custom\ViewCCDocumentLibraryFormCollection.vb" />
+    <Compile Include="Custom\ViewCCDocumentLibraryFormQuery.vb" />
+    <Compile Include="Custom\ViewCCDocumentLibraryUpdates.vb" />
+    <Compile Include="Custom\ViewCCDocumentLibraryUpdatesCollection.vb" />
+    <Compile Include="Custom\ViewCCDocumentLibraryUpdatesQuery.vb" />
+    <Compile Include="Custom\ViewCCFireFacilityRating.vb" />
+    <Compile Include="Custom\ViewCCFireFacilityRatingCollection.vb" />
+    <Compile Include="Custom\ViewCCFireFacilityRatingQuery.vb" />
+    <Compile Include="Custom\ViewCCFirePlanReview.vb" />
+    <Compile Include="Custom\ViewCCFirePlanReviewCollection.vb" />
+    <Compile Include="Custom\ViewCCFirePlanReviewQuery.vb" />
+    <Compile Include="Custom\ViewCCFireRecommendationCounts.vb" />
+    <Compile Include="Custom\ViewCCFireRecommendationCountsCollection.vb" />
+    <Compile Include="Custom\ViewCCFireRecommendationCountsQuery.vb" />
+    <Compile Include="Custom\ViewCCFireRecommendationGrid.vb" />
+    <Compile Include="Custom\ViewCCFireRecommendationGridCollection.vb" />
+    <Compile Include="Custom\ViewCCFireRecommendationGridQuery.vb" />
+    <Compile Include="Custom\ViewCCGaugeStats.vb" />
+    <Compile Include="Custom\ViewCCGaugeStatsCollection.vb" />
+    <Compile Include="Custom\ViewCCGaugeStatsQuery.vb" />
+    <Compile Include="Custom\ViewCCGRIPSSLocations.vb" />
+    <Compile Include="Custom\ViewCCGRIPSSLocationsCollection.vb" />
+    <Compile Include="Custom\ViewCCGRIPSSLocationsQuery.vb" />
+    <Compile Include="Custom\ViewCCGSafeSitemapItems.vb" />
+    <Compile Include="Custom\ViewCCGSafeSitemapItemsCollection.vb" />
+    <Compile Include="Custom\ViewCCGSafeSitemapItemsQuery.vb" />
+    <Compile Include="Custom\ViewCCInspectionDateGreaterDateStampAll.vb" />
+    <Compile Include="Custom\ViewCCInspectionDateGreaterDateStampAllCollection.vb" />
+    <Compile Include="Custom\ViewCCInspectionDateGreaterDateStampAllQuery.vb" />
+    <Compile Include="Custom\ViewCCIRRecommendationCounts.vb" />
+    <Compile Include="Custom\ViewCCIRRecommendationCountsCollection.vb" />
+    <Compile Include="Custom\ViewCCIRRecommendationCountsQuery.vb" />
+    <Compile Include="Custom\ViewCCIRRecommendationGrid.vb" />
+    <Compile Include="Custom\ViewCCIRRecommendationGridCollection.vb" />
+    <Compile Include="Custom\ViewCCIRRecommendationGridQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationAllViolationsJuris.vb" />
+    <Compile Include="Custom\ViewCCLocationAllViolationsJurisCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationAllViolationsJurisQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationInspectionBM.vb" />
+    <Compile Include="Custom\ViewCCLocationInspectionBMCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationInspectionBMQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationInspectionFire.vb" />
+    <Compile Include="Custom\ViewCCLocationInspectionFireCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationInspectionFireQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationInspectionIR.vb" />
+    <Compile Include="Custom\ViewCCLocationInspectionIRCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationInspectionIRQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationInspectionNatHaz.vb" />
+    <Compile Include="Custom\ViewCCLocationInspectionNatHazCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationInspectionNatHazQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationListingBM.vb" />
+    <Compile Include="Custom\ViewCCLocationListingBMBase.vb" />
+    <Compile Include="Custom\ViewCCLocationListingBMBaseCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationListingBMBaseQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationListingBMCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationListingBMGroupBy.vb" />
+    <Compile Include="Custom\ViewCCLocationListingBMGroupByCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationListingBMGroupByQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationListingBMQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationListingFire.vb" />
+    <Compile Include="Custom\ViewCCLocationListingFireBase.vb" />
+    <Compile Include="Custom\ViewCCLocationListingFireBaseCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationListingFireBaseQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationListingFireCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationListingFireGroupBy.vb" />
+    <Compile Include="Custom\ViewCCLocationListingFireGroupByCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationListingFireGroupByQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationListingFireQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationListingFireRating.vb" />
+    <Compile Include="Custom\ViewCCLocationListingFireRatingCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationListingFireRatingQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationListingFireRecommendation.vb" />
+    <Compile Include="Custom\ViewCCLocationListingFireRecommendationCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationListingFireRecommendationQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationListingIR.vb" />
+    <Compile Include="Custom\ViewCCLocationListingIRBase.vb" />
+    <Compile Include="Custom\ViewCCLocationListingIRBaseCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationListingIRBaseQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationListingIRCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationListingIRGroupBy.vb" />
+    <Compile Include="Custom\ViewCCLocationListingIRGroupByCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationListingIRGroupByQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationListingIRQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationListingJuris.vb" />
+    <Compile Include="Custom\ViewCCLocationListingJurisCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationListingJurisQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationListingNatHaz.vb" />
+    <Compile Include="Custom\ViewCCLocationListingNatHazBase.vb" />
+    <Compile Include="Custom\ViewCCLocationListingNatHazBaseCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationListingNatHazBaseQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationListingNatHazCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationListingNatHazGroupBy.vb" />
+    <Compile Include="Custom\ViewCCLocationListingNatHazGroupByCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationListingNatHazGroupByQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationListingNatHazQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationListingRecResponseBM.vb" />
+    <Compile Include="Custom\ViewCCLocationListingRecResponseBMCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationListingRecResponseBMQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationListingRecResponseFire.vb" />
+    <Compile Include="Custom\ViewCCLocationListingRecResponseFireCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationListingRecResponseFireQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationListingRecResponseIR.vb" />
+    <Compile Include="Custom\ViewCCLocationListingRecResponseIRCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationListingRecResponseIRQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationListingRecResponseNatHaz.vb" />
+    <Compile Include="Custom\ViewCCLocationListingRecResponseNatHazCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationListingRecResponseNatHazQuery.vb" />
+    <Compile Include="Custom\ViewCCLocationOpenViolationCountJuris.vb" />
+    <Compile Include="Custom\ViewCCLocationOpenViolationCountJurisCollection.vb" />
+    <Compile Include="Custom\ViewCCLocationOpenViolationCountJurisQuery.vb" />
+    <Compile Include="Custom\ViewCCNavLink.vb" />
+    <Compile Include="Custom\ViewCCNavLinkCollection.vb" />
+    <Compile Include="Custom\ViewCCNavLinkQuery.vb" />
+    <Compile Include="Custom\ViewCCPrefCountry.vb" />
+    <Compile Include="Custom\ViewCCPrefCountryCollection.vb" />
+    <Compile Include="Custom\ViewCCPrefCountryQuery.vb" />
+    <Compile Include="Custom\ViewCCPrefCurrency.vb" />
+    <Compile Include="Custom\ViewCCPrefCurrencyCollection.vb" />
+    <Compile Include="Custom\ViewCCPrefCurrencyQuery.vb" />
+    <Compile Include="Custom\ViewCCPrefCustomAccess.vb" />
+    <Compile Include="Custom\ViewCCPrefCustomAccessCollection.vb" />
+    <Compile Include="Custom\ViewCCPrefCustomAccessFilteredByFilePrefix.vb" />
+    <Compile Include="Custom\ViewCCPrefCustomAccessFilteredByFilePrefixCollection.vb" />
+    <Compile Include="Custom\ViewCCPrefCustomAccessFilteredByFilePrefixQuery.vb" />
+    <Compile Include="Custom\ViewCCPrefCustomAccessQuery.vb" />
+    <Compile Include="Custom\ViewCCPrefDivision.vb" />
+    <Compile Include="Custom\ViewCCPrefDivisionCollection.vb" />
+    <Compile Include="Custom\ViewCCPrefDivisionFilteredByFilePrefix.vb" />
+    <Compile Include="Custom\ViewCCPrefDivisionFilteredByFilePrefixCollection.vb" />
+    <Compile Include="Custom\ViewCCPrefDivisionFilteredByFilePrefixQuery.vb" />
+    <Compile Include="Custom\ViewCCPrefDivisionQuery.vb" />
+    <Compile Include="Custom\ViewCCPrefDivisionUsers.vb" />
+    <Compile Include="Custom\ViewCCPrefDivisionUsersCollection.vb" />
+    <Compile Include="Custom\ViewCCPrefDivisionUsersQuery.vb" />
+    <Compile Include="Custom\ViewCCPrefLocation.vb" />
+    <Compile Include="Custom\ViewCCPrefLocationCollection.vb" />
+    <Compile Include="Custom\ViewCCPrefLocationQuery.vb" />
+    <Compile Include="Custom\ViewCCPrefTIV.vb" />
+    <Compile Include="Custom\ViewCCPrefTIVCollection.vb" />
+    <Compile Include="Custom\ViewCCPrefTIVQuery.vb" />
+    <Compile Include="Custom\ViewCCPrefUnit.vb" />
+    <Compile Include="Custom\ViewCCPrefUnitCollection.vb" />
+    <Compile Include="Custom\ViewCCPrefUnitQuery.vb" />
+    <Compile Include="Custom\ViewCCRecCompletedLossEstList.vb" />
+    <Compile Include="Custom\ViewCCRecCompletedLossEstListCollection.vb" />
+    <Compile Include="Custom\ViewCCRecCompletedLossEstListQuery.vb" />
+    <Compile Include="Custom\ViewCCRecCurrentLossEstList.vb" />
+    <Compile Include="Custom\ViewCCRecCurrentLossEstListCollection.vb" />
+    <Compile Include="Custom\ViewCCRecCurrentLossEstListQuery.vb" />
+    <Compile Include="Custom\ViewCCRecEstCostToCompleteList.vb" />
+    <Compile Include="Custom\ViewCCRecEstCostToCompleteListCollection.vb" />
+    <Compile Include="Custom\ViewCCRecEstCostToCompleteListQuery.vb" />
+    <Compile Include="Custom\ViewCCRecImpactList.vb" />
+    <Compile Include="Custom\ViewCCRecImpactListCollection.vb" />
+    <Compile Include="Custom\ViewCCRecImpactListQuery.vb" />
+    <Compile Include="Custom\ViewCCRecIntendedActionList.vb" />
+    <Compile Include="Custom\ViewCCRecIntendedActionListCollection.vb" />
+    <Compile Include="Custom\ViewCCRecIntendedActionListQuery.vb" />
+    <Compile Include="Custom\ViewCCRecPrimaryTypeList.vb" />
+    <Compile Include="Custom\ViewCCRecPrimaryTypeListCollection.vb" />
+    <Compile Include="Custom\ViewCCRecPrimaryTypeListQuery.vb" />
+    <Compile Include="Custom\ViewCCRecSecondaryTypeList.vb" />
+    <Compile Include="Custom\ViewCCRecSecondaryTypeListCollection.vb" />
+    <Compile Include="Custom\ViewCCRecSecondaryTypeListQuery.vb" />
+    <Compile Include="Custom\ViewCCRecStatusList.vb" />
+    <Compile Include="Custom\ViewCCRecStatusListCollection.vb" />
+    <Compile Include="Custom\ViewCCRecStatusListQuery.vb" />
+    <Compile Include="Custom\ViewCCTranslation.vb" />
+    <Compile Include="Custom\ViewCCTranslationCollection.vb" />
+    <Compile Include="Custom\ViewCCTranslationHazard.vb" />
+    <Compile Include="Custom\ViewCCTranslationHazardCollection.vb" />
+    <Compile Include="Custom\ViewCCTranslationHazardQuery.vb" />
+    <Compile Include="Custom\ViewCCTranslationImpact.vb" />
+    <Compile Include="Custom\ViewCCTranslationImpactCollection.vb" />
+    <Compile Include="Custom\ViewCCTranslationImpactQuery.vb" />
+    <Compile Include="Custom\ViewCCTranslationIntendedAction.vb" />
+    <Compile Include="Custom\ViewCCTranslationIntendedActionCollection.vb" />
+    <Compile Include="Custom\ViewCCTranslationIntendedActionQuery.vb" />
+    <Compile Include="Custom\ViewCCTranslationMgmtIntendedAction.vb" />
+    <Compile Include="Custom\ViewCCTranslationMgmtIntendedActionCollection.vb" />
+    <Compile Include="Custom\ViewCCTranslationMgmtIntendedActionQuery.vb" />
+    <Compile Include="Custom\ViewCCTranslationPrimaryRec.vb" />
+    <Compile Include="Custom\ViewCCTranslationPrimaryRecCollection.vb" />
+    <Compile Include="Custom\ViewCCTranslationPrimaryRecQuery.vb" />
+    <Compile Include="Custom\ViewCCTranslationQuery.vb" />
+    <Compile Include="Custom\ViewCCTranslationRecStatus.vb" />
+    <Compile Include="Custom\ViewCCTranslationRecStatusCollection.vb" />
+    <Compile Include="Custom\ViewCCTranslationRecStatusQuery.vb" />
+    <Compile Include="Custom\ViewCCTranslationSecondaryRec.vb" />
+    <Compile Include="Custom\ViewCCTranslationSecondaryRecCollection.vb" />
+    <Compile Include="Custom\ViewCCTranslationSecondaryRecQuery.vb" />
+    <Compile Include="Custom\ViewCCUserActivityGrid.vb" />
+    <Compile Include="Custom\ViewCCUserActivityGridCollection.vb" />
+    <Compile Include="Custom\ViewCCUserActivityGridQuery.vb" />
+    <Compile Include="Custom\ViewCCUserSecureClients.vb" />
+    <Compile Include="Custom\ViewCCUserSecureClientsCollection.vb" />
+    <Compile Include="Custom\ViewCCUserSecureClientsQuery.vb" />
+    <Compile Include="Custom\ViewCCUserSecureLocations.vb" />
+    <Compile Include="Custom\ViewCCUserSecureLocationsCollection.vb" />
+    <Compile Include="Custom\ViewCCUserSecureLocationsQuery.vb" />
+    <Compile Include="Custom\VwBMElectMaintenanceSummary.vb" />
+    <Compile Include="Custom\VwBMElectMaintenanceSummaryCollection.vb" />
+    <Compile Include="Custom\VwBMElectMaintenanceSummaryQuery.vb" />
+    <Compile Include="Custom\VwBMFacilityDataSummary.vb" />
+    <Compile Include="Custom\VwBMFacilityDataSummaryCollection.vb" />
+    <Compile Include="Custom\VwBMFacilityDataSummaryQuery.vb" />
+    <Compile Include="Custom\VwBMRecommendationResponsesFollowUp.vb" />
+    <Compile Include="Custom\VwBMRecommendationResponsesFollowUpCollection.vb" />
+    <Compile Include="Custom\VwBMRecommendationResponsesFollowUpQuery.vb" />
+    <Compile Include="Custom\VwBMRecommendationResponsesTrackingAll.vb" />
+    <Compile Include="Custom\VwBMRecommendationResponsesTrackingAllCollection.vb" />
+    <Compile Include="Custom\VwBMRecommendationResponsesTrackingAllQuery.vb" />
+    <Compile Include="Custom\VwBMRecommendations.vb" />
+    <Compile Include="Custom\VwBMRecommendationsCollection.vb" />
+    <Compile Include="Custom\VwBMRecommendationsQuery.vb" />
+    <Compile Include="Custom\VwFireAllRecommendations.vb" />
+    <Compile Include="Custom\VwFireAllRecommendationsCollection.vb" />
+    <Compile Include="Custom\VwFireAllRecommendationsQuery.vb" />
+    <Compile Include="Custom\VwFireCOPESummary.vb" />
+    <Compile Include="Custom\VwFireCOPESummaryCollection.vb" />
+    <Compile Include="Custom\VwFireCOPESummaryQuery.vb" />
+    <Compile Include="Custom\VwFireFacilityRatingSummary.vb" />
+    <Compile Include="Custom\VwFireFacilityRatingSummaryCollection.vb" />
+    <Compile Include="Custom\VwFireFacilityRatingSummaryQuery.vb" />
+    <Compile Include="Custom\VwFireRecommendationResponsesFollowUp.vb" />
+    <Compile Include="Custom\VwFireRecommendationResponsesFollowUpCollection.vb" />
+    <Compile Include="Custom\VwFireRecommendationResponsesFollowUpQuery.vb" />
+    <Compile Include="Custom\VwFireRecommendationResponsesTrackingAll.vb" />
+    <Compile Include="Custom\VwFireRecommendationResponsesTrackingAllCollection.vb" />
+    <Compile Include="Custom\VwFireRecommendationResponsesTrackingAllQuery.vb" />
+    <Compile Include="Custom\VwIRRecommendationResponsesFollowUp.vb" />
+    <Compile Include="Custom\VwIRRecommendationResponsesFollowUpCollection.vb" />
+    <Compile Include="Custom\VwIRRecommendationResponsesFollowUpQuery.vb" />
+    <Compile Include="Custom\VwIRRecommendationResponsesTrackingAll.vb" />
+    <Compile Include="Custom\VwIRRecommendationResponsesTrackingAllCollection.vb" />
+    <Compile Include="Custom\VwIRRecommendationResponsesTrackingAllQuery.vb" />
+    <Compile Include="Custom\VwNatHazFloodRecommendationResponsesFollowUp.vb" />
+    <Compile Include="Custom\VwNatHazFloodRecommendationResponsesFollowUpCollection.vb" />
+    <Compile Include="Custom\VwNatHazFloodRecommendationResponsesFollowUpQuery.vb" />
+    <Compile Include="Custom\VwNatHazFloodRecommendationResponsesTrackingAll.vb" />
+    <Compile Include="Custom\VwNatHazFloodRecommendationResponsesTrackingAllCollection.vb" />
+    <Compile Include="Custom\VwNatHazFloodRecommendationResponsesTrackingAllQuery.vb" />
+    <Compile Include="Custom\VwNatHazSeismicRecommendationResponsesFollowUp.vb" />
+    <Compile Include="Custom\VwNatHazSeismicRecommendationResponsesFollowUpCollection.vb" />
+    <Compile Include="Custom\VwNatHazSeismicRecommendationResponsesFollowUpQuery.vb" />
+    <Compile Include="Custom\VwNatHazSeismicRecommendationResponsesTrackingAll.vb" />
+    <Compile Include="Custom\VwNatHazSeismicRecommendationResponsesTrackingAllCollection.vb" />
+    <Compile Include="Custom\VwNatHazSeismicRecommendationResponsesTrackingAllQuery.vb" />
+    <Compile Include="Custom\VwNatHazWindRecommendationResponsesFollowUp.vb" />
+    <Compile Include="Custom\VwNatHazWindRecommendationResponsesFollowUpCollection.vb" />
+    <Compile Include="Custom\VwNatHazWindRecommendationResponsesFollowUpQuery.vb" />
+    <Compile Include="Custom\VwNatHazWindRecommendationResponsesTrackingAll.vb" />
+    <Compile Include="Custom\VwNatHazWindRecommendationResponsesTrackingAllCollection.vb" />
+    <Compile Include="Custom\VwNatHazWindRecommendationResponsesTrackingAllQuery.vb" />
+    <Compile Include="CustomExtensions\ListExtensions.vb" />
+    <Compile Include="Generated\Aplfactorkey.vb" />
+    <Compile Include="Generated\BmBpv.vb" />
+    <Compile Include="Generated\BmBpvA.vb" />
+    <Compile Include="Generated\BmComputerSystem.vb" />
+    <Compile Include="Generated\BmCpv.vb" />
+    <Compile Include="Generated\BmElectrical.vb" />
+    <Compile Include="Generated\BmElectricalRotatingEquipment.vb" />
+    <Compile Include="Generated\BmElectricalTransformer.vb" />
+    <Compile Include="Generated\BmEppms.vb" />
+    <Compile Include="Generated\BmEppmsA.vb" />
+    <Compile Include="Generated\BmHebcp.vb" />
+    <Compile Include="Generated\BmMain.vb" />
+    <Compile Include="Generated\BmMechanical.vb" />
+    <Compile Include="Generated\BmMppm.vb" />
+    <Compile Include="Generated\BmOccupancy.vb" />
+    <Compile Include="Generated\BMPlanReview.vb" />
+    <Compile Include="Generated\BmPpe.vb" />
+    <Compile Include="Generated\BmPpeA.vb" />
+    <Compile Include="Generated\BmPrimeMover.vb" />
+    <Compile Include="Generated\BMRating.vb" />
+    <Compile Include="Generated\BMRecommendations.vb" />
+    <Compile Include="Generated\Clientfeatures.vb" />
+    <Compile Include="Generated\Clients.vb" />
+    <Compile Include="Generated\Color.vb" />
+    <Compile Include="Generated\CommentsLog.vb" />
+    <Compile Include="Generated\Contact1.vb" />
+    <Compile Include="Generated\CopeFireConstruction.vb" />
+    <Compile Include="Generated\CopeFireExposure.vb" />
+    <Compile Include="Generated\CopeFireMain.vb" />
+    <Compile Include="Generated\CopeFireOccupancy.vb" />
+    <Compile Include="Generated\CopeFireProtection.vb" />
+    <Compile Include="Generated\CopeNatHazModeling.vb" />
+    <Compile Include="Generated\CopeUnitConversion.vb" />
+    <Compile Include="Generated\CurrencyDefinition.vb" />
+    <Compile Include="Generated\DdPasswordType.vb" />
+    <Compile Include="Generated\EmployeeClientList.vb" />
+    <Compile Include="Generated\ErrorLog.vb" />
+    <Compile Include="Generated\EventLevel.vb" />
+    <Compile Include="Generated\EventLog.vb" />
+    <Compile Include="Generated\EventType.vb" />
+    <Compile Include="Generated\EzyAuditLog.vb" />
+    <Compile Include="Generated\EzyUsers.vb" />
+    <Compile Include="Generated\Findings.vb" />
+    <Compile Include="Generated\FirePlanReview.vb" />
+    <Compile Include="Generated\FireRecommendations.vb" />
+    <Compile Include="Generated\FireRetail.vb" />
+    <Compile Include="Generated\GRIPSSWorkload.vb" />
+    <Compile Include="Generated\GSafeDetail.vb" />
+    <Compile Include="Generated\GSafeFileNo.vb" />
+    <Compile Include="Generated\GSafeFilePrefix.vb" />
+    <Compile Include="Generated\GSafeFilePrefixFilter.vb" />
+    <Compile Include="Generated\GSafeHeader.vb" />
+    <Compile Include="Generated\GSafeSitemapItems.vb" />
+    <Compile Include="Generated\IRRecommendations.vb" />
+    <Compile Include="Generated\LocationSpecificAll.vb" />
+    <Compile Include="Generated\NatHazFloodBldgStructureDetails.vb" />
+    <Compile Include="Generated\NatHazFloodExposureDetails.vb" />
+    <Compile Include="Generated\NatHazFloodGeneral.vb" />
+    <Compile Include="Generated\NatHazFloodOtherDetails.vb" />
+    <Compile Include="Generated\NatHazSeismicGeneral.vb" />
+    <Compile Include="Generated\NatHazSeismicNonstructural.vb" />
+    <Compile Include="Generated\NatHazSeismicStructural.vb" />
+    <Compile Include="Generated\NatHazSeismicStructuralData.vb" />
+    <Compile Include="Generated\NatHazWindBuildingEnvelope.vb" />
+    <Compile Include="Generated\NatHazWindGeneral.vb" />
+    <Compile Include="Generated\NatHazWindMiscellaneousOther.vb" />
+    <Compile Include="Generated\NatHazWindUtilities.vb" />
+    <Compile Include="Generated\NavControl.vb" />
+    <Compile Include="Generated\NavLevel.vb" />
+    <Compile Include="Generated\Rating.vb" />
+    <Compile Include="Generated\REDocAttrib.vb" />
+    <Compile Include="Generated\REDocHeader.vb" />
+    <Compile Include="Generated\ReportArchive.vb" />
+    <Compile Include="Generated\RRLog.vb" />
+    <Compile Include="Generated\RRLogArchive.vb" />
+    <Compile Include="Generated\SysAppSetting.vb" />
+    <Compile Include="Generated\TblUserDefinableLabel.vb" />
+    <Compile Include="Generated\ViewCCActiveRRLog.vb" />
+    <Compile Include="Generated\ViewCCAdminWindowDocManagerBM.vb" />
+    <Compile Include="Generated\ViewCCAdminWindowDocManagerFire.vb" />
+    <Compile Include="Generated\ViewCCAdminWindowDocManagerFlood.vb" />
+    <Compile Include="Generated\ViewCCAdminWindowDocManagerIR.vb" />
+    <Compile Include="Generated\ViewCCAdminWindowDocManagerJuris.vb" />
+    <Compile Include="Generated\ViewCCAdminWindowDocManagerSeismic.vb" />
+    <Compile Include="Generated\ViewCCAdminWindowDocManagerWind.vb" />
+    <Compile Include="Generated\ViewCCAdminWindowRecResponseBM.vb" />
+    <Compile Include="Generated\ViewCCAdminWindowRecResponseFire.vb" />
+    <Compile Include="Generated\ViewCCAdminWindowRecResponseIR.vb" />
+    <Compile Include="Generated\ViewCCAdminWindowRecResponseJuris.vb" />
+    <Compile Include="Generated\ViewCCAdminWindowRecResponseNatHaz.vb" />
+    <Compile Include="Generated\ViewCCAllClients.vb" />
+    <Compile Include="Generated\ViewCCAllPlanReview.vb" />
+    <Compile Include="Generated\ViewCCBMFacilityRating.vb" />
+    <Compile Include="Generated\ViewCCBMPlanReview.vb" />
+    <Compile Include="Generated\ViewCCBMRecommendationCounts.vb" />
+    <Compile Include="Generated\ViewCCBMRecommendationGrid.vb" />
+    <Compile Include="Generated\ViewCCCopeMainBM.vb" />
+    <Compile Include="Generated\ViewCCCopeMainFire.vb" />
+    <Compile Include="Generated\ViewCCDocumentLibraryForm.vb" />
+    <Compile Include="Generated\ViewCCDocumentLibraryUpdates.vb" />
+    <Compile Include="Generated\ViewCCFireFacilityRating.vb" />
+    <Compile Include="Generated\ViewCCFirePlanReview.vb" />
+    <Compile Include="Generated\ViewCCFireRecommendationCounts.vb" />
+    <Compile Include="Generated\ViewCCFireRecommendationGrid.vb" />
+    <Compile Include="Generated\ViewCCGaugeStats.vb" />
+    <Compile Include="Generated\ViewCCGRIPSSLocations.vb" />
+    <Compile Include="Generated\ViewCCGSafeSitemapItems.vb" />
+    <Compile Include="Generated\ViewCCInspectionDateGreaterDateStampAll.vb" />
+    <Compile Include="Generated\ViewCCIRRecommendationCounts.vb" />
+    <Compile Include="Generated\ViewCCIRRecommendationGrid.vb" />
+    <Compile Include="Generated\ViewCCLocationAllViolationsJuris.vb" />
+    <Compile Include="Generated\ViewCCLocationInspectionBM.vb" />
+    <Compile Include="Generated\ViewCCLocationInspectionFire.vb" />
+    <Compile Include="Generated\ViewCCLocationInspectionIR.vb" />
+    <Compile Include="Generated\ViewCCLocationInspectionNatHaz.vb" />
+    <Compile Include="Generated\ViewCCLocationListingBM.vb" />
+    <Compile Include="Generated\ViewCCLocationListingBMBase.vb" />
+    <Compile Include="Generated\ViewCCLocationListingBMGroupBy.vb" />
+    <Compile Include="Generated\ViewCCLocationListingFire.vb" />
+    <Compile Include="Generated\ViewCCLocationListingFireBase.vb" />
+    <Compile Include="Generated\ViewCCLocationListingFireGroupBy.vb" />
+    <Compile Include="Generated\ViewCCLocationListingFireRating.vb" />
+    <Compile Include="Generated\ViewCCLocationListingFireRecommendation.vb" />
+    <Compile Include="Generated\ViewCCLocationListingIR.vb" />
+    <Compile Include="Generated\ViewCCLocationListingIRBase.vb" />
+    <Compile Include="Generated\ViewCCLocationListingIRGroupBy.vb" />
+    <Compile Include="Generated\ViewCCLocationListingJuris.vb" />
+    <Compile Include="Generated\ViewCCLocationListingNatHaz.vb" />
+    <Compile Include="Generated\ViewCCLocationListingNatHazBase.vb" />
+    <Compile Include="Generated\ViewCCLocationListingNatHazGroupBy.vb" />
+    <Compile Include="Generated\ViewCCLocationListingRecResponseBM.vb" />
+    <Compile Include="Generated\ViewCCLocationListingRecResponseFire.vb" />
+    <Compile Include="Generated\ViewCCLocationListingRecResponseIR.vb" />
+    <Compile Include="Generated\ViewCCLocationListingRecResponseNatHaz.vb" />
+    <Compile Include="Generated\ViewCCLocationOpenViolationCountJuris.vb" />
+    <Compile Include="Generated\ViewCCNavLink.vb" />
+    <Compile Include="Generated\ViewCCPrefCountry.vb" />
+    <Compile Include="Generated\ViewCCPrefCurrency.vb" />
+    <Compile Include="Generated\ViewCCPrefCustomAccess.vb" />
+    <Compile Include="Generated\ViewCCPrefCustomAccessFilteredByFilePrefix.vb" />
+    <Compile Include="Generated\ViewCCPrefDivision.vb" />
+    <Compile Include="Generated\ViewCCPrefDivisionFilteredByFilePrefix.vb" />
+    <Compile Include="Generated\ViewCCPrefDivisionUsers.vb" />
+    <Compile Include="Generated\ViewCCPrefLocation.vb" />
+    <Compile Include="Generated\ViewCCPrefTIV.vb" />
+    <Compile Include="Generated\ViewCCPrefUnit.vb" />
+    <Compile Include="Generated\ViewCCRecCompletedLossEstList.vb" />
+    <Compile Include="Generated\ViewCCRecCurrentLossEstList.vb" />
+    <Compile Include="Generated\ViewCCRecEstCostToCompleteList.vb" />
+    <Compile Include="Generated\ViewCCRecImpactList.vb" />
+    <Compile Include="Generated\ViewCCRecIntendedActionList.vb" />
+    <Compile Include="Generated\ViewCCRecPrimaryTypeList.vb" />
+    <Compile Include="Generated\ViewCCRecSecondaryTypeList.vb" />
+    <Compile Include="Generated\ViewCCRecStatusList.vb" />
+    <Compile Include="Generated\ViewCCTranslation.vb" />
+    <Compile Include="Generated\ViewCCTranslationHazard.vb" />
+    <Compile Include="Generated\ViewCCTranslationImpact.vb" />
+    <Compile Include="Generated\ViewCCTranslationIntendedAction.vb" />
+    <Compile Include="Generated\ViewCCTranslationMgmtIntendedAction.vb" />
+    <Compile Include="Generated\ViewCCTranslationPrimaryRec.vb" />
+    <Compile Include="Generated\ViewCCTranslationRecStatus.vb" />
+    <Compile Include="Generated\ViewCCTranslationSecondaryRec.vb" />
+    <Compile Include="Generated\ViewCCUserActivityGrid.vb" />
+    <Compile Include="Generated\ViewCCUserSecureClients.vb" />
+    <Compile Include="Generated\ViewCCUserSecureLocations.vb" />
+    <Compile Include="Generated\VwBMElectMaintenanceSummary.vb" />
+    <Compile Include="Generated\VwBMFacilityDataSummary.vb" />
+    <Compile Include="Generated\VwBMRecommendationResponsesFollowUp.vb" />
+    <Compile Include="Generated\VwBMRecommendationResponsesTrackingAll.vb" />
+    <Compile Include="Generated\VwBMRecommendations.vb" />
+    <Compile Include="Generated\VwFireAllRecommendations.vb" />
+    <Compile Include="Generated\VwFireCOPESummary.vb" />
+    <Compile Include="Generated\VwFireFacilityRatingSummary.vb" />
+    <Compile Include="Generated\VwFireRecommendationResponsesFollowUp.vb" />
+    <Compile Include="Generated\VwFireRecommendationResponsesTrackingAll.vb" />
+    <Compile Include="Generated\VwIRRecommendationResponsesFollowUp.vb" />
+    <Compile Include="Generated\VwIRRecommendationResponsesTrackingAll.vb" />
+    <Compile Include="Generated\VwNatHazFloodRecommendationResponsesFollowUp.vb" />
+    <Compile Include="Generated\VwNatHazFloodRecommendationResponsesTrackingAll.vb" />
+    <Compile Include="Generated\VwNatHazSeismicRecommendationResponsesFollowUp.vb" />
+    <Compile Include="Generated\VwNatHazSeismicRecommendationResponsesTrackingAll.vb" />
+    <Compile Include="Generated\VwNatHazWindRecommendationResponsesFollowUp.vb" />
+    <Compile Include="Generated\VwNatHazWindRecommendationResponsesTrackingAll.vb" />
+    <Compile Include="GDC\UtilFilter.vb" />
+    <Compile Include="GDC\UtilGDC.vb" />
+    <Compile Include="ILossEstimateValidation.vb" />
+    <Compile Include="ITranslatable.vb" />
+    <Compile Include="LossEstimateValidationResult.vb" />
+    <Compile Include="CustomExtensions\MailAddressCollectionExtensions.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="CustomExtensions\RatingKeyItemCollectionExtensions.vb" />
+    <Compile Include="RecFollowUpStatus\UtilRecFollowUpStatus.vb" />
+    <Compile Include="SQLMaker\IUtilSQLMakerParameterInfo.vb" />
+    <Compile Include="SQLMaker\UtilSQLMaker.Parameters.vb" />
+    <Compile Include="SQLMaker\UtilSQLMaker.SQLMetaData.vb" />
+    <Compile Include="SQLMaker\UtilSQLMaker.vb" />
+    <Compile Include="UtilChr.vb" />
+    <Compile Include="UtilConstants.vb" />
+    <Compile Include="UtilCookie.vb" />
+    <Compile Include="UtilCurrency.vb" />
+    <Compile Include="UtilDB.vb" />
+    <Compile Include="UtilEmail.vb" />
+    <Compile Include="UtilEmailTemplate.vb" />
+    <Compile Include="UtilErrorLog.vb" />
+    <Compile Include="UtilESStart.vb" />
+    <Compile Include="UtilException.vb" />
+    <Compile Include="UtilJSON.vb" />
+    <Compile Include="UtilMetaMapPin.vb" />
+    <Compile Include="UtilMetaMenu.vb" />
+    <Compile Include="UtilMetaPractice.vb" />
+    <Compile Include="UtilNotification.vb" />
+    <Compile Include="UtilNotification.Auto.vb" />
+    <Compile Include="UtilFileNo.vb" />
+    <Compile Include="UtilFind.vb" />
+    <Compile Include="UtilGOCSafe.vb" />
+    <Compile Include="UtilHTML.vb" />
+    <Compile Include="UtilKendo.vb" />
+    <Compile Include="UtilLog.File.vb" />
+    <Compile Include="UtilLog.vb" />
+    <Compile Include="UtilLogin.vb" />
+    <Compile Include="UtilLogin2.vb" />
+    <Compile Include="UtilLossEstimates.vb" />
+    <Compile Include="UtilNav.vb" />
+    <Compile Include="UtilNavLink.vb" />
+    <Compile Include="UtilPractice.vb" />
+    <Compile Include="UtilPreference.vb" />
+    <Compile Include="UtilPrefilter.vb" />
+    <Compile Include="UtilProgramStatus.vb" />
+    <Compile Include="UtilRating.vb" />
+    <Compile Include="UtilReporting.Chart.vb" />
+    <Compile Include="UtilReporting.vb" />
+    <Compile Include="UtilRiskImprovement.vb" />
+    <Compile Include="UtilSAID.vb" />
+    <Compile Include="UtilSetting.vb" />
+    <Compile Include="UtilSystemParms.vb" />
+    <Compile Include="UtilTest.vb" />
+    <Compile Include="UtilText.vb" />
+    <Compile Include="UtilTime.vb" />
+    <Compile Include="UtilTranslation.vb" />
+    <Compile Include="UtilUnit.vb" />
+    <Compile Include="UtilUpdates.vb" />
+    <Compile Include="UtilURL.vb" />
+    <Compile Include="UtilUser.vb" />
+    <Compile Include="UtilUserActivity.vb" />
+    <Compile Include="UtilUserDefinable.vb" />
+    <Compile Include="UtilUserReclassification.vb" />
+    <Compile Include="UtilValidate.vb" />
+    <Compile Include="UtilVersion.vb" />
+    <Compile Include="UtilWebBrowser.vb" />
+    <Compile Include="UtilWinEventLog.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ES\GRCConnect.esprj" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ExceptionClasses\" />
+    <Folder Include="Setting\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataLib\DataLib.vbproj">
+      <Project>{4b0916ea-885e-4abb-954f-5322fa889129}</Project>
+      <Name>DataLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GridFilterSortLib\FilterSortLib.vbproj">
+      <Project>{8927d11f-d576-4069-9252-33710c6775d9}</Project>
+      <Name>FilterSortLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

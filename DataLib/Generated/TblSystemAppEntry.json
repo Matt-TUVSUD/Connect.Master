@@ -1,0 +1,19 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colFldID":1, 
+	"colFldGuid":"fldGuid", 
+	"colFldUserName":"fldUserName", 
+	"colFldUserEmail":"fldUserEmail", 
+	"colFldEntrySource":"fldEntrySource", 
+	"colFldEntryDateTime":"fldEntryDateTime", 
+	"colFldForeignKeyID":1, 
+	"colFldForeignTableName":"fldForeignTableName"
+}]

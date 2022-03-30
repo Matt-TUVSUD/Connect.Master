@@ -1,0 +1,23 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colFilePrefix":"FilePrefix", 
+	"colRoleSort":1, 
+	"colRoleCd":"RoleCd", 
+	"colRoleDescription":"RoleDescription", 
+	"colRoleDescriptionPractice":"RoleDescriptionPractice", 
+	"colFullName":"FullName", 
+	"colEmail":"Email", 
+	"colCell":"Cell", 
+	"colVoice":"Voice", 
+	"colOfficeAddress1":"OfficeAddress1", 
+	"colOfficeAddress2":"OfficeAddress2", 
+	"colTitle":"Title"
+}]

@@ -1,0 +1,205 @@
+﻿<!-- FOR KENDO GRID ROW DETAIL TEMPLATES -->
+<!-- CELL DATA REPLACERS USE #= NameOfField # -->
+<!-- AVOID USING # AS A CHARACTER IN THE TEMPLATE -->
+<!-- IF USING A CLASS LOOKUP TO THE GRID, MAKE SURE THAT CLASS IS IN THE COLUMN TEMPLATE -->
+<!-- SCRIPTS INCLUDED HERE GET RUN EVERY TIME THE DETAIL POPUP IS OPENED -->
+<!-- WHEN COPIED TO THE DATABASE, THE HTML AND JS MUST BE ALL IN ONE LINE -->
+<!-- DO NOT USE DOUBLE QUOTES IN JS OR HTML -->
+<!-- DO NOT USE COMMENTS IN JS, ALL ONE LINE COMMENTS WILL NOT RUN CODE -->
+
+<!-- FormViewNameOfGrid LAYOUT -->
+<div id='divDetailForm_#= uid #' class='divDetailForm'>
+    
+    <div class='LDHead'>
+        Location Detail</div>
+    <!--Row 1-->
+    <div class='LDInfo'>
+        <div>
+            <span id='lblFileNo'>File No.</span>
+            <input id='fileno' readonly='readonly' type='text' value='#= fileno #' />
+            <span id='lblClientLocID'>Client Loc. ID</span>
+            <input id='clientlocno' readonly='readonly' type='text' value='#= clientlocno #' />
+        </div>
+        <!--Row 2-->
+        <div>
+            <span id='lblAddress'>Address</span>
+            <input id='address' readonly='readonly' type='text' value='#= address #' />
+            <span id='lblCity'>City</span>
+            <input id='city' readonly='readonly' type='text' value='#= city #' />
+            <span id='lblStProv'>St/Prov</span>
+            <input id='stprov' readonly='readonly' type='text' value='#= stprov #' />
+            <span id='lblCountry'>Country</span>
+            <input id='country' readonly='readonly' type='text' value='#= country #' />
+        </div>
+        <!--Row 3-->
+        <div>
+            <span id='lblDivision'>Division</span>
+            <input id='division' readonly='readonly' type='text' value='#= division #' />
+            <span id='lblFacility'>Facility</span>
+            <input id='facility' readonly='readonly' type='text' value='#= facility #' />
+        </div>
+    </div>
+    <div class='FVTIV'>
+        <div id='lblTIV'>TIV</div>
+        <div>(millions)</div>
+        <div>
+            <input id='TIV' readonly='readonly' type='text' value='#= TIV #' />
+        </div>
+    </div>
+    <div class='FVTIV'>
+        <div>Date Of</div>
+        <div>Inspection</div>
+        <div>
+            <input id='InspectionDateString' readonly='readonly' type='text' value='#= InspectionDateString #' />
+        </div>
+    </div>
+    <div class='FVTable'>
+        <table cellspacing='0' cellpadding='2'>
+            <tr class='th'>
+                <td colspan='2' class='rb'>
+                    Occupancy
+                </td>
+                <td colspan='1' class='rb'>
+                    Rating
+                </td>
+                <td colspan='9' class='b'>
+                    Active
+                </td>
+            </tr>
+            <tr class='tch'>
+                <td class='rb'>
+                    Major Occup. Group
+                </td>
+                <td class='hrb'>
+                    Specific Occup. Group
+                </td>
+                <td class='hrb'>
+                    Mech.<br />
+                    Equip.
+                </td>
+                <td class='rb'>
+                    Overall<br />
+                    Program
+                </td>
+                <td class='rb'>
+                    CMMS<br />
+                    in Place?
+                </td>
+                <td class='rb'>
+                    Vibration<br />
+                    Analysis
+                </td>
+                <td class='rb'>
+                    Lube Oil<br />
+                    Testing
+                </td>
+                <td class='rb'>
+                    NDE
+                </td>
+                <td class='rb'>
+                    Overspeed Trip<br />
+                    Testing
+                </td>
+                <td class='rb'>
+                    Visual<br />
+                    Inspection(s)
+                </td>
+                <td class='rb'>
+                    Alignment
+                </td>
+                <td class='b'>
+                    Other
+                </td>
+            </tr>
+            <tr>
+                <td class='r'>
+                    <input style='width: 125px' id='majorgroup' readonly='readonly' type='text' value='#= majorgroup #' />
+                </td>
+                <td class='hr'>
+                    <input style='width: 125px' id='specificgroup' readonly='readonly' type='text' value='#= specificgroup #' />
+                </td>
+                <td class='hr'>
+                    <input style='width: 35px' id='mechequipc' readonly='readonly' type='text' value='#= mechequipc #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 50px' id='mechpremaintadequacy' readonly='readonly' type='text' value='#= mechpremaintadequacy #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 55px' id='mechpremaintcmms' readonly='readonly' type='text' value='#= mechpremaintcmms #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 55px' id='mechpremaintvibe' readonly='readonly' type='text' value='#= mechpremaintvibe #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 55px' id='mechpremaintlubeoil' readonly='readonly' type='text' value='#= mechpremaintlubeoil #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 55px' id='mechpremaintnde' readonly='readonly' type='text' value='#= mechpremaintnde #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 55px' id='mechpremaintoverspeed' readonly='readonly' type='text' value='#= mechpremaintoverspeed #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 55px' id='mechpremaintvisual' readonly='readonly' type='text' value='#= mechpremaintvisual #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 55px' id='mechpremaintalign' readonly='readonly' type='text' value='#= mechpremaintalign #' />
+                </td>
+                <td>
+                    <input style='width: 55px' id='mechpremaintother' readonly='readonly' type='text' value='#= mechpremaintother #' />
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <br />
+
+    <div class='tableDiv'>
+        <div style='margin: auto; width: 100%; text-align: center;'>
+            <span style='margin: auto; width: 100%; text-align: center;'><button class='k-button' onclick='globalCloseFormView(); return false;'>Close</button></span>
+        </div>
+    </div>
+</div>
+<script>
+    /*LOAD THE CSS*/
+    var zLink = "<link rel='stylesheet' type='text/css' href='../../../css/FormView/FormView.css'>";
+    $(zLink).appendTo('head');
+
+    setTimeout(function () {
+        var zUID = '#= uid #';
+
+        /* COLOR REPLACEMENTS REMIX*/
+        var colorItems = [
+			'mechequipc',
+			'mechpremaintadequacy',
+            'mechpremaintcmms',
+			'mechpremaintvibe',
+			'mechpremaintlubeoil',
+			'mechpremaintnde',
+			'mechpremaintoverspeed',
+			'mechpremaintvisual',
+			'mechpremaintalign',
+			'mechpremaintother'
+        ];
+        for (i = 0; i < colorItems.length; i++){
+            var zColor = 'transparent';
+            zColor = $('[data-uid=' + zUID + '] .' + colorItems[i] + 'Color').css('background-color');
+            $('\\#divDetailForm_' + zUID + ' \\#' + colorItems[i] + '').css('background-color', zColor);
+        }
+
+        /* FORMAT DATES GLOBAL REMIX */
+        $('\\#divDetailForm_' + zUID + ' input').each(function(){
+            if( $(this).attr('id').toLowerCase().indexOf('date') > -1 ){
+                $(this).val(global.formatShortDateWithMonth($(this).val()));
+            }
+        });
+
+        /* REMOVE NULLS GLOBAL REMIX */
+        $('\\#divDetailForm_' + zUID + ' input').each(function(){
+            if( ($(this).val() == 'null') || ($(this).val() == 'undefined') ){
+                $(this).val('');
+            }
+        });
+
+    }, 50);
+</script>

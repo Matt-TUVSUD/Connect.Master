@@ -1,0 +1,23 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: ViewCCGRIPSSLocationsV2 --> [viewCCGRIPSSLocationsV2]
+
+  colFilePrefix --> [FilePrefix] varchar(50) null
+  colFileNo --> [FileNo] nvarchar(40) not null
+  colDivision --> [Division] nvarchar(75) null
+  colCustomAccess --> [CustomAccess] nvarchar(50) null
+  colClientLocNo --> [ClientLocNo] nvarchar(30) null
+  colFacility --> [Facility] nvarchar(50) null
+  colCity --> [City] nvarchar(30) null
+  colStProv --> [StProv] nvarchar(20) null
+  colCountry --> [Country] nvarchar(20) null
+  colCityStProvCountry --> [CityStProvCountry] nvarchar(4000) null
+  colStProvCountry --> [StProvCountry] nvarchar(4000) null
+

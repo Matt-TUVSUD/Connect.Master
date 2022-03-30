@@ -1,0 +1,28 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colRowNO":null, 
+	"colId":"Id", 
+	"colFollowUpStatus":"FollowUpStatus", 
+	"colRRLogId":1, 
+	"colFollowUp":1, 
+	"colPracticeCode":null, 
+	"colFileNo":"FileNo", 
+	"colDateStamp":null, 
+	"colRecsNeedingResponses":1, 
+	"colPracticeGroup":"PracticeGroup", 
+	"colFilePrefix":"FilePrefix", 
+	"colPracticeId":1, 
+	"colRFU1Date":null, 
+	"colRFU2Date":null, 
+	"colRFU3Date":null, 
+	"colLastInspectionDate":null, 
+	"colDaysSinceDateStamp":1
+}]

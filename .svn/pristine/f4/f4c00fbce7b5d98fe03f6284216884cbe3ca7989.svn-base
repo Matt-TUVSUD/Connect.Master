@@ -1,0 +1,16 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblMetaCurrency --> [tblMetaCurrency]
+
+  colFldId --> [fldId] int **PK** identity not null
+  colFldName --> [fldName] nvarchar(50) not null
+  colFldCode --> [fldCode] varchar(3) not null
+  colFldSymbol --> [fldSymbol] nvarchar(50) null
+

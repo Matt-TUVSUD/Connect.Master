@@ -1,0 +1,36 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colLoginID":1, 
+	"colEmailAddress":"EmailAddress", 
+	"colFullName":"FullName", 
+	"colPassword":"Password", 
+	"colActiveFlag":null, 
+	"colMarkForDeletionDate":null, 
+	"colComments":"Comments", 
+	"colLoginGuid":"LoginGuid", 
+	"colInactivityReminderSentDate":null, 
+	"colIsLockedOut":null, 
+	"colPasswordIsExpired":null, 
+	"colLastPasswordChangeDate":null, 
+	"colLastLoginDate":null, 
+	"colLastPasswordResetRequestDate":null, 
+	"colLastFailedLoginDate":null, 
+	"colInternal":null, 
+	"colPasswordReminderSentFlag":1, 
+	"colFailedLoginStrikeStartDate":null, 
+	"colFailedLoginStrikeCount":1, 
+	"colAllowReclassLoginOverride":null, 
+	"colSysUserCreated":"SysUserCreated", 
+	"colSysDateCreated":null, 
+	"colSysUserModified":"SysUserModified", 
+	"colSysDateModified":null, 
+	"colWhatsNewLastReviewedDate":null
+}]

@@ -1,0 +1,6 @@
+﻿<a tabIndex='-1' href='\#' onclick='onPlanProjectReviewLetter(#=data.FileNo#, "Boiler")'>Click Here</a>
+
+<script>
+    function(pData){var zReturn=" "; if (pData.Link_to_Review_Letter !==undefined && pData.Link_to_Review_Letter !==null && pData.Link_to_Review_Letter.toString().length > 0){zReturn="<a tabIndex='-1' href='\#' onclick='buildFileOpenLink(\"" + pData.Link_to_Review_Letter + "\", null, \"\", \"\", true)'>Click Here</a>";}return zReturn;}
+
+</script>

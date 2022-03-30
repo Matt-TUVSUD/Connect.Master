@@ -1,0 +1,33 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblIndexManager --> [tblIndexManager]
+
+  colFldIndexId --> [fldIndexId] int **PK** identity not null
+  colFldIndexName --> [fldIndexName] varchar(255) null
+  colFldStatus --> [fldStatus] varchar(20) null
+  colFldEnabled --> [fldEnabled] bit null
+  colFldLastIndexDate --> [fldLastIndexDate] datetime null
+  colFldLastContentUpdateDate --> [fldLastContentUpdateDate] datetime null
+  colFldStartDirectory --> [fldStartDirectory] varchar(500) null
+  colFldSpiderURL --> [fldSpiderURL] varchar(500) null
+  colFldBaseURL --> [fldBaseURL] varchar(500) null
+  colFldOutputDirectory --> [fldOutputDirectory] varchar(255) null
+  colFldTemplateFilename --> [fldTemplateFilename] varchar(255) null
+  colFldFilePrefix --> [fldFilePrefix] varchar(10) null
+  colFldStartJobTime --> [fldStartJobTime] datetime null
+  colFldEndJobTime --> [fldEndJobTime] datetime null
+  colFldLastPollTime --> [fldLastPollTime] datetime null
+  colFldHasContent --> [fldHasContent] bit null
+  colFldTnEInactiveFlag --> [fldTnEInactiveFlag] int null
+  colFldIndexMode --> [fldIndexMode] varchar(5) null
+  colFldLastIndexLapseMin --> [fldLastIndexLapseMin] real null
+  colFldIndexGUID --> [fldIndexGUID] varchar(50) null
+  colFldCldbName --> [fldCldbName] varchar(50) null
+

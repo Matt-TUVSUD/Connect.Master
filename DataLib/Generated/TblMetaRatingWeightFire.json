@@ -1,0 +1,22 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colFldId":1, 
+	"colFldPhysicalProtectionWeightGRC":null, 
+	"colFldHumanElementWeightGRC":null, 
+	"colFldNaturalHazardsProtectionWeightGRC":null, 
+	"colFldBusinessContinuityWeightGRC":null, 
+	"colFldFloodWeightGRC":null, 
+	"colFldEarthquakeWeightGRC":null, 
+	"colFldWindstormWeightGRC":null, 
+	"colFldConstructionWeightGRC":null, 
+	"colFldOccupancyWeightGRC":null, 
+	"colFldOtherWeightGRC":null
+}]

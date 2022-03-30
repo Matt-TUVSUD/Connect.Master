@@ -1,0 +1,31 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colPDFErFilePath":"PDFErFilePath", 
+	"colPDFDiagramFilePath":"PDFDiagramFilePath", 
+	"colClientDBRootPath":"ClientDBRootPath", 
+	"colId":1, 
+	"colFileno":"fileno", 
+	"colClientlocid":"clientlocid", 
+	"colDocumentdate":null, 
+	"colLinktoer":"linktoer", 
+	"colLinktourorlereport":"linktourorlereport", 
+	"colLinktodiagram":"linktodiagram", 
+	"colPractice":"practice", 
+	"colDivision":"division", 
+	"colFacility":"facility", 
+	"colAddress1":"address1", 
+	"colCity":"city", 
+	"colStProv":"st_prov", 
+	"colCountry":"country", 
+	"colCldbname":"cldbname", 
+	"colReportGuid":"ReportGuid", 
+	"colMetaPracticeID":1
+}]

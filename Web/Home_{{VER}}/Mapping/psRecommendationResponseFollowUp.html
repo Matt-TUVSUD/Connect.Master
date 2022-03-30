@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../../../css/pages/mapping.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/pages/print.css" />
+    <script>
+        var gWindowTitle = "Process Safety Recommendation Response Follow Up";
+    </script>
+    <script src="../../../Lib_{{VER}}/Mapping/mapping.js"></script>
+    <script src="../../../Lib_{{VER}}/Mapping/moment.min.js"></script>
+</head>
+<body>
+    <div id="formView">
+        <div style="font-family:Arial !important; font-size:8pt">
+            <div id="printWindow" class="windowBody pdf-page" style="font-family:Arial !important; font-size:8pt;">
+                <div id="loading" class="noShow"><span>Loading...</span></div>
+                <div class="infoArea">
+                    <div class="popColA bottomSpaceRow">
+                        <div class="popRow">
+                            <label class="topHalfLbl">File No.:</label><span data-bind="text: objFormData().FileNo" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">Client:</label><span data-bind="text: objFormData().client" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">Client Loc. ID:</label><span data-bind="text: objFormData().ClientLocNo" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">Divisions:</label><span data-bind="text: objFormData().Division" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow bottomSpaceRow">
+                            <label class="topHalfLbl">Facility:</label><span data-bind="text: objFormData().Facility" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">TIV (millions) <span data-bind="text: currencyText"></span></label><span data-bind="    text: numeral(objFormData().TIV).format('0,0')" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">Date of Last Insp.:</label><span data-bind="text: moment(objFormData().LastInspDate).format('DD-MMM-YY')" class="topHalfTxt"></span>
+                        </div>
+                    </div>
+                    <div class="popColB bottomSpaceRow">
+                        <div class="popRow">
+                            <label class="topHalfLbl">Address:</label><span data-bind="text: objFormData().address" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">City:</label><span data-bind="text: objFormData().City" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">St/Prov.:</label><span data-bind="text: objFormData().StProv" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">Country:</label><span data-bind="text: objFormData().Country" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow bottomSpaceRow">
+                            <label class="topHalfLbl">Postal Code:</label><span data-bind="text: objFormData().Zip" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">Latitude:</label><span data-bind="text: objFormData().latitude" class="topHalfTxt"></span>
+                        </div>
+                        <div class="popRow">
+                            <label class="topHalfLbl">Longitude:</label><span data-bind="text: objFormData().longitude" class="topHalfTxt"></span>
+                        </div>
+                    </div>
+                    <div id="satMap" class="imgHldr">
+                            <a href="#" class="printNone">
+                                <img data-bind="attr: { src: getStaticMapUrl() }, click: onGoToLocationBingMaps" />
+                            </a>
+                            <img class="printOnly" data-bind="attr: { src: staticImageBase64 }" />
+                            <span class="satImgTip">Tip! The above map is interactive and will open Bing Maps.</span>
+                        </div>
+                    </div>
+                <div class="btnHldr noPrint">
+                    <a href="#" class="grcBlueBtn printNone" data-bind="click: function () { onCurrentERReport(); }, visible: visibleCurrentERReport">
+                        <i class="far fa-file" style="font-size:20px; margin-right:5px"></i> Current ER Report
+                    </a>
+                    <a href="#" class="grcBlueBtn printNone" data-bind="click: function () { onCurrentDiagramReport(); }, visible: visibleCurrentDiagramReport">
+                        <i class="far fa-file" style="font-size:20px; margin-right:5px;"></i>Current Diagram
+                    </a>
+                    <a href="#" class="grcBlueBtn printNone" data-bind="click: function () { onPrint(); }, visible: visiblePrint">
+                        <i class="far fa-file" style="font-size:20px; margin-right:5px;"></i>Print
+                    </a>
+                </div>
+            <div class="bottomSection">
+                <div class="borderedGrid" style="">
+                    <div class="borderedGridBody">
+                        <div class="gridBodyRow">
+                         <div class="fullBox101">
+                             <div class="fullBoxTopHalf">Response Status</div>
+                             <div class="fullBoxBottomHalf" data-bind="style: { background: objFormData().ResponseStatusColor }">
+                                 <span data-bind="text: objFormData().ResponseStatus"></span>
+                             </div>
+                         </div>
+                         <div class="fullBox101">
+                             <div class="fullBoxTopHalf">Auto-Request</div>
+                             <div class="fullBoxBottomHalf">
+                                 <span data-bind="text: objFormData().AutoRequest"></span>
+                             </div>
+                         </div>
+                         <div class="thirdBox">
+                             <div class="thirdBox3WordTopHalf">Resp.<br />Request<br />Date</div>
+                             <div class="thirdBoxBottomHalf">
+                                 <span data-bind="text: objFormData().RespRequestDateString"></span>
+                             </div>
+                         </div>
+                         <div class="halfBox">
+                             <div class="halfBoxTopHalf">Total No. of<br />Recs.</div>
+                             <div class="halfBoxBottomHalf">
+                                 <span data-bind="text: objFormData().TotalNoRecs"></span>
+                             </div>
+                         </div>
+                         <div class="halfBox">
+                             <div class="halfBoxTopHalf">No. of Active<br />Recs.</div>
+                             <div class="halfBoxBottomHalf">
+                                 <span data-bind="text: objFormData().NoActiveRecs"></span>
+                             </div>
+                         </div>
+                         <div class="halfBox">
+                             <div class="halfBoxTopHalf" style="height:32px; padding-top:3px;">No. of Recs<br />Needing<br />Resp.</div>
+                             <div class="halfBoxBottomHalf" data-bind="style: { background: objFormData().NoRecsNeedingRespColor }">
+                                 <span data-bind="text: objFormData().NoRecsNeedingResp"></span>
+                             </div>
+                         </div>
+                         <div class="thirdBox">
+                            <div class="thirdBoxTopHalf">Resp. Due<br />Date</div>
+                            <div class="thirdBoxBottomHalf">
+                                <span data-bind="text: objFormData().RespDueDateString"></span>
+                            </div>
+                        </div>
+                        <div class="quarterBox">
+                            <div class="quarterBoxTopHalf">Days<br />Overdue</div>
+                            <div class="quarterBoxBottomHalf">
+                                <span data-bind="text: objFormData().DaysOverdue"></span>
+                            </div>
+                        </div>
+                        <div class="thirdBox">
+                            <div class="thirdBoxTopHalf">1st<br />Follow-up</div>
+                            <div class="thirdBoxBottomHalf">
+                                <span data-bind="text: objFormData().RFU1DateString"></span>
+                            </div>
+                        </div>
+                        <div class="thirdBox">
+                            <div class="thirdBoxTopHalf">2nd<br />Follow-up</div>
+                            <div class="thirdBoxBottomHalf">
+                                <span data-bind="text: objFormData().RFU2DateString"></span>
+                            </div>
+                        </div>
+                        <div class="thirdBox">
+                            <div class="thirdBoxTopHalf">3rd<br />Follow-up</div>
+                            <div class="thirdBoxBottomHalf">
+                                <span data-bind="text: objFormData().RFU3DateString"></span>
+                            </div>
+                        </div>
+                         <div class="fullBox">
+                            <div class="fullBoxTopHalf">Request Sent To</div>
+                            <div class="fullBoxBottomHalf" style="text-align:center;">
+                                <span data-bind="text: objFormData().RecipientName"></span>
+                            </div>
+                        </div>
+                        <div class="xlBox lastBox" style="width:165px">
+                            <div class="xlBoxTopHalf">Request Sent To Email</div>
+                            <div class="xlBoxBottomHalf" style="text-align:center;">
+                                <a data-bind="text: objFormData().RecipientEmail, attr: { href: 'mailto:' + objFormData().RecipientEmail }"></a>
+                            </div>
+                        </div>
+                     </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" onclick="getPDF('.pdf-page'); return false;" class="printThis printNone" title="Print This Section"><i class="fa fa-print"></i></button>
+        </div>
+        </div>
+    </div>
+
+     <script>
+         function getPDF(selector) {
+             $('.noPrint').hide();
+             kendo.drawing.drawDOM($(selector)).then(function (group) {
+                 kendo.drawing.pdf.saveAs(group, "popupWindow.pdf");
+             });
+             setTimeout(function () { $('.noPrint').show(); }, 5000);
+         }
+    </script>
+
+</body>
+</html>

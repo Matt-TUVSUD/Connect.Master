@@ -1,0 +1,40 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: VwClientUsers --> [vwClientUsers]
+
+  colFilePrefix --> [FilePrefix] smallint not null
+  colReclassificationLinkGUID --> [ReclassificationLinkGUID] nvarchar(100) null
+  colUserIndex --> [UserIndex] bigint null
+  colUserTotalCount --> [UserTotalCount] int null
+  colUserCertifiedCount --> [UserCertifiedCount] int null
+  colFullName --> [FullName] varchar(50) null
+  colEzyUserId --> [EzyUserId] int not null
+  colEzyGuid --> [EzyGuid] varchar(50) null
+  colActiveUser --> [ActiveUser] varchar(8) not null
+  colAccessLevel --> [AccessLevel] varchar(14) null
+  colAccessLevelDetails --> [AccessLevelDetails] varchar(50) null
+  colEmail --> [Email] varchar(50) not null
+  colCCOnly --> [CCOnly] varchar(3) not null
+  colDateTimeStamp --> [DateTimeStamp] varchar(11) null
+  colLastLogin --> [LastLogin] varchar(11) null
+  colComment --> [Comment] varchar(255) null
+  colClientComment --> [ClientComment] varchar(500) null
+  colRInit --> [RInit] varchar(12) null
+  colRReport --> [RReport] varchar(12) null
+  colRfu1 --> [Rfu1] varchar(12) null
+  colRfu2 --> [Rfu2] varchar(12) null
+  colRfu3 --> [Rfu3] varchar(12) null
+  colROverdue1 --> [ROverdue1] varchar(12) null
+  colROverdue2 --> [ROverdue2] varchar(12) null
+  colROverdue3 --> [ROverdue3] varchar(12) null
+  colExpOverdue --> [ExpOverdue] varchar(12) null
+  colRExpd --> [RExpd] varchar(12) null
+  colActionId --> [ActionId] int null
+

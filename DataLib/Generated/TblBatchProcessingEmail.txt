@@ -1,0 +1,20 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblBatchProcessingEmail --> [tblBatchProcessingEmail]
+
+  colFldId --> [fldId] int **PK** identity not null
+  colFldTo --> [fldTo] nvarchar(1000) null
+  colFldCc --> [fldCc] nvarchar(1500) null
+  colFldBcc --> [fldBcc] nvarchar(100) null
+  colFldSubject --> [fldSubject] nvarchar(255) null
+  colFldBody --> [fldBody] nvarchar(MAX) null
+  colFldSentDate --> [fldSentDate] datetime null
+  colFldHasException --> [fldHasException] bit null
+

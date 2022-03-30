@@ -1,0 +1,25 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colFldId":1, 
+	"colFldSectionName":"fldSectionName", 
+	"colFldTopName":"fldTopName", 
+	"colFldMetricName":"fldMetricName", 
+	"colFldSubMetricName":"fldSubMetricName", 
+	"colFldMetricValue":1, 
+	"colFldMetricLabel":"fldMetricLabel"
+	"colFldMetricVisible":null, 
+	"colFldMetricColor":"fldMetricColor", 
+	"colFldDirectId":1, 
+	"colFldCriteria":"fldCriteria", 
+	"colFldFilter":"fldFilter", 
+	"colFldGridId":1, 
+	"colFldSort":"fldSort"
+}]

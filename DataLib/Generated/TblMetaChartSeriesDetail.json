@@ -1,0 +1,22 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colFldId":1, 
+	"colFldMetaChartSeriesId":1, 
+	"colFldMetaChartDrillDownId":1, 
+	"colFldIndexOrder":1, 
+	"colFldField":"fldField", 
+	"colFldTitle":"fldTitle", 
+	"colFldColor":"fldColor", 
+	"colFldNotes":"fldNotes", 
+	"colFldMetaChartDrillDownTypeId":1, 
+	"colFldInclude":null, 
+	"colFldCustomFeature":"fldCustomFeature"
+}]

@@ -1,0 +1,23 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: VwUserActivityLog --> [vwUserActivityLog]
+
+  colId --> [ID] int not null
+  colClientname --> [clientname] varchar(150) null
+  colFullName --> [FullName] nvarchar(150) null
+  colEmailAddress --> [EmailAddress] nvarchar(150) null
+  colLastLoginDateTime --> [LastLoginDateTime] datetime null
+  colLastActivityDateTime --> [LastActivityDateTime] datetime null
+  colDuration --> [Duration] varchar(30) null
+  colFilePrefix --> [FilePrefix] nvarchar(10) null
+  colLoginID --> [LoginID] int null
+  colInternal --> [Internal] bit not null
+  colUserLogout --> [UserLogout] bit null
+

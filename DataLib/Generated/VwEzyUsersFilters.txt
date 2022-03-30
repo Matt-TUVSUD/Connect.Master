@@ -1,0 +1,29 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: VwEzyUsersFilters --> [vwEzyUsersFilters]
+
+  colEzyUsersID --> [ezyUsersID] varchar(75) not null
+  colEmail --> [Email] varchar(50) not null
+  colGSafeGUID --> [GSafeGUID] varchar(40) not null
+  colFilePrefix --> [FilePrefix] smallint not null
+  colDivision --> [Division] varchar(50) null
+  colPlant --> [Plant] varchar(50) null
+  colCustomAccessText --> [CustomAccessText] varchar(50) null
+  colClientLocNoText --> [ClientLocNoText] varchar(50) null
+  colFacilityText --> [FacilityText] varchar(50) null
+  colCityText --> [CityText] varchar(50) null
+  colStProvText --> [StProvText] varchar(50) null
+  colCountryText --> [CountryText] varchar(50) null
+  colCCActive --> [CCActive] bit not null
+  colCityManager --> [CityManager] bit not null
+  colStProvManager --> [StProvManager] bit not null
+  colActiveUser --> [ActiveUser] bit not null
+  colCCOnly --> [CCOnly] bit not null
+

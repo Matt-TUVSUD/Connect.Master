@@ -1,0 +1,1427 @@
+﻿/* General Window Styles*/
+
+#loading {
+    height:96%;
+    width:98%;
+    font-size:14px;
+    text-align:center;
+    background:#fff;
+    color:#000;
+    position:absolute;
+    z-index:5;
+}
+
+#loading span {
+    display:block;
+    margin:200px;
+}
+
+.windowBody {
+    padding:10px;
+}
+
+.topSection {
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.bottomSection {
+    width:100%;
+    display:flex;
+    justify-content:flex-start;
+}
+
+.recCtHldr {
+    margin:0 auto;
+    width:170px;
+}
+
+.countHldr {
+    border: 1px solid #abb5be;
+    border-collapse: collapse;
+    height:18px;
+    width:65px;
+    line-height:18px;
+    margin:0 5px;
+    text-align:center;
+    /*float:left;*/
+}
+
+.infoArea {
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    /*float:left;
+    margin-top:15px;*/
+}
+
+.popColA {
+    flex-basis:33%;
+    /*width:50%;
+    float:left;*/
+}
+
+.popColB {
+    flex-basis:33%;
+    /*width:50%;
+    float:left;*/
+}
+
+.popRow {
+    display:flex;
+    width:100%;
+    margin-bottom:10px;
+}
+
+.impLbl {
+    /*float:left;*/
+    width:215px;
+    line-height:17px;
+    font-size:12px;
+    text-align:left;
+}
+
+.impBox {
+    /*float:left;*/
+    border:1px solid #abb5be;
+    border-collapse: collapse;
+    width:30px;
+    height:15px;
+    line-height:17px;
+    margin-right:15px;
+    font-size:12px;
+}
+
+.bottomSpaceRow {
+    margin-bottom:42px;
+}
+
+.btnHldr {
+    width:100%;
+    display:flex;
+    justify-content:space-around;
+    align-content:center;
+    margin:10px 0;
+    /*margin:0 auto;
+    text-align:center;*/
+}
+
+.imgHldr {
+    flex-basis:33%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+   /* width:30%;
+    float:left;*/
+}
+.imgHldr img {
+    height: 300px;
+    width: 320px;
+}
+
+.satImgTip {
+    color:#ff0000;
+    font-size:10px;
+    font-weight:400;
+    width:100%;
+    text-align:center;
+    display:block;
+}
+
+
+/*End Window Styles*/
+
+/*Label Styles*/
+
+.popColA .topHalfLbl {
+    font-size:13px;
+    font-weight:700;
+    /*float:left;*/
+    width:125px;
+}
+
+.popColB .topHalfLbl {
+    font-size:13px;
+    font-weight:700;
+    /*float:left;*/
+    width:85px;
+}
+
+.topHalfTxt {
+    font-size:13px;
+    font-weight:400;
+    /*float:left;*/
+}
+
+/*End Label Styles*/
+
+/*Grid Styles*/
+.gridRow1 {
+    display:flex;
+    flex-direction:column;
+}
+
+
+.gridRow1, .gridRow2, .gridRow3, .gridRow4, .gridRow5 {
+    margin:0 auto 10px;
+    width:1000px;
+}
+
+.borderedGrid {
+    width:1065px;
+    margin:0 auto 10px;
+    border:1px solid #abb5be;
+    border-collapse: collapse;
+    font-size:10px;
+    padding:5px;
+}
+
+.borderedGrid90Percent {
+    width:995px !important;
+    margin:0 auto 10px;
+    border:1px solid #abb5be;
+    border-collapse: collapse;
+    font-size:9px;
+}
+
+.borderedHeader {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-bottom:1px solid #abb5be;
+    margin-bottom:5px;
+}
+
+.halfGridRow {
+    /*float:left;*/
+    width:400px;
+}
+
+.gridBodyHalfRow {
+    width:380px;
+    /*float:left;*/
+}
+
+.gridBodyRow {
+    display:flex;
+    flex-direction:row;
+    /*margin-bottom:5px;*/
+    width:100%;
+}
+
+.mappingRowDiv {
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    padding:5px;
+}
+
+.recInputRecNo {
+    display:flex;
+    align-items:center;
+}
+
+.recLabelLeft {
+    flex-basis:105px;
+}
+
+.recLabelRec {
+    flex-basis:105px;
+}
+
+.recInputRec {
+    display:flex; 
+    justify-content:center; 
+    align-items:center;
+    border: 1px solid #abb5be; 
+    height: 20px; 
+    width: 55px;
+}
+
+.recLabelRangeLarge {
+    display:flex; 
+    justify-content:center; 
+    flex-basis:132px;
+    margin-right:8px;
+}
+
+.cell1, .cell2, .cell3 {
+    display:flex;
+    justify-content:space-around;
+    flex-basis:210px;
+}
+
+.valLbl {
+    /*float:left;*/
+    text-align:left;
+    line-height:14px;
+    font-size:12px;
+    font-weight:700;
+    margin-right:10px;
+    width:90px;
+}
+
+.valBox {
+    /*float:left;*/
+    height:12px;
+    width:85px;
+    line-height:12px;
+    font-size:12px;
+    border:1px solid #abb5be;
+    border-collapse: collapse;
+}
+
+.gridBodyBottomRow {
+    margin-bottom:0px;
+}
+
+.tallBlueHeading {
+    /*background:#2f75b5;*/
+    background:#0046ad;
+    color:#fff;
+    height:50px;
+    width:1000px;
+    text-align:center;
+    border-left:1px solid #abb5be;
+    border-right:1px solid #abb5be;
+    border-top:1px solid #abb5be;
+    border-collapse: collapse;
+    font-size:12px;
+    display:flex;
+}
+
+.shortBlueHeader {
+    /*background:#2f75b5;*/
+    background:#0046ad;
+    color:#fff;
+    height:20px;
+    width:1000px;
+    text-align:center;
+    border-collapse: collapse;
+    border-left:1px solid #abb5be;
+    border-right:1px solid #abb5be;
+    /*border-top:1px solid #abb5be;*/
+    font-size:12px;
+    display:flex;
+}
+
+.shortHalfBlueHeader {
+    /*background:#2f75b5;*/
+    background:#0046ad;
+    color:#fff;
+    height:20px;
+    width:400px;
+    text-align:center;
+    border-collapse: collapse;
+    border-left:1px solid #abb5be;
+    border-right:1px solid #abb5be;
+    border-top:1px solid #abb5be;
+    font-size:12px;
+}
+
+.infoRow {
+    width:1000px;
+    height:20px;
+    border-collapse: collapse;
+    border:1px solid #abb5be;
+    text-align:center;
+    display:flex;
+}
+
+.inspSum {
+    /*float:left;*/
+    width: 300px;
+    height:30px;
+    text-align:center;
+    border-collapse: collapse;
+    border-right:1px solid #abb5be;
+    padding-top:20px;
+}
+
+.inspLbl {
+    /*float:left;*/
+    width: 295px;
+    height:15px;
+    text-align:right;
+    border-collapse: collapse;
+    border-right:1px solid #abb5be;
+    padding-top:5px;
+    padding-right:5px;
+    color:#000;
+    display:block;
+}
+
+.recSumLbl {
+    /*float:left;*/
+    height:17px;
+    width: 300px;
+    text-align:center;
+    border-collapse: collapse;
+    border-right:1px solid #abb5be;
+    padding-top:3px;
+}
+
+.recSumInfoRow {
+    width:1002px;
+    height:19px;
+    display:flex;
+    align-items:center;
+}
+
+.fireSumLbl, .bmSumLbl, .infraSumLbl, .nathazSumLbl {
+    /*float:left;*/
+    height:17px;
+    width:100px;
+    text-align:center;
+    border-collapse: collapse;
+    border-right:1px solid #abb5be;
+    padding-top:3px;
+}
+
+.curRecStatusLbl {
+    /*float:left;*/
+    height:17px;
+    width:295px;
+    text-align:center;
+    padding-top:3px;
+}
+
+.fireBlock, .bmBlock, .infraBlock, .nathazBlock, .divsrvBlock, .psBlock {
+    padding-top:3px;
+    text-align:center;
+    color:#fff;
+    /*float:left;*/
+    width:100px;
+    border-collapse: collapse;
+    border-right:1px solid #abb5be;
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.fireShortBlock, .bmShortBlock, .infraShortBlock, .nathazShortBlock, .divsrvShortBlock, .psShortBlock {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:101px;
+}
+
+.shortHeading {
+    width:100px;
+    height:15px;
+    /*float:left;*/
+    border-collapse: collapse;
+    border-bottom:1px solid #abb5be;
+}
+
+.regBox {
+    /*float:left;*/
+    width:49px;
+    padding-top:3px;
+    border-collapse: collapse;
+    border-right:1px solid #abb5be;
+}
+
+.regInfo {
+    /*float:left;*/
+    width:49px;
+    height:15px;
+    padding-top:5px;
+    border-collapse: collapse;
+    border-right:1px solid #abb5be;
+    text-align:center;
+    display:block;
+}
+
+.specBox {
+    /*float:left;*/
+    width:49px;
+    padding-top:3px;
+}
+
+.specInfo {
+    /*float:left;*/
+    width:49px;
+    height:15px;
+    padding-top:5px;
+    border-collapse: collapse;
+    border-right:1px solid #abb5be;
+    text-align:center;
+    display:block;
+}
+
+.lowImpRecLbl, .modImpRecLbl {
+    /*float:left;*/
+    text-align:right;
+    height:17px;
+    width: 295px;
+    border-collapse: collapse;
+    border-left:1px solid #abb5be;
+    padding-right:5px;
+    padding-top:3px;
+}
+
+.highImpRecLbl {
+    /*float:left;*/
+    text-align:right;
+    height:16px;
+    width: 295px;
+    border-collapse: collapse;
+    border-left:1px solid #abb5be;
+    border-bottom:1px solid #abb5be;
+    padding-right:5px;
+    padding-top:2px;
+}
+
+.fireLowImp, .fireModImp, .fireHighImp{
+    /*float:left;*/
+    text-align:center;
+    height:15px;
+    width:100px;
+    padding-top:3px;
+    border-collapse: collapse;
+    border-left:1px solid #abb5be;
+    border-right:1px solid #abb5be;
+    border-bottom:1px solid #abb5be;
+    display:block;
+}
+
+.bmLowImp, .infraLowImp, .nathazLowImp, .bmModImp, .infraModImp, .nathazModImp, .bmHighImp, .infraHighImp, .nathazHighImp  {
+    /*float:left;*/
+    text-align:center;
+    width:100px;
+    height:15px;
+    padding-top:3px;
+    border-collapse: collapse;
+    border-right:1px solid #abb5be;
+    border-bottom:1px solid #abb5be;
+    display:block;
+}
+
+.procSafeBox {
+    /*float:left;*/
+    text-align:center;
+    width:100px;
+    height:15px;
+    padding-top:3px;
+    border-collapse: collapse;
+    border-right:1px solid #abb5be;
+    border-bottom:1px solid #abb5be;
+    display:block;
+}
+
+.blankBox {
+    /*float:left;*/
+    text-align:center;
+    width:93px;
+    height:15px;
+    padding-top:3px;
+    border-collapse: collapse;
+    border-right:1px solid #abb5be;
+    border-bottom:1px solid #abb5be;
+    display:block;
+}
+
+.fireLowImp, .bmLowImp, .infraLowImp, .nathazLowImp{
+    background:#1cf831;
+}
+
+.bmModImp, .infraModImp, .nathazModImp, .fireModImp {
+    background:#ffff00;
+}
+
+.fireHighImp, .bmHighImp, .infraHighImp, .nathazHighImp {
+    background:#ff0000;
+}
+
+.internalLbl {
+    /*float:left;*/
+    text-align:right;
+    width:95px;
+    padding-right:5px;
+    padding-top:3px;
+}
+
+.internalLblBordered {
+    /*float:left;*/
+    text-align:right;
+    height:15px;
+    width:95px;
+    padding-right:5px;
+    padding-top:3px;
+    border-collapse: collapse;
+    border-bottom:1px solid #abb5be;
+}
+
+.fireRespStatus, .bmRespStatus {
+    /*float:left;*/
+    text-align:center;
+    height:15px;
+    width:194px;
+    padding-top:3px;
+    border-collapse: collapse;
+    border-right:1px solid #abb5be;
+    border-left:1px solid #abb5be;
+    border-bottom:1px solid #abb5be;
+}
+
+.infraRespStatus {
+    /*float:left;*/
+    text-align:center;
+    height:15px;
+    width:194px;
+    padding-top:3px;
+    border-collapse: collapse;
+    border-right:1px solid #abb5be;
+    border-bottom:1px solid #abb5be;
+    border-left:1px solid #abb5be;
+}
+
+.ratingSumLbl {
+    /*float:left;*/
+    height:17px;
+    width: 300px;
+    text-align:center;
+    border-collapse: collapse;
+    border-right:1px solid #abb5be;
+    padding-top:3px;
+
+}
+
+.fireRatingSumLbl, .bmRatingSumLbl {
+    /*float:left;*/
+    height:17px;
+    width:100px;
+    border-collapse: collapse;
+    border-right:1px solid #abb5be;
+    padding-top:3px;
+}
+
+.nathazRatingSumLbl {
+    /*float:left;*/
+    height:17px;
+    width:150px;
+    border-collapse: collapse;
+    border-collapse: collapse;
+    border-right:1px solid #abb5be;
+    border-left:1px solid #abb5be;
+    padding-top:3px;
+}
+
+.seismicRatingSumLbl, .floodRatingSumLbl, .windRatingSumLbl {
+    /*float:left;*/
+    height:17px;
+    width:100px;
+    border-collapse: collapse;
+    border-right:1px solid #abb5be;
+    padding-top:3px;
+}
+
+.windRatingSumLbl {
+    width:92px;
+    border-collapse: collapse;
+    border-right:none;
+}
+
+.ratingSumTxtLbl {
+    text-align:right;
+    /*float:left;*/
+    width:295px;
+    height:16px;
+    padding-top:3px;
+    border-collapse: collapse;
+    border-left:1px solid #abb5be;
+    border-right:1px solid #abb5be;
+    border-bottom:1px solid #abb5be;
+    padding-right:5px;
+}
+
+.fireRatingBlock, .bmRatingBlock, .seismicRatingBlock, .floodRatingBlock {
+    text-align:center;
+    /*float:left;*/
+    width:100px;
+    height:16px;
+    padding-top:3px;
+    border-collapse: collapse;
+    border-right:1px solid #abb5be;
+    border-bottom:1px solid #abb5be;
+}
+
+.windRatingBlock {
+    text-align:center;
+    /*float:left;*/
+    width:92px;
+    height:16px;
+    padding-top:3px;
+    border-collapse: collapse;
+    border-right:1px solid #abb5be;
+    border-bottom:1px solid #abb5be;
+}
+
+.latestRatingLbl {
+    width:145px;
+    padding-right:5px;
+    height:19px;
+    border-collapse: collapse;
+    border-left:1px solid #abb5be;
+    border-right:1px solid #abb5be;
+    border-bottom:1px solid #abb5be;
+    padding-right:5px;
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+}
+
+.blueBarLbl {
+    padding-top:3px;
+    height:17px;
+    display:block;
+}
+
+.totalImpTxtLbl {
+    /*float:left;*/
+    text-align:right;
+    height:16px;
+    width:445px;
+    padding-top:4px;
+    padding-right:5px;
+    border-collapse: collapse;
+    border-right:1px solid #abb5be;
+}
+
+.totalImpBlock, .pendingImpBlock, .advisoryImpBlock, .restoredImpBlock{
+    text-align:center;
+    /*float:left;*/
+    height:15px;
+    width:40px;
+    padding-top:5px;
+    border-collapse: collapse;
+    border-right:1px solid #abb5be;
+}
+
+.jurisCertBlockingBlock{
+    text-align:center;
+    /*float:left;*/
+    height:15px;
+    width:40px;
+    padding-top:5px;
+}
+
+.overdueImpBlock {
+    text-align:center;
+    /*float:left;*/
+    height:15px;
+    width:40px;
+    padding-top:5px;
+}
+
+.impNumPendingTxtLbl, .impNumAdvisoryTxtLbl, .impNumRestoredTxtLbl, .impNumOverdueTxtLbl {
+    /*float:left;*/
+    text-align:right;
+    height:16px;
+    width:80px;
+    padding-top:4px;
+    padding-right:5px;
+    border-collapse: collapse;
+    border-right:1px solid #abb5be;
+}
+
+.jurisCertBlockingTxtLbl{
+    /*float:left;*/
+    text-align:right;
+    height:17px;
+    width:455px;
+    padding-top:3px;
+    padding-right:5px;
+    border-collapse: collapse;
+    border-right:1px solid #abb5be;
+}
+
+.jurisCertBlockingRecTxtLbl {
+    /*float:left;*/
+    text-align:right;
+    height:17px;
+    width:450px;
+    padding-top:3px;
+    padding-right:5px;
+    border-collapse: collapse;
+    border-right:1px solid #abb5be;
+    border-left:1px solid #abb5be;
+}
+
+
+
+
+/* START NEW IMPAIRMENT AND JURIS COMBINED */
+.blueBarLbl_Right_Combined {
+    float: right;
+    text-align: center;
+    padding-top:3px;
+    height:17px;
+    width: 364px; 
+    display:block;
+    position:relative; 
+}
+
+.blueBarLbl_Left_Combined {
+    float: left;
+    text-align: center;
+    padding-top:3px;
+    height:17px;
+    display:block;
+    position:relative; 
+    width: 632px; 
+    border-collapse: collapse;
+    border-right:1px solid #abb5be;
+}
+
+.totalImpTxtLbl_Combined {
+    /*float:left;*/
+    text-align:right;
+    height:16px;
+    width:100px;
+    padding-top:4px;
+    padding-right:5px;
+    border-collapse: collapse;
+    border-right:1px solid #abb5be;
+}
+
+.totalImpBlock_Combined, .pendingImpBlock_Combined, .advisoryImpBlock_Combined, .restoredImpBlock_Combined {
+    text-align:center;
+    /*float:left;*/
+    height:15px;
+    width:40px;
+    padding-top:5px;
+    border-collapse: collapse;
+    border-right:1px solid #abb5be;
+}
+
+.jurisCertBlockingBlock_Combined {
+    text-align:center;
+    /*float:left;*/
+    height:15px;
+    width:40px;
+    padding-top:5px;
+    border-collapse: collapse;
+    /*border-right:1px solid #abb5be;*/
+}
+
+.overdueImpBlock_Combined {
+    text-align:center;
+    /*float:left;*/
+    height:15px;
+    width:40px;
+    padding-top:5px;
+    border-collapse: collapse;
+    border-right:1px solid #abb5be;
+}
+
+.impNumPendingTxtLbl_Combined, .impNumAdvisoryTxtLbl_Combined, .impNumRestoredTxtLbl_Combined, .impNumOverdueTxtLbl_Combined {
+    /*float:left;*/
+    text-align:right;
+    height:16px;
+    width:75px;
+    padding-top:4px;
+    padding-right:5px;
+    border-collapse: collapse;
+    border-right:1px solid #abb5be;
+}
+
+.jurisCertBlockingTxtLbl_Combined {
+    /*float:left;*/
+    text-align:right;
+    height:17px;
+    width:100px;
+    padding-top:3px;
+    padding-right:5px;
+    border-collapse: collapse;
+    border-right:1px solid #abb5be;
+}
+
+.jurisCertBlockingRecTxtLbl_Combined {
+    /*float:left;*/
+    text-align:right;
+    height:17px;
+    width:170px;
+    padding-top:3px;
+    padding-right:5px;
+    border-collapse: collapse;
+    border-right:1px solid #abb5be;
+    border-left:1px solid #abb5be;
+}
+
+/* END NEW IMPAIRMENT AND JURIS COMBINED*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.occupancyHeaderLbl {
+    display:block;
+    /*float:left;*/
+    width:255px;
+    text-align:center;
+}
+
+.ratingHeaderLbl {
+    display:block;
+    /*float:left;*/
+    width:340px;
+    text-align:left;
+}
+
+.activeHeaderLbl {
+    display:block;
+    /*float:left;*/
+    width:400px;
+    text-align:left;
+}
+
+.bmFacilityActiveHeaderLbl {
+    display:block;
+    /*float:left;*/
+    width:390px;
+    text-align:center;
+}
+
+.bmFacilityPassiveHeaderLbl{
+    display:block;
+    /*float:left;*/
+    width:275px;
+    text-align:center;
+}
+
+.bmFacilityCurrentHeaderLbl {
+    display:block;
+    /*float:left;*/
+    width:188px;
+}
+
+.bmFacilityCompletedHeaderLbl {
+    display:block;
+    /*float:left;*/
+    width:100px;
+}
+
+.currentHeaderLbl {
+    display:block;
+    /*float:left;*/
+    width:100px;
+    text-align:center;
+}
+
+.wRecHeaderLbl {
+    display:block;
+    /*float:left;*/
+    width:250px;
+    text-align:center;
+}
+
+.borderedGridBody {
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.xxlBox {
+    /*float:left;*/
+    width:220px;
+    margin-right:3px;
+    border:1px solid #abb5be;
+}
+
+.xlBox {
+    /*float:left;*/
+    width:165px;
+    margin-right:3px;
+    margin-bottom:3px;
+    border:1px solid #abb5be;
+}
+
+.fullBox {
+    /*float:left;*/
+    width:118px;
+    margin-right:3px;
+    margin-bottom:3px;
+    border:1px solid #abb5be;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+.fullBox101 {
+    /*float:left;*/
+    width:120px;
+    margin-right:3px;
+    border:1px solid #abb5be;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.halfBox{
+    /*float:left;
+    width:65px;*/
+    margin-right:3px;
+    margin-bottom:3px;
+    border:1px solid #abb5be;
+    max-height:48px;
+    width:90px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+}
+
+.thirdBox {
+    /*float:left;*/
+    width:55px;
+    margin-right:3px;
+    border:1px solid #abb5be;
+}
+
+.quarterBox {
+    /*float:left;*/
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    height:auto;
+    width:50px;
+    margin-right:3px;
+    border:1px solid #abb5be;
+}
+
+.otherBox {
+    /*float:left;*/
+    width:65px;
+    border:1px solid #abb5be;
+}
+
+.fullBoxTopHalf, .otherTopHalf, .ultrasoundTopHalf, .xlBoxTopHalf {
+    border-bottom:1px solid #abb5be;
+    height:29px;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+.xxlBoxTopHalf {
+    border-bottom:1px solid #abb5be;
+    height:29px;
+    padding-top:6px;
+    text-align:center;
+}
+
+.fullBoxTopHalf2Line {
+    border-bottom:1px solid #abb5be;
+    height:29px;
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.fullBoxTopHalf3Line, .thirdBox3WordTopHalf {
+    border-bottom:1px solid #abb5be;
+    height:29px;
+    text-align:center;
+}
+
+.quarterBoxTopHalf, .thirdBoxTopHalf, .halfBoxTopHalf{
+    border-bottom:1px solid #abb5be;
+    height:29px;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.quarterBoxTallTopHalf {
+    border-bottom:1px solid #abb5be;
+    height:29px;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+quarterBoxTallTopHalfWSplit {
+    border-bottom:1px solid #abb5be;
+    text-align:center;
+}
+
+.quarterBoxTallSplit {
+    border-bottom:1px solid #abb5be;
+    text-align:center;
+}
+
+.quarterBoxTallTopHalf2Word {
+    border-bottom:1px solid #abb5be;
+    height:35px;
+    text-align:center;
+}
+
+.quarterBoxTallTopHalf3Word {
+    border-bottom:1px solid #abb5be;
+    height:35px;
+    text-align:center;
+}
+
+.halfBox1WordTopHalf, .quarterBox1WordTopHalf {
+    border-bottom:1px solid #abb5be;
+    height:35px;
+    line-height:35px;
+    text-align:center;
+}
+
+.xlBoxTopHalf2Line {
+    border-bottom:1px solid #abb5be;
+    height:29px;
+    padding-top:6px;
+    text-align:center;
+}
+
+.xxlBoxTopHalf2Line {
+    border-bottom:1px solid #abb5be;
+    height:29px;
+    padding-top:6px;
+    text-align:center;
+}
+
+.quarterBoxTallBottomHalf {
+    height:30px;
+    line-height:30px;
+    text-align:center;
+}
+
+.quarterBoxBottomHalf, .halfBoxBottomHalf, .otherBottomHalf{
+    height:12px;
+    overflow:hidden;
+    display:flex;
+    width:100%;
+    justify-content:center;
+    align-items:center;
+}
+
+.thirdBoxBottomHalf {
+    height:12px;
+    overflow:hidden;
+    display:flex;
+    width:50px;
+    justify-content:center;
+    align-items:center;
+}
+
+.fullBoxBottomHalf{
+    height: 12px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.halfBoxTallBottomHalf {
+    height:30px;
+    line-height:30px;
+    text-align:center;
+}
+
+.fullBoxBottomHalfRow2 {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-right:3px;
+    width:118px;
+    height:12px;
+    border:1px solid #abb5be;
+}
+
+.halfBoxBottomHalfRow2 {
+    /*float:left;*/
+    margin-right:3px;
+    width:90px;
+    height:12px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border:1px solid #abb5be;
+}
+
+.xlBoxBottomHalf{
+    /*text-align:left;
+    height:12px;
+    line-height:12px;
+    overflow:hidden;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3px;
+    height: 12px;
+}
+
+.xxlBoxBottomHalf{
+    text-align:center;
+    height:12px;
+    line-height:12px;
+    overflow:hidden;
+}
+
+.xlBoxBottomHalfRow2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:165px;
+    height:12px;
+    border:1px solid #abb5be;
+    margin-right:3px;
+}
+
+.xxlBoxBottomHalfRow2 {
+    /*float:left;*/
+    text-align:left;
+    width:220px;
+    height:12px;
+    line-height:12px;
+    border:1px solid #abb5be;
+}
+
+.smallGridBox, .tableDiv .smallGridBox {
+    border:1px solid #abb5be; 
+    flex-basis:80px; 
+    height:20px; 
+    margin-right:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.dateGridBox {
+    border:1px solid #abb5be; 
+    flex-basis:65px; 
+    height:20px; 
+    margin-right:8px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.fullRecBox {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border:1px solid #abb5be; 
+    width:130px; 
+    height:20px; 
+    margin-right:10px;
+}
+
+.gridMultiLine {
+    border: 1px solid rgb(171, 181, 190); 
+    width: 705px; 
+    height: 24px; 
+    line-height:12px;
+    overflow-y: scroll;
+    padding:4px 5px 4px;
+}
+
+.dateLnk {
+    color:#2778c9;
+    text-decoration:underline;
+    cursor:pointer;
+}
+
+.lastBox {
+    margin-right:0px !important;
+}
+
+
+/*Buttons*/
+
+.printReportBtn {
+    cursor:pointer;
+    text-decoration:underline;
+    color:#fff; 
+    background:#0046ad; 
+    border:1px solid #0046ad;
+    border-radius:2px;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    height:35px; 
+    width:195px;
+    margin-right:25px;
+    /*float:left;*/
+    position:relative;
+}
+
+.printReportMidBtn {
+    cursor:pointer;
+    text-decoration:underline;
+    color:#fff; 
+    background:#0046ad; 
+    border:1px solid #0046ad;
+    border-radius:2px;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    height:35px; 
+    width:195px;
+    /*float:left;*/
+    position:relative;
+}
+
+.bluePrntBtn {
+    cursor:pointer;
+    background:#0046ad; 
+    border:1px solid #0046ad;
+    border-radius:2px;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    height:35px; 
+    width:70px; 
+    margin-left:25px;
+    /*float:left;*/
+    position:relative;
+}
+
+.blueBtnTxt {
+    font-size:13px;
+    color:#fff; 
+    position:absolute;
+    top:12px;
+    left:33px;
+}
+
+.printReportBtn:hover, .bluePrntBtn:hover{
+    background:#277ad9;
+}
+
+.printThis{
+    float:right;
+    cursor: pointer;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: #1861ad;
+}
+
+.printThis:hover{
+    color: #333;
+    background-color: #ddd;
+}
+
+.btnIcon {
+    height:24px;
+    width:24px;
+    position:absolute;
+    top:6px;
+    left:6px;
+}
+
+/*End Buttons*/
+
+/*Overrides and Helpers*/
+.noBorder {
+    border:none !important;
+}
+
+.noShow {
+    display:none !important;
+}
+
+.headerSpacer {
+    width:50px;
+    /*float:left;*/
+    background:#fff;
+    height:20px;
+}
+
+.padTop3 {
+    padding-top:3px;
+}
+
+.printOnly {
+    display:none;
+}
+
+.ui-helper-clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.ui-helper-clearfix { display: inline-block; }
+/* required comment for clearfix to work in Opera \*/
+* html .ui-helper-clearfix { height: 1%; }
+.ui-helper-clearfix { display: block; }
+/* end clearfix */
+
+/*Master Page Styles*/
+.mapBlueBarButton {
+    background-color: #1860AD;
+    font-size: 11pt;
+    min-width: 100px;
+    margin: 4px;
+    margin-left: 8px;
+    margin-right: 16px;
+    color: #FFFFFF;
+    height: 28px;
+    /*line-height: 26px;*/
+    border-radius: 2px;
+    border: 1px solid #FAFAFA;
+    cursor: pointer;
+}
+.mapBlueBarButton:hover {
+    background-color: #1b6cc3;
+}
+
+.mapBlueBarButtonText {
+    position: relative;
+    display: block;
+    float: right;
+    margin-top: 2px;
+}
+
+.mapBlueBarContainer {
+    float: left; 
+    position: absolute;
+}
+
+.mapBlueBarSubContainer {
+    float: left;
+}
+
+.mapBlueBarRightContainer {
+    float: right; 
+    font-weight:700;
+    color: #000;
+    margin-top: 8px;
+    margin-right: 10px;
+}
+
+.mapBlueBarFilters {
+    font-size: 8pt;
+    line-height: 11pt;
+
+}
+
+/*End Master Page Styles*/

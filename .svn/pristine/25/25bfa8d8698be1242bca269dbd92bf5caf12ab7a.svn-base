@@ -1,0 +1,310 @@
+﻿<!-- FOR KENDO GRID ROW DETAIL TEMPLATES -->
+<!-- CELL DATA REPLACERS USE #= NameOfField # -->
+<!-- AVOID USING # AS A CHARACTER IN THE TEMPLATE -->
+<!-- IF USING A CLASS LOOKUP TO THE GRID, MAKE SURE THAT CLASS IS IN THE COLUMN TEMPLATE -->
+<!-- SCRIPTS INCLUDED HERE GET RUN EVERY TIME THE DETAIL POPUP IS OPENED -->
+<!-- WHEN COPIED TO THE DATABASE, THE HTML AND JS MUST BE ALL IN ONE LINE -->
+<!-- DO NOT USE DOUBLE QUOTES IN JS OR HTML -->
+<!-- DO NOT USE COMMENTS IN JS, ALL ONE LINE COMMENTS WILL NOT RUN CODE -->
+
+<!-- FormViewNameOfGrid LAYOUT -->
+<div id='divDetailForm_#= uid #' class='divDetailForm'>
+    
+    <div class='LDHead'>
+        Location Detail</div>
+    <!--Row 1-->
+    <div class='LDInfo'>
+        <div>
+            <span id='lblFileNo'>File No.</span>
+            <input id='FileNo' readonly='readonly' type='text' value='#= FileNo #' />
+            <span id='lblClientLocID'>Client Loc. ID</span>
+            <input id='ClientLocNo' readonly='readonly' type='text' value='#= ClientLocNo #' />
+        </div>
+        <!--Row 2-->
+        <div>
+            <span id='lblAddress'>Address</span>
+            <input id='Address' readonly='readonly' type='text' value='#= Address #' />
+            <span id='lblCity'>City</span>
+            <input id='City' readonly='readonly' type='text' value='#= City #' />
+            <span id='lblStProv'>St/Prov</span>
+            <input id='StProv' readonly='readonly' type='text' value='#= StProv #' />
+            <span id='lblCountry'>Country</span>
+            <input id='Country' readonly='readonly' type='text' value='#= Country #' />
+        </div>
+        <!--Row 3-->
+        <div>
+            <span id='lblDivision'>Division</span>
+            <input id='Division' readonly='readonly' type='text' value='#= Division #' />
+            <span id='lblFacility'>Facility</span>
+            <input id='Facility' readonly='readonly' type='text' value='#= Facility #' />
+        </div>
+    </div>
+    <div class='FVTIV'>
+        <div id='lblTIV'>TIV</div>
+        <div>(millions)</div>
+        <div>
+            <input id='TIV' readonly='readonly' type='text' value='#= TIV #' />
+        </div>
+    </div>
+    <div class='FVTIV'>
+        <div>Date Of</div>
+        <div>Inspection</div>
+        <div>
+            <input id='SurveyDateString' readonly='readonly' type='text' value='#= SurveyDateString #' />
+        </div>
+    </div>
+    <div id='StandardFormView' class='FVTIV' style='width: 110px; position: relative; top: -8.5px; left: 3px;'>
+        <div>LE's (millions)</div>
+        <div>
+            <div style='float: left; padding-right: 4px;'>
+                APL<br />
+                <span id='lblAPLCurrency'>USD</span><br />
+                <input style='width: 30px;' id='APL' readonly='readonly' type='text' value='#= APL #' />
+            </div>
+            <div style='float: left; padding-right: 4px;'>
+                PML<br />
+                <span id='lblPMLCurrency'>USD</span><br />
+                <input style='width: 30px;' id='PML' readonly='readonly' type='text' value='#= PML #' />
+            </div>
+            <div style='float: left;'>
+                MFL<br />
+                <span id='lblMFLCurrency'>USD</span><br />
+                <input style='width: 30px;' id='MFL' readonly='readonly' type='text' value='#= MFL #' />
+            </div>
+        </div>
+    </div>
+    <div id='NoPMLFormView' class='FVTIV' style='width: 110px; position: relative; top: -8.5px; left: 3px;'>
+        <div>LE's (millions)</div>
+        <div>
+            <div style='float: left; padding-right: 4px;'>
+                APL<br />
+                <span id='lblAPLCurrencyNoPML'>USD</span><br />
+                <input style='width: 45px;' id='APL' readonly='readonly' type='text' value='#= PML #' />
+            </div>
+            <div style='float: left;'>
+                MFL<br />
+                <span id='lblMFLCurrencyNoPML'>USD</span><br />
+                <input style='width: 45px;' id='MFL' readonly='readonly' type='text' value='#= MFL #' />
+            </div>
+        </div>
+    </div>
+    <div class='FVTable'>
+        <table cellspacing='0' cellpadding='2'>
+            <tr class='th'>
+                <td colspan='12' class='rb'>
+                    Construction
+                </td>
+                <td class='rb'>
+                    Occupancy
+                </td>
+                <td colspan='6' class='rb'>
+                    Protection
+                </td>
+                <td colspan='4' class='b'>
+                    Exposure
+                </td>
+            </tr>
+            <tr class='tch'>
+                <td colspan='4' class='rb'>
+                    Year
+                </td>
+                <td id='lblArea' colspan='4' class='rb'>
+                    Area
+                </td>
+                <td colspan='4' class='hrb'>
+                    No. of Stories
+                </td>
+                <td class='hrb'>
+                    Major Group/
+                </td>
+                <td rowspan='2' class='rb'>
+                    %<br />
+                    AS
+                </td>
+                <td rowspan='2' class='rb'>
+                    %<br />
+                    ASN
+                </td>
+                <td rowspan='2' class='rb'>
+                    Water<br />
+                    Supply
+                </td>
+                <td rowspan='2' class='rb'>
+                    Surv.
+                </td>
+                <td rowspan='2' class='rb'>
+                    Spec. Haz.
+                </td>
+                <td rowspan='2' class='hrb'>
+                    HE
+                </td>
+                <td rowspan='2' class='rb'>
+                    External<br />
+                    Fire
+                </td>
+                <td rowspan='2' class='rb'>
+                    Earth-<br />
+                    quake
+                </td>
+                <td class='rb'>
+                    Flood Rating
+                </td>
+                <td class='b'>
+                    Wind Rating
+                </td>
+            </tr>
+            <tr class='tch'>
+                <td colspan='3' class='rb'>
+                    %FR
+                </td>
+                <td colspan='3' class='rb'>
+                    %NC
+                </td>
+                <td colspan='3' class='rb'>
+                    %Comb.
+                </td>
+                <td colspan='3' class='hrb'>
+                    Class II
+                </td>
+                <td class='hrb'>
+                    Specific Group
+                </td>
+                <td class='rb'>
+                    Flood Zone
+                </td>
+                <td id='lblMaxSustainedWindSpeed' class='b'>
+                    Wind Zone
+                </td>
+            </tr>
+            <tr class='tch'>
+                <td colspan='4' class='rb'>
+                    <input style='width: 34px' id='InititalMajorConstructionYear' readonly='readonly' type='text' value='#= InititalMajorConstructionYear #' />
+                </td>
+                <td colspan='6' class='rb'>
+                    <input style='width: 100px' id='TotalFloorArea' readonly='readonly' type='text' value='#= TotalFloorArea #' />
+                </td>
+                <td colspan='2' class='hrb'>
+                    <input style='width: 20px' id='NoofStories' readonly='readonly' type='text' value='#= NoofStories #' />
+                </td>
+                <td class='hrb'>
+                    <input style='width: 195px' id='MajorGroup' readonly='readonly' type='text' value='#= MajorGroup #' />
+                </td>
+                <td rowspan='2' class='r'>
+                    <input style='width: 18px; height: 32px' id='AreaWithSprinklers' readonly='readonly' type='text' value='#= AreaWithSprinklers #' />
+                </td>
+                <td rowspan='2' class='r'>
+                    <input style='width: 18px; height: 32px' id='AreaWithoutSprinklersNeedingSprinklers' readonly='readonly' type='text' value='#= AreaWithoutSprinklersNeedingSprinklers #' />
+                </td>
+                <td rowspan='2' class='r'>
+                    <input style='width: 50px; height: 32px' id='WaterSupplyRating' readonly='readonly' type='text' value='#= WaterSupplyRating #' />
+                </td>
+                <td rowspan='2' class='r'>
+                    <input style='width: 50px; height: 32px' id='PropertySurveillance' readonly='readonly' type='text' value='#= PropertySurveillance #' />
+                </td>
+                <td rowspan='2' class='r'>
+                    <input style='width: 50px; height: 32px' id='SpecialHazardsRating' readonly='readonly' type='text' value='#= SpecialHazardsRating #' />
+                </td>
+                <td rowspan='2' class='hr'>
+                    <input style='width: 18px; height: 32px' id='HumanElementRating' readonly='readonly' type='text' value='#= HumanElementRating #' />
+                </td>
+                <td rowspan='2' class='r'>
+                    <input style='width: 50px; height: 32px' id='ExternalFire' readonly='readonly' type='text' value='#= ExternalFire #' />
+                </td>
+                <td rowspan='2' class='r'>
+                    <input style='width: 30px; height: 32px' id='FMSeismicZone' readonly='readonly' type='text' value='#= FMSeismicZone #' />
+                </td>
+                <td class='rb'>
+                    <input style='width: 100px' id='Flood' readonly='readonly' type='text' value='#= Flood #' />
+                </td>
+                <td>
+                    <input style='width: 50px' id='Windstorm' readonly='readonly' type='text' value='#= Windstorm #' />
+                </td>
+            </tr>
+            <tr class='tch'>
+                <td colspan='3' class='r'>
+                    <input style='width: 23px' id='RoofConstructionFireResistive' readonly='readonly' type='text' value='#= RoofConstructionFireResistive #' />
+                </td>
+                <td colspan='3' class='r'>
+                    <input style='width: 29px' id='RoofConstructionNoncombustible' readonly='readonly' type='text' value='#= RoofConstructionNoncombustible #' />
+                </td>
+                <td colspan='3' class='r'>
+                    <input style='width: 48px' id='RoofConstructionCombustible' readonly='readonly' type='text' value='#= RoofConstructionCombustible #' />
+                </td>
+                <td colspan='3' class='hr'>
+                    <input style='width: 46px' id='RoofConstructionClass' readonly='readonly' type='text' value='#= RoofConstructionClass #' />
+                </td>
+                <td class='hr'>
+                    <input style='width: 195px' id='SpecificGroup' readonly='readonly' type='text' value='#= SpecificGroup #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 100px' id='Zone' readonly='readonly' type='text' value='#= Zone #' />
+                </td>
+                <td>
+                    <input style='width: 50px' id='MaxSustainedWindSpeed' readonly='readonly' type='text' value='#= MaxSustainedWindSpeed #' />
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <br />
+
+    <div class='tableDiv'>
+        <div style='margin: auto; width: 100%; text-align: center;'>
+            <span style='margin: auto; width: 100%; text-align: center;'><button class='k-button' onclick='globalCloseFormView(); return false;'>Close</button></span>
+        </div>
+    </div>
+</div>
+<script>
+    /*LOAD THE CSS*/
+    var zLink = "<link rel='stylesheet' type='text/css' href='../../../css/FormView/FormView.css'>";
+    $(zLink).appendTo('head');
+
+    setTimeout(function () {
+
+        /*PROCESS SPECIAL FEATURES*/
+        if (globalClientFeatures.toLowerCase().indexOf('f') > -1) {
+            $('\\#NoPMLFormView').show(1);
+            $('\\#StandardFormView').hide(1);
+        } else {
+            $('\\#NoPMLFormView').hide(1);
+            $('\\#StandardFormView').show(1);
+        }
+
+        var zUID = '#= uid #';
+
+        /* COLOR REPLACEMENTS REMIX*/
+        var colorItems = [
+			'WaterSupplyRating',
+			'PropertySurveillance',
+			'SpecialHazardsRating',
+            'HumanElementRating',
+			'ExternalFire',
+			'Seismic',
+			'FMSeismicZone',
+			'Flood',
+			'Zone',
+			'Windstorm',
+			'MaxSustainedWindSpeed'
+        ];
+        for (i = 0; i < colorItems.length; i++){
+            var zColor = 'transparent';
+            zColor = $('[data-uid=' + zUID + '] .' + colorItems[i] + 'Color').css('background-color');
+            $('\\#divDetailForm_' + zUID + ' \\#' + colorItems[i] + '').css('background-color', zColor);
+        }
+
+        /* FORMAT DATES GLOBAL REMIX */
+        $('\\#divDetailForm_' + zUID + ' input').each(function(){
+            if( $(this).attr('id').toLowerCase().indexOf('date') > -1 ){
+                $(this).val(global.formatShortDateWithMonth($(this).val()));
+            }
+        });
+
+        /* REMOVE NULLS GLOBAL REMIX */
+        $('\\#divDetailForm_' + zUID + ' input').each(function(){
+            if( ($(this).val() == 'null') || ($(this).val() == 'undefined') ){
+                $(this).val('');
+            }
+        });
+
+    }, 50);
+</script>

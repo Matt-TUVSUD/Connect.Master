@@ -1,0 +1,14 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblBatchProcessingStatus --> [tblBatchProcessingStatus]
+
+  colFldId --> [fldId] int **PK** identity not null
+  colFldStatus --> [fldStatus] nvarchar(255) not null
+

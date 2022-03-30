@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Whats New | Global Risk Consultants</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+		
+	<link type="text/css" href="wnCss/reset.css" rel="stylesheet" />
+	<link type="text/css" href="wnCss/grid.css" rel="stylesheet" />
+	<link type="text/css" href="wnCss/font-awesome.min.css" rel="stylesheet" />
+	<link type="text/css" href="wnCss/common.css" rel="stylesheet" />
+    <link type="text/css" href="wnCss/print.css" rel="stylesheet" media="print" />
+		
+	<link rel="shortcut icon" href="images/favicon.ico" />
+
+	<script type="text/javascript" src="jquery/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="jquery/jquery.sticky.js"></script>
+	<script type="text/javascript" src="jquery/jquery.printThis.js"></script>
+	<script type="text/javascript" src="jquery/jquery.highlight.js"></script>
+	<script type="text/javascript" src="jquery/jquery-functions.js"></script>
+</head>
+<body>
+    <div id="header" class="setPrimary">
+        <div id="headerInner" class="clearfix">
+            <div class="logo">
+                <img src="images/logo_horizontalstacked.png" style="height: 110px;" alt="" />
+            </div>
+            <div class="description">
+                <h3>TUV SUD GRC Client Connect Knowledge Base</h3>
+            </div>
+        </div>
+    </div>
+
+    <div id="bluebar" class="setPrimary">
+        <div id="bluebarInner" class="clearfix"></div>
+    </div>
+
+    <div id="contentInner">
+         <div class="content">
+            <h2>TUV SUD GRC Connect</h2><button type="button" class="printThis" title="Print This Section"><i class="fa fa-print"></i></button>
+            <h3 style="color:#000;">Risk Improvement Chart</h3>
+            <p class="contentP">
+                As shown below, we have completed an enhancement to the current <strong>Risk Improvement Chart</strong>, which depicts the risk improvement over the life of the program, by adding an 
+                additional column to the <strong>Improved</strong> risk.
+            </p>
+            <p class="contentP">
+                This is now a two-page report with the second page providing a rolling five-year analysis of their risk improvements.  The chart on the left side identifies the number of new recommendations 
+                for that calendar year (blue bar) along with the number of recommendation closed for that calendar year (green bar).  The chart on the right contains the <strong>Identified</strong> and <strong>Improved</strong> risks in 
+                association with the recommendation counts by year.
+            </p>
+            <p class="contentP">
+                <strong>Note:</strong>  This is not an interactive tool due to the complexity of the various statistical breakdowns.  
+            </p>
+            <p class="contentP">
+                This enhanced chart is now available in TUV SUD GRC Connect, which can be accessed under the <strong>Site Map > Output Reports > All Recommendations > Risk Improvement Chart.</strong>
+                This is available for both Fire and Boiler & Machinery.
+            </p>
+            <p>
+                <img src="images/RiskImprovementChart.png" />
+            </p>
+        </div>
+    </div>
+</body>
+</html>

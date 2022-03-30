@@ -1,0 +1,23 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblMetaMapPin --> [tblMetaMapPin]
+
+  colFldId --> [fldId] int **PK** identity not null
+  colFldIcon --> [fldIcon] nvarchar(50) null
+  colFldHeight --> [fldHeight] int null
+  colFldWidth --> [fldWidth] int null
+  colFldAnchorX --> [fldAnchorX] int null
+  colFldAnchorY --> [fldAnchorY] int null
+  colFldTextOffsetX --> [fldTextOffsetX] int null
+  colFldTextOffsetY --> [fldTextOffsetY] int null
+  colFldNote --> [fldNote] nvarchar(255) null
+  colFldBaseString --> [fldBaseString] nvarchar(MAX) null
+  colFldMetaColorId --> [fldMetaColorId] int null
+

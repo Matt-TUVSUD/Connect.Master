@@ -1,0 +1,1933 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4B0916EA-885E-4ABB-954F-5322FA889129}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>GRC.Connect.Libraries.DataLib</RootNamespace>
+    <AssemblyName>DataLib</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>DataLib.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>DataLib.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Tools\JSON.Net\Bin\Net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Custom\rowTblEzyUsers.vb" />
+    <Compile Include="Custom\TblBatchProcessing.Custom.vb" />
+    <Compile Include="Custom\TblMetaRatingCategory.vb" />
+    <Compile Include="Custom\VwMetaGridColumns.Custom.vb" />
+    <Compile Include="Custom\TblMetaColor.Custom.vb" />
+    <Compile Include="Custom\TblMetaColorAlias.Custom.vb" />
+    <Compile Include="Custom\TblMetaCurrency.Custom.vb" />
+    <Compile Include="Custom\TblMetaGridColumn_Custom.vb" />
+    <Compile Include="Custom\TblMetaInspectionProgramYear.Custom.vb" />
+    <Compile Include="Custom\TblMetaLanguage.Custom.vb" />
+    <Compile Include="Custom\TblMetaLossEstimate.Custom.vb" />
+    <Compile Include="Custom\TblMetaLossEstimateType.Custom.vb" />
+    <Compile Include="Custom\tblMetaParameter.Custom.vb" />
+    <Compile Include="Custom\TblMetaPractice.Custom.vb" />
+    <Compile Include="Custom\TblMetaRatingKeyRange.Custom.vb" />
+    <Compile Include="Custom\TblMetaReport.Custom.vb" />
+    <Compile Include="Custom\TblMetaReportVendor.Custom.vb" />
+    <Compile Include="Custom\TblMetaSource.Custom.vb" />
+    <Compile Include="Custom\tblMetaSourceJoin.Custom.vb" />
+    <Compile Include="Custom\TblMetaSourceValueColor.Custom.vb" />
+    <Compile Include="Custom\tblMetaTIV.Custom.vb" />
+    <Compile Include="Custom\TblMetaUnitMeasurement.Custom.vb" />
+    <Compile Include="Custom\tblMetaUnitSystem.Custom.vb" />
+    <Compile Include="Custom\vwBatchProcessing.Custom.vb" />
+    <Compile Include="Custom\VwRRClients.Custom.vb" />
+    <Compile Include="Generated\GSafeFileNoRadiusParms.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryGSafeFileNoRadiusParms.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblAppVersion.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblBatchProcessingEmail.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblBatchProcessingEmailSet.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblBatchProcessingException.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblBatchProcessingFile.vb">
+      <DependentUpon>Copy of Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblBatchProcessingFileNo.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblBatchProcessingLog.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblBatchProcessingSet.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblBatchProcessingSetItem.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblBatchProcessingSetType.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblBatchProcessingSetTypeGroup.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblBatchProcessingStatus.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblClientMetaRatingCategoryColor.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblClients.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblClientsfileprefixspec.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblClientsroguefile.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblClientsskipdatafolder.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblClientsskiprootfolder.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblEmailTemplate.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblEmailTemplateType.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblEzyLogin.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblEzyLoginactivitylog.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblEzyPasswordhistory.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblEzyUsers.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblEzyUserstracking.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblGridFavorite.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblGSafeHeader.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblGSafePreferences.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblGSafeSlideMenu.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblGSafeUserReclass.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblIndexManager.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaAppSetting.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaAutoRecProcess.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaChart.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaChartDrillDownType.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaChartSeries.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaChartSeriesDetail.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaChartSeriesType.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaColor.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaColorAlias.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaContextTerm.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaCurrency.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaDataTransferGrid.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaExchangeRate.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaGrid.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaGridColumn.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaGridColumnHeaderAttributes.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaGridColumnTemplate.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaGridColumnType.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaInspectionProgramYear.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaKey.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaLanguage.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaLossEstimate.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaLossEstimateType.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaMapPin.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaParameter.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaParameterKind.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaPractice.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaProgramStatus.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaRatingCategory.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaRatingKey.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaRatingKeyRange.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaRatingWeightBM.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaRatingWeightFire.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaReport.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaReportVendor.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaSource.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaSourceJoin.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaSourceParameter.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaSourceType.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaSourceValueColor.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaSQL.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaSQLFunction.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaTIV.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaUnitMeasurement.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaUnitMeasurementLookup.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblMetaUnitSystem.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblNavLink.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblNotification.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblReportArchiveValidation.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblRRLog.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblRRLogArchive.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblSystemAppEntry.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblWhatIfFireRecSelected.vb">
+      <DependentUpon>WhatIfTables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblWhatIfKey.vb">
+      <DependentUpon>WhatIfTables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblWhatIfLocation.vb">
+      <DependentUpon>WhatIfTables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblWhatIfLocationSelected.vb">
+      <DependentUpon>WhatIfTables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblWhatIfOutputParm.vb">
+      <DependentUpon>WhatIfTables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblWhatIfRecSort.vb">
+      <DependentUpon>WhatIfTables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryTblWhatsNew.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryViewCCGaugeStats.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryViewCCGRIPSSLocationsV2.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryViewCCGRIPSSLocationsV3.vb">
+      <DependentUpon>Views-Special-NoColPrefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryViewCCGSafeSitemapItems.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryViewCCUserActivityGridV2.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryViewCCUserSecureLocationsV2.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwActiveAccountService.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwActiveAccountServiceContact.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwAllLocations.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwBatchProcessingSet.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwBatchProcessingSetItem.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwBatchReportFileList.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwBMLossEstimatesLatestFacilityRatingExtractSelect.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwClientMetaPractice.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwClientUsers.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwClientUsersPending.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwDataTransferClient.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwDataTransferMetaGrid.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwDataTransferReportArchive.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwDataTransferReportArchiveValidation.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwEmailTemplate.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwEzyUserPasswordLookup.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwEzyUsersFilters.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwFireLossEstimatesLatestFacilityRatingExtractSelect.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwGSafeFileNoRadius.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwGSafeLocationFilter.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwImpairmentDropDownGroups.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwLastInspectionDate.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwLibrariesDocumentLibrarySelect.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwLocationFilterFileNo.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwLocationListing.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwMetaChartPrefilters.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwMetaChartSeriesItem.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwMetaColor.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwMetaGridColumns.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwMetaRatingKeyRange.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwMetaReportPrefilters.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwNavLinkChartDrillDownInfo.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwPasswordSecurity.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwReclassificationAccount.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwReclassificationDeletedUser.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwRRAutoRequest.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwRRClients.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwRRExpiringExpiredExpectedCompletedDate.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwRRLogCleanUp.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwRRLogFollowUp.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwRRLogFollowUpRecStatusDate.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwUserActivityLog.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwWhatIfFireFacilityRating.vb">
+      <DependentUpon>WhatIfViews.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwWhatIfFireRecGrid.vb">
+      <DependentUpon>WhatIfViews.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\queryVwWhatIfRecSort.vb">
+      <DependentUpon>WhatIfViews.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblAppVersion.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblBatchProcessingEmail.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblBatchProcessingEmailSet.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblBatchProcessingException.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblBatchProcessingFile.vb">
+      <DependentUpon>Copy of Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblBatchProcessingFileNo.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblBatchProcessingLog.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblBatchProcessingSet.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblBatchProcessingSetItem.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblBatchProcessingSetType.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblBatchProcessingSetTypeGroup.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblBatchProcessingStatus.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblClientMetaRatingCategoryColor.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblClients.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblClientsfileprefixspec.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblClientsroguefile.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblClientsskipdatafolder.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblClientsskiprootfolder.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblEmailTemplate.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblEmailTemplateType.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblEzyLogin.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblEzyLoginactivitylog.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblEzyPasswordhistory.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblEzyUsers.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblEzyUserstracking.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblGridFavorite.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblGSafeHeader.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblGSafePreferences.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblGSafeSlideMenu.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblGSafeUserReclass.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblIndexManager.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaAppSetting.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaAutoRecProcess.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaChart.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaChartDrillDownType.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaChartSeries.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaChartSeriesDetail.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaChartSeriesType.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaColor.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaColorAlias.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaContextTerm.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaCurrency.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaDataTransferGrid.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaExchangeRate.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaGrid.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaGridColumn.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaGridColumnHeaderAttributes.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaGridColumnTemplate.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaGridColumnType.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaInspectionProgramYear.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaKey.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaLanguage.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaLossEstimate.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaLossEstimateType.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaMapPin.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaParameter.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaParameterKind.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaPractice.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaProgramStatus.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaRatingCategory.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaRatingKey.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaRatingKeyRange.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaRatingWeightBM.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaRatingWeightFire.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaReport.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaReportVendor.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaSource.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaSourceJoin.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaSourceParameter.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaSourceType.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaSourceValueColor.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaSQL.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaSQLFunction.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaTIV.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaUnitMeasurement.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaUnitMeasurementLookup.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblMetaUnitSystem.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblNavLink.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblNotification.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblReportArchiveValidation.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblRRLog.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblRRLogArchive.vb">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblSystemAppEntry.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblWhatIfFireRecSelected.vb">
+      <DependentUpon>WhatIfTables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblWhatIfKey.vb">
+      <DependentUpon>WhatIfTables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblWhatIfLocation.vb">
+      <DependentUpon>WhatIfTables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblWhatIfLocationSelected.vb">
+      <DependentUpon>WhatIfTables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblWhatIfOutputParm.vb">
+      <DependentUpon>WhatIfTables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblWhatIfRecSort.vb">
+      <DependentUpon>WhatIfTables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\TblWhatsNew.vb">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\UtilSQLServer.vb">
+      <DependentUpon>Engine.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\ViewCCGaugeStats.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\ViewCCGRIPSSLocationsV2.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\ViewCCGRIPSSLocationsV3.vb">
+      <DependentUpon>Views-Special-NoColPrefix.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\ViewCCGSafeSitemapItems.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\ViewCCUserActivityGridV2.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\ViewCCUserSecureLocationsV2.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwActiveAccountService.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwActiveAccountServiceContact.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwAllLocations.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwBatchProcessingSet.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwBatchProcessingSetItem.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwBatchReportFileList.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwBMLossEstimatesLatestFacilityRatingExtractSelect.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwClientMetaPractice.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwClientUsers.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwClientUsersPending.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwDataTransferClient.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwDataTransferMetaGrid.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwDataTransferReportArchive.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwDataTransferReportArchiveValidation.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwEmailTemplate.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwEzyUserPasswordLookup.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwEzyUsersFilters.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwFireLossEstimatesLatestFacilityRatingExtractSelect.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwGSafeFileNoRadius.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwGSafeLocationFilter.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwImpairmentDropDownGroups.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwLastInspectionDate.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwLibrariesDocumentLibrarySelect.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwLocationFilterFileNo.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwLocationListing.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwMetaChartPrefilters.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwMetaChartSeriesItem.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwMetaColor.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwMetaGridColumns.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwMetaRatingKeyRange.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwMetaReportPrefilters.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwNavLinkChartDrillDownInfo.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwPasswordSecurity.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwReclassificationAccount.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwReclassificationDeletedUser.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwRRAutoRequest.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwRRClients.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwRRExpiringExpiredExpectedCompletedDate.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwRRLogCleanUp.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwRRLogFollowUp.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwRRLogFollowUpRecStatusDate.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwUserActivityLog.vb">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwWhatIfFireFacilityRating.vb">
+      <DependentUpon>WhatIfViews.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwWhatIfFireRecGrid.vb">
+      <DependentUpon>WhatIfViews.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="Generated\VwWhatIfRecSort.vb">
+      <DependentUpon>WhatIfViews.M2G</DependentUpon>
+    </Compile>
+    <Compile Include="MapData.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="rowVwLocationFilterFileNo.vb" />
+    <Compile Include="VwMetaRatingKeyRange.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Generated\Copy of Tables.M2G">
+      <Generator>My2ndGenerationGenerator</Generator>
+      <LastGenOutput>Copy of Tables.txt</LastGenOutput>
+    </None>
+    <None Include="Generated\Engine.M2G">
+      <Generator>My2ndGenerationGenerator</Generator>
+      <LastGenOutput>Engine.txt</LastGenOutput>
+    </None>
+    <None Include="Generated\GSafeFileNoRadiusParms.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\Tables-Prefix.M2G">
+      <Generator>My2ndGenerationGenerator</Generator>
+      <LastGenOutput>Tables-Prefix.txt</LastGenOutput>
+    </None>
+    <None Include="Generated\Tables.M2G">
+      <Generator>My2ndGenerationGenerator</Generator>
+      <LastGenOutput>Tables.txt</LastGenOutput>
+    </None>
+    <None Include="Generated\Tables3.M2G" />
+    <None Include="Generated\TblAppVersion.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblBatchProcessingEmail.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblBatchProcessingEmailSet.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblBatchProcessingException.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblBatchProcessingFile.json">
+      <DependentUpon>Copy of Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblBatchProcessingFileNo.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblBatchProcessingLog.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblBatchProcessingSet.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblBatchProcessingSetItem.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblBatchProcessingSetType.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblBatchProcessingSetTypeGroup.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblBatchProcessingStatus.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblClientMetaRatingCategoryColor.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblClients.json">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblClientsfileprefixspec.json">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblClientsroguefile.json">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblClientsskipdatafolder.json">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblClientsskiprootfolder.json">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblEmailTemplate.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblEmailTemplateType.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblEzyLogin.json">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblEzyLoginactivitylog.json">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblEzyPasswordhistory.json">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblEzyUsers.json">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblEzyUserstracking.json">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblGridFavorite.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblGSafeHeader.json">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblGSafePreferences.json">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblGSafeSlideMenu.json">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblGSafeUserReclass.json">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblIndexManager.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaAppSetting.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaAutoRecProcess.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaChart.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaChartDrillDownType.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaChartSeries.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaChartSeriesDetail.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaChartSeriesType.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaColor.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaColorAlias.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaContextTerm.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaCurrency.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaDataTransferGrid.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaExchangeRate.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaGrid.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaGridColumn.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaGridColumnHeaderAttributes.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaGridColumnTemplate.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaGridColumnType.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaInspectionProgramYear.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaKey.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaLanguage.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaLossEstimate.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaLossEstimateType.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaMapPin.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaParameter.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaParameterKind.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaPractice.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaProgramStatus.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaRatingCategory.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaRatingKey.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaRatingKeyRange.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaRatingWeightBM.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaRatingWeightFire.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaReport.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaReportVendor.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaSource.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaSourceJoin.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaSourceParameter.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaSourceType.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaSourceValueColor.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaSQL.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaSQLFunction.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaTIV.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaUnitMeasurement.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaUnitMeasurementLookup.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblMetaUnitSystem.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblNavLink.json">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblNotification.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblReportArchiveValidation.json">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblRRLog.json">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblRRLogArchive.json">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblSystemAppEntry.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblWhatIfFireRecSelected.json">
+      <DependentUpon>WhatIfTables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblWhatIfKey.json">
+      <DependentUpon>WhatIfTables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblWhatIfLocation.json">
+      <DependentUpon>WhatIfTables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblWhatIfLocationSelected.json">
+      <DependentUpon>WhatIfTables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblWhatIfOutputParm.json">
+      <DependentUpon>WhatIfTables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblWhatIfRecSort.json">
+      <DependentUpon>WhatIfTables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\TblWhatsNew.json">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\ViewCCGaugeStats.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\ViewCCGRIPSSLocationsV2.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\ViewCCGRIPSSLocationsV3.json">
+      <DependentUpon>Views-Special-NoColPrefix.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\ViewCCGSafeSitemapItems.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\ViewCCUserActivityGridV2.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\ViewCCUserSecureLocationsV2.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\Views-Special-NoColPrefix.M2G">
+      <Generator>My2ndGenerationGenerator</Generator>
+      <LastGenOutput>Views-Special-NoColPrefix.txt</LastGenOutput>
+    </None>
+    <None Include="Generated\Views.M2G">
+      <Generator>My2ndGenerationGenerator</Generator>
+      <LastGenOutput>Views.txt</LastGenOutput>
+    </None>
+    <None Include="Generated\VwActiveAccountService.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwActiveAccountServiceContact.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwAllLocations.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwBatchProcessingSet.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwBatchProcessingSetItem.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwBatchReportFileList.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwBMLossEstimatesLatestFacilityRatingExtractSelect.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwClientMetaPractice.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwClientUsers.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwClientUsersPending.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwDataTransferClient.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwDataTransferMetaGrid.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwDataTransferReportArchive.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwDataTransferReportArchiveValidation.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwEmailTemplate.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwEzyUserPasswordLookup.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwEzyUsersFilters.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwFireLossEstimatesLatestFacilityRatingExtractSelect.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwGSafeFileNoRadius.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwGSafeLocationFilter.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwImpairmentDropDownGroups.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwLastInspectionDate.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwLibrariesDocumentLibrarySelect.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwLocationFilterFileNo.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwLocationListing.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwMetaChartPrefilters.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwMetaChartSeriesItem.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwMetaColor.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwMetaGridColumns.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwMetaRatingKeyRange.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwMetaReportPrefilters.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwNavLinkChartDrillDownInfo.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwPasswordSecurity.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwReclassificationAccount.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwReclassificationDeletedUser.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwRRAutoRequest.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwRRClients.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwRRExpiringExpiredExpectedCompletedDate.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwRRLogCleanUp.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwRRLogFollowUp.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwRRLogFollowUpRecStatusDate.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwUserActivityLog.json">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwWhatIfFireFacilityRating.json">
+      <DependentUpon>WhatIfViews.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwWhatIfFireRecGrid.json">
+      <DependentUpon>WhatIfViews.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\VwWhatIfRecSort.json">
+      <DependentUpon>WhatIfViews.M2G</DependentUpon>
+    </None>
+    <None Include="Generated\WhatIfTables.M2G">
+      <Generator>My2ndGenerationGenerator</Generator>
+      <LastGenOutput>WhatIfTables.txt</LastGenOutput>
+    </None>
+    <None Include="Generated\WhatIfViews.M2G">
+      <Generator>My2ndGenerationGenerator</Generator>
+      <LastGenOutput>WhatIfViews.txt</LastGenOutput>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interface\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Generated\Copy of Tables.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Copy of Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\Engine.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Engine.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\GSafeFileNoRadiusParms.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\Tables-Prefix.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\Tables.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblAppVersion.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblBatchProcessingEmail.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblBatchProcessingEmailSet.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblBatchProcessingException.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblBatchProcessingFile.txt">
+      <DependentUpon>Copy of Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblBatchProcessingFileNo.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblBatchProcessingLog.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblBatchProcessingSet.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblBatchProcessingSetItem.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblBatchProcessingSetType.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblBatchProcessingSetTypeGroup.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblBatchProcessingStatus.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblClientMetaRatingCategoryColor.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblClients.txt">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblClientsfileprefixspec.txt">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblClientsroguefile.txt">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblClientsskipdatafolder.txt">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblClientsskiprootfolder.txt">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblEmailTemplate.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblEmailTemplateType.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblEzyLogin.txt">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblEzyLoginactivitylog.txt">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblEzyPasswordhistory.txt">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblEzyUsers.txt">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblEzyUserstracking.txt">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblGridFavorite.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblGSafeHeader.txt">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblGSafePreferences.txt">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblGSafeSlideMenu.txt">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblGSafeUserReclass.txt">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblIndexManager.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaAppSetting.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaAutoRecProcess.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaChart.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaChartDrillDownType.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaChartSeries.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaChartSeriesDetail.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaChartSeriesType.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaColor.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaColorAlias.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaContextTerm.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaCurrency.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaDataTransferGrid.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaExchangeRate.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaGrid.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaGridColumn.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaGridColumnHeaderAttributes.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaGridColumnTemplate.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaGridColumnType.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaInspectionProgramYear.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaKey.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaLanguage.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaLossEstimate.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaLossEstimateType.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaMapPin.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaParameter.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaParameterKind.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaPractice.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaProgramStatus.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaRatingCategory.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaRatingKey.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaRatingKeyRange.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaRatingWeightBM.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaRatingWeightFire.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaReport.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaReportVendor.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaSource.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaSourceJoin.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaSourceParameter.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaSourceType.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaSourceValueColor.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaSQL.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaSQLFunction.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaTIV.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaUnitMeasurement.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaUnitMeasurementLookup.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblMetaUnitSystem.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblNavLink.txt">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblNotification.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblReportArchiveValidation.txt">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblRRLog.txt">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblRRLogArchive.txt">
+      <DependentUpon>Tables-Prefix.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblSystemAppEntry.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblWhatIfFireRecSelected.txt">
+      <DependentUpon>WhatIfTables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblWhatIfKey.txt">
+      <DependentUpon>WhatIfTables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblWhatIfLocation.txt">
+      <DependentUpon>WhatIfTables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblWhatIfLocationSelected.txt">
+      <DependentUpon>WhatIfTables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblWhatIfOutputParm.txt">
+      <DependentUpon>WhatIfTables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblWhatIfRecSort.txt">
+      <DependentUpon>WhatIfTables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\TblWhatsNew.txt">
+      <DependentUpon>Tables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\ViewCCGaugeStats.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\ViewCCGRIPSSLocationsV2.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\ViewCCGRIPSSLocationsV3.txt">
+      <DependentUpon>Views-Special-NoColPrefix.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\ViewCCGSafeSitemapItems.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\ViewCCUserActivityGridV2.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\ViewCCUserSecureLocationsV2.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\Views-Special-NoColPrefix.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Views-Special-NoColPrefix.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\Views.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwActiveAccountService.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwActiveAccountServiceContact.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwAllLocations.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwBatchProcessingSet.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwBatchProcessingSetItem.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwBatchReportFileList.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwBMLossEstimatesLatestFacilityRatingExtractSelect.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwClientMetaPractice.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwClientUsers.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwClientUsersPending.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwDataTransferClient.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwDataTransferMetaGrid.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwDataTransferReportArchive.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwDataTransferReportArchiveValidation.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwEmailTemplate.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwEzyUserPasswordLookup.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwEzyUsersFilters.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwFireLossEstimatesLatestFacilityRatingExtractSelect.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwGSafeFileNoRadius.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwGSafeLocationFilter.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwImpairmentDropDownGroups.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwLastInspectionDate.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwLibrariesDocumentLibrarySelect.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwLocationFilterFileNo.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwLocationListing.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwMetaChartPrefilters.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwMetaChartSeriesItem.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwMetaColor.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwMetaGridColumns.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwMetaRatingKeyRange.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwMetaReportPrefilters.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwNavLinkChartDrillDownInfo.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwPasswordSecurity.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwReclassificationAccount.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwReclassificationDeletedUser.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwRRAutoRequest.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwRRClients.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwRRExpiringExpiredExpectedCompletedDate.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwRRLogCleanUp.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwRRLogFollowUp.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwRRLogFollowUpRecStatusDate.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwUserActivityLog.txt">
+      <DependentUpon>Views.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwWhatIfFireFacilityRating.txt">
+      <DependentUpon>WhatIfViews.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwWhatIfFireRecGrid.txt">
+      <DependentUpon>WhatIfViews.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\VwWhatIfRecSort.txt">
+      <DependentUpon>WhatIfViews.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\WhatIfTables.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WhatIfTables.M2G</DependentUpon>
+    </Content>
+    <Content Include="Generated\WhatIfViews.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WhatIfViews.M2G</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GridFilterSortLib\FilterSortLib.vbproj">
+      <Project>{8927d11f-d576-4069-9252-33710c6775d9}</Project>
+      <Name>FilterSortLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

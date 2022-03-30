@@ -1,0 +1,34 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblWhatIfLocation --> [TblWhatIfLocation]
+
+  colFldGSafeId --> [fldGSafeId] int **PK** not null
+  colFldFileNo --> [fldFileNo] varchar(10) **PK** not null
+  colFldDivision --> [fldDivision] nvarchar(100) null
+  colFldCustomAccess --> [fldCustomAccess] nvarchar(100) null
+  colFldClientLocID --> [fldClientLocID] nvarchar(100) null
+  colFldAddressStamp --> [fldAddressStamp] nvarchar(1000) null
+  colFldFilePrefix --> [fldFilePrefix] nvarchar(50) null
+  colFldTivUSD --> [fldTivUSD] numeric(18,2) null
+  colFldTotalScore --> [fldTotalScore] numeric(8,2) not null
+  colFldTotalScoreRecsComplete --> [fldTotalScoreRecsComplete] numeric(8,2) not null
+  colFldTotalScoreAchievedPercent --> [fldTotalScoreAchievedPercent] numeric(8,2) not null
+  colFldPhysicalProtRating --> [fldPhysicalProtRating] numeric(8,2) not null
+  colFldPhysicalProtWeight --> [fldPhysicalProtWeight] numeric(8,2) null
+  colFldHeRating --> [fldHeRating] numeric(8,2) null
+  colFldHeWeight --> [fldHeWeight] numeric(8,2) null
+  colFldNatHazRating --> [fldNatHazRating] numeric(8,2) null
+  colFldNatHazWeight --> [fldNatHazWeight] numeric(8,2) null
+  colFldBcpRating --> [fldBcpRating] numeric(8,2) null
+  colFldBcpWeight --> [fldBcpWeight] numeric(8,2) null
+  colFldHasRatingData --> [fldHasRatingData] bit null
+  colFldCreateDate --> [fldCreateDate] datetime null
+  colFldFacility --> [fldFacility] nvarchar(100) null
+

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TUV SUD Demo</title>
+    <!-- Referencing Aeris JS SDK 1.5.3 for correct functioning of vector update method-->
+    <script defer src="https://cdn.aerisapi.com/sdk/js/1.5.3/aerisweather.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.aerisapi.com/sdk/js/1.5.3/aerisweather.css">
+
+    <style>
+        #app {
+            font-family: 'Helvetica','Arial',sans-serif;
+            height: 600px;
+            margin: 30px auto;
+            width: 1000px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="app"></div>
+
+    <script>
+
+        //Referencing a json source for demonstration purposes
+        const facilitiesSources = {
+            locations: {
+                //url: 'https://apollo.urban10.net/aeris/js/sdk/data/aeris_data_json.json',
+                //url: '//dev.globalriskconsultants.com/capi/clients/1001/locations',
+                url: "aerisMapLocs.json",
+                icon: {
+                    url: '../../Home_{{VER}}/Images/icons/maps/icon-facility.svg'
+                }
+            }
+        };
+
+        //Fetch new location objects
+        const fetchData = (limit) => {
+            return fetch(facilitiesSources.locations.url)
+                .then((response) => response.json())
+                .then((json) => {
+                    const results = [];
+                    const count = json.length;
+                    let n = 0;
+
+                    while (n < limit) {
+                        const index = Math.round(Math.random() * (count - 1));
+                        results.push(json[index]);
+                        n += 1;
+                    }
+                    //Return location object fetched for testing purposes
+                    console.log(results);
+                    return results;
+                });
+        };
+
+        // local cache for all returned results that get pushed to the datasource
+        // per each update interval
+        let payload = [];
+
+        window.onload = () => {
+            //debugger;
+            const aeris = new AerisWeather('itsH0ETre02EmR6CZIC4l', '5iI6TbpIJ9vmdNQDhcUeTVtXwYRmPGSE8CriqLJL');
+            const utils = aeris.utils;
+            //debugger;
+            aeris.apps().then((apps) => {
+                const app = new apps.InteractiveMapApp('#app', {
+                    map: {
+                        strategy: 'leaflet',
+                        zoom: 2,
+                        center: { lat: 37, lon: -93 },
+                        layers: 'radar'
+                    },
+                    panels: {
+                        layers: {
+                            buttons: [
+                            {
+                                id: 'facilities',
+                                title: 'Facilities',
+                                filter: true,
+                                segments: [{
+                                    title: 'Customer Locations',
+                                    value: 'facilities'
+                                }]
+                            },
+                            {
+                                id: 'radar',
+                                value: 'radar:80',
+                                title: 'Radar'
+                            }, {
+                                id: 'satellite',
+                                value: 'satellite:75',
+                                title: 'Satellite'
+                            }, {
+                                id: 'alerts',
+                                value: 'alerts',
+                                title: 'Alerts'
+                            }, {
+
+                            }]
+                        },
+                        info: {
+                            views: {
+                                facility: {
+                                    request: (data) => {
+                                        const request = aeris.api();
+                                        const forecastFields = 'timestamp,dateTimeISO,tempF,icon,weatherPrimary,windSpeedMPH,windSpeedMinMPH,windSpeedMaxMPH,windGustMPH,snowIN,precipIN'.split(',').map((key) => `periods.${key}`);
+                                        request.addRequest(aeris.api().endpoint('observations'));
+                                        request.addRequest(aeris.api().endpoint('forecasts').fields(forecastFields.join(',')).filter('3hr').limit(7));
+                                        request.addRequest(aeris.api().endpoint('threats').radius('50mi'));
+                                        request.addRequest(aeris.api().endpoint('alerts').fields('details.type,details.name,timestamps'));
+                                        request.addRequest(aeris.api().endpoint('phrases/summary'));
+                                        request.addRequest(aeris.api().endpoint('convective/outlook').action('contains'));
+                                        request.addRequest(aeris.api().endpoint('lightning/summary').action('closest').radius('60mi').limit(100));
+
+                                        return request;
+                                    },
+                                    views: [{
+                                        renderer: (data) => {
+                                            // View the data returned from the request just above
+                                            console.log(data);
+                                            if (!data.observations || !data.observations.place || !data.observations.place.city || !data.observations.place.state) return ('<p>No place data</p>');
+                                            return ('<p>Custom content displaying the observation data place.</p><p>' + data.observations.place.city + ', ' + data.observations.place.state + '</p>');
+                                        }
+                                    }, {
+                                        title: 'Active Alerts',
+                                        renderer: 'alerts'
+                                    }, {
+                                        title: 'Active Threats',
+                                        renderer: 'threats'
+                                    }, {
+                                        title: 'Impacts',
+                                        renderer: 'hazards'
+                                    }, {
+                                        title: 'Observations',
+                                        renderer: 'obs'
+                                    }, {
+                                        title: 'Outlook',
+                                        renderer: 'outlook'
+                                    }, {
+                                        title: 'Short-Term Forecast',
+                                        renderer: 'forecast'
+                                    }]
+                                }
+                            }
+                        }
+                    }
+                });
+
+                // Add your custom vector source
+                // The data being referenced is the local cache of location objects
+                const customDataSource = app.addSource('facilities', 'vector', {
+                    data: {
+                        items: payload,
+                        coordinate: (data) => {
+                            const { lat, lon } = data;
+                            return { lat, lon };
+                        }
+                    },
+                    style: {
+                        marker: data => {
+                            const icon = facilitiesSources.locations.icon;
+                            return {
+                                className: "facilities",
+                                icon: {
+                                    url: icon.url
+                                },
+                                size: [30, 30]
+                            };
+                        }
+                    }
+                });
+
+
+                app.on('ready', async () => {
+                    //debugger;
+                    //Once the app is ready, add our custom data source to the map
+                    app.map.addSource(customDataSource);
+
+                    //When we update our data source, we add the location object to our local cache "payload"
+                    //	Then use the update method on the vector source to add all relevant locations
+                    //	The local cache is necessary, as calling update overrides the data existing, it does not add to the data
+                    const updateDataSource = (results) => {
+                        payload = payload.concat(results);
+                        customDataSource.update({ items: payload });
+                    };
+
+                    app.map.on('marker:click', (e) => {
+                        if (e.data) {
+                            let data = e.data.data || {};
+                            const source = data.awxjs_source;
+                            // Make sure you match your source names properly
+                            if (source === 'facilities') {
+                                const loc = data.lat + ',' + data.lon;
+                                const name = utils.strings.toName(data.LID);
+                                app.showInfo('facility', name).load({ p: loc });
+                            }
+                        }
+                    });
+
+                    // fetch initial data set
+                    updateDataSource(await fetchData(5));
+
+                    // TEST ONLY!
+                    // fetch new results every few seconds to mimic progressively adding to and updating
+                    // the data source data currently on the map
+                    setInterval(async () => {
+                        updateDataSource(await fetchData(2));
+                    }, 5000);
+                });
+            });
+
+        };
+
+    </script>
+
+</body>
+</html>

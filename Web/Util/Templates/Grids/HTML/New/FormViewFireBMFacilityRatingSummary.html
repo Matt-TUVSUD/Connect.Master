@@ -1,0 +1,178 @@
+﻿<!-- FOR KENDO GRID ROW DETAIL TEMPLATES -->
+<!-- CELL DATA REPLACERS USE #= NameOfField # -->
+<!-- AVOID USING # AS A CHARACTER IN THE TEMPLATE -->
+<!-- IF USING A CLASS LOOKUP TO THE GRID, MAKE SURE THAT CLASS IS IN THE COLUMN TEMPLATE -->
+<!-- SCRIPTS INCLUDED HERE GET RUN EVERY TIME THE DETAIL POPUP IS OPENED -->
+<!-- WHEN COPIED TO THE DATABASE, THE HTML AND JS MUST BE ALL IN ONE LINE -->
+<!-- DO NOT USE DOUBLE QUOTES IN JS OR HTML -->
+<!-- DO NOT USE COMMENTS IN JS, ALL ONE LINE COMMENTS WILL NOT RUN CODE -->
+
+<!-- FormViewNameOfGrid LAYOUT -->
+<div id='divDetailForm_#= uid #' class='divDetailForm'>
+    
+    <div class='LDHead'>
+            Location Detail</div>
+        <!--Row 1-->
+        <div class='LDInfo'>
+            <div>
+                <span id='lblFileNo'>File No.</span>
+                <input id='FileNo' readonly='readonly' type='text' value='#= FileNo #' />
+                <span id='lblClientLocID'>Client Loc. ID</span>
+                <input id='ClientLocNo' readonly='readonly' type='text' value='#= ClientLocNo #' />
+            </div>
+            <!--Row 2-->
+            <div>
+                <span id='lblAddress'>Address</span>
+                <input id='Address' readonly='readonly' type='text' value='#= Address #' />
+                <span id='lblCity'>City</span>
+                <input id='City' readonly='readonly' type='text' value='#= City #' />
+                <span id='lblStProv'>St/Prov</span>
+                <input id='StProv' readonly='readonly' type='text' value='#= StProv #' />
+                <span id='lblCountry'>Country</span>
+                <input id='Country' readonly='readonly' type='text' value='#= Country #' />
+            </div>
+            <!--Row 3-->
+            <div>
+                <span id='lblDivision'>Division</span>
+                <input id='Division' readonly='readonly' type='text' value='#= Division #' />
+                <span id='lblFacility'>Facility</span>
+                <input id='Facility' readonly='readonly' type='text' value='#= Facility #' />
+            </div>
+        </div>
+        <div class='FVTIV'>
+            <div id='lblTIV'>TIV</div>
+            <div>(millions)</div>
+            <div>
+                <input id='TIV' readonly='readonly' type='text' value='#= TIV #' />
+            </div>
+        </div>
+        <div class='FVTIV'>
+            <div>Date Of</div>
+            <div>Inspection</div>
+            <div>
+                <input id='InspectionDateString' readonly='readonly' type='text' value='#= InspectionDateString #' />
+            </div>
+        </div>
+        <div class='FVTable'>
+            <table cellspacing='0' cellpadding='2'>
+                <tr class='th'>
+                    <td colspan='9' class='b'>
+                        Rating Summary
+                    </td>
+                </tr>
+                <tr class='tch'>
+                    <td rowspan='2' class='rb'>
+                        Passive<br />
+                        Score
+                    </td>
+                    <td rowspan='2' class='rb'>
+                        Passive<br />
+                        w/Recs
+                    </td>
+                    <td rowspan='2' class='rb'>
+                        Active<br />
+                        Score
+                    </td>
+                    <td rowspan='2' class='rb'>
+                        Active<br />
+                        w/Recs
+                    </td>
+                    <td colspan='2' class='rb'>
+                        Current
+                    </td>
+                    <td colspan='2' class='b'>
+                        w/Recs Completed
+                    </td>
+                </tr>
+                <tr class='tch'>
+                    <td class='rb'>
+                        Score
+                    </td>
+                    <td class='rb'>
+                        Rating
+                    </td>
+                    <td class='rb'>
+                        Score
+                    </td>
+                    <td class='b'>
+                        Rating
+                    </td>
+                </tr>
+                <tr>
+                    <td class='rb'>
+                        <input style='width: 35px' id='PassiveC' readonly='readonly' type='text' value='#= PassiveC #' />
+                    </td>
+                    <td class='rb'>
+                        <input style='width: 35px' id='PassiveWC' readonly='readonly' type='text' value='#= PassiveWC #' />
+                    </td>
+                    <td class='rb'>
+                        <input style='width: 35px' id='ActiveC' readonly='readonly' type='text' value='#= ActiveC #' />
+                    </td>
+                    <td class='rb'>
+                        <input style='width: 35px' id='ActiveWC' readonly='readonly' type='text' value='#= ActiveWC #' />
+                    </td>
+                    <td class='rb'>
+                        <input style='width: 45px' id='TotalScoreCurrent' readonly='readonly' type='text' value='#= TotalScoreCurrent #' />
+                    </td>
+                    <td class='rb'>
+                        <input style='width: 70px' id='TotalRating' readonly='readonly' type='text' value='#= TotalRating #' />
+                    </td>
+                    <td class='rb'>
+                        <input style='width: 45px' id='TotalWRComplete' readonly='readonly' type='text' value='#= TotalWRComplete #' />
+                    </td>
+                    <td class='b'>
+                        <input style='width: 70px' id='TotalWRCompleteRating' readonly='readonly' type='text' value='#= TotalWRCompleteRating #' />
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <br />
+
+    <div class='tableDiv'>
+        <div style='margin: auto; width: 100%; text-align: center;'>
+            <span style='margin: auto; width: 100%; text-align: center;'><button class='k-button' onclick='globalCloseFormView(); return false;'>Close</button></span>
+        </div>
+    </div>
+</div>
+<script>
+    /*LOAD THE CSS*/
+    var zLink = "<link rel='stylesheet' type='text/css' href='../../../css/FormView/FormView.css'>";
+    $(zLink).appendTo('head');
+
+    setTimeout(function () {
+        var zUID = '#= uid #';
+
+        /* COLOR REPLACEMENTS */
+        var colorItems = [
+            'FireTotalScore',
+            'FireOverallPlantRating',
+            'FireOverallScoreWithRecsComplete',
+            'FireOverallPlantRatingWithRecsComplete',
+            'BMTotalScoreCurrent',
+            'BMTotalRating',
+            'BMTotalWRComplete',
+            'BMTotalWRCompleteRating'
+        ];
+        for (i = 0; i < colorItems.length; i++){
+            var zColor = 'transparent';
+            zColor = $('[data-uid=' + zUID + '] .' + colorItems[i] + 'Color').css('background-color');
+            $('\\#divDetailForm_' + zUID + ' \\#' + colorItems[i] + '').css('background-color', zColor);
+        }
+
+        /* FORMAT DATES GLOBAL REMIX */
+        $('\\#divDetailForm_' + zUID + ' input').each(function(){
+            if( $(this).attr('id').toLowerCase().indexOf('date') > -1 ){
+                $(this).val(global.formatShortDateWithMonth($(this).val()));
+            }
+        });
+
+        /* REMOVE NULLS GLOBAL REMIX */
+        $('\\#divDetailForm_' + zUID + ' input').each(function(){
+            if( ($(this).val() == 'null') || ($(this).val() == 'undefined') ){
+                $(this).val('');
+            }
+        });
+
+    }, 50);
+</script>

@@ -1,0 +1,582 @@
+[
+  {
+    "LID": "1001.0498",
+    "Address": "Westendstraße 199",
+    "City": "München",
+    "State": "",
+    "Zip": "80686",
+    "Country": "Germany",
+    "lat": 48.1351222,
+    "lon": 11.5214633
+  },
+  {
+    "LID": "1001.0003",
+    "Address": "65 Shawmut Road",
+    "City": "Canton",
+    "State": "Massachusetts",
+    "Zip": "02021",
+    "Country": "United States",
+    "lat": 42.1873218,
+    "lon": -71.1515279
+  },
+  {
+    "LID": "1001.0005",
+    "Address": "85 Enterprise Boulevard, Suite 100",
+    "City": "Markham",
+    "State": "Ontario",
+    "Zip": "L6G 0B5",
+    "Country": "Canada",
+    "lat": 43.850578,
+    "lon": -79.319714
+  },
+  {
+    "LID": "1001.0008",
+    "Address": "3576 Concord Road",
+    "City": "York",
+    "State": "Pennsylvania",
+    "Zip": "17402",
+    "Country": "United States",
+    "lat": 39.9625984,
+    "lon": -76.727745
+  },
+  {
+    "LID": "MX80",
+    "Address": "Calzada del Oro 1755 Col. Dos Divisi�n 2",
+    "City": "Mexicali",
+    "State": "",
+    "Zip": "21399",
+    "Country": "Mexico",
+    "lat": 32.5948087,
+    "lon": -115.4101475
+  },
+  {
+    "LID": "CI12",
+    "Address": "Avenida el Bosque Norte 500",
+    "City": "Santiago",
+    "State": "",
+    "Zip": "7550000",
+    "Country": "Chile",
+    "lat": -33.4254119,
+    "lon": -70.56656659999999
+  },
+  {
+    "LID": "AS99",
+    "Address": "19 Corporate Drive",
+    "City": "Cannon Hill",
+    "State": "",
+    "Zip": "4170",
+    "Country": "Australia",
+    "lat": -27.466776,
+    "lon": 153.092224
+  },
+  {
+    "LID": "AS0K",
+    "Address": "45 Grosvenor Street",
+    "City": "Abbotsford",
+    "State": "",
+    "Zip": "3067",
+    "Country": "Australia",
+    "lat": -37.8076817955868,
+    "lon": 145.006592273712
+  },
+  {
+    "LID": "IE3B",
+    "Address": "Orion-Campus ,Phase-1 ,19/2 Devarabisanahalli, Varthur",
+    "City": "Bangalore",
+    "State": "",
+    "Zip": "560103",
+    "Country": "India",
+    "lat": 12.9249717125533,
+    "lon": 77.686847448349
+  },
+  {
+    "LID": "FI40",
+    "Address": "VIESTIKATU 1-3",
+    "City": "Kuopio",
+    "State": "",
+    "Zip": "70600",
+    "Country": "Finland",
+    "lat": 62.8933345,
+    "lon": 27.6793276
+  },
+  {
+    "LID": "AB02",
+    "Address": "5925 Centre Street SW",
+    "City": "Calgary",
+    "State": "Alberta",
+    "Zip": "T2H 0C2",
+    "Country": "Canada",
+    "lat": 51.0009369,
+    "lon": -114.0638098
+  },
+  {
+    "LID": "AB08",
+    "Address": "104A Boulder Crescent Suite 3",
+    "City": "Canmore",
+    "State": "Alberta",
+    "Zip": "T1W 1L2",
+    "Country": "Canada",
+    "lat": 51.0784714,
+    "lon": -115.3231744
+  },
+  {
+    "LID": "AB11",
+    "Address": "5580 45th Street Bay C5",
+    "City": "Red Deer",
+    "State": "Alberta",
+    "Zip": "T4N 1L1",
+    "Country": "Canada",
+    "lat": 52.303123,
+    "lon": -114.08863
+  },
+  {
+    "LID": "AB19",
+    "Address": "2181 Premier Way, Suite 160",
+    "City": "Sherwood Park",
+    "State": "Alberta",
+    "Zip": "T8H 2V1",
+    "Country": "Canada",
+    "lat": 53.5614264,
+    "lon": -113.3164717
+  },
+  {
+    "LID": "AE07",
+    "Address": "Carlos Pellegrini 179",
+    "City": "Buenos Aires",
+    "State": "",
+    "Zip": "1009",
+    "Country": "Argentina",
+    "lat": -34.6063651,
+    "lon": -58.3808147
+  },
+  {
+    "LID": "AL06",
+    "Address": "1327 Erie Street",
+    "City": "Birmingham",
+    "State": "Alabama",
+    "Zip": "35224",
+    "Country": "United States",
+    "lat": 33.4990741,
+    "lon": -86.9178058
+  },
+  {
+    "LID": "AL07",
+    "Address": "1 Cliff Garrett Drive",
+    "City": "Anniston",
+    "State": "Alabama",
+    "Zip": "36203",
+    "Country": "United States",
+    "lat": 33.5901809,
+    "lon": -85.8469587
+  },
+  {
+    "LID": "AL19",
+    "Address": "2100 Riverchase Center",
+    "City": "Birmingham",
+    "State": "Alabama",
+    "Zip": "35244-1855",
+    "Country": "United States",
+    "lat": 33.365017,
+    "lon": -86.787123
+  },
+  {
+    "LID": "AL36",
+    "Address": "207 Jacintoport Boulevard",
+    "City": "Saraland",
+    "State": "Alabama",
+    "Zip": "36671",
+    "Country": "United States",
+    "lat": 30.8049702,
+    "lon": -88.0675378
+  },
+  {
+    "LID": "AL37",
+    "Address": "1 Linde Drive",
+    "City": "Chickasaw",
+    "State": "Alabama",
+    "Zip": "36611",
+    "Country": "United States",
+    "lat": 30.7605837,
+    "lon": -88.0736852
+  },
+  {
+    "LID": "AS01",
+    "Address": "2 Richardson Place",
+    "City": "North Ryde",
+    "State": "",
+    "Zip": "2113",
+    "Country": "Australia",
+    "lat": -33.797679,
+    "lon": 151.145322
+  },
+  {
+    "LID": "AS05",
+    "Address": "225 Main Road",
+    "City": "Derwent Park",
+    "State": "",
+    "Zip": "7009",
+    "Country": "Australia",
+    "lat": -42.838577,
+    "lon": 147.289691
+  },
+  {
+    "LID": "AS51",
+    "Address": "215 Wellington Street",
+    "City": "Launceston",
+    "State": "",
+    "Zip": "7250",
+    "Country": "Australia",
+    "lat": -41.44694,
+    "lon": 147.139721
+  },
+  {
+    "LID": "AS59",
+    "Address": "24 Potts Street",
+    "City": "East Brisbane",
+    "State": "",
+    "Zip": "4169",
+    "Country": "Australia",
+    "lat": -27.485899,
+    "lon": 153.040794
+  },
+  {
+    "LID": "AS65",
+    "Address": "Units 5&6, 130 Francisco Street",
+    "City": "Belmont",
+    "State": "",
+    "Zip": "6104",
+    "Country": "Australia",
+    "lat": -31.955015,
+    "lon": 115.923379
+  },
+  {
+    "LID": "AS66",
+    "Address": "28 Callemondah Road",
+    "City": "Gladstone",
+    "State": "",
+    "Zip": "4680",
+    "Country": "Australia",
+    "lat": -23.8731430859615,
+    "lon": 151.213075788208
+  },
+  {
+    "LID": "AU01",
+    "Address": "Handelskai 388",
+    "City": "Vienna",
+    "State": "",
+    "Zip": "1020",
+    "Country": "Austria",
+    "lat": 48.2031750846426,
+    "lon": 16.4354717731476
+  },
+  {
+    "LID": "AU04",
+    "Address": "Grabenweg 69/Top 2-18",
+    "City": "Innsbruck",
+    "State": "",
+    "Zip": "6020",
+    "Country": "Austria",
+    "lat": 47.2651901254322,
+    "lon": 11.4395999908447
+  },
+  {
+    "LID": "AU05",
+    "Address": "Feldkirchner Strasse 140",
+    "City": "Klagenfurt",
+    "State": "",
+    "Zip": "9020",
+    "Country": "Austria",
+    "lat": 46.6409842567688,
+    "lon": 14.2891734838486
+  },
+  {
+    "LID": "AU06",
+    "Address": "Lederergasse 88",
+    "City": "Linz",
+    "State": "",
+    "Zip": "4020",
+    "Country": "Austria",
+    "lat": 48.3125527735887,
+    "lon": 14.3065756559372
+  },
+  {
+    "LID": "AU08",
+    "Address": "Mayrwiesstrasse 22",
+    "City": "Hallwang",
+    "State": "",
+    "Zip": "5300",
+    "Country": "Austria",
+    "lat": 47.8349845436951,
+    "lon": 13.0853551626205
+  },
+  {
+    "LID": "AU12",
+    "Address": "Vorarlberger Wirtschaftspark 1",
+    "City": "Goetzis",
+    "State": "",
+    "Zip": "6840",
+    "Country": "Austria",
+    "lat": 47.3285775388303,
+    "lon": 9.64123249053955
+  },
+  {
+    "LID": "AZ09",
+    "Address": "4805 Mohave Airport Drive",
+    "City": "Kingman",
+    "State": "Arizona",
+    "Zip": "86401",
+    "Country": "United States",
+    "lat": 35.2601166,
+    "lon": -113.9460227
+  },
+  {
+    "LID": "AZ10",
+    "Address": "11100 North Oracle Rd",
+    "City": "Tucson",
+    "State": "Arizona",
+    "Zip": "85737",
+    "Country": "United States",
+    "lat": 32.4091913,
+    "lon": -110.9420315
+  },
+  {
+    "LID": "AZ14",
+    "Address": "3131 E. Air Lane",
+    "City": "Phoenix",
+    "State": "Arizona",
+    "Zip": "85034",
+    "Country": "United States",
+    "lat": 33.4439751,
+    "lon": -112.0144
+  },
+  {
+    "LID": "AZ17",
+    "Address": "1944 E. Sky Harbor Circle North",
+    "City": "Phoenix",
+    "State": "Arizona",
+    "Zip": "85034",
+    "Country": "United States",
+    "lat": 33.441139,
+    "lon": -112.0419444
+  },
+  {
+    "LID": "AZ18",
+    "Address": "1300 West Warner Road",
+    "City": "Tempe",
+    "State": "Arizona",
+    "Zip": "85284",
+    "Country": "United States",
+    "lat": 33.334768,
+    "lon": -111.958677
+  },
+  {
+    "LID": "AZ33",
+    "Address": "6760 West Chicago Street",
+    "City": "Chandler",
+    "State": "Arizona",
+    "Zip": "85226",
+    "Country": "United States",
+    "lat": 33.30035,
+    "lon": -111.959395
+  },
+  {
+    "LID": "AZ43",
+    "Address": "111 South 34th Street",
+    "City": "Phoenix",
+    "State": "Arizona",
+    "Zip": "85034",
+    "Country": "United States",
+    "lat": 33.4470312,
+    "lon": -112.0073769
+  },
+  {
+    "LID": "AZ54",
+    "Address": "San Tan Remote Test Facility / 2799 Bob Bowden Blvd.",
+    "City": "Queen Creek",
+    "State": "Arizona",
+    "Zip": "85242",
+    "Country": "United States",
+    "lat": 33.1873438248092,
+    "lon": -111.736621856689
+  },
+  {
+    "LID": "AZ70",
+    "Address": "402 S 36th St",
+    "City": "Phoenix",
+    "State": "Arizona",
+    "Zip": "85034",
+    "Country": "United States",
+    "lat": 33.443634,
+    "lon": -112.004096
+  },
+  {
+    "LID": "AZ75",
+    "Address": "21111 N. 19th Ave",
+    "City": "Phoenix",
+    "State": "Arizona",
+    "Zip": "85027-2708",
+    "Country": "United States",
+    "lat": 33.679441,
+    "lon": -112.09705
+  },
+  {
+    "LID": "AZ76",
+    "Address": "19019 N 59th Ave.",
+    "City": "Glendale",
+    "State": "Arizona",
+    "Zip": "85308-9650",
+    "Country": "United States",
+    "lat": 33.657228,
+    "lon": -112.185817
+  },
+  {
+    "LID": "AZ90",
+    "Address": "5150 / 5160 W. Phelps Rd",
+    "City": "Glendale",
+    "State": "Arizona",
+    "Zip": "85308",
+    "Country": "United States",
+    "lat": 33.636915,
+    "lon": -112.1713974
+  },
+  {
+    "LID": "BC01",
+    "Address": "3490 Gardner Court Suite 300",
+    "City": "Burnaby",
+    "State": "British Columbia",
+    "Zip": "V5G 3K4",
+    "Country": "Canada",
+    "lat": 49.2526159,
+    "lon": -122.9964672
+  },
+  {
+    "LID": "BC35",
+    "Address": "500 Brooksbank Avenue",
+    "City": "North Vancouver",
+    "State": "British Columbia",
+    "Zip": "V7J 3S4",
+    "Country": "Canada",
+    "lat": 49.3103246,
+    "lon": -123.0404041
+  },
+  {
+    "LID": "BE11",
+    "Address": "Goudenregenlaan 3",
+    "City": "Wilrijk",
+    "State": "",
+    "Zip": "2610",
+    "Country": "Belgium",
+    "lat": 51.1753393065225,
+    "lon": 4.39976692199707
+  },
+  {
+    "LID": "BE16",
+    "Address": "Noorderlaan 147",
+    "City": "Antwerp",
+    "State": "",
+    "Zip": "2030",
+    "Country": "Belgium",
+    "lat": 51.2641403874974,
+    "lon": 4.39950406551361
+  },
+  {
+    "LID": "BR74",
+    "Address": "Rua  Jupter II no. 16. Bairro Renascen�a II - Edificio Cristal",
+    "City": "S?o Luis ? MA",
+    "State": "",
+    "Zip": "65075-045",
+    "Country": "Brazil",
+    "lat": -2.497017,
+    "lon": -44.28620599999999
+  },
+  {
+    "LID": "CA1S",
+    "Address": "34854-55 Petersen Road, Saugus",
+    "City": "Agua Dulce",
+    "State": "California",
+    "Zip": "91350",
+    "Country": "United States",
+    "lat": 36.778261,
+    "lon": -119.4179324
+  },
+  {
+    "LID": "CA26",
+    "Address": "850 South Sepulveda Blvd",
+    "City": "El Segundo",
+    "State": "California",
+    "Zip": "90245-0098",
+    "Country": "United States",
+    "lat": 33.9043068,
+    "lon": -118.3961138
+  },
+  {
+    "LID": "CA34",
+    "Address": "1740 Creekside Oaks Drive Suite 150",
+    "City": "Sacramento",
+    "State": "California",
+    "Zip": "95833",
+    "Country": "United States",
+    "lat": 38.608982,
+    "lon": -121.498924
+  },
+  {
+    "LID": "CA54",
+    "Address": "525 Nichols Road",
+    "City": "Pittsburg",
+    "State": "California",
+    "Zip": "94553",
+    "Country": "United States",
+    "lat": 38.044493,
+    "lon": -121.987201
+  },
+  {
+    "LID": "CA55",
+    "Address": "Nichols Road & Chicago Highway",
+    "City": "Pittsburg",
+    "State": "California",
+    "Zip": "94553",
+    "Country": "United States",
+    "lat": 38.041253,
+    "lon": -121.988022
+  },
+  {
+    "LID": "CA72",
+    "Address": "3500 Garrett Dr.",
+    "City": "Santa Clara",
+    "State": "California",
+    "Zip": "95054-2827",
+    "Country": "United States",
+    "lat": 37.38362,
+    "lon": -121.986034
+  },
+  {
+    "LID": "CA28",
+    "Address": "1349 Moffett Park Dr.",
+    "City": "Sunnyvale",
+    "State": "California",
+    "Zip": "94089-1134",
+    "Country": "United States",
+    "lat": 37.412139,
+    "lon": -122.003493
+  },
+  {
+    "LID": "CA60",
+    "Address": "2525 W. 190th Street",
+    "City": "Torrance",
+    "State": "California",
+    "Zip": "90504",
+    "Country": "United States",
+    "lat": 33.861866,
+    "lon": -118.322119
+  },
+  {
+    "LID": "CH10",
+    "Address": "#7 GaoKeYiLu, Nanjing High & New Technology Industrial Development Zone, Pukou District",
+    "City": "Nanjing",
+    "State": "",
+    "Zip": "210061",
+    "Country": "China",
+    "lat": 32.1686015991687,
+    "lon": 118.715386390686
+  }
+]

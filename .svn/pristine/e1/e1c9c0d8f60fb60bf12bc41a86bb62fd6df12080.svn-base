@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D64DABE9-A89C-4DB6-BD0E-A590529CFC3C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>GRC.Connect.Libraries.ImportLib</RootNamespace>
+    <AssemblyName>ImportLib</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>ImportLib.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>ImportLib.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntitySpaces.Core, Version=2012.1.930.0, Culture=neutral, PublicKeyToken=653e033684908f9c, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\GRCConnectDLLs\EntitySpaces.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EntitySpaces.DynamicQuery, Version=2012.1.930.0, Culture=neutral, PublicKeyToken=653e033684908f9c, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\GRCConnectDLLs\EntitySpaces.DynamicQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="EntitySpaces.Interfaces, Version=2012.1.930.0, Culture=neutral, PublicKeyToken=653e033684908f9c, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\GRCConnectDLLs\EntitySpaces.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="GRC.Excel, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Tools\GRC\API\GRC.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="GRC.MSOffice">
+      <HintPath>..\..\..\..\..\..\..\GRCConnectDLLs\GRC.MSOffice.dll</HintPath>
+    </Reference>
+    <Reference Include="GRC.Resources">
+      <HintPath>..\..\..\..\..\..\..\..\Tools\GRC\GRC.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="GRC.Connect" />
+    <Import Include="GRC.Connect.Libraries" />
+    <Import Include="GRC.Connect.Libraries.CoreLib" />
+    <Import Include="GRC.Connect.Libraries.CoreLib.BusinessObjects" />
+    <Import Include="GRC.Connect.Libraries.CoreLib.CustomExtensions" />
+    <Import Include="GRC.Connect.Libraries.ImportLib" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CellAddress.vb" />
+    <Compile Include="ExcelDataTemplateInfo.vb" />
+    <Compile Include="ImportDataRow.vb" />
+    <Compile Include="ImportTableInfo.PSImportTableInfo.vb" />
+    <Compile Include="Meta.BmMeta.CalpineBmMeta.vb" />
+    <Compile Include="Meta.FireMeta.CalpineFireMeta.vb" />
+    <Compile Include="Meta.PSMeta.vb" />
+    <Compile Include="Error.ImportError.vb" />
+    <Compile Include="Error.ValidationError.vb" />
+    <Compile Include="Error.ValidationErrorCollection.vb" />
+    <Compile Include="Error.vb" />
+    <Compile Include="EsHelper.vb" />
+    <Compile Include="ExcelUtility.vb" />
+    <Compile Include="Import.BusinessLogic.vb" />
+    <Compile Include="ImportEnum.vb" />
+    <Compile Include="ImportException.vb" />
+    <Compile Include="ImportFileResult.vb" />
+    <Compile Include="ImportFileResultList.vb" />
+    <Compile Include="ImportNote.vb" />
+    <Compile Include="ImportNoteCollection.vb" />
+    <Compile Include="ImportSheetResult.vb" />
+    <Compile Include="ImportSheetResultList.vb" />
+    <Compile Include="ImportTableInfo.BmImportTableInfo.vb" />
+    <Compile Include="ImportTableInfo.FireImportTableInfo.vb" />
+    <Compile Include="ImportTableInfo.vb" />
+    <Compile Include="ImportTableInfoList.vb" />
+    <Compile Include="ImportTableResult.vb" />
+    <Compile Include="ImportTableResultList.vb" />
+    <Compile Include="ImportUtility.Validation.Recommendations.vb" />
+    <Compile Include="ImportUtility.Validation.vb" />
+    <Compile Include="ImportUtility.vb" />
+    <Compile Include="Map.vb" />
+    <Compile Include="MapCollection.vb" />
+    <Compile Include="Meta.BmMeta.AesBmMeta.vb" />
+    <Compile Include="Meta.BmMeta.vb" />
+    <Compile Include="Meta.FireMeta.CargillFireMeta.vb" />
+    <Compile Include="Meta.FireMeta.vb" />
+    <Compile Include="Meta.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Public.vb" />
+    <Compile Include="Result.vb" />
+    <Compile Include="UtilRecMeta.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\CoreLib.vbproj">
+      <Project>{85fbabea-5d69-4199-85d3-756f818835c9}</Project>
+      <Name>CoreLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

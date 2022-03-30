@@ -1,0 +1,20 @@
+
+
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colRadiusParmId":1, 
+	"colGSafeId":1, 
+	"colLatitude":null, 
+	"colLongitude":null, 
+	"colInputRange":null, 
+	"colUnits":"Units", 
+	"colSearchName":"SearchName"
+}]

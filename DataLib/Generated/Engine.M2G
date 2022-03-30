@@ -1,0 +1,20 @@
+﻿var Project = 
+{
+  "TemplateInformation": {
+    "Namespace": "razor.experimental",
+    "Name": "razor.engine.vb.sqlserver",
+    "ScriptingEngine": "Handlebars",
+    "OutputLanguage": "VB.NET",
+    "MappingLanguage": "VB.NET"
+  },
+  "Tables": [],
+  "Views": [],
+  "Procs": [],
+  "DatabaseName": null,
+  "DatabaseType": null,
+  "JsonName": "(None)",
+  "EdmxName": "(None)",
+  "Settings": {
+    "OutputPath": "C:\\M2G\\razor\\"
+  }
+}

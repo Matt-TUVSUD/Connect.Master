@@ -1,0 +1,94 @@
+﻿div#RecFVInfo{padding:5px;}
+div#RecFVInfo div{text-align:left;padding:2px 0px;}
+div#RecFVInfo div span{font-size:7pt;text-align:right; padding-right: 3px;}    /*padding required since html minify removes spaces next to inputs*/
+div#RecFVInfo div input{font-size:7pt;text-align:center;border:solid 1px blue;}
+
+div#RecFVInfo div #lblFindingNo{margin-left:43px;}
+div#RecFVInfo div #findingno{width:20px;}
+div#RecFVInfo div #lblRecNo{margin-left:10px;}
+div#RecFVInfo div #RecYear{width:35px;}
+div#RecFVInfo div #RecMonth{width:20px;}
+div#RecFVInfo div #RecNumber{width:20px;}
+div#RecFVInfo div #lblRecHistory{margin-left:10px;}
+div#RecFVInfo div #History{width:70px;}
+div#RecFVInfo div #lblRecStatus{margin-left:22px;}
+div#RecFVInfo div #RecStatus{width:90px;}
+div#RecFVInfo div #lblStatusDate{margin-left:28px;}
+div#RecFVInfo div #StatusDate{width:55px;}
+div#RecFVInfo div #lblRecCategory{margin-left:10px;}
+div#RecFVInfo div #RecCategory{width:75px;}
+
+div#RecFVInfo div #lblProbableEquipmentDamageCost{margin-left:48px;}
+div#RecFVInfo div #ProbableEquipmentDamageCost{width:142px;}
+div#RecFVInfo div #lblLengthofBusinessInterruption{margin-left:31px;}
+div#RecFVInfo div #LengthofBusinessInterruption{width:70px;}
+div#RecFVInfo div #lblseverityrating{margin-left:18px;}
+div#RecFVInfo div #severityrating{width:90px;}
+div#RecFVInfo div #lblCriticalit{margin-left:10px;}
+div#RecFVInfo div #Criticalit{width:55px;}
+
+div#RecFVInfo div #lblLocation{margin-left:25px;}
+div#RecFVInfo div #Location{width:85px;}
+div#RecFVInfo div #lblEquipment{margin-left:10px;}
+div#RecFVInfo div #Equipment{width:129px;}
+div#RecFVInfo div #lblPrimaryRecType{margin-left:18px;}
+div#RecFVInfo div #PrimaryRecType{width:140px;}
+div#RecFVInfo div #lblSecondaryRecType{margin-left:10px;}
+div#RecFVInfo div #SecondaryRecType{width:140px;}
+
+div#RecFVInfo div #lblDetectedWith{margin-left:31px;}
+div#RecFVInfo div #DetectedWith{width:85px;}
+div#RecFVInfo div #lblFaultType{margin-left:10px;}
+div#RecFVInfo div #FaultType{width:129px;}
+div#RecFVInfo div #lblPlantAreaAffected{margin-left:39px;}
+div#RecFVInfo div #PlantAreaAffected{width:140px;}
+div#RecFVInfo div #lblRedundancySpare{margin-left:20px;}
+div#RecFVInfo div #RedundancySpare{width:140px;}
+
+div#RecFVInfo div #lblProbableCause{margin-left:22px;}
+div#RecFVInfo div #ProbableCause{width:277px;}
+div#RecFVInfo div #lblRecommendation{margin-left:29px;}
+div#RecFVInfo div #Recommendation{width:389px;}
+
+div#RecFVInfo div #lblSpecItemDetail{margin-left:10px;}
+div#RecFVInfo div #SpecItemDetail{width:771px;}
+
+div#RecFVInfo div #lblComments{margin-left:23px;}
+div#RecFVInfo div #Comments{width:771px;}
+
+div#RecFVInfo div #lblFindEquip{margin-left:23px;}
+div#RecFVInfo div #FindEquip{width:115px;}
+div#RecFVInfo div #lblLoad{margin-left:10px;}
+div#RecFVInfo div #Load{width:145px;}
+div#RecFVInfo div #lblResponseDate{margin-left:25px;}
+div#RecFVInfo div #ResponseDate{width:55px;}
+div#RecFVInfo div #lblResponseFrom{margin-left:10px;}
+div#RecFVInfo div #ResponseFrom{width:267px;}
+
+div#RecFVInfo div #lblPlantComment{margin-left:17px;}
+div#RecFVInfo div #PlantComment{width:379px; text-align:left;}
+div#RecFVInfo div #lblIntendedAction{margin-left:30px;}
+div#RecFVInfo div #IntendedAction{width:267px; text-align:left;}
+
+div#RecFVInfo div #lblResponseStatus{margin-left:92px;}
+div#RecFVInfo div #lblRespRequestDate{margin-left:16px;}
+div#RecFVInfo div #RespRequestDate{width:55px;}
+div#RecFVInfo div #lblRFU1Date{margin-left:10px;}
+div#RecFVInfo div #RFU1Date{width:55px;}
+div#RecFVInfo div #lblRecipientName{margin-left:43px;}
+div#RecFVInfo div #RecipientName{width:267px; text-align:left;}
+
+div#RecFVInfo div #ResponseStatus{width:80px;margin-left:92px;}
+div#RecFVInfo div #lblRespDueDate{margin-left:10px;}
+div#RecFVInfo div #RespDueDate{width:55px;}
+div#RecFVInfo div #lblRFU2Date{margin-left:11px;}
+div#RecFVInfo div #RFU2Date{width:55px;}
+div#RecFVInfo div #lblRecipientEmail{margin-left:44px;}
+div#RecFVInfo div #RecipientEmail{width:267px; text-align:left;}
+
+div#RecFVInfo div #lblDaysOverdue{margin-left:206px;}
+div#RecFVInfo div #DaysOverdue{width:55px;}
+div#RecFVInfo div #lblRFU3Date{margin-left:10px;}
+div#RecFVInfo div #RFU3Date{width:55px;}
+
+div.OK{width:100%;text-align:center;}

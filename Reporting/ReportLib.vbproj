@@ -1,0 +1,1161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DE254A6A-5CCF-425D-B637-2D5A7A0EDFFF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>GRC.Connect.Libraries.ReportLib</RootNamespace>
+    <AssemblyName>ReportLib</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>ReportLib.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>ReportLib.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ABCpdf, Version=10.1.0.2, Culture=neutral, PublicKeyToken=a7a0b3f5184f2169, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\GRCConnectDLLs\ABCpdf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Accessibility" />
+    <Reference Include="EDA.Impairments.Reports">
+      <HintPath>..\..\..\..\..\..\..\GRCConnectDLLs\EDA.Impairments.Reports.dll</HintPath>
+    </Reference>
+    <Reference Include="EntitySpaces.Core, Version=2012.1.930.0, Culture=neutral, PublicKeyToken=653e033684908f9c, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\GRCConnectDLLs\EntitySpaces.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EntitySpaces.DynamicQuery, Version=2012.1.930.0, Culture=neutral, PublicKeyToken=653e033684908f9c, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\GRCConnectDLLs\EntitySpaces.DynamicQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="EntitySpaces.Interfaces, Version=2012.1.930.0, Culture=neutral, PublicKeyToken=653e033684908f9c, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\GRCConnectDLLs\EntitySpaces.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EntitySpaces.Loader, Version=2012.1.930.0, Culture=neutral, PublicKeyToken=653e033684908f9c, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\GRCConnectDLLs\EntitySpaces.Loader.dll</HintPath>
+    </Reference>
+    <Reference Include="EntitySpaces.Profiler, Version=2012.1.930.0, Culture=neutral, PublicKeyToken=653e033684908f9c, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\GRCConnectDLLs\EntitySpaces.Profiler.dll</HintPath>
+    </Reference>
+    <Reference Include="EntitySpaces.SqlClientProvider, Version=2012.1.930.0, Culture=neutral, PublicKeyToken=653e033684908f9c, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\GRCConnectDLLs\EntitySpaces.SqlClientProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Chart.v9, Version=9.3.4039.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\..\GRCConnectDLLs\GrapeCity.ActiveReports.Chart.v9.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Chart.v9.resources">
+      <HintPath>..\..\..\..\..\..\GRCConnectDLLs\GrapeCity.ActiveReports.Chart.v9.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Design.Win.v9, Version=9.3.4039.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\..\GRCConnectDLLs\GrapeCity.ActiveReports.Design.Win.v9.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Design.Win.v9.resources">
+      <HintPath>..\..\..\..\..\..\GRCConnectDLLs\GrapeCity.ActiveReports.Design.Win.v9.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Diagnostics.v9, Version=9.3.4039.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\..\GRCConnectDLLs\GrapeCity.ActiveReports.Diagnostics.v9.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Document.v9, Version=9.3.4039.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\..\GRCConnectDLLs\GrapeCity.ActiveReports.Document.v9.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Document.v9.resources">
+      <HintPath>..\..\..\..\..\..\GRCConnectDLLs\GrapeCity.ActiveReports.Document.v9.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Export.Html.v9">
+      <HintPath>..\..\..\..\..\..\GRCConnectDLLs\GrapeCity.ActiveReports.Export.Html.v9.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Export.Image.v9, Version=9.3.4039.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\..\GRCConnectDLLs\GrapeCity.ActiveReports.Export.Image.v9.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Export.Image.v9.resources">
+      <HintPath>..\..\..\..\..\..\GRCConnectDLLs\GrapeCity.ActiveReports.Export.Image.v9.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Export.Pdf.v9, Version=9.3.4039.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\GRCConnectDLLs\GrapeCity.ActiveReports.Export.Pdf.v9.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Export.Rdf.v9, Version=9.3.4039.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\..\GRCConnectDLLs\GrapeCity.ActiveReports.Export.Rdf.v9.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Extensibility.v9, Version=9.3.4039.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\..\GRCConnectDLLs\GrapeCity.ActiveReports.Extensibility.v9.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Extensibility.v9.resources">
+      <HintPath>..\..\..\..\..\..\GRCConnectDLLs\GrapeCity.ActiveReports.Extensibility.v9.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.v9, Version=9.3.4039.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\..\GRCConnectDLLs\GrapeCity.ActiveReports.v9.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.v9.resources">
+      <HintPath>..\..\..\..\..\..\GRCConnectDLLs\GrapeCity.ActiveReports.v9.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Viewer.Win.v9, Version=9.3.4039.0, Culture=neutral, PublicKeyToken=cc4967777c49a3ff">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\..\GRCConnectDLLs\GrapeCity.ActiveReports.Viewer.Win.v9.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.ActiveReports.Viewer.Win.v9.resources">
+      <HintPath>..\..\..\..\..\..\GRCConnectDLLs\GrapeCity.ActiveReports.Viewer.Win.v9.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="GRC.Resources, Version=12.10.2015.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Tools\GRC\ResourcesBin\GRC.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\..\..\GRCConnectDLLs\Microsoft.VisualBasic.PowerPacks.Vs.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Tools\JSON.Net\Bin\Net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Telerik.Reporting, Version=15.2.21.1125, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\GRCConnectDLLs\Telerik.Reporting.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="GRC.Connect" />
+    <Import Include="GRC.Connect.Libraries.CoreLib" />
+    <Import Include="GRC.Connect.Libraries.DataLib" />
+    <Import Include="GRC.Connect.Libraries.ReportLib" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActiveReports\rptFireBMFacilityRatingSummary.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptFireBMFacilityRatingSummaryNoAPL.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptFireFacilityRatingSummary.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptFireFacilityRatingSummarySubHeader.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptFireFacilityRatingSummarySubHeaderNoAPL.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptFireFacilityRatingSummarySubOverallRatingKey.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptPSRecommendationResponsesFollowUp.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptPSRecommendationResponsesTracking.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptPSRecommendations.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptBMElectMaintenanceSummary.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptBMFacilityDataSummary.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptBMFacilityRatingDetail.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptBMFacilityRatingKey.Designer.vb">
+      <DependentUpon>rptBMFacilityRatingKey.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ActiveReports\rptBMFacilityRatingKey.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptBMFacilityRatingSummary.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptBMFacilityRatingSummarySubHeader.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptBMFacilityRatingSummarySubOverallRatingKey.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptBMHumanElementSummary.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptBMMechMaintenanceSummary.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptBMRecommendationResponsesFollowUp.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptBMRecommendationResponsesTracking.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptBMRecommendations.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptFireCleaningElectricalSummary.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptFireCOPESummary.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptFireExtinguishersHazardControlsSummary.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptFireHumanElementSummary.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptFireLossEstimatesByLocation.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptFireMiscellaneousSummary.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptFireRecommendationResponsesFollowUp.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptFireRecommendationResponsesTracking.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptFireRecommendations.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptFireSprinklerSystemSummary.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptIRRecommendationResponsesFollowUp.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptIRRecommendationResponsesTracking.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptIRRecommendations.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptNatHazFloodAssessmentExpBldgStructOther.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptNatHazFloodAssessmentGeneral.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptNatHazRecommendationResponsesFollowUp.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptNatHazRecommendationResponsesTracking.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptNatHazRecommendations.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptNatHazSeismicAssessmentNonstructural.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptNatHazSeismicAssessmentStructural.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptNatHazWindAssessmentBuildingEnvelope.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveReports\rptNatHazWindAssessmentUtilitiesMiscellaneousOther.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Archive\ReportProccessor.ProcessingProperties.vb" />
+    <Compile Include="Archive\TesterSetting.vb" />
+    <Compile Include="Archive\TesterSettingList.vb" />
+    <Compile Include="ColorTextBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\CopeData\Fire\FireCopeDataAndRatingReport.Designer.vb">
+      <DependentUpon>FireCopeDataAndRatingReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\CopeData\Fire\FireCopeDataAndRatingReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\FacilityRating\FireFacilityRatingReportWhatIf.Designer.vb">
+      <DependentUpon>FireFacilityRatingReportWhatIf.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\FacilityRating\FireFacilityRatingReportWhatIf.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\FacilityRating\FireFacilitySummaryReport.Designer.vb">
+      <DependentUpon>FireFacilitySummaryReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\FacilityRating\FireFacilitySummaryReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\FacilityRating\FireFacilityDetailReport.Designer.vb">
+      <DependentUpon>FireFacilityDetailReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\FacilityRating\FireFacilityDetailReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GrcTelerikRatingCategoryTexBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\FacilityRating\BoilerFacilityRatingActiveTrendingReport.Designer.vb">
+      <DependentUpon>BoilerFacilityRatingActiveTrendingReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\FacilityRating\BoilerFacilityRatingActiveTrendingReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\FacilityRating\BoilerFacilityRatingPassiveTrendingReport.Designer.vb">
+      <DependentUpon>BoilerFacilityRatingPassiveTrendingReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\FacilityRating\BoilerFacilityRatingPassiveTrendingReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\FacilityRating\FireFacilityRatingActiveTrendingReport.Designer.vb">
+      <DependentUpon>FireFacilityRatingActiveTrendingReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\FacilityRating\FireFacilityRatingActiveTrendingReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\FacilityRating\FireFacilityRatingPassiveTrendingReport.Designer.vb">
+      <DependentUpon>FireFacilityRatingPassiveTrendingReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\FacilityRating\FireFacilityRatingPassiveTrendingReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\FacilityRating\UtilTrend.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\FacilityRating\TrendingReport.Designer.vb">
+      <DependentUpon>TrendingReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\FacilityRating\TrendingReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\PM\PMActivitySubReport.Designer.vb">
+      <DependentUpon>PMActivitySubReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\PM\PMActivitySubReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\PM\PMClientSummaryReport.Designer.vb">
+      <DependentUpon>PMClientSummaryReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\PM\PMClientSummaryReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\PM\PMContactsSubReport.Designer.vb">
+      <DependentUpon>PMContactsSubReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\PM\PMContactsSubReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\PM\PMEmptyReport.Designer.vb">
+      <DependentUpon>PMEmptyReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\PM\PMEmptyReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\PM\PMIssuesSubReport.Designer.vb">
+      <DependentUpon>PMIssuesSubReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\PM\PMIssuesSubReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\PM\PMMilestonesSubReport.Designer.vb">
+      <DependentUpon>PMMilestonesSubReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\PM\PMMilestonesSubReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\PM\PMPolicyValueSubReport.Designer.vb">
+      <DependentUpon>PMPolicyValueSubReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\PM\PMPolicyValueSubReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\PM\PMPolicyValueSubReport_NewProject.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\PM\PMReport.Designer.vb">
+      <DependentUpon>PMReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\PM\PMReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\TopoRecReport.Designer.vb">
+      <DependentUpon>TopoRecReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\TopoRecReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\RiskImprovement\RiskImprovementChart2.Designer.vb">
+      <DependentUpon>RiskImprovementChart2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\RiskImprovement\RiskImprovementChart2.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\WhatIf\TestBubbleChartReport.Designer.vb">
+      <DependentUpon>TestBubbleChartReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\WhatIf\TestBubbleChartReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\WhatIf\WhatIfAnalysisSummaryReport.Designer.vb">
+      <DependentUpon>WhatIfAnalysisSummaryReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\WhatIf\WhatIfAnalysisSummaryReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\_Templates\BaseReportLandscapeLegal.Designer.vb">
+      <DependentUpon>BaseReportLandscapeLegal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\_Templates\BaseReportLandscapeLegal.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UtilReport.Generator.vb" />
+    <Compile Include="IActiveReport.vb" />
+    <Compile Include="TelerikReports\CopeData\Fire\FireCopeSummaryRatingReport.Designer.vb">
+      <DependentUpon>FireCopeSummaryRatingReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\CopeData\Fire\FireCopeSummaryRatingReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\CopeData\Fire\FireCopeSummaryReport.Designer.vb">
+      <DependentUpon>FireCopeSummaryReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\CopeData\Fire\FireCopeSummaryReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\FacilityRating\BoilerFacilityRatingReport.Designer.vb">
+      <DependentUpon>BoilerFacilityRatingReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\FacilityRating\BoilerFacilityRatingReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\FacilityRating\FireFacilityRatingReport.Designer.vb">
+      <DependentUpon>FireFacilityRatingReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\FacilityRating\FireFacilityRatingReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\FacilityRating\RatinglKeySubReport.Designer.vb">
+      <DependentUpon>RatinglKeySubReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\FacilityRating\RatinglKeySubReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\Impairments\Controls\ImpairmentCheckBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\Impairments\Controls\ImpairmentHtmlTextBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\Impairments\Controls\ImpairmentTextBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\Impairments\Interfaces\IImpairmentControl.vb" />
+    <Compile Include="TelerikReports\Impairments\Interfaces\IImpairmentReport.vb" />
+    <Compile Include="TelerikReports\Impairments\OverviewReport.Designer.vb">
+      <DependentUpon>OverviewReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\Impairments\OverviewReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\Impairments\Palette\FireImpairmentChartPalette.vb" />
+    <Compile Include="TelerikReports\Impairments\SummaryReport.Designer.vb">
+      <DependentUpon>SummaryReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\Impairments\SummaryReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\JurisObject\JurisObjectReport.Designer.vb">
+      <DependentUpon>JurisObjectReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\JurisObject\JurisObjectReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\JurisViolation\JurisViolationDetailReport.Designer.vb">
+      <DependentUpon>JurisViolationDetailReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\JurisViolation\JurisViolationDetailReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\LossEstimates\BoilerLossEstimatesReport.Designer.vb">
+      <DependentUpon>BoilerLossEstimatesReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\LossEstimates\BoilerLossEstimatesReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\PlanReview\PlanReviewReport.ReviewActivitySubReport.Designer.vb">
+      <DependentUpon>PlanReviewReport.ReviewActivitySubReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\PlanReview\PlanReviewReport.ReviewActivitySubReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\PlanReview\PlanReviewReport.ScheduleSummarySubReport.Designer.vb">
+      <DependentUpon>PlanReviewReport.ScheduleSummarySubReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\PlanReview\PlanReviewReport.ScheduleSummarySubReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\PlanReview\PlanReviewReport.Designer.vb">
+      <DependentUpon>PlanReviewReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\PlanReview\PlanReviewReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\Qor\QorChart.Designer.vb">
+      <DependentUpon>QorChart.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\Qor\QorChart.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\Qor\QorChartPalette.vb" />
+    <Compile Include="TelerikReports\Qor\QorRecommendations.Designer.vb">
+      <DependentUpon>QorRecommendations.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\Qor\QorRecommendations.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\Qor\QorReport.Designer.vb">
+      <DependentUpon>QorReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\Qor\QorReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\RecommendationResponse\RecommendationResponseReport.Designer.vb">
+      <DependentUpon>RecommendationResponseReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\RecommendationResponse\RecommendationResponseReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\RecommendationResponse\RecommendationResponseReportIR.Designer.vb">
+      <DependentUpon>RecommendationResponseReportIR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\RecommendationResponse\RecommendationResponseReportIR.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\RecommendationResponse\Test.Designer.vb">
+      <DependentUpon>Test.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\RecommendationResponse\Test.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\RiskImprovement\RiskImprovementChart.Designer.vb">
+      <DependentUpon>RiskImprovementChart.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\RiskImprovement\RiskImprovementChart.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UtilReport.ActiveReport.Header.vb" />
+    <Compile Include="TelerikReports\IrEquipment\EquipmentListingReport.Designer.vb">
+      <DependentUpon>EquipmentListingReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\IrEquipment\EquipmentListingReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UtilReport.ActiveReport.vb" />
+    <Compile Include="IUtilReport.vb" />
+    <Compile Include="ITelerikBaseReport.vb" />
+    <Compile Include="ITelerikReport.vb" />
+    <Compile Include="TelerikReports\CopeData\BM\SubReports\BMFacilityDataReport.BoilersSubReport.Designer.vb">
+      <DependentUpon>BMFacilityDataReport.BoilersSubReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\CopeData\BM\SubReports\BMFacilityDataReport.BoilersSubReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\CopeData\BM\SubReports\BMFacilityDataReport.CpvSubReport.Designer.vb">
+      <DependentUpon>BMFacilityDataReport.CpvSubReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\CopeData\BM\SubReports\BMFacilityDataReport.CpvSubReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\CopeData\BM\SubReports\BMFacilityDataReport.CriticalSpareSubReport.Designer.vb">
+      <DependentUpon>BMFacilityDataReport.CriticalSpareSubReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\CopeData\BM\SubReports\BMFacilityDataReport.CriticalSpareSubReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\CopeData\BM\BMFacilityDataReport.Designer.vb">
+      <DependentUpon>BMFacilityDataReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\CopeData\BM\SubReports\BMFacilityDataReport.PPESubReport.Designer.vb">
+      <DependentUpon>BMFacilityDataReport.PPESubReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\CopeData\BM\SubReports\BMFacilityDataReport.PPESubReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\CopeData\BM\SubReports\BMFacilityDataReport.PrimaryTransformers.Designer.vb">
+      <DependentUpon>BMFacilityDataReport.PrimaryTransformers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\CopeData\BM\SubReports\BMFacilityDataReport.PrimaryTransformers.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\CopeData\BM\SubReports\BMFacilityDataReport.PrimeMoversSubReport.Designer.vb">
+      <DependentUpon>BMFacilityDataReport.PrimeMoversSubReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\CopeData\BM\SubReports\BMFacilityDataReport.PrimeMoversSubReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\CopeData\BM\SubReports\BMFacilityDataReport.RotatingElectEquipment.Designer.vb">
+      <DependentUpon>BMFacilityDataReport.RotatingElectEquipment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\CopeData\BM\SubReports\BMFacilityDataReport.RotatingElectEquipment.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\CopeData\BM\BMFacilityDataReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\CopeData\Fire\FireCopeDataReport.Designer.vb">
+      <DependentUpon>FireCopeDataReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\CopeData\Fire\FireCopeDataReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\CopeData\BM\BMFacilityDataSummaryReport.Designer.vb">
+      <DependentUpon>BMFacilityDataSummaryReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\CopeData\BM\SubReports\BMFacilityDataSummaryReport.LargestPrimaryTransformers.Designer.vb">
+      <DependentUpon>BMFacilityDataSummaryReport.LargestPrimaryTransformers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\CopeData\BM\SubReports\BMFacilityDataSummaryReport.LargestPrimaryTransformers.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\CopeData\BM\BMFacilityDataSummaryReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\CopeData\BM\BMFacilityDataSummaryRatingReport.Designer.vb">
+      <DependentUpon>BMFacilityDataSummaryRatingReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\CopeData\BM\BMFacilityDataSummaryRatingReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\CopeData\Recommendation\CopeRecommendationsSubReport.Portait.Designer.vb">
+      <DependentUpon>CopeRecommendationsSubReport.Portait.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\CopeData\Recommendation\CopeRecommendationsSubReport.Portait.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\InspectionFrequency\InspectionFrequencyReport.Designer.vb">
+      <DependentUpon>InspectionFrequencyReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\InspectionFrequency\InspectionFrequencyReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\_Templates\BaseReportPortrait.Designer.vb">
+      <DependentUpon>BaseReportPortrait.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\_Templates\BaseReportPortrait.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UtilReport.Color.vb" />
+    <Compile Include="UtilReport.Telerik.ReportItemFunction.vb" />
+    <Compile Include="UtilReport.Telerik.vb" />
+    <Compile Include="TelerikReports\InspectionStatus\InspectionStatusReport.Designer.vb">
+      <DependentUpon>InspectionStatusReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\InspectionStatus\InspectionStatusReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="TelerikReports\_Templates\BaseReportLandscape.Designer.vb">
+      <DependentUpon>BaseReportLandscape.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\_Templates\BaseReportLandscape.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\_Templates\BaseSubReport.Designer.vb">
+      <DependentUpon>BaseSubReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\_Templates\BaseSubReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\_Templates\ErrorReport.Designer.vb">
+      <DependentUpon>ErrorReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\_Templates\ErrorReport.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\_Templates\ShadowBoxes_Landscape.Designer.vb">
+      <DependentUpon>ShadowBoxes_Landscape.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\_Templates\ShadowBoxes_Landscape.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TelerikReports\_Templates\ShadowBoxes_Portrait.Designer.vb">
+      <DependentUpon>ShadowBoxes_Portrait.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelerikReports\_Templates\ShadowBoxes_Portrait.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UtilReport.Translation.vb" />
+    <Compile Include="UtilReport.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ActiveReports\rptBMFacilityRatingSummarySubHeader.resx">
+      <DependentUpon>rptBMFacilityRatingSummarySubHeader.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptFireBMFacilityRatingSummary.resx">
+      <DependentUpon>rptFireBMFacilityRatingSummary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptFireBMFacilityRatingSummaryNoAPL.resx">
+      <DependentUpon>rptFireBMFacilityRatingSummaryNoAPL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptFireFacilityRatingSummary.resx">
+      <DependentUpon>rptFireFacilityRatingSummary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptFireFacilityRatingSummarySubHeader.resx">
+      <DependentUpon>rptFireFacilityRatingSummarySubHeader.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptFireFacilityRatingSummarySubHeaderNoAPL.resx">
+      <DependentUpon>rptFireFacilityRatingSummarySubHeaderNoAPL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptFireFacilityRatingSummarySubOverallRatingKey.resx">
+      <DependentUpon>rptFireFacilityRatingSummarySubOverallRatingKey.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptPSRecommendationResponsesFollowUp.resx">
+      <DependentUpon>rptPSRecommendationResponsesFollowUp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptPSRecommendationResponsesTracking.resx">
+      <DependentUpon>rptPSRecommendationResponsesTracking.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptPSRecommendations.resx">
+      <DependentUpon>rptPSRecommendations.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptBMElectMaintenanceSummary.resx">
+      <DependentUpon>rptBMElectMaintenanceSummary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptBMFacilityDataSummary.resx">
+      <DependentUpon>rptBMFacilityDataSummary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptBMFacilityRatingDetail.resx">
+      <DependentUpon>rptBMFacilityRatingDetail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptBMFacilityRatingKey.resx">
+      <DependentUpon>rptBMFacilityRatingKey.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptBMFacilityRatingSummary.resx">
+      <DependentUpon>rptBMFacilityRatingSummary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptBMFacilityRatingSummarySubOverallRatingKey.resx">
+      <DependentUpon>rptBMFacilityRatingSummarySubOverallRatingKey.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptBMHumanElementSummary.resx">
+      <DependentUpon>rptBMHumanElementSummary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptBMMechMaintenanceSummary.resx">
+      <DependentUpon>rptBMMechMaintenanceSummary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptBMRecommendationResponsesFollowUp.resx">
+      <DependentUpon>rptBMRecommendationResponsesFollowUp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptBMRecommendationResponsesTracking.resx">
+      <DependentUpon>rptBMRecommendationResponsesTracking.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptBMRecommendations.resx">
+      <DependentUpon>rptBMRecommendations.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptFireCleaningElectricalSummary.resx">
+      <DependentUpon>rptFireCleaningElectricalSummary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptFireCOPESummary.resx">
+      <DependentUpon>rptFireCOPESummary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptFireExtinguishersHazardControlsSummary.resx">
+      <DependentUpon>rptFireExtinguishersHazardControlsSummary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptFireHumanElementSummary.resx">
+      <DependentUpon>rptFireHumanElementSummary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptFireLossEstimatesByLocation.resx">
+      <DependentUpon>rptFireLossEstimatesByLocation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptFireMiscellaneousSummary.resx">
+      <DependentUpon>rptFireMiscellaneousSummary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptFireRecommendationResponsesFollowUp.resx">
+      <DependentUpon>rptFireRecommendationResponsesFollowUp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptFireRecommendationResponsesTracking.resx">
+      <DependentUpon>rptFireRecommendationResponsesTracking.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptFireRecommendations.resx">
+      <DependentUpon>rptFireRecommendations.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptFireSprinklerSystemSummary.resx">
+      <DependentUpon>rptFireSprinklerSystemSummary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptIRRecommendationResponsesFollowUp.resx">
+      <DependentUpon>rptIRRecommendationResponsesFollowUp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptIRRecommendationResponsesTracking.resx">
+      <DependentUpon>rptIRRecommendationResponsesTracking.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptIRRecommendations.resx">
+      <DependentUpon>rptIRRecommendations.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptNatHazFloodAssessmentExpBldgStructOther.resx">
+      <DependentUpon>rptNatHazFloodAssessmentExpBldgStructOther.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptNatHazFloodAssessmentGeneral.resx">
+      <DependentUpon>rptNatHazFloodAssessmentGeneral.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptNatHazRecommendationResponsesFollowUp.resx">
+      <DependentUpon>rptNatHazRecommendationResponsesFollowUp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptNatHazRecommendationResponsesTracking.resx">
+      <DependentUpon>rptNatHazRecommendationResponsesTracking.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptNatHazRecommendations.resx">
+      <DependentUpon>rptNatHazRecommendations.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptNatHazSeismicAssessmentNonstructural.resx">
+      <DependentUpon>rptNatHazSeismicAssessmentNonstructural.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptNatHazSeismicAssessmentStructural.resx">
+      <DependentUpon>rptNatHazSeismicAssessmentStructural.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptNatHazWindAssessmentBuildingEnvelope.resx">
+      <DependentUpon>rptNatHazWindAssessmentBuildingEnvelope.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ActiveReports\rptNatHazWindAssessmentUtilitiesMiscellaneousOther.resx">
+      <DependentUpon>rptNatHazWindAssessmentUtilitiesMiscellaneousOther.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\CopeData\Fire\FireCopeDataAndRatingReport.resx">
+      <DependentUpon>FireCopeDataAndRatingReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\FacilityRating\FireFacilityRatingReportWhatIf.resx">
+      <DependentUpon>FireFacilityRatingReportWhatIf.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\FacilityRating\FireFacilitySummaryReport.resx">
+      <DependentUpon>FireFacilitySummaryReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\FacilityRating\FireFacilityDetailReport.resx">
+      <DependentUpon>FireFacilityDetailReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\CopeData\BM\SubReports\BMFacilityDataReport.BoilersSubReport.resx">
+      <DependentUpon>BMFacilityDataReport.BoilersSubReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\CopeData\BM\SubReports\BMFacilityDataReport.CpvSubReport.resx">
+      <DependentUpon>BMFacilityDataReport.CpvSubReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\CopeData\BM\SubReports\BMFacilityDataReport.CriticalSpareSubReport.resx">
+      <DependentUpon>BMFacilityDataReport.CriticalSpareSubReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\CopeData\BM\SubReports\BMFacilityDataReport.PPESubReport.resx">
+      <DependentUpon>BMFacilityDataReport.PPESubReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\CopeData\BM\SubReports\BMFacilityDataReport.PrimaryTransformers.resx">
+      <DependentUpon>BMFacilityDataReport.PrimaryTransformers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\CopeData\BM\SubReports\BMFacilityDataReport.PrimeMoversSubReport.resx">
+      <DependentUpon>BMFacilityDataReport.PrimeMoversSubReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\CopeData\BM\BMFacilityDataReport.resx">
+      <DependentUpon>BMFacilityDataReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\CopeData\BM\SubReports\BMFacilityDataReport.RotatingElectEquipment.resx">
+      <DependentUpon>BMFacilityDataReport.RotatingElectEquipment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\CopeData\BM\BMFacilityDataSummaryRatingReport.resx">
+      <DependentUpon>BMFacilityDataSummaryRatingReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\CopeData\BM\BMFacilityDataSummaryReport.resx">
+      <DependentUpon>BMFacilityDataSummaryReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\CopeData\Fire\FireCopeDataReport.resx">
+      <DependentUpon>FireCopeDataReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\CopeData\BM\SubReports\BMFacilityDataSummaryReport.LargestPrimaryTransformers.resx">
+      <DependentUpon>BMFacilityDataSummaryReport.LargestPrimaryTransformers.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\CopeData\Fire\FireCopeSummaryRatingReport.resx">
+      <DependentUpon>FireCopeSummaryRatingReport.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\CopeData\Fire\FireCopeSummaryReport.resx">
+      <DependentUpon>FireCopeSummaryReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\CopeData\Recommendation\CopeRecommendationsSubReport.Portait.resx">
+      <DependentUpon>CopeRecommendationsSubReport.Portait.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\FacilityRating\BoilerFacilityRatingReport.resx">
+      <DependentUpon>BoilerFacilityRatingReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\FacilityRating\BoilerFacilityRatingActiveTrendingReport.resx">
+      <DependentUpon>BoilerFacilityRatingActiveTrendingReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\FacilityRating\BoilerFacilityRatingPassiveTrendingReport.resx">
+      <DependentUpon>BoilerFacilityRatingPassiveTrendingReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\FacilityRating\FireFacilityRatingActiveTrendingReport.resx">
+      <DependentUpon>FireFacilityRatingActiveTrendingReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\FacilityRating\FireFacilityRatingPassiveTrendingReport.resx">
+      <DependentUpon>FireFacilityRatingPassiveTrendingReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\FacilityRating\FireFacilityRatingReport.resx">
+      <DependentUpon>FireFacilityRatingReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\FacilityRating\RatinglKeySubReport.resx">
+      <DependentUpon>RatinglKeySubReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\Impairments\Controls\ImpairmentCheckBox.resx">
+      <DependentUpon>ImpairmentCheckBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\Impairments\OverviewReport.resx">
+      <DependentUpon>OverviewReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\Impairments\SummaryReport.resx">
+      <DependentUpon>SummaryReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\InspectionFrequency\InspectionFrequencyReport.resx">
+      <DependentUpon>InspectionFrequencyReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\InspectionStatus\InspectionStatusReport.resx">
+      <DependentUpon>InspectionStatusReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\IrEquipment\EquipmentListingReport.resx">
+      <DependentUpon>EquipmentListingReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\JurisObject\JurisObjectReport.resx">
+      <DependentUpon>JurisObjectReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\JurisViolation\JurisViolationDetailReport.resx">
+      <DependentUpon>JurisViolationDetailReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\LossEstimates\BoilerLossEstimatesReport.resx">
+      <DependentUpon>BoilerLossEstimatesReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\PlanReview\PlanReviewReport.ReviewActivitySubReport.resx">
+      <DependentUpon>PlanReviewReport.ReviewActivitySubReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\PlanReview\PlanReviewReport.ScheduleSummarySubReport.resx">
+      <DependentUpon>PlanReviewReport.ScheduleSummarySubReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\PlanReview\PlanReviewReport.resx">
+      <DependentUpon>PlanReviewReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\PM\PMActivitySubReport.resx">
+      <DependentUpon>PMActivitySubReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\PM\PMClientSummaryReport.resx">
+      <DependentUpon>PMClientSummaryReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\PM\PMContactsSubReport.resx">
+      <DependentUpon>PMContactsSubReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\PM\PMEmptyReport.resx">
+      <DependentUpon>PMEmptyReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\PM\PMIssuesSubReport.resx">
+      <DependentUpon>PMIssuesSubReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\PM\PMMilestonesSubReport.resx">
+      <DependentUpon>PMMilestonesSubReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\PM\PMPolicyValueSubReport.resx">
+      <DependentUpon>PMPolicyValueSubReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\PM\PMPolicyValueSubReport_NewProject.resx">
+      <DependentUpon>PMPolicyValueSubReport_NewProject.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\PM\PMReport.resx">
+      <DependentUpon>PMReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\Qor\QorChart.resx">
+      <DependentUpon>QorChart.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\Qor\QorRecommendations.resx">
+      <DependentUpon>QorRecommendations.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\Qor\QorReport.resx">
+      <DependentUpon>QorReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\RecommendationResponse\RecommendationResponseReport.resx">
+      <DependentUpon>RecommendationResponseReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\RecommendationResponse\RecommendationResponseReportIR.resx">
+      <DependentUpon>RecommendationResponseReportIR.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\RecommendationResponse\Test.resx">
+      <DependentUpon>Test.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\TopoRecReport.resx">
+      <DependentUpon>TopoRecReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\RiskImprovement\RiskImprovementChart2.resx">
+      <DependentUpon>RiskImprovementChart2.vb</DependentUpon>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\RiskImprovement\RiskImprovementChart.resx">
+      <DependentUpon>RiskImprovementChart.vb</DependentUpon>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\FacilityRating\TrendingReport.resx">
+      <DependentUpon>TrendingReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\WhatIf\TestBubbleChartReport.resx">
+      <DependentUpon>TestBubbleChartReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\WhatIf\WhatIfAnalysisSummaryReport.resx">
+      <DependentUpon>WhatIfAnalysisSummaryReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\_Templates\BaseReportLandscape.resx">
+      <DependentUpon>BaseReportLandscape.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\_Templates\BaseReportPortrait.resx">
+      <DependentUpon>BaseReportPortrait.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\_Templates\BaseSubReport.resx">
+      <DependentUpon>BaseSubReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\_Templates\BaseReportLandscapeLegal.resx">
+      <DependentUpon>BaseReportLandscapeLegal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\_Templates\ErrorReport.resx">
+      <DependentUpon>ErrorReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\_Templates\ShadowBoxes_Landscape.resx">
+      <DependentUpon>ShadowBoxes_Landscape.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelerikReports\_Templates\ShadowBoxes_Portrait.resx">
+      <DependentUpon>ShadowBoxes_Portrait.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star.bmp" />
+    <Content Include="TelerikReports\_Templates\Images\CheckBox1.CheckedImage.png" />
+    <Content Include="TelerikReports\_Templates\Images\CheckBox1.IndeterminateImage.png" />
+    <Content Include="TelerikReports\_Templates\Images\CheckBox1.UncheckedImage.png" />
+    <Compile Include="UtilReport.SQL.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChartingLib\ChartingLib.vbproj">
+      <Project>{9e805f12-fa6b-4eea-84b4-2f16f560a7f5}</Project>
+      <Name>ChartingLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\CoreLib.vbproj">
+      <Project>{85fbabea-5d69-4199-85d3-756f818835c9}</Project>
+      <Name>CoreLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataLib\DataLib.vbproj">
+      <Project>{4b0916ea-885e-4abb-954f-5322fa889129}</Project>
+      <Name>DataLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GridFilterSortLib\FilterSortLib.vbproj">
+      <Project>{8927d11f-d576-4069-9252-33710c6775d9}</Project>
+      <Name>FilterSortLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WhatIfInterfaceLib\WhatIfInterfaceLib.vbproj">
+      <Project>{806e6784-4cbd-42da-8a4a-6e23885af06d}</Project>
+      <Name>WhatIfInterfaceLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

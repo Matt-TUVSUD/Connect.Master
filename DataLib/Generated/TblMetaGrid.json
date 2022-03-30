@@ -1,0 +1,29 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colFldId":1, 
+	"colFldGridName":"fldGridName", 
+	"colFldKeyField":"fldKeyField", 
+	"colFldGridPageTitle":"fldGridPageTitle", 
+	"colFldGridPageSubTitle":"fldGridPageSubTitle", 
+	"colFldGridPractice":"fldGridPractice", 
+	"colFldFileName":"fldFileName", 
+	"colFldSourceId":1, 
+	"colFldReportId":1, 
+	"colFldFormViewTemplateName":"fldFormViewTemplateName", 
+	"colFldInstructions":"fldInstructions", 
+	"colFldLegacyFavoritesGridID":1, 
+	"colFldReport2Id":1, 
+	"colFldComment":"fldComment", 
+	"colFldFormViewReportId":1, 
+	"colFldMapShowPinText":null, 
+	"colFldMetaPracticeId":1, 
+	"colFldExtractHeaderRowHeight":1.5
+}]

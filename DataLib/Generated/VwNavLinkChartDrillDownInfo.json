@@ -1,0 +1,17 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colFldParentNavLinkId":1, 
+	"colFldParentChartId":1, 
+	"colFldChartDrillDownId":1, 
+	"colFldReportId":1, 
+	"colFldUrlBase":"fldUrlBase", 
+	"colFldUrlParms":"fldUrlParms"
+}]

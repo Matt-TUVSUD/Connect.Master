@@ -1,0 +1,20 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblMetaParameter --> [tblMetaParameter]
+
+  colFldId --> [fldId] int **PK** identity not null
+  colFldName --> [fldName] nvarchar(50) not null
+  colFldType --> [fldType] nvarchar(255) not null
+  colFldAllowWildcardValue --> [fldAllowWildcardValue] bit null
+  colFldParameterKindId --> [fldParameterKindId] int not null
+  colFldFieldName --> [fldFieldName] nvarchar(100) null
+  colFldFlagId --> [fldFlagId] int null
+  colFldIsVirtual --> [fldIsVirtual] bit null
+

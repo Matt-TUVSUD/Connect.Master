@@ -1,0 +1,406 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Facility Summary</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/pages/mapping.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/pages/print.css" />
+    <script>
+        var gWindowTitle = "Facility Summary";
+    </script>
+    <script src="../../../Lib_{{VER}}/Mapping/mapping.js"></script>
+    <script src="../../../Lib_{{VER}}/Mapping/moment.min.js"></script>
+</head>
+<body>
+
+    <div id="formView">
+        <div style="font-size:8pt; font-family:Arial !important;">
+        <div id="printWindow" style="font-size:8pt; font-family:Arial !important;" class="windowBody pdf-page">
+            <div id="loading" class="noShow"><span>Loading...</span></div>
+            <div class="infoArea">
+                <div class="popColA bottomSpaceRow">
+                    <div class="popRow ">
+                        <label class="topHalfLbl">File No.:</label><span data-bind="text: objFormData().FileNo" class="topHalfTxt"></span>
+                    </div>
+                    <div class="popRow ">
+                        <label class="topHalfLbl">Client:</label><span data-bind="text: objFormData().client" class="topHalfTxt"></span>
+                    </div>
+                    <div class="popRow ">
+                        <label class="topHalfLbl">Client Loc. ID:</label><span data-bind="text: objFormData().ClientLocNo" class="topHalfTxt"></span>
+                    </div>
+                    <div class="popRow ">
+                        <label class="topHalfLbl">Divisions:</label><span data-bind="text: objFormData().Division" class="topHalfTxt"></span>
+                    </div>
+                    <div class="popRow bottomSpaceRow ">
+                        <label class="topHalfLbl">Facility:</label><span data-bind="text: objFormData().Facility" class="topHalfTxt"></span>
+                    </div>
+                    <div class="popRow ">
+                        <label class="topHalfLbl">TIV (millions) <span data-bind="text: currencyText"></span></label><span data-bind="    text: numeral(objFormData().TIV).format('0,0')" class="topHalfTxt"></span>
+                    </div>
+                    <div class="popRow ">
+                       <!-- <label class="topHalfLbl">Date of Last Insp.:</label><span class="topHalfTxt">7-Apr-17</span>-->
+                    </div>
+                </div>
+                <div class="popColB bottomSpaceRow">
+                    <div class="popRow ">
+                        <label class="topHalfLbl">Address:</label><span data-bind="text: objFormData().address" class="topHalfTxt"></span>
+                    </div>
+                    <div class="popRow ">
+                        <label class="topHalfLbl">City:</label><span data-bind="text: objFormData().City" class="topHalfTxt"></span>
+                    </div>
+                    <div class="popRow ">
+                        <label class="topHalfLbl">St/Prov.:</label><span data-bind="text: objFormData().StProv" class="topHalfTxt"></span>
+                    </div>
+                    <div class="popRow ">
+                        <label class="topHalfLbl">Country:</label><span data-bind="text: objFormData().Country" class="topHalfTxt"></span>
+                    </div>
+                    <div class="popRow bottomSpaceRow ">
+                        <label class="topHalfLbl">Postal Code:</label><span data-bind="text: objFormData().Zip" class="topHalfTxt"></span>
+                    </div>
+                    <div class="popRow ">
+                        <label class="topHalfLbl">Latitude:</label><span data-bind="text: objFormData().latitude" class="topHalfTxt"></span>
+                    </div>
+                    <div class="popRow ">
+                        <label class="topHalfLbl">Longitude:</label><span data-bind="text: objFormData().longitude" class="topHalfTxt"></span>
+                    </div>
+                </div>
+                <div id="satMap" class="imgHldr">
+                <a href="#" class="printNone"><img data-bind="attr: { src: getStaticMapUrl() }, click: onGoToLocationBingMaps" /></a>
+                <img class="printOnly" data-bind="attr: { src: staticImageBase64 }" />
+                <span class="satImgTip">Tip! The above map is interactive and will open Bing Maps.</span>
+            </div>
+            </div>
+            <div class="btnHldr">
+                    <!--<button style="float:none;" class="printReportBtn">Click to Current ER Report</button>-->
+                </div>
+            <div class="bottomSection" style="flex-direction:column;">
+            <div class="gridRow1">
+                <div class="tallBlueHeading">
+                    <div class="inspSum">
+                        <span>Inspection Summary</span>
+                    </div>
+                    <div class="fireBlock">
+                        <span class="shortHeading">Fire</span>
+                        <span class="regBox">Reg.<br />Insp.</span>
+                        <span class="specBox">Spec.<br />Insp.</span>
+                    </div>
+                    <div class="bmBlock">
+                        <span class="shortHeading">B&M</span>
+                        <span class="regBox">Reg.<br />Insp.</span>
+                        <span class="specBox">Spec.<br />Insp.</span>
+                    </div>
+                    <div class="infraBlock">
+                        <span class="shortHeading">Infrared</span>
+                        <span class="regBox">Reg.<br />Insp.</span>
+                        <span class="specBox">Spec.<br />Insp.</span>
+                    </div>
+                    <div class="nathazBlock">
+                        <span class="shortHeading">NatHaz</span>
+                        <span class="regBox">Reg.<br />Insp.</span>
+                        <span class="specBox">Spec.<br />Insp.</span>
+                    </div>
+                    <div class="psBlock">
+                        <span class="shortHeading">Proc Safety</span>
+                        <span class="regBox">Reg.<br />Insp.</span>
+                        <span class="specBox">Spec.<br />Insp.</span>
+                    </div>
+                    <div class="divsrvBlock">
+                        <span class="shortHeading">DivSrvs</span>
+                        <span class="regBox">Reg.<br />Insp.</span>
+                        <span class="specBox">Spec.<br />Insp.</span>
+                    </div>
+                </div>
+                <div class="infoRow ">
+                    <span class="inspLbl">No. of Inspections Due(Original Count):</span>
+                    <div class="fireShortBlock">
+                        <span data-bind="text: objFormData().FireRegInspDue" class="regInfo"></span>
+                        <span data-bind="text: objFormData().FireSpecInspDue" class="specInfo"></span>
+                    </div>
+                    <div class="bmShortBlock">
+                        <span data-bind="text: objFormData().BoilerRegInspDue" class="regInfo"></span>
+                        <span data-bind="text: objFormData().BoilerSpecInspDue" class="specInfo"></span>
+                    </div>
+                    <div class="infraShortBlock">
+                        <span data-bind="text: objFormData().InfraredRegInspDue" class="regInfo"></span>
+                        <span data-bind="text: objFormData().InfraredSpecInspDue" class="specInfo"></span>
+                    </div>
+                    <div class="nathazShortBlock">
+                        <span data-bind="text:objFormData().NatHazRegInspDue" class="regInfo"></span>
+                        <span data-bind="text:objFormData().NatHazSpecInspDue" class="specInfo"></span>
+                    </div>
+                    <div class="psShortBlock">
+                        <span data-bind="text: objFormData().ProcSafetyRegInspDue" class="regInfo"></span>
+                        <span data-bind="text: objFormData().ProcSafetySpecInspDue" class="specInfo"></span>
+                    </div>
+                    <div class="divsrvShortBlock">
+                        <span data-bind="text:objFormData().DivSrvsRegInspDue" class="regInfo"></span>
+                        <span data-bind="text: objFormData().DivSrvsSpecInspDue" class="specInfo"></span>
+                    </div>
+                </div>
+                <div class="infoRow " style="border-top:none;">
+                    <span class="inspLbl">Click on date of last inspection to see report:</span>
+                    <div class="fireShortBlock" style="border-right:1px solid #abb5be; width:99px;">
+                        <span class="dateLnk" data-bind="text: moment(objFormData().FireLastInspectionDate).format('DD-MMM-YY'), click: function () { onCurrentERReport(3); }"></span>
+                    </div>
+                    <div class="bmShortBlock" style="border-right:1px solid #abb5be; width:100px;">
+                        <span class="dateLnk" data-bind="text: moment(objFormData().BoilerLastInspectionDate).format('DD-MMM-YY'), click: function () { onCurrentERReport(2); }"></span>
+                    </div>
+                    <div class="infraShortBlock" style="border-right:1px solid #abb5be; width:100px;">
+                        <span class="dateLnk" data-bind="text: moment(objFormData().InfraredLastInspectionDate).format('DD-MMM-YY'), click: function () { onCurrentERReport(4); }"></span>
+                    </div>
+                    <div class="nathazShortBlock" style="border-right:1px solid #abb5be; width:100px;">
+                        <span class="dateLnk" data-bind="text: moment(objFormData().NatHazLastInspectionDate).format('DD-MMM-YY'), click: function () { onCurrentERReport(9); }"></span>
+                    </div>
+                    <div class="psShortBlock" style="border-right:1px solid #abb5be; width:100px;">
+                        <span class="dateLnk" data-bind="text: moment(objFormData().ProcSafetyLastInspectionDate).format('DD-MMM-YY'), click: function () { onCurrentERReport(9); }"></span>
+                    </div>
+                    <div class="divsrvShortBlock" style="border-right:1px solid #abb5be; width:100px;">
+                        <span class="dateLnk" data-bind="text: moment(objFormData().DivSrvsLastInspectionDate).format('DD-MMM-YY'), click: function () { onCurrentERReport(10); }"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="gridRow2 ">
+                <div class="shortBlueHeader">
+                    <div class="recSumLbl">
+                        <span>Project Management Summary</span>
+                    </div>
+                    <div class="fireBlock">
+                        <span class="regBox">Open</span>
+                        <span class="specBox">Closed</span>
+                    </div>
+                    <div class="bmBlock">
+                        <span class="regBox">Open</span>
+                        <span class="specBox">Closed</span>
+                    </div>
+                    <div class="bmBlock">
+                        <span class="regBox">Open</span>
+                        <span class="specBox">Closed</span>
+                    </div>
+                    <div class="bmBlock">
+                        <span class="regBox">Open</span>
+                        <span class="specBox">Closed</span>
+                    </div>
+                    <div class="bmBlock">
+                        <span class="regBox">Open</span>
+                        <span class="specBox">Closed</span>
+                    </div>
+                    <div class="bmBlock">
+                        <span class="regBox">Open</span>
+                        <span class="specBox">Closed</span>
+                    </div>
+                </div>
+                <div class="infoRow">
+                    <span class="inspLbl">No. of Projects</span>
+                    <div class="fireShortBlock" >
+                        <span class="regBox" data-bind="text: objFormData().FireProjectsOpen" style="padding-top:4px; height:15px;"></span>
+                        <span class="specBox" data-bind="text: objFormData().FireProjectsClosed" style="padding-top:4px; height:15px; border-right:1px solid #abb5be;"></span>
+                    </div>
+                    <div class="fireShortBlock">
+                        <span class="regBox" data-bind="text: objFormData().BoilerProjectsOpen" style="padding-top:4px; height:15px;"></span>
+                        <span class="specBox" data-bind="text: objFormData().BoilerProjectsClosed" style="padding-top:4px; height:15px; border-right:1px solid #abb5be;"></span>
+                    </div>
+                    <div class="fireShortBlock">
+                        <span class="regBox" data-bind="text: objFormData().InfraredProjectsOpen" style="padding-top:4px; height:15px;"></span>
+                        <span class="specBox" data-bind="text: objFormData().InfraredProjectsClosed" style="padding-top:4px; height:15px; border-right:1px solid #abb5be;"></span>
+                    </div>
+                    <div class="fireShortBlock">
+                        <span class="regBox" data-bind="text: objFormData().NatHazProjectsOpen" style="padding-top:4px; height:15px;"></span>
+                        <span class="specBox" data-bind="text: objFormData().NatHazProjectsClosed" style="padding-top:4px; height:15px; border-right:1px solid #abb5be;"></span>
+                    </div>
+                    <div class="fireShortBlock">
+                        <span class="regBox" data-bind="text: objFormData().ProcSafetyProjectsOpen" style="padding-top:4px; height:15px;"></span>
+                        <span class="specBox" data-bind="text: objFormData().ProcSafetyProjectsClosed" style="padding-top:4px; height:15px; border-right:1px solid #abb5be;"></span>
+                    </div>
+                    <div class="fireShortBlock">
+                        <span class="regBox" data-bind="text: objFormData().DivSrvsProjectsOpen" style="padding-top:4px; height:15px;"></span>
+                        <span class="specBox" data-bind="text: objFormData().DivSrvsProjectsClosed" style="padding-top:4px; height:15px; border-right:1px solid #abb5be;"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="gridRow2 " style="flex-direction:column;">
+                <div class="shortBlueHeader">
+                    <div class="recSumLbl">
+                        <span>Recommendation Summary</span>
+                    </div>
+                    <div class="fireSumLbl">
+                        <span>Fire</span>
+                    </div>
+                    <div class="bmSumLbl">
+                        <span>B&M</span>
+                    </div>
+                    <div class="infraSumLbl">
+                        <span>Infrared</span>
+                    </div>
+                    <div class="nathazSumLbl">
+                        <span>NatHaz</span>
+                    </div>
+                    <div class="nathazSumLbl">
+                        <span>Proc Safety</span>
+                    </div>
+                    <div class="nathazSumLbl">
+                        <span>DivSrvs</span>
+                    </div>
+                </div>
+                <div class="recSumInfoRow">
+                    <span class="lowImpRecLbl">No. of Active Recs with Low Impact: </span>
+                    <span data-bind="text: objFormData().FireActiveRecsImpactLow" class="fireLowImp"></span>
+                    <span data-bind="text: objFormData().BoilerActiveRecsImpactLow" class="bmLowImp"></span>
+                    <span data-bind="text: objFormData().InfraredActiveRecsImpactLow" class="infraLowImp"></span>
+                    <span data-bind="text: objFormData().NatHazActiveRecsImpactLow" class="nathazLowImp"></span>
+                    <span data-bind="text: objFormData().ProcSafetyActiveRecsImpactLow" class="nathazLowImp"></span>
+                    <span data-bind="text: objFormData().DivSrvsActiveRecsImpactLow" class="nathazLowImp"></span>
+                    <span class="blankBox">&nbsp;</span>
+                </div>
+                <div class="recSumInfoRow">
+                    <span class="modImpRecLbl">No. of Active Recs with Moderate Impact: </span>
+                    <span data-bind="text: objFormData().FireActiveRecsImpactModerate" class="fireModImp"></span>
+                    <span data-bind="text: objFormData().BoilerActiveRecsImpactModerate" class="bmModImp"></span>
+                    <span data-bind="text: objFormData().InfraredActiveRecsImpactModerate" class="infraModImp"></span>
+                    <span data-bind="text: objFormData().NatHazActiveRecsImpactModerate" class="nathazModImp"></span>
+                    <span data-bind="text: objFormData().ProcSafetyActiveRecsImpactModerate" class="nathazModImp"></span>
+                    <span data-bind="text: objFormData().DivSrvsActiveRecsImpactModerate" class="nathazModImp"></span>
+                    <span class="blankBox">&nbsp;</span>
+                </div>
+                <div class="recSumInfoRow">
+                    <span class="highImpRecLbl" style="border-bottom:none;">No. of Active Recs with High Impact: </span>
+                    <span data-bind="text: objFormData().FireActiveRecsImpactHigh" class="fireHighImp"></span>
+                    <span data-bind="text: objFormData().BoilerActiveRecsImpactHigh" class="bmHighImp"></span>
+                    <span data-bind="text: objFormData().InfraredActiveRecsImpactHigh" class="infraHighImp"></span>
+                    <span data-bind="text: objFormData().NatHazActiveRecsImpactHigh" class="nathazHighImp"></span>
+                    <span data-bind="text: objFormData().ProcSafetyActiveRecsImpactHigh" class="nathazHighImp"></span>
+                    <span data-bind="text: objFormData().DivSrvsActiveRecsImpactHigh" class="nathazHighImp"></span>
+                    <span class="blankBox">&nbsp;</span>
+                </div>
+                <div class="recSumInfoRow">
+                    <span class="highImpRecLbl">Current Rec. Response Status: </span>
+                    <span data-bind="text: objFormData().FireRecResponseStatus, style: { background: objFormData().FireRecResponseStatusColor }" class="procSafeBox" style="border-left:1px solid #abb5be;"></span>
+                    <span data-bind="text: objFormData().BoilerRecResponseStatus, style: { background: objFormData().BoilerRecResponseStatusColor }" class="procSafeBox"></span>
+                    <span data-bind="text: objFormData().InfraredRecResponseStatus, style: { background: objFormData().InfraredRecResponseStatusColor }" class="procSafeBox"></span>
+                    <span data-bind="text: objFormData().NatHAzRecResponseStatus, style: { background: objFormData().NatHazResponseStatusColor }" class="procSafeBox"></span>
+                    <span data-bind="text: objFormData().ProcSafetyRecResponseStatus, style: { background: objFormData().ProcSafetyRecResponseStatusColor }" class="procSafeBox"></span>
+                    <span data-bind="text: objFormData().DivSrvsRecResponseStatus, style: { background: objFormData().DivSrvsRecResponseStatusColor }" class="procSafeBox"></span>
+                    <span class="blankBox">&nbsp;</span>
+                </div>
+            </div>
+            <div class="gridRow3 ">
+                <div class="shortBlueHeader">
+                    <div class="ratingSumLbl">
+                        <span>Rating Summary</span>
+                    </div>
+                    <div class="fireRatingSumLbl">
+                         <span>Fire</span>
+                    </div>
+                    <div class="bmRatingSumLbl">
+                        <span>B&M</span>
+                    </div>
+                    <div class="headerSpacer noBorder">
+                        <span>&nbsp;</span>
+                    </div>
+                    <div class="nathazRatingSumLbl">
+                        <span>NatHaz Summary</span>
+                    </div>
+                    <div class="seismicRatingSumLbl">
+                        <span>Seismic</span>
+                    </div>
+                    <div class="floodRatingSumLbl">
+                        <span>Flood</span>
+                    </div>
+                    <div class="windRatingSumLbl">
+                        <span>Wind</span>
+                    </div>
+                </div>
+                <div class="recSumInfoRow ">
+                    <span class="ratingSumTxtLbl">Overall Rating:</span>
+                    <div data-bind="style: {background:objFormData().FireFacilityRatingColor}" class="fireRatingBlock">
+                        <span data-bind="text: objFormData().FireFacilityRating" class="fireRatingBlockVal"></span>
+                    </div>
+                    <div data-bind="style: {background:objFormData().BoilerFacilityRatingColor}" class="bmRatingBlock">
+                        <span data-bind="text: objFormData().BoilerFacilityRating" class="bmRatingBlockVal"></span>
+                    </div>
+                    <div class="headerSpacer">
+                        <span>&nbsp;</span>
+                    </div>
+                    <div class="nathazRatingSumInfo">
+                        <span class="latestRatingLbl">Latest Rating:</span>
+                    </div>
+                    <div data-bind="style: {background:objFormData().LatestRatingSeismicColor}" class="seismicRatingBlock">
+                        <span data-bind="text: objFormData().LatestRatingSeismic" class="seismicRatingBlockVal"></span>
+                    </div>
+                    <div data-bind="style: {background:objFormData().LatestRatingFloodColor}" class="floodRatingBlock">
+                        <span data-bind="text: objFormData().LatestRatingFlood" class="floodRatingBlockVal"></span>
+                    </div>
+                    <div data-bind="style: { background: objFormData().LatestRatingWindColor }" class="windRatingBlock">
+                        <span data-bind="text: objFormData().LatestRatingWind" class="windRatingBlockVal"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="gridRow4 ">
+                <div class="shortBlueHeader">
+                    <span class="blueBarLbl_Left_Combined">Impairment Summary</span>
+                    <span class="blueBarLbl_Right_Combined">Jurisdictional Summary</span>
+                </div>
+                <div class="infoRow">
+                    <!-- IMPAIRMENT INFO -->
+                    <span class="totalImpTxtLbl_Combined">Total No. of Imps.:</span>
+                    <div class="totalImpBlock_Combined">
+                        <span data-bind="text: objFormData().FireImpairmentSumNumTotal" class="totalImpVal"></span>
+                    </div>
+                    <span class="impNumPendingTxtLbl_Combined">No. Pending:</span>
+                    <div class="pendingImpBlock_Combined">
+                        <span data-bind="text: objFormData().FireImpairmentSumNumPending" class="pendingImpVal"></span>
+                    </div>
+                    <span class="impNumAdvisoryTxtLbl_Combined">No. Advisory:</span>
+                    <div class="advisoryImpBlock_Combined">
+                        <span data-bind="text: objFormData().FireImpairmentSumNumAdvisory" class="advisoryImpVal"></span>
+                    </div>
+                    <span class="impNumRestoredTxtLbl_Combined">No. Restored:</span>
+                    <div class="restoredImpBlock_Combined">
+                        <span data-bind="text: objFormData().FireImpairmentSumNumRestored" class="restoredImpVal"></span>
+                    </div>
+                    <span class="impNumOverdueTxtLbl_Combined">No. Overdue:</span>
+                    <div class="overdueImpBlock_Combined">
+                        <span data-bind="text: objFormData().FireImpairmentSumNumOverdue" class="overdueImpVal"></span>
+                    </div>
+                    <!-- JURIS INFO -->
+                    <span class="jurisCertBlockingTxtLbl_Combined">No. of Open Recs.:</span>
+                    <div class="jurisCertBlockingBlock_Combined">
+                        <span data-bind="text: objFormData().JurisSumRecsOpen" class="jurisCertBlockingVal"></span>
+                    </div>
+                    <span class="jurisCertBlockingRecTxtLbl_Combined">No. of Certificate Blocking Recs.:</span>
+                    <div class="jurisCertBlockingBlock_Combined">
+                        <span data-bind="text: objFormData().JurisSumRecsCertBlock" class="jurisCertBlockingVal"></span>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="gridRow5 ">
+                <div class="shortBlueHeader">
+                    <span class="blueBarLbl">Jurisdictional Summary</span>
+                </div>
+                <div class="infoRow">
+                    <span class="jurisCertBlockingTxtLbl">No. of Open Recommendations:</span>
+                    <div class="jurisCertBlockingBlock">
+                        <span data-bind="text: objFormData().JurisSumRecsOpen" class="jurisCertBlockingVal"></span>
+                    </div>
+                    <span class="jurisCertBlockingRecTxtLbl">No. of Certificate Blocking Recommendations:</span>
+                     <div class="jurisCertBlockingBlock">
+                        <span data-bind="text: objFormData().JurisSumRecsCertBlock" class="jurisCertBlockingVal"></span>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+        <button type="button" onclick="getPDF('.pdf-page'); return false;" class="printThis printNone" title="Print This Section"><i class="fa fa-print"></i></button>
+        </div>
+        </div>
+    </div>
+
+     <script>
+         function getPDF(selector) {
+             $('.noPrint').hide();
+             kendo.drawing.drawDOM($(selector)).then(function (group) {
+                 kendo.drawing.pdf.saveAs(group, "popupWindow.pdf");
+             });
+             setTimeout(function () { $('.noPrint').show(); }, 5000);
+         }
+    </script>
+
+</body>
+</html>

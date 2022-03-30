@@ -1,0 +1,31 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: VwDataTransferClient --> [vwDataTransferClient]
+
+  colCldbname --> [cldbname] varchar(50) not null
+  colClientname --> [clientname] varchar(150) null
+  colFileprefix --> [fileprefix] varchar(50) not null
+  colDataTransferPassword --> [DataTransferPassword] nvarchar(50) null
+  colDataTransferEncryptionKey --> [DataTransferEncryptionKey] nvarchar(50) null
+  colDataTransferPgpEnabled --> [DataTransferPgpEnabled] bit null
+  colDataTransferPgpPublicKey --> [DataTransferPgpPublicKey] nvarchar(MAX) null
+  colDataTransferFtpEnabled --> [DataTransferFtpEnabled] bit null
+  colDataTransferFtpUrl --> [DataTransferFtpUrl] nvarchar(500) null
+  colDataTransferOutputOptions --> [DataTransferOutputOptions] nvarchar(5) null
+  colDataTransferFtpUserName --> [DataTransferFtpUserName] nvarchar(100) null
+  colDataTransferFtpPassword --> [DataTransferFtpPassword] nvarchar(100) null
+  colDataTransferPgpFileExtension --> [DataTransferPgpFileExtension] nvarchar(5) null
+  colDataTransferFtpLocalFolder --> [DataTransferFtpLocalFolder] nvarchar(50) null
+  colDataTransferFileNameFormatString --> [DataTransferFileNameFormatString] nvarchar(100) null
+  colDataTransferRetrievalDate --> [DataTransferRetrievalDate] datetime null
+  colClientDBRootPath --> [ClientDBRootPath] nvarchar(MAX) null
+  colDataTransferFtpMonthJson --> [DataTransferFtpMonthJson] nvarchar(255) null
+  colDataTransferFtpDayJson --> [DataTransferFtpDayJson] nvarchar(255) null
+

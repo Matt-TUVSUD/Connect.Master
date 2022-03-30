@@ -1,0 +1,184 @@
+﻿/*********************************
+/****** INPUTS GENERAL ***********
+/****** DO NOT CHANGE THE ORDER **
+/****** OF THESE CLASSES ********/
+.inputCenter
+{
+    text-align: center;
+    /*width: 100%;*/
+    line-height: 10px;
+    padding-top: 0.1em;
+}
+.inputRight
+{
+    text-align: right;
+    /*width: 100%;*/
+    line-height: 10px;
+    padding-top: 0.1em;
+}
+.inputPadding
+{
+    padding-left: 4px;
+    /*width: 100%;*/
+    line-height: 10px;
+    padding-top: 0.1em;
+}
+.inputNoEdit, :disabled
+{
+    filter: alpha(opacity=100);
+    opacity: 1;
+    color: Black;
+    /*width: 100%;*/
+    line-height: 10px;
+    padding-top: 10.1em;
+}
+.inputLink
+{
+    /*width: 100%;*/
+    text-decoration: underline;
+    color: #5b63b7;
+    line-height: 10px;
+    padding-top: 0.25em;
+}
+.inputEdit
+{
+    text-align: left;
+    /*width: 100%;*/
+    padding-left: 4px;
+}
+
+
+
+/*********************************
+/****** INPUTS SPECIFIC *********/
+.documentsInputs
+{
+    width: 115px;
+}
+.schedulingInputs
+{
+    width: 115px;
+}
+.locationsInputs1
+{
+    width: 75px;
+}
+.companyInputs1
+{
+    width: 105px;
+}
+.companyInputs2
+{
+    width: 105px;
+}
+.companyInputs3
+{
+    width: 125px;
+}
+.companyInputs4
+{
+    width: 75px;
+}
+.companyInputs5
+{
+    width: 207px;
+}
+.companyInputs6
+{
+    width: 425px; 
+}
+.schedulingCommentsInputs
+{
+    width: 810px;
+    height: 50px;
+}
+.buttonInput
+{
+    width: 50px;
+    font-family: Arial;
+    font-size: 8pt;
+    height: 20px;
+}
+.buttonRecordLabel input
+{
+    margin-bottom: 2px;
+}
+
+
+
+/*********************************
+/****** LABELS SPECIFIC *********/
+.documentsLabels
+{
+    width: 115px;
+}
+.schedulingLabels
+{
+    width: 85px;
+    padding-left: 8px;
+}
+.locationsLabels1
+{
+    width: 75px;
+    padding-left: 8px;
+}
+.locationsLabels2
+{
+    width: 75px;
+    padding-left: 6px;
+}.companyLabels1
+{
+    text-align: right;
+    width: 70px;
+    padding-right: 6px;
+}
+.companyLabels2
+{
+    text-align: right;
+    width: 85px;
+    padding-right: 6px;
+}
+.companyLabels3
+{
+    text-align: right;
+    width: 85px;
+    padding-left: 5px;
+    padding-right: 4px;
+}
+.companyLabels4
+{
+    text-align: right;
+    width: 50px;
+    padding-right: 6px;
+}
+.companyLabels5
+{
+    text-align: right;
+    width: 210px;
+    padding-left: 5px;
+    padding-right: 4px;
+}
+.schedulingCommentsLabel
+{
+    width: 810px;
+    height: 38px;
+}
+.buttonCell
+{
+    width: 208px;
+    text-align: right;
+}
+.buttonContainer
+{
+    line-height: normal;
+    padding: 0px;
+    margin: 0px;
+    padding-left: 23px;
+}
+.buttonShape
+{
+    height: 20px;
+    width: 20px;
+    margin-right: 1px;
+    margin-left: 1px;
+}

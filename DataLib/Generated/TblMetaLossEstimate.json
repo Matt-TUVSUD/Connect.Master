@@ -1,0 +1,19 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colFldExchangeRateGroupID":1, 
+	"colFldCurrencyId":1
+	"colFldLossEstimateTypeId":1, 
+	"colFldIndexNo":1
+	"colFldRangeText":"fldRangeText", 
+	"colFldRangeDisplay":"fldRangeDisplay", 
+	"colFldRangeValueLow":null, 
+	"colFldRangeValueHigh":null
+}]

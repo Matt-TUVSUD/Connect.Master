@@ -1,0 +1,14 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblBatchProcessingFileNo --> [tblBatchProcessingFileNo]
+
+  colFldSetId --> [fldSetId] int **PK** not null
+  colFldFileNo --> [fldFileNo] nvarchar(25) **PK** not null
+

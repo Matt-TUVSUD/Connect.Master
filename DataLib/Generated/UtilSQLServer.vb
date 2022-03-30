@@ -1,0 +1,2064 @@
+'/===============================================================\
+'| razor engine (experimental) - rev 4.2.64                      |
+'|---------------------------------------------------------------|
+'|  Template: razor.engine.vb.sqlserver (experimental version)   |
+'|   Website: http://www.pigford.net/razor                       |
+'|                                                               |
+'\===============================================================/
+
+Imports System.Data.SqlClient
+Imports System.Text.RegularExpressions
+Imports System.Runtime.CompilerServices
+
+Namespace razor
+
+    Partial Public Class UtilSQLServer
+
+        Private Shared _ServerName As String = ""
+        Private Shared _DatabaseName As String = ""
+        Private Shared _UserName As String = ""
+        Private Shared _Password As String = ""
+        Private Shared _Trusted As Boolean = False
+        Private Shared _ApplicationName As String = ""
+        Private Shared _PersistSecurityInfo As Boolean = False
+        Private Shared _ConnectionString As String = ""
+
+        Public Shared Function LastChar(pIn As String, pLastChar As String) As String
+            If Right(pIn, 1) = pLastChar Then
+                Return pIn
+            Else
+                Return pIn & pLastChar
+            End If
+        End Function
+
+        Public Shared Function GetConnectionObject() As SqlConnection
+            Dim zConnection As New SqlConnection
+            zConnection.ConnectionString = _ConnectionString
+            zConnection.Open()
+            Return zConnection
+        End Function
+
+        Public Shared ReadOnly Property ConnectionString As String
+            Get
+                Return _ConnectionString
+            End Get
+        End Property
+
+        Public Shared ReadOnly Property Database As String
+            Get
+                Return _DatabaseName
+            End Get
+        End Property
+
+        Public Shared ReadOnly Property UserName As String
+            Get
+                Return _UserName
+            End Get
+        End Property
+
+        Public Shared ReadOnly Property Trusted As Boolean
+            Get
+                Return _Trusted
+            End Get
+        End Property
+
+        Public Shared Property PersistSecurityInfo As Boolean
+            Get
+                Return _PersistSecurityInfo
+            End Get
+            Set(value As Boolean)
+                _PersistSecurityInfo = value
+            End Set
+        End Property
+
+        Public Shared ReadOnly Property ApplicationName As String
+            Get
+                Return _ApplicationName
+            End Get
+        End Property
+
+        Public Shared Sub SetConnection(pServerName As String, pDatabaseName As String, pApplicationName As String)
+
+            _ServerName = pServerName
+            _DatabaseName = pDatabaseName
+            _ApplicationName = pApplicationName
+            _Trusted = True
+
+            Dim zConnectionString As String = "Server=" & _ServerName & "; Database=" & _DatabaseName & "; Trusted_Connection=" & _Trusted & "; Application Name=" & _ApplicationName
+
+            SetConnection(zConnectionString)
+
+        End Sub
+
+        Public Shared Sub SetConnection(pServerName As String, pDatabaseName As String, pUserName As String, pPassword As String, pApplicationName As String)
+
+            _ServerName = pServerName
+            _DatabaseName = pDatabaseName
+            _UserName = pUserName
+            _Password = pPassword
+            _ApplicationName = pApplicationName
+            _Trusted = False
+
+            Dim zConnectionString As String = "Server=" & _ServerName & "; Database=" & _DatabaseName & "; Trusted_Connection=" & _Trusted & "; User Id=" & _UserName & "; Password=" & _Password & "; Application Name=" & _ApplicationName
+
+            SetConnection(zConnectionString)
+
+        End Sub
+
+        Public Shared Sub SetConnection(pConnectionString As String)
+
+            If pConnectionString.Length > 0 Then
+                _ConnectionString = pConnectionString
+
+                If String.IsNullOrEmpty(_ApplicationName) Then _ApplicationName = GetApplicationName()
+                If Not String.IsNullOrEmpty(_ApplicationName) Then
+                    Dim zCon As SqlClient.SqlConnection = GetConnectionObject()
+                    If String.IsNullOrEmpty(_DatabaseName) Then _DatabaseName = zCon.Database
+                    If String.IsNullOrEmpty(_ServerName) Then _ServerName = zCon.DataSource
+                    If String.IsNullOrEmpty(_UserName) Then _UserName = GetUserID()
+                    If String.IsNullOrEmpty(_Password) Then _Password = GetPassword()
+                    If String.IsNullOrEmpty(_PersistSecurityInfo) Then _PersistSecurityInfo = GetPersistSecurityInfo()
+                    zCon.Dispose()
+                    zCon = Nothing
+                Else
+                    Throw New ApplicationException("Application name not specified in connection string.")
+                End If
+
+            Else
+                Throw New ApplicationException("No connection string specified.")
+            End If
+
+        End Sub
+
+        <Obsolete("This method is deprecated, use SetConnection/GetConnectionObject instead.")>
+        Public Shared Sub OpenDatabase(Optional pConnectionString As String = "")
+
+        End Sub
+
+        <Obsolete("This method is deprecated, database is autoclosed.")>
+        Public Shared Sub CloseDatabase()
+
+        End Sub
+
+        Public Shared Function ExecuteNonQuery(pCommandText As String) As Integer
+            Dim zReturn As Integer = 0
+            Dim zCmd As New SqlCommand
+            zCmd.CommandText = pCommandText
+            zReturn = razor.UtilSQLServer.ExecuteNonQuery(zCmd)
+            Return zReturn
+        End Function
+
+        Public Shared Function ExecuteNonQuery(pCommand As SqlCommand) As Integer
+            Dim zReturn As Integer = 0
+
+            If IsNothing(pCommand.Transaction) Then
+                pCommand.Connection = razor.UtilSQLServer.GetConnectionObject
+                Using pCommand.Connection
+                    Using pCommand
+                        Try
+                            zReturn = pCommand.ExecuteNonQuery()
+                        Finally
+                            pCommand.Connection.Close()
+                        End Try
+                    End Using
+                End Using
+            Else
+                pCommand.Connection = pCommand.Transaction.Connection
+                Using pCommand
+                    zReturn = pCommand.ExecuteNonQuery()
+                End Using
+            End If
+
+            Return zReturn
+        End Function
+
+        Public Shared Function ExecuteNonQueryRowId(pCommandText As String) As Long
+            Dim zCmd As New SqlCommand
+            zCmd.CommandText = pCommandText
+            Return razor.UtilSQLServer.ExecuteNonQueryRowId(zCmd)
+        End Function
+
+        Public Shared Function ExecuteNonQueryRowId(pCommand As SqlCommand) As Long
+            Dim zReturn As Long = 0
+
+            If IsNothing(pCommand.Transaction) Then
+                pCommand.Connection = razor.UtilSQLServer.GetConnectionObject
+                Using pCommand.Connection
+                    Using pCommand
+                        Try
+                            '  pCommand.ExecuteNonQuery()
+                            '  pCommand.CommandText = "SELECT @@IDENTITY"
+                            zReturn = pCommand.ExecuteScalar()
+                        Finally
+                            pCommand.Connection.Close()
+                        End Try
+                    End Using
+                End Using
+            Else
+                pCommand.Connection = pCommand.Transaction.Connection
+                Using pCommand
+                    ' pCommand.ExecuteNonQuery()
+                    ' pCommand.CommandText = "SELECT @@IDENTITY"
+                    zReturn = pCommand.ExecuteScalar()
+                End Using
+            End If
+
+            Return zReturn
+        End Function
+
+        Public Shared Function ExecuteReader(pCommand As SqlCommand) As SqlDataReader
+            Try
+                pCommand.CommandTimeout = 120
+                Dim zReader As SqlDataReader
+
+                If pCommand.Connection Is Nothing Then
+                    If IsNothing(pCommand.Transaction) Then
+                        pCommand.Connection = razor.UtilSQLServer.GetConnectionObject
+                        zReader = pCommand.ExecuteReader(System.Data.CommandBehavior.CloseConnection)
+                    Else
+                        pCommand.Connection = pCommand.Transaction.Connection
+                        zReader = pCommand.ExecuteReader()
+                    End If
+                Else
+                    pCommand.Connection = razor.UtilSQLServer.GetConnectionObject
+                    zReader = pCommand.ExecuteReader(System.Data.CommandBehavior.CloseConnection)
+                End If
+
+                Return zReader
+
+            Catch ex As Exception
+                ex.Data.Add("Command Text", pCommand.CommandText)
+                Throw
+            End Try
+
+        End Function
+
+        Public Shared Function ExecuteDataTable(pCommandText As String) As DataTable
+            Return ExecuteDataTable(New SqlCommand(pCommandText))
+        End Function
+
+        Public Shared Function ExecuteDataTable(pCommand As SqlCommand) As DataTable
+            If pCommand.Connection Is Nothing Then
+                pCommand.Connection = razor.UtilSQLServer.GetConnectionObject
+            End If
+
+            pCommand.CommandTimeout = 120
+            Dim zReader As SqlDataReader
+            zReader = pCommand.ExecuteReader(System.Data.CommandBehavior.CloseConnection)
+
+            Dim zTable As New DataTable
+            zTable.Load(zReader)
+            zReader.Close()
+            Return zTable
+        End Function
+
+        Public Shared Function IsKeySet(pParm As Object) As Boolean
+            'default to false
+            Dim zReturn As Boolean = False
+            If pParm = Nothing Then
+                Return zReturn
+            End If
+            Dim result As String = pParm.GetType().ToString()
+            result = result.Replace("System.", String.Empty)
+            Select Case result
+                Case "String", "Char "
+                    If pParm <> Nothing Then
+                        zReturn = True
+                    End If
+                Case "Int32", "Double"
+                    If Convert.ToDouble(pParm.ToString()) > 0 Then
+                        zReturn = True
+                    End If
+                Case Else
+                    zReturn = False
+            End Select
+            Return zReturn
+        End Function
+
+        Public Shared Function IsNumber(pParm As Object) As Boolean
+            Dim zReturn As Boolean = False
+            Dim result As String = pParm.GetType().ToString()
+            result = result.Replace("System.", String.Empty)
+            If result <> "String" Or result <> "Char" Then
+                zReturn = True
+            End If
+            Return zReturn
+        End Function
+
+        Public Shared Function ExecuteScalar(pCommand As SqlCommand) As Object
+            Dim zReturn As Object = 0
+
+            If IsNothing(pCommand.Transaction) Then
+                pCommand.Connection = razor.UtilSQLServer.GetConnectionObject
+                Using pCommand.Connection
+                    Using pCommand
+                        Try
+                            zReturn = pCommand.ExecuteScalar()
+                        Finally
+                            pCommand.Connection.Close()
+                        End Try
+                    End Using
+                End Using
+            Else
+                pCommand.Connection = pCommand.Transaction.Connection
+                Using pCommand
+                    zReturn = pCommand.ExecuteScalar()
+                End Using
+            End If
+
+            Return zReturn
+        End Function
+
+        Private Shared Function GetUserID() As String
+            Dim zUserRegex As String = "((User).*?(=.+?))(?:;)"
+            If Regex.IsMatch(razor.UtilSQLServer.ConnectionString, zUserRegex) Then
+                Dim zMatch As Match = Regex.Match(razor.UtilSQLServer.ConnectionString, zUserRegex)
+                Dim zUserID() As String = Split(zMatch.Value, "=")
+                Dim zUserIDValue As String = zUserID(1)
+                Return Left(zUserIDValue, Len(zUserIDValue) - 1)
+            Else
+                Return ""
+            End If
+        End Function
+
+        Private Shared Function GetPassword() As String
+            Dim zUserRegex As String = "((Password).*?(=.+?))(?:;)"
+            If Regex.IsMatch(razor.UtilSQLServer.ConnectionString, zUserRegex) Then
+                Dim zMatch As Match = Regex.Match(razor.UtilSQLServer.ConnectionString, zUserRegex)
+                Dim zPassword() As String = Split(zMatch.Value, "=")
+                Dim zPasswordValue As String = zPassword(1)
+                Return Left(zPasswordValue, Len(zPasswordValue) - 1)
+            Else
+                Return ""
+            End If
+
+        End Function
+
+        Private Shared Function GetApplicationName() As String
+            If _ConnectionString.ToLower.Contains("Application Name".ToLower) Then
+                Dim zAttributes As List(Of String) = Split(_ConnectionString, ";").ToList
+                Dim zAttribute As String = zAttributes.Find(Function(x) x.ToLower.Contains("Application Name".ToLower))
+                Dim zAppName() As String = Split(zAttribute, "=")
+                Dim zAppNameValue As String = Trim(zAppName(1))
+                Return zAppNameValue
+            Else
+                Return ""
+            End If
+
+        End Function
+
+        Private Shared Function GetPersistSecurityInfo() As Boolean
+            Try
+                Dim zUserRegex As String = "((Persist Security Info).*?(=.+?))(?:;)"
+                If Regex.IsMatch(razor.UtilSQLServer.ConnectionString, zUserRegex) Then
+                    Dim zMatch As Match = Regex.Match(razor.UtilSQLServer.ConnectionString, zUserRegex)
+                    Dim zPersistSecurityInfo() As String = Split(zMatch.Value, "=")
+                    Dim zPersistSecurityInfoValue As String = zPersistSecurityInfo(1)
+                    Return CBool(Left(zPersistSecurityInfoValue, Len(zPersistSecurityInfoValue) - 1))
+                Else
+                    Return False
+                End If
+            Catch ex As Exception
+                Return False
+            End Try
+        End Function
+
+
+        Public Enum ConjuctionOperatorEnum
+            [And]
+            [Or]
+        End Enum
+
+        Public Class [WhereStatement]
+            Private Const __AND As String = "AND"
+            Private Const __OR As String = "OR"
+            Private Const __OPENPAREN As String = "("
+            Private Const __CLOSEPAREN As String = ")"
+            Protected Friend _Text As New List(Of String)
+            Private _ConjuctionOperator As ConjuctionOperatorEnum = ConjuctionOperatorEnum.And
+            Private _NeedConjunction As Boolean = False
+            Private _OpenParen As Integer = 0
+            Private _DictParenExpressionPresent As New Dictionary(Of Integer, Boolean)
+            Private _ParenNdx As Integer = 0
+
+            Public Sub SetConjuction(pOperator As ConjuctionOperatorEnum)
+                _ConjuctionOperator = pOperator
+            End Sub
+
+            Public Sub [OpenParen]()
+                _OpenParen = _OpenParen + 1
+                _ParenNdx = _ParenNdx + 1
+                _DictParenExpressionPresent.Add(_ParenNdx, False)
+            End Sub
+
+            Public Sub [CloseParen]()
+                SetCloseParen()
+                _DictParenExpressionPresent.Remove(_ParenNdx)
+                _ParenNdx = _ParenNdx - 1
+            End Sub
+
+            Public Sub [Add](pItem As Object)
+                Dim zItem(0) As Object
+                zItem(0) = pItem
+                BuildExpressionList(zItem, __AND)
+            End Sub
+
+            Public Sub [And](ParamArray pItems() As Object)
+                OpenParen()
+                BuildExpressionList(pItems, __AND)
+                CloseParen()
+            End Sub
+
+            Public Sub [Or](ParamArray pItems() As Object)
+                OpenParen()
+                BuildExpressionList(pItems, __OR)
+                CloseParen()
+            End Sub
+
+            Private Function GetConjunctionOperator(pValue As ConjuctionOperatorEnum) As String
+                Select Case pValue
+                    Case ConjuctionOperatorEnum.And
+                        Return __AND
+                    Case ConjuctionOperatorEnum.Or
+                        Return __OR
+                End Select
+                Return __AND
+            End Function
+
+            Private Sub SetOpenParen()
+                Dim zRepeat As Integer = 0
+                For zRepeat = 0 To _OpenParen - 1
+                    _Text.Add(__OPENPAREN)
+                    _OpenParen = _OpenParen - 1
+                Next
+            End Sub
+
+            Private Sub SetCloseParen()
+                If _DictParenExpressionPresent.Item(_ParenNdx) = True Then
+                    _Text.Add(__CLOSEPAREN)
+                Else
+                    _OpenParen = _OpenParen - 1
+                End If
+            End Sub
+
+            Private Sub BuildExpressionList(pItems() As Object, pOperator As String)
+                If _NeedConjunction Then _Text.Add(GetConjunctionOperator(_ConjuctionOperator))
+                If _OpenParen Then SetOpenParen()
+                _Text.Add(Join(pItems, Space(1) & pOperator & Space(1)))
+                'If _CloseParen Then SetCloseParen()
+                _NeedConjunction = True
+                SetParenExpressionPresent(_ParenNdx, True)
+            End Sub
+
+            Private Sub SetParenExpressionPresent(pIndexLevel As Integer, pValue As Boolean)
+                For xNdx = 1 To pIndexLevel
+                    _DictParenExpressionPresent.Item(xNdx) = pValue
+                Next
+            End Sub
+
+        End Class
+
+        Public Class SafeReader
+            Public Shared Function SafeReadInt16(ByRef pReader As SqlClient.SqlDataReader, pColumn As String) As Int16
+                Try
+                    Return pReader.GetInt16(pReader.GetOrdinal(pColumn))
+                Catch ex As Exception
+                    ex.Data.Add("Column", pColumn)
+                    Throw
+                End Try
+            End Function
+
+            Public Shared Function SafeReadInt32(ByRef pReader As SqlClient.SqlDataReader, pColumn As String) As Int32
+                Try
+                    Return pReader.GetInt32(pReader.GetOrdinal(pColumn))
+                Catch ex As Exception
+                    ex.Data.Add("Column", pColumn)
+                    Throw
+                End Try
+
+            End Function
+
+            Public Shared Function SafeReadInt64(ByRef pReader As SqlClient.SqlDataReader, pColumn As String) As Int64
+                Try
+                    Return pReader.GetInt64(pReader.GetOrdinal(pColumn))
+                Catch ex As Exception
+                    ex.Data.Add("Column", pColumn)
+                    Throw
+                End Try
+            End Function
+
+            Public Shared Function SafeReadString(ByRef pReader As SqlClient.SqlDataReader, pColumn As String) As String
+                Try
+                    Return pReader.GetString(pReader.GetOrdinal(pColumn))
+                Catch ex As Exception
+                    ex.Data.Add("Column", pColumn)
+                    Throw
+                End Try
+            End Function
+
+            Public Shared Function SafeReadDateTime(ByRef pReader As SqlClient.SqlDataReader, pColumn As String) As DateTime
+                Try
+                    Return pReader.GetDateTime(pReader.GetOrdinal(pColumn))
+                Catch ex As Exception
+                    ex.Data.Add("Column", pColumn)
+                    Throw
+                End Try
+            End Function
+
+            Public Shared Function SafeReadDecimal(ByRef pReader As SqlClient.SqlDataReader, pColumn As String) As Decimal
+                Try
+                    Return pReader.GetDecimal(pReader.GetOrdinal(pColumn))
+                Catch ex As Exception
+                    ex.Data.Add("Column", pColumn)
+                    Throw
+                End Try
+            End Function
+
+            Public Shared Function SafeReadBoolean(ByRef pReader As SqlClient.SqlDataReader, pColumn As String) As Boolean
+                Try
+                    Return pReader.GetBoolean(pReader.GetOrdinal(pColumn))
+                Catch ex As Exception
+                    ex.Data.Add("Column", pColumn)
+                    Throw
+                End Try
+            End Function
+
+            Public Shared Function SafeReadDate(ByRef pReader As SqlClient.SqlDataReader, pColumn As String) As Date
+                Try
+                    Return pReader.GetDateTime(pReader.GetOrdinal(pColumn))
+                Catch ex As Exception
+                    ex.Data.Add("Column", pColumn)
+                    Throw
+                End Try
+            End Function
+
+            Public Shared Function SafeReadTimeSpan(ByRef pReader As SqlClient.SqlDataReader, pColumn As String) As TimeSpan
+                Try
+                    Return pReader.GetTimeSpan(pReader.GetOrdinal(pColumn))
+                Catch ex As Exception
+                    ex.Data.Add("Column", pColumn)
+                    Throw
+                End Try
+            End Function
+
+            Public Shared Function SafeReadSingle(ByRef pReader As SqlClient.SqlDataReader, pColumn As String) As Single
+                Try
+                    Return pReader.GetSqlSingle(pReader.GetOrdinal(pColumn))
+                Catch ex As Exception
+                    ex.Data.Add("Column", pColumn)
+                    Throw
+                End Try
+
+            End Function
+
+            Public Shared Function SafeReadDouble(ByRef pReader As SqlClient.SqlDataReader, pColumn As String) As Double
+                Try
+                    Return pReader.GetDouble(pReader.GetOrdinal(pColumn))
+                Catch ex As Exception
+                    ex.Data.Add("Column", pColumn)
+                    Throw
+                End Try
+            End Function
+
+            Public Shared Function SafeReadByte(ByRef pReader As SqlClient.SqlDataReader, pColumn As String) As Byte
+                Try
+                    Return pReader.GetByte(pReader.GetOrdinal(pColumn))
+                Catch ex As Exception
+                    ex.Data.Add("Column", pColumn)
+                    Throw
+                End Try
+            End Function
+
+            Public Shared Function SafeReadGuid(ByRef pReader As SqlClient.SqlDataReader, pColumn As String) As Guid
+                Try
+                    Return pReader.GetGuid(pReader.GetOrdinal(pColumn))
+                Catch ex As Exception
+                    ex.Data.Add("Column", pColumn)
+                    Throw
+                End Try
+            End Function
+        End Class
+
+        Public MustInherit Class Query
+            Public [Where] As New WhereStatement
+            Private _FirstColumn As String = ""
+            Private _TableName As String = ""
+            Private _Top As Integer = 0
+            Private _PageSize As Integer = 0
+            Private _PageNumber As Integer = 0
+            Private _Select As New List(Of String)
+            Private _Where As New List(Of String)
+            Private _OrderBy As New List(Of String)
+            Private _GroupCount As New List(Of String)
+            Private _CountAll As Boolean = False
+            Private _Distinct As Boolean = False
+            Private _SelectIntoTable As String = ""
+
+            Protected Property FirstColumn() As String
+                Get
+                    Return _FirstColumn
+                End Get
+                Set(pColumn As String)
+                    _FirstColumn = pColumn
+                End Set
+            End Property
+
+            Protected Property TableName() As String
+                Get
+                    Return _TableName
+                End Get
+                Set(pTable As String)
+                    _TableName = pTable
+                End Set
+            End Property
+
+            Public Property [CountAll]() As Boolean
+                Get
+                    Return _CountAll
+                End Get
+                Set(pValue As Boolean)
+                    _CountAll = pValue
+                End Set
+            End Property
+
+            Public Property [Distinct]() As Boolean
+                Get
+                    Return _Distinct
+                End Get
+                Set(pValue As Boolean)
+                    _Distinct = pValue
+                End Set
+            End Property
+
+            Public Property [Top]() As Integer
+                Get
+                    Return _Top
+                End Get
+                Set(pLimit As Integer)
+                    _Top = pLimit
+                End Set
+            End Property
+
+            Public Property PageSize() As Integer
+                Get
+                    Return _PageSize
+                End Get
+                Set(pSize As Integer)
+                    _PageSize = pSize
+                End Set
+            End Property
+
+            Public Property PageNumber() As Integer
+                Get
+                    Return _PageNumber
+                End Get
+                Set(pNumber As Integer)
+                    _PageNumber = pNumber
+                End Set
+            End Property
+
+            Private Function PageStart() As Integer
+                Return Me.PageSize * (Me.PageNumber - 1) + 1
+            End Function
+
+            Private Function PageEnd() As Integer
+                Return PageStart() + Me.PageSize - 1
+            End Function
+
+            Public Sub [Select](ParamArray pColumns() As Object)
+                _Select.Clear()
+                For Each zItem In pColumns
+                    _Select.Add(zItem.ColumnName)
+                Next
+            End Sub
+
+            Public Sub [Select](pColumnName As String)
+                _Select.Add(pColumnName)
+            End Sub
+
+            Public Sub [SelectInto](pTableName As String, ParamArray pColumns() As Object)
+                _Select.Clear()
+                _SelectIntoTable = pTableName
+                For Each zItem In pColumns
+                    _Select.Add(zItem.ColumnName)
+                Next
+            End Sub
+
+            Public Sub [SelectInto](pTableName As String, pColumnName As String)
+                _SelectIntoTable = pTableName
+                _Select.Add(pColumnName)
+            End Sub
+
+            Public Sub [SelectAll]()
+                _Select.Clear()
+                _Select.Add("*")
+            End Sub
+
+            Public Sub [GroupCount](ParamArray pItems() As Object)
+                For Each zItem In pItems
+                    If TypeOf zItem Is String Then
+                        _GroupCount.Add(zItem)
+                    Else
+                        _GroupCount.Add(zItem.ColumnName)
+                    End If
+                Next
+            End Sub
+
+            Public Sub [OrderBy](ParamArray pOrderByItems() As Object)
+                For Each zItem In pOrderByItems
+                    If TypeOf zItem Is String Then
+                        _OrderBy.Add(zItem)
+                    Else
+                        _OrderBy.Add(zItem.ToString)
+                    End If
+                Next
+            End Sub
+
+            Public Function QueryText() As String
+                Dim zSQL As String = ""
+
+                If Me.PageSize > 0 Then
+                    zSQL = zSQL & "SELECT * "
+                    zSQL = zSQL & "FROM "
+                    zSQL = zSQL & "(SELECT [src].*, "
+                    zSQL = zSQL & "ROW_NUMBER() OVER("
+                    If _OrderBy.Count = 0 Then
+                        zSQL = zSQL & "ORDER BY [src]." & FirstColumn() & " Asc) AS [ROWNUMBER] "
+                    Else
+                        zSQL = zSQL & "ORDER BY " & String.Join(", ", _OrderBy) & ") AS [ROWNUMBER] "
+                    End If
+                    zSQL = zSQL & "FROM ("
+
+                    'Select
+                    zSQL = zSQL & "SELECT "
+                    If _Top > 0 Then
+                        zSQL = zSQL & "TOP " & CStr(_Top) & " "
+                    Else
+                        zSQL = zSQL & "TOP 100 PERCENT "
+                    End If
+                    zSQL = zSQL & String.Join(", ", _Select) & " "
+
+                    'FROM
+                    zSQL = zSQL & "FROM " & TableName() & " "
+
+                    'WHERE
+                    If Where._Text.Count > 0 Then
+                        zSQL = zSQL & "WHERE" & Space(1) & String.Join(" ", Where._Text) & Space(1)
+                    End If
+
+                    'ORDER BY
+                    If _OrderBy.Count > 0 Then
+                        zSQL = zSQL & "ORDER BY " & String.Join(", ", _OrderBy)
+                    End If
+
+                    zSQL = zSQL & ") [src]"
+                    zSQL = zSQL & ") [src] "
+
+                    zSQL = zSQL & "WHERE [ROWNUMBER] "
+                    zSQL = zSQL & "BETWEEN " & PageStart() & " AND " & PageEnd()
+                Else
+                    'Select
+                    zSQL = zSQL & "SELECT "
+                    If _CountAll Then
+                        zSQL = zSQL & "COUNT(*) AS [totalcount] "
+                    ElseIf _GroupCount.Count > 0 Then
+                        zSQL = zSQL & String.Join(", ", _GroupCount) & ", COUNT(*) AS [itemcount] "
+                    Else
+                        If _Distinct Then zSQL = zSQL & "DISTINCT "
+                        If _Top > 0 Then zSQL = zSQL & "TOP " & CStr(_Top) & " "
+                        zSQL = zSQL & String.Join(", ", _Select) & " "
+                    End If
+
+                    If _SelectIntoTable <> "" Then
+                        zSQL = zSQL & " INTO [" & _SelectIntoTable & "] "
+                    End If
+
+                    'FROM
+                    zSQL = zSQL & "FROM " & TableName() & " "
+
+                    'WHERE
+                    If Where._Text.Count > 0 Then
+                        zSQL = zSQL & "WHERE" & Space(1) & String.Join(" ", Where._Text) & Space(1)
+                    End If
+
+                    If _GroupCount.Count > 0 Then
+                        zSQL = zSQL & "GROUP BY " & String.Join(", ", _GroupCount) & " "
+                    End If
+
+                    'ORDER BY
+                    If _OrderBy.Count > 0 Then
+                        zSQL = zSQL & "ORDER BY " & String.Join(", ", _OrderBy) & " "
+                    End If
+
+                End If
+
+                Return zSQL
+            End Function
+        End Class
+
+        Public MustInherit Class DataColumn
+            Public ColumnName As String
+
+            <Obsolete("You must use a matching typed variable when using Equals comparison.", True)>
+            Public Overrides Function Equals(obj As Object) As Boolean
+                Return MyBase.Equals(obj)
+            End Function
+
+            Public Overloads Function IsNull() As String
+                Return ColumnName & " IS NULL"
+            End Function
+
+            Public Overloads Function IsNotNull() As String
+                Return ColumnName & " IS NOT NULL"
+            End Function
+
+            Public Overloads Function Ascending() As String
+                Return ColumnName & " ASC "
+            End Function
+
+            Public Overloads Function Descending() As String
+                Return ColumnName & " DESC "
+            End Function
+
+        End Class
+
+        Public Class StringDataColumn
+            Inherits DataColumn
+
+            Public Overloads Function Equals(pValue As String, Optional isCaseSensitive As Boolean = False) As String
+                If Not isCaseSensitive Then
+                    Return "UPPER(" & ColumnName & ") = " & SQuote(pValue.ToUpper)
+                Else
+                    Return ColumnName & " = " & SQuote(pValue)
+                End If
+            End Function
+
+            Public Overloads Function NotEqual(pValue As String, Optional isCaseSensitive As Boolean = False) As String
+                If Not isCaseSensitive Then
+                    Return "UPPER(" & ColumnName & ") <> " & SQuote(pValue.ToUpper)
+                Else
+                    Return ColumnName & " <> " & SQuote(pValue)
+                End If
+            End Function
+
+            Public Overloads Function BeginsWith(pValue As String, Optional isCaseSensitive As Boolean = False) As String
+                If Not isCaseSensitive Then
+                    Return "UPPER(" & ColumnName & ") LIKE " & SQuote(pValue.ToUpper & "%")
+                Else
+                    Return ColumnName & " LIKE " & SQuote(pValue & "%")
+                End If
+            End Function
+
+            Public Overloads Function EndsWith(pValue As String, Optional isCaseSensitive As Boolean = False) As String
+                If Not isCaseSensitive Then
+                    Return "UPPER(" & ColumnName & ") LIKE " & SQuote("%" & pValue.ToUpper)
+                Else
+                    Return ColumnName & " LIKE " & SQuote("%" & pValue)
+                End If
+            End Function
+
+            Public Overloads Function Contains(pValue As String, Optional isCaseSensitive As Boolean = False) As String
+                If Not isCaseSensitive Then
+                    Return "UPPER(" & ColumnName & ") LIKE " & SQuote("%" & pValue.ToUpper & "%")
+                Else
+                    Return ColumnName & " LIKE " & SQuote("%" & pValue & "%")
+                End If
+            End Function
+
+            Public Overloads Function NotContains(pValue As String, Optional isCaseSensitive As Boolean = False) As String
+                If Not isCaseSensitive Then
+                    Return "UPPER(" & ColumnName & ") NOT LIKE " & SQuote("%" & pValue.ToUpper & "%")
+                Else
+                    Return ColumnName & " NOT LIKE " & SQuote("%" & pValue & "%")
+                End If
+            End Function
+
+            Public Overloads Function [In](pValue() As String, Optional isCaseSensitive As Boolean = False) As String
+                Dim zNdx As Integer = 0
+                For zNdx = 0 To UBound(pValue)
+                    pValue(zNdx) = pValue(zNdx).ToUpper
+                    pValue(zNdx) = SQuote(pValue(zNdx))
+                Next
+                If Not isCaseSensitive Then
+                    Return "UPPER(" & ColumnName & ") IN (" & Join(pValue, ",") & ")"
+                Else
+                    Return ColumnName & " IN (" & Join(pValue, ",") & ")"
+                End If
+            End Function
+
+            Public Overloads Function [NotIn](pValue() As String, Optional isCaseSensitive As Boolean = False) As String
+                Dim zNdx As Integer = 0
+                For zNdx = 0 To UBound(pValue)
+                    pValue(zNdx) = pValue(zNdx).ToUpper
+                    pValue(zNdx) = SQuote(pValue(zNdx))
+                Next
+
+                If Not isCaseSensitive Then
+                    Return "UPPER(" & ColumnName & ") NOT IN (" & Join(pValue, ",") & ")"
+                Else
+                    Return ColumnName & " NOT IN (" & Join(pValue, ",") & ")"
+                End If
+            End Function
+
+            Public Overloads Function GreaterThan(pValue As String) As String
+                Return ColumnName & " > " & SQuote(pValue)
+            End Function
+
+            Public Overloads Function GreaterThanEqual(pValue As String) As String
+                Return ColumnName & " >= " & SQuote(pValue)
+            End Function
+
+            Public Overloads Function LessThan(pValue As String) As String
+                Return ColumnName & " < " & SQuote(pValue)
+            End Function
+
+            Public Overloads Function LessThanEqual(pValue As String) As String
+                Return ColumnName & " <= " & SQuote(pValue)
+            End Function
+
+        End Class
+
+        Public Class GuidDataColumn
+            Inherits DataColumn
+
+            Public Overloads Function Equals(pValue As Guid) As String
+                Return ColumnName & " = " & pValue.ToString
+            End Function
+
+            Public Overloads Function NotEqual(pValue As Guid) As String
+                Return ColumnName & " <> " & pValue.ToString
+            End Function
+        End Class
+
+        Public Class IntegerDataColumn
+            Inherits DataColumn
+
+            Public Overloads Function Equals(pValue As Integer) As String
+                Return ColumnName & " = " & CStr(pValue)
+            End Function
+
+            Public Overloads Function NotEqual(pValue As Integer) As String
+                Return ColumnName & " <> " & CStr(pValue)
+            End Function
+
+            Public Overloads Function GreaterThan(pValue As Integer) As String
+                Return ColumnName & " > " & CStr(pValue)
+            End Function
+
+            Public Overloads Function GreaterThanEqual(pValue As Integer) As String
+                Return ColumnName & " >= " & CStr(pValue)
+            End Function
+
+            Public Overloads Function LessThan(pValue As Integer) As String
+                Return ColumnName & " < " & CStr(pValue)
+            End Function
+
+            Public Overloads Function LessThanEqual(pValue As Integer) As String
+                Return ColumnName & " <= " & CStr(pValue)
+            End Function
+
+            Public Overloads Function [In](pValue() As Integer) As String
+                Dim zNdx As Integer = 0
+                Dim zStringValue() As String
+                ReDim zStringValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zStringValue(zNdx) = pValue(zNdx).ToString
+                Next
+                Return ColumnName & " IN (" & Join(zStringValue, ",") & ")"
+            End Function
+
+            Public Overloads Function [NotIn](pValue() As Integer) As String
+                Dim zNdx As Integer = 0
+                Dim zStringValue() As String
+                ReDim zStringValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zStringValue(zNdx) = pValue(zNdx).ToString
+                Next
+                Return ColumnName & " NOT IN (" & Join(zStringValue, ",") & ")"
+            End Function
+
+            Public Overloads Function [In](pValue() As String) As String
+                Dim zNdx As Integer = 0
+                Dim zStringValue() As String
+                ReDim zStringValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zStringValue(zNdx) = pValue(zNdx).ToString
+                Next
+                Return ColumnName & " IN (" & Join(zStringValue, ",") & ")"
+            End Function
+
+            Public Overloads Function [NotIn](pValue() As String) As String
+                Dim zNdx As Integer = 0
+                Dim zStringValue() As String
+                ReDim zStringValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zStringValue(zNdx) = pValue(zNdx).ToString
+                Next
+                Return ColumnName & " NOT IN (" & Join(zStringValue, ",") & ")"
+            End Function
+        End Class
+
+        Public Class LongDataColumn
+            Inherits DataColumn
+
+            Public Overloads Function Equals(pValue As Long) As String
+                Return ColumnName & " = " & CStr(pValue)
+            End Function
+
+            Public Overloads Function NotEqual(pValue As Long) As String
+                Return ColumnName & " <> " & CStr(pValue)
+            End Function
+
+            Public Overloads Function GreaterThan(pValue As Long) As String
+                Return ColumnName & " > " & CStr(pValue)
+            End Function
+
+            Public Overloads Function GreaterThanEqual(pValue As Long) As String
+                Return ColumnName & " >= " & CStr(pValue)
+            End Function
+
+            Public Overloads Function LessThan(pValue As Long) As String
+                Return ColumnName & " < " & CStr(pValue)
+            End Function
+
+            Public Overloads Function LessThanEqual(pValue As Long) As String
+                Return ColumnName & " <= " & CStr(pValue)
+            End Function
+
+            Public Overloads Function [In](pValue() As Long) As String
+                Dim zNdx As Integer = 0
+                Dim zStringValue() As String
+                ReDim zStringValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zStringValue(zNdx) = pValue(zNdx).ToString
+                Next
+                Return ColumnName & " IN (" & Join(zStringValue, ",") & ")"
+            End Function
+
+            Public Overloads Function [NotIn](pValue() As Long) As String
+                Dim zNdx As Integer = 0
+                Dim zStringValue() As String
+                ReDim zStringValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zStringValue(zNdx) = pValue(zNdx).ToString
+                Next
+                Return ColumnName & " NOT IN (" & Join(zStringValue, ",") & ")"
+            End Function
+
+            Public Overloads Function [In](pValue() As String) As String
+                Dim zNdx As Integer = 0
+                Dim zStringValue() As String
+                ReDim zStringValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zStringValue(zNdx) = pValue(zNdx).ToString
+                Next
+                Return ColumnName & " IN (" & Join(zStringValue, ",") & ")"
+            End Function
+
+            Public Overloads Function [NotIn](pValue() As String) As String
+                Dim zNdx As Integer = 0
+                Dim zStringValue() As String
+                ReDim zStringValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zStringValue(zNdx) = pValue(zNdx).ToString
+                Next
+                Return ColumnName & " NOT IN (" & Join(zStringValue, ",") & ")"
+            End Function
+        End Class
+
+        Public Class ShortDataColumn
+            Inherits DataColumn
+
+            Public Overloads Function Equals(pValue As Short) As String
+                Return ColumnName & " = " & CStr(pValue)
+            End Function
+
+            Public Overloads Function NotEqual(pValue As Short) As String
+                Return ColumnName & " <> " & CStr(pValue)
+            End Function
+
+            Public Overloads Function GreaterThan(pValue As Short) As String
+                Return ColumnName & " > " & CStr(pValue)
+            End Function
+
+            Public Overloads Function GreaterThanEqual(pValue As Short) As String
+                Return ColumnName & " >= " & CStr(pValue)
+            End Function
+
+            Public Overloads Function LessThan(pValue As Short) As String
+                Return ColumnName & " < " & CStr(pValue)
+            End Function
+
+            Public Overloads Function LessThanEqual(pValue As Short) As String
+                Return ColumnName & " <= " & CStr(pValue)
+            End Function
+
+            Public Overloads Function [In](pValue() As Short) As String
+                Dim zNdx As Integer = 0
+                Dim zStringValue() As String
+                ReDim zStringValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zStringValue(zNdx) = pValue(zNdx).ToString
+                Next
+                Return ColumnName & " IN (" & Join(zStringValue, ",") & ")"
+            End Function
+
+            Public Overloads Function [NotIn](pValue() As Short) As String
+                Dim zNdx As Integer = 0
+                Dim zStringValue() As String
+                ReDim zStringValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zStringValue(zNdx) = pValue(zNdx).ToString
+                Next
+                Return ColumnName & " NOT IN (" & Join(zStringValue, ",") & ")"
+            End Function
+
+            Public Overloads Function [In](pValue() As String) As String
+                Dim zNdx As Integer = 0
+                Dim zStringValue() As String
+                ReDim zStringValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zStringValue(zNdx) = pValue(zNdx).ToString
+                Next
+                Return ColumnName & " IN (" & Join(zStringValue, ",") & ")"
+            End Function
+
+            Public Overloads Function [NotIn](pValue() As String) As String
+                Dim zNdx As Integer = 0
+                Dim zStringValue() As String
+                ReDim zStringValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zStringValue(zNdx) = pValue(zNdx).ToString
+                Next
+                Return ColumnName & " NOT IN (" & Join(zStringValue, ",") & ")"
+            End Function
+        End Class
+
+        Public Class SingleDataColumn
+            Inherits DataColumn
+
+            Public Overloads Function Equals(pValue As Single) As String
+                Return ColumnName & " = " & CStr(pValue)
+            End Function
+
+            Public Overloads Function NotEqual(pValue As Single) As String
+                Return ColumnName & " <> " & CStr(pValue)
+            End Function
+
+            Public Overloads Function GreaterThan(pValue As Single) As String
+                Return ColumnName & " > " & CStr(pValue)
+            End Function
+
+            Public Overloads Function GreaterThanEqual(pValue As Single) As String
+                Return ColumnName & " >= " & CStr(pValue)
+            End Function
+
+            Public Overloads Function LessThan(pValue As Single) As String
+                Return ColumnName & " < " & CStr(pValue)
+            End Function
+
+            Public Overloads Function LessThanEqual(pValue As Single) As String
+                Return ColumnName & " <= " & CStr(pValue)
+            End Function
+
+            Public Overloads Function [In](pValue() As Single) As String
+                Dim zNdx As Integer = 0
+                Dim zStringValue() As String
+                ReDim zStringValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zStringValue(zNdx) = pValue(zNdx).ToString
+                Next
+                Return ColumnName & " IN (" & Join(zStringValue, ",") & ")"
+            End Function
+
+            Public Overloads Function [NotIn](pValue() As Single) As String
+                Dim zNdx As Integer = 0
+                Dim zStringValue() As String
+                ReDim zStringValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zStringValue(zNdx) = pValue(zNdx).ToString
+                Next
+                Return ColumnName & " NOT IN (" & Join(zStringValue, ",") & ")"
+            End Function
+
+            Public Overloads Function [In](pValue() As String) As String
+                Dim zNdx As Integer = 0
+                Dim zStringValue() As String
+                ReDim zStringValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zStringValue(zNdx) = pValue(zNdx).ToString
+                Next
+                Return ColumnName & " IN (" & Join(zStringValue, ",") & ")"
+            End Function
+
+            Public Overloads Function [NotIn](pValue() As String) As String
+                Dim zNdx As Integer = 0
+                Dim zStringValue() As String
+                ReDim zStringValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zStringValue(zNdx) = pValue(zNdx).ToString
+                Next
+                Return ColumnName & " NOT IN (" & Join(zStringValue, ",") & ")"
+            End Function
+        End Class
+
+        Public Class ByteDataColumn
+            Inherits DataColumn
+
+            Public Overloads Function Equals(pValue As Byte) As String
+                Return ColumnName & " = " & CStr(pValue)
+            End Function
+
+            Public Overloads Function NotEqual(pValue As Byte) As String
+                Return ColumnName & " <> " & CStr(pValue)
+            End Function
+
+            Public Overloads Function GreaterThan(pValue As Byte) As String
+                Return ColumnName & " > " & CStr(pValue)
+            End Function
+
+            Public Overloads Function GreaterThanEqual(pValue As Byte) As String
+                Return ColumnName & " >= " & CStr(pValue)
+            End Function
+
+            Public Overloads Function LessThan(pValue As Byte) As String
+                Return ColumnName & " < " & CStr(pValue)
+            End Function
+
+            Public Overloads Function LessThanEqual(pValue As Byte) As String
+                Return ColumnName & " <= " & CStr(pValue)
+            End Function
+        End Class
+
+        Public Class DecimalDataColumn
+            Inherits DataColumn
+
+            Public Overloads Function Equals(pValue As Decimal) As String
+                Return ColumnName & " = " & CStr(pValue)
+            End Function
+
+            Public Overloads Function NotEqual(pValue As Decimal) As String
+                Return ColumnName & " <> " & CStr(pValue)
+            End Function
+
+            Public Overloads Function GreaterThan(pValue As Decimal) As String
+                Return ColumnName & " > " & CStr(pValue)
+            End Function
+
+            Public Overloads Function GreaterThanEqual(pValue As Decimal) As String
+                Return ColumnName & " >= " & CStr(pValue)
+            End Function
+
+            Public Overloads Function LessThan(pValue As Decimal) As String
+                Return ColumnName & " < " & CStr(pValue)
+            End Function
+
+            Public Overloads Function LessThanEqual(pValue As Decimal) As String
+                Return ColumnName & " <= " & CStr(pValue)
+            End Function
+
+            Public Overloads Function [In](pValue() As Decimal) As String
+                Dim zNdx As Integer = 0
+                Dim zStringValue() As String
+                ReDim zStringValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zStringValue(zNdx) = pValue(zNdx).ToString
+                Next
+                Return ColumnName & " IN (" & Join(zStringValue, ",") & ")"
+            End Function
+
+            Public Overloads Function [NotIn](pValue() As Decimal) As String
+                Dim zNdx As Integer = 0
+                Dim zStringValue() As String
+                ReDim zStringValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zStringValue(zNdx) = pValue(zNdx).ToString
+                Next
+                Return ColumnName & " NOT IN (" & Join(zStringValue, ",") & ")"
+            End Function
+
+            Public Overloads Function [In](pValue() As String) As String
+                Dim zNdx As Integer = 0
+                Dim zStringValue() As String
+                ReDim zStringValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zStringValue(zNdx) = pValue(zNdx).ToString
+                Next
+                Return ColumnName & " IN (" & Join(zStringValue, ",") & ")"
+            End Function
+
+            Public Overloads Function [NotIn](pValue() As String) As String
+                Dim zNdx As Integer = 0
+                Dim zStringValue() As String
+                ReDim zStringValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zStringValue(zNdx) = pValue(zNdx).ToString
+                Next
+                Return ColumnName & " NOT IN (" & Join(zStringValue, ",") & ")"
+            End Function
+        End Class
+
+        Public Class DoubleDataColumn
+            Inherits DataColumn
+
+            Public Overloads Function Equals(pValue As Double) As String
+                Return ColumnName & " = " & CStr(pValue)
+            End Function
+
+            Public Overloads Function NotEqual(pValue As Double) As String
+                Return ColumnName & " <> " & CStr(pValue)
+            End Function
+
+            Public Overloads Function GreaterThan(pValue As Double) As String
+                Return ColumnName & " > " & CStr(pValue)
+            End Function
+
+            Public Overloads Function GreaterThanEqual(pValue As Double) As String
+                Return ColumnName & " >= " & CStr(pValue)
+            End Function
+
+            Public Overloads Function LessThan(pValue As Double) As String
+                Return ColumnName & " < " & CStr(pValue)
+            End Function
+
+            Public Overloads Function LessThanEqual(pValue As Double) As String
+                Return ColumnName & " <= " & CStr(pValue)
+            End Function
+
+            Public Overloads Function [In](pValue() As Double) As String
+                Dim zNdx As Integer = 0
+                Dim zStringValue() As String
+                ReDim zStringValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zStringValue(zNdx) = pValue(zNdx).ToString
+                Next
+                Return ColumnName & " IN (" & Join(zStringValue, ",") & ")"
+            End Function
+
+            Public Overloads Function [NotIn](pValue() As Double) As String
+                Dim zNdx As Integer = 0
+                Dim zStringValue() As String
+                ReDim zStringValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zStringValue(zNdx) = pValue(zNdx).ToString
+                Next
+                Return ColumnName & " NOT IN (" & Join(zStringValue, ",") & ")"
+            End Function
+
+            Public Overloads Function [In](pValue() As String) As String
+                Dim zNdx As Integer = 0
+                Dim zStringValue() As String
+                ReDim zStringValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zStringValue(zNdx) = pValue(zNdx).ToString
+                Next
+                Return ColumnName & " IN (" & Join(zStringValue, ",") & ")"
+            End Function
+
+            Public Overloads Function [NotIn](pValue() As String) As String
+                Dim zNdx As Integer = 0
+                Dim zStringValue() As String
+                ReDim zStringValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zStringValue(zNdx) = pValue(zNdx).ToString
+                Next
+                Return ColumnName & " NOT IN (" & Join(zStringValue, ",") & ")"
+            End Function
+        End Class
+
+        Public Class BooleanDataColumn
+            Inherits DataColumn
+
+            Private Function Bit(pValue As Boolean) As Integer
+                If pValue Then
+                    Return 1
+                Else
+                    Return 0
+                End If
+            End Function
+
+            Public Overloads Function Equals(pValue As Boolean) As String
+                Return ColumnName & " = " & CStr(Bit(pValue))
+            End Function
+
+            Public Overloads Function NotEqual(pValue As Boolean) As String
+                Return ColumnName & " <> " & CStr(Bit(pValue))
+            End Function
+
+            Public Overloads Function [In](pValue() As Boolean) As String
+                Dim zNdx As Integer = 0
+                Dim zStringValue() As String
+                ReDim zStringValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zStringValue(zNdx) = pValue(zNdx).ToString
+                Next
+                Return ColumnName & " IN (" & Join(zStringValue, ",") & ")"
+            End Function
+
+            Public Overloads Function [NotIn](pValue() As Boolean) As String
+                Dim zNdx As Integer = 0
+                Dim zStringValue() As String
+                ReDim zStringValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zStringValue(zNdx) = pValue(zNdx).ToString
+                Next
+                Return ColumnName & " NOT IN (" & Join(zStringValue, ",") & ")"
+            End Function
+
+            Public Overloads Function [In](pValue() As String) As String
+                Dim zNdx As Integer = 0
+                Dim zStringValue() As String
+                ReDim zStringValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zStringValue(zNdx) = SQuote(pValue(zNdx).ToString)
+                Next
+                Return ColumnName & " IN (" & Join(zStringValue, ",") & ")"
+            End Function
+
+            Public Overloads Function [NotIn](pValue() As String) As String
+                Dim zNdx As Integer = 0
+                Dim zStringValue() As String
+                ReDim zStringValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zStringValue(zNdx) = SQuote(pValue(zNdx).ToString)
+                Next
+                Return ColumnName & " NOT IN (" & Join(zStringValue, ",") & ")"
+            End Function
+        End Class
+
+        Public Class DateTimeDataColumn
+            Inherits DataColumn
+
+            Public Overloads Function Equals(pValue As DateTime) As String
+                Return ColumnName & " = " & SQuote(pValue)
+            End Function
+
+            Public Overloads Function NotEqual(pValue As DateTime) As String
+                Return ColumnName & " <> " & SQuote(pValue)
+            End Function
+
+            Public Overloads Function GreaterThan(pValue As DateTime) As String
+                Return ColumnName & " > " & SQuote(pValue)
+            End Function
+
+            Public Overloads Function GreaterThanEqual(pValue As DateTime) As String
+                Return ColumnName & " >= " & SQuote(pValue)
+            End Function
+
+            Public Overloads Function LessThan(pValue As DateTime) As String
+                Return ColumnName & " < " & SQuote(pValue)
+            End Function
+
+            Public Overloads Function LessThanEqual(pValue As DateTime) As String
+                Return ColumnName & " <= " & SQuote(pValue)
+            End Function
+
+            Public Overloads Function Between(pValueBegin As DateTime, pValueEnd As DateTime) As String
+                Return ColumnName & " BETWEEN " & SQuote(pValueBegin) & " AND " & SQuote(pValueEnd)
+            End Function
+
+            Public Overloads Function [In](pValue() As DateTime) As String
+                Dim zNdx As Integer = 0
+                Dim zValue() As String
+                ReDim zValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zValue(zNdx) = SQuote(pValue(zNdx).ToString)
+                Next
+                Return ColumnName & " IN (" & Join(zValue, ",") & ")"
+            End Function
+
+            Public Overloads Function [NotIn](pValue() As DateTime) As String
+                Dim zNdx As Integer = 0
+                Dim zValue() As String
+                ReDim zValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zValue(zNdx) = SQuote(pValue(zNdx).ToString)
+                Next
+                Return ColumnName & " NOT IN (" & Join(zValue, ",") & ")"
+            End Function
+
+            Public Overloads Function [In](pValue() As String) As String
+                Dim zNdx As Integer = 0
+                Dim zValue() As String
+                ReDim zValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zValue(zNdx) = SQuote(pValue(zNdx).ToString)
+                Next
+                Return ColumnName & " IN (" & Join(zValue, ",") & ")"
+            End Function
+
+            Public Overloads Function [NotIn](pValue() As String) As String
+                Dim zNdx As Integer = 0
+                Dim zValue() As String
+                ReDim zValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zValue(zNdx) = SQuote(pValue(zNdx).ToString)
+                Next
+                Return ColumnName & " NOT IN (" & Join(zValue, ",") & ")"
+            End Function
+        End Class
+
+        Public Class DateDataColumn
+            Inherits DataColumn
+
+            Public Overloads Function Equals(pValue As Date) As String
+                Return ColumnName & " = " & SQuote(pValue)
+            End Function
+
+            Public Overloads Function NotEqual(pValue As Date) As String
+                Return ColumnName & " <> " & SQuote(pValue)
+            End Function
+
+            Public Overloads Function GreaterThan(pValue As Date) As String
+                Return ColumnName & " > " & SQuote(pValue)
+            End Function
+
+            Public Overloads Function GreaterThanEqual(pValue As Date) As String
+                Return ColumnName & " >= " & SQuote(pValue)
+            End Function
+
+            Public Overloads Function LessThan(pValue As Date) As String
+                Return ColumnName & " < " & SQuote(pValue)
+            End Function
+
+            Public Overloads Function LessThanEqual(pValue As Date) As String
+                Return ColumnName & " <= " & SQuote(pValue)
+            End Function
+
+            Public Overloads Function Between(pValueBegin As Date, pValueEnd As Date) As String
+                Return ColumnName & " BETWEEN " & SQuote(pValueBegin) & " AND " & SQuote(pValueEnd)
+            End Function
+
+            Public Overloads Function [In](pValue() As Date) As String
+                Dim zNdx As Integer = 0
+                Dim zValue() As String
+                ReDim zValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zValue(zNdx) = SQuote(pValue(zNdx).ToString)
+                Next
+                Return ColumnName & " IN (" & Join(zValue, ",") & ")"
+            End Function
+
+            Public Overloads Function [NotIn](pValue() As Date) As String
+                Dim zNdx As Integer = 0
+                Dim zValue() As String
+                ReDim zValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zValue(zNdx) = SQuote(pValue(zNdx).ToString)
+                Next
+                Return ColumnName & " NOT IN (" & Join(zValue, ",") & ")"
+            End Function
+
+            Public Overloads Function [In](pValue() As String) As String
+                Dim zNdx As Integer = 0
+                Dim zValue() As String
+                ReDim zValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zValue(zNdx) = SQuote(pValue(zNdx).ToString)
+                Next
+                Return ColumnName & " IN (" & Join(zValue, ",") & ")"
+            End Function
+
+            Public Overloads Function [NotIn](pValue() As String) As String
+                Dim zNdx As Integer = 0
+                Dim zValue() As String
+                ReDim zValue(UBound(pValue))
+                For zNdx = 0 To UBound(pValue)
+                    zValue(zNdx) = SQuote(pValue(zNdx).ToString)
+                Next
+                Return ColumnName & " NOT IN (" & Join(zValue, ",") & ")"
+            End Function
+        End Class
+
+        Public Class TimeSpanDataColumn
+            Inherits DataColumn
+
+            Public Overloads Function Equals(pValue As TimeSpan) As String
+                Return ColumnName & " = " & SQuote(pValue.ToString)
+            End Function
+
+            Public Overloads Function NotEqual(pValue As TimeSpan) As String
+                Return ColumnName & " <> " & SQuote(pValue.ToString)
+            End Function
+
+            Public Overloads Function GreaterThan(pValue As TimeSpan) As String
+                Return ColumnName & " > " & SQuote(pValue.ToString)
+            End Function
+
+            Public Overloads Function GreaterThanEqual(pValue As TimeSpan) As String
+                Return ColumnName & " >= " & SQuote(pValue.ToString)
+            End Function
+
+            Public Overloads Function LessThan(pValue As TimeSpan) As String
+                Return ColumnName & " < " & SQuote(pValue.ToString)
+            End Function
+
+            Public Overloads Function LessThanEqual(pValue As TimeSpan) As String
+                Return ColumnName & " <= " & SQuote(pValue.ToString)
+            End Function
+
+            Public Overloads Function Between(pValueBegin As TimeSpan, pValueEnd As TimeSpan) As String
+                Return ColumnName & " BETWEEN " & SQuote(pValueBegin.ToString) & " AND " & SQuote(pValueEnd.ToString)
+            End Function
+        End Class
+    End Class
+
+    Module modStringLib
+        Public Function SQuote(pIn As String) As String
+            Return Chr(39) & Replace(pIn, "'", "''") & Chr(39)
+        End Function
+    End Module
+
+    Partial Public Class UtilConfiguration
+        Public Class Auditing
+            Public Shared CurrentUserDelegate As CurrentUserDelegate
+
+            Public Shared Function AuditIsEnabled()
+                Return Not IsNothing(CurrentUserDelegate)
+            End Function
+
+        End Class
+    End Class
+
+    Public Delegate Function CurrentUserDelegate() As String
+
+    Public Class UtilFilterSort
+
+#Region "Private Members"
+        Private mFilterCount As Integer = 0
+
+        Private Structure strFilterData
+            Public SeqNum As Integer
+            Public GroupNum As Integer
+            Public ObjectLevel As Integer
+            Public ArrayLevel As Integer
+            Public Logic As String
+            Public FilterField As String
+            Public FilterOperator As String
+            Public FilterValue As String
+        End Structure
+
+        '"[{"field":"City","dir":"asc"}]"
+        Private Structure strSortData
+            Public SeqNum As Integer
+            Public SortField As String
+            Public SortDirection As String
+        End Structure
+
+        Private mFilterData() As strFilterData
+        Private mSortData() As strSortData
+#End Region
+
+#Region "Public Members"
+        Public SortText As String = ""
+        Public FilterText As String = ""
+#End Region
+
+#Region "Debug"
+        Private Sub DebugFilterData()
+            Dim zNdx As Integer = 0
+
+            For zNdx = 0 To UBound(mFilterData)
+                Dim zDebugFilterData As String = ""
+                zDebugFilterData = zDebugFilterData & mFilterData(zNdx).SeqNum.ToString
+                zDebugFilterData = zDebugFilterData & " " & mFilterData(zNdx).GroupNum.ToString
+                zDebugFilterData = zDebugFilterData & " " & mFilterData(zNdx).ObjectLevel.ToString
+                zDebugFilterData = zDebugFilterData & " " & mFilterData(zNdx).ArrayLevel.ToString
+                zDebugFilterData = zDebugFilterData & " " & mFilterData(zNdx).Logic
+                zDebugFilterData = zDebugFilterData & " " & mFilterData(zNdx).FilterField
+                zDebugFilterData = zDebugFilterData & " " & mFilterData(zNdx).FilterOperator
+                zDebugFilterData = zDebugFilterData & " " & mFilterData(zNdx).FilterValue
+                Debug.Print(zDebugFilterData)
+            Next zNdx
+        End Sub
+#End Region
+
+#Region "Sort Processing"
+        Public Sub SetSort(pJSON As String, ByRef pQuery As Object)
+            If pJSON Is Nothing Then Exit Sub
+
+            SortText = ""
+
+            Dim zNdx As Integer = 0
+            Dim zJSON As String = pJSON
+            Dim zConditionText As String = ""
+
+            Diagnostics.Debug.Print(zJSON)
+
+            ReDim mSortData(0)
+            Call ReadSortData(pJSON)
+
+            For zNdx = 0 To UBound(mSortData)
+                If Not mSortData(zNdx).SortField Is Nothing Then
+                    If SortText.Length > 0 Then SortText = SortText & ", "
+                    SortText = SortText & pQuery.Member(pQuery.Column2Member(mSortData(zNdx).SortField)).ColumnName
+                    If mSortData(zNdx).SortDirection.ToLower = "asc" Then
+                        pQuery.OrderBy(pQuery.Member(pQuery.Column2Member(mSortData(zNdx).SortField)).Ascending)
+                        SortText = SortText & " Ascending"
+                    Else
+                        pQuery.OrderBy(pQuery.Member(pQuery.Column2Member(mSortData(zNdx).SortField)).Descending)
+                        SortText = SortText & " Descending"
+                    End If
+                End If
+            Next
+        End Sub
+
+        Private Sub ReadSortData(pJSON As String)
+            Dim zReader As Newtonsoft.Json.JsonTextReader
+
+            Dim zPropertyName As String = ""
+
+            Dim zNdx As Integer = -1
+            zReader = New Newtonsoft.Json.JsonTextReader(New System.IO.StringReader(pJSON))
+            While zReader.Read()
+                Select Case zReader.TokenType
+                    Case Newtonsoft.Json.JsonToken.StartObject
+                        zNdx = zNdx + 1
+                        ReDim Preserve mSortData(zNdx)
+                        mSortData(zNdx).SeqNum = zNdx
+
+                    Case Newtonsoft.Json.JsonToken.PropertyName
+                        zPropertyName = zReader.Value
+
+                    Case Newtonsoft.Json.JsonToken.String
+                        '"[{"field":"City","dir":"asc"}]"
+                        Select Case zPropertyName
+                            Case "field"
+                                mSortData(zNdx).SortField = zReader.Value
+                            Case "dir"
+                                mSortData(zNdx).SortDirection = zReader.Value
+                        End Select
+                End Select
+
+            End While
+
+        End Sub
+#End Region
+
+#Region "Filter Processing"
+        Public Function IsCustom(pGroupNum As Integer) As Boolean
+            Dim zReturn As Boolean = False
+            Dim zNdx As Integer = 0
+            Dim zRefGroupNum As Integer = pGroupNum
+            Dim zCountGroup As Integer = 0
+            Dim zCountEq As Integer = 0
+            Dim zCountNeq As Integer = 0
+
+            For zNdx = 0 To UBound(mFilterData)
+                If mFilterData(zNdx).GroupNum = zRefGroupNum And Not mFilterData(zNdx).FilterField Is Nothing Then
+                    zCountGroup = zCountGroup + 1
+                    Select Case mFilterData(zNdx).FilterOperator
+                        Case "eq"
+                            zCountEq = zCountEq + 1
+                        Case "neq"
+                            zCountNeq = zCountNeq + 1
+                    End Select
+                End If
+            Next zNdx
+
+            If zCountGroup <> zCountEq And zCountGroup <> zCountNeq Then zReturn = True
+
+            Return zReturn
+
+        End Function
+
+        Private Function GetFilterField(pNdx As Integer) As String
+            Dim zReturn As String = ""
+
+            Try
+                zReturn = mFilterData(pNdx).FilterField
+            Catch ex As Exception
+                'Index must not exist - eat it.
+            End Try
+
+            Return zReturn
+        End Function
+
+        Public Function SetFilter(pJSON As String, ByRef pQuery As Object) As Integer
+            If pJSON Is Nothing Then
+                Return 0
+                Exit Function
+            End If
+
+            Dim zNdx As Integer = 0
+            Dim zJSON As String = pJSON
+            Dim zConditionText As String = ""
+
+            'Diagnostics.Debug.Print(zJSON)
+
+            'zJSON = Replace(zJSON, SafeWrap("filters"), SafeWrap("lstFilters"), 1, -1, CompareMethod.Text)
+            'zJSON = Replace(zJSON, SafeWrap("logic"), SafeWrap("strLogic"), 1, -1, CompareMethod.Text)
+            'zJSON = Replace(zJSON, SafeWrap("field"), SafeWrap("strField"), 1, -1, CompareMethod.Text)
+            'zJSON = Replace(zJSON, SafeWrap("operator"), SafeWrap("strOperator"), 1, -1, CompareMethod.Text)
+            'zJSON = Replace(zJSON, SafeWrap("value"), SafeWrap("strValue"), 1, -1, CompareMethod.Text)
+
+            Diagnostics.Debug.Print(zJSON)
+
+            ReDim mFilterData(0)
+            Call ReadData(pJSON)
+            Call DebugFilterData()
+
+            Dim zSQLLogicOperator As String = GetTopLogic()
+
+            mFilterCount = 0
+            FilterText = "On "
+            For zNdx = 0 To UBound(mFilterData)
+                If Not mFilterData(zNdx).FilterField Is Nothing Then
+                    If IsCustom(mFilterData(zNdx).GroupNum) Then
+                        'Custom Filter
+                        pQuery.Where.OpenParen()
+                        zNdx = BuildCustomGroupFilter(zNdx, mFilterData(zNdx).GroupNum, pQuery)
+                        pQuery.where.CloseParen()
+                    Else
+                        'Picklist filter
+                        Dim zColumnName As String = mFilterData(zNdx).FilterField
+                        Dim zInList As New List(Of String)
+                        Dim zFilterOperator As String = ""
+
+                        zInList.Clear()
+                        zNdx = GetPickedValues(mFilterData(zNdx).ObjectLevel, mFilterData(zNdx).ArrayLevel, zColumnName, zInList, zFilterOperator)
+
+                        If zFilterOperator = "neq" Then
+                            pQuery.Where.Add(pQuery.Member(pQuery.Column2Member(mFilterData(zNdx).FilterField)).NotIn(zInList.ToArray))
+                            zConditionText = " to be not equal to "
+                        Else
+                            pQuery.Where.Add(pQuery.Member(pQuery.Column2Member(mFilterData(zNdx).FilterField)).In(zInList.ToArray))
+                            zConditionText = " to be equal to "
+                        End If
+
+                        mFilterCount = mFilterCount + 1
+                        FilterText = FilterText & pQuery.Member(pQuery.Column2Member(zColumnName)).ColumnName & zConditionText & "[" & Join(zInList.ToArray, "], [") & "];"
+                    End If
+
+                    If mFilterData(zNdx).GroupNum <> MaxGroups() Then
+                        If zSQLLogicOperator = "and" Then
+                            pQuery.Where.SetConjuction(razor.UtilSQLServer.ConjuctionOperatorEnum.And)
+                            FilterText = FilterText & " and on "
+                        Else
+                            pQuery.Where.SetConjuction(razor.UtilSQLServer.ConjuctionOperatorEnum.Or)
+                            FilterText = FilterText & " or on "
+                        End If
+                    End If
+                End If
+            Next
+
+            If FilterText.Trim.ToLower = "on" Then
+                FilterText = ""
+            End If
+
+            Return mFilterCount
+        End Function
+
+        Private Function MaxGroups() As Integer
+            Dim zReturn As Integer = 0
+            zReturn = mFilterData(UBound(mFilterData)).GroupNum
+            Return zReturn
+        End Function
+
+        Private Function CountGroupItems(pGroupNum As Integer) As Integer
+            Dim zNdx As Integer = 0
+            Dim zReturn As Integer = 0
+
+            For zNdx = 0 To UBound(mFilterData)
+                If mFilterData(zNdx).GroupNum = pGroupNum And Not mFilterData(zNdx).FilterField Is Nothing Then
+                    zReturn = zReturn + 1
+                End If
+            Next
+            Return zReturn
+        End Function
+
+        Private Function BuildCustomGroupFilter(pNdx As Integer, pGroupNum As Integer, ByRef pQuery As Object) As Integer
+            Dim zReturn As Integer = pNdx
+            Dim zConditionCount As Integer = 0
+            Dim zConditionText As String = ""
+
+            For zNdx = pNdx To UBound(mFilterData)
+                If mFilterData(zNdx).GroupNum = pGroupNum And Not mFilterData(zNdx).FilterField Is Nothing Then
+                    Dim zColumnName As String = mFilterData(zNdx).FilterField
+                    Dim zCompareOperator As String = mFilterData(zNdx).FilterOperator
+                    Dim zValue As String = mFilterData(zNdx).FilterValue
+                    Dim zSQLLogicOperator As String = GetLogic(mFilterData(zNdx).GroupNum, mFilterData(zNdx).ObjectLevel)
+
+                    Select Case zCompareOperator
+                        Case "neq"
+                            pQuery.Where.Add(pQuery.Member(pQuery.Column2Member(mFilterData(zNdx).FilterField)).NotEqual(zValue))
+                            zConditionText = " to not be equal to "
+                        Case "lt"
+                            pQuery.Where.Add(pQuery.Member(pQuery.Column2Member(mFilterData(zNdx).FilterField)).LessThan(zValue))
+                            zConditionText = " to be less than "
+                        Case "lte"
+                            pQuery.Where.Add(pQuery.Member(pQuery.Column2Member(mFilterData(zNdx).FilterField)).LessThanEqual(zValue))
+                            zConditionText = " to be less than or equal to "
+                        Case "gt"
+                            pQuery.Where.Add(pQuery.Member(pQuery.Column2Member(mFilterData(zNdx).FilterField)).GreaterThan(zValue))
+                            zConditionText = " to be greater than "
+                        Case "gte"
+                            pQuery.Where.Add(pQuery.Member(pQuery.Column2Member(mFilterData(zNdx).FilterField)).GreaterThanEqual(zValue))
+                            zConditionText = " to be greater than or equal to "
+                        Case "startswith"
+                            zValue = zValue & "%"
+                            pQuery.Where.Add(pQuery.Member(pQuery.Column2Member(mFilterData(zNdx).FilterField)).BeginsWith(zValue))
+                            zConditionText = " to start with "
+                        Case "endswith"
+                            zValue = "%" & zValue
+                            pQuery.Where.Add(pQuery.Member(pQuery.Column2Member(mFilterData(zNdx).FilterField)).EndsWith(zValue))
+                            zConditionText = " to end with "
+                        Case "contains"
+                            zValue = "%" & zValue & "%"
+                            pQuery.Where.Add(pQuery.Member(pQuery.Column2Member(mFilterData(zNdx).FilterField)).Contains(zValue))
+                            zConditionText = " to contain "
+                        Case "doesnotcontain"
+                            zValue = "%" & zValue & "%"
+                            pQuery.Where.Add(pQuery.Member(pQuery.Column2Member(mFilterData(zNdx).FilterField)).NotContains(zValue))
+                            zConditionText = " to not contain "
+                        Case "isnotnull"
+                            zValue = ""
+                            pQuery.Where.Add(pQuery.Member(pQuery.Column2Member(mFilterData(zNdx).FilterField)).IsNotNull)
+                            zConditionText = " to not be set "
+                        Case "isnull"
+                            zValue = ""
+                            pQuery.Where.Add(pQuery.Member(pQuery.Column2Member(mFilterData(zNdx).FilterField)).IsNull)
+                            zConditionText = " to be set "
+                        Case Else
+                            pQuery.Where.Add(pQuery.Member(pQuery.Column2Member(mFilterData(zNdx).FilterField)).Equal(zValue))
+                            zConditionText = " to be equal to "
+                    End Select
+
+                    mFilterCount = mFilterCount + 1
+                    zConditionCount = zConditionCount + 1
+                    FilterText = FilterText & zColumnName & zConditionText & "[" & zValue.Replace("%", "") & "];"
+
+                    If zConditionCount <> CountGroupItems(mFilterData(zNdx).GroupNum) Then
+                        If zSQLLogicOperator = "and" Then
+                            FilterText = FilterText & " and on "
+                        Else
+                            FilterText = FilterText & " or on "
+                        End If
+                    End If
+                    zReturn = zNdx
+                End If
+            Next
+            Return zReturn
+        End Function
+
+        Private Function GetPickedValues(pObjectLevel As Integer, pArrayLevel As Integer, pFilterField As String, ByRef pInList As List(Of String), ByRef pCompareOperator As String) As Integer
+            'Build the pickvalues list and forward the array index to the next filter
+            Dim zNdx As Integer = 0
+            Dim zReturn As String = ""
+
+            pInList.Clear()
+            For zNdx = 0 To UBound(mFilterData)
+                If mFilterData(zNdx).ObjectLevel = pObjectLevel And mFilterData(zNdx).ArrayLevel = pArrayLevel And mFilterData(zNdx).FilterField = pFilterField Then
+                    pInList.Add(mFilterData(zNdx).FilterValue)
+                    pCompareOperator = mFilterData(zNdx).FilterOperator
+                    zReturn = zNdx
+                End If
+            Next
+            Return zReturn
+        End Function
+
+        Private Function GetTopLogic() As String
+            Dim zNdx As Integer = 0
+            Dim zReturn As String = ""
+
+            For zNdx = 0 To UBound(mFilterData)
+                If mFilterData(zNdx).ObjectLevel = 1 Then
+                    zReturn = mFilterData(zNdx).Logic
+
+                    If IsNothing(zReturn) Then  'BY DEFAULT MAKE TOP LOGIC ="AND"
+                        zReturn = "and"
+                    End If
+
+                    Exit For
+                End If
+            Next
+            Return zReturn
+        End Function
+
+        Private Function GetLogic(pGroupNum As Integer, pObjectLevel As Integer) As String
+            Dim zNdx As Integer = 0
+            Dim zReturn As String = ""
+
+            For zNdx = 0 To UBound(mFilterData)
+                If mFilterData(zNdx).GroupNum = pGroupNum And mFilterData(zNdx).ObjectLevel = pObjectLevel - 1 Then
+                    zReturn = mFilterData(zNdx).Logic
+                    Exit For
+                End If
+            Next
+            Return zReturn
+        End Function
+
+        Private Sub ReadData(pJSON As String)
+            Dim zReader As Newtonsoft.Json.JsonTextReader
+
+            Dim zGroupNum As Integer = 0
+            Dim zObjectLevel As Integer = 0
+            Dim zArrayLevel As Integer = 0
+            Dim zPropertyName As String = ""
+            Dim zStringValue As String = ""
+
+            Dim zNdx As Integer = -1
+            zReader = New Newtonsoft.Json.JsonTextReader(New System.IO.StringReader(pJSON))
+            While zReader.Read()
+                Select Case zReader.TokenType
+                    Case Newtonsoft.Json.JsonToken.StartObject
+                        zObjectLevel = zObjectLevel + 1
+                        zNdx = zNdx + 1
+                        ReDim Preserve mFilterData(zNdx)
+                        mFilterData(zNdx).SeqNum = zNdx
+                        mFilterData(zNdx).ObjectLevel = zObjectLevel
+                        mFilterData(zNdx).ArrayLevel = zArrayLevel
+                        mFilterData(zNdx).GroupNum = zGroupNum
+
+                    Case Newtonsoft.Json.JsonToken.PropertyName
+                        zPropertyName = zReader.Value
+
+                    Case Newtonsoft.Json.JsonToken.String, Newtonsoft.Json.JsonToken.Date, Newtonsoft.Json.JsonToken.Integer, Newtonsoft.Json.JsonToken.Float
+                        Select Case zPropertyName
+                            Case "logic"
+                                mFilterData(zNdx).Logic = zReader.Value
+                            Case "field"
+                                mFilterData(zNdx).FilterField = zReader.Value
+                            Case "operator"
+                                mFilterData(zNdx).FilterOperator = zReader.Value
+                            Case "value"
+                                mFilterData(zNdx).FilterValue = zReader.Value
+
+                                If mFilterData(zNdx).FilterValue = "%" Then
+                                    zNdx = zNdx - 1 ' Kill the array entry, as filters of % can be optimised out of the query.
+                                    ReDim Preserve mFilterData(zNdx)
+                                End If
+                        End Select
+
+                    Case Newtonsoft.Json.JsonToken.StartArray
+                        zGroupNum = zGroupNum + 1
+                        zArrayLevel = zArrayLevel + 1
+                        mFilterData(zNdx).ArrayLevel = zArrayLevel
+                        mFilterData(zNdx).GroupNum = zGroupNum
+
+                    Case Newtonsoft.Json.JsonToken.EndArray
+                        zArrayLevel = zArrayLevel - 1
+
+                    Case Newtonsoft.Json.JsonToken.EndObject
+                        zObjectLevel = zObjectLevel - 1
+                        zGroupNum = zGroupNum + 1
+
+                End Select
+
+            End While
+
+        End Sub
+
+        Private Function SafeWrap(pIn As String) As String
+            Dim zReturn As String = ""
+            Dim zDQ As String = Chr(34)
+            zReturn = zDQ + pIn + zDQ + ":"
+            Return zReturn
+        End Function
+
+#End Region
+
+    End Class
+End Namespace
+
+

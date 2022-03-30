@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../../../css/pages/recktracking.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/pages/mapping.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/pages/print.css" />
+    <script>
+        var gWindowTitle = "Jurisdictional Recommendations";
+    </script>
+    <script src="../../../Lib_{{VER}}/Mapping/mapping.js"></script>
+</head>
+<body>
+    <div id="formView">
+        <div class="windowBody">
+            <div class="infoArea">
+                <div class="popColA bottomSpaceRow">
+                    <div class="popRow">
+                        <label class="topHalfLbl">File No.:</label><span class="topHalfTxt">1001.0002</span>
+                    </div>
+                    <div class="popRow">
+                        <label class="topHalfLbl">Client:</label><span class="topHalfTxt">ABC Company(Demo)</span>
+                    </div>
+                    <div class="popRow">
+                        <label class="topHalfLbl">Client Loc. ID:</label><span class="topHalfTxt">38334</span>
+                    </div>
+                    <div class="popRow">
+                        <label class="topHalfLbl">Divisions:</label><span class="topHalfTxt">Division A</span>
+                    </div>
+                    <div class="popRow bottomSpaceRow">
+                        <label class="topHalfLbl">Facility:</label><span class="topHalfTxt">Main Building</span>
+                    </div>
+                    <div class="popRow">
+                        <label class="topHalfLbl">TIV (millions) EUR:</label><span class="topHalfTxt">259</span>
+                    </div>
+                    <div class="popRow">
+                        <label class="topHalfLbl">Date of Last Insp.:</label><span class="topHalfTxt">7-Apr-17</span>
+                    </div>
+                </div>
+                <div class="popColB bottomSpaceRow">
+                    <div class="popRow">
+                        <label class="topHalfLbl">Address:</label><span class="topHalfTxt">100 Walnut Avenue</span>
+                    </div>
+                    <div class="popRow">
+                        <label class="topHalfLbl">City:</label><span class="topHalfTxt">Clark</span>
+                    </div>
+                    <div class="popRow">
+                        <label class="topHalfLbl">St/Prov.:</label><span class="topHalfTxt">New Jersey</span>
+                    </div>
+                    <div class="popRow">
+                        <label class="topHalfLbl">Country:</label><span class="topHalfTxt">United States</span>
+                    </div>
+                    <div class="popRow bottomSpaceRow">
+                        <label class="topHalfLbl">Postal Code:</label><span class="topHalfTxt">54903-9287</span>
+                    </div>
+                    <div class="popRow">
+                        <label class="topHalfLbl">Latitude:</label><span class="topHalfTxt">39.594</span>
+                    </div>
+                    <div class="popRow">
+                        <label class="topHalfLbl">Longitude:</label><span class="topHalfTxt">-78.742</span>
+                    </div>
+                </div>
+                <div id="satMap" class="imgHldr">
+                    <a href="#" class="printNone">
+                        <img data-bind="attr: { src: getStaticMapUrl() }, click: onGoToLocationBingMaps" />
+                    </a>
+                    <img class="printOnly" data-bind="attr: { src: staticImageBase64 }" />
+                    <span class="satImgTip">Tip! The above map is interactive and will open Bing Maps.</span>
+                </div>
+            </div>
+            <div class="btnHldr">
+                <a href="#" class="grcBlueBtn printNone" data-bind="click: function () { onCurrentERReport(); }, visible: visibleCurrentERReport">
+                    <i class="far fa-file" style="font-size: 20px; margin-right: 5px"></i>Current ER Report
+                </a>
+                <a href="#" class="grcBlueBtn printNone" data-bind="click: function () { onCurrentDiagramReport(); }, visible: visibleCurrentDiagramReport">
+                    <i class="far fa-file" style="font-size: 20px; margin-right: 5px;"></i>Current Diagram
+                </a>
+                <a href="#" class="grcBlueBtn printNone" data-bind="click: function () { onPrint(); }, visible: visiblePrint">
+                    <i class="far fa-file" style="font-size: 20px; margin-right: 5px;"></i>Print
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

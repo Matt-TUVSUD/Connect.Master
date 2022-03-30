@@ -1,0 +1,17 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colFldID":1, 
+	"colFldPracticeGroupCd":"fldPracticeGroupCd", 
+	"colFldTextBoxLabel":"fldTextBoxLabel", 
+	"colFldEmptyMessage":"fldEmptyMessage", 
+	"colFldMaxCharacters":1, 
+	"colFldSort":1
+}]

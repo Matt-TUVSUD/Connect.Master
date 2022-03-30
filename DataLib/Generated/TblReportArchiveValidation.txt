@@ -1,0 +1,20 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblReportArchiveValidation --> [ReportArchiveValidation]
+
+  colId --> [ID] int **PK** identity not null
+  colReportArchiveID --> [ReportArchiveID] int null
+  colFilePath --> [FilePath] nvarchar(255) null
+  colReportType --> [ReportType] nvarchar(50) null
+  colIsValid --> [IsValid] bit null
+  colValidationDate --> [ValidationDate] datetime null
+  colSuggestedFilePath --> [SuggestedFilePath] nvarchar(MAX) null
+  colSuggestedFilePathCount --> [SuggestedFilePathCount] int null
+

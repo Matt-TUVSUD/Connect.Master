@@ -1,0 +1,23 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblMetaRatingWeightFire --> [tblMetaRatingWeightFire]
+
+  colFldId --> [fldId] int **PK** identity not null
+  colFldPhysicalProtectionWeightGRC --> [fldPhysicalProtectionWeightGRC] float not null
+  colFldHumanElementWeightGRC --> [fldHumanElementWeightGRC] float not null
+  colFldNaturalHazardsProtectionWeightGRC --> [fldNaturalHazardsProtectionWeightGRC] float not null
+  colFldBusinessContinuityWeightGRC --> [fldBusinessContinuityWeightGRC] float not null
+  colFldFloodWeightGRC --> [fldFloodWeightGRC] float not null
+  colFldEarthquakeWeightGRC --> [fldEarthquakeWeightGRC] float not null
+  colFldWindstormWeightGRC --> [fldWindstormWeightGRC] float not null
+  colFldConstructionWeightGRC --> [fldConstructionWeightGRC] float not null
+  colFldOccupancyWeightGRC --> [fldOccupancyWeightGRC] float not null
+  colFldOtherWeightGRC --> [fldOtherWeightGRC] float not null
+

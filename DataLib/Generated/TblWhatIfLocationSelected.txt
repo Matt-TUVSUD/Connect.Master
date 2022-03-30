@@ -1,0 +1,14 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblWhatIfLocationSelected --> [TblWhatIfLocationSelected]
+
+  colFldGSafeId --> [fldGSafeId] int **PK** not null
+  colFldFileNo --> [fldFileNo] varchar(10) **PK** not null
+

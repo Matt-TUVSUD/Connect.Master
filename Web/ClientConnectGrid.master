@@ -1,0 +1,17 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/ClientConnectSite.Master" AutoEventWireup="false" CodeBehind="ClientConnectGrid.master.vb" Inherits="GRC.Connect.Web.ClientConnectGrid" %>
+<asp:Content ID="ClientConnectGridHeadContent" ContentPlaceHolderID="ClientConnectSiteHead" runat="server">
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="ClientConnectGridBodyContent" ContentPlaceHolderID="ClientConnectSiteBody" runat="server">
+    <form id="form1" runat="server">
+    <div style="width: 100%">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <div class="hidden">
+    </div>
+    </form>
+</asp:Content>
+<asp:Content ID="ClientConnectSiteBottomHtmlContent" ContentPlaceHolderID="ClientConnectSiteBottomHtml" runat="server">
+</asp:Content>

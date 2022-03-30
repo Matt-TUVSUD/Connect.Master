@@ -1,0 +1,20 @@
+
+
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colGSafeId":1, 
+	"colGSafeGUID":"GSafeGUID", 
+	"colCreated":null, 
+	"colLastAccessed":null, 
+	"colLastUpdated":null, 
+	"colLoginName":"LoginName", 
+	"colLoginID":1
+}]

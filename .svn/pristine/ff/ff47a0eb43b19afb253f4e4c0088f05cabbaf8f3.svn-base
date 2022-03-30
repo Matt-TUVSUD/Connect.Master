@@ -1,0 +1,97 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: VwFireLossEstimatesLatestFacilityRatingExtractSelect --> [vwFireLossEstimatesLatestFacilityRatingExtractSelect]
+
+  colFilePrefix --> [FilePrefix] varchar(50) null
+  colFileNo --> [FileNo] nvarchar(9) null
+  colClient --> [Client] nvarchar(40) null
+  colClientLocNo --> [ClientLocNo] nvarchar(30) null
+  colDivision --> [Division] nvarchar(75) null
+  colFacility --> [Facility] nvarchar(50) null
+  colAddress --> [Address] nvarchar(40) null
+  colCity --> [City] nvarchar(30) null
+  colStProv --> [StProv] nvarchar(20) null
+  colCountry --> [Country] nvarchar(20) null
+  colLatitude --> [Latitude] char(9) null
+  colLongitude --> [Longitude] char(9) null
+  colBIReporting --> [BIReporting] nvarchar(50) null
+  colApl --> [APL] float null
+  colAplpd --> [APLPD] float null
+  colAplbi --> [APLBI] float null
+  colAPLPercent --> [APLPercent] float null
+  colAPLPDPercent --> [APLPDPercent] float null
+  colAPLBIPercent --> [APLBIPercent] float null
+  colPml --> [PML] float null
+  colPmlpd --> [PMLPD] float null
+  colPmlbi --> [PMLBI] float null
+  colPMLPercent --> [PMLPercent] float null
+  colPMLPDPercent --> [PMLPDPercent] float null
+  colPMLBIPercent --> [PMLBIPercent] float null
+  colMfl --> [MFL] float null
+  colMflpd --> [MFLPD] float null
+  colMflbi --> [MFLBI] float null
+  colMFLPercent --> [MFLPercent] float null
+  colMFLPDPercent --> [MFLPDPercent] float null
+  colMFLBIPercent --> [MFLBIPercent] float null
+  colTiv --> [TIV] float null
+  colTivpd --> [TIVPD] float null
+  colTivbi --> [TIVBI] float null
+  colInterdependencies --> [Interdependencies] nvarchar(5) null
+  colLEandInterdependecyComments --> [LEandInterdependecyComments] nvarchar(255) null
+  colLossesLast3Years --> [Losses_Last_3_Years] nvarchar(5) null
+  colLossHistoryDescription --> [Loss_History_Description] nvarchar(255) null
+  colInspectionDate --> [InspectionDate] datetime null
+  colActiveScore --> [ActiveScore] numeric(18,1) null
+  colPassiveScore --> [PassiveScore] numeric(18,1) null
+  colTotalScore --> [TotalScore] float null
+  colOverallRating --> [OverallRating] varchar(50) null
+  colTotalscoreColor --> [totalscoreColor] varchar(7) null
+  colOccupancy --> [Occupancy] nvarchar(50) null
+  colIndustryGroup --> [IndustryGroup] nvarchar(255) null
+  colMajorGroup --> [MajorGroup] nvarchar(255) null
+  colSpecificGroup --> [SpecificGroup] nvarchar(255) null
+  colActiveScoreWithRecsComplete --> [Active_Score_With_Recs_Complete] numeric(18,1) null
+  colOverallScoreWithRecsComplete --> [OverallScoreWithRecsComplete] numeric(18,1) null
+  colMaxPossibleScore --> [MaxPossibleScore] numeric(18,1) null
+  colConstructionRating --> [Construction_Rating] bigint null
+  colOccupancyRating --> [Occupancy_Rating] bigint null
+  colFloodRating --> [Flood_Rating] bigint null
+  colEarthquakeRating --> [Earthquake_Rating] bigint null
+  colWindstormRating --> [Windstorm_Rating] bigint null
+  colOtherRating --> [Other_Rating] bigint null
+  colPhysicalProtectionRating --> [Physical_Protection_Rating] bigint null
+  colHumanElementRating --> [Human_Element_Rating] bigint null
+  colNaturalHazardsProtectionRating --> [Natural_Hazards_Protection_Rating] bigint null
+  colBusinessContinuityRating --> [Business_Continuity_Rating] bigint null
+  colAplFactor --> [APL_Factor] numeric(18,1) null
+  colAPLFactorWithAllRecsComplete --> [APLFactorWithAllRecsComplete] numeric(18,1) null
+  colOtherWeight --> [Other_Weight] bigint null
+  colConstructionWeight --> [Construction_Weight] bigint null
+  colOccupancyWeight --> [Occupancy_Weight] bigint null
+  colPhysicalProtectionWeight --> [Physical_Protection_Weight] bigint null
+  colHumanElementWeight --> [Human_Element_Weight] bigint null
+  colNaturalHazardsProtectionWeight --> [Natural_Hazards_Protection_Weight] bigint null
+  colBusinessContinuityWeight --> [Business_Continuity_Weight] bigint null
+  colFireProtectionAllRecsCompleteRating --> [Fire_Protection_All_Recs_Complete_Rating] bigint null
+  colHumanElementAllRecsCompleteRating --> [Human_Element_All_Recs_Complete_Rating] bigint null
+  colNatHazProtAllRecsCompleteRating --> [Nat_Haz_Prot_All_Recs_Complete_Rating] bigint null
+  colBcpAllRecsCompletRating --> [BCP_All_Recs_Complet_Rating] bigint null
+  colFloodWeight --> [Flood_Weight] bigint null
+  colEarthquakeWeight --> [Earthquake_Weight] bigint null
+  colWindstormWeight --> [Windstorm_Weight] bigint null
+  colCustomAccess --> [CustomAccess] nvarchar(50) null
+  colInspProgramYearFROM --> [InspProgramYearFROM] smalldatetime null
+  colInspProgramYear --> [InspProgramYear] varchar(61) null
+  colAchievableScorePercent --> [AchievableScorePercent] numeric(38,20) null
+  colAchievableScorePercentString --> [AchievableScorePercentString] varchar(5) null
+  colIsLatestRating --> [IsLatestRating] varchar(5) not null
+  colIbi --> [IBI] float null
+  colHighestLossExpectancy --> [HighestLossExpectancy] int null
+

@@ -1,0 +1,26 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblMetaProgramStatus --> [tblMetaProgramStatus]
+
+  colFldId --> [fldId] int **PK** identity not null
+  colFldSectionName --> [fldSectionName] varchar(100) null
+  colFldTopName --> [fldTopName] varchar(10) null
+  colFldMetricName --> [fldMetricName] varchar(100) null
+  colFldSubMetricName --> [fldSubMetricName] varchar(50) null
+  colFldMetricValue --> [fldMetricValue] int null
+  colFldMetricLabel --> [fldMetricLabel] varchar(500) null
+  colFldMetricVisible --> [fldMetricVisible] bit null
+  colFldMetricColor --> [fldMetricColor] varchar(10) null
+  colFldDirectId --> [fldDirectId] int null
+  colFldCriteria --> [fldCriteria] varchar(MAX) null
+  colFldFilter --> [fldFilter] varchar(MAX) null
+  colFldGridId --> [fldGridId] int null
+  colFldSort --> [fldSort] varchar(MAX) null
+

@@ -1,0 +1,24 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: VwActiveAccountServiceContact --> [vwActiveAccountServiceContact]
+
+  colFilePrefix --> [FilePrefix] varchar(50) null
+  colRoleSort --> [RoleSort] int null
+  colRoleCd --> [RoleCd] varchar(2) not null
+  colRoleDescription --> [RoleDescription] nvarchar(50) null
+  colRoleDescriptionPractice --> [RoleDescriptionPractice] nvarchar(102) null
+  colFullName --> [FullName] nvarchar(61) null
+  colEmail --> [Email] nvarchar(50) null
+  colCell --> [Cell] nvarchar(24) null
+  colVoice --> [Voice] nvarchar(291) null
+  colOfficeAddress1 --> [OfficeAddress1] nvarchar(255) null
+  colOfficeAddress2 --> [OfficeAddress2] nvarchar(769) null
+  colTitle --> [Title] nvarchar(150) null
+

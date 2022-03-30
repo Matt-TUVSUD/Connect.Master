@@ -1,0 +1,170 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: ViewCCGaugeStats --> [viewCCGaugeStats]
+
+  colFilePrefix --> [FilePrefix] varchar(50) not null
+  colGSafeGUID --> [GSafeGUID] varchar(40) not null
+  colFireInspectionsDue --> [FireInspectionsDue] varchar(10) null
+  colFireInspectionsComplete --> [FireInspectionsComplete] varchar(10) null
+  colFireInspectionsPending --> [FireInspectionsPending] varchar(10) null
+  colFireInspectionsCancelled --> [FireInspectionsCancelled] varchar(10) null
+  colFireInpectionsDueStatisticId --> [FireInpectionsDueStatisticId] varchar(2) not null
+  colFireInpectionsCompletedStatisticId --> [FireInpectionsCompletedStatisticId] varchar(2) not null
+  colFireInpectionsPendingStatisticId --> [FireInpectionsPendingStatisticId] varchar(2) not null
+  colFireInpectionsCancelledStatisticId --> [FireInpectionsCancelledStatisticId] varchar(2) not null
+  colFireInspectionsDueFilter --> [FireInspectionsDueFilter] varchar(2) not null
+  colFireInspectionsCompleteFilter --> [FireInspectionsCompleteFilter] varchar(2) not null
+  colFireInspectionsPendingFilter --> [FireInspectionsPendingFilter] varchar(2) not null
+  colFireInspectionsCancelledFilter --> [FireInspectionsCancelledFilter] varchar(2) not null
+  colFireInpectionsDueLabel --> [FireInpectionsDueLabel] varchar(32) not null
+  colFireInpectionsCompletedLabel --> [FireInpectionsCompletedLabel] varchar(21) not null
+  colFireInpectionsPendingLabel --> [FireInpectionsPendingLabel] varchar(19) not null
+  colFireInpectionsCancelledLabel --> [FireInpectionsCancelledLabel] varchar(21) not null
+  colBMInspectionsDue --> [BMInspectionsDue] varchar(10) null
+  colBMInspectionsComplete --> [BMInspectionsComplete] varchar(10) null
+  colBMInspectionsPending --> [BMInspectionsPending] varchar(10) null
+  colBMInspectionsCancelled --> [BMInspectionsCancelled] varchar(10) null
+  colBMInpectionsDueStatisticId --> [BMInpectionsDueStatisticId] varchar(2) not null
+  colBMInpectionsCompletedStatisticId --> [BMInpectionsCompletedStatisticId] varchar(2) not null
+  colBMInpectionsPendingStatisticId --> [BMInpectionsPendingStatisticId] varchar(2) not null
+  colBMInpectionsCancelledStatisticId --> [BMInpectionsCancelledStatisticId] varchar(2) not null
+  colBMInspectionsDueFilter --> [BMInspectionsDueFilter] varchar(2) not null
+  colBMInspectionsCompleteFilter --> [BMInspectionsCompleteFilter] varchar(2) not null
+  colBMInspectionsPendingFilter --> [BMInspectionsPendingFilter] varchar(2) not null
+  colBMInspectionsCancelledFilter --> [BMInspectionsCancelledFilter] varchar(2) not null
+  colBMInpectionsDueLabel --> [BMInpectionsDueLabel] varchar(32) not null
+  colBMInpectionsCompletedLabel --> [BMInpectionsCompletedLabel] varchar(21) not null
+  colBMInpectionsPendingLabel --> [BMInpectionsPendingLabel] varchar(19) not null
+  colBMInpectionsCancelledLabel --> [BMInpectionsCancelledLabel] varchar(21) not null
+  colIRInspectionsDue --> [IRInspectionsDue] varchar(10) null
+  colIRInspectionsComplete --> [IRInspectionsComplete] varchar(10) null
+  colIRInspectionsPending --> [IRInspectionsPending] varchar(10) null
+  colIRInspectionsCancelled --> [IRInspectionsCancelled] varchar(10) null
+  colIRInpectionsDueStatisticId --> [IRInpectionsDueStatisticId] varchar(2) not null
+  colIRInpectionsCompletedStatisticId --> [IRInpectionsCompletedStatisticId] varchar(2) not null
+  colIRInpectionsPendingStatisticId --> [IRInpectionsPendingStatisticId] varchar(2) not null
+  colIRInpectionsCancelledStatisticId --> [IRInpectionsCancelledStatisticId] varchar(2) not null
+  colIRInspectionsDueFilter --> [IRInspectionsDueFilter] varchar(2) not null
+  colIRInspectionsCompleteFilter --> [IRInspectionsCompleteFilter] varchar(2) not null
+  colIRInspectionsPendingFilter --> [IRInspectionsPendingFilter] varchar(2) not null
+  colIRInspectionsCancelledFilter --> [IRInspectionsCancelledFilter] varchar(2) not null
+  colIRInpectionsDueLabel --> [IRInpectionsDueLabel] varchar(32) not null
+  colIRInpectionsCompletedLabel --> [IRInpectionsCompletedLabel] varchar(21) not null
+  colIRInpectionsPendingLabel --> [IRInpectionsPendingLabel] varchar(19) not null
+  colIRInpectionsCancelledLabel --> [IRInpectionsCancelledLabel] varchar(21) not null
+  colNatHazInspectionsDue --> [NatHazInspectionsDue] varchar(10) null
+  colNatHazInspectionsComplete --> [NatHazInspectionsComplete] varchar(10) null
+  colNatHazInspectionsPending --> [NatHazInspectionsPending] varchar(10) null
+  colNatHazInspectionsCancelled --> [NatHazInspectionsCancelled] varchar(10) null
+  colNatHazInpectionsDueStatisticId --> [NatHazInpectionsDueStatisticId] varchar(2) not null
+  colNatHazInpectionsCompletedStatisticId --> [NatHazInpectionsCompletedStatisticId] varchar(2) not null
+  colNatHazInpectionsPendingStatisticId --> [NatHazInpectionsPendingStatisticId] varchar(2) not null
+  colNatHazInpectionsCancelledStatisticId --> [NatHazInpectionsCancelledStatisticId] varchar(2) not null
+  colNatHazInspectionsDueFilter --> [NatHazInspectionsDueFilter] varchar(2) not null
+  colNatHazInspectionsCompleteFilter --> [NatHazInspectionsCompleteFilter] varchar(2) not null
+  colNatHazInspectionsPendingFilter --> [NatHazInspectionsPendingFilter] varchar(2) not null
+  colNatHazInspectionsCancelledFilter --> [NatHazInspectionsCancelledFilter] varchar(2) not null
+  colNatHazInpectionsDueLabel --> [NatHazInpectionsDueLabel] varchar(32) not null
+  colNatHazInpectionsCompletedLabel --> [NatHazInpectionsCompletedLabel] varchar(21) not null
+  colNatHazInpectionsPendingLabel --> [NatHazInpectionsPendingLabel] varchar(19) not null
+  colNatHazInpectionsCancelledLabel --> [NatHazInpectionsCancelledLabel] varchar(21) not null
+  colWindInspectionsDue --> [WindInspectionsDue] varchar(10) null
+  colWindInspectionsComplete --> [WindInspectionsComplete] varchar(10) null
+  colWindInspectionsPending --> [WindInspectionsPending] varchar(10) null
+  colWindInspectionsCancelled --> [WindInspectionsCancelled] varchar(10) null
+  colNatHazWindInpectionsDueStatisticId --> [NatHazWindInpectionsDueStatisticId] varchar(2) not null
+  colNatHazWindInpectionsCompletedStatisticId --> [NatHazWindInpectionsCompletedStatisticId] varchar(2) not null
+  colNatHazWindInpectionsPendingStatisticId --> [NatHazWindInpectionsPendingStatisticId] varchar(2) not null
+  colNatHazWindInpectionsCancelledStatisticId --> [NatHazWindInpectionsCancelledStatisticId] varchar(2) not null
+  colNatHazWindInspectionsDueFilter --> [NatHazWindInspectionsDueFilter] varchar(2) not null
+  colNatHazWindInspectionsCompleteFilter --> [NatHazWindInspectionsCompleteFilter] varchar(2) not null
+  colNatHazWindInspectionsPendingFilter --> [NatHazWindInspectionsPendingFilter] varchar(2) not null
+  colNatHazWindInspectionsCancelledFilter --> [NatHazWindInspectionsCancelledFilter] varchar(2) not null
+  colNatHazWindInpectionsDueLabel --> [NatHazWindInpectionsDueLabel] varchar(32) not null
+  colNatHazWindInpectionsCompletedLabel --> [NatHazWindInpectionsCompletedLabel] varchar(21) not null
+  colNatHazWindInpectionsPendingLabel --> [NatHazWindInpectionsPendingLabel] varchar(19) not null
+  colNatHazWindInpectionsCancelledLabel --> [NatHazWindInpectionsCancelledLabel] varchar(21) not null
+  colSeismicInspectionsDue --> [SeismicInspectionsDue] varchar(10) null
+  colSeismicInspectionsComplete --> [SeismicInspectionsComplete] varchar(10) null
+  colSeismicInspectionsPending --> [SeismicInspectionsPending] varchar(10) null
+  colSeismicInspectionsCancelled --> [SeismicInspectionsCancelled] varchar(10) null
+  colNatHazSeismicInpectionsDueStatisticId --> [NatHazSeismicInpectionsDueStatisticId] varchar(2) not null
+  colNatHazSeismicInpectionsCompletedStatisticId --> [NatHazSeismicInpectionsCompletedStatisticId] varchar(2) not null
+  colNatHazSeismicInpectionsPendingStatisticId --> [NatHazSeismicInpectionsPendingStatisticId] varchar(2) not null
+  colNatHazSeismicInpectionsCancelledStatisticId --> [NatHazSeismicInpectionsCancelledStatisticId] varchar(2) not null
+  colNatHazSeismicInspectionsDueFilter --> [NatHazSeismicInspectionsDueFilter] varchar(2) not null
+  colNatHazSeismicInspectionsCompleteFilter --> [NatHazSeismicInspectionsCompleteFilter] varchar(2) not null
+  colNatHazSeismicInspectionsPendingFilter --> [NatHazSeismicInspectionsPendingFilter] varchar(2) not null
+  colNatHazSeismicInspectionsCancelledFilter --> [NatHazSeismicInspectionsCancelledFilter] varchar(2) not null
+  colNatHazSeismicInpectionsDueLabel --> [NatHazSeismicInpectionsDueLabel] varchar(32) not null
+  colNatHazSeismicInpectionsCompletedLabel --> [NatHazSeismicInpectionsCompletedLabel] varchar(21) not null
+  colNatHazSeismicInpectionsPendingLabel --> [NatHazSeismicInpectionsPendingLabel] varchar(19) not null
+  colNatHazSeismicInpectionsCancelledLabel --> [NatHazSeismicInpectionsCancelledLabel] varchar(21) not null
+  colFloodInspectionsDue --> [FloodInspectionsDue] varchar(10) null
+  colFloodInspectionsComplete --> [FloodInspectionsComplete] varchar(10) null
+  colFloodInspectionsPending --> [FloodInspectionsPending] varchar(10) null
+  colFloodInspectionsCancelled --> [FloodInspectionsCancelled] varchar(10) null
+  colNatHazFloodInpectionsDueStatisticId --> [NatHazFloodInpectionsDueStatisticId] varchar(2) not null
+  colNatHazFloodInpectionsCompletedStatisticId --> [NatHazFloodInpectionsCompletedStatisticId] varchar(2) not null
+  colNatHazFloodInpectionsPendingStatisticId --> [NatHazFloodInpectionsPendingStatisticId] varchar(2) not null
+  colNatHazFloodInpectionsCancelledStatisticId --> [NatHazFloodInpectionsCancelledStatisticId] varchar(2) not null
+  colNatHazFloodInspectionsDueFilter --> [NatHazFloodInspectionsDueFilter] varchar(2) not null
+  colNatHazFloodInspectionsCompleteFilter --> [NatHazFloodInspectionsCompleteFilter] varchar(2) not null
+  colNatHazFloodInspectionsPendingFilter --> [NatHazFloodInspectionsPendingFilter] varchar(2) not null
+  colNatHazFloodInspectionsCancelledFilter --> [NatHazFloodInspectionsCancelledFilter] varchar(2) not null
+  colNatHazFloodInpectionsDueLabel --> [NatHazFloodInpectionsDueLabel] varchar(32) not null
+  colNatHazFloodInpectionsCompletedLabel --> [NatHazFloodInpectionsCompletedLabel] varchar(21) not null
+  colNatHazFloodInpectionsPendingLabel --> [NatHazFloodInpectionsPendingLabel] varchar(19) not null
+  colNatHazFloodInpectionsCancelledLabel --> [NatHazFloodInpectionsCancelledLabel] varchar(21) not null
+  colJurisNoObjections --> [JurisNoObjections] varchar(10) null
+  colJurisOpenViolations --> [JurisOpenViolations] varchar(10) null
+  colJurisNoActiveObjections --> [JurisNoActiveObjections] varchar(10) null
+  colJurisObjectsStatisticId --> [JurisObjectsStatisticId] varchar(2) not null
+  colJurisActiveObjectsStatisticId --> [JurisActiveObjectsStatisticId] varchar(2) not null
+  colJurisOpenRecommendationsStatisticId --> [JurisOpenRecommendationsStatisticId] varchar(2) not null
+  colJurisObjectsFilter --> [JurisObjectsFilter] varchar(2) not null
+  colJurisActiveObjectsFilter --> [JurisActiveObjectsFilter] varchar(2) not null
+  colJurisOpenRecommendationsFilter --> [JurisOpenRecommendationsFilter] varchar(2) not null
+  colJurisObjectsLabel --> [JurisObjectsLabel] varchar(7) not null
+  colJurisActiveObjectsLabel --> [JurisActiveObjectsLabel] varchar(14) not null
+  colJurisOpenRecommendationsLabel --> [JurisOpenRecommendationsLabel] varchar(20) not null
+  colDivServInspectionsDue --> [DivServInspectionsDue] varchar(10) null
+  colDivServInspectionsComplete --> [DivServInspectionsComplete] varchar(10) null
+  colDivServInspectionsPending --> [DivServInspectionsPending] varchar(10) null
+  colDivServInspectionsCancelled --> [DivServInspectionsCancelled] varchar(10) null
+  colDivServInpectionsDueStatisticId --> [DivServInpectionsDueStatisticId] varchar(2) not null
+  colDivServInpectionsCompletedStatisticId --> [DivServInpectionsCompletedStatisticId] varchar(2) not null
+  colDivServInpectionsPendingStatisticId --> [DivServInpectionsPendingStatisticId] varchar(2) not null
+  colDivServInpectionsCancelledStatisticId --> [DivServInpectionsCancelledStatisticId] varchar(2) not null
+  colDivServInspectionsDueFilter --> [DivServInspectionsDueFilter] varchar(2) not null
+  colDivServInspectionsCompleteFilter --> [DivServInspectionsCompleteFilter] varchar(2) not null
+  colDivServInspectionsPendingFilter --> [DivServInspectionsPendingFilter] varchar(2) not null
+  colDivServInspectionsCancelledFilter --> [DivServInspectionsCancelledFilter] varchar(2) not null
+  colDivServInpectionsDueLabel --> [DivServInpectionsDueLabel] varchar(32) not null
+  colDivServInpectionsCompletedLabel --> [DivServInpectionsCompletedLabel] varchar(21) not null
+  colDivServInpectionsPendingLabel --> [DivServInpectionsPendingLabel] varchar(19) not null
+  colDivServInpectionsCancelledLabel --> [DivServInpectionsCancelledLabel] varchar(21) not null
+  colPSInspectionsDue --> [PSInspectionsDue] varchar(10) null
+  colPSInspectionsComplete --> [PSInspectionsComplete] varchar(10) null
+  colPSInspectionsPending --> [PSInspectionsPending] varchar(10) null
+  colPSInspectionsCancelled --> [PSInspectionsCancelled] varchar(10) null
+  colPSInpectionsDueStatisticId --> [PSInpectionsDueStatisticId] varchar(2) not null
+  colPSInpectionsCompletedStatisticId --> [PSInpectionsCompletedStatisticId] varchar(2) not null
+  colPSInpectionsPendingStatisticId --> [PSInpectionsPendingStatisticId] varchar(2) not null
+  colPSInpectionsCancelledStatisticId --> [PSInpectionsCancelledStatisticId] varchar(2) not null
+  colPSInspectionsDueFilter --> [PSInspectionsDueFilter] varchar(2) not null
+  colPSInspectionsCompleteFilter --> [PSInspectionsCompleteFilter] varchar(2) not null
+  colPSInspectionsPendingFilter --> [PSInspectionsPendingFilter] varchar(2) not null
+  colPSInspectionsCancelledFilter --> [PSInspectionsCancelledFilter] varchar(2) not null
+  colPSInpectionsDueLabel --> [PSInpectionsDueLabel] varchar(32) not null
+  colPsInpectionsCompletedLabel --> [PsInpectionsCompletedLabel] varchar(21) not null
+  colPSInpectionsPendingLabel --> [PSInpectionsPendingLabel] varchar(19) not null
+  colPSInpectionsCancelledLabel --> [PSInpectionsCancelledLabel] varchar(21) not null
+

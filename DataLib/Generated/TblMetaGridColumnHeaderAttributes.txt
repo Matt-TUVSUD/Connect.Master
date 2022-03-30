@@ -1,0 +1,16 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblMetaGridColumnHeaderAttributes --> [tblMetaGridColumnHeaderAttributes]
+
+  colFldId --> [fldId] int **PK** identity not null
+  colFldDescription --> [fldDescription] nvarchar(100) null
+  colClass --> [class] nvarchar(100) null
+  colStyle --> [style] nvarchar(255) null
+

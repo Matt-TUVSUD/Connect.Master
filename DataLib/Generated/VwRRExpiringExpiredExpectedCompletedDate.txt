@@ -1,0 +1,27 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: VwRRExpiringExpiredExpectedCompletedDate --> [vwRRExpiringExpiredExpectedCompletedDate]
+
+  colRowNo --> [RowNo] bigint null
+  colFilePrefix --> [FilePrefix] varchar(50) null
+  colFileNo --> [FileNo] nvarchar(40) null
+  colDivision --> [Division] nvarchar(75) null
+  colCustomAccess --> [CustomAccess] nvarchar(50) null
+  colClientLocNo --> [ClientLocNo] nvarchar(30) null
+  colFacility --> [Facility] nvarchar(50) null
+  colCity --> [City] nvarchar(30) null
+  colStProv --> [StProv] nvarchar(20) null
+  colCountry --> [Country] nvarchar(20) null
+  colPracticeId --> [PracticeId] int not null
+  colRRLogID --> [RRLogID] int null
+  colRecipientName --> [RecipientName] varchar(75) null
+  colRecipientEmail --> [RecipientEmail] varchar(75) null
+  colPracticeName --> [PracticeName] varchar(14) not null
+

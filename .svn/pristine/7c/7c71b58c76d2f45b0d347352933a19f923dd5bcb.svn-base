@@ -1,0 +1,89 @@
+﻿    div#RecFVInfo{padding:5px;}
+    div#RecFVInfo div{text-align:left;padding:2px 0px;}
+    div#RecFVInfo div span{font-size:7pt;text-align:right;}    /*padding required since html minify removes spaces next to inputs*/
+    div#RecFVInfo div input{font-size:7pt;text-align:center;border:solid 1px blue; margin-left: 5px;}
+
+    div#RecFVInfo div #lblRecNo{margin-left:55px;}
+    div#RecFVInfo div #RecYear{width:35px;}
+    div#RecFVInfo div #RecMonth{width:20px;}
+    div#RecFVInfo div #RecNumber{width:20px;}
+    div#RecFVInfo div #RecSubletter{width:20px;}
+    div#RecFVInfo div #lblCode{margin-left:10px;}
+    div#RecFVInfo div #Code{width:30px;}
+    div#RecFVInfo div #lblRecCategory{margin-left:25px;}
+    div#RecFVInfo div #RecCategory{width:70px;}
+    div#RecFVInfo div #lblRecStatus{margin-left:50px;}
+    div#RecFVInfo div #RecStatus{width:100px;}
+    div#RecFVInfo div #lblStatusDate{margin-left:40px;}
+    div#RecFVInfo div #StatusDate{width:60px;}
+
+    div#RecFVInfo div #lblHazard{margin-left:57px;}
+    div#RecFVInfo div #Hazard{width:104px;}
+    div#RecFVInfo div #lblPrimaryRecType{margin-left:10px;}
+    div#RecFVInfo div #PrimaryRecType{width:140px;}
+    div#RecFVInfo div #lblSecondaryRecType{margin-left:10px;}
+    div#RecFVInfo div #SecondaryRecType{width:140px;}
+
+    div#RecFVInfo div #lblRecKeyWords{margin-left:20px;}
+    div#RecFVInfo div #RecKeyWords{width:707px; text-align:left;}
+
+    div#RecFVInfo div #lblCurrentLossEst{margin-left:90px;font-weight:bold;}
+    div#RecFVInfo div #lblCompletedLossEst{margin-left:97px;font-weight:bold;}
+    div#RecFVInfo div #lblEstCostToComplete{margin-left:89px;font-weight:bold;}
+    div#RecFVInfo div #lblSavingsRatioNoLE{margin-left:78px;}
+
+    div#RecFVInfo div#ActualLEValues{}
+    div#RecFVInfo div #lblActualLEBefore{margin-left:68px;font-weight:bold;}
+    div#RecFVInfo div .ActualLEBefore{width:140px;}
+    div#RecFVInfo div #lblActualLEAfter{margin-left:8px;font-weight:bold;}
+    div#RecFVInfo div .ActualLEAfter{width:140px;}
+    div#RecFVInfo div #lblActualLECost{margin-left:14px;font-weight:bold;}
+    div#RecFVInfo div .ActualLECost{width:140px;}
+    div#RecFVInfo div #lblSavingsRatio{margin-left:72px; display: none;}
+
+    div#RecFVInfo div #lblLEBefore{margin-left:53px;font-weight:bold;}
+    div#RecFVInfo div .LEBefore{width:140px;}
+    div#RecFVInfo div #lblLEAfter{margin-left:3px;font-weight:bold;}
+    div#RecFVInfo div .LEAfter{width:140px;margin-left:0px;}
+    div#RecFVInfo div #lblLECost{margin-left:10px;font-weight:bold;}
+    div#RecFVInfo div .LECost{width:140px;margin-left:0px;}
+    div#RecFVInfo div #SavingsRatio{width:55px;margin-left:14px;}
+
+    div#RecFVInfo div #lblActualCost{margin-left:14px;}
+    div#RecFVInfo div #ActualCostToComplete{margin-left:12px;width:140px;}
+
+    div#RecFVInfo div #lblResponseDate{margin-left:41px;}
+    div#RecFVInfo div #ResponseDate{width:55px;}
+    div#RecFVInfo div #lblResponseFrom{margin-left:64px;}
+    div#RecFVInfo div #ResponseFrom{width:236px; text-align:left;}
+
+    div#RecFVInfo div #lblExpectedCompletionDate{margin-left:10px;}
+    div#RecFVInfo div #ExpectedCompletionDate{width:55px;}
+    div#RecFVInfo div #lblIntendedAction{margin-left:26px;}
+    div#RecFVInfo div #IntendedAction{width:236px; text-align:left;}
+
+    div#RecFVInfo div #lblPlantComment{margin-left:15px;}
+    div#RecFVInfo div #PlantComment{width:707px; text-align:left;}
+
+    div#RecFVInfo div #lblResponseStatus{margin-left:90px;}
+    div#RecFVInfo div #lblRespRequestDate{margin-left:16px;}
+    div#RecFVInfo div #RespRequestDate{width:55px;}
+    div#RecFVInfo div #lblRFU1Date{margin-left:10px;}
+    div#RecFVInfo div #RFU1Date{width:55px;}
+    div#RecFVInfo div #lblRecipientName{margin-left:10px;}
+    div#RecFVInfo div #RecipientName{width:252px; text-align:left;}
+
+    div#RecFVInfo div #ResponseStatus{width:80px;margin-left:90px;}
+    div#RecFVInfo div #lblRespDueDate{margin-left:10px;}
+    div#RecFVInfo div #RespDueDate{width:55px;}
+    div#RecFVInfo div #lblRFU2Date{margin-left:7px;}
+    div#RecFVInfo div #RFU2Date{width:55px;}
+    div#RecFVInfo div #lblRecipientEmail{margin-left:11px;}
+    div#RecFVInfo div #RecipientEmail{width:252px; text-align:left;}
+
+    div#RecFVInfo div #lblDaysOverdue{margin-left:204px;}
+    div#RecFVInfo div #DaysOverdue{width:55px;}
+    div#RecFVInfo div #lblRFU3Date{margin-left:9px;}
+    div#RecFVInfo div #RFU3Date{width:55px;}
+
+    div.OK{width:100%;text-align:center;}

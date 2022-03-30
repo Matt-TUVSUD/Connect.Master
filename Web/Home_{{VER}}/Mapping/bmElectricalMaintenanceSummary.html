@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../../../css/pages/mapping.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/pages/print.css" />
+    <script>
+        var gWindowTitle = "B&#38;M Electrical Maintenance Summary";
+    </script>
+    <script src="../../../Lib_{{VER}}/Mapping/mapping.js"></script>
+</head>
+<body>
+    <div id="formView">
+        <div style="font-size:8pt; font-family:Arial !important;">
+            <div style="font-size:8pt; font-family:Arial !important;" id="printWindow" class="windowBody pdf-page">
+                <div id="loading" class="noShow"><span>Loading...</span></div>
+                    <div class="infoArea">
+                        <div class="popColA bottomSpaceRow">
+                            <div class="popRow">
+                                <label class="topHalfLbl">File No.:</label><span data-bind="text: objFormData().fileno" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow">
+                                <label class="topHalfLbl">Client:</label><span data-bind="text: objFormData().client" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow">
+                                <label class="topHalfLbl">Client Loc. ID:</label><span data-bind="text: objFormData().clientlocno" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow">
+                                <label class="topHalfLbl">Divisions:</label><span data-bind="text: objFormData().division" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow bottomSpaceRow">
+                                <label class="topHalfLbl">Facility:</label><span data-bind="text: objFormData().facility" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow">
+                                <label class="topHalfLbl">TIV (millions) <span data-bind="text: currencyText"></span></label><span data-bind="    text: numeral(objFormData().TIV).format('0,0')" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow">
+                                <label class="topHalfLbl">Date of Last Insp.:</label><span data-bind="text: objFormData().InspectionDateString" class="topHalfTxt"></span>
+                            </div>
+                        </div>
+                        <div class="popColB bottomSpaceRow">
+                            <div class="popRow">
+                                <label class="topHalfLbl">Address:</label><span data-bind="text: objFormData().address" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow">
+                                <label class="topHalfLbl">City:</label><span data-bind="text: objFormData().city" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow">
+                                <label class="topHalfLbl">St/Prov.:</label><span data-bind="text: objFormData().stprov" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow">
+                                <label class="topHalfLbl">Country:</label><span data-bind="text: objFormData().country" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow bottomSpaceRow">
+                                <label class="topHalfLbl">Postal Code:</label><span data-bind="text: objFormData().zip" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow">
+                                <label class="topHalfLbl">Latitude:</label><span data-bind="text: objFormData().latitude" class="topHalfTxt"></span>
+                            </div>
+                            <div class="popRow">
+                                <label class="topHalfLbl">Longitude:</label><span data-bind="text: objFormData().longitude" class="topHalfTxt"></span>
+                            </div>
+                        </div>
+                        <div id="satMap" class="imgHldr">
+                            <a href="#" class="printNone">
+                                <img data-bind="attr: { src: getStaticMapUrl() }, click: onGoToLocationBingMaps" />
+                            </a>
+                            <img class="printOnly" data-bind="attr: { src: staticImageBase64 }" />
+                            <span class="satImgTip">Tip! The above map is interactive and will open Bing Maps.</span>
+                        </div>
+                    </div>
+                <div class="btnHldr noPrint">
+                    <a href="#" class="grcBlueBtn printNone" data-bind="click: function () { onCurrentERReport(); }, visible: visibleCurrentERReport">
+                        <i class="far fa-file" style="font-size:20px; margin-right:5px"></i> Current ER Report
+                    </a>
+                    <a href="#" class="grcBlueBtn printNone" data-bind="click: function () { onCurrentDiagramReport(); }, visible: visibleCurrentDiagramReport">
+                        <i class="far fa-file" style="font-size:20px; margin-right:5px;"></i>Current Diagram
+                    </a>
+                    <a href="#" class="grcBlueBtn printNone" data-bind="click: function () { onPrint(); }, visible: visiblePrint">
+                        <i class="far fa-file" style="font-size:20px; margin-right:5px;"></i>Print
+                    </a>
+                </div>
+                <div class="bottomSection">
+                    <div class="borderedGrid90Percent">
+                        <div class="borderedHeader">
+                            <span class="occupancyHeaderLbl">Occupancy</span>
+                            <span class="ratingHeaderLbl">Rating</span>
+                            <span class="activeHeaderLbl">Management Programs</span>
+                        </div>
+                        <div class="borderedGridBody">
+                            <div class="gridBodyRow">
+                                <div class="fullBox">
+                                    <div class="fullBoxTopHalf">
+                                        <span class="">Major Occup. Group.</span>
+                                    </div>
+                                    <div class="fullBoxBottomHalf">
+                                        <span data-bind="text: objFormData().majorgroup" class="majorOccVal"></span>
+                                    </div>
+                                </div>
+                                <div class="fullBox">
+                                    <div class="fullBoxTopHalf">
+                                        <span class="">Specific Occup. Group.</span>
+                                    </div>
+                                    <div class="fullBoxBottomHalf">
+                                        <span data-bind="text: objFormData().specificgroup" class="specOccVal"></span>
+                                    </div>
+                                </div>
+                                <div class="quarterBox">
+                                    <div class="quarterBoxTopHalf">
+                                        <span class="">Elect.<br />
+                                            Equip.</span>
+                                    </div>
+                                    <div class="quarterBoxBottomHalf" data-bind="style: { background: objFormData().elecequipcColor }">
+                                        <span data-bind="text: objFormData().elecequipc" class="elecEquipVal"></span>
+                                    </div>
+                                </div>
+                                <div class="halfBox">
+                                    <div class="halfBoxTopHalf">
+                                        <span class="">Overall<br />
+                                            Program</span>
+                                    </div>
+                                    <div class="halfBoxBottomHalf" data-bind="style: { background: objFormData().elecpremaintadequateColor }">
+                                        <span data-bind="text: objFormData().elecpremaintadequate" class="overallProgVal"></span>
+                                    </div>
+                                </div>
+                                <div style="display: none;" class="cmmsBox">
+                                    <div class="cmmsTopHalf">
+                                        <span class="">CMMS In<br />
+                                            Place?</span>
+                                    </div>
+                                    <div class="cmmsBottomHalf" data-bind="style: { background: objFormData().elecpremaintcmmsColor }">
+                                        <span data-bind="text: objFormData().elecpremaintcmms" class="cmmsVal"></span>
+                                    </div>
+                                </div>
+                                <div class="halfBox">
+                                    <div class="halfBoxTopHalf">
+                                        <span class="">Infrared<br />
+                                            Surveys</span>
+                                    </div>
+                                    <div class="halfBoxBottomHalf" data-bind="style: { background: objFormData().electirColor }">
+                                        <span data-bind="text: objFormData().electir" class="infraSurvVal"></span>
+                                    </div>
+                                </div>
+                                <div class="halfBox">
+                                    <div class="halfBox1WordTopHalf">
+                                        <span class="">Ultrasound</span>
+                                    </div>
+                                    <div class="halfBoxBottomHalf" data-bind="style: { background: objFormData().elecultrasoundColor }">
+                                        <span data-bind="text: objFormData().elecultrasound" class="ultrasoundVal"></span>
+                                    </div>
+                                </div>
+                                <div class="halfBox">
+                                    <div class="halfBoxTopHalf">
+                                        <span class="">Switchgear<br />
+                                            Testing</span>
+                                    </div>
+                                    <div class="halfBoxBottomHalf" data-bind="style: { background: objFormData().elecswitchColor }">
+                                        <span data-bind="text: objFormData().elecswitch" class="switchGearVal"></span>
+                                    </div>
+                                </div>
+                                <div class="halfBox">
+                                    <div class="halfBoxTopHalf">
+                                        <span class="">Trans. Oil<br />
+                                            Testing</span>
+                                    </div>
+                                    <div class="halfBoxBottomHalf" data-bind="style: { background: objFormData().electranoilColor }">
+                                        <span data-bind="text: objFormData().electranoil" class="transOilVal"></span>
+                                    </div>
+                                </div>
+                                <div class="halfBox">
+                                    <div class="halfBoxTopHalf">
+                                        <span class="">Batt. Insp.<br />
+                                            & Testing</span>
+                                    </div>
+                                    <div class="halfBoxBottomHalf" data-bind="style: { background: objFormData().elecbatteryColor }">
+                                        <span data-bind="text: objFormData().elecbattery" class="batInspVal"></span>
+                                    </div>
+                                </div>
+                                <div class="halfBox">
+                                    <div class="halfBoxTopHalf">
+                                        <span class="">Motor<br />
+                                            Testing</span>
+                                    </div>
+                                    <div class="halfBoxBottomHalf" data-bind="style: { background: objFormData().elecmotorColor }">
+                                        <span data-bind="text: objFormData().elecmotor" class="motorTestVal"></span>
+                                    </div>
+                                </div>
+                                <div class="halfBox">
+                                    <div class="halfBoxTopHalf">
+                                        <span class="">Ground<br />
+                                            Testing</span>
+                                    </div>
+                                    <div class="halfBoxBottomHalf" data-bind="style: { background: objFormData().elecgroundingColor }">
+                                        <span data-bind="text: objFormData().elecgrounding" class="groundTestVal"></span>
+                                    </div>
+                                </div>
+                                <div class="halfBox">
+                                    <div class="halfBoxTopHalf">
+                                        <span class="">Relay<br />
+                                            Testing</span>
+                                    </div>
+                                    <div class="halfBoxBottomHalf" data-bind="style: { background: objFormData().elecrelayColor }">
+                                        <span data-bind="text: objFormData().elecrelay" class="relayTestVal"></span>
+                                    </div>
+                                </div>
+                                <div class="otherBox">
+                                    <div class="otherTopHalf">
+                                        <span class="">Other</span>
+                                    </div>
+                                    <div class="otherBottomHalf" data-bind="style: { background: objFormData().elecotherColor }">
+                                        <span data-bind="text: objFormData().elecother" class="elecEquipVal"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" onclick="getPDF('.pdf-page'); return false;" class="printThis printNone" title="Print This Section"><i class="fa fa-print"></i></button>
+            </div>
+        </div>
+    </div>
+
+     <script>
+         function getPDF(selector) {
+             $('.noPrint').hide();
+             kendo.drawing.drawDOM($(selector)).then(function (group) {
+                 kendo.drawing.pdf.saveAs(group, "popupWindow.pdf");
+             });
+             setTimeout(function () { $('.noPrint').show(); }, 5000);
+         }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+
+
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: VwWhatIfFireRecGrid --> [vwWhatIfFireRecGrid]
+
+  colRecID --> [RecID] int not null
+  colGSafeId --> [GSafeId] int not null
+  colFilePrefix --> [FilePrefix] varchar(50) null
+  colFileNo --> [FileNo] nvarchar(40) null
+  colClient --> [Client] nvarchar(40) null
+  colClientLocNo --> [ClientLocNo] nvarchar(30) null
+  colDivision --> [Division] nvarchar(75) null
+  colCustomAccess --> [CustomAccess] nvarchar(50) null
+  colFacility --> [Facility] nvarchar(50) null
+  colAddress --> [Address] nvarchar(40) null
+  colCity --> [City] nvarchar(30) null
+  colStProv --> [StProv] nvarchar(20) null
+  colZip --> [Zip] nvarchar(10) null
+  colCountry --> [Country] nvarchar(20) null
+  colLatitude --> [Latitude] decimal(7,4) null
+  colLongitude --> [Longitude] decimal(7,4) null
+  colTivus --> [TIVUS] float null
+  colStProvName --> [StProvName] nvarchar(255) null
+  colRecUniqueID --> [RecUniqueID] int not null
+  colRecYear --> [RecYear] int not null
+  colRecMonth --> [RecMonth] nvarchar(255) null
+  colRecNumber --> [RecNumber] int not null
+  colRecSubletter --> [RecSubletter] nvarchar(255) null
+  colRecNo --> [RecNo] nvarchar(533) null
+  colRecCategory --> [RecCategory] nvarchar(255) null
+  colRecCategorySortOrder --> [RecCategorySortOrder] int not null
+  colRecStatus --> [RecStatus] nvarchar(255) null
+  colStatusDate --> [StatusDate] smalldatetime null
+  colRecCode --> [RecCode] nvarchar(255) null
+  colPrimaryRecType --> [PrimaryRecType] nvarchar(255) null
+  colSecondaryRecType --> [SecondaryRecType] nvarchar(255) null
+  colRecKeyWords --> [RecKeyWords] nvarchar(255) null
+  colLossExpectancyBefore --> [LossExpectancyBefore] nvarchar(255) null
+  colLossExpectancyAfter --> [LossExpectancyAfter] nvarchar(255) null
+  colCostToComplete --> [CostToComplete] nvarchar(255) null
+  colSavingsRatio --> [SavingsRatio] float null
+  colPlantComment --> [PlantComment] varchar(8000) null
+  colExpectedCompletionDate --> [ExpectedCompletionDate] smalldatetime null
+  colIntendedAction --> [IntendedAction] nvarchar(255) null
+  colLossExpectancyBeforeActual --> [LossExpectancyBeforeActual] int null
+  colLossExpectancyAfterActual --> [LossExpectancyAfterActual] int null
+  colCostToCompleteActual --> [CostToCompleteActual] int null
+  colActualCostToComplete --> [ActualCostToComplete] int null
+  colRecPriority --> [RecPriority] int null
+  colRatingCatWeight --> [RatingCatWeight] numeric(18,2) null
+  colRatingCat --> [RatingCat] varchar(4) null
+  colRatingPts --> [RatingPts] numeric(18,2) null
+  colRatingScoreChange --> [RatingScoreChange] numeric(18,2) null
+  colRatingCatPts --> [RatingCatPts] nvarchar(54) null
+  colRecCategoryColor --> [RecCategoryColor] varchar(7) null
+  colExpectedCompletionDateColor --> [ExpectedCompletionDateColor] nvarchar(50) null
+  colRecCategoryForeColor --> [RecCategoryForeColor] varchar(7) not null
+  colLossExpectancyBeforeMedian --> [LossExpectancyBeforeMedian] int null
+  colLossExpectancyAfterMedian --> [LossExpectancyAfterMedian] int null
+  colCostToCompleteMedian --> [CostToCompleteMedian] int null
+  colFldAddressStamp --> [fldAddressStamp] nvarchar(4000) null
+  colLocationRatingFormViewLink --> [LocationRatingFormViewLink] varchar(9) not null
+  colLocationRatingReportLink --> [LocationRatingReportLink] varchar(4) not null
+  colWiIsSelected --> [WiIsSelected] bit null
+  colWiRecStatus --> [WiRecStatus] nvarchar(255) null
+  colLossExpectancyBeforeSortValue --> [LossExpectancyBeforeSortValue] int null
+  colCostToCompleteSortValue --> [CostToCompleteSortValue] int null
+  colFldFileNo --> [fldFileNo] nvarchar(40) null
+  colFldClientLocID --> [fldClientLocID] nvarchar(30) null
+  colFldDivision --> [fldDivision] nvarchar(75) null
+  colFldCustomAccess --> [fldCustomAccess] nvarchar(50) null
+  colFldFacility --> [fldFacility] nvarchar(50) null
+

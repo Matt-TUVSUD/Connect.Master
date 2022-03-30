@@ -1,0 +1,138 @@
+﻿<!-- FOR KENDO GRID ROW DETAIL TEMPLATES -->
+<!-- CELL DATA REPLACERS USE #= NameOfField # -->
+<!-- AVOID USING # AS A CHARACTER IN THE TEMPLATE -->
+<!-- IF USING A CLASS LOOKUP TO THE GRID, MAKE SURE THAT CLASS IS IN THE COLUMN TEMPLATE -->
+<!-- SCRIPTS INCLUDED HERE GET RUN EVERY TIME THE DETAIL POPUP IS OPENED -->
+<!-- WHEN COPIED TO THE DATABASE, THE HTML AND JS MUST BE ALL IN ONE LINE -->
+<!-- DO NOT USE DOUBLE QUOTES IN JS OR HTML -->
+<!-- DO NOT USE COMMENTS IN JS, ALL ONE LINE COMMENTS WILL NOT RUN CODE -->
+
+<!-- FormViewNameOfGrid LAYOUT -->
+<div id='divDetailForm_#= uid #' class='divDetailForm'>
+    
+    <div class='LDHead'>
+        Location Detail</div>
+    <!--Row 1-->
+    <div class='LDInfo'>
+        <div>
+            <span id='lblFileNo'>File No.</span>
+            <input id='FileNo' readonly='readonly' type='text' value='#= FileNo #' />
+            <span id='lblClientLocID'>Client Loc. ID</span>
+            <input id='ClientLocNo' readonly='readonly' type='text' value='#= ClientLocNo #' />
+        </div>
+        <!--Row 2-->
+        <div>
+            <span id='lblAddress'>Address</span>
+            <input id='Address' readonly='readonly' type='text' value='#= Address #' />
+            <span id='lblCity'>City</span>
+            <input id='City' readonly='readonly' type='text' value='#= City #' />
+            <span id='lblStProv'>St/Prov</span>
+            <input id='StProv' readonly='readonly' type='text' value='#= StProv #' />
+            <span id='lblCountry'>Country</span>
+            <input id='Country' readonly='readonly' type='text' value='#= Country #' />
+        </div>
+        <!--Row 3-->
+        <div>
+            <span id='lblDivision'>Division</span>
+            <input id='Division' readonly='readonly' type='text' value='#= Division #' />
+            <span id='lblFacility'>Facility</span>
+            <input id='Facility' readonly='readonly' type='text' value='#= Facility #' />
+        </div>
+    </div>
+    <div class='FVTIV'>
+        <div id='lblTIV'>TIV</div>
+        <div>(millions)</div>
+        <div>
+            <input id='TIV' readonly='readonly' type='text' value='#= TIV #'/>
+        </div>
+    </div>
+    <div class='FVTIV' style='width: 90px;'>
+        <div>Response</div>
+        <div>Status</div>
+        <div>
+            <input id='ResponseStatus' readonly='readonly' type='text' value='#= ResponseStatus #' />
+        </div>
+    </div>
+    <div class='FVTIV' style='float: none; width: 80px;'>
+        <div>Auto-</div>
+        <div>Request</div>
+        <div>
+            <input id='AutoRequest' readonly='readonly' type='text' value='#= AutoRequest #' />
+        </div>
+    </div>
+    <br />
+    <div id='RecFVInfo'>
+        <div>
+            <span id='lblHazard'>Hazard</span>
+            <input id='Hazard' readonly='readonly' type='text' value='#= Hazard #' />
+            <span id='lblTotalNoRecs'>Total No. of Recs.</span>
+            <input id='TotalNoRecs' readonly='readonly' type='text' value='#= TotalNoRecs #' />
+            <span id='lblRespRequestDate'>Resp. Request Date</span>
+            <input id='RespRequestDate' readonly='readonly' type='text' value='#= RespRequestDateString #' />
+            <span id='lblRFU1Date'>1st Follow-Up</span>
+            <input id='RFU1Date' readonly='readonly' type='text' value='#= RFU1DateString #' />
+            <span id='lblRecipientName'>Recipient's Name</span>
+            <input id='RecipientName' readonly='readonly' type='text' value='#= RecipientName #' />
+        </div>
+        <div>
+            <span id='lblNoActiveRecs'>No. of Active Recs.</span>
+            <input id='NoActiveRecs' readonly='readonly' type='text' value='#= NoActiveRecs #' />
+            <span id='lblRespDueDate'>Request Due Date</span>
+            <input id='RespDueDate' readonly='readonly' type='text' value='#= RespDueDateString #' />
+            <span id='lblRFU2Date'>2nd Follow-Up</span>
+            <input id='RFU2Date' readonly='readonly' type='text' value='#= RFU2DateString #' />
+            <span id='lblRecipientEmail'>Recipient's Email</span>
+            <input id='RecipientEmail' readonly='readonly' type='text' value='#= RecipientEmail #' />
+        </div>
+        <div>
+            <span id='lblNoRecsNeedingResp'>No. of Recs. Needing Responses</span>
+            <input id='NoRecsNeedingResp' readonly='readonly' type='text' value='#= NoRecsNeedingResp #' />
+            <span id='lblDaysOverdue'>Days Overdue</span>
+            <input id='DaysOverdue' readonly='readonly' type='text' value='#= DaysOverdue #' />
+            <span id='lblRFU3Date'>3rd Follow-Up</span>
+            <input id='RFU3Date' readonly='readonly' type='text' value='#= RFU3DateString #' />
+        </div>
+    </div>
+
+    <br />
+
+    <div class='tableDiv'>
+        <div style='margin: auto; width: 100%; text-align: center;'>
+            <span style='margin: auto; width: 100%; text-align: center;'><button class='k-button' onclick='globalCloseFormView(); return false;'>Close</button></span>
+        </div>
+    </div>
+</div>
+<script>
+    /*LOAD THE CSS*/
+    var zLink = "<link rel='stylesheet' type='text/css' href='../../../css/FormView/FormViewFireRecommendationsResponseFollowUp.css'>";
+    $(zLink).appendTo('head');
+
+    setTimeout(function () {
+        var zUID = '#= uid #';
+
+        /* COLOR REPLACEMENTS REMIX*/
+        var colorItems = [
+            'ResponseStatus'
+        ];
+        for (i = 0; i < colorItems.length; i++){
+            var zColor = 'transparent';
+            zColor = $('[data-uid=' + zUID + '] .' + colorItems[i] + 'Color').css('background-color');
+            $('\\#divDetailForm_' + zUID + ' \\#' + colorItems[i] + '').css('background-color', zColor);
+        }
+
+        /* FORMAT DATES GLOBAL REMIX */
+        $('\\#divDetailForm_' + zUID + ' input').each(function(){
+            if( $(this).attr('id').toLowerCase().indexOf('date') > -1 ){
+                $(this).val(global.formatShortDateWithMonth($(this).val()));
+            }
+        });
+
+        /* REMOVE NULLS GLOBAL REMIX */
+        $('\\#divDetailForm_' + zUID + ' input').each(function(){
+            if( ($(this).val() == 'null') || ($(this).val() == 'undefined') ){
+                $(this).val('');
+            }
+        });
+
+    }, 50);
+</script>

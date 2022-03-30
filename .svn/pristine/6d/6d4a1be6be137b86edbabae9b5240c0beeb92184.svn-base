@@ -1,0 +1,15 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblClientsfileprefixspec --> [clientsfileprefixspec]
+
+  colCldbname --> [cldbname] varchar(50) **PK** not null
+  colFilePrefixSpec --> [FilePrefixSpec] varchar(50) **PK** not null
+  colComments --> [Comments] text null
+

@@ -1,0 +1,26 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblGridFavorite --> [tblGridFavorite]
+
+  colId --> [Id] int **PK** identity not null
+  colFldTitle --> [fldTitle] varchar(250) not null
+  colFldFilePrefix --> [fldFilePrefix] varchar(10) not null
+  colFldGridId --> [fldGridId] int not null
+  colFldEzyUserId --> [fldEzyUserId] int not null
+  colFldPractice --> [fldPractice] varchar(10) null
+  colFldCurrencyId --> [fldCurrencyId] int null
+  colFldUnitId --> [fldUnitId] int null
+  colFldColumnOrderJSON --> [fldColumnOrderJSON] varchar(MAX) null
+  colFldSortJSON --> [fldSortJSON] varchar(MAX) null
+  colFldFilterJSON --> [fldFilterJSON] varchar(MAX) null
+  colFldCriteriaJSON --> [fldCriteriaJSON] varchar(MAX) null
+  colFldCreateStamp --> [fldCreateStamp] timestamp not null
+  colFldUpdateDate --> [fldUpdateDate] datetime null
+

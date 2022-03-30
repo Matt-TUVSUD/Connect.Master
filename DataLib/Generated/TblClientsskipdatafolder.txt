@@ -1,0 +1,16 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblClientsskipdatafolder --> [clientsskipdatafolder]
+
+  colExcludeClientFolderId --> [ExcludeClientFolderId] int **PK** identity not null
+  colCldbname --> [cldbname] varchar(50) null
+  colExcludeFolderName --> [ExcludeFolderName] text null
+  colComments --> [Comments] text null
+

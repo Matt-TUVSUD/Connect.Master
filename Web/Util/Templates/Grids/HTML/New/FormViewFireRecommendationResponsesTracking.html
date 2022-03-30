@@ -1,0 +1,162 @@
+﻿<!-- FOR KENDO GRID ROW DETAIL TEMPLATES -->
+<!-- CELL DATA REPLACERS USE #= NameOfField # -->
+<!-- AVOID USING # AS A CHARACTER IN THE TEMPLATE -->
+<!-- IF USING A CLASS LOOKUP TO THE GRID, MAKE SURE THAT CLASS IS IN THE COLUMN TEMPLATE -->
+<!-- SCRIPTS INCLUDED HERE GET RUN EVERY TIME THE DETAIL POPUP IS OPENED -->
+<!-- WHEN COPIED TO THE DATABASE, THE HTML AND JS MUST BE ALL IN ONE LINE -->
+<!-- DO NOT USE DOUBLE QUOTES IN JS OR HTML -->
+<!-- DO NOT USE COMMENTS IN JS, ALL ONE LINE COMMENTS WILL NOT RUN CODE -->
+
+<!-- FormViewNameOfGrid LAYOUT -->
+<div id='divDetailForm_#= uid #' class='divDetailForm'>
+    
+    <div id='RecFVInfo'>
+        <div>
+            <span id='lblRecNo'>Rec No.</span>
+            <input id='RecYear' readonly='readonly' type='text' value='#= RecYear #' />
+            <input id='RecMonth' readonly='readonly' type='text' value='#= RecMonth #' />
+            <input id='RecNumber' readonly='readonly' type='text' value='#= RecNumber #' />
+            <input id='RecSubletter' readonly='readonly' type='text' value='#= RecSubletter #' />
+            <span id='lblCode'>Code</span>
+            <input id='Code' readonly='readonly' type='text' value='#= RecCode #' />
+            <span id='lblRecCategory'>Rec. Impact</span>
+            <input id='RecCategory' readonly='readonly' type='text' value='#= RecCategory #' />
+            <span id='lblRecStatus'>Rec. Status</span>
+            <input id='RecStatus' readonly='readonly' type='text' value='#= RecStatus #' />
+            <span id='lblStatusDate'>Status Date</span>
+            <input id='StatusDate' readonly='readonly' type='text' value='#= StatusDateString #' />
+        </div>
+        <div>
+            <span id='lblHazard'>Hazard</span>
+            <input id='Hazard' readonly='readonly' type='text' value='#= Hazard #' />
+            <span id='lblPrimaryRecType'>Primary Rec. Type</span>
+            <input id='PrimaryRecType' readonly='readonly' type='text' value='#= PrimaryRecType #' />
+            <span id='lblSecondaryRecType'>Secondary Rec. Type</span>
+            <input id='SecondaryRecType' readonly='readonly' type='text' value='#= SecondaryRecType #' />
+        </div>
+        <div>
+            <span id='lblRecKeyWords'>Rec. Key Words</span>
+            <input id='RecKeyWords' readonly='readonly' type='text' value='#= RecKeyWords #' />
+        </div>
+        <div style='margin-bottom: 0px; padding-bottom: 0px;'>
+            <span id='lblCurrentLossEst'>Current Loss Est.</span>
+            <span id='lblCompletedLossEst'>Completed Loss Est.</span>
+            <span id='lblEstCostToComplete'>Est. Cost to Complete</span>
+            <span id='lblSavingsRatioNoLE'>Savings Ratio</span>
+        </div>
+        <div style='padding-top: 0px;' id='ActualLEValues'>
+            <span id='lblActualLEBefore'>USD</span>
+            <input id='LossExpectancyBeforeActual' class='ActualLEBefore' readonly='readonly' type='text' value='#= LossExpectancyBeforeActual #' />
+            <span id='lblActualLEAfter'>USD</span>
+            <input id='LossExpectancyAfterActual' class='ActualLEAfter' readonly='readonly' type='text' value='#= LossExpectancyAfterActual #' />
+            <span id='lblActualLECost'>USD</span>
+            <input id='CostToCompleteActual' class='ActualLECost' readonly='readonly' type='text' value='#= CostToCompleteActual #' />
+            <span id='lblSavingsRatio'>Savings Ratio</span>
+        </div>
+        <div>
+            <span id='lblLEBefore'>(Range)</span>
+            <input id='LossExpectancyBefore' class='LEBefore' readonly='readonly' type='text' value='#= LossExpectancyBefore #' />
+            <span id='lblLEAfter'>(Range)</span>
+            <input id='LossExpectancyAfter' class='LEAfter' readonly='readonly' type='text' value='#= LossExpectancyAfter #' />
+            <span id='lblLECost'>(Range)</span>
+            <input id='CostToComplete' class='LECost' readonly='readonly' type='text' value='#= CostToComplete #' />
+            <input id='SavingsRatio' readonly='readonly' type='text' value='#= SavingsRatio #' />
+        </div>
+        <div>
+            <span id='lblResponseDate'>Resp. Date</span>
+            <input id='ResponseDate' readonly='readonly' type='text' value='#= ResponseDateString #' />
+            <span id='lblResponseFrom'>Resp. From</span>
+            <input id='ResponseFrom' readonly='readonly' type='text' value='#= ResponseFrom #' />
+            <span id='lblActualCost'>Actual Cost To Comply</span>
+        </div>
+        <div>
+            <span id='lblExpectedCompletionDate'>Exp'd Compl. Date</span>
+            <input id='ExpectedCompletionDate' readonly='readonly' type='text' value='#= ExpectedCompletionDateString #' />
+            <span id='lblIntendedAction'>Rec. Intended Action</span>
+            <input id='IntendedAction' readonly='readonly' type='text' value='#= IntendedAction #' />
+            <input id='ActualCostToComplete' readonly='readonly' type='text' value='#= ActualCostToComplete #' />
+        </div>
+        <div>
+            <span id='lblPlantComment'>Facility Comment</span>
+            <input id='PlantComment' readonly='readonly' type='text' value='#= PlantComment #' />
+        </div>
+        <div>
+            <span id='lblResponseStatus'>Response Status</span>
+            <span id='lblRespRequestDate'>Resp. Request Date</span>
+            <input id='RespRequestDate' readonly='readonly' type='text' value='#= RespRequestDateString #' />
+            <span id='lblRFU1Date'>1st Follow-Up</span>
+            <input id='RFU1Date' readonly='readonly' type='text' value='#= RFU1DateString #' />
+            <span id='lblRecipientName'>Recipient's Name</span>
+            <input id='RecipientName' readonly='readonly' type='text' value='#= RecipientName #' />
+        </div>
+        <div>
+            <input id='ResponseStatus' readonly='readonly' type='text' value='#= ResponseStatus #' />
+            <span id='lblRespDueDate'>Request Due Date</span>
+            <input id='RespDueDate' readonly='readonly' type='text' value='#= RespDueDateString #' />
+            <span id='lblRFU2Date'>2nd Follow-Up</span>
+            <input id='RFU2Date' readonly='readonly' type='text' value='#= RFU2DateString #' />
+            <span id='lblRecipientEmail'>Recipient's Email</span>
+            <input id='RecipientEmail' readonly='readonly' type='text' value='#= RecipientEmail #' />
+        </div>
+        <div>
+            <span id='lblDaysOverdue'>Days Overdue</span>
+            <input id='DaysOverdue' readonly='readonly' type='text' value='#= DaysOverdue #' />
+            <span id='lblRFU3Date'>3rd Follow-Up</span>
+            <input id='RFU3Date' readonly='readonly' type='text' value='#= RFU3DateString #' />
+        </div>
+    </div>
+
+    <br />
+
+    <div class='tableDiv'>
+        <div style='margin: auto; width: 100%; text-align: center;'>
+            <span style='margin: auto; width: 100%; text-align: center;'><button class='k-button' onclick='globalCloseFormView(); return false;'>Close</button></span>
+        </div>
+    </div>
+</div>
+<script>
+    /*LOAD THE CSS*/
+
+    /* TEMPORARY CSS NAME - IT WILL NEED TO BE UPDATED TO FormViewFireRecommendationsResponseTracking.css UPON NEXT BUILD */
+
+    var zLink = "<link rel='stylesheet' type='text/css' href='../../../css/FormView/FormViewFireRecommendationsResponseTracking.css'>";
+    $(zLink).appendTo('head');
+
+    setTimeout(function () {
+
+        /*PROCESS SPECIAL FEATURES*/
+        if (globalClientFeatures.toLowerCase().indexOf('l') > -1) {
+            $('\\#ActualLEValues').show(1);
+        } else {
+            $('\\#ActualLEValues').hide(1);
+        }
+
+        var zUID = '#= uid #';
+
+        /* COLOR REPLACEMENTS REMIX*/
+        var colorItems = [
+            'ResponseStatus',
+            'RecCategory'
+        ];
+        for (i = 0; i < colorItems.length; i++){
+            var zColor = 'transparent';
+            zColor = $('[data-uid=' + zUID + '] .' + colorItems[i] + 'Color').css('background-color');
+            $('\\#divDetailForm_' + zUID + ' \\#' + colorItems[i] + '').css('background-color', zColor);
+        }
+
+        /* FORMAT DATES GLOBAL REMIX */
+        $('\\#divDetailForm_' + zUID + ' input').each(function(){
+            if( $(this).attr('id').toLowerCase().indexOf('date') > -1 ){
+                $(this).val(global.formatShortDateWithMonth($(this).val()));
+            }
+        });
+
+        /* REMOVE NULLS GLOBAL REMIX */
+        $('\\#divDetailForm_' + zUID + ' input').each(function(){
+            if( ($(this).val() == 'null') || ($(this).val() == 'undefined') ){
+                $(this).val('');
+            }
+        });
+
+    }, 50);
+</script>

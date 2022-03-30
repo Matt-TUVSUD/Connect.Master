@@ -1,0 +1,21 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblMetaReport --> [tblMetaReport]
+
+  colFldId --> [fldId] int **PK** identity not null
+  colFldName --> [fldName] nvarchar(255) not null
+  colFldFileName --> [fldFileName] nvarchar(255) not null
+  colFldVendorId --> [fldVendorId] int not null
+  colFldSourceId --> [fldSourceId] int not null
+  colFldTypeName --> [fldTypeName] nvarchar(255) null
+  colFldMetaPracticeId --> [fldMetaPracticeId] int null
+  colFldOldRptCode --> [fldOldRptCode] varchar(10) null
+  colFldComment --> [fldComment] nvarchar(255) null
+

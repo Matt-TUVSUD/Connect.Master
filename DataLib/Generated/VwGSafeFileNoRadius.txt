@@ -1,0 +1,36 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: VwGSafeFileNoRadius --> [vwGSafeFileNoRadius]
+
+  colLinkToPopup --> [Link_to_Popup] int null
+  colGSafeId --> [GSafeId] int not null
+  colRefLatitude --> [RefLatitude] decimal(7,4) not null
+  colRefLongitude --> [RefLongitude] decimal(7,4) not null
+  colUnits --> [Units] varchar(15) null
+  colInputRange --> [InputRange] float null
+  colSearchName --> [SearchName] varchar(70) null
+  colFileNo --> [FileNo] nvarchar(40) not null
+  colClient --> [client] nvarchar(40) null
+  colAddress --> [address] nvarchar(40) null
+  colCity --> [City] nvarchar(30) null
+  colStProv --> [StProv] nvarchar(20) null
+  colCountry --> [Country] nvarchar(20) null
+  colZip --> [Zip] nvarchar(10) null
+  colTiv --> [TIV] float null
+  colLatitude --> [latitude] decimal(7,4) null
+  colLongitude --> [longitude] decimal(7,4) null
+  colDistanceMiles --> [DistanceMiles] float null
+  colDistanceNauticalMiles --> [DistanceNauticalMiles] float null
+  colDistanceKilometers --> [DistanceKilometers] float null
+  colLastInspDate --> [LastInspDate] datetime null
+  colClientLocNo --> [ClientLocNo] nvarchar(30) null
+  colDivision --> [Division] nvarchar(75) null
+  colFacility --> [Facility] nvarchar(50) null
+

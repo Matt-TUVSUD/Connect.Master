@@ -1,0 +1,20 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: VwMetaChartSeriesItem --> [vwMetaChartSeriesItem]
+
+  colFldId --> [fldId] int not null
+  colFldMetaChartId --> [fldMetaChartId] int null
+  colName --> [name] varchar(50) null
+  colField --> [field] varchar(50) null
+  colCategoryField --> [categoryField] varchar(50) null
+  colColorField --> [colorField] varchar(50) null
+  colColor --> [color] varchar(100) null
+  colFldTypeName --> [fldTypeName] varchar(25) null
+

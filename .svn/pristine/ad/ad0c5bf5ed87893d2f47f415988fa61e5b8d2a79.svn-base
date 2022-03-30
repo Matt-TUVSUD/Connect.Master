@@ -1,0 +1,23 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colFldId":1, 
+	"colFldMechMaintWgt":null, 
+	"colFldElecMaintWgt":null, 
+	"colFldSparesWgt":null, 
+	"colFldHEWgt":null, 
+	"colFldBCPWgt":null, 
+	"colFldMechEquipWgt":null, 
+	"colFldElecEquipWgt":null, 
+	"colFldBoilersWgt":null, 
+	"colFldProcEquipWgt":null, 
+	"colFldOccupancyWgt":null, 
+	"colFldCompSystemWgt":null
+}]

@@ -1,0 +1,18 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: VwWhatIfRecSort --> [vwWhatIfRecSort]
+
+  colFldID --> [fldID] int identity not null
+  colFldText --> [fldText] nvarchar(50) null
+  colFldToolTip --> [fldToolTip] nvarchar(200) null
+  colFldSortJson --> [fldSortJson] nvarchar(255) null
+  colFldSortOrder --> [fldSortOrder] int null
+  colFldVisible --> [fldVisible] bit null
+

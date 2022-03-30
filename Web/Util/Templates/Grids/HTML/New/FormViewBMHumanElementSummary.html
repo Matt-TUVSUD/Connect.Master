@@ -1,0 +1,202 @@
+﻿<!-- FOR KENDO GRID ROW DETAIL TEMPLATES -->
+<!-- CELL DATA REPLACERS USE #= NameOfField # -->
+<!-- AVOID USING # AS A CHARACTER IN THE TEMPLATE -->
+<!-- IF USING A CLASS LOOKUP TO THE GRID, MAKE SURE THAT CLASS IS IN THE COLUMN TEMPLATE -->
+<!-- SCRIPTS INCLUDED HERE GET RUN EVERY TIME THE DETAIL POPUP IS OPENED -->
+<!-- WHEN COPIED TO THE DATABASE, THE HTML AND JS MUST BE ALL IN ONE LINE -->
+<!-- DO NOT USE DOUBLE QUOTES IN JS OR HTML -->
+<!-- DO NOT USE COMMENTS IN JS, ALL ONE LINE COMMENTS WILL NOT RUN CODE -->
+
+<!-- FormViewNameOfGrid LAYOUT -->
+<div id='divDetailForm_#= uid #' class='divDetailForm'>
+    
+    <div class='LDHead'>
+        Location Detail</div>
+    <!--Row 1-->
+    <div class='LDInfo'>
+        <div>
+            <span id='lblFileNo'>File No.</span>
+            <input id='fileno' readonly='readonly' type='text' value='#= fileno #' />
+            <span id='lblClientLocID'>Client Loc. ID</span>
+            <input id='clientlocno' readonly='readonly' type='text' value='#= clientlocno #' />
+        </div>
+        <!--Row 2-->
+        <div>
+            <span id='lblAddress'>Address</span>
+            <input id='address' readonly='readonly' type='text' value='#= address #' />
+            <span id='lblCity'>City</span>
+            <input id='city' readonly='readonly' type='text' value='#= city #' />
+            <span id='lblStProv'>St/Prov</span>
+            <input id='stprov' readonly='readonly' type='text' value='#= stprov #' />
+            <span id='lblCountry'>Country</span>
+            <input id='country' readonly='readonly' type='text' value='#= country #' />
+        </div>
+        <!--Row 3-->
+        <div>
+            <span id='lblDivision'>Division</span>
+            <input id='division' readonly='readonly' type='text' value='#= division #' />
+            <span id='lblFacility'>Facility</span>
+            <input id='facility' readonly='readonly' type='text' value='#= facility #' />
+        </div>
+    </div>
+    <div class='FVTIV'>
+        <div id='lblTIV'>TIV</div>
+        <div>(millions)</div>
+        <div>
+            <input id='TIV' readonly='readonly' type='text' value='#= TIV #' />
+        </div>
+    </div>
+    <div class='FVTIV'>
+        <div>Date Of</div>
+        <div>Inspection</div>
+        <div>
+            <input id='InspectionDateString' readonly='readonly' type='text' value='#= InspectionDateString #' />
+        </div>
+    </div>
+    <div class='FVTIV'>
+        <div>HE</div>
+        <div>Rating</div>
+        <div>
+            <input id='humanelementc' readonly='readonly' type='text' value='#= humanelementc #' />
+        </div>
+    </div>
+    <div class='FVTIV'>
+        <div>HE</div>
+        <div>Adequate</div>
+        <div>
+            <input id='headequate' readonly='readonly' type='text' value='#= headequate #' />
+        </div>
+    </div>
+    <div class='FVTable'>
+        <table cellspacing='0' cellpadding='2'>
+            <tr class='th'>
+                <td colspan='5' class='rb'>
+                    Training
+                </td>
+                <td colspan='4' class='b'>
+                    Management
+                </td>
+            </tr>
+            <tr class='tch'>
+                <td class='rb'>
+                    Mech. / Maint.<br />
+                    Training
+                </td>
+                <td class='rb'>
+                    Elec. / Maint.<br />
+                    Training
+                </td>
+                <td class='rb'>
+                    Elec. Safety<br />
+                    Training
+                </td>
+                <td class='rb'>
+                    Gen. Ops.<br />
+                    Training
+                </td>
+                <td class='hrb'>
+                    Boiler Ops.<br />
+                    Training
+                </td>
+                <td class='rb'>
+                    Record<br />
+                    Keeping
+                </td>
+                <td class='rb'>
+                    Housekeeping
+                </td>
+                <td class='rb'>
+                    General<br />
+                    Maint.
+                </td>
+                <td class='b'>
+                    Mgmt. of<br />
+                    Change
+                </td>
+            </tr>
+            <tr>
+                <td class='r'>
+                    <input id='hemechmainttrain' readonly='readonly' type='text' value='#= hemechmainttrain #' />
+                </td>
+                <td class='r'>
+                    <input id='heelecmainttrain' readonly='readonly' type='text' value='#= heelecmainttrain #' />
+                </td>
+                <td class='r'>
+                    <input id='heelecsafetytrain' readonly='readonly' type='text' value='#= heelecsafetytrain #' />
+                </td>
+                <td class='r'>
+                    <input id='hegenopstrain' readonly='readonly' type='text' value='#= hegenopstrain #' />
+                </td>
+                <td class='hr'>
+                    <input id='heboileroptrain' readonly='readonly' type='text' value='#= heboileroptrain #' />
+                </td>
+                <td class='r'>
+                    <input id='herecordkeeping' readonly='readonly' type='text' value='#= herecordkeeping #' />
+                </td>
+                <td class='r'>
+                    <input id='hehousekeeping' readonly='readonly' type='text' value='#= hehousekeeping #' />
+                </td>
+                <td class='r'>
+                    <input id='hegenmaint' readonly='readonly' type='text' value='#= hegenmaint #' />
+                </td>
+                <td>
+                    <input id='hemgmtofchng' readonly='readonly' type='text' value='#= hemgmtofchng #' />
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <br />
+
+    <div class='tableDiv'>
+        <div style='margin: auto; width: 100%; text-align: center;'>
+            <span style='margin: auto; width: 100%; text-align: center;'><button class='k-button' onclick='globalCloseFormView(); return false;'>Close</button></span>
+        </div>
+    </div>
+</div>
+<script>
+    /*LOAD THE CSS*/
+    var zLink = "<link rel='stylesheet' type='text/css' href='../../../css/FormView/FormView.css'>";
+    $(zLink).appendTo('head');
+
+    setTimeout(function () {
+        var zUID = '#= uid #';
+
+        /*SET AND FORMAT COLORS*/
+
+        /* COLOR REPLACEMENTS REMIX */
+        var colorItems = [
+            'humanelementc',
+            'headequate',
+            'hemechmainttrain',
+            'heelecmainttrain',
+            'heelecsafetytrain',
+            'hegenopstrain',
+            'heboileroptrain',
+            'herecordkeeping',
+            'hehousekeeping',
+            'hegenmaint',
+            'hemgmtofchng'
+        ];
+        for (i = 0; i < colorItems.length; i++) {
+            var zColor = 'transparent';
+            zColor = $('[data-uid=' + zUID + '] .' + colorItems[i] + 'Color').css('background-color');
+            $('\\#divDetailForm_' + zUID + ' \\#' + colorItems[i] + '').css('background-color', zColor);
+        }
+
+        /* FORMAT DATES GLOBAL REMIX */
+        $('\\#divDetailForm_' + zUID + ' input').each(function(){
+            if( $(this).attr('id').toLowerCase().indexOf('date') > -1 ){
+                $(this).val(global.formatShortDateWithMonth($(this).val()));
+            }
+        });
+
+        /* REMOVE NULLS GLOBAL REMIX */
+        $('\\#divDetailForm_' + zUID + ' input').each(function(){
+            if( ($(this).val() == 'null') || ($(this).val() == 'undefined') ){
+                $(this).val('');
+            }
+        });
+
+    }, 50);
+</script>

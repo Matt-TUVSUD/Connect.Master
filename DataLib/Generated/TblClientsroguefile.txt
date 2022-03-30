@@ -1,0 +1,18 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblClientsroguefile --> [clientsroguefile]
+
+  colRogueFileId --> [RogueFileId] int **PK** identity not null
+  colFilePathName --> [FilePathName] varchar(1000) null
+  colFoundInFilePrefix --> [FoundInFilePrefix] varchar(10) null
+  colFoundInCldbName --> [FoundInCldbName] varchar(50) null
+  colFoundOnDate --> [FoundOnDate] datetime null
+  colComments --> [Comments] text null
+

@@ -1,0 +1,20 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: VwDataTransferReportArchive --> [vwDataTransferReportArchive]
+
+  colReportArchiveId --> [ReportArchiveId] int not null
+  colColumnName --> [ColumnName] varchar(7) not null
+  colFilePrefix --> [FilePrefix] nvarchar(10) null
+  colFileNo --> [FileNo] varchar(50) null
+  colDocumentDate --> [DocumentDate] datetime null
+  colPractice --> [Practice] varchar(50) null
+  colPDFFilePath --> [PDFFilePath] nvarchar(MAX) null
+  colClientDBRootPath --> [ClientDBRootPath] nvarchar(MAX) null
+

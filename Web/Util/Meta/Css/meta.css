@@ -1,0 +1,11 @@
+﻿
+
+/*For setting the textbox edit control to fit column container width*/
+
+tr.rgRow td.rgBatchCurrent div.rgBatchContainer input[type="text"] {
+    width:100%;
+}
+
+tr.rgAltRow td.rgBatchCurrent div.rgBatchContainer input[type="text"] {
+    width:100%;
+}

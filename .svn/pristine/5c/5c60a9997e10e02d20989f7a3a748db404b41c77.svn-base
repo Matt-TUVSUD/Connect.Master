@@ -1,0 +1,18 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colFldId":1, 
+	"colFldColor":"fldColor", 
+	"colFldHex":"fldHex", 
+	"colFldR":1, 
+	"colFldG":1, 
+	"colFldB":1, 
+	"colFldA":null
+}]

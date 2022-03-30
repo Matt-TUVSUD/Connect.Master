@@ -1,0 +1,22 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblAdminQueue --> [tblAdminQueue]
+
+  colFldID --> [fldID] int **PK** identity not null
+  colFldTo --> [fldTo] nvarchar(1000) null
+  colFldViewIDs --> [fldViewIDs] nvarchar(500) null
+  colFldDBAFilter --> [fldDBAFilter] nvarchar(50) null
+  colFldCreateBy --> [fldCreateBy] nvarchar(50) null
+  colFldCreateDate --> [fldCreateDate] datetime null
+  colFldIsProcessed --> [fldIsProcessed] bit null
+  colFldStatus --> [fldStatus] nvarchar(50) null
+  colFldProcessedDate --> [fldProcessedDate] datetime null
+  colFldException --> [fldException] nvarchar(MAX) null
+

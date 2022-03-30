@@ -1,0 +1,17 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblGSafeUserReclass --> [GSafeUserReclass]
+
+  colId --> [Id] int **PK** identity not null
+  colGsafeId --> [GsafeId] int not null
+  colUserIndex --> [UserIndex] int not null
+  colEzyUserGuid --> [EzyUserGuid] nvarchar(50) not null
+  colIsReviewed --> [IsReviewed] bit not null
+

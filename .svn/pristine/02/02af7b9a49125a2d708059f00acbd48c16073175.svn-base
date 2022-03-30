@@ -1,0 +1,57 @@
+﻿<!-- FOR KENDO GRID ROW DETAIL TEMPLATES -->
+<!-- CELL DATA REPLACERS USE #= NameOfField # -->
+<!-- AVOID USING # AS A CHARACTER IN THE TEMPLATE -->
+<!-- IF USING A CLASS LOOKUP TO THE GRID, MAKE SURE THAT CLASS IS IN THE COLUMN TEMPLATE -->
+<!-- SCRIPTS INCLUDED HERE GET RUN EVERY TIME THE DETAIL POPUP IS OPENED -->
+<!-- WHEN COPIED TO THE DATABASE, THE HTML AND JS MUST BE ALL IN ONE LINE -->
+<!-- DO NOT USE DOUBLE QUOTES IN JS OR HTML -->
+<!-- DO NOT USE COMMENTS IN JS, ALL ONE LINE COMMENTS WILL NOT RUN CODE -->
+
+<!-- FormViewNameOfGrid LAYOUT -->
+<div id='divDetailForm_#= uid #' class='divDetailForm'>
+    <div class='tableDiv'>
+        <div style='margin: auto; width: 100%; text-align: center;'>
+            <span style='margin: auto; width: 100%; text-align: center;'><button class='k-button' onclick='globalCloseFormView(); return false;'>Close</button></span>
+        </div>
+    </div>
+</div>
+<script>
+    /*LOAD THE CSS*/
+    /*THIS IS THE CORRECT FORM FOR READING INTO THE TEMPLATE, MAY CAUSE JS WARNINGS WHEN COMPOSING*/
+    var zLink = \"<link rel='stylesheet' type='text/css' href='../../../css/FormView/NameOfFile.css'>\";
+    $(zLink).appendTo('head');
+    setTimeout(function () {
+        /*PROCESS SPECIAL FEATURES*/
+        /*THIS IS AN EXAMPLE OF LE FIELDS*/
+        /*
+        if (globalClientFeatures.toLowerCase().indexOf('l') > -1) {
+            $('\\#ActualLEValues').show(1);
+        } else {
+            $('\\#ActualLEValues').hide(1);
+        }
+        */
+
+        var zUID = '#= uid #';
+        /*SET AND FORMAT COLORS*/
+        /*
+        var zColor = 'transparent';
+        zColor = $('[data-uid=' + zUID + '] .ZZZColor').css('background-color');
+        $('\\#divDetailForm_' + zUID + ' \\#ZZZ').css('background-color', zColor);
+        */
+
+        /*FORMAT DATES*/
+        /*
+        $('\\#divDetailForm_' + zUID + ' \\#ZZZ').val(global.formatShortDateWithMonth('#= ZZZ #'));
+        */
+
+        /*REMOVE NULLS*/
+        /*
+        if ('#= ZZZ #' == 'undefined' || '#= ZZZ #' == 'null') { $('\\#divDetailForm_' + zUID + ' \\#ZZZ').val(''); }
+        */
+
+        /*PROTECT FORMATTED TEXT (ERROR WITH ONLY ONE DOUBLE QUOTE IN STRING CAUSES CRASH)*/
+        /*
+        if (ZZZ == 'undefined' || ZZZ == 'null') { $('\\#divDetailForm_' + zUID + ' \\#ZZZ').val(''); }
+        */
+    }, 50);
+</script>

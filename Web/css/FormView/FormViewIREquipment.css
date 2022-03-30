@@ -1,0 +1,48 @@
+﻿div.IREquipmentLDHead{width:auto !important;text-align:center;font-size:8pt;font-weight:bold;}
+
+div.IREquipmentLDInfo{width:auto;text-align:left;float:left;height:58px; font-size:7pt;}
+div.IREquipmentLDInfo div{width:auto;font-size:7pt;}
+
+div.IREquipmentLDInfo div #lblFileNo{margin-right:7px;}
+div.IREquipmentLDInfo div #lblClientLocID{margin-right:5px;}
+div.IREquipmentLDInfo div #lblAddress{margin-right:5px;}
+div.IREquipmentLDInfo div #lblCity{margin-right:19px;}
+div.IREquipmentLDInfo div #lblStProv{margin-right:5px;}
+div.IREquipmentLDInfo div #lblZip{margin-right:5px;}          
+div.IREquipmentLDInfo div #lblCountry{margin-right:5px;}
+div.IREquipmentLDInfo div #lblDivision{margin-right:7px;}
+div.IREquipmentLDInfo div #lblFacility{margin-right:5px;}
+            
+div.IREquipmentLDInfo div input{font-size:7pt;border:solid 1px blue; margin-right: 5px;}
+div.IREquipmentLDInfo div input#FileNo{text-align:left;width:80px;}
+div.IREquipmentLDInfo div input#clientlocno{text-align:left;width:100px;}
+div.IREquipmentLDInfo div input#Address{text-align:left;width:250px;}
+div.IREquipmentLDInfo div input#city{text-align:left;width:76px; margin-left: 5px;}
+div.IREquipmentLDInfo div input#stprov{text-align:center;width:25px;}
+div.IREquipmentLDInfo div input#zip{text-align:center;width:35px;}
+div.IREquipmentLDInfo div input#country{text-align:left;width:80px;}
+div.IREquipmentLDInfo div input#division{text-align:left;width:250px;}
+div.IREquipmentLDInfo div input#facility{text-align:left;width:335px; margin-left: 5px;}
+
+div.FVTable{padding-bottom:5px;float:left; clear: both;}
+div.FVTable table{border:solid 2px #666;text-align:left}
+div.FVTable table input,
+div.FVTable input{font-size:7pt;text-align:center;border:solid 1px blue;}
+
+.rmx1 {
+    font-weight: bold;
+    border: 1px solid #aaa;
+    text-align: center;
+}
+.rmx2{
+    overflow:hidden;
+    border-right: 1px solid #aaa;
+    border-left: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+}
+.rmx3{
+    overflow: hidden;
+    border-right: 1px solid #aaa;
+    border-left: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+}

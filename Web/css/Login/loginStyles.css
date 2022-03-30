@@ -1,0 +1,238 @@
+﻿body {
+    margin: 0;
+}
+
+#loginPageBody {
+    display: -webkit-box;
+    display: flex;
+    display: -ms-flexbox;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    /*min-height: 98vh;*/
+    min-height: 83.5vh;
+    overflow: hidden;
+}
+
+#imageHldr {
+    width: 75%;
+    min-height: 100vh;
+    background: url(../../Home_{{VER}}/Images/Home_{{VER}}/honeyComb.png) no-repeat 25% 50%;
+    background-size: 100% 100%;
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+}
+
+.video-background {
+    width: 1420px;
+}
+
+#loginHldr {
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:flex-start;
+    padding: 10px;
+    width: 375px;
+    height: 400px;
+    margin: 15px 500px 0px 91.6px;
+}
+
+/*#logoHldr {
+    width: 100%;
+    text-align: center;
+}
+
+#logoHldr img{
+    height:auto;
+    max-width:100%;
+}*/
+
+#tagLine {
+    width: 80%;
+    padding: 5px;
+    color: #0046ad;
+    font-size: 16px;
+    font-weight:700;
+    text-align: center;
+    margin: auto;
+}
+
+.loginImgHldr{
+    width: 100%;
+    height: 320px;
+    /*margin: 72px 0 65px;
+    padding: 109px 282px 107px 164px;*/
+}
+
+.loginImg {
+    width:100%;
+    height:auto;
+    max-height:320px;
+}
+
+.emailLbl {
+    width: 51px;
+    height: 18px;
+    margin: 0 301px 17px 0;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #666666;
+}
+
+.userHldr {
+    /*margin-top: 20px;
+    text-align: center;*/
+    width: 352px;
+    /*height: 105px;*/
+    /*margin: 57px 0 20px;*/
+    padding: 0 0 15px;
+}
+
+.textInput {
+    /*background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+    width: 220px;*/
+    width: 352px;
+    height: 50px;
+    margin: 17px 0 0;
+    padding: 0px 5px;
+    border-radius: 4px;
+    border: solid 1px #d1d4d3;
+    background-color: #ffffff;
+
+}
+
+#pwHldr {
+    /*margin-top: 20px;
+    text-align: center;*/
+    width: 352px;
+    /*height: 105px;*/
+    /*margin: 57px 0 20px;*/
+    padding: 0 0 15px;
+}
+
+.pwLbl {
+    width: 100px;
+    height: 18px;
+    /*margin: 0 301px 17px 0;*/
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #666666;
+}
+
+#btnHldr {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.loginBtn {
+    background: #0046ad;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    border-radius: 0px;
+    padding: 5px;
+    /*width: 75px;
+    height: 35px;*/
+    width:352px;
+    height:50px;
+}
+
+.loginBtn:hover {
+    background: #002968;
+    cursor: pointer;
+}
+
+.loginBtn:active {
+    background: #002d72;
+    cursor: pointer;
+    -webkit-box-shadow: inset 0 0 100px #196090;
+    box-shadow: inset 0 0 100px #196090;
+}
+
+#resetHldr {
+    margin-top: 20px;
+    /*text-align: center;*/
+    text-align:left;
+}
+
+.loginPageLnk {
+    /*color: #0046ad;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    font-weight: 700;*/
+    font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.5;
+  letter-spacing: normal;
+  text-align: left;
+  color: #0046ad;
+}
+
+#contactHldr {
+    margin-top: 20px;
+    /*text-align: center;*/
+    text-align:left;
+}
+
+.messageError {
+    width: 100%; 
+    line-height: 18px; 
+    padding-top: 4px; 
+    text-align: center; 
+    color: #ff0000; 
+    font-weight:700;
+    font-family: Arial, sans-serif;
+}
+
+.preferenceLbl {
+    width:160px;
+    display:-webkit-inline-box;
+    display:-ms-inline-flexbox;
+    display:inline-flex;
+}
+
+.divTable {
+    display:flexbox;
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+        -ms-flex-direction:column;
+            flex-direction:column;
+}
+
+.messageErrorLogin
+{
+    color: #ff0000;
+    font-size: 12px;
+    font-weight: bold;
+    font-style: normal;
+}

@@ -1,0 +1,24 @@
+
+
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colFldID":1, 
+	"colFldFileNo":"fldFileNo", 
+	"colFldInspectionID":"fldInspectionID", 
+	"colFldPracticeGroupCd":"fldPracticeGroupCd", 
+	"colFldNoteTextBoxId":1, 
+	"colFldNote":"fldNote", 
+	"colFldCreateBy":"fldCreateBy", 
+	"colFldCreateDateTime":null, 
+	"colFldUpdateBy":"fldUpdateBy", 
+	"colFldUpdateDateTime":null, 
+	"colFldExcludeInXL":null
+}]

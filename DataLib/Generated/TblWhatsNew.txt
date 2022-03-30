@@ -1,0 +1,16 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblWhatsNew --> [tblWhatsNew]
+
+  colId --> [ID] int **PK** identity not null
+  colTitle --> [Title] nvarchar(100) null
+  colPostDate --> [PostDate] date null
+  colComments --> [Comments] nvarchar(255) null
+

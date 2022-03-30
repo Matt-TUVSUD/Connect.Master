@@ -1,0 +1,39 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblMetaSource --> [tblMetaSource]
+
+  colFldId --> [fldId] int **PK** identity not null
+  colFldSchemaName --> [fldSchemaName] nvarchar(10) not null
+  colFldObjectName --> [fldObjectName] nvarchar(255) not null
+  colFldOrderBy --> [fldOrderBy] nvarchar(255) not null
+  colFldJoinFieldName --> [fldJoinFieldName] nvarchar(255) null
+  colFldIsJoinRequired --> [fldIsJoinRequired] bit not null
+  colFldHasCurrencyParm --> [fldHasCurrencyParm] bit not null
+  colFldHasUnitParm --> [fldHasUnitParm] bit not null
+  colFldHasFileNoParm --> [fldHasFileNoParm] bit not null
+  colFldHasFilePrefixParm --> [fldHasFilePrefixParm] bit not null
+  colFldType --> [fldType] int not null
+  colFldHasDivisionParm --> [fldHasDivisionParm] bit not null
+  colFldHasCountryParm --> [fldHasCountryParm] bit not null
+  colFldHasCustomAccessParm --> [fldHasCustomAccessParm] bit not null
+  colFldObjectId --> [fldObjectId] bigint not null
+  colFldParameterFlag --> [fldParameterFlag] int null
+  colFldHasLanguageParm --> [fldHasLanguageParm] bit null
+  colFldHasImpStartDateParm --> [fldHasImpStartDateParm] bit not null
+  colFldHasImpEndDateParm --> [fldHasImpEndDateParm] bit not null
+  colFldHasInspProgramYearParm --> [fldHasInspProgramYearParm] bit not null
+  colFldHasTIVParm --> [fldHasTIVParm] bit not null
+  colFldHasRecStatusParm --> [fldHasRecStatusParm] bit not null
+  colFldHasHazardParm --> [fldHasHazardParm] bit not null
+  colFldHasTIVValueParm --> [fldHasTIVValueParm] bit not null
+  colFldHasAutoRequestParm --> [fldHasAutoRequestParm] bit not null
+  colFldComment --> [fldComment] nvarchar(255) null
+  colFldUniqueFieldName --> [fldUniqueFieldName] nvarchar(50) null
+

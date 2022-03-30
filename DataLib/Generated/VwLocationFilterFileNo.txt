@@ -1,0 +1,14 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: VwLocationFilterFileNo --> [vwLocationFilterFileNo]
+
+  colFileNo --> [FileNo] nvarchar(40) not null
+  colFilePrefix --> [FilePrefix] varchar(50) null
+

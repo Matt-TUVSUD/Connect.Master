@@ -1,0 +1,30 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblMetaGrid --> [tblMetaGrid]
+
+  colFldId --> [fldId] int **PK** identity not null
+  colFldGridName --> [fldGridName] nvarchar(100) not null
+  colFldKeyField --> [fldKeyField] nvarchar(100) null
+  colFldGridPageTitle --> [fldGridPageTitle] nvarchar(255) null
+  colFldGridPageSubTitle --> [fldGridPageSubTitle] nvarchar(255) null
+  colFldGridPractice --> [fldGridPractice] nvarchar(255) null
+  colFldFileName --> [fldFileName] nvarchar(255) null
+  colFldSourceId --> [fldSourceId] int not null
+  colFldReportId --> [fldReportId] int not null
+  colFldFormViewTemplateName --> [fldFormViewTemplateName] nvarchar(155) null
+  colFldInstructions --> [fldInstructions] nvarchar(1000) null
+  colFldLegacyFavoritesGridID --> [fldLegacyFavoritesGridID] int null
+  colFldReport2Id --> [fldReport2Id] int null
+  colFldComment --> [fldComment] nvarchar(255) null
+  colFldFormViewReportId --> [fldFormViewReportId] int null
+  colFldMapShowPinText --> [fldMapShowPinText] bit null
+  colFldMetaPracticeId --> [fldMetaPracticeId] int null
+  colFldExtractHeaderRowHeight --> [fldExtractHeaderRowHeight] numeric(18,0) null
+

@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../../Lib_{{VER}}/JQuery.v1.11.3/jquery-1.11.3.min.js"></script>
+    <script src="../../Lib_{{VER}}/WhatIf/kendo.all.min.js"></script>
+</head>
+<body>
+    <div id="grid">
+</div>
+
+<script>
+    $(function () {
+        $("#grid").kendoGrid({
+            dataSource: {
+                type: "",
+                serverPaging: true,
+                pageSize: 100,
+                transport: {
+                    read: {
+                        url: "http://localhost:65457/service/wi/recs/7c43aa2a5e96424eba93419984ba0f10/",
+                        dataType: "json" // "jsonp" is required for cross-domain requests; use "json" for same-domain requests
+                    }
+                },
+                schema: {
+                    data: "Data",
+                    model: {
+                        fields: {
+                            FileNo: { type: "string" },
+                            Client: { type: "string" },
+                            Division: { type: "string" }
+                        }
+
+                    }
+                }
+            },
+            columns: [
+              { field: "FileNo", title: "File No." },
+              { field: "Client", title: "File No." },
+              { field: "Division", title: "Division" }
+            ],
+            height: 250,
+            selectable: true,
+            scrollable: {
+                virtual: true
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

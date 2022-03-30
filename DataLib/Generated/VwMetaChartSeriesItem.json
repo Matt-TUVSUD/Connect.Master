@@ -1,0 +1,19 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colFldId":1, 
+	"colFldMetaChartId":1, 
+	"colName":"name", 
+	"colField":"field", 
+	"colCategoryField":"categoryField", 
+	"colColorField":"colorField", 
+	"colColor":"color", 
+	"colFldTypeName":"fldTypeName"
+}]

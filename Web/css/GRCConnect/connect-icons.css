@@ -1,0 +1,45 @@
+﻿.iconPin {
+    background-position: -160px -272px;
+}
+.iconUnPin {
+    background-position: -160px -256px;
+}
+
+.iconEarthWhite {
+    position: relative;
+    display: block;
+    float: left;
+    height: 20px;
+    width: 20px;
+    background-image: url('../../Home_{{VER}}/Images/icons/maps/icon_earth_white_32x32.png');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    margin-right: 8px;
+    margin-left: 0px;
+}
+
+.iconArrowLeft {
+    position: relative;
+    display: block;
+    float: left;
+    height: 20px;
+    width: 20px;
+    background-image: url('../../Home_{{VER}}/Images/icons/other/icon_arrow_left_white_32x32.png');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    margin-right: 8px;
+    margin-left: 0px;
+}
+
+.iconPicklistFilter {
+    position: relative;
+    display: block;
+    float: left;
+    height: 20px;
+    width: 20px;
+    background-image: url('../../Home_{{VER}}/Images/icons/other/icon_funnel_white_32x32.png');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    margin-right: 8px;
+    margin-left: 0px;
+}

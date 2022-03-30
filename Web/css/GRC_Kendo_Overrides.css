@@ -1,0 +1,83 @@
+﻿/*BLUE #0046ad*/
+
+.k-window-titlebar {
+    padding: 8px 12px;
+    border-width: 0 0 1px;
+    border-style: solid;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    white-space: nowrap;
+    min-height: 16px;
+    height:40px;
+    background: #0046ad;
+    color: #fff;
+    border-bottom: 1px solid #353537;
+    text-align:center;
+}
+
+
+.k-window {
+    background: #fff;
+}
+
+.k-window-titlebar .k-window-actions {
+    top:0px;
+    border:none !important;
+    color:#ffffff;
+    font-size:25px;
+    padding-top:0px;
+}
+
+.k-window-titlebar .k-window-action {
+    height:auto;
+    width:auto;
+    padding:0px;
+    border:none !important;
+    opacity:1;
+    line-height:15px;
+}
+
+.k-window-titlebar .k-window-action .k-icon{
+    font-size:15px;
+}
+
+.k-window-title {
+    font-size:16px;
+}
+
+.k-window-action.k-state-hover{
+    font-size:20px !important;
+    color:#ffffff !important;
+    background:#0046ad !important;
+}
+
+.k-window-action i {
+    font-size: 25px;
+}
+
+.k-switch-container {
+    background: #fff;
+}
+
+.k-grid-header {
+    background: #0046ad;
+}
+
+.k-grid-header .k-header .k-link .k-icon{
+    display:none;
+}
+
+.gridTopInfoContainer {
+    color:#666;
+}
+
+.k-header .k-link {
+    color: #000;
+}
+
+.k-column-menu .k-header .k-link:hover, 
+.k-column-menu .k-header .k-link:active{
+    background:#0046ad;
+    color:#fff;
+}

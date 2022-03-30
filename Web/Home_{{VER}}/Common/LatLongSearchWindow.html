@@ -1,0 +1,122 @@
+﻿<HTML>
+<head>
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta http-equiv="CACHE-CONTROL" content="NO-STORE" />
+    <meta http-equiv="PRAGMA" content="NO-CACHE" />
+    <meta name="EXPIRES" content="0" />
+    <meta name="VERSION" content="{{VER}}" />
+
+    <!-- OUTDATED STYLES-->
+    
+    <!-- UPDATED STYLES -->
+    <link rel="Stylesheet" type="text/css" href="../../css/Kendo.v2014.1.318/kendo.common.min.css" />
+
+    <!-- ORIGINAL STYLES -->
+    <link rel="Stylesheet" type="text/css" href="../../css/kendo-lightblue-noedit.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/kendo-lightblue-grid.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/kendo-lightblue-menu.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/global.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/gauge.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/topbanner.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/windows.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/icons.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadFileExplorer.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadFileExplorerOffice2010Silver.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadWindow.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadWindowOffice2010Blue.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/EDA/cssgrid.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/EDA/eda.css" />
+
+    <!-- OUTDATED JAVASCRIPT -->
+
+    <!-- UPDATED JAVASCRIPT -->
+    <!--<script src="../../Lib_{{VER}}/JQuery.v1.11.3/jquery-1.11.3.min.js" type="text/javascript"></script>-->
+    <script src="../../Lib_{{VER}}/JQuery/jQuery.3.4.1.min.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Knockout.v3.3.0/knockout-3.3.0.js" type="text/javascript"></script>
+    <!--<script src="../../Lib_{{VER}}/KendoUI.v2014.1.416/kendo.web.min.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/KendoUI.v2014.1.416/kendo.all.min.js" type="text/javascript"></script>-->
+    <!--<script src="../../Lib_{{VER}}/kendo.web.min.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/kendo.all.min.js" type="text/javascript"></script>-->
+    <script src="../../Lib_{{VER}}/kendo.all.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/knockoutkendo.v0.9.3/knockout-kendo.min.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/JQuery.hoverIntent.v1.8.0/jquery.hoverIntent.minified.js"></script>
+
+    <!-- ORIGINAL JAVASCRIPT -->
+    <script src="../../Lib_{{VER}}/JQuery/jquery.cookie.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/JQuery/cache-controller_{{VER}}.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/global.js"></script>
+    <script src="../../Lib_{{VER}}/json/json2.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/ES/entityspaces.XHR.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/GSafeDetail.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/GSafeDetail.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/GSafeHeader.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/GSafeHeader.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/NavLink.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Config/baseurl.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Session/sessvars.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/util_{{VER}}.js" type="text/javascript"></script>
+    <!--<script src="../../Lib_{{VER}}/pages/gauge.js" type="text/javascript"></script>-->
+    <script src="../../Lib_{{VER}}/pages/topbanner.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/nav.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/export.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/searchLatLong.js" type="text/javascript"></script>
+</head>
+<body style="font-size: 9pt;">
+    <div id="windowLatLong" class="windowContent" style="display: inline-block;"> <!-- COMMENTS WINDOW -->
+    <!--<div id="windowLatLong" class="windowContent" style="display: inline-block; width: 560px; height: 400px;"> -->
+        <div class="windowLatLong_Instructions" style="text-align: justify;">
+            This tool allows you to enter a specific Latitude/Longitude point of interest, then select the desired measurement in miles (m), nautical miles (nm) or kilometers (km), enter the distance and then click <b>Compute</b>. The search will return a list of your active facilities in the TUV SUD GRC system, regardless of inspection schedule. Once the calculation is complete and the grid of facilities is created, you can extract that listing or go to the Map View. 
+	    </div>
+	    <br />
+        <div class="windowLatLong_Instructions" style="text-align: justify;">
+		    <b>Signed degrees format (DDD.dddd) -</b> A latitude or longitude with 8 decimal places pinpoints a location to within 1 millimeter,( 1/16 inch).  Precede South latitudes and West longitudes with a minus sign.  Latitudes range from -90 to 90.  Longitudes range from -180 to 180.
+	    </div>
+	    <br />
+	    <div id="windowLatLong_InputHeader" style="text-align: center;" class="messageNoticeNoBold">
+		    <b>Enter the Latitude and Longitude for your Point of Interest</b>
+	    </div>
+        <br />
+	    <div id="windowLatLong_LatLongContainers" style="text-align: center; margin: auto;">
+		    <span id="windowLatLong_LatColumn" style="width: 90px; display: inline-block;">
+				<b>Latitude</b>
+		    </span>
+            &nbsp;<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+		    <span id="windowLatLong_LongColumn" style="width: 90px; display: inline-block;">
+				<b>Longitude</b>
+		    </span>
+	    </div>
+	    <div id="windowLatLong_LatLongInputContainers" style="text-align: center;">
+		    <span id="windowLatLong_LatColumnInput">
+			    <input id="windowLatLong_LatInput" class="k-autocomplete k-input inputNoEdit numericOnly"  style="width: 90px; padding-left: 3px;" />
+		    </span>
+            &nbsp;<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+		    <span id="windowLatLong_LongColumnInput">
+			    <input id="windowLatLong_LongInput" class="k-autocomplete k-input inputNoEdit numericOnly" style="width: 90px; padding-left: 3px;" />
+		    </span>
+	    </div>
+        <br />
+	    <div id="windowLatLong_UnitsDistanceContainer" style="text-align: center;">
+		    <div id="windowLatLong_UnitsDistanceLabel">
+			    <b>Choose Units and Distance</b>
+		    </div>
+		    <input id="windowLatLong_UnitInput" class="inputNoEdit recInputRec" style="text-align: left !important; font-size: 8.1pt !important;" />
+		    <input id="windowLatLong_DistanceInput" class="k-autocomplete k-input inputNoEdit numericOnly" style="width: 75px; padding-left: 3px;" />
+	    </div>
+	    <br />
+	    <div id="windowLatLong_NameYourSearchContainer" style="text-align: center;">
+		    <div id="windowLatLong_NameYourSearchLabel">
+			    <b>Name Your Search</b> (optional)
+		    </div>
+		    <input id="windowLatLong_NameYourSearchInput" class="k-autocomplete k-input inputNoEdit"  style="width: 215px; padding-left: 3px;" />
+	    </div>
+	    <br />
+        <div style="text-align: center;">
+            <button class="k-button k-button-padding" style="min-width: 90px;" id="btnCompute" onclick="onComputeClick()">Compute</button>
+            &nbsp;<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+            <button class="k-button k-button-padding" style="min-width: 90px;" id="btnReset" onclick="onResetClick()">Reset</button>
+        </div>
+    </div>
+</body>
+</HTML>    

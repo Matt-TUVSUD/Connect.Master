@@ -1,0 +1,30 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: VwReclassificationAccount --> [vwReclassificationAccount]
+
+  colLoginID --> [LoginID] int null
+  colFileprefix --> [fileprefix] varchar(50) not null
+  colClientname --> [clientname] varchar(150) null
+  colServiceLeaderName --> [ServiceLeaderName] nvarchar(201) null
+  colServiceLeaderEmailAddress --> [ServiceLeaderEmailAddress] varchar(255) null
+  colAsicontactname --> [asicontactname] nvarchar(50) null
+  colConnectemail --> [connectemail] nvarchar(150) null
+  colContractFrom --> [ContractFrom] datetime null
+  colMonthOrdinal --> [MonthOrdinal] int null
+  colReclassificationemailsentdate --> [reclassificationemailsentdate] datetime null
+  colReclassificationemailfollowupdate --> [reclassificationemailfollowupdate] datetime null
+  colReclassificationlinkguid --> [reclassificationlinkguid] nvarchar(100) null
+  colReclassificationcompletiondate --> [reclassificationcompletiondate] datetime null
+  colTodaysDate --> [TodaysDate] date null
+  colDateToSend1stRequestEmail --> [DateToSend1stRequestEmail] datetime null
+  colDateToSend2ndRequestEmail --> [DateToSend2ndRequestEmail] datetime null
+  colSend1stRequestEmail --> [Send1stRequestEmail] bit null
+  colSend2ndRequestEmail --> [Send2ndRequestEmail] bit null
+

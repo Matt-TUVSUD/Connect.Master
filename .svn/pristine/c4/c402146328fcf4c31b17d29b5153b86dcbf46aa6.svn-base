@@ -1,0 +1,1 @@
+﻿The scripts folder was added to the GRC.Connect project for JS intellisense.  Do not add JS scripts to this folder.

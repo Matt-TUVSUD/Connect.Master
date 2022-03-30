@@ -1,0 +1,18 @@
+
+
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblWhatIfFireRecSelected --> [TblWhatIfFireRecSelected]
+
+  colFldGSafeID --> [fldGSafeID] int **PK** not null
+  colFldRecID --> [fldRecID] int **PK** not null
+  colFldFilePrefix --> [fldFilePrefix] nvarchar(10) **PK** not null
+  colFldCreateDateTime --> [fldCreateDateTime] datetime not null
+

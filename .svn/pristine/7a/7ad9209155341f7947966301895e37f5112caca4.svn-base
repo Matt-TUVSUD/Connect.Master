@@ -1,0 +1,18 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colRptCode":1, 
+	"colEnumValue":1, 
+	"colFldName":"fldName", 
+	"colFldFieldName":"fldFieldName", 
+	"colFldAllowWildcardValue":null, 
+	"colFldParameterKindId":1, 
+	"colParameterKindName":"ParameterKindName"
+}]

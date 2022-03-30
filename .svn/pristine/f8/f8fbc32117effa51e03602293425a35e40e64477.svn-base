@@ -1,0 +1,49 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblMetaGridColumn --> [tblMetaGridColumn]
+
+  colFldId --> [fldId] int **PK** identity not null
+  colFldMetaGridId --> [fldMetaGridId] int not null
+  colFldNotes --> [fldNotes] nvarchar(500) null
+  colType --> [type] int null
+  colEncoded --> [encoded] bit null
+  colField --> [field] nvarchar(100) null
+  colTitle --> [title] nvarchar(255) null
+  colWidth --> [width] int null
+  colHidden --> [hidden] bit null
+  colFilterable --> [filterable] bit null
+  colSortable --> [sortable] bit null
+  colGroupable --> [groupable] bit null
+  colLocked --> [locked] bit null
+  colLockable --> [lockable] bit null
+  colInclude --> [include] bit null
+  colFormat --> [format] nvarchar(MAX) null
+  colMenu --> [menu] bit null
+  colTemplate --> [template] nvarchar(MAX) null
+  colEditable --> [editable] bit null
+  colEditor --> [editor] nvarchar(MAX) null
+  colNullable --> [nullable] bit null
+  colFooterTemplate --> [footerTemplate] nvarchar(MAX) null
+  colHeaderAttributes --> [headerAttributes] int null
+  colIndexOrder --> [IndexOrder] int null
+  colSrcField --> [SrcField] nvarchar(100) null
+  colSrcTable --> [SrcTable] nvarchar(100) null
+  colKeyField --> [KeyField] nvarchar(100) null
+  colFldFieldNameBackColor --> [fldFieldNameBackColor] nvarchar(100) null
+  colFldCustomFeature --> [fldCustomFeature] nvarchar(10) null
+  colFldExcludeFromExtract --> [fldExcludeFromExtract] bit null
+  colFldMapTitleHtmlSnippet --> [fldMapTitleHtmlSnippet] nvarchar(255) null
+  colFldMapPinIconSqlSnippet --> [fldMapPinIconSqlSnippet] nvarchar(255) null
+  colFldMapDefaultDepicted --> [fldMapDefaultDepicted] bit null
+  colFldMapIsDepictable --> [fldMapIsDepictable] bit null
+  colFldMapIsPicklistable --> [fldMapIsPicklistable] bit null
+  colFldColumnDescription --> [fldColumnDescription] nvarchar(255) null
+  colFldExtractWrapText --> [fldExtractWrapText] bit null
+

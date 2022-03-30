@@ -1,0 +1,29 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colLoginID":1, 
+	"colFileprefix":"fileprefix", 
+	"colClientname":"clientname", 
+	"colServiceLeaderName":"ServiceLeaderName", 
+	"colServiceLeaderEmailAddress":"ServiceLeaderEmailAddress", 
+	"colAsicontactname":"asicontactname", 
+	"colConnectemail":"connectemail", 
+	"colContractFrom":null, 
+	"colMonthOrdinal":1, 
+	"colReclassificationemailsentdate":null, 
+	"colReclassificationemailfollowupdate":null, 
+	"colReclassificationlinkguid":"reclassificationlinkguid", 
+	"colReclassificationcompletiondate":null, 
+	"colTodaysDate":null, 
+	"colDateToSend1stRequestEmail":null, 
+	"colDateToSend2ndRequestEmail":null, 
+	"colSend1stRequestEmail":null, 
+	"colSend2ndRequestEmail":null
+}]

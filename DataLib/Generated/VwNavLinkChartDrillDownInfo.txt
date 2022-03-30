@@ -1,0 +1,18 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: VwNavLinkChartDrillDownInfo --> [vwNavLinkChartDrillDownInfo]
+
+  colFldParentNavLinkId --> [fldParentNavLinkId] int null
+  colFldParentChartId --> [fldParentChartId] int not null
+  colFldChartDrillDownId --> [fldChartDrillDownId] int null
+  colFldReportId --> [fldReportId] int null
+  colFldUrlBase --> [fldUrlBase] varchar(20) not null
+  colFldUrlParms --> [fldUrlParms] varchar(168) null
+

@@ -1,0 +1,18 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblEzyLoginactivitylog --> [ezy_LoginActivityLog]
+
+  colId --> [ID] int **PK** identity not null
+  colLoginID --> [LoginID] int null
+  colLastLoginDateTime --> [LastLoginDateTime] datetime null
+  colLastActivityDateTime --> [LastActivityDateTime] datetime null
+  colFilePrefix --> [FilePrefix] nvarchar(10) null
+  colUserLogout --> [UserLogout] bit null
+

@@ -1,0 +1,15 @@
+﻿<div class="bottomBanner_Container">
+    <div class="masterBottomBannerElasticBlue">
+        <div class="bottomBanner_Container_Elastic_Blue" id="divBottomBannerNonAdmin">
+            <div class="bottomBanner_Left_Elastic_Blue" style=""></div>
+            <!--<div class="bottomBanner_Right_Elastic_Blue" style=""><a onclick="setCurrentTab(utilConstants.pageId_LogOut, utilConstants.pageId_Gauge)" href="#">Logout</a></div>-->
+            <div class="bottomBanner_Middle_Elastic_Blue" style=""><span class="bottomBanner_Text">Global Risk Consultants Corp.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="bottomBanner_Link"><a href="mailto:grc-ClientDBA@tuvsud.com">Email Us</a></span></div>
+        </div>
+    </div>
+</div>
+
+ <!--<img src="../images/bottombanner/bottombanner_english_noLogout.png" alt="Bottom Banner" usemap="#bottombannermap" style="width: 987px; border: 0px;" />
+        <map name="bottombannermap" id="bottombannermap">
+            <!--<area id="bottombannercontact" coords="555,0,625,19" shape="rect" alt="Email Us" onmouseup="setCurrentTab(utilConstants.pageId_ContactUs, utilConstants.pageId_Gauge)" href="#" />
+            <area id="bottombannercontact" coords="555,0,625,19" shape="rect" alt="Email Us" onmouseup="" href="mailto:grc-ClientDBA@tuvsud.com" />
+        </map>-->

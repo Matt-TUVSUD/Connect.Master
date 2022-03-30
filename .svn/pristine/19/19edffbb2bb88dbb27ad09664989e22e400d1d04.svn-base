@@ -1,0 +1,317 @@
+﻿<!-- FOR KENDO GRID ROW DETAIL TEMPLATES -->
+<!-- CELL DATA REPLACERS USE #= NameOfField # -->
+<!-- AVOID USING # AS A CHARACTER IN THE TEMPLATE -->
+<!-- IF USING A CLASS LOOKUP TO THE GRID, MAKE SURE THAT CLASS IS IN THE COLUMN TEMPLATE -->
+<!-- SCRIPTS INCLUDED HERE GET RUN EVERY TIME THE DETAIL POPUP IS OPENED -->
+<!-- WHEN COPIED TO THE DATABASE, THE HTML AND JS MUST BE ALL IN ONE LINE -->
+<!-- DO NOT USE DOUBLE QUOTES IN JS OR HTML -->
+<!-- DO NOT USE COMMENTS IN JS, ALL ONE LINE COMMENTS WILL NOT RUN CODE -->
+
+<!-- FormViewNameOfGrid LAYOUT -->
+<div id='divDetailForm_#= uid #' class='divDetailForm'>
+    
+<div class='LDHead'>
+        Location Detail</div>
+    <!--Row 1-->
+    <div class='LDInfo'>
+        <div>
+            <span id='lblFileNo'>File No.</span>
+            <input id='fileno' readonly='readonly' type='text' value='#= fileno #' />
+            <span id='lblClientLocID'>Client Loc. ID</span>
+            <input id='clientlocno' readonly='readonly' type='text' value='#= clientlocno #' />
+        </div>
+        <!--Row 2-->
+        <div>
+            <span id='lblAddress'>Address</span>
+            <input id='address' readonly='readonly' type='text' value='#= address #' />
+            <span id='lblCity'>City</span>
+            <input id='city' readonly='readonly' type='text' value='#= city #' />
+            <span id='lblStProv'>St/Prov</span>
+            <input id='stprov' readonly='readonly' type='text' value='#= stprov #' />
+            <span id='lblCountry'>Country</span>
+            <input id='country' readonly='readonly' type='text' value='#= country #' />
+        </div>
+        <!--Row 3-->
+        <div>
+            <span id='lblDivision'>Division</span>
+            <input id='division' readonly='readonly' type='text' value='#= division #' />
+            <span id='lblFacility'>Facility</span>
+            <input id='facility' readonly='readonly' type='text' value='#= facility #' />
+        </div>
+    </div>
+    <div class='FVTIV'>
+        <div id='lblTIV'>TIV</div>
+        <div>(millions)</div>
+        <div>
+            <input id='TIV' readonly='readonly' type='text' />
+        </div>
+    </div>
+    <div class='FVTIV'>
+        <div>Date Of</div>
+        <div>Inspection</div>
+        <div>
+            <input id='SurveyDateString' readonly='readonly' type='text' value='#= SurveyDateString #' />
+        </div>
+    </div>
+    <div class='FVTable'>
+        <table cellspacing='0' cellpadding='2'>
+            <tr class='th'>
+                <td colspan='5' class='rb'>
+                    Valves
+                </td>
+                <td colspan='4' class='rb'>
+                    Sprinkler Heads
+                </td>
+                <td colspan='7' class='rb'>
+                    Annual Test Verification
+                </td>
+                <td colspan='7' class='b'>
+                    Other
+                </td>
+            </tr>
+            <tr class='tch'>
+                <td class='rb'>
+                    No.
+                </td>
+                <td class='rb'>
+                    All Open
+                </td>
+                <td class='rb'>
+                    Locked
+                </td>
+                <td class='rb'>
+                    Labeled
+                </td>
+                <td class='hrb'>
+                    Insp<br />
+                    Monthly
+                </td>
+                <td class='rb'>
+                    Box<br />
+                    Monthly
+                </td>
+                <td class='rb'>
+                    Spare Heads<br />
+                    Avail.
+                </td>
+                <td class='rb'>
+                    Wrench in<br />
+                    Box
+                </td>
+                <td class='hrb'>
+                    Correct<br />
+                    Heads Prov'd
+                </td>
+                <td class='rb'>
+                    2in. Drain
+                </td>
+                <td class='rb'>
+                    Dry Pipe<br />
+                    Valve
+                </td>
+                <td class='rb'>
+                    Fire Pump
+                </td>
+                <td class='rb'>
+                    Antifreeze<br />
+                    System(s)
+                </td>
+                <td class='rb'>
+                    Valve Tamper
+                </td>
+                <td class='rb'>
+                    Water Flow
+                </td>
+                <td class='hrb'>
+                    DS Low Air
+                </td>
+                <td class='rb'>
+                    Imp. Proc.<br />
+                    Observed
+                </td>
+                <td class='rb'>
+                    Caps on FD<br />
+                    Conn.
+                </td>
+                <td class='rb'>
+                    Fire Suppr.<br />
+                    Sys.<br />
+                    Servicing
+                </td>
+                <td class='rb'>
+                    Blow-off<br />
+                    Caps
+                </td>
+                <td class='rb'>
+                    Manual<br />
+                    Release<br />
+                    Accessible
+                </td>
+                <td class='rb'>
+                    Min. 18in<br />
+                    Clearance
+                </td>
+                <td class='b'>
+                    Alarm Zones<br />
+                    Posted
+                </td>
+            </tr>
+            <tr class='tch'>
+                <td class='r'>
+                    <input style='width: 20px' id='noofvalves' readonly='readonly' type='text' value='#= noofvalves #' />
+                </td>
+                <td class='r'>
+                    <input style='width: 30px' id='allvalvesopen' readonly='readonly' type='text' value='#= allvalvesopen #' />
+                    <input id='AllValvesOpenC' readonly='readonly' type='text' value='#= AllValvesOpenC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 30px' id='valveslocked' readonly='readonly' type='text' value='#= valveslocked #' />
+                    <input id='ValvesLockedC' readonly='readonly' type='text' value='#= ValvesLockedC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 30px' id='valveslabeled' readonly='readonly' type='text' value='#= valveslabeled #' />
+                    <input id='ValvesLabeledC' readonly='readonly' type='text' value='#= ValvesLabeledC #' class='hidden' />
+                </td>
+                <td class='hr'>
+                    <input style='width: 30px' id='valvesinspmonthly' readonly='readonly' type='text' value='#= valvesinspmonthly #' />
+                    <input id='ValvesInspMonthlyC' readonly='readonly' type='text' value='#= ValvesInspMonthlyC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 30px' id='ssheadboxmonthly' readonly='readonly' type='text' value='#= ssheadboxmonthly #' />
+                    <input id='SSHeadBoxMonthlyC' readonly='readonly' type='text' value='#= SSHeadBoxMonthlyC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 30px' id='ssheadsavail' readonly='readonly' type='text' value='#= ssheadsavail #' />
+                    <input id='SSHeadsAvailC' readonly='readonly' type='text' value='#= SSHeadsAvailC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 30px' id='ssheadwrenchinbox' readonly='readonly' type='text' value='#= ssheadwrenchinbox #' />
+                    <input id='SSHeadWrenchInBoxC' readonly='readonly' type='text' value='#= SSHeadWrenchInBoxC #' class='hidden' />
+                </td>
+                <td class='hr'>
+                    <input style='width: 30px' id='correctheadsprovided' readonly='readonly' type='text' value='#= correctheadsprovided #' />
+                    <input id='CorrectHeadsProvidedC' readonly='readonly' type='text' value='#= CorrectHeadsProvidedC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 30px' id='atv2indrain' readonly='readonly' type='text' value='#= atv2indrain #' />
+                    <input id='ATV2inDrainC' readonly='readonly' type='text' value='#= ATV2inDrainC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 30px' id='atvdrypipevalve' readonly='readonly' type='text' value='#= atvdrypipevalve #' />
+                    <input id='ATVDryPipeValveC' readonly='readonly' type='text' value='#= ATVDryPipeValveC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 30px' id='atvfirepump' readonly='readonly' type='text' value='#= atvfirepump #' />
+                    <input id='ATVFirePumpC' readonly='readonly' type='text' value='#= ATVFirePumpC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 30px' id='atvantifreeze' readonly='readonly' type='text' value='#= atvantifreeze #' />
+                    <input id='ATVAntifreezeC' readonly='readonly' type='text' value='#= ATVAntifreezeC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 30px' id='atvvalvetamper' readonly='readonly' type='text' value='#= atvvalvetamper #' />
+                    <input id='ATVValveTamperC' readonly='readonly' type='text' value='#= ATVValveTamperC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 30px' id='atvwaterflow' readonly='readonly' type='text' value='#= atvwaterflow #' />
+                    <input id='ATVWaterFlowC' readonly='readonly' type='text' value='#= ATVWaterFlowC #' class='hidden' />
+                </td>
+                <td class='hr'>
+                    <input style='width: 30px' id='atvdrysyslowair' readonly='readonly' type='text' value='#= atvdrysyslowair #' />
+                    <input id='ATVDrySysLowAirC' readonly='readonly' type='text' value='#= ATVDrySysLowAirC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 30px' id='impprocobserved' readonly='readonly' type='text' value='#= impprocobserved #' />
+                    <input id='ImpProcObservedC' readonly='readonly' type='text' value='#= ImpProcObservedC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 30px' id='nomissingcapsfdc' readonly='readonly' type='text' value='#= nomissingcapsfdc #' />
+                    <input id='NoMissingCapsFDCC' readonly='readonly' type='text' value='#= NoMissingCapsFDCC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 30px' id='firesupsysover' readonly='readonly' type='text' value='#= firesupsysover #' />
+                    <input id='FireSupSysOverC' readonly='readonly' type='text' value='#= FireSupSysOverC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 30px' id='blowoffcaps' readonly='readonly' type='text' value='#= blowoffcaps #' />
+                    <input id='BlowOffCapsC' readonly='readonly' type='text' value='#= BlowOffCapsC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 30px' id='manualrelease' readonly='readonly' type='text' value='#= manualrelease #' />
+                    <input id='ManualReleaseC' readonly='readonly' type='text' value='#= ManualReleaseC #' class='hidden' />
+                </td>
+                <td class='r'>
+                    <input style='width: 30px' id='min18clearance' readonly='readonly' type='text' value='#= min18clearance #' />
+                    <input id='Min18ClearanceC' readonly='readonly' type='text' value='#= Min18ClearanceC #' class='hidden' />
+                </td>
+                <td class='outside-bottom-right'>
+                    <input style='width: 30px' id='firealarmzoneposted' readonly='readonly' type='text' value='#= firealarmzoneposted #' />
+                    <input id='FireAlarmZonePostedC' readonly='readonly' type='text' value='#= FireAlarmZonePostedC #' class='hidden' />
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <br />
+
+    <div class='tableDiv'>
+        <div style='margin: auto; width: 100%; text-align: center;'>
+            <span style='margin: auto; width: 100%; text-align: center;'><button class='k-button' onclick='globalCloseFormView(); return false;'>Close</button></span>
+        </div>
+    </div>
+</div>
+<script>
+    /*LOAD THE CSS*/
+    var zLink = "<link rel='stylesheet' type='text/css' href='../../../css/FormView/FormView.css'>";
+    $(zLink).appendTo('head');
+
+    setTimeout(function () {
+        var zUID = '#= uid #';
+
+        /* COLOR REPLACEMENTS REMIX*/
+        var colorItems = [
+			'allvalvesopen',
+			'valveslocked',
+			'valveslabeled',
+			'valvesinspmonthly',
+			'ssheadboxmonthly',
+			'ssheadsavail',
+			'ssheadwrenchinbox',
+			'correctheadsprovided',
+			'atv2indrain',
+			'atvdrypipevalve',
+			'atvfirepump',
+			'atvantifreeze',
+			'atvvalvetamper',
+			'atvwaterflow',
+			'atvdrysyslowair',
+			'impprocobserved',
+			'nomissingcapsfdc',
+			'firesupsysover',
+			'blowoffcaps',
+			'manualrelease',
+			'min18clearance',
+			'firealarmzoneposted'
+        ];
+        for (i = 0; i < colorItems.length; i++){
+            var zColor = 'transparent';
+            zColor = $('[data-uid=' + zUID + '] .' + colorItems[i] + 'Color').css('background-color');
+            $('\\#divDetailForm_' + zUID + ' \\#' + colorItems[i] + '').css('background-color', zColor);
+        }
+
+        /* FORMAT DATES GLOBAL REMIX */
+        $('\\#divDetailForm_' + zUID + ' input').each(function(){
+            if( $(this).attr('id').toLowerCase().indexOf('date') > -1 ){
+                $(this).val(global.formatShortDateWithMonth($(this).val()));
+            }
+        });
+
+        /* REMOVE NULLS GLOBAL REMIX */
+        $('\\#divDetailForm_' + zUID + ' input').each(function(){
+            if( ($(this).val() == 'null') || ($(this).val() == 'undefined') ){
+                $(this).val('');
+            }
+        });
+
+    }, 50);
+</script>

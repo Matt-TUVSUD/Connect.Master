@@ -1,0 +1,78 @@
+﻿.tabLocDetails {
+    min-height: 304px;
+    z-index: 2; 
+    position: relative;
+}
+
+.tabLocDetailsLoading {
+    text-align: center;
+    padding-top: 50px;
+    font-size: 12pt;
+}
+
+.tabLocDetailBackground {
+    z-index: 1;
+    background-color: white;
+    position: absolute;
+    width: 830px;
+    height: 460px;
+    margin-left: 4px;
+    margin-top: 39px;
+}
+
+.tabLocDetailsContainer {
+    margin-top: -6px;
+    padding-top: 12px;
+}
+
+.tabLocDetailsContainerInside {
+    z-index: 0;
+    display: none;
+    min-height: 503px;
+    margin-top: 0px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 2px;
+    padding-left: 2px;
+    border-radius: 6px 6px 6px 6px;
+    -moz-border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    background-color: #0046ad;
+}
+
+#tabLocDetailsContainer .k-tabstrip,
+#tabLocDetailsContainer .k-tabstrip-items  {
+    background-color: transparent; /*#1961AD;*/
+}
+
+#tabLocDetailsContainer .k-reset {
+    margin-left: 1px;
+}
+
+#tabLocDetailsContainer .k-content {
+}
+
+#tabLocDetailsContainer .k-item.k-state-default,
+#tabLocDetailsContainer .k-item.k-state-default > .k-link {
+    color: #FFFFFF !important;
+    background-color: #0046ad !important;
+    font-size: 11pt;
+    border-color: #FFFFFF;
+}
+
+#tabLocDetailsContainer .k-item.k-state-active,
+#tabLocDetailsContainer .k-item.k-state-active > .k-link {
+    color: #000000 !important;
+    background-color: #FFFFFF !important;
+    font-size: 11pt;
+    border-color: #FFFFFF;
+}
+
+
+#tabLocDetailsContainer .k-item.k-state-hover,
+#tabLocDetailsContainer .k-item.k-state-hover > .k-link {
+    color: #FFFFFF !important;
+    background-color: #002968 !important;
+    font-size: 11pt;
+    border-color: #FFFFFF;
+}

@@ -1,0 +1,20 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblSystemAppEntry --> [tblSystemAppEntry]
+
+  colFldID --> [fldID] int **PK** identity not null
+  colFldGuid --> [fldGuid] nvarchar(50) not null
+  colFldUserName --> [fldUserName] nvarchar(100) not null
+  colFldUserEmail --> [fldUserEmail] nvarchar(100) not null
+  colFldEntrySource --> [fldEntrySource] nvarchar(50) not null
+  colFldEntryDateTime --> [fldEntryDateTime] nvarchar(50) not null
+  colFldForeignKeyID --> [fldForeignKeyID] int not null
+  colFldForeignTableName --> [fldForeignTableName] nvarchar(50) not null
+

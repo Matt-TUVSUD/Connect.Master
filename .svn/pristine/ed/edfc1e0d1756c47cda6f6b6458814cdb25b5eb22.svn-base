@@ -1,0 +1,32 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colFldIndexId":1, 
+	"colFldIndexName":"fldIndexName", 
+	"colFldStatus":"fldStatus", 
+	"colFldEnabled":null, 
+	"colFldLastIndexDate":null, 
+	"colFldLastContentUpdateDate":null, 
+	"colFldStartDirectory":"fldStartDirectory", 
+	"colFldSpiderURL":"fldSpiderURL", 
+	"colFldBaseURL":"fldBaseURL", 
+	"colFldOutputDirectory":"fldOutputDirectory", 
+	"colFldTemplateFilename":"fldTemplateFilename", 
+	"colFldFilePrefix":"fldFilePrefix", 
+	"colFldStartJobTime":null, 
+	"colFldEndJobTime":null, 
+	"colFldLastPollTime":null, 
+	"colFldHasContent":null, 
+	"colFldTnEInactiveFlag":1, 
+	"colFldIndexMode":"fldIndexMode", 
+	"colFldLastIndexLapseMin":null, 
+	"colFldIndexGUID":"fldIndexGUID", 
+	"colFldCldbName":"fldCldbName"
+}]

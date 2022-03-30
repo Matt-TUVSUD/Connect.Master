@@ -1,0 +1,734 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/ClientConnectForm.master" AutoEventWireup="false" CodeBehind="GridMasterPage.master.vb" Inherits="GRC.Connect.Web.Grids_GridMasterPage" %>
+
+<%@ Register Src="~/Home_{{VER}}/Controls/RevisionStampControl.ascx" TagName="RevisionStampControl" TagPrefix="grcRSC" %>
+<%@ Register Src="~/Home_{{VER}}/Controls/Header.ascx" TagName="Header" TagPrefix="grcRSC" %>
+<%@ Register Src="~/Home_{{VER}}/Controls/LeftNav.ascx" TagName="LeftNav" TagPrefix="grcRSC" %>
+<%@ Register Src="~/Home_{{VER}}/Controls/Footer.ascx" TagName="Footer" TagPrefix="grcRSC" %>
+
+<asp:Content ID="HeadContent" ContentPlaceHolderID="ClientConnectFormHead" runat="Server">
+
+    <meta charset="utf-8" />
+    <meta http-equiv="CACHE-CONTROL" content="NO-STORE" />
+    <meta http-equiv="PRAGMA" content="NO-CACHE" />
+    <meta name="EXPIRES" content="0" />
+    <meta name="VERSION" content="{{VER}}" />
+    <title>TUV SUD GRC Connect Grid</title>
+
+    <link rel="Stylesheet" type="text/css" href="../../../css/Kendo.v2014.1.318/kendo.common.min.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/kendo.common.min.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/kendo-lightblue-noedit.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/kendo-lightblue-menu.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/kendo-lightblue-grid.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/Kendo.v2014.1.318/kendo.grid.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/GRCConnect/connect-grid.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/GRCConnect/connect-icons.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/pages/global.css" />
+    <%--<link rel="Stylesheet" type="text/css" href="../../../css/pages/icons.css" />--%>
+    <link rel="Stylesheet" type="text/css" href="../../../css/pages/windows.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/EDA/eda.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/EDA/cssgrid.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/pages/mapping.css" />
+
+    <link rel="stylesheet" type="text/css" href="../../../css/Utilities/Loader.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/GRC_Kendo_Overrides.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/Utilities/utilities.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/Header/header.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/Nav/nav.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/pages/mainPageBody.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/Footer/footer.css" />
+    <link rel="Stylesheet" type="text/css" href="../../../css/Font-Awesome/all.css" />
+
+    <script src="../../../Lib_{{VER}}/JQuery/jQuery.3.4.1.min.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/Knockout.v3.3.0/knockout-3.3.0.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/kendo.all-2019.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/KendoUI.v2014.1.416/kendo.grc.grid.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/knockoutkendo.v0.9.3/knockout-kendo.min.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/pages/global.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/JQuery/jquery.cookie.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/JQuery/cache-controller_{{VER}}.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/json/json2.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/ES/entityspaces.XHR.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/Config/baseurl.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/Generated/GSafeDetail.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/Custom/GSafeDetail.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/Generated/GSafeHeader.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/Custom/GSafeHeader.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/Generated/NavLink.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/Session/sessvars.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/pages/constants.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/pages/util_{{VER}}.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/pages/topbanner.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.5.6/numeral.min.js"></script>
+    <script src="../../../Lib_{{VER}}/Footer/footer.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/header/header.js" type="text/javascript"></script>
+    <script src="../../../Lib_{{VER}}/Nav/Navigation.js" type="text/javascript"></script>
+
+    <script>
+        var gCurrencyIdFromPrefilter = "<%=ServerSide_CurrencyIdFromPrefilter%>";
+        var gServerSide_BingMapKey = "<%=ServerSide_BingMapKey%>";
+        var ServerSide_GridId = "<%=ServerSide_GridId%>";
+    </script>
+
+    <%-- BING MAPS JAVASCRIPT --%>
+    <script src="../../../Lib_{{VER}}/Mapping/bluebird.v3.5.0.min.js"></script>
+    <script charset="UTF-8" type="text/javascript" src="https://www.bing.com/api/maps/mapcontrol"></script>
+    <script src="../../../Lib_{{VER}}/Mapping/bingLT.v8.0.2.min.js"></script>
+    <script src="../../../Lib_{{VER}}/Mapping/bingMapUtil.v8.0.2.js"></script>
+    <script src="../../../Lib_{{VER}}/Mapping/Standard.js"></script>
+    <script src="../../../Lib_{{VER}}/Picklist/Picklist_v2015.04.09.js"></script>
+
+
+    <asp:ContentPlaceHolder ID="GridHeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style>
+        body {
+            width: 100%;
+        }
+
+    </style>
+
+</asp:Content>
+<asp:Content ID="ClientConnectTestBodyContent" ContentPlaceHolderID="ClientConnectFormBody" runat="server">
+    <form id="form1" runat="server">
+        <telerik:RadStyleSheetManager ID="RadStyleSheetManager1" runat="server">
+            <StyleSheets>
+                <telerik:StyleSheetReference Path="../../../css/Telerik/RadFileExplorer.css" />
+                <telerik:StyleSheetReference Path="../../../css/Telerik/RadFileExplorerOffice2010Silver.css" />
+                <telerik:StyleSheetReference Path="../../../css/Telerik/RadWindow.css" />
+                <telerik:StyleSheetReference Path="../../../css/Telerik/RadWindowOffice2010Blue.css" />
+            </StyleSheets>
+        </telerik:RadStyleSheetManager>
+        <telerik:RadWindowManager
+            ID="RadWindowManager1"
+            runat="server"
+            Title="Your Request Is Being Processed"
+            Behaviors="Close"
+            VisibleStatusbar="False"
+            Skin="Office2010Blue"
+            IconUrl="../../../Home_{{VER}}/Images/icons/reports/chart_column_16x16.png"
+            ReloadOnShow="True">
+            <Windows>
+                <telerik:RadWindow
+                    Title="Select A Prefilter"
+                    ID="RadWindow1"
+                    runat="server"
+                    Left="350px"
+                    Top="225px"
+                    Width="395px"
+                    Height="300px"
+                    Behaviours="Close"
+                    Modal="true">
+                </telerik:RadWindow>
+            </Windows>
+        </telerik:RadWindowManager>
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <asp:HiddenField ID="HiddenField1" runat="server" />
+        <asp:HiddenField ID="HiddenPracticeID" runat="server" />
+
+
+        <!--HEADER-->
+        <header>
+            <grcRSC:Header ID="header" runat="server" />
+        </header>
+        <div class="subHeader" id="mapstrip" >
+            <div class="subHeaderContent">
+                <!-- HEADER CONTAINERS FOR MAP -->
+                <div id="divViewGridButtonContainer" class="" style="display: none;">
+                </div>
+                <div id="divViewMapButtonContainer" class="" style="display: none;">
+                    <div class="" style="display:flex; height:36px;">
+                        <div class="subHeaderBtnHldr">
+                            <button id="btnViewGrid" class="grcBlueBtn" onclick="gHideMap(); return false;">
+                                <i class="fas fa-long-arrow-alt-left" style="margin-right: 5px; font-size: 18px;"></i>
+                                <span class="mapBlueBarButtonText">Show Grid</span>
+                            </button>
+                            <button id="btnMapPinFilter" class="grcBlueBtn" style="margin-left: 10px;" onclick="gPickListOpen(); return false;">
+                                <i class="fas fa-filter" style="margin-right: 5px; font-size: 12px;"></i>
+                                <span class="mapBlueBarButtonText">Map Pin Filters</span>
+                            </button>
+                        </div>
+                        <div class="subHeaderFilterInfoHldr" style="">
+                            <div class="subHeaderRow">
+                                <span class="mapBlueBarLabel">Grid Filters:</span>
+                                <span id="txtFilteredBy" class="mapBlueBarValue" data-bind="text: txtFilteredBy"></span>
+                            </div>
+                            <div class="subHeaderRow">
+                                <span class="mapBlueBarLabel">
+                                    <span id="txtMapPinCount">0</span> Depicted Items<span id="spnFilteredByText">&nbsp;Filtered By</span>:
+                                </span>
+                                <span id="txtMapFilter" class="mapBlueBarValue"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="subHeaderLbl">
+                    <asp:Literal ID="litSubTitle" runat="server" Text="" />
+                </div>
+                <!-- END HEADER CONTAINERS FOR MAP -->
+            </div>
+        </div>
+
+
+        <section class="pageBodyHldr">
+            <div id="gridNavHldr" class="navHldr noShow">
+                <grcRSC:LeftNav ID="Nav" runat="server" />
+            </div>
+            <!-- MAP CONTAINER -->
+            <div class="locListBG ui-helper-clearfix" id="divContainerMap" style="display: none; position: absolute; width: 100%; height: 100%; background-image: none; z-index: 1">
+                <div id="viewMap" style="height: 100%;">
+
+                    <!-- ERROR MESSAGE -->
+                    <div id="txtMapMessageContainer" style="background-color: #FFFFFF; color: red; padding: 6px; padding-top: 12px; padding-bottom: 0px; width: 100%; min-height: 20px; display: none;"><span id="txtMapMessage"></span></div>
+
+                    <!-- THE MAP -->
+                    <div id="mapPage" class="mapPage" style="height: 100%;">
+                        <div id="mapContainer" class="mapContainer" style="background-color: transparent; height: 100%;"></div>
+                    </div>
+
+                    <!-- PICKLIST WINDOW FOR FILTERS -->
+                    <div id="windowPickListMap" class="pickListWindow" style="display: none;">
+                        <div class="pickListHeader">
+                            <label>Check the items to show.</label>
+                        </div>
+                        <div class="pickListContent">
+                            <div id="windowPickListMap_Loading" class="pickListLoading">
+                                <!-- MUST USE Name_Loading NAMING FORMAT FOR ID -->
+                                <img src="../../Images/loading/loading_2x.gif" class="pickListLoadingImage" />
+                            </div>
+                            <div id="windowPickListMap_Table" class="pickListTable"></div>
+                            <!-- MUST USE Name_Table NAMING FORMAT FOR ID -->
+                        </div>
+                        <div class="pickListFooter">
+                            <button class="k-button pickListButton" data-bind="click: pickListCheckAll">All</button>&nbsp;
+                    <button class="k-button pickListButton" data-bind="click: pickListCheckNone">None</button>&nbsp;
+                    <button class="k-button pickListButton" data-bind="click: pickListCheckReverse">Reverse</button>&nbsp;
+                    <div style="height: 4px;">&nbsp;</div>
+                            <button class="k-button pickListButton" data-bind="click: pickListApplyFilter">Apply</button>&nbsp;
+                    <button class="k-button pickListButton" data-bind="click: pickListCancel">Cancel</button>
+                        </div>
+                    </div>
+                    <!-- END PICKLIST WINDOW FOR FILTERS -->
+                </div>
+            </div>
+            <!-- END MAP CONTAINER -->
+
+
+            <!-- GRID BUTTONS AND CONVERSION -->
+            <div class="pageContentHldr" style="flex-direction: column; align-items: center;" id="divContainerGrid">
+                <!-- GRID BUTTONS AND CONVERSION -->
+                <div class="" style="display: flex; flex-direction: row; max-width: 1500px; width: 100%; color: #666;">
+                    <div id="divTopInstructions" class="" runat="server" style="width: 75%;">
+                        <span style="font-size:25px;">
+                            <i class="far fa-info-circle"></i>
+                        </span>
+                        <span>
+                            <asp:Label ID="lblTopMessage" runat="server" Text=""></asp:Label>
+                        </span>
+                    </div>
+                    <div id="divTopInstructionsMap" class="messageNoticeNoBoldSmallMap" runat="server" style="display: none; margin-left: 15px; font-style: normal;">
+                        <span style="font-size:25px;">
+                            <i class="far fa-info-circle"></i>
+                        </span>
+                        <span style="margin-left:10px;">
+                            <label id="lblTopMessageMap">
+                                This Mapping feature allows the user to view the data in the grid, apply multiple filters, as desired, then click the “Show Map” button to see those results graphically. You will see in the blue header which field the grid is defaulted on when depicting the information on the map.
+                                Only selected fields are depictable. You have the option to change what is being depicted by clicking on the Picklist menu and clicking the “Depict By” checkbox found at the bottom of the list.</label>
+                        </span>
+                    </div>
+                </div>
+                <div style="text-align: left; margin-bottom: 5px;" id="spnInspectionProgramYear" runat="server">
+                    <span style="color:#666">Inspection Program Year:&nbsp;
+                                <asp:DropDownList ID="cboInspectionProgramYear" runat="server" ClientIDMode="Static"></asp:DropDownList>
+                    </span>
+                </div>
+                <div style="display: flex; flex-direction: row; justify-content:space-around; max-width: 1500px; width: 100%; color: #666; margin-bottom:5px;">
+                    <!-- Map Button -->
+                    <div id="divContainerMapBtn" runat="server" class="icon_cell noShow">
+                        <div class="icon_cell" style="font-size: 25px;" onclick="gShowMap(); return false;">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <span class="icon_label" onclick="gShowMap(); return false;">
+                            Show Map
+                        </span>
+                    </div>
+                    <!-- CHART BUTTON -->
+                    <div id="divContainerCharts" runat="server" class="icon_cell noShow">
+                        <div class="icon_cell" style="font-size: 25px;" onclick="globalCreateBubbleChart();">
+                            <i class="fas fa-chart-scatter"></i>
+                        </div>
+                        <span class="icon_label" onclick="globalCreateBubbleChart();">
+                            Create Bubble Chart
+                        </span>
+                    </div>
+                    <!-- Search Button -->
+                    <div class="icon_cell" id="divContainerSearch" runat="server">
+                        <div class="icon_find icon_center" id="icoSearch" runat="server" onclick="searchLinkClick(searchURL);" style="font-size: 25px;">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <span class="icon_label" onclick="searchLinkClick(searchURL);">
+                            Search
+                        </span>
+                    </div>
+                    <!-- FAVORITES BUTTONS -->
+                    <div class="icon_cell" id="divFavoritesLibrary" runat="server">
+                        <div class="icon_favoritesLibrary icon_center" id="icoLibrary" runat="server" onclick="globalGoToFavories();" style="font-size: 25px;">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="icon_label" onclick="globalGoToFavories();">
+                            Favorites
+                        </span>
+                    </div>
+                    <div class="icon_cell" id="divFavoritesSave" runat="server">
+                        <div class="icon_favoritesSave icon_center" id="icoFavoriteSave" runat="server" onclick="globalSaveFavories();" style="font-size: 25px;">
+                            <i class="far fa-save"></i>
+                        </div>
+                        <span class="icon_label" onclick="globalSaveFavories();">
+                            Save Favorite
+                        </span>
+                    </div>
+                    <!-- EXTRACT BUTTONS -->
+                    <div class="icon_cell" id="divExtractDownloadChart" runat="server">
+                        <div class="icon_reportsAll icon_center" id="icoChart" runat="server" onclick="globalDownloadChart();" style="font-size: 25px;">
+                            <i class="far fa-download"></i>
+                        </div>
+                        <span class="icon_label" onclick="globalDownloadChart();">
+                            Download Chart
+                        </span>
+                    </div>
+                    <div class="icon_cell" id="divExtractDownloadReport" runat="server">
+                        <div class="icon_reportsDownload icon_center" id="icoReport" runat="server" onclick="globalDownloadReport();" style="font-size: 25px;">
+                            <i class="far fa-download"></i>
+                        </div>
+                        <span class="icon_label" onclick="globalDownloadReport();">
+                            Download Report
+                        </span>
+                    </div>
+                    <div class="icon_cell" id="divExtractDownloadData" runat="server">
+                        <div class="icon_dataDownload icon_center" id="icoExtractData" runat="server" onclick="globalDownloadData();" style="font-size: 25px;">
+                            <i class="far fa-download"></i>
+                        </div>
+                        <span class="icon_label" onclick="globalDownloadData();">
+                            Download Data
+                        </span>
+                    </div>
+                    <!-- ACTION BUTTONS -->
+                    <div class="icon_cell" id="divContainerActions" runat="server">
+                        <div class="icon_resetGrid icon_center" id="icoResetGrid" runat="server" onclick="refreshWindow();" style="font-size: 25px;">
+                            <i class="fad fa-sync-alt"></i>
+                        </div>
+                        <div class="icon_label" onclick="refreshWindow();">
+                            Reset Grid
+                        </div>
+                    </div>
+                </div>
+
+                <!-- END GRID BUTTONS AND CONVERSION -->
+
+                <asp:ContentPlaceHolder ID="GridBodyContent" runat="server">
+                </asp:ContentPlaceHolder>
+
+
+            </div>
+        </section>
+        <div class="hidden">
+            <asp:ContentPlaceHolder ID="HiddenContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <asp:HiddenField ID="hidSIDParameter" runat="server" />
+        <asp:HiddenField ID="hidMasterClientID" runat="server" />
+
+
+
+        <!--FOOTER-->
+        <footer>
+            <grcRSC:Footer ID="FooterControl" runat="server" />
+        </footer>
+
+        <!--Search Window-->
+        <div id="searchWindow"></div>
+        <!--Search Window End-->
+
+        <!--Search Lat Long Facility Window-->
+        <div id="searchLatLongFacilityWindow"></div>
+        <!--Search Lat Long Facility Window End-->
+
+        <!--Connect Maps PopUps-->
+        <div id="mappingPopup" style="display: none;"></div>
+        <!--End Maps Popips-->
+
+        <!-- PROJECT MANAGEMENT WINDOW -->
+        <div id="windowProjectMgmt" style="overflow: hidden;"></div>
+        <!-- END PROJECT MANAGEMENT WINDOW -->
+
+        <!--Project MAnagement Upload Window-->
+        <div id="windowProjectMgmtUpload"></div>
+        <!--End Project Management Upload Window-->
+
+        <script type="text/javascript">
+
+            var searchURL = "<%=ServerSide_SearchURL%>"
+            var gCboInspectionProgramYear = "<%= cboInspectionProgramYear.ClientID%>";
+
+            function openReportPopup(strUrl) {
+                var windowContent = window.radopen(strUrl, "RadWindow1");
+                windowContent.setUrl(strUrl);
+                return false;
+            }
+
+        </script>
+        <script>
+            var formView = null;
+            var popup = $('#mappingPopup');
+            var windowProjMGMT = $('#windowProjectMgmt');
+            var windowProjMGMTUpload = $('#windowProjectMgmtUpload');
+            var windowProjMGMTURL = null;
+            var windowProjMGMTUploadURL = null;
+            var isPopupContentLoaded = false;
+            var gIsPinClicked = false;
+            var globalPopupFileName = null;
+            var globalPopupTitle = null;
+            var globalPopupFileNo = null;
+            var globalPopupUniqueId = null;
+            var globalPracticeTypeForBubbleChart = null;
+
+            gOpenWindow = function (pFormName, pWindowTitle, pIdentifier1, pIdentifier2, pIdentifier3) {
+                // CLEAR ALL PREVIOUS FIELDS
+                //if (formView) {
+                //    formView.clearAll();
+                //}
+
+                // GATHER DATA IN GLOBALLY ACCESSED VARIABLES
+                globalPopupFileName = pFormName;
+                globalPopupTitle = pWindowTitle;
+                globalPopupFileNo = pIdentifier1;
+                globalPopupUniqueId = pIdentifier2;
+
+                // IF THE FORM CONTENT HTML HAS ALREADY BEEN LOADED, JUST LOAD THE DATA, ELSE LOAD THE CONTENT
+                if (isPopupContentLoaded) {
+                    gLoadFormData();
+                } else {
+                    //this is where the title and content dynamic code will go
+                    var window = popup.data("kendoWindow");
+                    var contentUrl = "../../Mapping/" + pFormName;
+                    window.title(pWindowTitle);
+                    window.refresh(contentUrl);
+                }
+                popup.data("kendoWindow").open();
+
+            };
+
+            function getInnermostHovered() {
+                var zParent = document.querySelector(":hover");
+                var zElement;
+                while (zParent) {
+                    zElement = zParent;
+                    zParent = zElement.querySelector(":hover");
+                }
+                return zElement;
+            }
+
+            $(document).on('click', 'body', function () {
+                gIsPinClicked = false;
+            });
+
+            popup.kendoWindow({
+                visible: false,
+                modal: true,
+                width: "1100px",
+                minHeight: "450px",
+                position: {
+                    top: 125,
+                    left: "16%"
+                }
+
+            }).data("kendoWindow");
+
+            //NEW PROJECT MGMT WINDOW JAVASCRIPT
+            windowProjMGMT.kendoWindow({
+                visible: false,
+                modal: true,
+                iframe: true,
+                draggable: true,
+                resizable: false,
+                width: "1400px",
+                height: "665px",
+                refresh: function (pEvent) {
+                    // SETUP THE COMMUNICATIONS BY HTML MESSAGES
+                    setTimeout(function () {
+                        var zMessage = {
+                            "isSuccess": true,
+                            "MessageType": "ProjectManagement",
+                            "MessageName": "Setup",
+                            "Name": null,
+                            "Value": null,
+                            "Parameters": null
+                        };
+                        var zWinDiv = document.getElementById("windowProjectMgmt");
+                        var zWinElements = zWinDiv.getElementsByClassName("k-content-frame");
+                        var zWin = zWinElements[0].contentWindow;
+                        zWin.postMessage(zMessage, windowProjMGMTURL);
+                    }, 333);
+                }
+            }).data('kendoWindow');
+
+            function openMGMTWin() {
+                globalOpenMGMTWin();
+            }
+
+            function closeMGMTWin() {
+
+            }
+
+            function globalresizeWindowProjectMgmt(pWidth, pHeight, pTime, pCallback, pBoldTitle) {
+                // RESIZE THE PROJECT MANAGEMENT WINDOW.
+                // ACCEPT AN OPTIONAL TIME FOR ANIMATION AND AN OPTIONAL CALLBACK FUNCTION
+                var zWidth = 1400;
+                var zHeight = 665;
+                var zTime = 667;
+                var zBoldTitle = '';
+
+                // ADJUST FOR DEFULTS AND NULLS
+                if (pTime) { zTime = pTime; }
+                if (pWidth) {
+                    if (pWidth > 0) {
+                        zWidth = pWidth;
+                    }
+                }
+                if (pHeight) {
+                    if (pHeight > 0) {
+                        zHeight = pHeight;
+                    }
+                }
+
+                if (pBoldTitle) {
+                    zBoldTitle = pBoldTitle;
+                } else {
+                    zBoldTitle = 'Project Details: ';
+                }
+
+                // MAKE THE ANIMATION
+                $('#windowProjectMgmt').parent().animate({
+                    width: zWidth,
+                    height: zHeight
+                }, zTime, function () {
+                    if (pCallback) {
+                        pCallback();
+                    }
+                });
+
+                $('#windowProjectMgmtTitleBold').html(zBoldTitle);
+            }
+
+            function globalOpenMGMTWin(pRowID, pFileNo, pClientName, pAddress, pCity, pStProv, pCountry) {
+                //CURRENT EDA.PM PORT #: 50937
+                var mgmtWin = windowProjMGMT.data('kendoWindow');
+                var sID = global.getQueryVariable('sid');
+                var zRowID = pRowID;
+                //CHECK TO SEEIF STATE-PROVIDENCE IS EMPTY STRING, IF SO OMIT IT FROM WINDOW TITLE
+                if (pStProv == '') {
+                    var pLocationInfo = pFileNo + ' - ' + pClientName + ' - ' + pAddress + ', ' + pCity + ', ' + pCountry;
+                } else {
+                    var pLocationInfo = pFileNo + ' - ' + pClientName + ' - ' + pAddress + ', ' + pCity + ', ' + pStProv + ', ' + pCountry;
+                }
+                //create if to see if we are running local vs live/test
+                //check if we are in test or live situation
+                //if local use hardCodedURL
+                //'../EDA.PM/Home/conProjectMgmtForm.aspx?sid=' + sID;
+                //pLocationInfo = pLocationInfo.replace(/'/g, "&#39;");
+                var mgmtContentURL = '';
+                switch (SITEMODE) {
+                    case 'localhost':
+                        var mgmtContentURL = 'http://' + SITEMODE + ':' + PROJECTFOLDERPM + '/Home/conProjectMgmtForm.aspx?sid=' + sID + '&p1=' + zRowID;
+                        windowProjMGMTURL = mgmtContentURL;
+                        mgmtWin.refresh(mgmtContentURL);
+                        break;
+                    case 'test':
+                        mgmtContentURL = 'https://grcconnecttest.globalriskconsultants.com/eda.pm/home/conProjectMgmtForm.aspx?sid=' + sID + '&p1=' + zRowID;
+                        windowProjMGMTURL = mgmtContentURL;
+                        mgmtWin.refresh(mgmtContentURL);
+                        break;
+                    case 'live':
+                        mgmtContentURL = 'https://grcconnect.globalriskconsultants.com/eda.pm/home/conProjectMgmtForm.aspx?sid=' + sID + '&p1=' + zRowID;
+                        windowProjMGMTURL = mgmtContentURL;
+                        mgmtWin.refresh(mgmtContentURL);
+                        break;
+                    default:
+                        break;
+                }
+                windowProjMGMT.data("kendoWindow").center().open();
+
+                $("#windowProjectMgmt").prev().find(".k-window-title").html("<span id='windowProjectMgmtTitleBold' style='font-weight: bold;'>Project Details: </span><span id='windowProjectMgmtTitle'></span>");
+                $("#windowProjectMgmtTitle").html(pLocationInfo);
+            }
+
+            function globalCloseWindowProjectMgmt() {
+                if (windowProjMGMT) {
+                    windowProjMGMT.data("kendoWindow").close();
+                }
+            }
+
+            function globalOpenClientInformation(pProjectGUID) {
+                var sID = global.getQueryVariable('sid');
+                var zProjectGUID = pProjectGUID;
+                var zURL = '../../../Home_{{VER}}/Explorer/Default.aspx?sid=' + sID + '&p1=4&proj=' + zProjectGUID;
+                //window.location.href = zURL;
+                openRequestedDocumentLibrary(zURL);
+            }
+
+            //PROJECT MANAGEMENT UPLOAD WINDOW
+            windowProjMGMTUpload.kendoWindow({
+                visible: false,
+                modal: true,
+                draggable: true,
+                resizable: false,
+                width: "550px",
+                height: "600px",
+                position: {
+                    top: 115,
+                    left: 625
+                },
+                content: "",
+                title: "Upload",
+                actions: ["close"],
+                animation: { open: { effects: "default" }, close: { effects: "default" } },
+                refresh: function (pEvent) {
+                    // SETUP THE COMMUNICATIONS BY HTML MESSAGES
+                    setTimeout(function () {
+                        var zMessage = {
+                            "isSuccess": true,
+                            "MessageType": "ProjectManagementUpload",
+                            "MessageName": "Setup",
+                            "Name": null,
+                            "Value": null,
+                            "Parameters": null
+                        };
+                        var zWinDiv = document.getElementById("windowProjectMgmtUpload");
+                        var zWinElements = zWinDiv.getElementsByClassName("k-content-frame");
+                        var zWin = zWinElements[0].contentWindow;
+                        zWin.postMessage(zMessage, windowProjMGMTUploadURL);
+                    }, 333);
+                }
+            }).data('kendoWindow');
+
+            function openMGMTUpload() {
+                globalOpenWindowProjectMgmtUpload();
+            }
+
+            function globalCloseWindowProjectMgmtUpload() {
+                if (windowProjMGMTUpload) {
+                    windowProjMGMTUpload.close();
+                }
+            }
+
+            function globalOpenWindowProjectMgmtUpload(pFileNo, pGUID) {
+
+                var mgmtUPWin = windowProjMGMTUpload.data("kendoWindow");
+                var mgmtUploadContentURL = '';
+                var sID = global.getQueryVariable('sid');
+                var zRowID = pRowID;
+
+                switch (SITEMODE) {
+                    case 'localhost':
+                        var mgmtUploadContentURL = 'http://' + SITEMODE + ':' + PROJECTFOLDERPM + '/Home/conProjectMgmtUploadForm.aspx?sid=' + sID + '&f1=' + pFileNo + "&g1=" + pGUID + "a1=" + "";
+                        windowProjMGMTUploadURL = mgmtContentURL;
+                        mgmtUPWin.refresh(mgmtUploadContentURL);
+                        break;
+                    case 'test':
+                        mgmtUploadContentURL = 'https://grcconnecttest.globalriskconsultants.com/eda.pm/home/conProjectMgmtUploadForm.aspx?sid=' + sID + '&f1=' + pFileNo + "&g1=" + pGUID + "a1=" + "";
+                        windowProjMGMTUploadURL = mgmtContentURL;
+                        mgmtUPWin.refresh(mgmtUploadContentURL);
+                        break;
+                    case 'live':
+                        mgmtUploadContentURL = 'https://grcconnect.globalriskconsultants.com/eda.pm/home/conProjectMgmtUploadForm.aspx?sid=' + sID + '&f1=' + pFileNo + "&g1=" + pGUID + "a1=" + "";
+                        windowProjMGMTUploadURL = mgmtContentURL;
+                        mgmtUPWin.refresh(mgmtUploadContentURL);
+                        break;
+                    default:
+                        break;
+                }
+
+                windowProjMGMTUpload.data("kendoWindow").open();
+            }
+
+            // PROCESS MESSAGES COMING FROM THE PROGRAM MANAGEMENT IFRAME
+            function processMessageProjMgmt(pMessage) {
+                switch (pMessage.MessageName) {
+                    case "SetValue":
+                        parent[pMessage.Name] = pMessage.Value;
+                        break;
+                    case "GetValue":
+                        break;
+                    case "RunFunction":
+                        if (parent[pMessage.Name]) {
+                            parent[pMessage.Name].apply(this, pMessage.Parameters);
+                        }
+                        break;
+                }
+            }
+
+
+            // LISTEN AND SENDING EVENTS FOR COMMUNICATION FROM IFRAME WINDOWS
+            function listenMessage(pEvent) {
+                if (pEvent.data != undefined && pEvent.data != null) {
+                    var zData = pEvent.data; //JSON.parse(JSON.parse(pEvent.data));
+                    if (zData.MessageType != undefined && zData.MessageType != null) {
+                        if (zData.MessageType == "ProjectManagement") {
+                            processMessageProjMgmt(zData);
+                        }
+                    }
+                } else {
+                    alert("An error occurred while sending message.");
+                }
+            };
+
+            if (window.addEventListener) {
+                addEventListener("message", listenMessage, false);
+            } else {
+                attachEvent("onmessage", listenMessage);
+            }
+
+            $(document).ready(function () {
+
+                if (globalClientFeatures.search("=") > -1) {
+                    if (ServerSide_GridId == 329 || ServerSide_GridId == 330) {
+                        $('#ClientConnectSiteBody_ClientConnectFormBody_divContainerCharts').removeClass('noShow');
+                        if (ServerSide_GridId == 329) {
+                            //Fire
+                            globalPracticeTypeForBubbleChart = 3;
+                        }
+                        if (ServerSide_GridId == 330) {
+                            //B&M
+                            globalPracticeTypeForBubbleChart = 2;
+                        }
+                    }
+                } else {
+                   $('#ClientConnectSiteBody_ClientConnectFormBody_divContainerCharts').addClass('noShow');
+                }
+
+                //SHOW OR HIDE TOP HORIZONTAL MENU
+                $("#headerInfoHldr").addClass("noShow");
+                if (ServerSide_GridId == "" || ServerSide_GridId == 60 || ServerSide_GridId == 314 || ServerSide_GridId == 196 || ServerSide_GridId == 192) {
+                    $("#headerInfoHldr").removeClass("noShow");
+                }
+
+                //SHOW/HIDE LEFT NAV FOR CERTAIN GRIDS
+                //PROJECT MGMT GRID
+                if (ServerSide_GridId == 314) {
+                    $('#gridNavHldr').removeClass('noShow');
+                }
+
+                //USER ACCOUNTS GRID
+                if (ServerSide_GridId == 196) {
+                    $('#gridNavHldr').removeClass('noShow');
+                }
+
+                //USER ACTIVITY GRID
+                if (ServerSide_GridId == 192) {
+                    $('#gridNavHldr').removeClass('noShow');
+                }
+            });
+
+        </script>
+    </form>
+</asp:Content>

@@ -1,0 +1,40 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colId":1, 
+	"colFilePrefix":null, 
+	"colFileNo":"FileNo", 
+	"colPracticeCode":null, 
+	"colHazard":"Hazard", 
+	"colDateStamp":null, 
+	"colSender":"Sender", 
+	"colRecipientName":"RecipientName", 
+	"colRecipientEmail":"RecipientEmail", 
+	"colActivity":"Activity", 
+	"colLinkActive":null, 
+	"colLinkActivatedDate":null, 
+	"colLinkActivatedBy":"LinkActivatedBy", 
+	"colLinkActivatedByEmail":"LinkActivatedByEmail", 
+	"colResponseActive":null, 
+	"colResponseLastActivity":null, 
+	"colChanged":null, 
+	"colRFU1Date":null, 
+	"colRFU2Date":null, 
+	"colRFU3Date":null, 
+	"colRRLogGuid":"RRLogGuid", 
+	"colCurrentLink":"CurrentLink", 
+	"colLanguagePreference":"LanguagePreference", 
+	"colAdminAlertDate":null, 
+	"colAdminAlertReason":"AdminAlertReason", 
+	"colSysUserCreated":"SysUserCreated", 
+	"colSysDateCreated":null, 
+	"colSysUserModified":"SysUserModified", 
+	"colSysDateModified":null
+}]

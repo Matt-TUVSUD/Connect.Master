@@ -1,0 +1,20 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colFldKeyId":1, 
+	"colFldRating":"fldRating", 
+	"colFldDescription":"fldDescription", 
+	"colFldScoreLow":null, 
+	"colFldScoreHigh":null, 
+	"colFldMetaColorId":1, 
+	"colFldPSRatingKey":"fldPSRatingKey", 
+	"colHexBackColor":"HexBackColor", 
+	"colHexForeColor":"HexForeColor"
+}]

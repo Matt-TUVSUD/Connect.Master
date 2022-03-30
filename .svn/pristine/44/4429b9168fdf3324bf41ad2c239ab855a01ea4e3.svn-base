@@ -1,0 +1,18 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+View: VwAdminViewXLSheet --> [vwAdminViewXLSheet]
+
+  colFldID --> [fldID] int identity not null
+  colFldTabName --> [fldTabName] nvarchar(50) null
+  colFldViewName --> [fldViewName] nvarchar(50) null
+  colFldSheetPosition --> [fldSheetPosition] int null
+  colFldInclude --> [fldInclude] bit null
+  colFldSQL --> [fldSQL] nvarchar(295) null
+

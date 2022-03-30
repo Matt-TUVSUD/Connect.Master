@@ -1,0 +1,29 @@
+﻿.tableBorder {
+    border-collapse: collapse;
+    border: solid 0px #cfd3d8;
+    margin: 4px;
+}
+
+    .tableBorder td {
+        border: solid 0px #cfd3d8;
+    }
+
+.errorMessage {
+    color: #0046ad;
+}
+
+.selectButton:disabled {
+    color: #9c9c9c;
+}
+
+footer {
+    display: flex;
+}
+
+.active {
+    background: #0046ad !important;
+}
+header {
+    display: flex !important;
+    height:90px !important;
+}

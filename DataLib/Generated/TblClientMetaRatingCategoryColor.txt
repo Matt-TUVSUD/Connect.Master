@@ -1,0 +1,17 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblClientMetaRatingCategoryColor --> [tblClientMetaRatingCategoryColor]
+
+  colFldId --> [fldId] int **PK** identity not null
+  colFldFilePrefix --> [fldFilePrefix] nvarchar(25) null
+  colFldCategoryId --> [fldCategoryId] int null
+  colFldRatingValue --> [fldRatingValue] int null
+  colFldColorId --> [fldColorId] int null
+

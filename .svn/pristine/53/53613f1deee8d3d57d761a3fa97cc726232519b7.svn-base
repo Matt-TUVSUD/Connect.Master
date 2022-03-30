@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+		
+		<link type="text/css" href="wnCss/reset.css" rel="stylesheet" />
+		<link type="text/css" href="wnCss/grid.css" rel="stylesheet" />
+		<link type="text/css" href="wnCss/font-awesome.min.css" rel="stylesheet" />
+		<link type="text/css" href="wnCss/common.css" rel="stylesheet" />
+        <link type="text/css" href="wnCss/print.css" rel="stylesheet" media="print" />
+		
+		<link rel="shortcut icon" href="images/favicon.ico" />
+
+		<script type="text/javascript" src="jquery/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="jquery/jquery.sticky.js"></script>
+		<script type="text/javascript" src="jquery/jquery.printThis.js"></script>
+		<script type="text/javascript" src="jquery/jquery.highlight.js"></script>
+		<script type="text/javascript" src="jquery/jquery-functions.js"></script>
+</head>
+<body>
+    <div id="header" class="setPrimary">
+        <div id="headerInner" class="clearfix">
+            <div class="logo">
+                <img src="images/logo_horizontalstacked.png" style="height: 110px;" alt="" />
+            </div>
+            <div class="description">
+                <h3>TUV SUD GRC Client Connect Knowledge Base</h3>
+            </div>
+        </div>
+    </div>
+
+    <div id="bluebar" class="setPrimary">
+        <div id="bluebarInner" class="clearfix"></div>
+    </div>
+
+    <div  id="contentInner">
+        <div class="content">
+            <h2>TUV SUD GRC Connect</h2><button type="button" class="printThis" title="Print This Section"><i class="fa fa-print"></i></button>
+            <h3 style="color:#000;">Facility Rating Trending Chart</h3>
+            <p class="contentP">
+                As shown below, a new interactive <strong>Facility Rating Trending Chart</strong> has been added to TUV SUD GRC Connect, which can be accessed under the 
+                <strong>Site Map > Output Reports > Rating > Facility Rating Trending - Chart to Report</strong>.  This is available for both Fire and Boiler & Machinery, 
+                depicting up to ten years of historical ratings.
+            </p>
+            <p class="contentP">
+                The new web tool will appear with a default sort of <strong>Highest to Lowest TIV</strong>.  The <strong>Sort</strong> selections are by <strong>File No., Client Loc. No., City, St/Prov., Country</strong> 
+                or by <strong>Total Insurable Value</strong>.  The chart shows the Active, Passive and Total Facility Score, with the applied APL factor, when applicable.
+            </p>
+            <p class="contentP">
+                You can interactively click on any of the bullet points, representing the rating element from that year’s inspection, which will navigate you to the Facility Rating Detail page for that specific 
+                rating record where you can then view all details.  The Facility Detail form has a <strong>Back</strong> button which will take you back to the page you came from.
+            </p>
+            <p>
+                <img src="images/facilityRatingTrendingChart.png" />
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>

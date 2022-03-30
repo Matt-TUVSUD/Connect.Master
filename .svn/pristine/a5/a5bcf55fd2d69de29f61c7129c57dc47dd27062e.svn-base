@@ -1,0 +1,209 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/ClientConnectForm.master" AutoEventWireup="false" CodeBehind="ClientConnectUserReclassification.master.vb" Inherits="GRC.Connect.Web.ClientConnectUserReclassification" %>
+<%@ Register Src="~/Home_{{VER}}/Controls/RevisionStampControl.ascx" TagName="RevisionStampControl" TagPrefix="grcRSC" %>
+
+<asp:Content ID="ClientConnectTestHeadContent" ContentPlaceHolderID="ClientConnectFormHead" runat="server">
+    <title>TUV SUD GRC Connect</title>
+
+    <%-- OUTDATED STYLES --%>
+    <%--<link rel="Stylesheet" type="text/css" href="../../css/kendo.common.min.css" />--%>
+    
+    <%-- UPDATED STYLES --%>
+    <link rel="Stylesheet" type="text/css" href="../../css/Kendo.v2014.1.318/kendo.common.min.css" />
+    <%--<link rel="Stylesheet" type="text/css" href="../../css/Kendo.v2014.1.318/kendo.silver.min.css" />--%>
+
+    <%-- ORIGINAL STYLES --%>
+    <link rel="Stylesheet" type="text/css" href="../../css/kendo-lightblue-noedit.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/kendo-lightblue-menu.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/GRCConnect/connect-grid.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/GRCConnect/connect-icons.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/global.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/topbanner.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/windows.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/icons.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadTreeView.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadTreeViewOffice2010Silver.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadFileExplorer.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadFileExplorerOffice2010Silver.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadWindow.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadWindowOffice2010Blue.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/EDA/cssgrid.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/EDA/eda.css" />
+
+    <%-- OUTDATED JAVASCRIPT --%>
+    <%--<script src="../../Lib_{{VER}}/KendoUI/kendo.web.min.js" type="text/javascript"></script>--%>
+    <%--<script src="../../Lib_{{VER}}/Knockout/knockout-2.0.0.debug.js" type="text/javascript"></script>--%>
+
+    <%-- UPDATED JAVASCRIPT --%>
+    <%--<script src="../../Lib_{{VER}}/KendoUI.v2014.1.416/kendo.web.min.js" type="text/javascript"></script>--%>
+    <%--<script src="../../Lib_{{VER}}/kendo.web.min.js" type="text/javascript"></script>--%>
+    <script src="../../Lib_{{VER}}/kendo.all.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Knockout.v3.3.0/knockout-3.3.0.js" type="text/javascript"></script>
+
+    <%-- ORIGINAL JAVASCRIPT --%>
+    <script src="../../Lib_{{VER}}/json/json2.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/ES/entityspaces.XHR.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/GSafeDetail.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/GSafeDetail.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/GSafeHeader.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/GSafeHeader.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/NavLink.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Config/baseurl.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Session/sessvars.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/util_{{VER}}.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/export.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/topbanner.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/nav.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/global.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Data/userReclass.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/userReclass.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="ClientConnectTestBodyContent" ContentPlaceHolderID="ClientConnectFormBody" runat="server">
+    <form id="form1" runat="server">
+        <telerik:RadStyleSheetManager ID="RadStyleSheetManager1" runat="server">
+            <StyleSheets>
+                <telerik:StyleSheetReference Path="../../css/Telerik/RadTreeView.css" /> 
+                <telerik:StyleSheetReference Path="../../css/Telerik/RadTreeViewOffice2010Silver.css" /> 
+                <telerik:StyleSheetReference Path="../../css/Telerik/RadFileExplorer.css" />
+                <telerik:StyleSheetReference Path="../../css/Telerik/RadFileExplorerOffice2010Silver.css" />
+                <telerik:StyleSheetReference Path="../../css/Telerik/RadWindow.css" /> 
+                <telerik:StyleSheetReference Path="../../css/Telerik/RadWindowOffice2010Blue.css" /> 
+            </StyleSheets>
+        </telerik:RadStyleSheetManager>
+        <telerik:RadWindowManager 
+            id="RadWindowManager1" 
+            runat="server" 
+            Title="Your Request Is Being Processed"
+            Behaviors="Move, Resize, Close"
+            VisibleStatusbar="False"
+            Skin="Office2010Blue"
+            IconUrl="../../Home_{{VER}}/Images/icons/reports/chart_column_16x16.png"
+            ReloadOnShow="True">
+            <windows>
+                <telerik:RadWindow 
+                    ID="RadWindow1" 
+                    runat="server"
+                    Left="350px"
+                    Top="225px" 
+                    Width="395px" 
+                    Height="300px"
+                    Behaviours="Close"
+                    Modal="true"
+                    >
+                </telerik:RadWindow>
+            </windows>
+        </telerik:RadWindowManager>
+
+
+        <%--<div class="masterHeader" id="viewMasterTop" data-bind="with: viewMasterTop">--%>
+        <div class="masterHeaderElasticBlue100 ui-helper-clearfix" id="viewMasterTop">
+                <!-- HEADER -->
+                <div class="headerContainerElastic ui-helper-clearfix">
+                    <div class="headerLeft" style="padding-top:10px;">
+                        <div class="headerCompanyNameLargeBlue">
+                            <asp:Label runat="server" ID="lblCompany" Text=""></asp:Label>
+                            <asp:ContentPlaceHolder ID="ContentFindCriteria" runat="server"></asp:ContentPlaceHolder>
+                        </div>
+                    </div>
+                    <div class="headerRight">
+                        <%--<div class="headerPageTitle" style="padding-top: 2px;"><asp:Label runat="server" ID="lblPageTitle" Text=""></asp:Label></div>--%>
+                        <h1>User Reclassification Form</h1>
+                    </div>
+                </div>
+                <!-- END HEADER -->
+        </div>
+        <div class="masterTopBannerElastic100">
+            <div class="topBanner_Container_Other_Elastic_Blue">
+                <span class="topBanner_Container_Left">
+                    <!-- IMAGES FOR CURRENT TAB | DEFAULT DISPLAY = HIDDEN -->
+                </span>
+                <div style="float: right;">
+                    <div class="headerWelcomeWhite"><asp:Label runat="server" ID="lblLoginName" Text=""></asp:Label><asp:Label runat="server" ID="lblPreferencesApplied" Visible="False" title="To change your filter/setting, go to Menu Selector > User Tools > myPreferences."><span>,</span> <span class="headerWelcomePreferences">you have a myPreference filter/setting applied!</span></asp:Label></div>
+                    <div class="headerTodaysDateLightBlue"><asp:Label runat="server" ID="lblTodaysDate" Text=""></asp:Label></div>
+                </div>
+            </div>
+            <br style="clear: both;" />
+        </div>
+        <div style="width:300px; float:left;" id="viewMasterLeftNav">
+            <span>
+                <div id="nav_Container" style="width:100%;" class="nav_Container" runat="server">
+                    <div style="padding-left:15px; text-align:justify;">
+                        <p>
+                            <strong>Instructions:</strong>
+                            Please review and authenticate each record by choosing one of the following options:
+                        </p>
+                        <p>
+                            <strong>Note:</strong> This form is sorted by user Full Name field.
+                        </p>
+                        <ul style="padding-left:15px;">
+                            <li style="margin-bottom:5px;">
+                                <strong>Activate User</strong> - where you want to Reactivate the user record.
+                            </li>
+                            <li style="margin-bottom:5px;">
+                                <strong>Inactivate User</strong> - where you do not want to delete the user record, but inactivate for a particular reason.
+                            </li>
+                            <li style="margin-bottom:5px;">
+                                <strong>Delete User</strong> - which will purge the record from the system.
+                            </li>
+                            <li style="margin-bottom:5px;">
+                                <strong>Confirm User</strong> - means the record is still valid and should remain.
+                            </li>
+                        </ul>
+                        <p>
+                            After you make your selection, click the <strong>Next</strong> button to advance to the next user record.  You may make changes to the <strong>Auto-Rec Distribution</strong> details along with entering in a <strong>Client Comment</strong>.
+                        </p>
+                        <p>
+                            Note: Your changes will automatically be saved as you navigate from record to record, backwards and forwards. 
+                        </p>
+                        <p>
+                            If you have the need to log back in to the Reclassification Form to complete the authentication of selected user records, your email link will remain active until such time that you complete the process.
+                        </p>
+                        <p>
+                            For convenience, you may click on <strong>Filter on Pending Records</strong> which will filter the user records for only those Pending authentication.
+                        </p>
+                        <p>
+                            Once you have completed the authentication of all user records, a confirmation page will appear along with receiving a confirmation email with attached changes.
+                        </p>
+                    </div>
+	                    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+			            <asp:HiddenField ID="HiddenField1"  runat="server" />
+                        <asp:HiddenField ID="HiddenPracticeID" runat="server" />
+                </div>
+                <%--<div style="position:relative;">--%>
+                    <div class="nav_Comments" style="margin-top:30px;">
+                        <b>Comments on what you see?</b>
+                        <br />
+                        <a href="#" onclick="onCommentsOpen(); return false;">Provide Feedback</a>
+                    </div>
+                <%--</div>--%>
+            </span>
+        </div>
+        <div style="float:right; width:625px;">
+            <span>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </span>
+        </div>
+
+        <div class="masterBottomBannerElasticBlue">
+            <div id="include_bottombanner"></div>
+            <div><br style="clear: both;" /><grcRSC:RevisionStampControl ID="RevisionStampControl" runat="server" /></div>
+        </div>
+        &nbsp;<br style="clear: both;" />
+        &nbsp;<br style="clear: both;" />
+
+        <!-- FEEDBACK COMMENTS WINDOWS AND SCRIPT - ALSO NEED TO INCLUDE CSS AND SERVERSIDE HIDDEN FIELD -->
+        <div id="include_comments"></div>
+
+    </form>  
+</asp:Content>
+<asp:Content ID="ClientConnectTestBottomHtml" ContentPlaceHolderID="ClientConnectFormBottomHtml" runat="server">
+    <script type="text/javascript">
+    $(document).ready(function () {
+        showTab();
+        $("#include_bottombanner").load("../Common/bottombanner_english_noLogout.html");
+        $("#include_comments").load("../Common/CommentsWindows.html");
+    });
+</script>
+</asp:Content>

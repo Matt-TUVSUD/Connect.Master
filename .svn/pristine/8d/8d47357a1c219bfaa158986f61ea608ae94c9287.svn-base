@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TÜV SÜD Global Risk Consultants Natural Hazard Mapping and Alerts</title>
+    <script defer src="https://cdn.aerisapi.com/sdk/js/latest/aerisweather.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.aerisapi.com/sdk/js/latest/aerisweather.css">
+
+    <style>
+        #map {
+            height: 900px;
+            margin: 30px auto;
+            width: 1200px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div id="map"></div>
+
+<script>
+
+
+    const facilitiesSources = {
+        locations: {
+            url: './Customer-Sites.json',
+            icon: {
+                url: './icon-facility.svg'
+            }
+        },
+    };
+
+    window.onload = () => {
+
+//        const aeris = new AerisWeather('68k8fqLVknO7EC2KJGe8G', 'X0MSZTXibVFNdkHM96fWHuGLHB1QL9H0Ge05E2Ys');
+        const aeris = new AerisWeather('itsH0ETre02EmR6CZIC4l', '5iI6TbpIJ9vmdNQDhcUeTVtXwYRmPGSE8CriqLJL');
+        const utils = aeris.utils;
+        const $ = aeris.utils.$;
+
+        aeris.apps((apps) => {
+            const app = new apps.InteractiveMapApp(document.getElementById('map'), {
+                map: {
+                    zoom: 5,
+                    strategy: 'leaflet',
+                    map: {
+                        zoomControl: false
+                    },
+                    timeline: {
+                        alwaysShowFuture: true
+                    },
+                    refresh: 120
+                },
+                panels: {
+                    layers: {
+                        buttons: [{
+                            id: 'facilities',
+                            title: 'Facilities',
+                            filter: true,
+                            segments: [{
+                                title: 'Customer Locations',
+                                value: 'facilities'
+                            }]
+                        }, {
+                            id: 'radar-global',
+                            title: 'Radar',
+                            value: 'radar-global:75',
+                            controls: {
+                                settings: [{
+                                    type: 'opacity'
+                                }]
+                            }
+                        }, {
+                            id: 'satellite',
+                            title: 'Satellite',
+                            segments: [{
+                                title: 'Infrared',
+                                value: 'satellite:75'
+                            }, {
+                                title: 'Geocolor',
+                                value: 'satellite-geocolor,states-outlines-dk'
+                            }],
+                                controls: {
+                                    settings: [{
+                                        type: 'opacity'
+                                    }]
+                                }
+                        }, {
+                            title: 'Alerts',
+                            value: 'alerts',
+                            controls: {
+                                settings: [{
+                                    type: 'opacity'
+                                }]
+                            }
+                        }, {
+                            id: 'temperatures',
+                            title: 'Temperatures',
+                            value: 'temperatures-global-aeris,states-outlines-dk',
+                            controls: {
+                                settings: [{
+                                    type: 'opacity'
+                                }]
+                            }
+                        }, {
+                            id: 'winds',
+                            title: 'Winds',
+                            value: 'wind-speeds:75,fwind-speeds:75,states-outlines-dk,wind-speeds-text-dk',
+                            controls: {
+                                settings: [{
+                                    type: 'opacity'
+                                }]
+                            }
+                        }, {
+                            title: 'Snowdepth',
+                            value: 'snowdepth',
+                            controls: {
+                                settings: [{
+                                    type: 'opacity'
+                                }]
+                            }
+                        }, {
+                            title: 'Storm Cells',
+                            value: 'stormcells',
+                            controls: {
+                                settings: [{
+                                    type: 'opacity'
+                                }]
+                            }
+                        }, {
+                            id: 'lightning',
+                            title: 'Lightning',
+                            value: 'lightning-strikes',
+                            controls: {
+                                settings: [{
+                                    type: 'opacity'
+                                }]
+                            }
+                        }, {
+                            id: 'tropical',
+                            title: 'Tropical Systems',
+                            value: 'tropical-cyclones',
+                            controls: {
+                                settings: [{
+                                    type: 'opacity'
+                                }]
+                            }
+                        }, {
+                            title: 'Fires',
+                            value: 'fires-obs-icons',
+                            controls: {
+                                settings: [{
+                                    type: 'opacity'
+                                }]
+                            }
+                        }]
+                    },
+                    timeline: {
+                        range: {
+                            range: {
+                                min: -48,
+                                max: 0
+                            },
+                            marks: {
+                                '-48': '-48',
+                                '-36': '-36',
+                                '-24': '-24',
+                                '-12': '-12',
+                                0: 'Now',
+                                12: '+12',
+                                24: '+24'
+                            }
+                        }
+                    },
+                    info: {
+                        views: {
+                            facility: {
+                                request: (data) => {
+                                    const request = aeris.api();
+                                    const forecastFields = 'timestamp,dateTimeISO,tempF,icon,weatherPrimary,windSpeedMPH,windSpeedMinMPH,windSpeedMaxMPH,windGustMPH,snowIN,precipIN'.split(',').map((key) => `periods.${key}`);
+                                    request.addRequest(aeris.api().endpoint('observations'));
+                                    request.addRequest(aeris.api().endpoint('forecasts').fields(forecastFields.join(',')).filter('3hr').limit(7));
+                                    request.addRequest(aeris.api().endpoint('threats').radius('50mi'));
+                                    request.addRequest(aeris.api().endpoint('alerts').fields('details.type,details.name,timestamps'));
+                                    request.addRequest(aeris.api().endpoint('phrases/summary'));
+                                    request.addRequest(aeris.api().endpoint('convective/outlook').action('contains'));
+                                    request.addRequest(aeris.api().endpoint('lightning/summary').action('closest').radius('60mi').limit(100));
+
+                                    return request;
+                                },
+                                views: [{
+                                    title: 'Active Alerts',
+                                    renderer: 'alerts'
+                                }, {
+                                    title: 'Active Threats',
+                                    renderer: 'threats'
+                                }, {
+                                    title: 'Impacts',
+                                    renderer: 'hazards'
+                                }, {
+                                    title: 'Observations',
+                                    renderer: 'obs'
+                                }, {
+                                    title: 'Outlook',
+                                    renderer: 'outlook'
+                                }, {
+                                    title: 'Short-Term Forecast',
+                                    renderer: 'forecast'
+                                }]
+                            }
+                        }
+                    }
+                }
+            });
+
+            const facilities = app.addSource('facilities', 'vector', {
+                data: {
+                    url: (params) => {
+                        return facilitiesSources.locations.url;
+                    },
+                    coordinate: (data) => {
+                        const { lat, lon } = data;
+                        return { lat, lon };
+                    }
+                },
+                style: {
+                    marker: (data) => {
+                        const icon = facilitiesSources.locations.icon;
+                        return {
+                            className: 'facilities',
+                            icon: {
+                                url: icon.url
+                            },
+                            size: [30, 30]
+                        };
+                    }
+                }
+            });
+
+            // set initial visible layers
+            const layers = app.getPanel('layers');
+            if (layers) {
+                // layers.select(['facilities', 'radar']);
+            }
+            // show info panel for location when map is clicked
+            app.map.on('click', (e) => {
+                app.showInfoAtCoord(e.data.coord, 'localweather', 'Local Weather');
+            });
+            app.map.on('marker:click', (e) => {
+                if (e.data) {
+                    let data = e.data.data || {};
+                    const source = data.awxjs_source;
+                    if (source === 'facilities' || source === 'officeEngLoc') {
+                        const loc = data.lat + ',' + data.lon;
+                        const name = utils.strings.toName(data.LID);
+                        // alert("loc : "+loc);
+                        // alert("name : "+name);
+                        app.showInfo('facility', name).load({ p: loc });
+                    }
+                }
+            });
+        });
+    }
+
+</script>
+
+</body>
+</html>

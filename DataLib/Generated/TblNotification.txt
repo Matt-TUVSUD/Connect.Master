@@ -1,0 +1,24 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblNotification --> [tblNotification]
+
+  colNotificationID --> [NotificationID] int **PK** identity not null
+  colTo --> [To] nvarchar(MAX) null
+  colCc --> [Cc] nvarchar(MAX) null
+  colBcc --> [Bcc] nvarchar(MAX) null
+  colSubject --> [Subject] nvarchar(MAX) null
+  colBody --> [Body] nvarchar(MAX) null
+  colCreateDate --> [CreateDate] datetime null
+  colSentDate --> [SentDate] datetime null
+  colProcessedDate --> [ProcessedDate] datetime null
+  colIsException --> [IsException] bit not null
+  colAttachmentData --> [AttachmentData] nvarchar(MAX) null
+  colNotificationType --> [NotificationType] nvarchar(50) null
+

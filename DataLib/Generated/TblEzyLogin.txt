@@ -1,0 +1,37 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblEzyLogin --> [ezy_Login]
+
+  colLoginID --> [LoginID] int **PK** identity not null
+  colEmailAddress --> [EmailAddress] nvarchar(150) null
+  colFullName --> [FullName] nvarchar(150) null
+  colPassword --> [Password] nvarchar(MAX) null
+  colActiveFlag --> [ActiveFlag] bit null
+  colMarkForDeletionDate --> [MarkForDeletionDate] datetime null
+  colComments --> [Comments] nvarchar(255) null
+  colLoginGuid --> [LoginGuid] nvarchar(200) null
+  colInactivityReminderSentDate --> [InactivityReminderSentDate] datetime null
+  colIsLockedOut --> [IsLockedOut] bit null
+  colPasswordIsExpired --> [PasswordIsExpired] bit null
+  colLastPasswordChangeDate --> [LastPasswordChangeDate] datetime null
+  colLastLoginDate --> [LastLoginDate] datetime null
+  colLastPasswordResetRequestDate --> [LastPasswordResetRequestDate] datetime null
+  colLastFailedLoginDate --> [LastFailedLoginDate] datetime null
+  colInternal --> [Internal] bit not null
+  colPasswordReminderSentFlag --> [PasswordReminderSentFlag] int not null
+  colFailedLoginStrikeStartDate --> [FailedLoginStrikeStartDate] datetime null
+  colFailedLoginStrikeCount --> [FailedLoginStrikeCount] int null
+  colAllowReclassLoginOverride --> [AllowReclassLoginOverride] bit null
+  colSysUserCreated --> [SysUserCreated] nvarchar(100) null
+  colSysDateCreated --> [SysDateCreated] datetime null
+  colSysUserModified --> [SysUserModified] nvarchar(100) null
+  colSysDateModified --> [SysDateModified] datetime null
+  colWhatsNewLastReviewedDate --> [WhatsNewLastReviewedDate] datetime null
+

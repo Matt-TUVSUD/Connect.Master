@@ -1,0 +1,30 @@
+/*/===============================================================\
+  | razor JSON (experimental) - rev 4.2.11                        |
+  |---------------------------------------------------------------|
+  |  Template: gen.vb.sqlserver (experimental version)            |
+  |   Website: http://www.pigford.net/razor                       |
+  |                                                               |
+  | Known Issues:                                                 |
+  \===============================================================/*/
+
+[{
+	"colCldbname":"cldbname", 
+	"colClientname":"clientname", 
+	"colFileprefix":"fileprefix", 
+	"colDataTransferPassword":"DataTransferPassword", 
+	"colDataTransferEncryptionKey":"DataTransferEncryptionKey", 
+	"colDataTransferPgpEnabled":null, 
+	"colDataTransferPgpPublicKey":"DataTransferPgpPublicKey", 
+	"colDataTransferFtpEnabled":null, 
+	"colDataTransferFtpUrl":"DataTransferFtpUrl", 
+	"colDataTransferOutputOptions":"DataTransferOutputOptions", 
+	"colDataTransferFtpUserName":"DataTransferFtpUserName", 
+	"colDataTransferFtpPassword":"DataTransferFtpPassword", 
+	"colDataTransferPgpFileExtension":"DataTransferPgpFileExtension", 
+	"colDataTransferFtpLocalFolder":"DataTransferFtpLocalFolder", 
+	"colDataTransferFileNameFormatString":"DataTransferFileNameFormatString", 
+	"colDataTransferRetrievalDate":null, 
+	"colClientDBRootPath":"ClientDBRootPath", 
+	"colDataTransferFtpMonthJson":"DataTransferFtpMonthJson", 
+	"colDataTransferFtpDayJson":"DataTransferFtpDayJson"
+}]

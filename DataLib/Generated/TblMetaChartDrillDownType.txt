@@ -1,0 +1,15 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblMetaChartDrillDownType --> [tblMetaChartDrillDownType]
+
+  colFldId --> [fldId] int **PK** identity not null
+  colFldTypeName --> [fldTypeName] varchar(50) null
+  colFldNotes --> [fldNotes] varchar(100) null
+

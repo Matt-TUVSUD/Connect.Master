@@ -1,0 +1,23 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblMetaChartSeriesDetail --> [tblMetaChartSeriesDetail]
+
+  colFldId --> [fldId] int **PK** identity not null
+  colFldMetaChartSeriesId --> [fldMetaChartSeriesId] int null
+  colFldMetaChartDrillDownId --> [fldMetaChartDrillDownId] int null
+  colFldIndexOrder --> [fldIndexOrder] int null
+  colFldField --> [fldField] varchar(100) null
+  colFldTitle --> [fldTitle] varchar(100) null
+  colFldColor --> [fldColor] varchar(100) null
+  colFldNotes --> [fldNotes] varchar(100) null
+  colFldMetaChartDrillDownTypeId --> [fldMetaChartDrillDownTypeId] int null
+  colFldInclude --> [fldInclude] bit null
+  colFldCustomFeature --> [fldCustomFeature] varchar(10) null
+

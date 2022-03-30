@@ -1,0 +1,15 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblMetaSQLFunction --> [tblMetaSQLFunction]
+
+  colFldId --> [fldId] int **PK** identity not null
+  colFldObjectName --> [fldObjectName] nvarchar(255) not null
+  colFldParameterFlag --> [fldParameterFlag] int null
+

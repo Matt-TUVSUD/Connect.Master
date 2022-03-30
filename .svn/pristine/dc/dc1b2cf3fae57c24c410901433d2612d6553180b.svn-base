@@ -1,0 +1,15 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblAppVersion --> [tblAppVersion]
+
+  colFldId --> [fldId] int **PK** identity not null
+  colFldVersion --> [fldVersion] nvarchar(25) null
+  colFldBuild --> [fldBuild] nvarchar(25) null
+

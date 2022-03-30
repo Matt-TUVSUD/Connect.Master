@@ -1,0 +1,17 @@
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblEmailTemplate --> [tblEmailTemplate]
+
+  colFldId --> [fldId] int **PK** identity not null
+  colFldTypeId --> [fldTypeId] int null
+  colFldFilePrefix --> [fldFilePrefix] int null
+  colFldSubject --> [fldSubject] nvarchar(MAX) null
+  colFldBody --> [fldBody] nvarchar(MAX) null
+

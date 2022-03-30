@@ -1,0 +1,21 @@
+
+
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: GSafeFileNoRadiusParms --> [GSafeFileNoRadiusParms]
+
+  colRadiusParmId --> [RadiusParmId] int **PK** identity not null
+  colGSafeId --> [GSafeId] int not null
+  colLatitude --> [Latitude] decimal(7,4) not null
+  colLongitude --> [Longitude] decimal(7,4) not null
+  colInputRange --> [InputRange] float null
+  colUnits --> [Units] varchar(15) null
+  colSearchName --> [SearchName] varchar(70) null
+

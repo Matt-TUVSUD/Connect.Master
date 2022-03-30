@@ -1,0 +1,21 @@
+
+
+/===============================================================\
+| razor doc (experimental) - rev 4.2.15                         |
+|---------------------------------------------------------------|
+|  Template: gen.vb.sqlserver (experimental version)            |
+|   Website: http://www.pigford.net/razor                       |
+|                                                               |
+| Known Issues:                                                 |
+\===============================================================/
+
+Table: TblGSafeHeader --> [GSafeHeader]
+
+  colGSafeId --> [GSafeId] int **PK** identity not null
+  colGSafeGUID --> [GSafeGUID] varchar(40) not null
+  colCreated --> [Created] datetime null
+  colLastAccessed --> [LastAccessed] datetime null
+  colLastUpdated --> [LastUpdated] datetime null
+  colLoginName --> [LoginName] varchar(50) null
+  colLoginID --> [LoginID] int null
+

@@ -1,0 +1,62 @@
+﻿/*********************
+*** PICK LIST    
+*********************/
+/*.pickListWindow
+{
+    position: absolute;
+    top: 37px;
+    width: 160px;
+    z-index: 10002;
+}*/
+
+.pickListWindow {
+    display: none;
+}
+.pickListHeader {
+    text-align: center; 
+    padding-bottom: 4px;
+}
+.pickListFooter {
+    padding-top: 8px; 
+    text-align: center;
+}
+.pickListTable {
+}
+.pickListContent {
+    background-color: #FFFFFF;
+    height: 315px; 
+    overflow-y: scroll;
+    border: 1px solid #CCCCCC;
+    padding: 0px;
+    margin: 0px;
+}
+.pickListLoading {
+    position: fixed;
+    top: inherit;
+    left: inherit;
+    opacity: 0.8;
+    background: #FFFFFF;
+}
+.pickListLoadingImage {
+    border: none;
+    margin-left: 125px; 
+    margin-top: 110px;
+    height: 32px; 
+    width: 32px;
+}
+.pickListButton {
+    min-width: 75px;
+    min-height: 28px;
+}
+.pickListItem {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 4px;
+}
+.pickListItemLabel {
+}
+.pickListItemLabel:hover {
+    text-decoration: underline;
+}
+
+/*END PICKLIST*/

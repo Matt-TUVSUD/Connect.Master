@@ -1,0 +1,154 @@
+﻿<%@ Master Language="VB" MasterPageFile="~/ClientConnectForm.master" AutoEventWireup="false" CodeBehind="ClientConnectLocationRatingFromChart.master.vb" Inherits="GRC.Connect.Web.ClientConnectRatingFromChart" %>
+<%@ Register Src="~/Home_{{VER}}/Controls/RevisionStampControl.ascx" TagName="RevisionStampControl" TagPrefix="grcRSC" %>
+<%@ Register Src="~/Home_{{VER}}/Controls/Header.ascx" TagName="Header" TagPrefix="grcRSC" %>
+<%@ Register Src="~/Home_{{VER}}/Controls/Footer.ascx" TagName="Footer" TagPrefix="grcRSC" %>
+
+<asp:Content ID="ClientConnectTestHeadContent" ContentPlaceHolderID="ClientConnectFormHead" runat="server">
+    <title>TUV SUD GRC Connect</title>
+
+    <%-- OUTDATED STYLES --%>
+    
+    <%-- UPDATED STYLES --%>
+    <link rel="Stylesheet" type="text/css" href="../../css/Kendo.v2014.1.318/kendo.common.min.css" />
+
+    <%-- ORIGINAL STYLES --%>
+    <link rel="Stylesheet" type="text/css" href="../../css/kendo-lightblue-noedit.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/kendo-lightblue-grid.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/kendo-lightblue-menu.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/kendo-lightblue-tabstrip.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/global.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/topbanner.css" />
+
+    <link rel="Stylesheet" type="text/css" href="../../css/Header/header.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Nav/nav.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/mainPageBody.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Footer/footer.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Font-Awesome/all.css" />
+
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/windows.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/pages/icons.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadFileExplorer.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadFileExplorerOffice2010Silver.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadWindow.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/Telerik/RadWindowOffice2010Blue.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/EDA/cssgrid.css" />
+    <link rel="Stylesheet" type="text/css" href="../../css/EDA/eda.css" />
+
+    <%-- OUTDATED JAVASCRIPT --%>
+    <%-- UPDATED JAVASCRIPT --%>
+    <%--<script src="../../Lib_{{VER}}/KendoUI.v2015.3.1111/kendo.all.min.js"></script>--%>
+    <%--<script src="../../Lib_{{VER}}/kendo.all.min.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/kendo.web.min.js" type="text/javascript"></script>--%>
+    <%--<script src="../../Lib_{{VER}}/KendoUI.v2015.3.1111/kendo.web.min.js"></script>--%>
+    <script src="../../Lib_{{VER}}/kendo.all.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/KendoUI.v2014.1.416/kendo.grc.grid.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Knockout.v3.3.0/knockout-3.3.0.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/knockoutkendo.v0.9.3/knockout-kendo.min.js" type="text/javascript"></script>
+
+    <%-- ORIGINAL JAVASCRIPT --%>
+    <script src="../../Lib_{{VER}}/json/json2.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/ES/entityspaces.XHR.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Math/Math.uuid.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/GSafeDetail.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/GSafeDetail.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Generated/GSafeHeader.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Custom/GSafeHeader.js" type="text/javascript"></script>
+
+
+    <script src="../../Lib_{{VER}}/Generated/NavLink.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Config/baseurl.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/Session/sessvars.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/global.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/util_{{VER}}.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/topbanner.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/nav.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/pages/export.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.5.6/numeral.min.js"></script>
+    <script src="../../Lib_{{VER}}/Footer/footer.js" type="text/javascript"></script>
+    <script src="../../Lib_{{VER}}/header/header.js" type="text/javascript"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        #icoBack
+        {
+            height: 13px;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="ClientConnectTestBodyContent" ContentPlaceHolderID="ClientConnectFormBody" runat="server">
+    <form id="form1" runat="server">
+        <!--HEADER-->
+        <header>
+            <grcRSC:Header id="Header" runat="server" />
+        </header>
+        <section class="pageBodyHldr">
+        <!--MAIN CONTENT AREA-->
+            <div class="pageContentHldr">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+                <div id="revStampHldr">
+                    <grcRSC:RevisionStampControl ID="RevisionStampControl1" runat="server" />
+                </div>
+            </div>
+        </section>
+        <!--FOOTER-->
+        <footer>
+            <grcRSC:footer ID="Footer" runat="server" />
+            <!-- FEEDBACK COMMENTS WINDOWS AND SCRIPT - ALSO NEED TO INCLUDE CSS AND SERVERSIDE HIDDEN FIELD -->
+            <div id="include_comments"></div>
+        </footer>
+
+
+    </form>
+</asp:Content>
+<asp:Content ID="ClientConnectTestBottomHtml" ContentPlaceHolderID="ClientConnectFormBottomHtml" runat="server">
+    <script type="text/javascript">
+        $(document).ready(function () {
+             //SHOW OR HIDE TOP HORIZONTAL MENU
+            $("#headerInfoHldr").addClass("noShow");
+            $("#include_comments").load("../Common/CommentsWindows.html");
+        });
+
+        function closeWindow() {
+            window.close()
+        }
+
+
+        function goBack() {
+            // COLLECT PARMS AND URL INFO
+            var URL = document.referrer.split("?")[0];
+            var zGuid = "";
+            if (global.getQueryVariable("sid")) {
+                zGuid = "&sid=" + global.getQueryVariable("sid");
+            }
+            var zChartId = "";
+            if (global.getQueryVariable("chartId")) {
+                zChartId = "&chartId=" + global.getQueryVariable("chartId");
+            }
+            var zP1 = "";
+            if (global.getQueryVariable("p1")) {
+                zP1 = "&p1=" + global.getQueryVariable("p1");
+            }
+            var zC1 = "";
+            if (global.getQueryVariable("c1")) {
+                zC1 = "&c1=" + global.getQueryVariable("c1");
+            }
+            var pageNum = "";
+            if (global.getQueryVariable("pg")) {
+                pageNum = "&pg=" + global.getQueryVariable("pg");
+            }
+            var pageSort = "";
+            if (global.getQueryVariable("srt")) {
+                pageSort = "&srt=" + global.getQueryVariable("srt");
+            }
+            // NAVIGATE BACK
+            if (pageNum.length > 0) {
+                URL = URL + "?q1=0" + zGuid + zChartId + zC1 + zP1 + pageNum + pageSort;
+                document.location.href = URL;
+            } else {
+                history.back();
+            };
+        }
+    </script>
+</asp:Content>

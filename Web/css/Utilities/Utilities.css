@@ -1,0 +1,446 @@
+﻿body {
+    font-size:16px;
+}
+
+.ui-helper-clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.ui-helper-clearfix { display: inline-block; }
+/* required comment for clearfix to work in Opera \*/
+* html .ui-helper-clearfix { height: 1%; }
+.ui-helper-clearfix { display: block; }
+/* end clearfix */
+
+.headerCompanyNameLargeBlue {
+    font-family: Calibri, Verdana, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    font-size: 15pt;
+    font-weight: bold;
+    color: #0046ad;
+}
+
+.headerCompanyNamePrint {
+    font-family: Calibri, Verdana, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    font-size: 12pt;
+    font-weight: bold;
+    color: #0046ad;
+}
+
+.noShow {
+    display: none !important;
+}
+
+.floatLeft {
+    float:left;
+}
+
+.floatRight {
+    float:right;
+}
+
+.noFloat {
+    float:none;
+}
+
+.TxtCenterAlign {
+    text-align:center;
+}
+
+.TxtLeftAlign {
+    text-align:left;
+}
+
+.TxtRightAlign {
+    text-align:right;
+}
+
+.bold {
+    font-weight:700;
+}
+
+.noTopMargin {
+    margin-top:0px !important;
+}
+
+.noRightMargin {
+    margin-right:0px !important;
+}
+
+.noBottomMargin {
+    margin-bottom:0px !important;
+}
+
+.noLeftMargin {
+    margin-left:0px !important;
+}
+
+.noBorder {
+    border:none !important;
+}
+
+.noTopBorder {
+    border-top:none !important;
+}
+
+.noRightBorder {
+    border-right:none !important;
+}
+
+.noBottomBorder {
+    border-bottom:none !important;
+}
+
+.noLeftBorder {
+    border-left: none !important;
+}
+
+.link {
+    text-decoration: underline !important;
+    cursor: pointer !important;
+}
+
+
+.pgBodyContent {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    width:100%;
+    /*justify-content:center;
+    align-items:center;*/
+    -webkit-box-pack:center;
+        -ms-flex-pack:center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    justify-content:center;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
+}
+
+.pgContentHeader {
+    font-size: 20px;
+    color: #0046ad;
+}
+
+
+.grcBlueBtn {
+    background: #0046ad;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    border-radius: 0px;
+    padding: 5px;
+    width: 130px;
+    height: 35px;
+    -webkit-box-pack:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
+}
+
+.grcBlueBtn:hover {
+    background: #002968;
+    cursor: pointer;
+    text-decoration:none;
+}
+
+.grcBlueBtn:active {
+    background: #002d72;
+    cursor: pointer;
+    -webkit-box-shadow: inset 0 0 100px #196090;
+    box-shadow: inset 0 0 100px #196090;
+}
+
+.grcBlueDisabledBtn, .grcBlueDisabledBtn:hover {
+    /* BACKGROUND COLLOR 4 SHADES LIGHTER THAN MAIN BUTTON COLOR */
+    background:#5C89CA !important;
+    cursor: default !important;
+}
+
+.grcGreenBtn {
+    background:#00b140;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    border-radius: 0px;
+    padding: 5px;
+    width: 130px;
+    height: 35px;
+    -webkit-box-pack:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
+}
+
+.grcGreenBtn:hover {
+    background:#009639;
+    cursor: pointer;
+    text-decoration:none;
+}
+.grcGreenBtn:active {
+    background:#007a33;
+    cursor: pointer;
+    -webkit-box-shadow: inset 0 0 100px #004e21;
+    box-shadow: inset 0 0 100px #004e21;
+}
+
+.grcGreenDisabledBtn, .grcGreenDisabledBtn:hover {
+    cursor:default !important;
+    background:#00A33C !important;
+}
+
+.grcYellowBtn {
+    background:#ffd100;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    border-radius: 0px;
+    padding: 5px;
+    width: 130px;
+    height: 35px;
+    -webkit-box-pack:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
+}
+
+.grcYellowBtn:hover {
+    background:#f2a900;
+    cursor: pointer;
+    text-decoration:none;
+}
+.grcYellowBtn:active {
+    background:#ff8200;
+    cursor: pointer;
+    -webkit-box-shadow: inset 0 0 100px #a35300;
+    box-shadow: inset 0 0 100px #a35300;
+}
+
+.grcRedBtn {
+    background:#D11A2A;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    border-radius: 0px;
+    padding: 5px;
+    width: 130px;
+    height: 35px;
+    -webkit-box-pack:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
+}
+
+.grcRedBtn:hover {
+    background:#AC1623;
+    cursor: pointer;
+    text-decoration:none;
+}
+.grcRedBtn:active {
+    background:#86111B;
+    cursor: pointer;
+    -webkit-box-shadow: inset 0 0 100px #730F17;
+    box-shadow: inset 0 0 100px #730F17;
+}
+
+.grcRedDisabledBtn, .grcRedDisabledBtn:hover {
+    /* 4 SHADES UP FROM STANDARD RED COLOR */
+    background:#E16D77 !important;
+    cursor:default !important;
+}
+
+.grcNeutralBtn {
+    background:#eee;
+    color: #0046ad;
+    font-weight: 700;
+    border: 2px solid #0046ad;
+    border-radius: 0px;
+    padding: 5px;
+    width: 130px;
+    height: 35px;
+    -webkit-box-pack:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
+}
+
+.grcNeutralBtn:hover{
+    color:#fff;
+    background:#8f8f8f;
+    cursor: pointer;
+    text-decoration:none;
+}
+
+.grcNeutralBtn:active{
+    color:#fff;
+    background:#5f5f5f;
+    cursor: pointer;
+    -webkit-box-shadow: inset 0 0 100px #474747;
+    box-shadow: inset 0 0 100px #474747;
+}
+
+.grcNeutralDisabledBtn {
+    font-weight: 700;
+    border: 2px solid #9c9c9c;
+    border-radius: 0px;
+    padding: 5px;
+    width: 130px;
+    height: 35px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #9c9c9c !important;
+}
+
+.grcNeutralDisabledBtn:hover {
+    cursor: default !important;
+}
+
+.pagerBtn {
+    width:22px;
+    height:22px;
+    border-radius:4px;
+    padding: 0px;
+}
+
+.findBtn {
+    width:75px;
+    height:22px;
+    border-radius:4px;
+    padding: 0px;
+}
+
+.tabActionBtn {
+    height:25px;
+    width:75px;
+}
+
+.icon_cell {
+    width:30%; 
+    display:-webkit-box; 
+    display:-ms-flexbox; 
+    display:flex; 
+    -webkit-box-orient:vertical; 
+    -webkit-box-direction:normal; 
+        -ms-flex-direction:column; 
+            flex-direction:column;
+    -webkit-box-pack:center;
+        -ms-flex-pack:center;
+            justify-content:center; 
+    -webkit-box-align:center; 
+        -ms-flex-align:center; 
+            align-items:center;
+}
+
+.icon_cell:hover {
+    cursor:pointer;
+}
+
+.prefBox {
+    padding:10px; 
+    background:#eee; 
+    color:#000; 
+    margin-right:10px; 
+    -ms-flex-preferred-size:50%; 
+        flex-basis:50%;
+}
+
+.prefilterHeaderTxt {
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:10px;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-pack:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
+    text-align:center;
+    width:100%;
+}
+
+.prefilterRow {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.prefilterBtnHldr {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex; 
+    width:75%; 
+    margin:15px auto; 
+    -webkit-box-pack:justify; 
+        -ms-flex-pack:justify; 
+            justify-content:space-between; 
+    -webkit-box-align:center; 
+        -ms-flex-align:center; 
+            align-items:center;
+}
+
+/* RAD WINDOW OVERRIDES */
+.RadWindow_Office2010Blue .rwTopLeft,
+.RadWindow_Office2010Blue .rwTopRight,
+.RadWindow_Office2010Blue .rwTitlebar,
+.RadWindow_Office2010Blue .rwFooterLeft,
+.RadWindow_Office2010Blue .rwFooterRight,
+.RadWindow_Office2010Blue .rwFooterCenter,
+.RadWindow_Office2010Blue .rwTopResize,
+.RadWindow_Office2010Blue .rwStatusbar div,
+.RadWindow_Office2010Blue .rwStatusbar,
+.RadWindow_Office2010Blue .rwPopupButton,
+.RadWindow_Office2010Blue .rwPopupButton span,
+.rwMinimizedWindow.RadWindow_Office2010Blue .rwCorner {
+    background-image:none !important;
+    background:#0046ad;
+}
+
+.RadWindow_Office2010Blue .rwBodyLeft, 
+.RadWindow_Office2010Blue .rwBodyRight, 
+.RadWindow_Office2010Blue .rwStatusbarRow .rwCorner {
+    background-image:none !important;
+    background:#0046ad;
+}

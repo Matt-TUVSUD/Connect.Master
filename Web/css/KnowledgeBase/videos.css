@@ -1,0 +1,111 @@
+﻿#viewVideos {
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
+}
+
+#viewVideos .k-panelbar{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+        -ms-flex-direction:column;
+            flex-direction:column;
+    width: 900px;
+    border:1px solid #fff;
+}
+
+#viewVideos .k-panelbar .k-item{
+    width:100%;
+    background:#0046ad;
+    color:#fff;
+    text-align:center;
+    border-bottom:1px solid #505052;
+}
+
+.videoPanelItem {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#000;
+    background:#eee;
+}
+
+.videoItem {
+    height:500px;
+    width:715px;
+    border-right:1px solid #000;
+    border-left: none;
+    border-top:none;
+    border-bottom:none;
+}
+
+.videoPanelItem .k-i-volume-up {
+    width:30px;
+}
+
+.videoPanelItem .k-mediaplayer-titlebar {
+    background:#999;
+}
+
+.k-mediaplayer-toolbar .k-button.k-bare {
+    padding-left:0px;
+    padding-right:0px;
+}
+
+.k-slider .k-slider-selection {
+    background: #002968;
+}
+
+.k-slider .k-draghandle {
+    border-color: #0046ad;
+    color: #fff;
+    background-color: #0046ad;
+    background-image: linear-gradient(rgba(255,138,88,0),rgba(255,138,88,.2));
+    border-radius: 50%;
+}
+
+.playlistHldr {
+    max-height:500px;
+    height:500px;
+    width:185px;
+    overflow:auto;
+}
+
+.playlistHldr .k-list{
+    list-style:none;
+    padding-left:0px;
+    border:none;
+}
+
+#viewVideos .playlistHldr .k-list .k-item{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    width:89%;
+    max-width:215px;
+    padding:10px;
+}
+
+#viewVideos .playlistHldr .k-list .k-item:hover{
+    cursor:pointer;
+}
+
+.playListItemHldr {
+    display:flex;
+    width:100%;
+    align-items:center;
+}
+
+.playListThumbNail {
+    /*width:50%;*/
+    max-width:80px;
+    height:auto;
+    max-height:50px;
+}
+
+.playListItemHldr h5 {
+    font-size:11px;
+    padding-left:10px;
+}

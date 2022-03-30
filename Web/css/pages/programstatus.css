@@ -1,0 +1,843 @@
+﻿#dashboardHldr, #programStatusDashboardHldr {
+    color: #000;
+    background: #eee;
+    max-width: 1200px;
+    width: 100%;
+    padding: 10px;
+}
+
+#dashboardHldr h1{
+    color: #000;
+    text-align: center;
+    text-decoration: underline;
+}
+
+#dashboardHldr a{
+    /*color: #000;*/
+    text-decoration: underline;
+}
+
+
+.serviceBox {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex; 
+    -webkit-box-orient:vertical; 
+    -webkit-box-direction:normal; 
+        -ms-flex-direction:column; 
+            flex-direction:column; 
+    -ms-flex-preferred-size: 75px; 
+        flex-basis: 75px; 
+    -webkit-box-pack:center; 
+        -ms-flex-pack:center; 
+            justify-content:center; 
+    -webkit-box-align:center; 
+        -ms-flex-align:center; 
+            align-items:center; 
+    border-right:1px solid #999;
+}
+
+.serviceTop {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    width:100%; 
+    -webkit-box-pack:center; 
+        -ms-flex-pack:center; 
+            justify-content:center; 
+    -webkit-box-align:center; 
+        -ms-flex-align:center; 
+            align-items:center;
+    height:50%; 
+    border-bottom:1px solid #999;
+}
+
+.serviceBottom {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex; 
+    -webkit-box-orient:horizontal; 
+    -webkit-box-direction:normal; 
+        -ms-flex-direction:row; 
+            flex-direction:row; 
+    width:100%; 
+    height:50%; 
+    -webkit-box-pack:center; 
+        -ms-flex-pack:center; 
+            justify-content:center; 
+    -webkit-box-align:center; 
+        -ms-flex-align:center; 
+            align-items:center; 
+    padding-top:2px;
+}
+
+.serviceBottomHalf {
+    width:50%; 
+    height:100%;
+    -webkit-box-pack:center;
+        -ms-flex-pack:center;
+            justify-content:center; 
+    -webkit-box-align:center; 
+        -ms-flex-align:center; 
+            align-items:center;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex; 
+
+}
+
+.tableBorder {
+    border-collapse: collapse;
+    border: solid 1px #cfd3d8;
+    margin: 4px;
+}
+
+    .tableBorder td {
+        border: solid 1px #cfd3d8;
+    }
+
+.errorMessage {
+    color: #0046ad;
+}
+
+/*********************************
+/****** INPUTS GENERAL ***********
+/****** DO NOT CHANGE THE ORDER **
+/****** OF THESE CLASSES ********/
+.inputCenter
+{
+    font-family: Arial;
+    font-size: 8pt;
+    text-indent: 4px;
+    text-align: center;
+    vertical-align: middle;
+    /*width: 100%;*/
+    height: 20px;
+    line-height: 10pt;
+    line-height: 12pt\9; /* THE \9 TARGETS IE8 AND OLDER ONLY */
+    padding-top: 0.1em;
+}
+.inputRight
+{
+    font-family: Arial;
+    font-size: 8pt;
+    text-indent: 4px;
+    text-align: right;
+    vertical-align: middle;
+    /*width: 100%;*/
+    height: 20px;
+    line-height: 10pt;
+    line-height: 12pt\9; /* THE \9 TARGETS IE8 AND OLDER ONLY */
+    padding-top: 0.1em;
+}
+.inputLeft
+{
+    font-family: Arial;
+    font-size: 8pt;
+    text-indent: 4px;
+    text-align: left;
+    vertical-align: middle;
+    /*width: 100%;*/
+    height: 20px;
+    line-height: 10pt;
+    line-height: 12pt\9; /* THE \9 TARGETS IE8 AND OLDER ONLY */
+    padding-top: 0.1em;
+}
+.inputLeftKendo
+{
+    font-family: Arial;
+    font-size: 8pt;
+    text-indent: 4px;
+    text-align: left;
+    vertical-align: middle;
+    /*width: 100%;*/
+    height: 20px;
+    line-height: 7pt;
+    padding-top: 0.1em;
+}
+.inputPadding
+{
+    padding-left: 4px;
+    /*width: 100%;*/
+    height: 20px;
+    line-height: 10pt;
+    line-height: 12pt\9; /* THE \9 TARGETS IE8 AND OLDER ONLY */
+    padding-top: 0.1em;
+}
+.inputNoEdit, :disabled
+{
+    filter: alpha(opacity=100);
+    opacity: 1;
+    color: Black;
+    /*width: 100%;*/
+}
+.inputLink
+{
+    /*width: 100%;*/
+    text-decoration: underline;
+    color: #5b63b7;
+    line-height: 10px;
+    padding-top: 0.25em;
+    /*padding-top: 0px;*/
+}
+.inputEdit
+{
+    text-align: left;
+    /*width: 100%;*/
+    padding-left: 4px;
+}
+
+
+
+/*********************************
+/****** HEADINGS ****************/
+.programstat_HeadingLabelLeft
+{
+    font-size: 11pt;
+    /*font-weight: bold;*/
+}
+.programstat_HeadingLabelPractice
+{
+    font-size: 11pt;
+    /*font-weight: bold;*/
+}
+.programstat_HeadingLabelProjectOpenClose
+{
+    font-size: 7pt;
+    /*font-weight: bold;*/
+}
+.programstat_HeadingLabelSub
+{
+    font-size: 7pt;
+    height: 100% !important; 
+    line-height: normal !important;
+}
+
+.serviceBottom .programstat_HeadingLabelSub
+{
+    font-size: 7pt;
+    height: 100% !important; 
+    line-height: normal !important;
+    text-align:center;
+    width:100%;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-pack:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
+}
+
+.programstat_LabelBlue
+{
+    color: Blue;
+}
+.programstat_PositionText
+{
+    position: relative;
+}
+.programstat_HeaderBackground
+{
+    /** BACKGROUND GRADIENT IMAGE **/
+    background-color: #0046ad;/*#C6D1DE;*/
+    /*background-image: url('../../Home_{{VER}}/Images/gridHeaderBackgroundKendo2.png'); 
+    background-position: 0px 50%;
+    background-repeat: repeat-x;    */
+}
+.programstat_HeadingTall
+{
+    display:flex;
+    width: 100%;
+    height: 58px;
+    /*background-color: #C6D1DE;
+    color: #1A1A1A;*/
+    background-color:#0046ad;
+    color:#fff;
+    border: 1px solid #1A1A1A;
+    padding: 0px;
+    margin: 0px;
+}
+.programstat_HeadingShort
+{
+    width: 100%;
+    height: 24px;
+    /*background-color: #C6D1DE;
+    background-position: 0px 52%;
+    color: #1A1A1A;*/
+    background-color:#0046ad;
+    color:#fff;
+    border: 1px solid #1A1A1A;
+    padding: 0px;
+    margin: 0px;
+}
+.programstat_HeadingMedium
+{
+    width: 100%;
+    height: 45px;
+    /*background-color: #C6D1DE;
+    color: #1A1A1A;*/
+    background-color:#0046ad;
+    color:#fff;
+    border: 1px solid #1A1A1A;
+    padding: 0px;
+    margin: 0px;
+}
+.programstat_HeadingProjectManagement
+{
+    width: 100%;
+    height: 50px;
+    /*background-color: #C6D1DE;
+    color: #1A1A1A;*/
+    background-color:#0046ad;
+    color:#fff;
+    border: 1px solid #1A1A1A;
+    padding: 0px;
+    margin: 0px;
+}
+
+.dualLineSubheader {
+    display:flex; 
+    flex-direction:column; 
+    flex-basis: 275px; 
+    width:275px; 
+    justify-content:center; 
+    align-items:center; 
+    padding:2px 6px; 
+    border-right:1px solid #999;
+}
+
+.subHeaderLineTwo {
+    display:flex; 
+    justify-content:center; 
+    align-items:center;
+}
+
+/************************************
+/****** CELLS **********************/
+/** TOTAL AVAILABLE SPACE = 815px **/
+.programstat_Center
+{
+    text-align: center;
+}
+.wide100
+{
+    width: 100%;
+}
+.programstat_ContentArea
+{
+    width: 100%;
+    border: 1px solid #999999;
+    border-collapse: collapse;
+}
+.programstat_ContentBorder
+{
+    border-left: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+    border-collapse: collapse;
+    margin-left: -1px;
+    margin-bottom: -1px;
+}
+.programstat_BorderRight
+{
+    border-right: 1px solid #999999;
+    border-collapse: collapse;
+    margin-left: -1px;
+    margin-right: -1px;
+    margin-bottom: -1px;
+}
+.programstat_BorderLeft
+{
+    border-left: 1px solid #999999;
+    border-collapse: collapse;
+    margin-left: -1px;
+    margin-right: -1px;
+    margin-bottom: -1px;
+}
+.programstat_BorderTop
+{
+    border-top: 1px solid #999999;
+    border-collapse: collapse;
+}
+.programstat_NoBottomBorder
+{
+    border-bottom: 0px;
+}
+.programstat_NoTopBorder
+{
+    border-top: 0px;
+}
+.programstat_CellLabelLeft
+{
+    width: 282px;
+    padding-right: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.programstat_CellLabelLeftShort
+{
+    width: 100px;
+    padding-right: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.programstat_CellLabelLeftLong
+{
+    width: 416px;
+    padding-right: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.programstat_LabelRight
+{
+    width: auto;
+    padding-right: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.programstat_CellLabelLeftCenter
+{
+    width: 272px;
+    padding-right: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.programstat_CellLabelLeftCenterLong
+{
+    width: 100%;
+    padding-right: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/** CELLS WITHOUT BORDERS **/
+.programstat_CellX1
+{
+    width: 38px;
+    padding: 2px 0px 2px 0px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.programstat_CellX2
+{
+    width: 76px;
+    padding: 2px 0px 2px 0px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.programstat_CellX3
+{
+    width: 114px;
+    padding: 2px 0px 2px 0px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.programstat_CellX4
+{
+    width: 152px;
+    padding: 2px 0px 2px 0px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.programstat_CellX5
+{
+    width: 190px;
+    padding: 2px 0px 2px 0px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.programstat_CellX6
+{
+    width: 228px;
+    padding: 2px 0px 2px 0px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.programstat_CellX7
+{
+    width: 266px;
+    padding: 2px 0px 2px 0px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.programstat_CellX8
+{
+    width: 304px;
+    padding: 2px 0px 2px 0px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.programstat_CellX9
+{
+    width: 342px;
+    padding: 2px 0px 2px 0px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.programstat_CellX10
+{
+    width: 380px;
+    padding: 2px 0px 2px 0px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.programstat_CellX11
+{
+    width: 418px;
+    padding: 2px 0px 2px 0px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.programstat_CellX12
+{
+    width: 456px;
+    padding: 2px 0px 2px 0px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.programstat_CellX13
+{
+    width: 494px;
+    padding: 2px 0px 2px 0px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.programstat_CellX14
+{
+    width: 532px;
+    padding: 2px 0px 2px 0px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/** CELLS WITH BORDERS **/
+.programstat_CellX1ExtraBorder
+{
+    width: 37px;
+    padding: 2px 0px 2px 0px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.programstat_CellX2ExtraBorder
+{
+    width: 75px;
+    padding: 2px 0px 2px 0px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.programstat_CellX3ExtraBorder
+{
+    width: 101px;
+    padding: 2px 0px 2px 0px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.programstat_CellX4ExtraBorder
+{
+    width: 135px;
+    padding: 2px 0px 2px 0px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.programstat_CellX5ExtraBorder
+{
+    width: 169px;
+    padding: 2px 0px 2px 0px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.programstat_CellX6ExtraBorder
+{
+    width: 203px;
+    padding: 2px 0px 2px 0px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.programstat_CellX7ExtraBorder
+{
+    width: 237px;
+    padding: 2px 0px 2px 0px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.programstat_CellX8ExtraBorder
+{
+    width: 271px;
+    padding: 2px 0px 2px 0px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.programstat_CellX9ExtraBorder
+{
+    width: 305px;
+    padding: 2px 0px 2px 0px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.programstat_CellX10ExtraBorder
+{
+    width: 339px;
+    padding: 2px 0px 2px 0px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.programstat_CellX11ExtraBorder
+{
+    width: 373px;
+    padding: 2px 0px 2px 0px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.programstat_CellX12ExtraBorder
+{
+    width: 407px;
+    padding: 2px 0px 2px 0px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.programstat_CellX13ExtraBorder
+{
+    width: 441px;
+    padding: 2px 0px 2px 0px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.programstat_CellX14ExtraBorder
+{
+    width: 475px;
+    padding: 2px 0px 2px 0px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+
+/********************************
+**** ROWS **********************/
+.programstat_ContentRow
+{
+    padding: 0px;
+    margin: 0px;
+    height: 26px;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+}
+.programstat_RowSeparator
+{
+    height: 6px !important;
+}
+
+
+
+
+/*********************************
+/****** LABELS SPECIFIC *********/
+.programstat_LabelRight
+{
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+/*********************************
+/****** INPUTS SPECIFIC *********/
+
+
+
+/*********************************
+/************ MISC **************/
+.programstat_TypeStyle
+{
+    /*font-family: Calibri, Arial, Verdana;*/
+}
+.programstat_DataTypeStyle
+{
+    font-size: 9pt;
+    /*font-family: Calibri, Arial, Verdana;*/
+}
+.programstat_LabelTypeStyle
+{
+    font-size: 8pt;
+    /*font-family: Calibri, Arial, Verdana;*/
+}
+.programstat_Link
+{
+    color: #0000FF;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.programstat_LinkDark
+{
+    color: #FFFFFF;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.programstat_NoLink
+{
+    color: #000000;
+    text-decoration: none !important;
+    cursor: default;
+}
+.programstat_NoUnderline
+{
+    color: #0000FF;
+    text-decoration: none;
+    cursor: default;
+}
+.programstat_NoUnderlineDark
+{
+    color: #FFFFFF;
+    text-decoration: none;
+    cursor: default;
+}
+.programstat_ChartContainer
+{
+    height: 200px;
+    width: 186px;
+    margin-top: -28px;
+    margin-left: 4px;
+    /*position: absolute;*/
+    white-space: normal;
+    overflow: hidden;
+    /*z-index: -1 TO CORRECT OVERLAP AND CLICKING IN CELLS*/
+}
+.programstat_ChartContainer_ClientFeatures
+{
+    height: 200px;
+    width: 186px;
+    margin-top: -0px;
+    margin-left: 4px;
+    /*position: absolute;*/
+    white-space: normal;
+    overflow: hidden;
+    /*z-index: -1 TO CORRECT OVERLAP AND CLICKING IN CELLS*/
+}
+.programstat_BottomCorrection
+{
+    margin-bottom: -1px;
+}
+.backColorRed
+{
+    background-color: #de3c39; /*#FF0000;*/ /*Red;*/
+    /*background-image: url('../../Home_{{VER}}/Images/gridHeaderBackgroundKendoDark.png'); 
+    background-position: 0px 43%;
+    background-repeat: repeat-x;    */
+}
+.backColorYellow
+{
+    background-color: #FFFF00; /*Yellow;*/
+    /*background-image: url('../../Home_{{VER}}/Images/gridHeaderBackgroundKendoDark.png'); 
+    background-position: 0px 43%;
+    background-repeat: repeat-x;    */
+}
+.backColorGreen
+{
+    background-color: #5ff300; /*#00B050;*/ /*Green;*/
+    /*background-image: url('../../Home_{{VER}}/Images/gridHeaderBackgroundKendoDark.png'); 
+    background-position: 0px 43%;
+    background-repeat: repeat-x;    */
+}
+.backNoColor
+{
+    /*background-image: url('../../Home_{{VER}}/Images/gridHeaderBackgroundKendoDark.png'); 
+    background-position: 0px 43%;
+    background-repeat: repeat-x;    */
+}
+/*IR COLORS*/
+.backColorIRRed {
+    background-color: #de3c39; /*#FC0D1B;*/
+    /*background-image: url('../../Home_{{VER}}/Images/gridHeaderBackgroundKendoDark.png'); 
+    background-position: 0px 43%;
+    background-repeat: repeat-x;    */
+}
+.backColorIRYellow {
+    background-color: #FFFF00;
+    /*background-image: url('../../Home_{{VER}}/Images/gridHeaderBackgroundKendoDark.png'); 
+    background-position: 0px 43%;
+    background-repeat: repeat-x;    */
+}
+.backColorIRGreen {
+    background-color: #5ff300; /*#94CE58;*/
+    /*background-image: url('../../Home_{{VER}}/Images/gridHeaderBackgroundKendoDark.png'); 
+    background-position: 0px 43%;
+    background-repeat: repeat-x;    */
+}
+.backColorIRBlue {
+    background-color: #1072BD;
+    /*background-image: url('../../Home_{{VER}}/Images/gridHeaderBackgroundKendoDark.png'); 
+    background-position: 0px 43%;
+    background-repeat: repeat-x;    */
+}
+.bufferLeft
+{
+    padding-left: 4px;
+}
+.bufferLeft12
+{
+    width: 12px;
+}
+.bufferRight
+{
+    padding-right: 4px;
+}
+
+.progStatusTopHldr {
+    display:flex; 
+    flex-direction:column;
+}
+
+.k-window-action .k-i-close 
+{
+    /* CORRECTION FOR CLOSE ICON WINDOW */
+    background-position: -32px -16px;
+}
